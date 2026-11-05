@@ -76,6 +76,95 @@ def error_path_witness(source, name, cases):
     return None
 
 
+# --- Amendment 1 (after the independent read-through review, 2026-11-05) -------------------------
+DV001_SENTENCE = PRESERVE_SENTENCE + " Compare arbitrary element objects by identity, not by copied value."
+LABEL_RENAMES = {
+    "DV011": [("unordered-overlap-chain", "unordered-overlap-with-disjoint")],
+    "TR024": [("compatibility-characters", "compatibility-and-nonascii-digit")],
+    "TR060": [("compatibility-characters", "compatibility-and-nonascii-digit")],
+}
+TR030_CASES = ["([[1], [1, 2], None],)", "([[1], [1, 2], [True]],)"]
+TR030_MUTANT = """
+_mut_orig = transpose
+def transpose(*args):
+    matrix = args[0]
+    # shape (ragged rows) checked before nested element types: violates type-before-shape order
+    if isinstance(matrix, list) and matrix and hasattr(matrix[0], "__len__"):
+        width = len(matrix[0])
+        if any(hasattr(row, "__len__") and len(row) != width for row in matrix):
+            raise ValueError("ragged")
+    return _mut_orig(*args)
+"""
+
+
+def amend(staging):
+    report = {}
+    for split in ("training", "development"):
+        for task in sorted((staging / "tasks" / split).iterdir()):
+            ident, changed = task.name, []
+            if ident == "DV001":
+                for name in ("SPEC.md", "PROMPT.md"):
+                    text = (task / name).read_text(encoding="utf-8")
+                    assert PRESERVE_SENTENCE in text and DV001_SENTENCE not in text
+                    (task / name).write_text(text.replace(PRESERVE_SENTENCE, DV001_SENTENCE), encoding="utf-8", newline="\n")
+                changed.append("identity wording")
+            for old, new in LABEL_RENAMES.get(ident, []):
+                for name in ("SPEC.md", "PROMPT.md", "TARGET.md", "evaluator/cases.json", "rubric.json"):
+                    text = (task / name).read_text(encoding="utf-8")
+                    assert old in text, (ident, name, old)
+                    (task / name).write_text(text.replace(old, new), encoding="utf-8", newline="\n")
+                changed.append(f"label {old} -> {new}")
+            if ident == "TR030":
+                gold = (task / "test_target.py").read_text(encoding="utf-8")
+                cases = json.loads((task / "evaluator/cases.json").read_text(encoding="utf-8"))
+                next_e = 1 + max(int(c["id"][1:]) for c in cases if c["id"].startswith("e"))
+                marker = "])\ndef test_raises_typeerror(args):"
+                assert gold.count(marker) == 1
+                new_ids = [f"e{next_e + i:03}" for i in range(len(TR030_CASES))]
+                lines = "".join(f'    pytest.param({a}, id="{i}"),\n' for a, i in zip(TR030_CASES, new_ids))
+                gold = gold.replace(marker, lines + marker)
+                compile(gold, "<amended-gold>", "exec")
+                cases += [dict(id=i, args_python=a, exception="TypeError", category="type-before-shape") for a, i in zip(TR030_CASES, new_ids)]
+                answer = (task / "TARGET.md").read_text(encoding="utf-8")
+                fence = chr(96) * 3
+                head, rest = answer.split(fence + "python\n", 1)
+                _, prose = rest.split(fence + "\n", 1)
+                m = re.search(r"TypeError=([e0-9,]+)", prose)
+                prose = prose.replace(m.group(0), m.group(0) + "," + ",".join(new_ids), 1)
+                (task / "test_target.py").write_text(gold, encoding="utf-8", newline="\n")
+                (task / "TARGET.md").write_text(head + fence + "python\n" + gold + fence + "\n" + prose, encoding="utf-8", newline="\n")
+                (task / "evaluator/cases.json").write_text(json.dumps(cases, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                reference = (task / "evaluator/reference/subject.py").read_text(encoding="utf-8")
+                for a in TR030_CASES:
+                    kind, value, _ = run_function(reference, "transpose", eval(a, dict(probes.NAMESPACE)))
+                    assert (kind, value) == ("raise", "TypeError"), (a, kind, value)
+                source = reference + TR030_MUTANT
+                kind, value, _ = run_function(source, "transpose", eval(TR030_CASES[0], dict(probes.NAMESPACE)))
+                assert (kind, value) == ("raise", "ValueError")
+                mutants = json.loads((task / "evaluator/mutants.json").read_text(encoding="utf-8"))
+                mid = f"R{1 + max(int(x['id'][1:]) for x in mutants if x['id'].startswith('R')):02}"
+                (task / "evaluator/mutants" / mid).mkdir(parents=True)
+                (task / "evaluator/mutants" / mid / "subject.py").write_text(source, encoding="utf-8", newline="\n")
+                mutants.append(dict(id=mid, requirement="order: type checks of nested rows before the ragged-shape check",
+                                    witness=dict(node=f"test_target.py::test_raises_typeerror[{new_ids[0]}]", case=new_ids[0], kind="required-exception-wrong-class",
+                                                 args_python=TR030_CASES[0], expected_exception="TypeError", actual_exception="ValueError"),
+                                    provenance="S011 amendment 1: independent read-through review showed e013 does not separate type-before-shape from shape-first code",
+                                    source_sha256=sha_text(source)))
+                (task / "evaluator/mutants.json").write_text(json.dumps(mutants, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                changed.append(f"added {new_ids} and mutant {mid}")
+            if changed:
+                record = json.loads((task / "record.json").read_text(encoding="utf-8"))
+                record.update(spec_sha256=sha_text((task / "SPEC.md").read_text(encoding="utf-8")),
+                              target_sha256=sha_text((task / "test_target.py").read_text(encoding="utf-8")),
+                              answer_sha256=sha_text((task / "TARGET.md").read_text(encoding="utf-8")),
+                              designated_mutants=len(json.loads((task / "evaluator/mutants.json").read_text(encoding="utf-8"))),
+                              exception_test_cases=sum("exception" in c for c in json.loads((task / "evaluator/cases.json").read_text(encoding="utf-8"))),
+                              status="repair-candidate-unapproved", parent_candidate="candidate-008")
+                (task / "record.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                report[ident] = changed
+    return report
+
+
 def main():
     assert not C9.exists(), "refuse to overwrite candidate-009"
     digests = json.loads((C8 / "SHA256.json").read_text(encoding="utf-8"))
@@ -145,6 +234,7 @@ def main():
                 (task / "rubric.json").write_text(json.dumps(rubric, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
                 reports.append(dict(id=ident, split=split, raise_tests_strengthened=gold.count("assert args == before") - 1,
                                     promoted_mutants=promoted, still_surviving=surviving, designated_mutants=len(mutants)))
+        amendment = amend(staging)
         # model packets from the (possibly changed) SPEC/TARGET files
         for split in ("training", "development"):
             rows = []
@@ -164,7 +254,7 @@ def main():
                         training_authorization="none; requires explicit approval of the changed prompt sentence and of this hash",
                         tasks=[json.loads(p.read_text(encoding="utf-8")) for p in sorted((staging / "tasks").glob("*/*/record.json"))])
         (staging / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        (staging / "calibration-design.json").write_text(json.dumps(dict(changed_tasks=reports, old_sentence=OLD_SENTENCE, new_sentence=PRESERVE_SENTENCE,
+        (staging / "calibration-design.json").write_text(json.dumps(dict(changed_tasks=reports, amendment_1=amendment, old_sentence=OLD_SENTENCE, new_sentence=PRESERVE_SENTENCE,
                                                                         old_prose=OLD_PROSE, new_prose=NEW_PROSE), indent=2) + "\n", encoding="utf-8")
         (staging / "README.md").write_text("# Candidate 009 — error-path preservation proposal, not a training export\n\n"
                                            "Candidate-008 plus audit finding N7 for the 19 mutable-input tasks: one changed coverage sentence, "
@@ -177,7 +267,7 @@ def main():
     except BaseException:
         shutil.rmtree(staging, ignore_errors=True)
         raise
-    report = dict(status="built-pending-execution", parent="candidate-008", changed_tasks=len(reports),
+    report = dict(status="built-pending-execution", parent="candidate-008", changed_tasks=len(reports), amendment_1=amendment,
                   promoted_mutants=sum(len(r["promoted_mutants"]) for r in reports),
                   still_surviving=[(r["id"], s) for r in reports for s in r["still_surviving"]],
                   candidate_hash_manifest_sha256=sha(C9 / "SHA256.json"), tasks=reports)

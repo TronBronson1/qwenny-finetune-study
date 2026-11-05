@@ -166,5 +166,19 @@
     },
     "provenance": "S011 promotion of independent-audit mutant M-matrix-on-error; survived candidate-007/008 gold; witness: expected exception raised but an argument changed",
     "source_sha256": "9e3e718526ca8f7e2037e3cc18485eeff75962fd10f06fb957ceb186dd82c6c7"
+  },
+  {
+    "id": "R10",
+    "requirement": "order: type checks of nested rows before the ragged-shape check",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e015]",
+      "case": "e015",
+      "kind": "required-exception-wrong-class",
+      "args_python": "([[1], [1, 2], None],)",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S011 amendment 1: independent read-through review showed e013 does not separate type-before-shape from shape-first code",
+    "source_sha256": "de7260b3701045c68d1ec46bb3cdade587cccd4343c0cf29b00d200523e0a850"
   }
 ]

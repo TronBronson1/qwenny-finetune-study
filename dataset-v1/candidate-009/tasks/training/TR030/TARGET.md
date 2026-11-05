@@ -43,6 +43,8 @@ def test_values(args,expected):
     pytest.param(([(1,)],), id="e012"),
     pytest.param(([[1], None, [1, 2]],), id="e013"),
     pytest.param((ListChild([[1], [2, 3]]),), id="e014"),
+    pytest.param(([[1], [1, 2], None],), id="e015"),
+    pytest.param(([[1], [1, 2], [True]],), id="e016"),
 ])
 def test_raises_typeerror(args):
     before=copy.deepcopy(args)
@@ -60,4 +62,4 @@ def test_raises_valueerror(args):
     assert args == before
 ```
 
-Return cases: empty=v000; one-zero-column=v001; several-zero-columns=v002; square=v003; one-row=v004; one-column=v005; unsorted-rows=v006. Validation cases: TypeError=e000,e001,e002,e003,e004,e005,e006,e007,e008,e009,e011,e012,e013,e014; ValueError=e010. Exact returned types are checked recursively where specified. Input preservation is checked before/after every call, including expected-exception calls. These finite witnesses do not prove exhaustive correctness. No execution is claimed.
+Return cases: empty=v000; one-zero-column=v001; several-zero-columns=v002; square=v003; one-row=v004; one-column=v005; unsorted-rows=v006. Validation cases: TypeError=e000,e001,e002,e003,e004,e005,e006,e007,e008,e009,e011,e012,e013,e014,e015,e016; ValueError=e010. Exact returned types are checked recursively where specified. Input preservation is checked before/after every call, including expected-exception calls. These finite witnesses do not prove exhaustive correctness. No execution is claimed.

@@ -30,3 +30,13 @@ References, cases and oracle files are unchanged. The other 53 tasks are byte-id
 ## Approval required
 
 Approval of candidate-008 does not transfer, because this changes model-visible instructions. Candidate-009 needs explicit user approval of the new sentence and of its `SHA256.json` hash before any use.
+
+## Amendment 1 (November 5, 2026, after the independent read-through review)
+
+This amendment is declared after the first candidate-009 build, in response to `independent-review/case-review-008-009/`. Candidate-009 was rebuilt from scratch by the same builder; nothing had been approved or used.
+
+- **TR030:** add `([[1], [1, 2], None],)` and `([[1], [1, 2], [True]],)` as TypeError cases (type-before-shape). Designate a shape-first mutant.
+- **DV001:** the coverage sentence adds "Compare arbitrary element objects by identity, not by copied value."
+- **Label renames:** DV011 `unordered-overlap-chain` → `unordered-overlap-with-disjoint`; TR024/TR060 `compatibility-characters` → `compatibility-and-nonascii-digit`.
+
+The amended changes to model-visible text are the DV001 sentence and the three label renames. All of them need the same explicit approval as the main S011 change.

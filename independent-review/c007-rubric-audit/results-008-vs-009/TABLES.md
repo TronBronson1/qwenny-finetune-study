@@ -1,6 +1,6 @@
 # Generated tables (make_report.py)
 
-Generated 2026-11-05T03:15:25Z from commit `b4997db125c4`; Python 3.13.18, pytest 9.2.0. Do not edit by hand.
+Generated 2026-11-05T03:41:48Z from commit `f97a0d6d0d04`; Python 3.13.18, pytest 9.2.0. Do not edit by hand.
 
 ## Totals
 
@@ -178,10 +178,10 @@ Generated 2026-11-05T03:15:25Z from commit `b4997db125c4`; Python 3.13.18, pytes
 - DV009 B-op5:13:<-><= candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed
 - DV009 B-op5:13:<-><= candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed
 - DV009 B-num7:45:1->0 candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed
-- DV009 B-num7:45:1->0 candidate-009: pytest timeout (120.11 s; mutant loops forever) - counted as killed
+- DV009 B-num7:45:1->0 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed
 - TR013 B-num3:25:2->1 candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed
 - TR013 B-num3:25:2->1 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed
-- TR021 B-num4:84:1->0 candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed
+- TR021 B-num4:84:1->0 candidate-008: pytest timeout (120.11 s; mutant loops forever) - counted as killed
 - TR021 B-num4:84:1->0 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed
-- TR059 B-num6:59:1->0 candidate-008: pytest timeout (120.41 s; mutant loops forever) - counted as killed
-- TR059 B-num6:59:1->0 candidate-009: pytest timeout (120.31 s; mutant loops forever) - counted as killed
+- TR059 B-num6:59:1->0 candidate-008: pytest timeout (120.45 s; mutant loops forever) - counted as killed
+- TR059 B-num6:59:1->0 candidate-009: pytest timeout (120.42 s; mutant loops forever) - counted as killed

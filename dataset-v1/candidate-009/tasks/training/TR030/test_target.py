@@ -42,6 +42,8 @@ def test_values(args,expected):
     pytest.param(([(1,)],), id="e012"),
     pytest.param(([[1], None, [1, 2]],), id="e013"),
     pytest.param((ListChild([[1], [2, 3]]),), id="e014"),
+    pytest.param(([[1], [1, 2], None],), id="e015"),
+    pytest.param(([[1], [1, 2], [True]],), id="e016"),
 ])
 def test_raises_typeerror(args):
     before=copy.deepcopy(args)

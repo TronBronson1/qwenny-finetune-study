@@ -137,5 +137,17 @@
     "args_python": "(ListChild([[1], [2, 3]]),)",
     "exception": "TypeError",
     "category": "type-before-value"
+  },
+  {
+    "id": "e015",
+    "args_python": "([[1], [1, 2], None],)",
+    "exception": "TypeError",
+    "category": "type-before-shape"
+  },
+  {
+    "id": "e016",
+    "args_python": "([[1], [1, 2], [True]],)",
+    "exception": "TypeError",
+    "category": "type-before-shape"
   }
 ]

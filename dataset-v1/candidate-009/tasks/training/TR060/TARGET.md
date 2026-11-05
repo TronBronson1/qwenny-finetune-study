@@ -35,4 +35,4 @@ def test_raises_typeerror(args):
         count_ascii_categories(*args)
 ```
 
-Return cases: empty=v000; ascii-letters-digits=v001; mixed=v002; unicode-other=v003; whitespace-other=v004; compatibility-characters=v005. Validation cases: TypeError=e000,e001,e002,e003,e004. Exact returned types are checked recursively where specified. These finite witnesses do not prove exhaustive correctness. No execution is claimed.
+Return cases: empty=v000; ascii-letters-digits=v001; mixed=v002; unicode-other=v003; whitespace-other=v004; compatibility-and-nonascii-digit=v005. Validation cases: TypeError=e000,e001,e002,e003,e004. Exact returned types are checked recursively where specified. These finite witnesses do not prove exhaustive correctness. No execution is claimed.

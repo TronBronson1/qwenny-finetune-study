@@ -35,4 +35,4 @@ def test_raises_typeerror(args):
         ascii_upper(*args)
 ```
 
-Return cases: empty=v000; ascii-case=v001; punctuation-digits=v002; nonascii-unchanged=v003; newline=v004; compatibility-characters=v005. Validation cases: TypeError=e000,e001,e002,e003,e004. Exact returned types are checked recursively where specified. These finite witnesses do not prove exhaustive correctness. No execution is claimed.
+Return cases: empty=v000; ascii-case=v001; punctuation-digits=v002; nonascii-unchanged=v003; newline=v004; compatibility-and-nonascii-digit=v005. Validation cases: TypeError=e000,e001,e002,e003,e004. Exact returned types are checked recursively where specified. These finite witnesses do not prove exhaustive correctness. No execution is claimed.

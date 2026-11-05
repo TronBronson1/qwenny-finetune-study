@@ -20,6 +20,14 @@ Built November 5, 2026, on CPU only. Candidate-009 is a **proposal**: it changes
 | Windows validation (GitHub runner, **Python 3.15.2, pytest 9.2.0**), run [41960481296](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41960481296) | **passed**: hash `fa1c0e58…` verified, 72/72 suites, 1,555 cases, 482/482 mutants |
 | Pinned-tokenizer profile, same run | Reproduces S007 exactly. Total 62,428 (007) → **64,319** (+3.0 %); 008 was 63,871. Only TR058 is over 2,048 (2,957); with the overlay, the maximum full training chat is **2,021** (TR049). |
 
-Candidate hash (`SHA256.json`): `fa1c0e581a1076775cfcc9e775b18f2805dd7459cf5d7f9dadeaa6ba44dfff64`.
+Candidate hash (`SHA256.json`) **after amendment 1**: `a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb`. The first build's hash `fa1c0e58…` is superseded; its cloud-gate record (`ci-run-41960481296/`) is kept as history.
 
 The audit's mutant families are finite and written by the same author. Zero survivors means the gold now detects every requirement violation this audit can express; it does not prove exhaustive correctness.
+
+## Amendment 1 (after the independent read-through review)
+
+See `PROTOCOL.md` § Amendment 1 and `independent-review/case-review-008-009/DISPOSITION.md`. The rebuilt candidate:
+
+- **Linux validation:** **72/72 suites, 1,557 cases; 483/483 designated mutants** rejected at their declared witness (`validation-001/summary.json`). The two new TR030 cases and shape-first mutant R10 account for the +2 and +1.
+- **TR058 overlay:** rebuilt against the new hash. Its messages are unchanged (`f2484474…`), because TR058 is not affected by the amendment.
+- **Audit rerun and cloud gates:** recorded below once complete.
