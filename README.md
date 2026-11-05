@@ -92,3 +92,9 @@ This is an AI-assisted research project, and the roles are disclosed openly:
 - **Independent adversarial review:** Anthropic Claude (Claude Code) reviews task wording, prompts and scoring. Its review prompted the S006 correction and the S007 measurement repair ([program/reviews/](program/reviews/)).
 
 Ground rules followed throughout: freeze everything before running, keep every attempt, never train on failed answers, never repair an answer inside its first-attempt score, and keep the final tests sealed.
+
+## License
+
+- **Code** (`*.py`, `*.ps1`): [MIT](LICENSE)
+- **Documentation, reports, results and task data:** [CC BY 4.0](LICENSE-docs.md). Reuse is welcome with attribution.
+- **Third-party:** Qwen3.5-9B metadata in `lora-feasibility/upstream-metadata/` stays under Apache 2.0.

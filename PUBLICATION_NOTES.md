@@ -22,4 +22,4 @@ Because of these exclusions, some hash manifests (for example `dataset-v1/candid
 
 ## Added for publication
 
-`README.md` (portfolio overview), `PUBLICATION_NOTES.md`, `.gitignore` and `.gitattributes`. The project's original introduction was renamed from `README.md` to [README_ORIGINAL.md](README_ORIGINAL.md); nothing linked to the old path.
+`README.md` (portfolio overview), `PUBLICATION_NOTES.md`, `LICENSE` (MIT, code), `LICENSE-docs.md` (CC BY 4.0, documentation and data), `.gitignore` and `.gitattributes`. The project's original introduction was renamed from `README.md` to [README_ORIGINAL.md](README_ORIGINAL.md); nothing linked to the old path.
