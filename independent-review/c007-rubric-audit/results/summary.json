@@ -1,0 +1,4527 @@
+{
+ "meta": {
+  "candidates": [
+   "candidate-006",
+   "candidate-007"
+  ],
+  "elapsed_seconds": 600.5,
+  "generated_utc": "2026-11-05T02:00:51Z",
+  "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+  "pytest": "9.2.0",
+  "pytest_flags": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, -p no:cacheprovider, isolated temp dir, timeout 120s",
+  "python": "3.13.18",
+  "repo_commit": "b0e0227ed1b30a12672da0183e670ba8097df120",
+  "script_sha256": {
+   "make_report.py": "39b19cb0948e1c6b37fb5c5ed3614fe3f4493f572e0d3c42e4b82bf75a6b58bf",
+   "mutants_lib.py": "126f8ac488164acf531073a2ee3bd17dc7cd049d1f8eb92ca25a7e8cc673f054",
+   "probes.py": "0ea7e1ebf4631b147d735d0425b168e2db5f4066c6511e2539256130616ebe5e",
+   "run_audit.py": "914794d8b53b5009bb37e24e5161e7959102e9407f81521ba4190821bf940f35"
+  },
+  "tasks": 72
+ },
+ "families": {
+  "type-subclass": {
+   "generated": 129,
+   "applicable": 129,
+   "gap_006": 1,
+   "fixed": 1
+  },
+  "type-ordinary": {
+   "generated": 129,
+   "applicable": 120,
+   "no_difference": 9,
+   "gap_006": 47,
+   "fixed": 19,
+   "gap_007": 28,
+   "still_open": 28
+  },
+  "type-bool": {
+   "generated": 67,
+   "applicable": 67
+  },
+  "return-subclass": {
+   "generated": 103,
+   "applicable": 97,
+   "no_difference": 6
+  },
+  "return-swap": {
+   "generated": 103,
+   "applicable": 35,
+   "no_difference": 68
+  },
+  "order": {
+   "generated": 72,
+   "no_difference": 50,
+   "applicable": 22,
+   "gap_006": 4,
+   "gap_007": 4,
+   "still_open": 4
+  },
+  "exception-class": {
+   "generated": 124,
+   "applicable": 124
+  },
+  "mutation-valid": {
+   "generated": 40,
+   "applicable": 37,
+   "no_difference": 3,
+   "gap_006": 4,
+   "gap_007": 4,
+   "still_open": 4
+  },
+  "ascii": {
+   "generated": 49,
+   "applicable": 46,
+   "gap_006": 31,
+   "fixed": 19,
+   "no_difference": 3,
+   "gap_007": 12,
+   "still_open": 12
+  },
+  "boundary": {
+   "generated": 271,
+   "applicable": 257,
+   "gap_006": 11,
+   "fixed": 2,
+   "gap_007": 9,
+   "still_open": 9,
+   "no_difference": 14
+  },
+  "case": {
+   "generated": 28,
+   "no_difference": 8,
+   "applicable": 20,
+   "gap_006": 4,
+   "fixed": 4
+  },
+  "mutation-error": {
+   "generated": 19,
+   "applicable": 19,
+   "gap_006": 19,
+   "gap_007": 19,
+   "still_open": 19
+  }
+ },
+ "known_gaps": [
+  {
+   "task": "TR038",
+   "gap": "non-ASCII hex digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR043",
+   "gap": "non-ASCII binary digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR044",
+   "gap": "non-ASCII decimal endpoints accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize",
+    "A-predicate-4"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "gap"
+  },
+  {
+   "task": "TR056",
+   "gap": "non-ASCII RGB hex digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV010",
+   "gap": "non-ASCII RPN digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV008",
+   "gap": "case-insensitive comparison",
+   "mutants": [
+    "C-input-fold-lower",
+    "C-input-fold-upper"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV011",
+   "gap": "int-subclass endpoints accepted",
+   "mutants": [
+    "T-intervals-L2-subclass"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR026",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR027",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR028",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR029",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR030",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-matrix-L2-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR031",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR032",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR033",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR034",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR035",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR036",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR058",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "TR059",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV004",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV009",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  },
+  {
+   "task": "DV011",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-intervals-L2-ordinary"
+   ],
+   "candidate-006": "gap",
+   "candidate-007": "covered"
+  }
+ ],
+ "per_task": [
+  {
+   "task": "DV001",
+   "split": "development",
+   "function": "rotate_right",
+   "mutants": 16,
+   "applicable": 12,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "DV002",
+   "split": "development",
+   "function": "minute_of_day",
+   "mutants": 20,
+   "applicable": 17,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "DV003",
+   "split": "development",
+   "function": "roman_encode",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "DV004",
+   "split": "development",
+   "function": "xor_checksum",
+   "mutants": 18,
+   "applicable": 17,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "O-value-before-type",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "O-value-before-type",
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "O-value-before-type",
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV005",
+   "split": "development",
+   "function": "parenthesis_depth",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV006",
+   "split": "development",
+   "function": "keypad_encode",
+   "mutants": 14,
+   "applicable": 11,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV007",
+   "split": "development",
+   "function": "grid_neighbors",
+   "mutants": 51,
+   "applicable": 50,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "B-op3:28:<=-><",
+     "B-op4:46:<-><="
+    ],
+    "candidate-007": [
+     "B-op4:46:<-><="
+    ]
+   },
+   "fixed": [
+    "B-op3:28:<=-><"
+   ],
+   "still_open": [
+    "B-op4:46:<-><="
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV008",
+   "split": "development",
+   "function": "edit_distance",
+   "mutants": 12,
+   "applicable": 10,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "C-input-fold-lower",
+     "C-input-fold-upper"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "C-input-fold-lower",
+    "C-input-fold-upper"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "DV009",
+   "split": "development",
+   "function": "lower_bound",
+   "mutants": 26,
+   "applicable": 24,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "function": "rpn_evaluate",
+   "mutants": 29,
+   "applicable": 23,
+   "no_difference": 6,
+   "gaps": {
+    "candidate-006": [
+     "T-tokens-L1-ordinary",
+     "O-value-before-type",
+     "M-tokens-on-error",
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize",
+     "B-num7:26:2->1",
+     "B-re10:{0,3}:2:3->2",
+     "B-re10:{0,3}:2:3->4"
+    ],
+    "candidate-007": [
+     "T-tokens-L1-ordinary",
+     "O-value-before-type",
+     "M-tokens-on-error",
+     "B-num7:26:2->1",
+     "B-re10:{0,3}:2:3->2",
+     "B-re10:{0,3}:2:3->4"
+    ]
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "T-tokens-L1-ordinary",
+    "O-value-before-type",
+    "M-tokens-on-error",
+    "B-num7:26:2->1",
+    "B-re10:{0,3}:2:3->2",
+    "B-re10:{0,3}:2:3->4"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "function": "interval_union",
+   "mutants": 34,
+   "applicable": 33,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-intervals-L0-ordinary",
+     "T-intervals-L1-ordinary",
+     "T-intervals-L2-subclass",
+     "T-intervals-L2-ordinary",
+     "O-value-before-type",
+     "M-intervals-on-error",
+     "B-num6:35:1->0",
+     "B-num6:50:1->0",
+     "B-num6:62:1->0",
+     "B-num6:85:1->0"
+    ],
+    "candidate-007": [
+     "T-intervals-L0-ordinary",
+     "T-intervals-L1-ordinary",
+     "O-value-before-type",
+     "M-intervals-on-error",
+     "B-num6:35:1->0",
+     "B-num6:50:1->0",
+     "B-num6:62:1->0",
+     "B-num6:85:1->0"
+    ]
+   },
+   "fixed": [
+    "T-intervals-L2-subclass",
+    "T-intervals-L2-ordinary"
+   ],
+   "still_open": [
+    "T-intervals-L0-ordinary",
+    "T-intervals-L1-ordinary",
+    "O-value-before-type",
+    "M-intervals-on-error",
+    "B-num6:35:1->0",
+    "B-num6:50:1->0",
+    "B-num6:62:1->0",
+    "B-num6:85:1->0"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "DV012",
+   "split": "development",
+   "function": "balanced_brackets",
+   "mutants": 7,
+   "applicable": 5,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR001",
+   "split": "training",
+   "function": "batches",
+   "mutants": 15,
+   "applicable": 14,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR002",
+   "split": "training",
+   "function": "strip_prefix",
+   "mutants": 11,
+   "applicable": 10,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR003",
+   "split": "training",
+   "function": "absolute_distance",
+   "mutants": 11,
+   "applicable": 8,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR004",
+   "split": "training",
+   "function": "clamp",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR005",
+   "split": "training",
+   "function": "parity_label",
+   "mutants": 7,
+   "applicable": 5,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR006",
+   "split": "training",
+   "function": "factorial",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "T-number-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-number-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-number-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR007",
+   "split": "training",
+   "function": "digit_sum",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR008",
+   "split": "training",
+   "function": "is_square",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-number-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-number-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-number-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR009",
+   "split": "training",
+   "function": "signed_gcd",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR010",
+   "split": "training",
+   "function": "population_count",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-number-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-number-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-number-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR011",
+   "split": "training",
+   "function": "leap_year",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR012",
+   "split": "training",
+   "function": "weekday_offset",
+   "mutants": 16,
+   "applicable": 15,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR013",
+   "split": "training",
+   "function": "int_to_base",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-number-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-number-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-number-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "function": "collapse_spaces",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize",
+     "A-predicate-6"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary",
+     "A-unicode-decimal-digits",
+     "A-predicate-6"
+    ]
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "T-text-L0-ordinary",
+    "A-unicode-decimal-digits",
+    "A-predicate-6"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR015",
+   "split": "training",
+   "function": "reverse_words",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR016",
+   "split": "training",
+   "function": "count_vowels",
+   "mutants": 8,
+   "applicable": 5,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary",
+     "A-nfkc-normalize"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary",
+    "A-nfkc-normalize"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR017",
+   "split": "training",
+   "function": "interleave_strings",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-left-L0-ordinary",
+     "T-right-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-left-L0-ordinary",
+     "T-right-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-left-L0-ordinary",
+    "T-right-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR018",
+   "split": "training",
+   "function": "is_palindrome",
+   "mutants": 10,
+   "applicable": 7,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR019",
+   "split": "training",
+   "function": "normalize_newlines",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR020",
+   "split": "training",
+   "function": "escape_html",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR021",
+   "split": "training",
+   "function": "common_prefix",
+   "mutants": 13,
+   "applicable": 11,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR022",
+   "split": "training",
+   "function": "quote_csv_field",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR023",
+   "split": "training",
+   "function": "plural_count",
+   "mutants": 12,
+   "applicable": 11,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-noun-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-noun-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-noun-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR024",
+   "split": "training",
+   "function": "ascii_upper",
+   "mutants": 15,
+   "applicable": 13,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary",
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary",
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR025",
+   "split": "training",
+   "function": "run_length_encode",
+   "mutants": 15,
+   "applicable": 13,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR026",
+   "split": "training",
+   "function": "stable_unique",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR027",
+   "split": "training",
+   "function": "pairwise_differences",
+   "mutants": 18,
+   "applicable": 16,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR028",
+   "split": "training",
+   "function": "prefix_sums",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "function": "chunk_list",
+   "mutants": 23,
+   "applicable": 21,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "T-width-L0-ordinary",
+     "M-values-sort",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "T-width-L0-ordinary",
+     "M-values-sort",
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "T-width-L0-ordinary",
+    "M-values-sort",
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "function": "transpose",
+   "mutants": 21,
+   "applicable": 20,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-matrix-L0-ordinary",
+     "T-matrix-L1-ordinary",
+     "T-matrix-L2-ordinary",
+     "O-value-before-type",
+     "M-matrix-sort",
+     "M-matrix-on-error"
+    ],
+    "candidate-007": [
+     "T-matrix-L0-ordinary",
+     "T-matrix-L1-ordinary",
+     "O-value-before-type",
+     "M-matrix-sort",
+     "M-matrix-on-error"
+    ]
+   },
+   "fixed": [
+    "T-matrix-L2-ordinary"
+   ],
+   "still_open": [
+    "T-matrix-L0-ordinary",
+    "T-matrix-L1-ordinary",
+    "O-value-before-type",
+    "M-matrix-sort",
+    "M-matrix-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "function": "multiset_intersection",
+   "mutants": 24,
+   "applicable": 22,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-left-L1-ordinary",
+     "T-right-L1-ordinary",
+     "M-left-on-error",
+     "M-right-on-error"
+    ],
+    "candidate-007": [
+     "M-left-on-error",
+     "M-right-on-error"
+    ]
+   },
+   "fixed": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "still_open": [
+    "M-left-on-error",
+    "M-right-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR032",
+   "split": "training",
+   "function": "partition_sign",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "function": "remove_at",
+   "mutants": 21,
+   "applicable": 20,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-sort",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-sort",
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-sort",
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "function": "bounded_slice",
+   "mutants": 27,
+   "applicable": 26,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-sort",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-sort",
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-sort",
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR035",
+   "split": "training",
+   "function": "adjacent_equal_count",
+   "mutants": 18,
+   "applicable": 16,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR036",
+   "split": "training",
+   "function": "lower_median",
+   "mutants": 17,
+   "applicable": 15,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-values-L1-ordinary",
+     "M-values-on-error"
+    ],
+    "candidate-007": [
+     "M-values-on-error"
+    ]
+   },
+   "fixed": [
+    "T-values-L1-ordinary"
+   ],
+   "still_open": [
+    "M-values-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR037",
+   "split": "training",
+   "function": "parse_unsigned",
+   "mutants": 13,
+   "applicable": 10,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "A-nfkc-normalize",
+     "A-predicate-4"
+    ],
+    "candidate-007": [
+     "A-predicate-4"
+    ]
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "A-predicate-4"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR038",
+   "split": "training",
+   "function": "parse_hex_byte",
+   "mutants": 13,
+   "applicable": 8,
+   "no_difference": 5,
+   "gaps": {
+    "candidate-006": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR039",
+   "split": "training",
+   "function": "parse_bool_word",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR040",
+   "split": "training",
+   "function": "parse_key_value",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR041",
+   "split": "training",
+   "function": "parse_int_pair",
+   "mutants": 15,
+   "applicable": 12,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "A-nfkc-normalize",
+     "A-predicate-4",
+     "B-re3:{0,11}:2:11->12"
+    ],
+    "candidate-007": [
+     "A-predicate-4"
+    ]
+   },
+   "fixed": [
+    "A-nfkc-normalize",
+    "B-re3:{0,11}:2:11->12"
+   ],
+   "still_open": [
+    "A-predicate-4"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR042",
+   "split": "training",
+   "function": "parse_version",
+   "mutants": 15,
+   "applicable": 12,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "A-nfkc-normalize",
+     "A-predicate-4"
+    ],
+    "candidate-007": [
+     "A-predicate-4"
+    ]
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "A-predicate-4"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR043",
+   "split": "training",
+   "function": "parse_binary",
+   "mutants": 13,
+   "applicable": 9,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-006": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR044",
+   "split": "training",
+   "function": "parse_range",
+   "mutants": 13,
+   "applicable": 10,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize",
+     "A-predicate-4"
+    ],
+    "candidate-007": [
+     "A-predicate-4"
+    ]
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "A-predicate-4"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR045",
+   "split": "training",
+   "function": "path_segments",
+   "mutants": 8,
+   "applicable": 6,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR046",
+   "split": "training",
+   "function": "parse_signed",
+   "mutants": 14,
+   "applicable": 10,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-006": [
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "A-nfkc-normalize"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR047",
+   "split": "training",
+   "function": "index_of_nth",
+   "mutants": 19,
+   "applicable": 17,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "C-input-fold-lower",
+     "C-input-fold-upper"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "C-input-fold-lower",
+    "C-input-fold-upper"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR048",
+   "split": "training",
+   "function": "spreadsheet_column",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-number-L0-ordinary"
+    ],
+    "candidate-007": [
+     "T-number-L0-ordinary"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-number-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR049",
+   "split": "training",
+   "function": "row_major_offset",
+   "mutants": 29,
+   "applicable": 28,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR050",
+   "split": "training",
+   "function": "unravel_index",
+   "mutants": 25,
+   "applicable": 24,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "B-op3:28:<=-><"
+    ],
+    "candidate-007": [
+     "B-op3:28:<=-><"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "B-op3:28:<=-><"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR051",
+   "split": "training",
+   "function": "wrap_index",
+   "mutants": 13,
+   "applicable": 12,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR052",
+   "split": "training",
+   "function": "seconds_to_hms",
+   "mutants": 12,
+   "applicable": 10,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR053",
+   "split": "training",
+   "function": "format_cents",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR054",
+   "split": "training",
+   "function": "grouped_decimal",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR055",
+   "split": "training",
+   "function": "encode_rgb",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [],
+    "candidate-007": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR056",
+   "split": "training",
+   "function": "decode_rgb",
+   "mutants": 15,
+   "applicable": 10,
+   "no_difference": 5,
+   "gaps": {
+    "candidate-006": [
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": []
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [],
+   "new_in_007": []
+  },
+  {
+   "task": "TR057",
+   "split": "training",
+   "function": "make_slug",
+   "mutants": 12,
+   "applicable": 9,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-unicode-decimal-digits",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary"
+    ]
+   },
+   "fixed": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "still_open": [
+    "T-text-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "function": "compare_versions",
+   "mutants": 19,
+   "applicable": 18,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-006": [
+     "T-left-L0-ordinary",
+     "T-left-L1-ordinary",
+     "T-right-L0-ordinary",
+     "T-right-L1-ordinary"
+    ],
+    "candidate-007": [
+     "T-left-L0-ordinary",
+     "T-right-L0-ordinary"
+    ]
+   },
+   "fixed": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "still_open": [
+    "T-left-L0-ordinary",
+    "T-right-L0-ordinary"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "function": "merge_sorted",
+   "mutants": 33,
+   "applicable": 29,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-006": [
+     "T-left-L0-ordinary",
+     "T-left-L1-ordinary",
+     "T-right-L0-ordinary",
+     "T-right-L1-ordinary",
+     "M-left-on-error",
+     "M-right-on-error"
+    ],
+    "candidate-007": [
+     "T-left-L0-ordinary",
+     "T-right-L0-ordinary",
+     "M-left-on-error",
+     "M-right-on-error"
+    ]
+   },
+   "fixed": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "still_open": [
+    "T-left-L0-ordinary",
+    "T-right-L0-ordinary",
+    "M-left-on-error",
+    "M-right-on-error"
+   ],
+   "new_in_007": []
+  },
+  {
+   "task": "TR060",
+   "split": "training",
+   "function": "count_ascii_categories",
+   "mutants": 23,
+   "applicable": 21,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-006": [
+     "T-text-L0-ordinary",
+     "A-nfkc-normalize"
+    ],
+    "candidate-007": [
+     "T-text-L0-ordinary",
+     "A-nfkc-normalize"
+    ]
+   },
+   "fixed": [],
+   "still_open": [
+    "T-text-L0-ordinary",
+    "A-nfkc-normalize"
+   ],
+   "new_in_007": []
+  }
+ ],
+ "still_open": [
+  {
+   "task": "DV004",
+   "split": "development",
+   "mutant": "O-value-before-type",
+   "family": "order",
+   "requirement": "type-before-value validation order",
+   "witness": {
+    "args_python": "([-4, '1'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-4'), ('str', \"'1'\"))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-4'), ('str', \"'1'\"))),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV004",
+   "split": "development",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([-1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-1'), ('int', '-1'))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-1'),)),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "DV005",
+   "split": "development",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV006",
+   "split": "development",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV007",
+   "split": "development",
+   "mutant": "B-op4:46:<-><=",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: op4:46:<-><=",
+   "witness": {
+    "args_python": "(0, 1, 1, 1)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('int', '0'), ('int', '1'), ('int', '1'), ('int', '1')))",
+     "value": "('list', (('tuple', (('int', '0'), ('int', '0'))),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '0'), ('int', '1'), ('int', '1'), ('int', '1')))",
+     "value": "'IndexError'"
+    }
+   }
+  },
+  {
+   "task": "DV009",
+   "split": "development",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 1.5)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('float', '1.5')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('float', '1.5')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "T-tokens-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "tokens level 1 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['\u0661', 1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'\u0661'\"), ('int', '1'))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'\u0661'\"), ('int', '1'))),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "O-value-before-type",
+   "family": "order",
+   "requirement": "type-before-value validation order",
+   "witness": {
+    "args_python": "([1, 1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "M-tokens-on-error",
+   "family": "mutation-error",
+   "requirement": "tokens: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"''\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "B-num7:26:2->1",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: num7:26:2->1",
+   "witness": {
+    "args_python": "(['4', '+'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'4'\"), ('str', \"'+'\"))),))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'4'\"), ('str', \"'+'\"))),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "B-re10:{0,3}:2:3->2",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: re10:{0,3}:2:3->2",
+   "witness": {
+    "args_python": "(['9999'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'9999'\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'9999'\"),)),))",
+     "value": "('int', '9999')"
+    }
+   }
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "B-re10:{0,3}:2:3->4",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: re10:{0,3}:2:3->4",
+   "witness": {
+    "args_python": "(['10000'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'10000'\"),)),))",
+     "value": "('int', '10000')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'10000'\"),)),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "T-intervals-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "intervals level 0 (list): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((),)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('tuple', ()),))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', ()),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "T-intervals-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "intervals level 1 (tuple): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([[1, 2]],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('list', (('int', '1'), ('int', '2'))),)),))",
+     "value": "('list', (('tuple', (('int', '1'), ('int', '2'))),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('list', (('int', '1'), ('int', '2'))),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "O-value-before-type",
+   "family": "order",
+   "requirement": "type-before-value validation order",
+   "witness": {
+    "args_python": "([(1,), -1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'),)), ('int', '-1'))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'),)), ('int', '-1'))),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "M-intervals-on-error",
+   "family": "mutation-error",
+   "requirement": "intervals: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "B-num6:35:1->0",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: num6:35:1->0",
+   "witness": {
+    "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '10'), ('int', '100')))))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '2'), ('int', '100')))))"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "B-num6:50:1->0",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: num6:50:1->0",
+   "witness": {
+    "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '2'), ('int', '100'))), ('tuple', (('int', '2'), ('int', '60')))))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '2'), ('int', '100')))))"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "B-num6:62:1->0",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: num6:62:1->0",
+   "witness": {
+    "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '-3'), ('int', '100')))))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '2'), ('int', '60'))), ('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '10'), ('int', '100'))))),))",
+     "value": "('list', (('tuple', (('int', '-3'), ('int', '-1'))), ('tuple', (('int', '2'), ('int', '100')))))"
+    }
+   }
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "B-num6:85:1->0",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: num6:85:1->0",
+   "witness": {
+    "args_python": "([(1, 2), (26, 27), (25, 130), (25, 256)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'), ('int', '2'))), ('tuple', (('int', '26'), ('int', '27'))), ('tuple', (('int', '25'), ('int', '130'))), ('tuple', (('int', '25'), ('int', '256'))))),))",
+     "value": "('list', (('tuple', (('int', '1'), ('int', '2'))), ('tuple', (('int', '25'), ('int', '27')))))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'), ('int', '2'))), ('tuple', (('int', '26'), ('int', '27'))), ('tuple', (('int', '25'), ('int', '130'))), ('tuple', (('int', '25'), ('int', '256'))))),))",
+     "value": "('list', (('tuple', (('int', '1'), ('int', '2'))), ('tuple', (('int', '25'), ('int', '256')))))"
+    }
+   }
+  },
+  {
+   "task": "DV012",
+   "split": "development",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR006",
+   "split": "training",
+   "mutant": "T-number-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1.5,)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR008",
+   "split": "training",
+   "mutant": "T-number-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1.5,)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR010",
+   "split": "training",
+   "mutant": "T-number-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1.5,)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR013",
+   "split": "training",
+   "mutant": "T-number-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1.5, 2)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'), ('int', '2')))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'), ('int', '2')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('str', \"'a'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0661',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'1'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'\u0661'\")"
+    }
+   }
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "mutant": "A-predicate-6",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: 'char != \" \"' -> 'not char.isspace()'",
+   "witness": {
+    "args_python": "(' \\n\\n,',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"' \\\\n\\\\n,'\"),))",
+     "value": "('str', \"' \\\\n,'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"' \\\\n\\\\n,'\"),))",
+     "value": "('str', \"' \\\\n\\\\n,'\")"
+    }
+   }
+  },
+  {
+   "task": "TR015",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0661',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'1'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'\u0661'\")"
+    }
+   }
+  },
+  {
+   "task": "TR015",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('on\uff45',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'on\uff45'\"),))",
+     "value": "('str', \"'one'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'on\uff45'\"),))",
+     "value": "('str', \"'on\uff45'\")"
+    }
+   }
+  },
+  {
+   "task": "TR016",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('int', '1')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR016",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('a1 \uff25!',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'a1 \uff25!'\"),))",
+     "value": "('int', '2')"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'a1 \uff25!'\"),))",
+     "value": "('int', '1')"
+    }
+   }
+  },
+  {
+   "task": "TR017",
+   "split": "training",
+   "mutant": "T-left-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'], '=')",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)), ('str', \"'='\")))",
+     "value": "('str', \"'a='\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)), ('str', \"'='\")))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR017",
+   "split": "training",
+   "mutant": "T-right-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "('\uff21', ['a'])",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff21'\"), ('list', (('str', \"'a'\"),))))",
+     "value": "('str', \"'\uff21a'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff21'\"), ('list', (('str', \"'a'\"),))))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR020",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('str', \"'a'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR022",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('list', (('str', \"'a'\"),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR023",
+   "split": "training",
+   "mutant": "T-noun-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "noun level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1, 1)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '-1'), ('int', '1')))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '-1'), ('int', '1')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR024",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('str', \"'A'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR024",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0661',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'1'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661'\"),))",
+     "value": "('str', \"'\u0661'\")"
+    }
+   }
+  },
+  {
+   "task": "TR024",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\u01c5',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u01c5'\"),))",
+     "value": "('str', \"'D\u017e'\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u01c5'\"),))",
+     "value": "('str', \"'\u01c5'\")"
+    }
+   }
+  },
+  {
+   "task": "TR025",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR026",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR027",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR028",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "mutant": "T-width-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "width level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([], -1.5)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('float', '-1.5')))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('float', '-1.5')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "mutant": "M-values-sort",
+   "family": "mutation-valid",
+   "requirement": "values: no input mutation (valid calls) (sort)",
+   "witness": {
+    "args_python": "([4, 2], 2)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '2'), ('int', '4'))), ('int', '2')))",
+     "value": "('list', (('list', (('int', '4'), ('int', '2'))),))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '4'), ('int', '2'))), ('int', '2')))",
+     "value": "('list', (('list', (('int', '4'), ('int', '2'))),))"
+    }
+   }
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '0')))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '0')))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "T-matrix-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "matrix level 0 (list): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((),)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('tuple', ()),))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', ()),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "T-matrix-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "matrix level 1 (list): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([(1,)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'),)),)),))",
+     "value": "('list', (('list', (('int', '1'),)),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('tuple', (('int', '1'),)),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "O-value-before-type",
+   "family": "order",
+   "requirement": "type-before-value validation order",
+   "witness": {
+    "args_python": "([[], None, [1, 2, 3, 4, 5]],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('list', ()), ('NoneType', 'None'), ('list', (('int', '1'), ('int', '2'), ('int', '3'), ('int', '4'), ('int', '5'))))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('list', ()), ('NoneType', 'None'), ('list', (('int', '1'), ('int', '2'), ('int', '3'), ('int', '4'), ('int', '5'))))),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "M-matrix-sort",
+   "family": "mutation-valid",
+   "requirement": "matrix: no input mutation (valid calls) (sort)",
+   "witness": {
+    "args_python": "([[59], [1]],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('list', (('int', '1'),)), ('list', (('int', '59'),)))),))",
+     "value": "('list', (('list', (('int', '59'), ('int', '1'))),))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('list', (('int', '59'),)), ('list', (('int', '1'),)))),))",
+     "value": "('list', (('list', (('int', '59'), ('int', '1'))),))"
+    }
+   }
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "M-matrix-on-error",
+   "family": "mutation-error",
+   "requirement": "matrix: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "M-left-on-error",
+   "family": "mutation-error",
+   "requirement": "left: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 3)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '3')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '3')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "M-right-on-error",
+   "family": "mutation-error",
+   "requirement": "right: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(3, [])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', (('int', '0'),))))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR032",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "mutant": "M-values-sort",
+   "family": "mutation-valid",
+   "requirement": "values: no input mutation (valid calls) (sort)",
+   "witness": {
+    "args_python": "([4, 2], 0)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '2'), ('int', '4'))), ('int', '0')))",
+     "value": "('list', (('int', '2'),))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '4'), ('int', '2'))), ('int', '0')))",
+     "value": "('list', (('int', '2'),))"
+    }
+   }
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '0')))",
+     "value": "'IndexError'"
+    }
+   }
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "mutant": "M-values-sort",
+   "family": "mutation-valid",
+   "requirement": "values: no input mutation (valid calls) (sort)",
+   "witness": {
+    "args_python": "([255, 17], 0, 0)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '17'), ('int', '255'))), ('int', '0'), ('int', '0')))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('int', '255'), ('int', '17'))), ('int', '0'), ('int', '0')))",
+     "value": "('list', ())"
+    }
+   }
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 1, 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    }
+   }
+  },
+  {
+   "task": "TR035",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR036",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR037",
+   "split": "training",
+   "mutant": "A-predicate-4",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+   "witness": {
+    "args_python": "('1\u0660',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'1\u0660'\"),))",
+     "value": "('int', '10')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'1\u0660'\"),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR041",
+   "split": "training",
+   "mutant": "A-predicate-4",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+   "witness": {
+    "args_python": "('-999999999999,99999999999\u0669',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'-999999999999,99999999999\u0669'\"),))",
+     "value": "('tuple', (('int', '-999999999999'), ('int', '999999999999')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'-999999999999,99999999999\u0669'\"),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR042",
+   "split": "training",
+   "mutant": "A-predicate-4",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+   "witness": {
+    "args_python": "('0.999.99\u0669',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'0.999.99\u0669'\"),))",
+     "value": "('tuple', (('int', '0'), ('int', '999'), ('int', '999')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'0.999.99\u0669'\"),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR044",
+   "split": "training",
+   "mutant": "A-predicate-4",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+   "witness": {
+    "args_python": "('[0:9\u0669]',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'[0:9\u0669]'\"),))",
+     "value": "('tuple', (('int', '0'), ('int', '99')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'[0:9\u0669]'\"),))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR048",
+   "split": "training",
+   "mutant": "T-number-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(-1.5,)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('float', '-1.5'),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR050",
+   "split": "training",
+   "mutant": "B-op3:28:<=-><",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: op3:28:<=-><",
+   "witness": {
+    "args_python": "(0, 1, 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '0'), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '0'), ('int', '1'), ('int', '0')))",
+     "value": "'ValueError'"
+    }
+   }
+  },
+  {
+   "task": "TR057",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'AttributeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "mutant": "T-left-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 0 (tuple): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([-2, 0, 10], (5, 3, 2, 1))",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-2'), ('int', '0'), ('int', '10'))), ('tuple', (('int', '5'), ('int', '3'), ('int', '2'), ('int', '1')))))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-2'), ('int', '0'), ('int', '10'))), ('tuple', (('int', '5'), ('int', '3'), ('int', '2'), ('int', '1')))))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "mutant": "T-right-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 0 (tuple): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((2, 0), [-2, 1, 3])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('int', '2'), ('int', '0'))), ('list', (('int', '-2'), ('int', '1'), ('int', '3')))))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('int', '2'), ('int', '0'))), ('list', (('int', '-2'), ('int', '1'), ('int', '3')))))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "T-left-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 0 (list): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((0, 256, 3), [])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('int', '0'), ('int', '256'), ('int', '3'))), ('list', ())))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('int', '0'), ('int', '256'), ('int', '3'))), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "T-right-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 0 (list): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([], (59, 32))",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('tuple', (('int', '59'), ('int', '32')))))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('tuple', (('int', '59'), ('int', '32')))))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "M-left-on-error",
+   "family": "mutation-error",
+   "requirement": "left: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 3)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '3')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '3')))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "M-right-on-error",
+   "family": "mutation-error",
+   "requirement": "right: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(3, [])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', (('int', '0'),))))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR060",
+   "split": "training",
+   "mutant": "T-text-L0-ordinary",
+   "family": "type-ordinary",
+   "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['a'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "('tuple', (('int', '1'), ('int', '0'), ('int', '0')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'a'\"),)),))",
+     "value": "'TypeError'"
+    }
+   }
+  },
+  {
+   "task": "TR060",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\u01c5',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u01c5'\"),))",
+     "value": "('tuple', (('int', '1'), ('int', '0'), ('int', '1')))"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u01c5'\"),))",
+     "value": "('tuple', (('int', '0'), ('int', '0'), ('int', '1')))"
+    }
+   }
+  }
+ ],
+ "fixed": [
+  {
+   "task": "DV002",
+   "split": "development",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff10\uff11:\uff10\uff12',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff10\uff11:\uff10\uff12'\"),))",
+     "value": "('int', '62')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff10\uff11:\uff10\uff12'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e013]"
+   ]
+  },
+  {
+   "task": "DV004",
+   "split": "development",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([-1.5],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('float', '-1.5'),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('float', '-1.5'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e007]"
+   ]
+  },
+  {
+   "task": "DV006",
+   "split": "development",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff21',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff21'\"),))",
+     "value": "('str', \"'2'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff21'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e007]"
+   ]
+  },
+  {
+   "task": "DV007",
+   "split": "development",
+   "mutant": "B-op3:28:<=-><",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: op3:28:<=-><",
+   "witness": {
+    "args_python": "(0, 0, 1, 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '0'), ('int', '0'), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '0'), ('int', '0'), ('int', '1'), ('int', '0')))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e023]",
+    "test_raises_valueerror[e025]"
+   ]
+  },
+  {
+   "task": "DV008",
+   "split": "development",
+   "mutant": "C-input-fold-lower",
+   "family": "case",
+   "requirement": "case-sensitivity / stated letter case: input fold-lower",
+   "witness": {
+    "args_python": "('A', 'a')",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\")))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\")))",
+     "value": "('int', '1')"
+    }
+   },
+   "killed_by_007": [
+    "test_values[v008]",
+    "test_values[v009]"
+   ]
+  },
+  {
+   "task": "DV008",
+   "split": "development",
+   "mutant": "C-input-fold-upper",
+   "family": "case",
+   "requirement": "case-sensitivity / stated letter case: input fold-upper",
+   "witness": {
+    "args_python": "('A', 'a')",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\")))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\")))",
+     "value": "('int', '1')"
+    }
+   },
+   "killed_by_007": [
+    "test_values[v008]",
+    "test_values[v009]"
+   ]
+  },
+  {
+   "task": "DV009",
+   "split": "development",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([1.5], 0)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)), ('int', '0')))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)), ('int', '0')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]"
+   ]
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "(['\u0663'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'\u0663'\"),)),))",
+     "value": "('int', '3')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'\u0663'\"),)),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e011]",
+    "test_raises_valueerror[e012]"
+   ]
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "(['\uff13'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'\uff13'\"),)),))",
+     "value": "('int', '3')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'\uff13'\"),)),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e012]"
+   ]
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "T-intervals-L2-subclass",
+   "family": "type-subclass",
+   "requirement": "intervals level 2 (int): exact types: subclass rejected",
+   "witness": {
+    "args_python": "([(IntChild(0), 1)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('IntChild', '0'), ('int', '1'))),)),))",
+     "value": "('list', (('tuple', (('IntChild', '0'), ('int', '1'))),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('tuple', (('IntChild', '0'), ('int', '1'))),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "T-intervals-L2-ordinary",
+   "family": "type-ordinary",
+   "requirement": "intervals level 2 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([(1.5, 2)],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('tuple', (('float', '1.5'), ('int', '2'))),)),))",
+     "value": "('list', (('tuple', (('float', '1.5'), ('int', '2'))),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('tuple', (('float', '1.5'), ('int', '2'))),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e011]"
+   ]
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "(' a  \uff42 ',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"' a  \uff42 '\"),))",
+     "value": "('str', \"' a b '\")"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"' a  \uff42 '\"),))",
+     "value": "('str', \"' a \uff42 '\")"
+    }
+   },
+   "killed_by_007": [
+    "test_values[v007]"
+   ]
+  },
+  {
+   "task": "TR026",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "('list', (('str', \"'x'\"),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR027",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR028",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([1.5],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)),))",
+     "value": "('list', (('float', '1.5'),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]"
+   ]
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'], 2)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '2')))",
+     "value": "('list', (('list', (('str', \"'x'\"),)),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '2')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "T-matrix-L2-ordinary",
+   "family": "type-ordinary",
+   "requirement": "matrix level 2 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([['x']],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('list', (('str', \"'x'\"),)),)),))",
+     "value": "('list', (('list', (('str', \"'x'\"),)),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('list', (('str', \"'x'\"),)),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "T-left-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'], [])",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('list', ())))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "T-right-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([], ['x'])",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', ()), ('list', (('str', \"'x'\"),))))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('list', (('str', \"'x'\"),))))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e014]",
+    "test_raises_typeerror[e015]",
+    "test_raises_typeerror[e016]",
+    "test_raises_typeerror[e017]"
+   ]
+  },
+  {
+   "task": "TR032",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([1.5],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)),))",
+     "value": "('tuple', (('list', ()), ('list', ()), ('list', (('float', '1.5'),))))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('float', '1.5'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]"
+   ]
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'], 0)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '0')))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '0')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'], 0, 0)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '0'), ('int', '0')))",
+     "value": "('list', ())"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('int', '0'), ('int', '0')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR035",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR036",
+   "split": "training",
+   "mutant": "T-values-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "values level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "('str', \"'x'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR037",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff13',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff13'\"),))",
+     "value": "('int', '3')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff13'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e012]"
+   ]
+  },
+  {
+   "task": "TR038",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0663f',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0663f'\"),))",
+     "value": "('int', '63')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\u0663f'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e009]",
+    "test_raises_valueerror[e010]"
+   ]
+  },
+  {
+   "task": "TR038",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff13f',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff13f'\"),))",
+     "value": "('int', '63')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff13f'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e010]"
+   ]
+  },
+  {
+   "task": "TR041",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('3,\uff14',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'3,\uff14'\"),))",
+     "value": "('tuple', (('int', '3'), ('int', '4')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'3,\uff14'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e011]"
+   ]
+  },
+  {
+   "task": "TR041",
+   "split": "training",
+   "mutant": "B-re3:{0,11}:2:11->12",
+   "family": "boundary",
+   "requirement": "boundary off-by-one: re3:{0,11}:2:11->12",
+   "witness": {
+    "args_python": "('0,1000000000000',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'0,1000000000000'\"),))",
+     "value": "('tuple', (('int', '0'), ('int', '1000000000000')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'0,1000000000000'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e012]"
+   ]
+  },
+  {
+   "task": "TR042",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('1.\uff12.3',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'1.\uff12.3'\"),))",
+     "value": "('tuple', (('int', '1'), ('int', '2'), ('int', '3')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'1.\uff12.3'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e010]"
+   ]
+  },
+  {
+   "task": "TR043",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0661\u0660',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0661\u0660'\"),))",
+     "value": "('int', '2')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\u0661\u0660'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e008]",
+    "test_raises_valueerror[e009]"
+   ]
+  },
+  {
+   "task": "TR043",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff11\uff10',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff11\uff10'\"),))",
+     "value": "('int', '2')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff11\uff10'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e009]"
+   ]
+  },
+  {
+   "task": "TR044",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('[\u0661:\u0663]',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'[\u0661:\u0663]'\"),))",
+     "value": "('tuple', (('int', '1'), ('int', '3')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'[\u0661:\u0663]'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e009]",
+    "test_raises_valueerror[e010]"
+   ]
+  },
+  {
+   "task": "TR044",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('[\uff11:\uff13]',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'[\uff11:\uff13]'\"),))",
+     "value": "('tuple', (('int', '1'), ('int', '3')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'[\uff11:\uff13]'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e010]"
+   ]
+  },
+  {
+   "task": "TR046",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('-\uff11',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'-\uff11'\"),))",
+     "value": "('int', '-1')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'-\uff11'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e011]"
+   ]
+  },
+  {
+   "task": "TR047",
+   "split": "training",
+   "mutant": "C-input-fold-lower",
+   "family": "case",
+   "requirement": "case-sensitivity / stated letter case: input fold-lower",
+   "witness": {
+    "args_python": "('A', 'a', 1)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\"), ('int', '1')))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\"), ('int', '1')))",
+     "value": "('int', '-1')"
+    }
+   },
+   "killed_by_007": [
+    "test_values[v008]",
+    "test_values[v009]"
+   ]
+  },
+  {
+   "task": "TR047",
+   "split": "training",
+   "mutant": "C-input-fold-upper",
+   "family": "case",
+   "requirement": "case-sensitivity / stated letter case: input fold-upper",
+   "witness": {
+    "args_python": "('A', 'a', 1)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\"), ('int', '1')))",
+     "value": "('int', '0')"
+    },
+    "reference": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'A'\"), ('str', \"'a'\"), ('int', '1')))",
+     "value": "('int', '-1')"
+    }
+   },
+   "killed_by_007": [
+    "test_values[v008]",
+    "test_values[v009]"
+   ]
+  },
+  {
+   "task": "TR056",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('#\u0661\u0662\u0663\u0664\u0665\u0666',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'#\u0661\u0662\u0663\u0664\u0665\u0666'\"),))",
+     "value": "('tuple', (('int', '18'), ('int', '52'), ('int', '86')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'#\u0661\u0662\u0663\u0664\u0665\u0666'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e008]",
+    "test_raises_valueerror[e009]"
+   ]
+  },
+  {
+   "task": "TR056",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('#\uff11\uff12\uff13\uff14\uff15\uff16',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'#\uff11\uff12\uff13\uff14\uff15\uff16'\"),))",
+     "value": "('tuple', (('int', '18'), ('int', '52'), ('int', '86')))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'#\uff11\uff12\uff13\uff14\uff15\uff16'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e009]"
+   ]
+  },
+  {
+   "task": "TR057",
+   "split": "training",
+   "mutant": "A-unicode-decimal-digits",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: unicode-decimal-digits",
+   "witness": {
+    "args_python": "('\u0663',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\u0663'\"),))",
+     "value": "('str', \"'3'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\u0663'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e007]"
+   ]
+  },
+  {
+   "task": "TR057",
+   "split": "training",
+   "mutant": "A-nfkc-normalize",
+   "family": "ascii",
+   "requirement": "ASCII-only rule: nfkc-normalize",
+   "witness": {
+    "args_python": "('\uff21',)",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('str', \"'\uff21'\"),))",
+     "value": "('str', \"'a'\")"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('str', \"'\uff21'\"),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_valueerror[e008]"
+   ]
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "mutant": "T-left-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((1.5, 0, 0), (0, 0, 0))",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('tuple', (('float', '1.5'), ('int', '0'), ('int', '0'))), ('tuple', (('int', '0'), ('int', '0'), ('int', '0')))))",
+     "value": "('int', '1')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('float', '1.5'), ('int', '0'), ('int', '0'))), ('tuple', (('int', '0'), ('int', '0'), ('int', '0')))))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e015]"
+   ]
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "mutant": "T-right-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "((0, 0, 0), (1.5, 0, 0))",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('tuple', (('int', '0'), ('int', '0'), ('int', '0'))), ('tuple', (('float', '1.5'), ('int', '0'), ('int', '0')))))",
+     "value": "('int', '-1')"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('tuple', (('int', '0'), ('int', '0'), ('int', '0'))), ('tuple', (('float', '1.5'), ('int', '0'), ('int', '0')))))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e025]",
+    "test_raises_typeerror[e029]",
+    "test_raises_typeerror[e034]"
+   ]
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "T-left-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "left level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "(['x'], [])",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('list', ())))",
+     "value": "('list', (('str', \"'x'\"),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "T-right-L1-ordinary",
+   "family": "type-ordinary",
+   "requirement": "right level 1 (int): exact types: ordinary wrong type rejected",
+   "witness": {
+    "args_python": "([], ['x'])",
+    "mutant": {
+     "outcome": "return",
+     "post_args": "('tuple', (('list', ()), ('list', (('str', \"'x'\"),))))",
+     "value": "('list', (('str', \"'x'\"),))"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('list', (('str', \"'x'\"),))))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_007": [
+    "test_raises_typeerror[e014]",
+    "test_raises_typeerror[e015]",
+    "test_raises_typeerror[e016]",
+    "test_raises_typeerror[e017]"
+   ]
+  }
+ ],
+ "new_in_007": [],
+ "anomalies": [
+  "DV009 B-op5:13:<-><= candidate-006: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "DV009 B-op5:13:<-><= candidate-007: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "DV009 B-num7:45:1->0 candidate-006: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "DV009 B-num7:45:1->0 candidate-007: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR013 B-num3:25:2->1 candidate-006: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "TR013 B-num3:25:2->1 candidate-007: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR021 B-num4:84:1->0 candidate-006: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "TR021 B-num4:84:1->0 candidate-007: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "TR059 B-num6:59:1->0 candidate-006: pytest timeout (120.36 s; mutant loops forever) - counted as killed",
+  "TR059 B-num6:59:1->0 candidate-007: pytest timeout (120.45 s; mutant loops forever) - counted as killed"
+ ],
+ "totals": {
+  "tasks": 72,
+  "generated": 1134,
+  "applicable": 973,
+  "gap_006": 121,
+  "gap_007": 76,
+  "fixed": 45,
+  "still_open": 76,
+  "new_in_007": 0,
+  "tasks_with_gap_006": 49,
+  "tasks_with_gap_007": 42
+ }
+}
