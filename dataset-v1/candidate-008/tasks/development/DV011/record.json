@@ -1,0 +1,33 @@
+{
+  "id": "DV011",
+  "split": "development",
+  "family": "interval-union",
+  "function": "interval_union",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "intervals"
+  ],
+  "schemas": [
+    "pairs"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "202abf5df8b6d0490b2c0b62cc7d22ecb9e0fd26e9e64882a7afe2b220850427",
+  "target_sha256": "655859007218c6ce97b7f88a19611fdac537cec846bff9a02be40f376d4eefe6",
+  "spec_sha256": "e63e347848e9f7d07cd345d29cb805f4187cfa26c150760eb043adeb4dbc6932",
+  "answer_sha256": "1980c5a7902b686e642f13ffb7d02bd53e12b8adf8630100ae14e388eeb1eff8",
+  "valid_test_cases": 10,
+  "exception_test_cases": 21,
+  "type_before_value_witnesses": 3,
+  "oracle_checks": 10,
+  "designated_mutants": 16,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

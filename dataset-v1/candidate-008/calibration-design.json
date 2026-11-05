@@ -1,0 +1,2596 @@
+{
+  "tasks": [
+    {
+      "id": "TR001",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "0a982e5fb736716434dd9a519e254c910797fb75cba00501958af82eadb53569",
+      "valid_cases": 6,
+      "invalid_cases": 21,
+      "oracle_checks": 316,
+      "semantic_categories": [
+        "zero-items",
+        "partial-batch",
+        "exact-capacity",
+        "remainder",
+        "unit-capacity",
+        "large-integer"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR002",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5f04ca2073302d5c83a6a0636114b8363f241ca9c428076dff0c3349de6a7e19",
+      "valid_cases": 10,
+      "invalid_cases": 14,
+      "oracle_checks": 45,
+      "semantic_categories": [
+        "remove-prefix",
+        "whole-prefix",
+        "absent-prefix",
+        "empty-text",
+        "remove-once",
+        "case-sensitive",
+        "start-only",
+        "space-prefix",
+        "unicode-prefix",
+        "long-prefix"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR003",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5858c742e1940e9cee9bb45026bbab99f349af77644d3f5fa8fb8ac97c3504fe",
+      "valid_cases": 7,
+      "invalid_cases": 10,
+      "oracle_checks": 232,
+      "semantic_categories": [
+        "equal",
+        "left-larger",
+        "right-larger",
+        "mixed-sign",
+        "reverse-mixed-sign",
+        "both-negative",
+        "large"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR004",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9390944e5ce7c6ab2f79cf22810662336a3c794ab0cae70ad9c1b9341676b95f",
+      "valid_cases": 7,
+      "invalid_cases": 19,
+      "oracle_checks": 142,
+      "semantic_categories": [
+        "below",
+        "lower-bound",
+        "inside",
+        "upper-bound",
+        "above",
+        "equal-bounds",
+        "negative-bounds"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR005",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "98b6bf4e0f91943c2df3c5eb889d0f3aa7d8ecd9d13d39203740e8ed41384c9a",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 67,
+      "semantic_categories": [
+        "zero",
+        "odd",
+        "even",
+        "negative-odd",
+        "negative-even",
+        "large"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR006",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "143e8adc1473d346d51b4f771343936ef0a89eb2e9fbbb39c5f9b6c3ac6ca3ac",
+      "valid_cases": 5,
+      "invalid_cases": 10,
+      "oracle_checks": 18,
+      "semantic_categories": [
+        "zero-factorial",
+        "one",
+        "two",
+        "intermediate",
+        "upper-bound"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR007",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "4e99e8db9fe0e37b6e475fc3dde28c4b971dfb553fbdac6d9ad135bd0aa35a2f",
+      "valid_cases": 6,
+      "invalid_cases": 7,
+      "oracle_checks": 306,
+      "semantic_categories": [
+        "zero",
+        "single-digit",
+        "decimal-zero",
+        "internal-zero",
+        "repeated-digits",
+        "large"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR008",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "923af86681db7e341a51f7823492cb7577a0601f01038cb2aab40e3278125648",
+      "valid_cases": 8,
+      "invalid_cases": 8,
+      "oracle_checks": 209,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "nonsquare",
+        "square",
+        "below-square",
+        "square-sixteen",
+        "above-square",
+        "large-square"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR009",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5798360ad69359c884707c91883644e0abe966b1b818d315f9460b2bc51134a7",
+      "valid_cases": 8,
+      "invalid_cases": 10,
+      "oracle_checks": 297,
+      "semantic_categories": [
+        "both-zero",
+        "left-zero",
+        "right-zero",
+        "ordinary",
+        "negative-left",
+        "negative-right",
+        "both-negative",
+        "coprime"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR010",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1cfcac99581ac2196c25cd429e6f136d64fc02790df2e90dc54708069aaaf0d4",
+      "valid_cases": 7,
+      "invalid_cases": 8,
+      "oracle_checks": 263,
+      "semantic_categories": [
+        "zero",
+        "one-bit",
+        "power-two",
+        "two-bits",
+        "byte-bits",
+        "higher-power",
+        "large-two-bits"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR011",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8689995be8c52ba77af50ef84b3aaa5ffa68ddb53fd4e9ad4933af26a94c1156",
+      "valid_cases": 8,
+      "invalid_cases": 9,
+      "oracle_checks": 508,
+      "semantic_categories": [
+        "lower-bound",
+        "divisible-four",
+        "century-not-leap",
+        "century-leap",
+        "ordinary-not-leap",
+        "ordinary-leap",
+        "future-century",
+        "upper-bound"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR012",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "2f4fe1de8cc0ff04d7d00b44314d1d4ab0d5ebaf8f008c589b926f873199e494",
+      "valid_cases": 7,
+      "invalid_cases": 16,
+      "oracle_checks": 294,
+      "semantic_categories": [
+        "identity",
+        "forward",
+        "wrap",
+        "negative-wrap",
+        "multiple-weeks",
+        "negative-weeks",
+        "forward-wrap"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR013",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "e276e25fb2ce2d8dd2057668f3ab8add373db742f3262c9d493a459b107bbf35",
+      "valid_cases": 8,
+      "invalid_cases": 20,
+      "oracle_checks": 508,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "alphabetic-digit",
+        "carry",
+        "binary",
+        "ternary",
+        "hexadecimal",
+        "octal"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR014",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "b03405f502f6930a3339dfc4c8fbeee17d8b9761a5625e33d5bcfda346a93733",
+      "valid_cases": 12,
+      "invalid_cases": 5,
+      "oracle_checks": 12,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "spaces-only",
+        "edges-and-run",
+        "preserve-tab",
+        "preserve-lf",
+        "unicode",
+        "preserve-nbsp",
+        "preserve-lf-run",
+        "preserve-tab-run",
+        "space-then-tab-lf",
+        "unicode-digits"
+      ],
+      "added_valid_labels": [
+        "preserve-lf-run",
+        "preserve-tab-run",
+        "space-then-tab-lf",
+        "unicode-digits"
+      ],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R02",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "id": "TR015",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "32316ce0aeede72ba19419f70895db083dadb0e7fd139d423e66435263f2af63",
+      "valid_cases": 7,
+      "invalid_cases": 4,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "whitespace-only",
+        "one-word",
+        "reverse-order",
+        "mixed-whitespace",
+        "unicode-whitespace",
+        "unicode-word-content"
+      ],
+      "added_valid_labels": [
+        "unicode-word-content"
+      ],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "id": "TR016",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "3d26194bf14945149810d6e5920feb1be27f1f228150fe3e28356159c37edb77",
+      "valid_cases": 7,
+      "invalid_cases": 5,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "both-ascii-cases",
+        "no-vowels",
+        "mixed-text",
+        "exclude-accent-y",
+        "digits-punctuation",
+        "fullwidth-and-accented"
+      ],
+      "added_valid_labels": [
+        "fullwidth-and-accented"
+      ],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "id": "TR017",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "4217f69204e73b918c82e4d0593994dfd2b0b9073b5e41540afaf7300a27ceed",
+      "valid_cases": 7,
+      "invalid_cases": 10,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "equal-length",
+        "left-remainder",
+        "right-remainder",
+        "unicode-space"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable",
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R02",
+        "R03"
+      ]
+    },
+    {
+      "id": "TR018",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "06eca10dc513152484eaa690243facd166af2aa99092c6d19c418905e26a41ef",
+      "valid_cases": 10,
+      "invalid_cases": 4,
+      "oracle_checks": 10,
+      "semantic_categories": [
+        "empty",
+        "one",
+        "two-equal",
+        "odd-palindrome",
+        "even-palindrome",
+        "not-palindrome",
+        "case-sensitive",
+        "literal-space",
+        "unicode",
+        "literal-punctuation-and-space"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR019",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "892399b264392efb463d4e60f20e1d978db80a647ca1685fe7d01b6694a13714",
+      "valid_cases": 7,
+      "invalid_cases": 4,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "crlf",
+        "cr",
+        "lf",
+        "mixed",
+        "adjacent-cr-crlf"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR020",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6e0512f2d721469a933d6773a204c838acf6d705a69863f6b863d4a2c66c8a9c",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "amp-angle",
+        "both-quotes",
+        "escape-existing-entity",
+        "unicode-combination"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 5,
+      "promoted_mutants": [
+        "R02"
+      ]
+    },
+    {
+      "id": "TR021",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9d0e430074ac3ef627b0dec246cee04ffebb1183ba951759b132b12172ff7183",
+      "valid_cases": 7,
+      "invalid_cases": 8,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "left-empty",
+        "equal",
+        "partial",
+        "shorter-right",
+        "case-sensitive",
+        "unicode"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR022",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "228c2a61876cf796eae0c32a2ee15ac2ff1f0be9f4739e2d4ef6cf7f68e13c63",
+      "valid_cases": 8,
+      "invalid_cases": 5,
+      "oracle_checks": 8,
+      "semantic_categories": [
+        "empty-quoted",
+        "unquoted",
+        "comma",
+        "quote-doubled",
+        "cr",
+        "lf",
+        "preserve-space",
+        "unicode"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 5,
+      "promoted_mutants": [
+        "R02"
+      ]
+    },
+    {
+      "id": "TR023",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "576ace0d633b774769f4ac53d3364d350ae0be3edb557d99c0b2e98266b741da",
+      "valid_cases": 6,
+      "invalid_cases": 16,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero-plural",
+        "one-singular",
+        "ordinary-plural",
+        "literal-singular",
+        "literal-suffix",
+        "unicode-noun"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR024",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8864a618efc2825c3b81c4ffe313834e6a29ad8cb5bd092f20c76e8e526177fc",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "ascii-case",
+        "punctuation-digits",
+        "nonascii-unchanged",
+        "newline",
+        "compatibility-characters"
+      ],
+      "added_valid_labels": [
+        "compatibility-characters"
+      ],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R02",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "id": "TR025",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "470d5b8850b182595e0abca9cd9417b4d6fc3d09107a62e3c35185c2b83700b2",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "separated-runs",
+        "empty-strings",
+        "case-distinct",
+        "unicode"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR026",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d019d92b6961e2b1ef092fd18327dce64089ea3e348d768f8f92e7fe2a6ce445",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "stable-order",
+        "zero-negative",
+        "already-unique"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 7,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR027",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "ac4597653f646985bd202a3becf8166e105fe601965174817a0c7bab56819dd1",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "signed-differences",
+        "equal-pair",
+        "negative-values"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 8,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR028",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "641a14bd5440aa4d99d7e92a9489a4dae8267b940402ea27e2212548201d0dea",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "ordinary",
+        "mixed-sign",
+        "zeros"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 7,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR029",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8d7d50f40d89af4f4147dc1dc19cf431e269b0a3c5840c5053043ebfa4907e86",
+      "valid_cases": 7,
+      "invalid_cases": 21,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "partial-single",
+        "full-chunks",
+        "last-partial",
+        "unit-width",
+        "oversize-width",
+        "unsorted-values"
+      ],
+      "added_valid_labels": [
+        "unsorted-values"
+      ],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 10,
+      "promoted_mutants": [
+        "R06",
+        "R07"
+      ]
+    },
+    {
+      "id": "TR030",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "589e6fc5954a65820cfd0954dc5e114b498a8ee00ada62cc244d1955c047c510",
+      "valid_cases": 7,
+      "invalid_cases": 15,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "one-zero-column",
+        "several-zero-columns",
+        "square",
+        "one-row",
+        "one-column",
+        "unsorted-rows"
+      ],
+      "added_valid_labels": [
+        "unsorted-rows"
+      ],
+      "added_invalid_labels": [
+        "ordinary-container",
+        "ordinary-row",
+        "type-before-shape"
+      ],
+      "mutants": 11,
+      "promoted_mutants": [
+        "R05",
+        "R06",
+        "R07",
+        "R08"
+      ]
+    },
+    {
+      "id": "TR031",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "35be1549f44f9ba8207773b3a33f306ba4818194446961b16ba87b5a3d9bb8f0",
+      "valid_cases": 7,
+      "invalid_cases": 18,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "multiplicity",
+        "count-limit",
+        "negative-order",
+        "left-order-not-sorted"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 8,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR032",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9f3f278ba0ba5b39a79a218b6ca33935a912eecd54f77847c24909f1fcad5e4a",
+      "valid_cases": 6,
+      "invalid_cases": 9,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "zero",
+        "all-signs-stable",
+        "positive-only",
+        "negative-only",
+        "positive-negative-order"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 8,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR033",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d74a5c348300c9f6cb9c4044bb72993fd3b241277200c2b8b52ff38adbfed45e",
+      "valid_cases": 6,
+      "invalid_cases": 23,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "only-item",
+        "first",
+        "middle",
+        "last",
+        "duplicates",
+        "unsorted-values"
+      ],
+      "added_valid_labels": [
+        "unsorted-values"
+      ],
+      "added_invalid_labels": [],
+      "mutants": 10,
+      "promoted_mutants": [
+        "R07"
+      ]
+    },
+    {
+      "id": "TR034",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "69c3ed81fe440af07015c39236a26a50fa9d606041c9cd6c6fd9ad889ff134ce",
+      "valid_cases": 6,
+      "invalid_cases": 27,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "full",
+        "middle",
+        "reversed-valid",
+        "end-empty",
+        "unsorted-values"
+      ],
+      "added_valid_labels": [
+        "unsorted-values"
+      ],
+      "added_invalid_labels": [],
+      "mutants": 10,
+      "promoted_mutants": [
+        "R07"
+      ]
+    },
+    {
+      "id": "TR035",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "2fd4e4e2ed9db0c8b457783416d6a680e577a64c67935374e79bd8ae9bded5e4",
+      "valid_cases": 6,
+      "invalid_cases": 9,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "one-pair",
+        "long-run",
+        "separated-equals",
+        "several-runs"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR036",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5df4a861cfdbdbfca217c90b11ee1bdad30d41a8a3238eae7646e4e575ffd6a8",
+      "valid_cases": 5,
+      "invalid_cases": 11,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "single",
+        "even-lower",
+        "odd",
+        "even-unsorted",
+        "negative-duplicate"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 7,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR037",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "82fa8ec2774d2d2f6c1cab5ada2f20c5cf74218aa5ee84aac7ba0536010357dd",
+      "valid_cases": 4,
+      "invalid_cases": 24,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "ordinary",
+        "maximum-length"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ascii-nonleading-digit"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R04"
+      ]
+    },
+    {
+      "id": "TR038",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "a67fd3d072a552c31c31e3e4fab67a9bfcda7f1434538b4b61e2b82939ad5121",
+      "valid_cases": 6,
+      "invalid_cases": 18,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "decimal-digits",
+        "lowercase",
+        "mixed-case",
+        "byte-upper-bound",
+        "intermediate"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR039",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6889c5f03404a6c3372adfe78733972d0ceb4c615cdbd4d2437fadf269a062bc",
+      "valid_cases": 2,
+      "invalid_cases": 12,
+      "oracle_checks": 2,
+      "semantic_categories": [
+        "true",
+        "false"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR040",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1226006893eb2c2ec71f77b7b018b65b6eeca1b8e8724870fba9a19b75b0f134",
+      "valid_cases": 5,
+      "invalid_cases": 10,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "ordinary",
+        "empty-value",
+        "first-equals-only",
+        "preserve-space",
+        "unicode"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR041",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "e880b0e599653a0c05dfb28b81403bc6bb1c324a88042c802a1045805bb53f9d",
+      "valid_cases": 5,
+      "invalid_cases": 26,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "zeros",
+        "negative-zero",
+        "signed-pair",
+        "maximum-length",
+        "both-components-max-length"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ascii-nonleading-digit",
+        "ascii-nonleading-digit"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R04"
+      ]
+    },
+    {
+      "id": "TR042",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "607cf304852bee5964dd5d66beed596707a7362ae87980e91769436b5fdeaeb1",
+      "valid_cases": 4,
+      "invalid_cases": 26,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zeros",
+        "ordinary",
+        "upper-bound",
+        "later-components-upper-bound"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ascii-nonleading-digit",
+        "ascii-nonleading-digit"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R04"
+      ]
+    },
+    {
+      "id": "TR043",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "0aacac662bcab600f0f0b8812e640eeb2a046826c1b54cbc6889caf330fe785d",
+      "valid_cases": 5,
+      "invalid_cases": 16,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "leading-zeros",
+        "ordinary",
+        "maximum-length"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR044",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6a09ff90123a2dfa507fbd90d22a281e0222aa1db7cc48f83c8d0dfc2c5692cd",
+      "valid_cases": 4,
+      "invalid_cases": 22,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-width",
+        "full-boundaries",
+        "ordinary",
+        "equal-upper"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ascii-nonleading-digit",
+        "ascii-nonleading-digit"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R04"
+      ]
+    },
+    {
+      "id": "TR045",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d3beb786a81dbcade28b813f58505d20dd63610fd2dcaee8872c8ff7e124397a",
+      "valid_cases": 6,
+      "invalid_cases": 4,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "separator-only",
+        "repeated-separators",
+        "literal-dot-segments",
+        "literal-backslash",
+        "space-unicode"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR046",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1ef5933568ffa5614ecf064e65d35fc02ded6a80296773c9c15e0392ae08f5f6",
+      "valid_cases": 6,
+      "invalid_cases": 20,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "negative-zero",
+        "positive-zero",
+        "leading-zeros",
+        "negative",
+        "maximum-length"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR047",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5292887d401d47bf4c0be7aab2b19ca0a4d433fc93b84a8545eb3a919026f03a",
+      "valid_cases": 10,
+      "invalid_cases": 21,
+      "oracle_checks": 10,
+      "semantic_categories": [
+        "empty",
+        "first-overlap",
+        "second-overlap",
+        "third-overlap",
+        "missing-overlap",
+        "whole-string",
+        "absent",
+        "unicode",
+        "literal-case",
+        "no-second-case-match"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR048",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "c8a5c77a907324a4705ac7eba5dc35ffda6e47cf010751621123160857dde4ac",
+      "valid_cases": 7,
+      "invalid_cases": 10,
+      "oracle_checks": 1006,
+      "semantic_categories": [
+        "lower-bound",
+        "last-single",
+        "first-double",
+        "double-boundary",
+        "last-double",
+        "first-triple",
+        "upper-bound"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-before-domain"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR049",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "69149d3e3453c50c75ec609dc07010363a425828ac4584e68785ea0f1ab941e6",
+      "valid_cases": 4,
+      "invalid_cases": 45,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "single-cell",
+        "top-right",
+        "bottom-left",
+        "last-offset"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR050",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8d919f8d5b33ba443a66f8edaca47eae7c5ed2d27c055bfc693a01b1ab03dcdf",
+      "valid_cases": 5,
+      "invalid_cases": 31,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "single-cell",
+        "origin",
+        "end-first-row",
+        "start-second-row",
+        "last-cell"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "columns-zero"
+      ],
+      "mutants": 8,
+      "promoted_mutants": [
+        "R05"
+      ]
+    },
+    {
+      "id": "TR051",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "20a81668605c0abf27104a6164f95e1448f065257f016ec516d4aa045a4c34dc",
+      "valid_cases": 6,
+      "invalid_cases": 16,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "unit-length",
+        "positive-wrap",
+        "negative-one",
+        "negative-period",
+        "positive-period",
+        "large"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR052",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "45871de6920fc1b2b90faa84b0b65b41c4eec1aca4fd36eec8dba550acd1df88",
+      "valid_cases": 6,
+      "invalid_cases": 7,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "last-second",
+        "minute",
+        "last-minute",
+        "hour",
+        "hours-over-day"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR053",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "fc6cb681c37d49dc2531caf16ce0fb67aeec1210f4d9494a6ce96516490e2579",
+      "valid_cases": 9,
+      "invalid_cases": 5,
+      "oracle_checks": 9,
+      "semantic_categories": [
+        "zero",
+        "fractional",
+        "negative-fractional",
+        "last-fraction",
+        "whole-unit",
+        "negative-whole",
+        "ordinary",
+        "large",
+        "negative-units-and-fraction"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR054",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "dfa22bf05ab3f6b3f44bd4d85656342a2873e6a92f06e0bae0b5639cc78f8099",
+      "valid_cases": 7,
+      "invalid_cases": 5,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "zero",
+        "single",
+        "last-ungrouped",
+        "first-grouped",
+        "negative",
+        "several-groups",
+        "large"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 4,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR055",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1aa067c7b6dcf6e2ab2d364b073fcf0e5480137203e1db03dc47ae303309ed18",
+      "valid_cases": 4,
+      "invalid_cases": 27,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-components",
+        "maximum-components",
+        "ordinary",
+        "mixed-boundaries"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR056",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "080b29e236f69aabbc2f6c2017a0a8846e93cedb3c578baba5ebf006198901f0",
+      "valid_cases": 4,
+      "invalid_cases": 16,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-components",
+        "maximum-components",
+        "ordinary",
+        "mixed-case"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 7,
+      "promoted_mutants": []
+    },
+    {
+      "id": "TR057",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d39e6032974d0e0f27d8d6a41bf945082f02b6f09f88a43ccc7f8e5eb7202dce",
+      "valid_cases": 5,
+      "invalid_cases": 15,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "separators-only",
+        "lowercase",
+        "separator-runs",
+        "digits"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "TR058",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "27b3d655e275be8fc5a14c934f7d3804c47620bc9c7c2b76b0bfcb0b4734bc08",
+      "valid_cases": 4,
+      "invalid_cases": 64,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "equal",
+        "less",
+        "greater-middle",
+        "lexicographic-major"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-container-before-shape",
+        "ordinary-container-before-shape"
+      ],
+      "mutants": 8,
+      "promoted_mutants": [
+        "R04",
+        "R05"
+      ]
+    },
+    {
+      "id": "TR059",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "569569aa685fae699ae8063f32790ce34bd8cc82eef2bc4d19ae01b976f407f0",
+      "valid_cases": 6,
+      "invalid_cases": 26,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "interleaving",
+        "duplicates",
+        "negatives"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-container-before-order",
+        "ordinary-container-before-order"
+      ],
+      "mutants": 10,
+      "promoted_mutants": [
+        "R06",
+        "R07"
+      ]
+    },
+    {
+      "id": "TR060",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "f282f53fe9db807322981f2925c3694e646c169d90997c64075d9aaa90d9073a",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "ascii-letters-digits",
+        "mixed",
+        "unicode-other",
+        "whitespace-other",
+        "compatibility-characters"
+      ],
+      "added_valid_labels": [
+        "compatibility-characters"
+      ],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 7,
+      "promoted_mutants": [
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "id": "DV001",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "8b58928a23dc04938c7bafb492153d581354a43b24065f004289bdd4c29cdc87",
+      "valid_cases": 9,
+      "invalid_cases": 8,
+      "oracle_checks": 9,
+      "semantic_categories": [
+        "empty-zero",
+        "empty-positive",
+        "single-negative",
+        "identity",
+        "right",
+        "left",
+        "wrap",
+        "duplicates",
+        "mutable-elements"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "DV002",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "824231258a49e60b12d236068864b57b64a4031b0fa68fbd3835af22eb70234e",
+      "valid_cases": 5,
+      "invalid_cases": 24,
+      "oracle_checks": 1445,
+      "semantic_categories": [
+        "midnight",
+        "minute",
+        "hour",
+        "ordinary",
+        "last-minute"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 6,
+      "promoted_mutants": []
+    },
+    {
+      "id": "DV003",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "74faaeee28a32b0fb20f8042162f6b3fb4d360b2ab7328a967b8d048bf2588b2",
+      "valid_cases": 9,
+      "invalid_cases": 9,
+      "oracle_checks": 4008,
+      "semantic_categories": [
+        "lower-bound",
+        "iv",
+        "ix",
+        "xl",
+        "xc",
+        "cd",
+        "cm",
+        "combined",
+        "upper-bound"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "DV004",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "52d9f65d89ea8e7172fa9b84ebebfff91a6163b37b8425ab836619a1b32bdaa0",
+      "valid_cases": 6,
+      "invalid_cases": 14,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "zero",
+        "maximum-byte",
+        "ordinary",
+        "duplicate-cancellation",
+        "repeated-cancellation"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "type-before-value"
+      ],
+      "mutants": 8,
+      "promoted_mutants": [
+        "R05"
+      ]
+    },
+    {
+      "id": "DV005",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "123742bf81852a8c19250eac367e7031850873779439b67308a199d9a97ce7d4",
+      "valid_cases": 5,
+      "invalid_cases": 13,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "one-pair",
+        "nested",
+        "siblings",
+        "deep"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "DV006",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "2858c23fa14c7e2f8d6166ed41b949da02230a2da0f3c6525c3a140275fb1687",
+      "valid_cases": 6,
+      "invalid_cases": 13,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "first-group",
+        "ordinary",
+        "pqrs",
+        "wxyz",
+        "full-alphabet"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    },
+    {
+      "id": "DV007",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "9db0853bc126331f30b6910f1fe2da4dda760d69761f1e67262d53f6fed66080",
+      "valid_cases": 6,
+      "invalid_cases": 60,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "single-cell",
+        "top-left",
+        "interior-order",
+        "bottom-right",
+        "single-row",
+        "single-column"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "column-equals-columns",
+        "row-equals-rows"
+      ],
+      "mutants": 10,
+      "promoted_mutants": [
+        "R07"
+      ]
+    },
+    {
+      "id": "DV008",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "6342f2e34658a651304a8977316bdae472987a7bee7f54eddc38a7fbeb858de9",
+      "valid_cases": 11,
+      "invalid_cases": 8,
+      "oracle_checks": 47,
+      "semantic_categories": [
+        "both-empty",
+        "left-empty",
+        "right-empty",
+        "equal",
+        "substitution",
+        "two-edits",
+        "multistep",
+        "unicode-accent",
+        "ascii-case-sensitive",
+        "unicode-case-sensitive",
+        "literal-codepoints-no-normalization"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 5,
+      "promoted_mutants": []
+    },
+    {
+      "id": "DV009",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "6b608d5a38645078c8cc9b84e4d72c7144a7bf3563a0fa615feb653b06426217",
+      "valid_cases": 7,
+      "invalid_cases": 17,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "before",
+        "equal",
+        "after",
+        "leftmost-duplicate",
+        "gap",
+        "negative"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [],
+      "mutants": 7,
+      "promoted_mutants": []
+    },
+    {
+      "id": "DV010",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "1684187c3dd5ea7435448d7c25113c9dfb9dd2eb460e474897f381a42c146d92",
+      "valid_cases": 9,
+      "invalid_cases": 26,
+      "oracle_checks": 9,
+      "semantic_categories": [
+        "zero",
+        "negative-zero",
+        "addition",
+        "subtraction",
+        "precedence-stack",
+        "negative-product",
+        "long-valid-expression",
+        "maximum-digits",
+        "negative-maximum-digits"
+      ],
+      "added_valid_labels": [
+        "maximum-digits",
+        "negative-maximum-digits"
+      ],
+      "added_invalid_labels": [
+        "type-before-value",
+        "digit-length",
+        "insufficient-operands"
+      ],
+      "mutants": 11,
+      "promoted_mutants": [
+        "R05",
+        "R06",
+        "R07",
+        "R08"
+      ]
+    },
+    {
+      "id": "DV011",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "202abf5df8b6d0490b2c0b62cc7d22ecb9e0fd26e9e64882a7afe2b220850427",
+      "valid_cases": 10,
+      "invalid_cases": 21,
+      "oracle_checks": 10,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "unordered-touching",
+        "nested",
+        "disjoint",
+        "negative-overlap",
+        "transitive-unordered-union",
+        "partial-overlap",
+        "unordered-overlap-chain",
+        "shared-low-overlap"
+      ],
+      "added_valid_labels": [
+        "partial-overlap",
+        "unordered-overlap-chain",
+        "shared-low-overlap"
+      ],
+      "added_invalid_labels": [
+        "ordinary-container",
+        "ordinary-pair",
+        "type-before-shape"
+      ],
+      "mutants": 16,
+      "promoted_mutants": [
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13"
+      ]
+    },
+    {
+      "id": "DV012",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "b4a7982ea66de885124f9098145a1d54bd91ee54ae22a5c6a270f6f5ea764a6a",
+      "valid_cases": 8,
+      "invalid_cases": 9,
+      "oracle_checks": 8,
+      "semantic_categories": [
+        "empty",
+        "single-pair",
+        "nested-all-kinds",
+        "mismatched",
+        "unclosed",
+        "premature-close",
+        "reversed",
+        "concatenated"
+      ],
+      "added_valid_labels": [],
+      "added_invalid_labels": [
+        "ordinary-iterable"
+      ],
+      "mutants": 6,
+      "promoted_mutants": [
+        "R03"
+      ]
+    }
+  ],
+  "promoted_audit_mutants": [
+    {
+      "task": "TR006",
+      "audit_mutant": "T-number-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1.5,)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR008",
+      "audit_mutant": "T-number-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1.5,)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR010",
+      "audit_mutant": "T-number-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1.5,)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR013",
+      "audit_mutant": "T-number-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1.5, 2)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR014",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "'a'"
+      }
+    },
+    {
+      "task": "TR014",
+      "audit_mutant": "A-unicode-decimal-digits",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: unicode-decimal-digits",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v011]",
+        "case": "v011",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('٣  ４',)",
+        "expected_python": "'٣ ４'",
+        "actual_python": "'3 4'"
+      }
+    },
+    {
+      "task": "TR014",
+      "audit_mutant": "A-predicate-6",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: 'char != \" \"' -> 'not char.isspace()'",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v010]",
+        "case": "v010",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('a \\t\\nb',)",
+        "expected_python": "'a \\t\\nb'",
+        "actual_python": "'a \\nb'"
+      }
+    },
+    {
+      "task": "TR015",
+      "audit_mutant": "A-unicode-decimal-digits",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: unicode-decimal-digits",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('١  ｅ',)",
+        "expected_python": "'ｅ ١'",
+        "actual_python": "'ｅ 1'"
+      }
+    },
+    {
+      "task": "TR015",
+      "audit_mutant": "A-nfkc-normalize",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: nfkc-normalize",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('١  ｅ',)",
+        "expected_python": "'ｅ ١'",
+        "actual_python": "'e ١'"
+      }
+    },
+    {
+      "task": "TR016",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR016",
+      "audit_mutant": "A-nfkc-normalize",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: nfkc-normalize",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('Ｅá',)",
+        "expected_python": "0",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR017",
+      "audit_mutant": "T-left-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "left level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'], 'b')",
+        "expected_exception": "TypeError",
+        "actual_python": "'ab'"
+      }
+    },
+    {
+      "task": "TR017",
+      "audit_mutant": "T-right-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "right level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-not-raised",
+        "args_python": "('a', ['b'])",
+        "expected_exception": "TypeError",
+        "actual_python": "'ab'"
+      }
+    },
+    {
+      "task": "TR020",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "'a'"
+      }
+    },
+    {
+      "task": "TR022",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "['a']"
+      }
+    },
+    {
+      "task": "TR023",
+      "audit_mutant": "T-noun-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "noun level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1, 1)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR024",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "'A'"
+      }
+    },
+    {
+      "task": "TR024",
+      "audit_mutant": "A-unicode-decimal-digits",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: unicode-decimal-digits",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('ǅ١ｅ',)",
+        "expected_python": "'ǅ١ｅ'",
+        "actual_python": "'ǅ1ｅ'"
+      }
+    },
+    {
+      "task": "TR024",
+      "audit_mutant": "A-nfkc-normalize",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: nfkc-normalize",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('ǅ١ｅ',)",
+        "expected_python": "'ǅ١ｅ'",
+        "actual_python": "'Dž١E'"
+      }
+    },
+    {
+      "task": "TR029",
+      "audit_mutant": "T-width-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "width level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([1], -1.5)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR029",
+      "audit_mutant": "M-values-sort",
+      "family": "mutation-valid",
+      "requirement": "values: no input mutation (valid calls) (sort)",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([4, 2], 2)",
+        "expected_python": "[[4, 2]]",
+        "actual_python": "[[4, 2]]"
+      }
+    },
+    {
+      "task": "TR030",
+      "audit_mutant": "T-matrix-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "matrix level 0 (list): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-not-raised",
+        "args_python": "((),)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR030",
+      "audit_mutant": "T-matrix-L1-ordinary",
+      "family": "type-ordinary",
+      "requirement": "matrix level 1 (list): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e012]",
+        "case": "e012",
+        "kind": "required-exception-not-raised",
+        "args_python": "([(1,)],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[[1]]"
+      }
+    },
+    {
+      "task": "TR030",
+      "audit_mutant": "O-value-before-type",
+      "family": "order",
+      "requirement": "type-before-value validation order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([[1], None, [1, 2]],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR030",
+      "audit_mutant": "M-matrix-sort",
+      "family": "mutation-valid",
+      "requirement": "matrix: no input mutation (valid calls) (sort)",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([[2, 1], [0, 3]],)",
+        "expected_python": "[[2, 0], [1, 3]]",
+        "actual_python": "[[2, 0], [1, 3]]"
+      }
+    },
+    {
+      "task": "TR033",
+      "audit_mutant": "M-values-sort",
+      "family": "mutation-valid",
+      "requirement": "values: no input mutation (valid calls) (sort)",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([4, 2], 0)",
+        "expected_python": "[2]",
+        "actual_python": "[2]"
+      }
+    },
+    {
+      "task": "TR034",
+      "audit_mutant": "M-values-sort",
+      "family": "mutation-valid",
+      "requirement": "values: no input mutation (valid calls) (sort)",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([3, 1, 2], 0, 3)",
+        "expected_python": "[3, 1, 2]",
+        "actual_python": "[3, 1, 2]"
+      }
+    },
+    {
+      "task": "TR037",
+      "audit_mutant": "A-predicate-4",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-not-raised",
+        "args_python": "('1٠',)",
+        "expected_exception": "ValueError",
+        "actual_python": "10"
+      }
+    },
+    {
+      "task": "TR041",
+      "audit_mutant": "A-predicate-4",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-not-raised",
+        "args_python": "('1٠,2',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(10, 2)"
+      }
+    },
+    {
+      "task": "TR042",
+      "audit_mutant": "A-predicate-4",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-not-raised",
+        "args_python": "('1٠.0.0',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(10, 0, 0)"
+      }
+    },
+    {
+      "task": "TR044",
+      "audit_mutant": "A-predicate-4",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: '[0-9]' -> '\\d'",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-not-raised",
+        "args_python": "('[0:1٠]',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(0, 10)"
+      }
+    },
+    {
+      "task": "TR048",
+      "audit_mutant": "T-number-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "number level 0 (int): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1.5,)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR050",
+      "audit_mutant": "B-op3:28:<=-><",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: op3:28:<=-><",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e018]",
+        "case": "e018",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(0, 1, 0)",
+        "expected_exception": "ValueError",
+        "actual_exception": "IndexError"
+      }
+    },
+    {
+      "task": "TR057",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "AttributeError"
+      }
+    },
+    {
+      "task": "TR058",
+      "audit_mutant": "T-left-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "left level 0 (tuple): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e040]",
+        "case": "e040",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([0, 0, 0], (0, 0, 0, 0))",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR058",
+      "audit_mutant": "T-right-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "right level 0 (tuple): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e041]",
+        "case": "e041",
+        "kind": "required-exception-wrong-class",
+        "args_python": "((0, 0), [0, 0, 0])",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR059",
+      "audit_mutant": "T-left-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "left level 0 (list): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e020]",
+        "case": "e020",
+        "kind": "required-exception-wrong-class",
+        "args_python": "((2, 1), [])",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR059",
+      "audit_mutant": "T-right-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "right level 0 (list): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e021]",
+        "case": "e021",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([], (2, 1))",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR060",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e004]",
+        "case": "e004",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['a'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "(1, 0, 0)"
+      }
+    },
+    {
+      "task": "TR060",
+      "audit_mutant": "A-nfkc-normalize",
+      "family": "ascii",
+      "requirement": "ASCII-only rule: nfkc-normalize",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('ǅＡ١',)",
+        "expected_python": "(0, 0, 3)",
+        "actual_python": "(2, 0, 2)"
+      }
+    },
+    {
+      "task": "DV004",
+      "audit_mutant": "O-value-before-type",
+      "family": "order",
+      "requirement": "type-before-value validation order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([-1, 'x'],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV005",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(['('],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV006",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['A'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "'2'"
+      }
+    },
+    {
+      "task": "DV007",
+      "audit_mutant": "B-op4:46:<-><=",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: op4:46:<-><=",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e026]",
+        "case": "e026",
+        "kind": "required-exception-not-raised",
+        "args_python": "(0, 1, 1, 1)",
+        "expected_exception": "IndexError",
+        "actual_python": "[(0, 0)]"
+      }
+    },
+    {
+      "task": "DV010",
+      "audit_mutant": "T-tokens-L1-ordinary",
+      "family": "type-ordinary",
+      "requirement": "tokens level 1 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(['+', 1],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV010",
+      "audit_mutant": "O-value-before-type",
+      "family": "order",
+      "requirement": "type-before-value validation order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(['+', 1],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV010",
+      "audit_mutant": "B-num7:26:2->1",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: num7:26:2->1",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e015]",
+        "case": "e015",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(['4', '+'],)",
+        "expected_exception": "ValueError",
+        "actual_exception": "IndexError"
+      }
+    },
+    {
+      "task": "DV010",
+      "audit_mutant": "B-re10:{0,3}:2:3->2",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: re10:{0,3}:2:3->2",
+      "status": "still-surviving",
+      "witness": null
+    },
+    {
+      "task": "DV010",
+      "audit_mutant": "B-re10:{0,3}:2:3->4",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: re10:{0,3}:2:3->4",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e014]",
+        "case": "e014",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['10000'],)",
+        "expected_exception": "ValueError",
+        "actual_python": "10000"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "T-intervals-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "intervals level 0 (list): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e015]",
+        "case": "e015",
+        "kind": "required-exception-not-raised",
+        "args_python": "((),)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "T-intervals-L1-ordinary",
+      "family": "type-ordinary",
+      "requirement": "intervals level 1 (tuple): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-not-raised",
+        "args_python": "([[1, 2]],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[(1, 2)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "O-value-before-type",
+      "family": "order",
+      "requirement": "type-before-value validation order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e017]",
+        "case": "e017",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([(1,), -1],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "B-num6:35:1->0",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: num6:35:1->0",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v008]",
+        "case": "v008",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+        "expected_python": "[(-3, -1), (2, 100)]",
+        "actual_python": "[(-3, -1), (2, 60), (10, 100)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "B-num6:50:1->0",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: num6:50:1->0",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v008]",
+        "case": "v008",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+        "expected_python": "[(-3, -1), (2, 100)]",
+        "actual_python": "[(2, 100), (2, 60)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "B-num6:62:1->0",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: num6:62:1->0",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v008]",
+        "case": "v008",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([(2, 60), (-3, -1), (10, 100)],)",
+        "expected_python": "[(-3, -1), (2, 100)]",
+        "actual_python": "[(-3, -1), (-3, 100)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "audit_mutant": "B-num6:85:1->0",
+      "family": "boundary",
+      "requirement": "boundary off-by-one: num6:85:1->0",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v009]",
+        "case": "v009",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([(1, 2), (26, 27), (25, 130), (25, 256)],)",
+        "expected_python": "[(1, 2), (25, 256)]",
+        "actual_python": "[(1, 2), (25, 27)]"
+      }
+    },
+    {
+      "task": "DV012",
+      "audit_mutant": "T-text-L0-ordinary",
+      "family": "type-ordinary",
+      "requirement": "text level 0 (str): exact types: ordinary wrong type rejected",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['('],)",
+        "expected_exception": "TypeError",
+        "actual_python": "False"
+      }
+    }
+  ],
+  "deferred": {
+    "mutation-error": "N7: input mutation before raising. The model-visible coverage expectations limit before/after checks to valid inputs, so adding these witnesses would change the task instructions as well as the gold. Deferred to a separately declared prompt revision."
+  },
+  "review_limit": "same coordinating agent; one independent-audit pass informed the additions"
+}

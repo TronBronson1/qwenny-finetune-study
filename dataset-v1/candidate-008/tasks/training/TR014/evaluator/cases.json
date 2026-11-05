@@ -1,0 +1,116 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('a',)",
+    "expected_python": "'a'",
+    "after_python": "('a',)",
+    "category": "unchanged"
+  },
+  {
+    "id": "v002",
+    "args_python": "('   ',)",
+    "expected_python": "' '",
+    "after_python": "('   ',)",
+    "category": "spaces-only"
+  },
+  {
+    "id": "v003",
+    "args_python": "(' a  b ',)",
+    "expected_python": "' a b '",
+    "after_python": "(' a  b ',)",
+    "category": "edges-and-run"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\t  b',)",
+    "expected_python": "'a\\t b'",
+    "after_python": "('a\\t  b',)",
+    "category": "preserve-tab"
+  },
+  {
+    "id": "v005",
+    "args_python": "('a\\n  b',)",
+    "expected_python": "'a\\n b'",
+    "after_python": "('a\\n  b',)",
+    "category": "preserve-lf"
+  },
+  {
+    "id": "v006",
+    "args_python": "('é  字',)",
+    "expected_python": "'é 字'",
+    "after_python": "('é  字',)",
+    "category": "unicode"
+  },
+  {
+    "id": "v007",
+    "args_python": "('a\\xa0 b',)",
+    "expected_python": "'a\\xa0 b'",
+    "after_python": "('a\\xa0 b',)",
+    "category": "preserve-nbsp"
+  },
+  {
+    "id": "v008",
+    "args_python": "('a\\n\\nb',)",
+    "expected_python": "'a\\n\\nb'",
+    "after_python": "('a\\n\\nb',)",
+    "category": "preserve-lf-run"
+  },
+  {
+    "id": "v009",
+    "args_python": "('a\\t\\tb',)",
+    "expected_python": "'a\\t\\tb'",
+    "after_python": "('a\\t\\tb',)",
+    "category": "preserve-tab-run"
+  },
+  {
+    "id": "v010",
+    "args_python": "('a \\t\\nb',)",
+    "expected_python": "'a \\t\\nb'",
+    "after_python": "('a \\t\\nb',)",
+    "category": "space-then-tab-lf"
+  },
+  {
+    "id": "v011",
+    "args_python": "('٣  ４',)",
+    "expected_python": "'٣ ４'",
+    "after_python": "('٣  ４',)",
+    "category": "unicode-digits"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "(['a'],)",
+    "exception": "TypeError",
+    "category": "explicit-invalid"
+  }
+]

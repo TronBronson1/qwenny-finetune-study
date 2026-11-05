@@ -1,0 +1,33 @@
+{
+  "id": "TR052",
+  "split": "training",
+  "family": "seconds-to-hms",
+  "function": "seconds_to_hms",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "seconds"
+  ],
+  "schemas": [
+    "int"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "45871de6920fc1b2b90faa84b0b65b41c4eec1aca4fd36eec8dba550acd1df88",
+  "target_sha256": "dca83b845f7ffaf9c9610f56e37c3fc0eaca6a9a31d2012ea66dddd29dac3e1f",
+  "spec_sha256": "825a9b05380351bd693d44b37e3e4eb2d983b929b189ecd4e41a98146c2f2556",
+  "answer_sha256": "2f2711d704e6ca0203dd1d18d8e8755223b88c32464a69a6995a9f4a0ced84d6",
+  "valid_test_cases": 6,
+  "exception_test_cases": 7,
+  "type_before_value_witnesses": 1,
+  "oracle_checks": 6,
+  "designated_mutants": 6,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Independent rubric-mutant audit of dataset-v1 candidate-006 and candidate-007 gold suites.
+"""Independent rubric-mutant audit of two dataset-v1 candidates' gold suites (default: candidate-006 vs candidate-007).
 
 One command (from the repository root, with pytest installed):
 
     python3 independent-review/c007-rubric-audit/run_audit.py
+    python3 independent-review/c007-rubric-audit/run_audit.py --candidates candidate-007 candidate-008 --results-dir results-007-vs-008
 
 Stages
   1. build   - generate single-requirement rubric mutants for every training/development task
@@ -122,7 +123,7 @@ def stage_witness(task_ids, tasks7, tasks6):
         records[tid] = {
             "task": tid, "split": split, "function": info["name"], "params": list(info["params"]),
             "schemas": list(info["schemas"]), "spec_flags": mutants_lib.spec_flags(spec),
-            "reference_sha256": sha256(ref_bytes), "reference_identical_006_007": ref_bytes == ref6_bytes,
+            "reference_sha256": sha256(ref_bytes), "reference_identical_across_candidates": ref_bytes == ref6_bytes,
             "probe_count": len(probes), "reference_raises": sorted(raised), "return_depth": depth,
             "mutants": entries,
         }
@@ -266,28 +267,34 @@ def stage_gold(records, task_map, workers):
 
 # ---------------------------------------------------------------------------
 def main():
+    global CANDIDATES, RESULTS
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--tasks", nargs="*", help="limit to these task ids (default: all)")
     parser.add_argument("--workers", type=int, default=os.cpu_count() or 2)
     parser.add_argument("--skip-gold", action="store_true")
+    parser.add_argument("--candidates", nargs=2, default=list(CANDIDATES), metavar=("OLD", "NEW"))
+    parser.add_argument("--results-dir", default="results")
     args = parser.parse_args()
 
     try:
         import pytest  # noqa: F401
     except ImportError:
         sys.exit("pytest is required: python3 -m pip install pytest")
+    CANDIDATES = tuple(args.candidates)
+    RESULTS = HERE / args.results_dir
+    old, new = CANDIDATES
     started = time.time()
     if BUILD.exists():
         shutil.rmtree(BUILD / "mutants", ignore_errors=True)
     BUILD.mkdir(exist_ok=True)
     RESULTS.mkdir(exist_ok=True)
     task_map = {c: task_dirs(c) for c in CANDIDATES}
-    ids = sorted(set(task_map["candidate-007"]) & set(task_map["candidate-006"]))
+    ids = sorted(set(task_map[new]) & set(task_map[old]))
     if args.tasks:
         ids = [t for t in ids if t in args.tasks]
     assert not any(t.startswith(("EV", "RG")) for t in ids), "final/regression tasks must not be audited"
-    records = stage_witness(ids, task_map["candidate-007"], task_map["candidate-006"])
-    stage_verify(records, task_map["candidate-007"])
+    records = stage_witness(ids, task_map[new], task_map[old])
+    stage_verify(records, task_map[new])
     if not args.skip_gold:
         stage_gold(records, task_map, args.workers)
     import pytest as _pytest
@@ -302,7 +309,7 @@ def main():
     }
     full = {"meta": meta, "tasks": records}
     (RESULTS / "audit-results.json").write_text(json.dumps(full, indent=1, sort_keys=True))
-    subprocess.run([sys.executable, str(HERE / "make_report.py")], check=True)
+    subprocess.run([sys.executable, str(HERE / "make_report.py"), str(RESULTS)], check=True)
     print(f"done in {meta['elapsed_seconds']} s")
 
 

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "''"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "aec839287053a1da7434095a9b5e19c5a5869a5626053b67ab8266a3a4933282"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-comparison-51-NotEq",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('   ',)",
+      "expected_python": "' '",
+      "actual_python": "'   '"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "2d1a0ca17c87be53c2c8b069fbf147060dc17bff0ea9b8c32952fd3ddde6e318"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-50-Eq",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('   ',)",
+      "expected_python": "' '",
+      "actual_python": "'   '"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "7a55d39d5094987f41b912e446129d5a6b9e2c24be6d832a160a98d95e9fb64e"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "''",
+      "actual_python": "''"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "be3527bed802b6d3cdde6bc046df40490838491a82be64dfbf222fe8aec686c1"
+  },
+  {
+    "id": "R02",
+    "requirement": "type-ordinary: text level 0 (str): exact types: ordinary wrong type rejected",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e004]",
+      "case": "e004",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['a'],)",
+      "expected_exception": "TypeError",
+      "actual_python": "'a'"
+    },
+    "provenance": "S010 promotion of independent-audit mutant T-text-L0-ordinary (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "614747f9a354233b765fce2331bacef9aafcc6de0214f42fceedc8caa6a4ac4c"
+  },
+  {
+    "id": "R03",
+    "requirement": "ascii: ASCII-only rule: unicode-decimal-digits",
+    "witness": {
+      "node": "test_target.py::test_values[v011]",
+      "case": "v011",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('٣  ４',)",
+      "expected_python": "'٣ ４'",
+      "actual_python": "'3 4'"
+    },
+    "provenance": "S010 promotion of independent-audit mutant A-unicode-decimal-digits (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "e268d1c682d2b35ccfee74282a56458aedf69bc57320126af364afd76d084aa5"
+  },
+  {
+    "id": "R04",
+    "requirement": "ascii: ASCII-only rule: 'char != \" \"' -> 'not char.isspace()'",
+    "witness": {
+      "node": "test_target.py::test_values[v010]",
+      "case": "v010",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('a \\t\\nb',)",
+      "expected_python": "'a \\t\\nb'",
+      "actual_python": "'a \\nb'"
+    },
+    "provenance": "S010 promotion of independent-audit mutant A-predicate-6 (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "da12d8b3dd37c32cacd7f681ec06fccc10c82358042e77054889732ee0e83da4"
+  }
+]

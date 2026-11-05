@@ -1,0 +1,39 @@
+{
+  "status": "finite-agent-category-map-pending-execution",
+  "model_visible": true,
+  "return_type": "exact built-in str",
+  "semantic_categories": [
+    {
+      "requirement": "both-empty",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "left-empty",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "equal",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "partial",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "shorter-right",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "case-sensitive",
+      "gold_case": "v005"
+    },
+    {
+      "requirement": "unicode",
+      "gold_case": "v006"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": false,
+  "limitations": "Finite same-agent semantic review plus one independent-audit mutant pass; not exhaustive correctness."
+}

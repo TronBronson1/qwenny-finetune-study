@@ -1,0 +1,112 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(1,)",
+    "expected_python": "False",
+    "after_python": "(1,)",
+    "category": "lower-bound"
+  },
+  {
+    "id": "v001",
+    "args_python": "(4,)",
+    "expected_python": "True",
+    "after_python": "(4,)",
+    "category": "divisible-four"
+  },
+  {
+    "id": "v002",
+    "args_python": "(1900,)",
+    "expected_python": "False",
+    "after_python": "(1900,)",
+    "category": "century-not-leap"
+  },
+  {
+    "id": "v003",
+    "args_python": "(2000,)",
+    "expected_python": "True",
+    "after_python": "(2000,)",
+    "category": "century-leap"
+  },
+  {
+    "id": "v004",
+    "args_python": "(2023,)",
+    "expected_python": "False",
+    "after_python": "(2023,)",
+    "category": "ordinary-not-leap"
+  },
+  {
+    "id": "v005",
+    "args_python": "(2024,)",
+    "expected_python": "True",
+    "after_python": "(2024,)",
+    "category": "ordinary-leap"
+  },
+  {
+    "id": "v006",
+    "args_python": "(2100,)",
+    "expected_python": "False",
+    "after_python": "(2100,)",
+    "category": "future-century"
+  },
+  {
+    "id": "v007",
+    "args_python": "(9999,)",
+    "expected_python": "False",
+    "after_python": "(9999,)",
+    "category": "upper-bound"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:year"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(1),)",
+    "exception": "TypeError",
+    "category": "type:year"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:year"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:year"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:year"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "(10000,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e007",
+    "args_python": "(IntChild(0),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e008",
+    "args_python": "(IntChild(10000),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

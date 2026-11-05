@@ -1,0 +1,100 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild('#000000'),)",
+      "expected_exception": "TypeError",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "6798f9a0bde9c9e7bbc766ca8714990d40a9e541acab926b63f6694659be0c81"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-constant-48-1-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('#010203',)",
+      "expected_python": "(1, 2, 3)",
+      "actual_python": "(16, 2, 3)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "1d97bfabf67ab8b851be69d08f870c08d465d391d6049cc81eb8fe2b92af341c"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-constant-48-2-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('#ffffff',)",
+      "expected_python": "(255, 255, 255)",
+      "actual_python": "(4095, 4095, 255)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "2121f5aa3852c5b6d99382624f585f579f05864c5552b5a15b87c2986971027e"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('#000000',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "e2159ba9291e795041f49a422918b382526d06999d4e630033bb38ebc261bf6d"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('#000000',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "5a4d6d9b10a5678b2d7c46d11012827dc59682c62f6f017306a080fe3157b0e3"
+  },
+  {
+    "id": "R03",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e010]",
+      "case": "e010",
+      "kind": "required-exception-wrong-class",
+      "args_python": "(StrChild('ffffff'),)",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "2093bf81dbfa67c37c311cc876e9107166db4c0acf8b68ba6cabaf9a2dc8eba5"
+  },
+  {
+    "id": "R04",
+    "requirement": "external-adversarial-witness",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e008]",
+      "case": "e008",
+      "kind": "required-exception-not-raised",
+      "args_python": "('#١٢٣٤٥٦',)",
+      "expected_exception": "ValueError",
+      "actual_python": "(18, 52, 86)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "dcd65f3bb0a3fc01b45c4c080afcfe171ba1189023e16cf1465ac9af3abc2beb"
+  }
+]
