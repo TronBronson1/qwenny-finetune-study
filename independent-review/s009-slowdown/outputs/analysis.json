@@ -1,0 +1,218 @@
+{
+ "reconstruction": {
+  "logged_microbatches": 213,
+  "reconstructed_input_tokens": 217219,
+  "logged_input_tokens": 217219,
+  "reconstructed_supervised_tokens": 149563,
+  "logged_supervised_tokens": 149563,
+  "reconstructed_optimizer_updates": 53,
+  "logged_optimizer_updates": 53,
+  "exact_match": true
+ },
+ "unfinished_microbatch": {
+  "microbatch": 214,
+  "epoch": 4,
+  "position": 34,
+  "task": "TR031",
+  "input_tokens": 1188,
+  "target_tokens": 838,
+  "optimizer_step_in_batch": false,
+  "length_rank_of_60": 15,
+  "status": "unfinished at 1200 s ceiling"
+ },
+ "memory_accounting": {
+  "total_bytes": 10736893952,
+  "points": [
+   {
+    "point": "preflight-baseline (longest example, after backward)",
+    "unix_time": 1793837109.7433715,
+    "reserved": 8115978240,
+    "allocated": 5921033728,
+    "peak_allocated": 7922842112,
+    "cuda_free": 387641344,
+    "outside_pytorch_reserved": 2233274368
+   },
+   {
+    "point": "preflight-comments (longest example, after backward)",
+    "unix_time": 1793837332.421467,
+    "reserved": 8115978240,
+    "allocated": 5921689088,
+    "peak_allocated": 7922842112,
+    "cuda_free": 200978432,
+    "outside_pytorch_reserved": 2419937280
+   },
+   {
+    "point": "training, zero-free samples (upper bound on reserved = training peak)",
+    "reserved": 8120172544,
+    "cuda_free": 0,
+    "outside_pytorch_reserved_lower_bound": 2616721408
+   }
+  ],
+  "post_run_free_bytes": 8533311488,
+  "post_run_other_consumers_bytes": 2203582464,
+  "load_guard_free_bytes": 8589934592,
+  "other_consumers_at_training_load_upper_bound_bytes": 2146959360,
+  "note": "At load, free >= 8 GiB with this process's CUDA context X already created, so other consumers <= total - 8 GiB - X. After termination (no context) other consumers = total - 8138 MiB. Growth >= 54 MiB + X.",
+  "growth_between_preflights_bytes": 186662912,
+  "growth_between_preflights_seconds": 222.67809557914734,
+  "min_other_consumer_growth_MiB_if_context_0MiB": 54.0,
+  "min_other_consumer_growth_MiB_if_context_250MiB": 304.0,
+  "min_other_consumer_growth_MiB_if_context_400MiB": 454.0,
+  "min_other_consumer_growth_MiB_if_context_600MiB": 654.0
+ },
+ "time_budget": {
+  "arm_ceiling_seconds": 1200,
+  "pretraining_phase_estimate_seconds": 179.2,
+  "pretraining_basis": "baseline preflight job wall time (same load/verification/longest-example/smoke/base-dev-loss steps run inside the training process before step 1)",
+  "logged_microbatch_seconds": 707.7,
+  "checkpoint_eval_estimate_seconds": [
+   30,
+   90
+  ],
+  "checkpoint_basis": "two checkpoints (E1, E3): adapter + optimizer save, reload probe and 24 no-grad development losses each; not logged in committed files",
+  "unfinished_microbatch_running_seconds_range": [
+   223,
+   283
+  ],
+  "positive_free_seconds_if_zero_free_sum_is_4x_median": 570.3,
+  "implied_mean_positive_free_seconds": 2.729,
+  "projected_undisturbed_arm_seconds": {
+   "at_median_2.672s": 1071,
+   "at_implied_mean": 1133
+  },
+  "headroom_fraction_at_median": 0.108
+ },
+ "reference_runs": [
+  {
+   "run": "feasibility seq768 chunk128 (10 synthetic steps)",
+   "median_step_s": 2.015499999994063,
+   "min_free_MiB": 173.046875,
+   "peak_reserved_GB": 8.772386816,
+   "windows_peak_shared_MB": 85.983232,
+   "stalled": false
+  },
+  {
+   "run": "feasibility seq768 no chunk (trial-003)",
+   "median_step_s": 40.54700000000594,
+   "min_free_MiB": 0.0,
+   "peak_reserved_GB": 11.047796736,
+   "windows_peak_shared_MB": null,
+   "stalled": false,
+   "note": "peak reserved exceeds the 10.74 GB device; completed without OOM but ~20x slower"
+  },
+  {
+   "run": "fit-2048 cpu-embed (3 synthetic steps)",
+   "median_step_s": 4.328000000008615,
+   "min_free_MiB": 799.0703125,
+   "peak_reserved_GB": 8.088715264,
+   "windows_peak_shared_MB": 85.983232,
+   "stalled": false
+  },
+  {
+   "run": "fit-2048 GPU embedding (interrupted)",
+   "median_step_s": null,
+   "min_free_MiB": 0,
+   "peak_reserved_GB": null,
+   "windows_peak_shared_MB": 656.408576,
+   "stalled": true,
+   "note": "2048-token forward exhausted CUDA free-memory headroom and Windows shared usage remained around 0.6 GiB; backward update 1 showed no recorded stage completion for over two minutes. Stopped owned trial to avoid prolonged paging. Not an observed CUDA OOM. No successful backward/save/reload result is claimed."
+  },
+  {
+   "run": "qwenny-001 (300 microbatches, 5 epochs, Nov 3)",
+   "median_step_s": 2.0,
+   "min_free_MiB": 414.140625,
+   "peak_reserved_GB": 8.126464,
+   "windows_peak_shared_MB": 85.983232,
+   "stalled": false,
+   "note": "completed in 695 s incl. 3 checkpoint evaluations; max example 1954 tokens"
+  },
+  {
+   "run": "qwenny-002 compact (Nov 3/4)",
+   "median_step_s": null,
+   "min_free_MiB": 763.9296875,
+   "peak_reserved_GB": 8.09500672,
+   "windows_peak_shared_MB": 85.983232,
+   "stalled": false,
+   "note": "completed in 608 s"
+  },
+  {
+   "run": "S009 baseline, positive-free samples (Nov 4)",
+   "median_step_s": 2.6719999999913853,
+   "min_free_MiB": null,
+   "peak_reserved_GB": 8.120172544,
+   "windows_peak_shared_MB": null,
+   "stalled": false,
+   "note": "209 samples"
+  },
+  {
+   "run": "S009 baseline, zero-free samples",
+   "median_step_s": 34.3519999999844,
+   "min_free_MiB": 0,
+   "peak_reserved_GB": 8.120172544,
+   "windows_peak_shared_MB": null,
+   "stalled": true,
+   "note": "4 samples, then an unfinished batch"
+  }
+ ],
+ "local_run_files": {},
+ "per_microbatch_time_memory_available": false,
+ "longest_examples": [
+  {
+   "task": "TR049",
+   "input_tokens": 1880
+  },
+  {
+   "task": "TR058",
+   "input_tokens": 1878
+  },
+  {
+   "task": "TR034",
+   "input_tokens": 1452
+  },
+  {
+   "task": "TR050",
+   "input_tokens": 1451
+  },
+  {
+   "task": "TR047",
+   "input_tokens": 1403
+  }
+ ],
+ "longest_example_occurrences_before_stop": [
+  {
+   "task": "TR058",
+   "microbatch": 52,
+   "epoch": 1
+  },
+  {
+   "task": "TR049",
+   "microbatch": 57,
+   "epoch": 1
+  },
+  {
+   "task": "TR058",
+   "microbatch": 71,
+   "epoch": 2
+  },
+  {
+   "task": "TR049",
+   "microbatch": 75,
+   "epoch": 2
+  },
+  {
+   "task": "TR058",
+   "microbatch": 142,
+   "epoch": 3
+  },
+  {
+   "task": "TR049",
+   "microbatch": 167,
+   "epoch": 3
+  },
+  {
+   "task": "TR049",
+   "microbatch": 182,
+   "epoch": 4
+  }
+ ]
+}
