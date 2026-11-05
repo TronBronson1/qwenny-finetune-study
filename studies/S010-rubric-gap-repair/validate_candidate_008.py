@@ -90,6 +90,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: summary[k] for k in ("status", "reference_suites", "reference_cases", "designated_mutants")} | {"failures": failures[:10]}, indent=2))
+    print("SUMMARY_JSON:" + json.dumps(summary, separators=(",", ":")))
     sys.exit(1 if failures else 0)
 
 

@@ -52,6 +52,7 @@ def main():
                   rows=[r | dict(delta_vs_007=r["complete_chat_tokens"] - by7[r["id"]]["complete_chat_tokens"]) for r in rows])
     (out / "token-profile-008.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in report.items() if k != "rows"}, indent=2))
+    print("PROFILE_JSON:" + json.dumps(report, separators=(",", ":")))
     if mismatch:
         sys.exit("cloud tokenizer does not reproduce the S007 profile; candidate-008 numbers are not certified")
 
