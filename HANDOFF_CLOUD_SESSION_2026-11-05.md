@@ -144,10 +144,10 @@ Decide this **before** any held-out evaluation, and record it as a change to `01
 
 ## Open decisions and next steps (in suggested order)
 
-1. Review and merge PRs #1 → #4, #2 and #3, or close any you reject. Then update `program/CURRENT_STATE.md` and `START_HERE.md`.
+1. Review and merge PRs #1 → #4 (→ #6), #2 and #3, or close any you reject. Then update `program/CURRENT_STATE.md` and `START_HERE.md`.
 2. Decide whether to approve candidate-009 (new sentence + hash) or keep candidate-008. Either way, use that candidate's validated TR058 fit overlay for training packets.
-3. Decide whether candidate-008 becomes the current candidate and gets a training export. Both need an explicit new statement from the user.
-4. Decide N7: revise the coverage-expectation wording, then the gold, in a separately declared study.
+3. Decide which candidate becomes current and whether it gets a training export. Both need an explicit new statement from the user.
+4. N7 is handled by the candidate-009 proposal (PR #6). Rejecting it leaves N7 as a documented, deferred gap in candidate-008.
 5. On the PC, run S009 forensics with `--run-dir`, then the frozen local diagnostic protocol, before any new paired training attempt.
 6. Approve, or edit and then approve, `independent-review/power-sim/PREREGISTRATION_PROPOSAL.md` before held-out evaluation.
 
