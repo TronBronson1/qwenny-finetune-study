@@ -1,0 +1,35 @@
+{
+  "status": "finite-agent-category-map-pending-execution",
+  "model_visible": true,
+  "return_type": "exact built-in three-item tuple of exact lists of exact ints",
+  "semantic_categories": [
+    {
+      "requirement": "empty",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "zero",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "all-signs-stable",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "positive-only",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "negative-only",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "positive-negative-order",
+      "gold_case": "v005"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": true,
+  "limitations": "Finite same-agent semantic review plus one independent-audit mutant pass; not exhaustive correctness."
+}

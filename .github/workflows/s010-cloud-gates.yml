@@ -1,0 +1,95 @@
+# S010 cloud gates for dataset-v1/candidate-008 (no GPU, no model weights, no secrets).
+#   1. Windows calibration validation (stand-in for the established Python 3.15 / pytest 9.2 PC runtime)
+#   2. Pinned-tokenizer length profile, calibrated against the committed S007 profile
+# Results are uploaded as run artifacts; nothing is committed back to the repository.
+name: S010 cloud gates (candidate-008)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/candidate-008]
+    paths:
+      - ".github/workflows/s010-cloud-gates.yml"
+      - "dataset-v1/candidate-008/**"
+      - "studies/S010-rubric-gap-repair/**"
+
+permissions:
+  contents: read
+
+jobs:
+  windows-validation:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python 3.15 (established runtime)
+        id: py315
+        continue-on-error: true
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.15"
+          allow-prereleases: true
+      - name: Fallback Python 3.14 (recorded in the summary note)
+        if: steps.py315.outcome != 'success'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install pytest 9.2
+        run: python -m pip install "pytest==9.2.*"
+      - name: Validate candidate-008 (gold vs references and all designated mutants)
+        shell: pwsh
+        run: >
+          python studies/S010-rubric-gap-repair/validate_candidate_008.py
+          --out ci-validation-windows
+          --note "GitHub Actions windows-latest runner (python 3.15 setup outcome: ${{ steps.py315.outcome }}); stand-in for the user's PC runtime."
+      - name: Upload validation summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s010-windows-validation
+          path: ci-validation-windows/
+
+  tokenizer-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tokenizer-only dependencies (versions from lora-feasibility/packages.lock.txt)
+        run: python -m pip install "transformers==5.22.1" "tokenizers==0.23.3" "huggingface_hub==2.4.0" "Jinja2==3.1.6"
+      - name: Profile candidate-008 with the pinned tokenizer
+        run: python studies/S010-rubric-gap-repair/profile_lengths_cloud.py --out ci-token-profile
+      - name: Upload token profile
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s010-token-profile
+          path: ci-token-profile/
+
+  prepare-packets:
+    # Staged candidate-008 token packets (not a training authorization). Commits the output folder once.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install tokenizer-only dependencies (versions from lora-feasibility/packages.lock.txt)
+        run: python -m pip install "transformers==5.22.1" "tokenizers==0.23.3" "huggingface_hub==2.4.0" "Jinja2==3.1.6"
+      - name: Prepare packets (calibrated against the committed S009 baseline packets)
+        if: hashFiles('studies/S010-rubric-gap-repair/packets-008/report.json') == ''
+        run: python studies/S010-rubric-gap-repair/prepare_packets_008.py --hub
+      - name: Commit staged packets
+        if: hashFiles('studies/S010-rubric-gap-repair/packets-008/report.json') != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studies/S010-rubric-gap-repair/packets-008
+          if git diff --cached --quiet; then echo "packets already committed"; exit 0; fi
+          git commit -m "S010: staged candidate-008 token packets from Actions run ${{ github.run_id }} (not a training authorization)"
+          git push origin HEAD:${{ github.ref_name }}

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('', 'a', 1)",
+    "expected_python": "-1",
+    "after_python": "('', 'a', 1)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('aaaa', 'aa', 1)",
+    "expected_python": "0",
+    "after_python": "('aaaa', 'aa', 1)",
+    "category": "first-overlap"
+  },
+  {
+    "id": "v002",
+    "args_python": "('aaaa', 'aa', 2)",
+    "expected_python": "1",
+    "after_python": "('aaaa', 'aa', 2)",
+    "category": "second-overlap"
+  },
+  {
+    "id": "v003",
+    "args_python": "('aaaa', 'aa', 3)",
+    "expected_python": "2",
+    "after_python": "('aaaa', 'aa', 3)",
+    "category": "third-overlap"
+  },
+  {
+    "id": "v004",
+    "args_python": "('aaaa', 'aa', 4)",
+    "expected_python": "-1",
+    "after_python": "('aaaa', 'aa', 4)",
+    "category": "missing-overlap"
+  },
+  {
+    "id": "v005",
+    "args_python": "('abc', 'abc', 1)",
+    "expected_python": "0",
+    "after_python": "('abc', 'abc', 1)",
+    "category": "whole-string"
+  },
+  {
+    "id": "v006",
+    "args_python": "('abc', 'x', 1)",
+    "expected_python": "-1",
+    "after_python": "('abc', 'x', 1)",
+    "category": "absent"
+  },
+  {
+    "id": "v007",
+    "args_python": "('éé', 'é', 2)",
+    "expected_python": "1",
+    "after_python": "('éé', 'é', 2)",
+    "category": "unicode"
+  },
+  {
+    "id": "v008",
+    "args_python": "('Aa', 'a', 1)",
+    "expected_python": "1",
+    "after_python": "('Aa', 'a', 1)",
+    "category": "literal-case"
+  },
+  {
+    "id": "v009",
+    "args_python": "('aA', 'a', 2)",
+    "expected_python": "-1",
+    "after_python": "('aA', 'a', 2)",
+    "category": "no-second-case-match"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''), 'a', 1)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x', 'a', 1)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1, 'a', 1)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None, 'a', 1)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('', StrChild('a'), 1)",
+    "exception": "TypeError",
+    "category": "type:needle"
+  },
+  {
+    "id": "e005",
+    "args_python": "('', b'x', 1)",
+    "exception": "TypeError",
+    "category": "type:needle"
+  },
+  {
+    "id": "e006",
+    "args_python": "('', 1, 1)",
+    "exception": "TypeError",
+    "category": "type:needle"
+  },
+  {
+    "id": "e007",
+    "args_python": "('', None, 1)",
+    "exception": "TypeError",
+    "category": "type:needle"
+  },
+  {
+    "id": "e008",
+    "args_python": "('', 'a', True)",
+    "exception": "TypeError",
+    "category": "type:occurrence"
+  },
+  {
+    "id": "e009",
+    "args_python": "('', 'a', IntChild(1))",
+    "exception": "TypeError",
+    "category": "type:occurrence"
+  },
+  {
+    "id": "e010",
+    "args_python": "('', 'a', 1.5)",
+    "exception": "TypeError",
+    "category": "type:occurrence"
+  },
+  {
+    "id": "e011",
+    "args_python": "('', 'a', 'bad')",
+    "exception": "TypeError",
+    "category": "type:occurrence"
+  },
+  {
+    "id": "e012",
+    "args_python": "('', 'a', None)",
+    "exception": "TypeError",
+    "category": "type:occurrence"
+  },
+  {
+    "id": "e013",
+    "args_python": "('abc', '', 1)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e014",
+    "args_python": "('abc', 'a', 0)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e015",
+    "args_python": "(StrChild('abc'), '', 1)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e016",
+    "args_python": "('abc', StrChild(''), 1)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e017",
+    "args_python": "('abc', '', IntChild(1))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e018",
+    "args_python": "(StrChild('abc'), 'a', 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e019",
+    "args_python": "('abc', StrChild('a'), 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e020",
+    "args_python": "('abc', 'a', IntChild(0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

@@ -1,0 +1,317 @@
+﻿2026-11-05T02:52:22.0687692Z Current runner version: '2.338.2'
+2026-11-05T02:52:22.0713027Z ##[group]Runner Image Provisioner
+2026-11-05T02:52:22.0713864Z Hosted Compute Agent
+2026-11-05T02:52:22.0714574Z Version: 20261028.624
+2026-11-05T02:52:22.0715303Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-05T02:52:22.0716091Z Build Date: 2026-10-28T21:51:42Z
+2026-11-05T02:52:22.0716819Z Worker ID: {bd56ac5e-f8c4-4d86-a33d-baf97cafbbed}
+2026-11-05T02:52:22.0717587Z Region: eastus
+2026-11-05T02:52:22.0718525Z Cloud: Azure
+2026-11-05T02:52:22.0719103Z ##[endgroup]
+2026-11-05T02:52:22.0720688Z ##[group]Operating System
+2026-11-05T02:52:22.0721348Z Ubuntu
+2026-11-05T02:52:22.0721940Z 24.04.5
+2026-11-05T02:52:22.0722480Z LTS
+2026-11-05T02:52:22.0723037Z ##[endgroup]
+2026-11-05T02:52:22.0723674Z ##[group]Runner Image
+2026-11-05T02:52:22.0724265Z Image: ubuntu-24.04
+2026-11-05T02:52:22.0724855Z Version: 20261101.360.1
+2026-11-05T02:52:22.0726159Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-05T02:52:22.0728092Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-05T02:52:22.0729143Z ##[endgroup]
+2026-11-05T02:52:22.0730676Z ##[group]GITHUB_TOKEN Permissions
+2026-11-05T02:52:22.0732913Z Contents: read
+2026-11-05T02:52:22.0733600Z Metadata: read
+2026-11-05T02:52:22.0734195Z ##[endgroup]
+2026-11-05T02:52:22.0736654Z Secret source: Actions
+2026-11-05T02:52:22.0738163Z Cache mode: write
+2026-11-05T02:52:22.0738979Z Prepare workflow directory
+2026-11-05T02:52:22.1068481Z Prepare all required actions
+2026-11-05T02:52:22.1116745Z Getting action download info
+2026-11-05T02:52:22.3308869Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-05T02:52:22.4451068Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-05T02:52:22.5232435Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-05T02:52:22.7435323Z Complete job name: tokenizer-profile
+2026-11-05T02:52:22.8320546Z ##[group]Run actions/checkout@v4
+2026-11-05T02:52:22.8321436Z with:
+2026-11-05T02:52:22.8321956Z   repository: TronBronson1/qwenny-finetune-study
+2026-11-05T02:52:22.8326312Z   token: ***
+2026-11-05T02:52:22.8326748Z   ssh-strict: true
+2026-11-05T02:52:22.8327198Z   ssh-user: git
+2026-11-05T02:52:22.8327853Z   persist-credentials: true
+2026-11-05T02:52:22.8328370Z   clean: true
+2026-11-05T02:52:22.8328825Z   sparse-checkout-cone-mode: true
+2026-11-05T02:52:22.8329356Z   fetch-depth: 1
+2026-11-05T02:52:22.8329795Z   fetch-tags: false
+2026-11-05T02:52:22.8330250Z   show-progress: true
+2026-11-05T02:52:22.8330708Z   lfs: false
+2026-11-05T02:52:22.8331131Z   submodules: false
+2026-11-05T02:52:22.8331583Z   set-safe-directory: true
+2026-11-05T02:52:22.8332100Z   allow-unsafe-pr-checkout: false
+2026-11-05T02:52:22.8332906Z ##[endgroup]
+2026-11-05T02:52:23.1791195Z Syncing repository: TronBronson1/qwenny-finetune-study
+2026-11-05T02:52:23.1794262Z ##[group]Getting Git version info
+2026-11-05T02:52:23.1795457Z Working directory is '/home/runner/work/qwenny-finetune-study/qwenny-finetune-study'
+2026-11-05T02:52:23.1796736Z [command]/usr/bin/git version
+2026-11-05T02:52:23.1887081Z git version 2.56.0
+2026-11-05T02:52:23.1910540Z ##[endgroup]
+2026-11-05T02:52:23.1926700Z Temporarily overriding HOME='/home/runner/work/_temp/f988c792-0c32-4991-83e6-c40a8ab4434d' before making global git config changes
+2026-11-05T02:52:23.1929439Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T02:52:23.1933325Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/qwenny-finetune-study/qwenny-finetune-study
+2026-11-05T02:52:23.2013931Z Deleting the contents of '/home/runner/work/qwenny-finetune-study/qwenny-finetune-study'
+2026-11-05T02:52:23.2017459Z ##[group]Initializing the repository
+2026-11-05T02:52:23.2025410Z [command]/usr/bin/git init /home/runner/work/qwenny-finetune-study/qwenny-finetune-study
+2026-11-05T02:52:23.2164390Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-05T02:52:23.2165771Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-05T02:52:23.2166900Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-05T02:52:23.2168118Z hint: call:
+2026-11-05T02:52:23.2168714Z hint:
+2026-11-05T02:52:23.2169527Z hint: 	git config --global init.defaultBranch <name>
+2026-11-05T02:52:23.2170272Z hint:
+2026-11-05T02:52:23.2170951Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-05T02:52:23.2172364Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-05T02:52:23.2173291Z hint:
+2026-11-05T02:52:23.2174243Z hint: 	git branch -m <name>
+2026-11-05T02:52:23.2175670Z hint:
+2026-11-05T02:52:23.2181290Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-05T02:52:23.2183956Z Initialized empty Git repository in /home/runner/work/qwenny-finetune-study/qwenny-finetune-study/.git/
+2026-11-05T02:52:23.2193471Z [command]/usr/bin/git remote add origin https://github.com/TronBronson1/qwenny-finetune-study
+2026-11-05T02:52:23.2253349Z ##[endgroup]
+2026-11-05T02:52:23.2254732Z ##[group]Disabling automatic garbage collection
+2026-11-05T02:52:23.2256947Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-05T02:52:23.2293766Z ##[endgroup]
+2026-11-05T02:52:23.2295091Z ##[group]Setting up auth
+2026-11-05T02:52:23.2300811Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T02:52:23.2344666Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T02:52:23.2810350Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T02:52:23.2856120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T02:52:23.3100251Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T02:52:23.3144597Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T02:52:23.3385976Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-05T02:52:23.3435638Z ##[endgroup]
+2026-11-05T02:52:23.3447624Z ##[group]Fetching the repository
+2026-11-05T02:52:23.3450010Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7e1e458ada8fea7dd7ae4797d71930056c9d931c:refs/remotes/origin/claude/candidate-008
+2026-11-05T02:52:23.9477245Z From https://github.com/TronBronson1/qwenny-finetune-study
+2026-11-05T02:52:23.9479479Z  * [new ref]         7e1e458ada8fea7dd7ae4797d71930056c9d931c -> origin/claude/candidate-008
+2026-11-05T02:52:23.9483998Z ##[endgroup]
+2026-11-05T02:52:23.9485820Z ##[group]Determining the checkout info
+2026-11-05T02:52:23.9488244Z ##[endgroup]
+2026-11-05T02:52:23.9491793Z [command]/usr/bin/git sparse-checkout disable
+2026-11-05T02:52:23.9558132Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-05T02:52:23.9599792Z ##[group]Checking out the ref
+2026-11-05T02:52:23.9611325Z [command]/usr/bin/git checkout --progress --force -B claude/candidate-008 refs/remotes/origin/claude/candidate-008
+2026-11-05T02:52:25.0008654Z Switched to a new branch 'claude/candidate-008'
+2026-11-05T02:52:25.0014927Z branch 'claude/candidate-008' set up to track 'origin/claude/candidate-008'.
+2026-11-05T02:52:25.0046096Z ##[endgroup]
+2026-11-05T02:52:25.0129174Z [command]/usr/bin/git log -1 --format=%H
+2026-11-05T02:52:25.0150401Z 7e1e458ada8fea7dd7ae4797d71930056c9d931c
+2026-11-05T02:52:25.0440618Z ##[group]Run actions/setup-python@v5
+2026-11-05T02:52:25.0440946Z with:
+2026-11-05T02:52:25.0441162Z   python-version: 3.13
+2026-11-05T02:52:25.0441391Z   check-latest: false
+2026-11-05T02:52:25.0443764Z   token: ***
+2026-11-05T02:52:25.0443985Z   update-environment: true
+2026-11-05T02:52:25.0444240Z   allow-prereleases: false
+2026-11-05T02:52:25.0444481Z   freethreaded: false
+2026-11-05T02:52:25.0444699Z ##[endgroup]
+2026-11-05T02:52:25.1973396Z ##[group]Installed versions
+2026-11-05T02:52:25.2083669Z (node:2338) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T02:52:25.2084631Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T02:52:25.2085411Z Successfully set up CPython (3.13.18)
+2026-11-05T02:52:25.2086332Z ##[endgroup]
+2026-11-05T02:52:25.2275690Z ##[group]Run python -m pip install "transformers==5.22.1" "tokenizers==0.23.3" "huggingface_hub==2.4.0" "Jinja2==3.1.6"
+2026-11-05T02:52:25.2276589Z [36;1mpython -m pip install "transformers==5.22.1" "tokenizers==0.23.3" "huggingface_hub==2.4.0" "Jinja2==3.1.6"[0m
+2026-11-05T02:52:25.2316439Z shell: /usr/bin/bash -e {0}
+2026-11-05T02:52:25.2316724Z env:
+2026-11-05T02:52:25.2316999Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:25.2317445Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib/pkgconfig
+2026-11-05T02:52:25.2318236Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:25.2318651Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:25.2319039Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:25.2319427Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib
+2026-11-05T02:52:25.2319782Z ##[endgroup]
+2026-11-05T02:52:26.4705702Z Collecting transformers==5.22.1
+2026-11-05T02:52:26.6360614Z   Downloading transformers-5.22.1-py3-none-any.whl.metadata (31 kB)
+2026-11-05T02:52:26.9074985Z Collecting tokenizers==0.23.3
+2026-11-05T02:52:26.9459655Z   Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+2026-11-05T02:52:27.0238831Z Collecting huggingface_hub==2.4.0
+2026-11-05T02:52:27.0622006Z   Downloading huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+2026-11-05T02:52:27.1244160Z Collecting Jinja2==3.1.6
+2026-11-05T02:52:27.1629222Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-05T02:52:27.4121088Z Collecting numpy>=1.17 (from transformers==5.22.1)
+2026-11-05T02:52:27.4503649Z   Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-05T02:52:27.5020565Z Collecting packaging>=20.0 (from transformers==5.22.1)
+2026-11-05T02:52:27.5400640Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-05T02:52:27.6092067Z Collecting pyyaml>=5.1 (from transformers==5.22.1)
+2026-11-05T02:52:27.6480594Z   Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-05T02:52:28.0332931Z Collecting regex>=2025.10.22 (from transformers==5.22.1)
+2026-11-05T02:52:28.0718693Z   Downloading regex-2026.9.29-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+2026-11-05T02:52:28.1391570Z Collecting typer (from transformers==5.22.1)
+2026-11-05T02:52:28.1774355Z   Downloading typer-0.27.3-py3-none-any.whl.metadata (16 kB)
+2026-11-05T02:52:28.3192107Z Collecting safetensors>=0.8.0 (from transformers==5.22.1)
+2026-11-05T02:52:28.3570692Z   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+2026-11-05T02:52:28.4194861Z Collecting tqdm>=4.60 (from transformers==5.22.1)
+2026-11-05T02:52:28.4575523Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+2026-11-05T02:52:28.5259593Z Collecting click<9.0.0,>=8.4.2 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:28.5651195Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-11-05T02:52:28.6289411Z Collecting filelock>=3.10.0 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:28.6669347Z   Downloading filelock-4.2.9-py3-none-any.whl.metadata (2.3 kB)
+2026-11-05T02:52:28.7202488Z Collecting fsspec>=2023.5.0 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:28.7580373Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-05T02:52:28.8516788Z Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:28.8899284Z   Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+2026-11-05T02:52:28.9419386Z Collecting httpx2<3,>=2.0.0 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:28.9811346Z   Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+2026-11-05T02:52:29.0382506Z Collecting typing-extensions>=4.1.0 (from huggingface_hub==2.4.0)
+2026-11-05T02:52:29.0772613Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-05T02:52:29.1665309Z Collecting MarkupSafe>=2.0 (from Jinja2==3.1.6)
+2026-11-05T02:52:29.2054666Z   Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-05T02:52:29.2607256Z Collecting anyio>=4.10 (from httpx2<3,>=2.0.0->huggingface_hub==2.4.0)
+2026-11-05T02:52:29.3002674Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-05T02:52:29.4671541Z Collecting httpcore2==2.16.0 (from httpx2<3,>=2.0.0->huggingface_hub==2.4.0)
+2026-11-05T02:52:29.5056776Z   Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+2026-11-05T02:52:29.5611578Z Collecting idna>=3.18 (from httpx2<3,>=2.0.0->huggingface_hub==2.4.0)
+2026-11-05T02:52:29.6028891Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-05T02:52:29.6522756Z Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface_hub==2.4.0)
+2026-11-05T02:52:29.6906479Z   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+2026-11-05T02:52:29.7391919Z Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2<3,>=2.0.0->huggingface_hub==2.4.0)
+2026-11-05T02:52:29.7786678Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-05T02:52:29.8335560Z Collecting shellingham>=1.3.0 (from typer->transformers==5.22.1)
+2026-11-05T02:52:29.8716196Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2026-11-05T02:52:29.9357080Z Collecting rich>=13.8.0 (from typer->transformers==5.22.1)
+2026-11-05T02:52:29.9739813Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-11-05T02:52:30.0220186Z Collecting annotated-doc>=0.0.2 (from typer->transformers==5.22.1)
+2026-11-05T02:52:30.0611283Z   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+2026-11-05T02:52:30.1294884Z Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers==5.22.1)
+2026-11-05T02:52:30.1679329Z   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-05T02:52:30.2232309Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer->transformers==5.22.1)
+2026-11-05T02:52:30.2626935Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-05T02:52:30.3088260Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers==5.22.1)
+2026-11-05T02:52:30.3479262Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-05T02:52:30.3904333Z Downloading transformers-5.22.1-py3-none-any.whl (13.1 MB)
+2026-11-05T02:52:30.6436970Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 63.7 MB/s  0:00:00
+2026-11-05T02:52:30.6818826Z Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+2026-11-05T02:52:30.6967338Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 249.9 MB/s  0:00:00
+2026-11-05T02:52:30.7348853Z Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+2026-11-05T02:52:30.7410229Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 153.9 MB/s  0:00:00
+2026-11-05T02:52:30.7794168Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-05T02:52:30.8204233Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-11-05T02:52:30.8614346Z Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+2026-11-05T02:52:30.8764350Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 340.9 MB/s  0:00:00
+2026-11-05T02:52:30.9143775Z Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+2026-11-05T02:52:30.9548097Z Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+2026-11-05T02:52:30.9948574Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-05T02:52:31.0353546Z Downloading filelock-4.2.9-py3-none-any.whl (164 kB)
+2026-11-05T02:52:31.0764386Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-05T02:52:31.1171736Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-05T02:52:31.1586539Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-05T02:52:31.2002970Z Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+2026-11-05T02:52:31.2401573Z Downloading numpy-2.5.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-05T02:52:31.3207575Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 211.5 MB/s  0:00:00
+2026-11-05T02:52:31.3606965Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-05T02:52:31.4014193Z Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (801 kB)
+2026-11-05T02:52:31.4073804Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 801.6/801.6 kB 144.4 MB/s  0:00:00
+2026-11-05T02:52:31.4485802Z Downloading regex-2026.9.29-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-05T02:52:31.4550894Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 142.7 MB/s  0:00:00
+2026-11-05T02:52:31.4970618Z Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+2026-11-05T02:52:31.5399466Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+2026-11-05T02:52:31.5808542Z Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+2026-11-05T02:52:31.6214414Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-05T02:52:31.6628264Z Downloading typer-0.27.3-py3-none-any.whl (123 kB)
+2026-11-05T02:52:31.7030757Z Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+2026-11-05T02:52:31.7430173Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+2026-11-05T02:52:31.7877351Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-05T02:52:31.7951362Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 200.7 MB/s  0:00:00
+2026-11-05T02:52:31.8360582Z Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+2026-11-05T02:52:31.8776553Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-11-05T02:52:31.9191118Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2026-11-05T02:52:32.1552885Z Installing collected packages: typing-extensions, truststore, tqdm, shellingham, safetensors, regex, pyyaml, pygments, packaging, numpy, mdurl, MarkupSafe, idna, hf-xet, h11, fsspec, filelock, click, annotated-doc, markdown-it-py, Jinja2, httpcore2, anyio, rich, httpx2, typer, huggingface_hub, tokenizers, transformers
+2026-11-05T02:52:44.9496068Z 
+2026-11-05T02:52:44.9531589Z Successfully installed Jinja2-3.1.6 MarkupSafe-3.0.4 annotated-doc-0.0.5 anyio-4.16.0 click-8.5.0 filelock-4.2.9 fsspec-2026.9.0 h11-0.16.0 hf-xet-1.8.0 httpcore2-2.16.0 httpx2-2.16.0 huggingface_hub-2.4.0 idna-3.20 markdown-it-py-4.2.0 mdurl-0.1.2 numpy-2.5.4 packaging-26.3 pygments-2.21.0 pyyaml-6.0.3 regex-2026.9.29 rich-15.0.0 safetensors-0.8.0 shellingham-1.5.4 tokenizers-0.23.3 tqdm-4.70.1 transformers-5.22.1 truststore-0.10.5 typer-0.27.3 typing-extensions-4.16.0
+2026-11-05T02:52:44.9539634Z 
+2026-11-05T02:52:44.9539991Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-05T02:52:44.9540857Z [notice] To update, run: pip install --upgrade pip
+2026-11-05T02:52:45.0631866Z ##[group]Run python studies/S010-rubric-gap-repair/profile_lengths_cloud.py --out ci-token-profile
+2026-11-05T02:52:45.0632836Z [36;1mpython studies/S010-rubric-gap-repair/profile_lengths_cloud.py --out ci-token-profile[0m
+2026-11-05T02:52:45.0655201Z shell: /usr/bin/bash -e {0}
+2026-11-05T02:52:45.0655450Z env:
+2026-11-05T02:52:45.0655710Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:45.0656152Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib/pkgconfig
+2026-11-05T02:52:45.0656579Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:45.0656964Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:45.0657343Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:45.0657999Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib
+2026-11-05T02:52:45.0658349Z ##[endgroup]
+2026-11-05T02:52:46.3764722Z [transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+2026-11-05T02:52:46.7742120Z Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-05T02:52:48.3372792Z {
+2026-11-05T02:52:48.3373681Z   "scope": "CPU tokenizer profile only; not loss-mask validation, training export, GPU fit or instruction-following evidence.",
+2026-11-05T02:52:48.3374600Z   "tokenizer": {
+2026-11-05T02:52:48.3374924Z     "repo": "Qwen/Qwen3.5-9B",
+2026-11-05T02:52:48.3375359Z     "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+2026-11-05T02:52:48.3375833Z     "transformers": "5.22.1",
+2026-11-05T02:52:48.3376182Z     "tokenizers": "0.23.3"
+2026-11-05T02:52:48.3376490Z   },
+2026-11-05T02:52:48.3376773Z   "calibration_against_s007": {
+2026-11-05T02:52:48.3377128Z     "rows": 60,
+2026-11-05T02:52:48.3377426Z     "mismatched_ids": [],
+2026-11-05T02:52:48.3378045Z     "reproduces_s007": true
+2026-11-05T02:52:48.3378403Z   },
+2026-11-05T02:52:48.3378676Z   "maximum_chat_tokens": 2918,
+2026-11-05T02:52:48.3379054Z   "maximum_plain_answer_tokens": 2576,
+2026-11-05T02:52:48.3379477Z   "over_previous_2048_chat_budget": [
+2026-11-05T02:52:48.3379846Z     "TR058"
+2026-11-05T02:52:48.3380101Z   ],
+2026-11-05T02:52:48.3380376Z   "total_chat_tokens_007": 62428,
+2026-11-05T02:52:48.3380748Z   "total_chat_tokens_008": 63871
+2026-11-05T02:52:48.3381105Z }
+2026-11-05T02:52:48.3410742Z PROFILE_JSON:{"scope":"CPU tokenizer profile only; not loss-mask validation, training export, GPU fit or instruction-following evidence.","tokenizer":{"repo":"Qwen/Qwen3.5-9B","revision":"c202236235762e1c871ad0ccb60c8ee5ba337b9a","transformers":"5.22.1","tokenizers":"0.23.3"},"calibration_against_s007":{"rows":60,"mismatched_ids":[],"reproduces_s007":true},"maximum_chat_tokens":2918,"maximum_plain_answer_tokens":2576,"over_previous_2048_chat_budget":["TR058"],"total_chat_tokens_007":62428,"total_chat_tokens_008":63871,"rows":[{"id":"TR001","complete_chat_tokens":1224,"plain_assistant_text_tokens":904,"delta_vs_007":0},{"id":"TR002","complete_chat_tokens":1116,"plain_assistant_text_tokens":786,"delta_vs_007":0},{"id":"TR003","complete_chat_tokens":959,"plain_assistant_text_tokens":655,"delta_vs_007":0},{"id":"TR004","complete_chat_tokens":1224,"plain_assistant_text_tokens":898,"delta_vs_007":0},{"id":"TR005","complete_chat_tokens":745,"plain_assistant_text_tokens":455,"delta_vs_007":0},{"id":"TR006","complete_chat_tokens":838,"plain_assistant_text_tokens":546,"delta_vs_007":20},{"id":"TR007","complete_chat_tokens":829,"plain_assistant_text_tokens":537,"delta_vs_007":0},{"id":"TR008","complete_chat_tokens":861,"plain_assistant_text_tokens":564,"delta_vs_007":20},{"id":"TR009","complete_chat_tokens":953,"plain_assistant_text_tokens":631,"delta_vs_007":0},{"id":"TR010","complete_chat_tokens":881,"plain_assistant_text_tokens":583,"delta_vs_007":20},{"id":"TR011","complete_chat_tokens":929,"plain_assistant_text_tokens":615,"delta_vs_007":0},{"id":"TR012","complete_chat_tokens":1087,"plain_assistant_text_tokens":764,"delta_vs_007":0},{"id":"TR013","complete_chat_tokens":1241,"plain_assistant_text_tokens":905,"delta_vs_007":23},{"id":"TR014","complete_chat_tokens":970,"plain_assistant_text_tokens":640,"delta_vs_007":175},{"id":"TR015","complete_chat_tokens":764,"plain_assistant_text_tokens":461,"delta_vs_007":37},{"id":"TR016","complete_chat_tokens":800,"plain_assistant_text_tokens":487,"delta_vs_007":57},{"id":"TR017","complete_chat_tokens":909,"plain_assistant_text_tokens":592,"delta_vs_007":43},{"id":"TR018","complete_chat_tokens":836,"plain_assistant_text_tokens":519,"delta_vs_007":0},{"id":"TR019","complete_chat_tokens":751,"plain_assistant_text_tokens":459,"delta_vs_007":0},{"id":"TR020","complete_chat_tokens":787,"plain_assistant_text_tokens":469,"delta_vs_007":20},{"id":"TR021","complete_chat_tokens":827,"plain_assistant_text_tokens":529,"delta_vs_007":0},{"id":"TR022","complete_chat_tokens":818,"plain_assistant_text_tokens":500,"delta_vs_007":20},{"id":"TR023","complete_chat_tokens":1090,"plain_assistant_text_tokens":753,"delta_vs_007":21},{"id":"TR024","complete_chat_tokens":752,"plain_assistant_text_tokens":459,"delta_vs_007":58},{"id":"TR025","complete_chat_tokens":873,"plain_assistant_text_tokens":540,"delta_vs_007":0},{"id":"TR026","complete_chat_tokens":869,"plain_assistant_text_tokens":564,"delta_vs_007":0},{"id":"TR027","complete_chat_tokens":861,"plain_assistant_text_tokens":547,"delta_vs_007":0},{"id":"TR028","complete_chat_tokens":865,"plain_assistant_text_tokens":553,"delta_vs_007":0},{"id":"TR029","complete_chat_tokens":1305,"plain_assistant_text_tokens":949,"delta_vs_007":61},{"id":"TR030","complete_chat_tokens":1153,"plain_assistant_text_tokens":815,"delta_vs_007":118},{"id":"TR031","complete_chat_tokens":1188,"plain_assistant_text_tokens":838,"delta_vs_007":0},{"id":"TR032","complete_chat_tokens":958,"plain_assistant_text_tokens":635,"delta_vs_007":0},{"id":"TR033","complete_chat_tokens":1295,"plain_assistant_text_tokens":954,"delta_vs_007":35},{"id":"TR034","complete_chat_tokens":1499,"plain_assistant_text_tokens":1135,"delta_vs_007":47},{"id":"TR035","complete_chat_tokens":905,"plain_assistant_text_tokens":582,"delta_vs_007":0},{"id":"TR036","complete_chat_tokens":946,"plain_assistant_text_tokens":626,"delta_vs_007":0},{"id":"TR037","complete_chat_tokens":1175,"plain_assistant_text_tokens":868,"delta_vs_007":45},{"id":"TR038","complete_chat_tokens":1054,"plain_assistant_text_tokens":762,"delta_vs_007":0},{"id":"TR039","complete_chat_tokens":792,"plain_assistant_text_tokens":512,"delta_vs_007":0},{"id":"TR040","complete_chat_tokens":892,"plain_assistant_text_tokens":573,"delta_vs_007":0},{"id":"TR041","complete_chat_tokens":1394,"plain_assistant_text_tokens":1063,"delta_vs_007":98},{"id":"TR042","complete_chat_tokens":1346,"plain_assistant_text_tokens":1029,"delta_vs_007":106},{"id":"TR043","complete_chat_tokens":1077,"plain_assistant_text_tokens":787,"delta_vs_007":0},{"id":"TR044","complete_chat_tokens":1191,"plain_assistant_text_tokens":875,"delta_vs_007":104},{"id":"TR045","complete_chat_tokens":744,"plain_assistant_text_tokens":436,"delta_vs_007":0},{"id":"TR046","complete_chat_tokens":1142,"plain_assistant_text_tokens":836,"delta_vs_007":0},{"id":"TR047","complete_chat_tokens":1403,"plain_assistant_text_tokens":1046,"delta_vs_007":0},{"id":"TR048","complete_chat_tokens":948,"plain_assistant_text_tokens":609,"delta_vs_007":20},{"id":"TR049","complete_chat_tokens":2021,"plain_assistant_text_tokens":1663,"delta_vs_007":0},{"id":"TR050","complete_chat_tokens":1554,"plain_assistant_text_tokens":1205,"delta_vs_007":103},{"id":"TR051","complete_chat_tokens":1066,"plain_assistant_text_tokens":755,"delta_vs_007":0},{"id":"TR052","complete_chat_tokens":877,"plain_assistant_text_tokens":560,"delta_vs_007":0},{"id":"TR053","complete_chat_tokens":931,"plain_assistant_text_tokens":608,"delta_vs_007":0},{"id":"TR054","complete_chat_tokens":857,"plain_assistant_text_tokens":555,"delta_vs_007":0},{"id":"TR055","complete_chat_tokens":1378,"plain_assistant_text_tokens":1051,"delta_vs_007":0},{"id":"TR056","complete_chat_tokens":1053,"plain_assistant_text_tokens":758,"delta_vs_007":0},{"id":"TR057","complete_chat_tokens":975,"plain_assistant_text_tokens":661,"delta_vs_007":20},{"id":"TR058","complete_chat_tokens":2918,"plain_assistant_text_tokens":2576,"delta_vs_007":66},{"id":"TR059","complete_chat_tokens":1369,"plain_assistant_text_tokens":1032,"delta_vs_007":46},{"id":"TR060","complete_chat_tokens":806,"plain_assistant_text_tokens":488,"delta_vs_007":60}]}
+2026-11-05T02:52:48.4155750Z ##[group]Run actions/upload-artifact@v4
+2026-11-05T02:52:48.4156062Z with:
+2026-11-05T02:52:48.4156257Z   name: s010-token-profile
+2026-11-05T02:52:48.4156501Z   path: ci-token-profile/
+2026-11-05T02:52:48.4156742Z   if-no-files-found: warn
+2026-11-05T02:52:48.4156973Z   compression-level: 6
+2026-11-05T02:52:48.4157184Z   overwrite: false
+2026-11-05T02:52:48.4157392Z   include-hidden-files: false
+2026-11-05T02:52:48.4157883Z env:
+2026-11-05T02:52:48.4158198Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:48.4158630Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib/pkgconfig
+2026-11-05T02:52:48.4159074Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:48.4159453Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:48.4159830Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+2026-11-05T02:52:48.4160221Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib
+2026-11-05T02:52:48.4160578Z ##[endgroup]
+2026-11-05T02:52:48.5851468Z (node:2401) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T02:52:48.5852216Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T02:52:48.5960528Z With the provided path, there will be 1 file uploaded
+2026-11-05T02:52:48.5961607Z Artifact name is valid!
+2026-11-05T02:52:48.5961999Z Root directory input is valid!
+2026-11-05T02:52:48.8499223Z Beginning upload of artifact content to blob storage
+2026-11-05T02:52:48.8743019Z (node:2401) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-05T02:52:48.9186951Z Uploaded bytes 1271
+2026-11-05T02:52:48.9361194Z Finished uploading artifact content to blob storage!
+2026-11-05T02:52:48.9362304Z SHA256 digest of uploaded artifact zip is 12982e8778a401238b473fb58a7c95d35da297911cff8737892bb358e8a75a96
+2026-11-05T02:52:48.9363319Z Finalizing artifact upload
+2026-11-05T02:52:49.3302588Z Artifact s010-token-profile.zip successfully finalized. Artifact ID 13383873364
+2026-11-05T02:52:49.3304554Z Artifact s010-token-profile has been successfully uploaded! Final size is 1271 bytes. Artifact ID is 13383873364
+2026-11-05T02:52:49.3311661Z Artifact download URL: https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41957973433/artifacts/13383873364
+2026-11-05T02:52:49.3511221Z Post job cleanup.
+2026-11-05T02:52:49.4756649Z (node:2413) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-05T02:52:49.4758555Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-05T02:52:49.4944016Z Post job cleanup.
+2026-11-05T02:52:49.5970996Z [command]/usr/bin/git version
+2026-11-05T02:52:49.6023032Z git version 2.56.0
+2026-11-05T02:52:49.6070106Z Temporarily overriding HOME='/home/runner/work/_temp/25ece4f4-8353-4c54-a7cd-33ec8e9f0e15' before making global git config changes
+2026-11-05T02:52:49.6071730Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-05T02:52:49.6074583Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/qwenny-finetune-study/qwenny-finetune-study
+2026-11-05T02:52:49.6152071Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-05T02:52:49.6219993Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-05T02:52:49.6647471Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-05T02:52:49.6685574Z http.https://github.com/.extraheader
+2026-11-05T02:52:49.6699710Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-05T02:52:49.6753659Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-05T02:52:49.7092590Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-05T02:52:49.7138958Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-05T02:52:49.7572960Z Cleaning up orphan processes
+2026-11-05T02:52:49.7957171Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

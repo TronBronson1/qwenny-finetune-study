@@ -1,0 +1,35 @@
+{
+  "status": "finite-agent-category-map-pending-execution",
+  "model_visible": true,
+  "return_type": "exact built-in list of exact two-item tuples (exact str label, exact int count)",
+  "semantic_categories": [
+    {
+      "requirement": "empty",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "single",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "separated-runs",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "empty-strings",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "case-distinct",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "unicode",
+      "gold_case": "v005"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": true,
+  "limitations": "Finite same-agent semantic review plus one independent-audit mutant pass; not exhaustive correctness."
+}

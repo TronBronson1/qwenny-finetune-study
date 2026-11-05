@@ -1,0 +1,159 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([], [])",
+    "expected_python": "[]",
+    "after_python": "([], [])",
+    "category": "both-empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "([1], [])",
+    "expected_python": "[]",
+    "after_python": "([1], [])",
+    "category": "right-empty"
+  },
+  {
+    "id": "v002",
+    "args_python": "([], [1])",
+    "expected_python": "[]",
+    "after_python": "([], [1])",
+    "category": "left-empty"
+  },
+  {
+    "id": "v003",
+    "args_python": "([2, 1, 2, 3], [2, 2, 4])",
+    "expected_python": "[2, 2]",
+    "after_python": "([2, 1, 2, 3], [2, 2, 4])",
+    "category": "multiplicity"
+  },
+  {
+    "id": "v004",
+    "args_python": "([1, 1, 1], [1, 1])",
+    "expected_python": "[1, 1]",
+    "after_python": "([1, 1, 1], [1, 1])",
+    "category": "count-limit"
+  },
+  {
+    "id": "v005",
+    "args_python": "([-1, 0, -1], [0, -1])",
+    "expected_python": "[-1, 0]",
+    "after_python": "([-1, 0, -1], [0, -1])",
+    "category": "negative-order"
+  },
+  {
+    "id": "v006",
+    "args_python": "([2, 1, 2], [1, 2])",
+    "expected_python": "[2, 1]",
+    "after_python": "([2, 1, 2], [1, 2])",
+    "category": "left-order-not-sorted"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([]), [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "([True], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "([IntChild(1)], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "((), [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e005",
+    "args_python": "(['x'], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e006",
+    "args_python": "([1.5], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e007",
+    "args_python": "([-1.5], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e008",
+    "args_python": "([None], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e009",
+    "args_python": "([], ListChild([]))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e010",
+    "args_python": "([], [True])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e011",
+    "args_python": "([], [IntChild(1)])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e012",
+    "args_python": "([], ())",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e013",
+    "args_python": "([], None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e014",
+    "args_python": "([], ['x'])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e015",
+    "args_python": "([], [1.5])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e016",
+    "args_python": "([], [-1.5])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e017",
+    "args_python": "([], [None])",
+    "exception": "TypeError",
+    "category": "type:right"
+  }
+]

@@ -1,0 +1,414 @@
+[
+  {
+    "id": "v000",
+    "args_python": "((0, 0, 0), (0, 0, 0))",
+    "expected_python": "0",
+    "after_python": "((0, 0, 0), (0, 0, 0))",
+    "category": "equal"
+  },
+  {
+    "id": "v001",
+    "args_python": "((1, 2, 3), (1, 2, 4))",
+    "expected_python": "-1",
+    "after_python": "((1, 2, 3), (1, 2, 4))",
+    "category": "less"
+  },
+  {
+    "id": "v002",
+    "args_python": "((1, 3, 0), (1, 2, 99))",
+    "expected_python": "1",
+    "after_python": "((1, 3, 0), (1, 2, 99))",
+    "category": "greater-middle"
+  },
+  {
+    "id": "v003",
+    "args_python": "((2, 0, 0), (1, 99, 99))",
+    "expected_python": "1",
+    "after_python": "((2, 0, 0), (1, 99, 99))",
+    "category": "lexicographic-major"
+  },
+  {
+    "id": "e000",
+    "args_python": "(TupleChild((0, 0, 0)), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "((True, 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "((IntChild(1), 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "([0, 0, 0], (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e005",
+    "args_python": "(('x', 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e006",
+    "args_python": "((1.5, 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e007",
+    "args_python": "((None, 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e008",
+    "args_python": "((IntChild(0), 0, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e009",
+    "args_python": "((0, 'x', 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e010",
+    "args_python": "((0, 1.5, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e011",
+    "args_python": "((0, None, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e012",
+    "args_python": "((0, True, 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e013",
+    "args_python": "((0, IntChild(0), 0), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e014",
+    "args_python": "((0, 0, 'x'), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e015",
+    "args_python": "((0, 0, 1.5), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e016",
+    "args_python": "((0, 0, None), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e017",
+    "args_python": "((0, 0, True), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e018",
+    "args_python": "((0, 0, IntChild(0)), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e019",
+    "args_python": "((0, 0, 0), TupleChild((0, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e020",
+    "args_python": "((0, 0, 0), (True, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e021",
+    "args_python": "((0, 0, 0), (IntChild(1), 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e022",
+    "args_python": "((0, 0, 0), [0, 0, 0])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e023",
+    "args_python": "((0, 0, 0), None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e024",
+    "args_python": "((0, 0, 0), ('x', 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e025",
+    "args_python": "((0, 0, 0), (1.5, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e026",
+    "args_python": "((0, 0, 0), (None, 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e027",
+    "args_python": "((0, 0, 0), (IntChild(0), 0, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e028",
+    "args_python": "((0, 0, 0), (0, 'x', 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e029",
+    "args_python": "((0, 0, 0), (0, 1.5, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e030",
+    "args_python": "((0, 0, 0), (0, None, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e031",
+    "args_python": "((0, 0, 0), (0, True, 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e032",
+    "args_python": "((0, 0, 0), (0, IntChild(0), 0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e033",
+    "args_python": "((0, 0, 0), (0, 0, 'x'))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e034",
+    "args_python": "((0, 0, 0), (0, 0, 1.5))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e035",
+    "args_python": "((0, 0, 0), (0, 0, None))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e036",
+    "args_python": "((0, 0, 0), (0, 0, True))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e037",
+    "args_python": "((0, 0, 0), (0, 0, IntChild(0)))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e038",
+    "args_python": "((1, 2), (1, 2, 3))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e039",
+    "args_python": "((1, -1, 0), (1, 0, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e040",
+    "args_python": "([0, 0, 0], (0, 0, 0, 0))",
+    "exception": "TypeError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e041",
+    "args_python": "((0, 0), [0, 0, 0])",
+    "exception": "TypeError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e042",
+    "args_python": "((-1, 0, 0), (0, 0, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e043",
+    "args_python": "((0, -1, 0), (0, 0, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e044",
+    "args_python": "((0, 0, -1), (0, 0, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e045",
+    "args_python": "((0, 0, 0), (-1, 0, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e046",
+    "args_python": "((0, 0, 0), (0, -1, 0))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e047",
+    "args_python": "((0, 0, 0), (0, 0, -1))",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e048",
+    "args_python": "(TupleChild((1, 2)), (1, 2, 3))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e049",
+    "args_python": "((1, 2), TupleChild((1, 2, 3)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e050",
+    "args_python": "(TupleChild((1, -1, 0)), (1, 0, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e051",
+    "args_python": "((1, -1, 0), TupleChild((1, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e052",
+    "args_python": "(TupleChild((-1, 0, 0)), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e053",
+    "args_python": "((-1, 0, 0), TupleChild((0, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e054",
+    "args_python": "(TupleChild((0, -1, 0)), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e055",
+    "args_python": "((0, -1, 0), TupleChild((0, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e056",
+    "args_python": "(TupleChild((0, 0, -1)), (0, 0, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e057",
+    "args_python": "((0, 0, -1), TupleChild((0, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e058",
+    "args_python": "(TupleChild((0, 0, 0)), (-1, 0, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e059",
+    "args_python": "((0, 0, 0), TupleChild((-1, 0, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e060",
+    "args_python": "(TupleChild((0, 0, 0)), (0, -1, 0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e061",
+    "args_python": "((0, 0, 0), TupleChild((0, -1, 0)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e062",
+    "args_python": "(TupleChild((0, 0, 0)), (0, 0, -1))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e063",
+    "args_python": "((0, 0, 0), TupleChild((0, 0, -1)))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

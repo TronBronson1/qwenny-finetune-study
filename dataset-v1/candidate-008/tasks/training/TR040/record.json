@@ -1,0 +1,33 @@
+{
+  "id": "TR040",
+  "split": "training",
+  "family": "parse-key-value",
+  "function": "parse_key_value",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "text"
+  ],
+  "schemas": [
+    "str"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "1226006893eb2c2ec71f77b7b018b65b6eeca1b8e8724870fba9a19b75b0f134",
+  "target_sha256": "5fc97731394a1a1c36240568addebb6ec5dfa6afb20bf04ced8b537e2441de67",
+  "spec_sha256": "4ab03467f7bc07471be914be43883f6560198eb3b2b3d828e182f0d3ffc3809e",
+  "answer_sha256": "a254e1cbe7f35cc7ac0148099a2eff0ee2d955c581dc171dc55f862333d612bf",
+  "valid_test_cases": 5,
+  "exception_test_cases": 10,
+  "type_before_value_witnesses": 3,
+  "oracle_checks": 5,
+  "designated_mutants": 5,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

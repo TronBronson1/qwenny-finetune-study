@@ -1,0 +1,22 @@
+{
+ "status": "validated-presentation-overlay-not-exported",
+ "parent_candidate": "candidate-008",
+ "parent_sha256": "b65935295c94814fc7744f70feac49aedf809847a629961ae9bfbc75f72e18f4",
+ "replacement_task": "TR058",
+ "replacement_messages": "tr058-fit-overlay/messages.json",
+ "replacement_sha256": "0b3aee814b100f26cd73172ed8ee855f1a92a72aac10a15bd136b580e614c076",
+ "unchanged_tasks": 59,
+ "original_chat_tokens": 2918,
+ "replacement_chat_tokens": 1919,
+ "profiled_maximum_full_training_chat": 2021,
+ "evidence": {
+  "behavior": "tr058-fit-overlay/validation.json (AST equal ignoring display ids; identical per-case results for reference + 8 mutants)",
+  "tokens": "ci-run-41958509654/token-profile-008.json (pinned tokenizer, calibrated against S007)"
+ },
+ "requirements_before_training": [
+  "explicit export/provenance/authorization",
+  "exact assistant-token masks and decode checks",
+  "actual maximum-example forward/backward"
+ ],
+ "no_training_performed": true
+}

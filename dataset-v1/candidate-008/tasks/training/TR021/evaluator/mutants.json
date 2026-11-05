@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''), '')",
+      "expected_exception": "TypeError",
+      "actual_python": "''"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "5f21e520cea27393bab53a08eeb8a23183d4151ae2806605f3b26f8e89b677ff"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-constant-47-0-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v005]",
+      "case": "v005",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('Ab', 'ab')",
+      "expected_python": "''",
+      "actual_python": "'Ab'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "d577981c4693596dc9ed9c9651e9437f8a3997724db0f529c39dbb069a984a60"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-omit-last-return-item-49",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('abc', 'abc')",
+      "expected_python": "'abc'",
+      "actual_python": "'ab'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "5693706aae21d89760e2d3a030b073062d1d7be08051dfdec3268b745c424f60"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('', '')",
+      "expected_python": "''",
+      "actual_python": "''"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "d50277d1a975c1399ca707cf84e8100060dfc9fd29469b891e6653558340f5b9"
+  }
+]

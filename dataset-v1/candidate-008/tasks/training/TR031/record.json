@@ -1,0 +1,35 @@
+{
+  "id": "TR031",
+  "split": "training",
+  "family": "multiset-intersection",
+  "function": "multiset_intersection",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "ints",
+    "ints"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "35be1549f44f9ba8207773b3a33f306ba4818194446961b16ba87b5a3d9bb8f0",
+  "target_sha256": "f0bdd5616f36ebc96f85f8950202a5d28daa6359a7a26116cf838daaaf0e0189",
+  "spec_sha256": "fedc6af2d4a40ede736642193d0cec0cfedbc890a07b37d9312b24a639fe5423",
+  "answer_sha256": "5d1b01ba6fd9d5fd8a5c2df337d5c8f82079074f4ea515fafa5fa315926d5d21",
+  "valid_test_cases": 7,
+  "exception_test_cases": 18,
+  "type_before_value_witnesses": 0,
+  "oracle_checks": 7,
+  "designated_mutants": 8,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

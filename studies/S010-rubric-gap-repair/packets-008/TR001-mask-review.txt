@@ -1,0 +1,86 @@
+MASKED PREFIX:
+<|im_start|>system
+Write executable pytest tests for the supplied contract. Use complete explicit argument tuples. Keep normal-return cases separate from expected-exception cases. Check expected results against concrete arguments. Follow the explicit coverage expectations; do not invent identity, nesting or bounds requirements. Distinguish inspection from execution and do not claim execution.<|im_end|>
+<|im_start|>user
+Function contract: batches(items, capacity).
+
+- items: exact built-in int; reject bool and int subclasses.
+
+- capacity: exact built-in int; reject bool and int subclasses.
+
+Reject invalid specified types with TypeError before shape/value checks.
+
+items >= 0 and capacity > 0. Return the minimum number of capacity-sized batches needed; zero items needs zero. Invalid values raise ValueError.
+
+Return type: exact built-in int.
+
+Coverage expectations: include normal cases for zero-items, partial-batch, exact-capacity, remainder, unit-capacity, large-integer. Test each input position and each stated nested type level with an ordinary wrong type and a subclass; reject bool wherever exact int is required, holding other inputs valid. Exercise stated invalid domain/shape/bounds rules and mixed-invalid witnesses for the stated validation order. Check exact returned types at the stated levels.
+
+Write one complete pytest file importing 'from subject import batches'. Do not implement, replace, mock or inspect the function. Use only pytest and the standard library. Use complete explicit argument tuples. Return one Python code block, then a brief requirement-to-input mapping and finite-coverage limitations. Do not claim execution.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+
+SUPERVISED:
+```python
+import pytest
+from subject import batches
+
+class IntChild(int): pass
+
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual) == len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+
+@pytest.mark.parametrize("args,expected", [
+    pytest.param((0, 3), 0, id="v000"),
+    pytest.param((1, 3), 1, id="v001"),
+    pytest.param((3, 3), 1, id="v002"),
+    pytest.param((4, 3), 2, id="v003"),
+    pytest.param((7, 1), 7, id="v004"),
+    pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+])
+def test_values(args,expected):
+    actual=batches(*args)
+    assert actual == expected
+    assert_exact_shape(actual,expected)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((True, 3), id="e000"),
+    pytest.param((IntChild(0), 3), id="e001"),
+    pytest.param((1.5, 3), id="e002"),
+    pytest.param(('bad', 3), id="e003"),
+    pytest.param((None, 3), id="e004"),
+    pytest.param((0, True), id="e005"),
+    pytest.param((0, IntChild(3)), id="e006"),
+    pytest.param((0, 1.5), id="e007"),
+    pytest.param((0, 'bad'), id="e008"),
+    pytest.param((0, None), id="e009"),
+    pytest.param(('bad', 0), id="e013"),
+    pytest.param((-1, 'bad'), id="e014"),
+    pytest.param((IntChild(-1), 3), id="e015"),
+    pytest.param((-1, IntChild(3)), id="e016"),
+    pytest.param((IntChild(2), 0), id="e017"),
+    pytest.param((2, IntChild(0)), id="e018"),
+    pytest.param((IntChild(2), -1), id="e019"),
+    pytest.param((2, IntChild(-1)), id="e020"),
+])
+def test_raises_typeerror(args):
+    with pytest.raises(TypeError):
+        batches(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((-1, 3), id="e010"),
+    pytest.param((2, 0), id="e011"),
+    pytest.param((2, -1), id="e012"),
+])
+def test_raises_valueerror(args):
+    with pytest.raises(ValueError):
+        batches(*args)
+```
+
+Return cases: zero-items=v000; partial-batch=v001; exact-capacity=v002; remainder=v003; unit-capacity=v004; large-integer=v005. Validation cases: TypeError=e000,e001,e002,e003,e004,e005,e006,e007,e008,e009,e013,e014,e015,e016,e017,e018,e019,e020; ValueError=e010,e011,e012. Exact returned types are checked recursively where specified. These finite witnesses do not prove exhaustive correctness. No execution is claimed.<|im_end|>
