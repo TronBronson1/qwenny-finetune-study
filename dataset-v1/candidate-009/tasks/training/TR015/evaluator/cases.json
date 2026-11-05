@@ -1,0 +1,75 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('   ',)",
+    "expected_python": "''",
+    "after_python": "('   ',)",
+    "category": "whitespace-only"
+  },
+  {
+    "id": "v002",
+    "args_python": "('one',)",
+    "expected_python": "'one'",
+    "after_python": "('one',)",
+    "category": "one-word"
+  },
+  {
+    "id": "v003",
+    "args_python": "('one two three',)",
+    "expected_python": "'three two one'",
+    "after_python": "('one two three',)",
+    "category": "reverse-order"
+  },
+  {
+    "id": "v004",
+    "args_python": "(' a\\tb\\nc ',)",
+    "expected_python": "'c b a'",
+    "after_python": "(' a\\tb\\nc ',)",
+    "category": "mixed-whitespace"
+  },
+  {
+    "id": "v005",
+    "args_python": "('é\\u2003字',)",
+    "expected_python": "'字 é'",
+    "after_python": "('é\\u2003字',)",
+    "category": "unicode-whitespace"
+  },
+  {
+    "id": "v006",
+    "args_python": "('١  ｅ',)",
+    "expected_python": "'ｅ ١'",
+    "after_python": "('١  ｅ',)",
+    "category": "unicode-word-content"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

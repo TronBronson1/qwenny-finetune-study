@@ -1,0 +1,33 @@
+{
+  "id": "DV006",
+  "split": "development",
+  "family": "keypad-encode",
+  "function": "keypad_encode",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "text"
+  ],
+  "schemas": [
+    "str"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "2858c23fa14c7e2f8d6166ed41b949da02230a2da0f3c6525c3a140275fb1687",
+  "target_sha256": "8498745e58f662f771ab3125f5cf742ec601f1d4c2d0326fb452f41cbe6c951a",
+  "spec_sha256": "9e3449bc92a5b4b217cadeb41dca5e40e85a0df3fd2e105f8479d291ce514fe8",
+  "answer_sha256": "4ff6863942a2aea0b00886c6b2698da9d821a651a901e6029b4aefbb7477a09f",
+  "valid_test_cases": 6,
+  "exception_test_cases": 13,
+  "type_before_value_witnesses": 4,
+  "oracle_checks": 6,
+  "designated_mutants": 6,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "DV004",
+  "split": "development",
+  "family": "xor-checksum",
+  "function": "xor_checksum",
+  "revision": 4,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values"
+  ],
+  "schemas": [
+    "ints"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Candidate-008 plus S011 error-path preservation (prompt sentence, gold assertion, promoted audit mutants).",
+  "previously_exposed_family": false,
+  "source_sha256": "52d9f65d89ea8e7172fa9b84ebebfff91a6163b37b8425ab836619a1b32bdaa0",
+  "target_sha256": "ef45e615355b7c5d9165f6dc510a17e5a4c9318c8b827519cbcf0f803ba932e3",
+  "spec_sha256": "42bac042dd37ab56e22cf9bb28c87afddc0fbebb2d12a9b9a2269f95b8ccf74b",
+  "answer_sha256": "cde037550751d61bf7087898600405baa87abf6ebdf68ed8ed94a6150fbb0b9a",
+  "valid_test_cases": 6,
+  "exception_test_cases": 14,
+  "type_before_value_witnesses": 2,
+  "oracle_checks": 6,
+  "designated_mutants": 9,
+  "pytest_validation": "pending S011 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-008"
+}

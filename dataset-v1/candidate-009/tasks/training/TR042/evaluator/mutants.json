@@ -1,0 +1,100 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild('0.0.0'),)",
+      "expected_exception": "TypeError",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "818f2c26f8bc8bdd9f92406d52220ffc055df9ba8dfeaf232f0f949415441470"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-omit-last-return-item-49",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "fc2662b40b711f9010a731aa5cdd9ddbb703dec4bfbae3a3998b72c748cb94de"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-missing-return-49",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "None"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "4c611146a4db38d1301eae0b5bb33a215c9cf3aeba9f9d4c569287acf74e14ef"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "6f1b32e687874fbadece4c31f8a594d5d5ffa4964d5837cc23111f576d90cea1"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "1886b023a324a77829726b7720fea62d8f0969cd42b2d939e978612b28b1b351"
+  },
+  {
+    "id": "R03",
+    "requirement": "ascii-digit-boundary",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e008]",
+      "case": "e008",
+      "kind": "required-exception-not-raised",
+      "args_python": "('1.2.٣',)",
+      "expected_exception": "ValueError",
+      "actual_python": "(1, 2, 3)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "f0d3f80af1db3fae1578ef1edf13ec8c6c3d18f7af7343d70b22c322a140cda7"
+  },
+  {
+    "id": "R04",
+    "requirement": "ascii: ASCII-only rule: '[0-9]' -> '\\d'",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e013]",
+      "case": "e013",
+      "kind": "required-exception-not-raised",
+      "args_python": "('1٠.0.0',)",
+      "expected_exception": "ValueError",
+      "actual_python": "(10, 0, 0)"
+    },
+    "provenance": "S010 promotion of independent-audit mutant A-predicate-4 (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "619e457c65a2787d580314409d0ca5d878e84a2b39879c2a302a6e9782b361bb"
+  }
+]

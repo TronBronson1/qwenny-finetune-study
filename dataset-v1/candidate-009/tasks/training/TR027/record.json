@@ -1,0 +1,33 @@
+{
+  "id": "TR027",
+  "split": "training",
+  "family": "pairwise-differences",
+  "function": "pairwise_differences",
+  "revision": 4,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values"
+  ],
+  "schemas": [
+    "ints"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Candidate-008 plus S011 error-path preservation (prompt sentence, gold assertion, promoted audit mutants).",
+  "previously_exposed_family": false,
+  "source_sha256": "ac4597653f646985bd202a3becf8166e105fe601965174817a0c7bab56819dd1",
+  "target_sha256": "1488747e1f931649e6796313bfedddd2731d9300d96300e57bf2d5fd27740ff2",
+  "spec_sha256": "b5e4f588ae3d16c215daae262726547ede04ef05c408cdd39e8f09ccb2b0b462",
+  "answer_sha256": "7020aa2bdaa08e9209453bfdd5e8cffb6c3783b2a5578187232369272a4dfb09",
+  "valid_test_cases": 5,
+  "exception_test_cases": 9,
+  "type_before_value_witnesses": 0,
+  "oracle_checks": 5,
+  "designated_mutants": 9,
+  "pytest_validation": "pending S011 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-008"
+}

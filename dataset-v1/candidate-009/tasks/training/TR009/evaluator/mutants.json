@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(True, 0)",
+      "expected_exception": "TypeError",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "10f82133b73e05a7b00cc2ae448219cc9811471c95fd550c75f9292a28fbee49"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-call-47-abs-to-int",
+    "witness": {
+      "node": "test_target.py::test_values[v005]",
+      "case": "v005",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(18, -12)",
+      "expected_python": "6",
+      "actual_python": "-6"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "c5747026859fc416792c66efeb60789d4a59c069a4e92c1920cb398b6f1219f2"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-offset-return-49",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0, 0)",
+      "expected_python": "0",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "89a5a9a3a4a761f4405f98d1c343c0b69a493ed9ce3f7ac3458442010b0f747e"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0, 0)",
+      "expected_python": "0",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "0f1227e17484062a562e4273680f262892a68198d8c556d2928d96a392f5b1f9"
+  }
+]

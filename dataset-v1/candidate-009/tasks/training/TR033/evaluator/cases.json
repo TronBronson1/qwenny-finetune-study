@@ -1,0 +1,182 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([1], 0)",
+    "expected_python": "[]",
+    "after_python": "([1], 0)",
+    "category": "only-item"
+  },
+  {
+    "id": "v001",
+    "args_python": "([1, 2, 3], 0)",
+    "expected_python": "[2, 3]",
+    "after_python": "([1, 2, 3], 0)",
+    "category": "first"
+  },
+  {
+    "id": "v002",
+    "args_python": "([1, 2, 3], 1)",
+    "expected_python": "[1, 3]",
+    "after_python": "([1, 2, 3], 1)",
+    "category": "middle"
+  },
+  {
+    "id": "v003",
+    "args_python": "([1, 2, 3], 2)",
+    "expected_python": "[1, 2]",
+    "after_python": "([1, 2, 3], 2)",
+    "category": "last"
+  },
+  {
+    "id": "v004",
+    "args_python": "([2, 2], 1)",
+    "expected_python": "[2]",
+    "after_python": "([2, 2], 1)",
+    "category": "duplicates"
+  },
+  {
+    "id": "v005",
+    "args_python": "([4, 2], 0)",
+    "expected_python": "[2]",
+    "after_python": "([4, 2], 0)",
+    "category": "unsorted-values"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([1]), 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e001",
+    "args_python": "([True], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e002",
+    "args_python": "([IntChild(1)], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e003",
+    "args_python": "((), 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e005",
+    "args_python": "(['x'], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e006",
+    "args_python": "([1.5], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e007",
+    "args_python": "([-1.5], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e008",
+    "args_python": "([None], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e009",
+    "args_python": "([1], True)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e010",
+    "args_python": "([1], IntChild(0))",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e011",
+    "args_python": "([1], 1.5)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e012",
+    "args_python": "([1], 'bad')",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e013",
+    "args_python": "([1], None)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e014",
+    "args_python": "([], 0)",
+    "exception": "IndexError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e015",
+    "args_python": "([1], -1)",
+    "exception": "IndexError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e016",
+    "args_python": "([1], 1)",
+    "exception": "IndexError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e017",
+    "args_python": "(ListChild([]), 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e018",
+    "args_python": "([], IntChild(0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e019",
+    "args_python": "(ListChild([1]), -1)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e020",
+    "args_python": "([1], IntChild(-1))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e021",
+    "args_python": "(ListChild([1]), 1)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e022",
+    "args_python": "([1], IntChild(1))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

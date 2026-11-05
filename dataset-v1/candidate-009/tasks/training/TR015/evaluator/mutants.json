@@ -1,0 +1,86 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "''"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "da3c527abfc509123b3a0f4efa0e543dae9805e62c1f1721c48a794f00a7fb9c"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-literal-47-suffix",
+    "witness": {
+      "node": "test_target.py::test_values[v003]",
+      "case": "v003",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('one two three',)",
+      "expected_python": "'three two one'",
+      "actual_python": "'three xtwo xone'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "0ecb41937c3c3240b952e9af976fbe115a845a35c2b642793ff63d14e830e64f"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-omit-last-return-item-47",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('one',)",
+      "expected_python": "'one'",
+      "actual_python": "'on'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "45ab432a195a254c2687a2edec3c976c0d41b806eba19765cc1b229aa27f6033"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "''",
+      "actual_python": "''"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "a0c034d3366248cbc44c4f907ea9c52ce39bd13f8ce143f79d8c46e3e19c9780"
+  },
+  {
+    "id": "R02",
+    "requirement": "ascii: ASCII-only rule: unicode-decimal-digits",
+    "witness": {
+      "node": "test_target.py::test_values[v006]",
+      "case": "v006",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('١  ｅ',)",
+      "expected_python": "'ｅ ١'",
+      "actual_python": "'ｅ 1'"
+    },
+    "provenance": "S010 promotion of independent-audit mutant A-unicode-decimal-digits (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "4c283238d8142b87aa5e5426dab32b4a4cfdced584afc5e63f38e3b4f51eb428"
+  },
+  {
+    "id": "R03",
+    "requirement": "ascii: ASCII-only rule: nfkc-normalize",
+    "witness": {
+      "node": "test_target.py::test_values[v006]",
+      "case": "v006",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('١  ｅ',)",
+      "expected_python": "'ｅ ١'",
+      "actual_python": "'e ١'"
+    },
+    "provenance": "S010 promotion of independent-audit mutant A-nfkc-normalize (independent-review/c007-rubric-audit); survived candidate-007 gold; finite witness validated against unchanged reference",
+    "source_sha256": "4d247b4d206ca08f4184dd6f5335ebd4f32c3282eae3bef287cc25ad458b52de"
+  }
+]
