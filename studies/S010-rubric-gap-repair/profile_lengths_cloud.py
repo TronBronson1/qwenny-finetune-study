@@ -50,6 +50,18 @@ def main():
                   total_chat_tokens_007=sum(r["complete_chat_tokens"] for r in again),
                   total_chat_tokens_008=sum(r["complete_chat_tokens"] for r in rows),
                   rows=[r | dict(delta_vs_007=r["complete_chat_tokens"] - by7[r["id"]]["complete_chat_tokens"]) for r in rows])
+    overlay = HERE / "tr058-fit-overlay"
+    if (overlay / "messages.json").exists():
+        import hashlib
+        check = json.loads((overlay / "validation.json").read_text(encoding="utf-8"))
+        assert hashlib.sha256((overlay / "messages.json").read_bytes()).hexdigest() == check["messages_sha256"]
+        messages = json.loads((overlay / "messages.json").read_text(encoding="utf-8"))
+        text = tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=False, enable_thinking=False)
+        tokens = len(tok(text, add_special_tokens=False)["input_ids"])
+        others = [r["complete_chat_tokens"] for r in rows if r["id"] != "TR058"]
+        report["tr058_fit_overlay"] = dict(messages_sha256=check["messages_sha256"], chat_tokens=tokens,
+                                           original_chat_tokens=next(r["complete_chat_tokens"] for r in rows if r["id"] == "TR058"),
+                                           within_2048=tokens <= 2048, maximum_full_training_chat_with_overlay=max(others + [tokens]))
     (out / "token-profile-008.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in report.items() if k != "rows"}, indent=2))
     print("PROFILE_JSON:" + json.dumps(report, separators=(",", ":")))
