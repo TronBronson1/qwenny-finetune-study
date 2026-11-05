@@ -24,9 +24,10 @@ This file does not supersede `program/CURRENT_STATE.md`. Whoever merges these PR
 | [1](https://github.com/TronBronson1/qwenny-finetune-study/pull/1) | Independent audit: candidate-007 rubric mutants | `claude/c007-rubric-audit` | `main` | `independent-review/c007-rubric-audit/REPORT.md` |
 | [4](https://github.com/TronBronson1/qwenny-finetune-study/pull/4) | Draft candidate-008: repair rubric gaps from the c007 audit | `claude/candidate-008` | **#1's branch** (stacked) | `studies/S010-rubric-gap-repair/RESULTS.md` |
 | [2](https://github.com/TronBronson1/qwenny-finetune-study/pull/2) | Independent analysis: S009 slowdown forensics | `claude/s009-slowdown` | `main` | `independent-review/s009-slowdown/REPORT.md` |
-| [3](https://github.com/TronBronson1/qwenny-finetune-study/pull/3) | Independent analysis: power of the final adoption rule | `claude/power-sim` | `main` | `independent-review/power-sim/REPORT.md` |
+| [3](https://github.com/TronBronson1/qwenny-finetune-study/pull/3) | Independent analysis: power of the final adoption rule | `claude/power-sim` | `main` | `independent-review/power-sim/REPORT.md`, then `PREREGISTRATION_PROPOSAL.md` |
+| [6](https://github.com/TronBronson1/qwenny-finetune-study/pull/6) | Proposal: candidate-009 error-path input preservation (S011) | `claude/candidate-009` | **#4's branch** (stacked) | `studies/S011-error-path-preservation/RESULTS.md` |
 
-**Merge order:** #1 before #4. #2 and #3 are independent. The PRs add separate folders and do not conflict with each other.
+**Merge order:** #1, then #4, then #6 (only if you approve candidate-009). #2 and #3 are independent. The PRs add separate folders and do not conflict with each other.
 
 ## 1. Candidate-007 rubric audit (PR #1)
 
@@ -117,14 +118,38 @@ python studies/S010-rubric-gap-repair/validate_candidate_008.py --out studies/S0
 
 Decide this **before** any held-out evaluation, and record it as a change to `01_EXPERIMENT_PLAN.md`'s provisional rule.
 
+## 5. Later in the same session
+
+- **TR058 fit overlay for candidate-008 (S010).**
+  - The overlay is presentation-only: AST equal to the gold, identical per-case results for the reference and all 8 mutants.
+  - The pinned tokenizer measures **2,918 → 1,919 tokens**, so every candidate-008 training chat now fits within 2,048 (maximum 2,021, TR049).
+  - Record: `studies/S010-rubric-gap-repair/TRAINING_FIT_OVERLAY.json`. It is not an export.
+- **S009 diagnostic, ready to run (PR #2).**
+  - `independent-review/s009-slowdown/diagnostic/` implements the frozen C0a, C1–C5, C0b protocol: per-condition child processes, all-process Windows GPU counters with a startup gate, a stall watchdog and an 1,800 s ceiling. `summarize.py` applies the frozen verdict.
+  - The CPU dry run was rehearsed in the cloud; the GPU path has **not** run. On the PC, start with the dry run:
+
+    ```bash
+    python independent-review/s009-slowdown/diagnostic/run_diagnostic.py --dry-run --ceiling 60 --idle 1
+    ```
+
+- **Adoption-rule pre-registration (PR #3).**
+  - `PREREGISTRATION_PROPOSAL.md` contains amendment text for the plan; it needs approval **before** any held-out or regression generation.
+  - `decide.py` computes the decision from a CSV of outcomes. It uses an exact sign-flip p-value, and its self-test checks that p-value against brute-force enumeration.
+- **Candidate-009 proposal (PR #6, S011)** closes N7:
+  - **Instruction:** one coverage sentence changes in the 19 mutable-input tasks: "Compare inputs before and after every call, including calls that raise."
+  - **Gold and mutants:** every exception test now checks its inputs, and 19 audit mutants are promoted.
+  - **Validation:** 482/482 mutants rejected on Windows with Python 3.15.2, and the audit rerun leaves **0 of 973** confirmed mutants surviving.
+  - **Size:** 64,319 tokens in total; the TR058 overlay is 1,967 tokens.
+  - **Approval:** it needs approval of the new sentence and of the hash `fa1c0e581a1076775cfcc9e775b18f2805dd7459cf5d7f9dadeaa6ba44dfff64`. The candidate-008 approval does not transfer.
+
 ## Open decisions and next steps (in suggested order)
 
 1. Review and merge PRs #1 → #4, #2 and #3, or close any you reject. Then update `program/CURRENT_STATE.md` and `START_HERE.md`.
-2. Decide how to handle TR058's 2,918-token chat for any training run with candidate-008. S009 used a certified fit overlay for it.
+2. Decide whether to approve candidate-009 (new sentence + hash) or keep candidate-008. Either way, use that candidate's validated TR058 fit overlay for training packets.
 3. Decide whether candidate-008 becomes the current candidate and gets a training export. Both need an explicit new statement from the user.
 4. Decide N7: revise the coverage-expectation wording, then the gold, in a separately declared study.
 5. On the PC, run S009 forensics with `--run-dir`, then the frozen local diagnostic protocol, before any new paired training attempt.
-6. Freeze the adoption-rule aggregation before held-out evaluation.
+6. Approve, or edit and then approve, `independent-review/power-sim/PREREGISTRATION_PROPOSAL.md` before held-out evaluation.
 
 ## Environment notes
 
