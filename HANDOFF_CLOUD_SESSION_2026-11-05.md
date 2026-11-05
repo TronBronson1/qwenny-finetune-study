@@ -150,6 +150,7 @@ Decide this **before** any held-out evaluation, and record it as a change to `01
   - Built in GitHub Actions after first regenerating S009's committed baseline packets byte-for-byte.
   - Maximum training row 1,919 tokens (TR058 overlay), exact answer-only masks.
   - **Not authorized for training.** That needs your explicit authorization naming `messages_jsonl_sha256` `b3aa1c91…` and `train_jsonl_sha256` `dd2eb1a0…` (`packets-008/report.json`). The maximum example is 39 tokens longer than S009's, so repeat the GPU maximum-example preflight.
+- **Staged candidate-009 token packets** (`studies/S011-error-path-preservation/packets-009/`): same gates as the 008 packets. Maximum training row 1,967 tokens. Hashes: messages `92c4a9c0…`, train `6b78f1cb…`. Not approved, not authorized.
 - **Independent read-through review** of the 60 new candidate-008 cases (`independent-review/case-review-008-009/` on the candidate-009 branch):
   - None contradicts its contract.
   - One is a weak witness (TR030 e013), which stays in the frozen 008 and is fixed in 009.
