@@ -49,3 +49,9 @@ These use the same script and gates as S010's candidate-008 packets, against the
 Hashes: `messages_jsonl_sha256` `92c4a9c0…`, `train_jsonl_sha256` `6b78f1cb…` (full values in `packets-009/report.json`).
 
 The packets are **not approved and not authorized for training**. Candidate-009 itself still needs user approval. The maximum example is 87 tokens longer than S009's 1,880-token preflight example, so repeat the GPU maximum-example preflight.
+
+## User approval
+
+On November 5, 2026, the user approved candidate-009: the S011 wording changes, including amendment 1, and hash `a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb`. The record is `dataset-v1/USER_REVIEW_2026-11-05-candidate-009.json`.
+
+The approval does **not** select candidate-009 as current, does not authorize the staged packets or any training, and does not approve the adoption-rule pre-registration. `packets-009/report.json` still says "candidate-not-approved", because it was written before the approval; that file is hashed evidence and is left unchanged.
