@@ -77,7 +77,7 @@ def development(tok, encode_answer, candidate):
         ident = request["id"]; assert re.fullmatch(r"DV\d{3}", ident)
         target = (candidate / "tasks/development" / ident / "TARGET.md").read_text(encoding="utf-8")
         if ident == "DV008":
-            escaped = target.replace("́", r"́")
+            escaped = target.replace(chr(0x301), "\\u" + "0301")  # literal backslash-u0301, as in S009
             assert ast.dump(ast.parse(code(target))) == ast.dump(ast.parse(code(escaped)))
             target = escaped
         for view in ("A", "B"):
