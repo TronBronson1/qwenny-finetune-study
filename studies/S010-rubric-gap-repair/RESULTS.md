@@ -49,7 +49,7 @@ Profile with the pinned tokenizer before training.
 ## Remaining gates before any training use
 
 1. ~~Validate on Windows Python 3.15 / pytest 9.2.~~ Done in the cloud: passed on a GitHub Windows runner with Python 3.15.2 and pytest 9.2.0 (see below). An optional rerun on the user's own PC would record that exact machine.
-2. ~~Profile token lengths with the pinned tokenizer.~~ Done in the cloud (see below). TR058 still needs the same handling as in S009.
+2. ~~Profile token lengths with the pinned tokenizer.~~ Done in the cloud (see below). TR058 now has a validated fit overlay at 1,919 tokens (see below).
 3. ~~Review the new cases and labels.~~ Done: the user reviewed them on November 5, 2026 (`dataset-v1/USER_REVIEW_2026-11-05.json`).
 4. ~~Obtain explicit corpus approval for the new hash.~~ Done: the user approved `b65935295c94814fc7744f70feac49aedf809847a629961ae9bfbc75f72e18f4` (candidate-008 `SHA256.json`) in the same record. That approval does not select candidate-008 as current, export it or authorize a training run.
 5. Decide separately whether to revise prompts for N7.
@@ -67,3 +67,11 @@ The workflow is `.github/workflows/s010-cloud-gates.yml`. Its job logs are saved
 | Candidate-008 token profile | Total 62,428 → **63,871** (+1,443, +2.3 %). Maximum **2,918** (TR058, +66); **TR058 is the only chat over 2,048**, as in 007. The next longest is TR049 at 2,021, unchanged. The largest increases are TR014 +175, TR030 +118, TR042 +106, TR044 +104, TR050 +103 and TR041 +98. File: `ci-run-41957973433/token-profile-008.json`. |
 
 The offline estimate above (63,486 total, maximum ≈2,906) is superseded by these measured values.
+
+## TR058 fit overlay (same method as S007 length-preview-002)
+
+`build_tr058_overlay.py` writes `tr058-fit-overlay/`, a presentation-only version of the candidate-008 TR058 answer: pytest display ids removed, whitespace compacted, prose shortened.
+
+- **Same tests:** the executable AST equals the candidate-008 gold, ignoring only display ids. Per-test-case results are identical for the reference and all 8 designated mutants.
+- **Measured fit:** the pinned tokenizer measured it in Actions run [41958509654](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41958509654): **2,918 → 1,919 tokens**. With the overlay, the longest full training chat is **2,021 (TR049)**, so all 60 fit within 2,048. That run also repeated the Windows validation: passed again on Python 3.15.2.
+- **Record:** `TRAINING_FIT_OVERLAY.json`. Candidate-008 files are unchanged. The overlay is not an export, and training still needs explicit export authorization, mask/decode checks and a maximum-example forward/backward check, as in S009.
