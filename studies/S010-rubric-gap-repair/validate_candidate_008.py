@@ -7,6 +7,7 @@ every designated mutant must fail with its declared witness node among the failu
 Isolated temp dirs, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, -p no:cacheprovider, per-run timeout.
 Writes validation-001/summary.json. Candidate files are verified against SHA256.json first.
 """
+import argparse
 import concurrent.futures as futures
 import hashlib, json, os, pathlib, platform, shutil, subprocess, sys, tempfile, time
 import xml.etree.ElementTree as ET
@@ -14,7 +15,7 @@ import xml.etree.ElementTree as ET
 HERE = pathlib.Path(__file__).resolve().parent
 EXP = HERE.parents[1]
 C8 = EXP / "dataset-v1" / "candidate-008"
-OUT = HERE / "validation-001"
+OUT = HERE / "validation-001"  # default; override with --out
 TIMEOUT = 120
 
 
@@ -23,17 +24,17 @@ def sha(p):
 
 
 def run(test_file, subject_file):
-    with tempfile.TemporaryDirectory(prefix="s010-") as tmp:
+    with tempfile.TemporaryDirectory(prefix="s010-", ignore_cleanup_errors=True) as tmp:
         tmp = pathlib.Path(tmp)
         shutil.copy(test_file, tmp / "test_target.py"); shutil.copy(subject_file, tmp / "subject.py")
         (tmp / "pytest.ini").write_text("[pytest]\n")
         env = {k: v for k, v in os.environ.items() if not k.startswith("PYTEST")}
-        env.update(PYTEST_DISABLE_PLUGIN_AUTOLOAD="1", PYTHONDONTWRITEBYTECODE="1", PYTHONHASHSEED="0")
+        env.update(PYTEST_DISABLE_PLUGIN_AUTOLOAD="1", PYTHONDONTWRITEBYTECODE="1", PYTHONHASHSEED="0", PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
         cmd = [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider", "-c", str(tmp / "pytest.ini"), "--rootdir", str(tmp),
                "--junitxml", str(tmp / "junit.xml"), "test_target.py"]
         start = time.monotonic()
         try:
-            proc = subprocess.run(cmd, cwd=tmp, env=env, capture_output=True, text=True, timeout=TIMEOUT)
+            proc = subprocess.run(cmd, cwd=tmp, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=TIMEOUT)
         except subprocess.TimeoutExpired:
             return dict(exit_code=None, timeout=True, seconds=round(time.monotonic() - start, 2))
         out = dict(exit_code=proc.returncode, timeout=False, seconds=round(time.monotonic() - start, 2))
@@ -45,6 +46,13 @@ def run(test_file, subject_file):
 
 
 def main():
+    global OUT
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", help="output directory (default: validation-001 next to this script)")
+    parser.add_argument("--note", default="Linux validation; established Python 3.15 / pytest 9.2 Windows validation remains required before training use.")
+    cli = parser.parse_args()
+    if cli.out:
+        OUT = pathlib.Path(cli.out)
     digests = json.loads((C8 / "SHA256.json").read_text(encoding="utf-8"))
     bad = [name for name, digest in digests.items() if sha(C8 / name) != digest]
     assert not bad, f"candidate-008 files changed since build: {bad[:5]}"
@@ -78,10 +86,11 @@ def main():
                    runtime=f"{platform.python_version()} / pytest {pytest.__version__} / {platform.platform()}",
                    reference_suites=len(refs), reference_cases=sum(r.get("tests", 0) for r in refs),
                    designated_mutants=len(results) - len(refs), failures=failures, results=results,
-                   note="Linux validation; established Python 3.15 / pytest 9.2 Windows validation remains required before training use.")
-    OUT.mkdir(exist_ok=True)
+                   note=cli.note)
+    OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: summary[k] for k in ("status", "reference_suites", "reference_cases", "designated_mutants")} | {"failures": failures[:10]}, indent=2))
+    sys.exit(1 if failures else 0)
 
 
 if __name__ == "__main__":
