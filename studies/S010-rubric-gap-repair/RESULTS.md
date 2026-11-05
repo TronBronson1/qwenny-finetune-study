@@ -50,8 +50,8 @@ Profile with the pinned tokenizer before training.
 
 1. Validate on the established Windows Python 3.15 / pytest 9.2 runtime. This run used Linux, Python 3.13.18 and pytest 9.2.0.
 2. Profile token lengths with the pinned tokenizer, and handle TR058 as was done for S009.
-3. Review the new cases and labels: same-agent authoring plus one independent-audit pass is not independent semantic review.
-4. Obtain explicit corpus approval for the new hash `b65935295c94814fc7744f70feac49aedf809847a629961ae9bfbc75f72e18f4` (candidate-008 `SHA256.json`). Nothing is inherited from earlier approvals.
+3. ~~Review the new cases and labels.~~ Done: the user reviewed them on November 5, 2026 (`dataset-v1/USER_REVIEW_2026-11-05.json`).
+4. ~~Obtain explicit corpus approval for the new hash.~~ Done: the user approved `b65935295c94814fc7744f70feac49aedf809847a629961ae9bfbc75f72e18f4` (candidate-008 `SHA256.json`) in the same record. That approval does not select candidate-008 as current, export it or authorize a training run.
 5. Decide separately whether to revise prompts for N7.
 
 Note: the builder's docstring names `dataset-v1/candidate-007/build-sources/build_repair.py` as the reused source. The code actually loads `studies/S007-measurement-repair/build_repair.py`, because that copy's relative paths resolve correctly. The two files are byte-identical, so the docstring was left alone to keep the hashed candidate copy unchanged.
