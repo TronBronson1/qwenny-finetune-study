@@ -1,0 +1,190 @@
+{
+  "status": "completed",
+  "models": [
+    "base",
+    "epoch-5"
+  ],
+  "tasks": [
+    "DV001",
+    "DV002"
+  ],
+  "new_decoders": [
+    "greedy-0",
+    "sample-0"
+  ],
+  "reused_decoder": "sample-1.5 from qwenny-001-direct-001; same seed/prompt/runtime and unchanged weights",
+  "thinking": false,
+  "max_new_tokens": 2048,
+  "context": 16134,
+  "seed": 42,
+  "sample_temperature": 1.0,
+  "sample_top_k": 20,
+  "sample_top_p": 0.95,
+  "repetition_penalty": 1.0,
+  "training": "none",
+  "final_test": "never read",
+  "completed": [
+    {
+      "task": "DV001",
+      "variant": "base-greedy-0",
+      "decoder": "greedy-0",
+      "prompt_tokens": 370,
+      "generated_tokens": 685,
+      "seconds": 76.56200000000536,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793763962.0793545,
+        "allocated": 5879452672,
+        "reserved": 7985954816,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7985954816,
+        "cuda_free": 843661312,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-5-greedy-0",
+      "decoder": "greedy-0",
+      "prompt_tokens": 370,
+      "generated_tokens": 2048,
+      "seconds": 227.40600000001723,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793764189.49361,
+        "allocated": 5879463424,
+        "reserved": 7988051968,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7988051968,
+        "cuda_free": 1001734144,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV001",
+      "variant": "base-sample-0",
+      "decoder": "sample-0",
+      "prompt_tokens": 370,
+      "generated_tokens": 1375,
+      "seconds": 146.85899999999674,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793764336.357065,
+        "allocated": 5879458304,
+        "reserved": 7990149120,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7990149120,
+        "cuda_free": 1033060352,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-5-sample-0",
+      "decoder": "sample-0",
+      "prompt_tokens": 370,
+      "generated_tokens": 520,
+      "seconds": 57.96899999998277,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793764394.3469787,
+        "allocated": 5879451136,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 997539840,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-5-greedy-0",
+      "decoder": "greedy-0",
+      "prompt_tokens": 361,
+      "generated_tokens": 2048,
+      "seconds": 227.28200000000652,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793764621.639796,
+        "allocated": 5879463424,
+        "reserved": 7988051968,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 986398720,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "base-sample-0",
+      "decoder": "sample-0",
+      "prompt_tokens": 361,
+      "generated_tokens": 736,
+      "seconds": 79.0,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793764700.652371,
+        "allocated": 5879453184,
+        "reserved": 7990149120,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 999636992,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-5-sample-0",
+      "decoder": "sample-0",
+      "prompt_tokens": 361,
+      "generated_tokens": 931,
+      "seconds": 104.17200000002049,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793764804.8190093,
+        "allocated": 5879454720,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1030963200,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "base-greedy-0",
+      "decoder": "greedy-0",
+      "prompt_tokens": 361,
+      "generated_tokens": 2048,
+      "seconds": 216.78099999998813,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793765021.6109002,
+        "allocated": 5879463424,
+        "reserved": 7983857664,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1082966016,
+        "total": 10736893952
+      }
+    }
+  ],
+  "current_task": "DV002",
+  "current_variant": "base-greedy-0"
+}

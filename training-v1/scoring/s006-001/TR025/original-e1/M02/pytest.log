@@ -1,0 +1,102 @@
+.......FFFFFFF.......                                                    [100%]
+================================== FAILURES ===================================
+___________________ TestConsecutiveRuns.test_two_identical ____________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x000001DEFE62BD90>
+
+    def test_two_identical(self):
+>       assert run_length_encode(["a", "a"]) == [("a", 2)]
+E       AssertionError: assert [('a', 1), ('a', 1)] == [('a', 2)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 2)
+E         Left contains one more item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:39: AssertionError
+__________________ TestConsecutiveRuns.test_three_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x000001DEFE700190>
+
+    def test_three_identical(self):
+>       assert run_length_encode(["a", "a", "a"]) == [("a", 3)]
+E       AssertionError: assert [('a', 1), ('a', 1), ('a', 1)] == [('a', 3)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 3)
+E         Left contains 2 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:42: AssertionError
+___________________ TestConsecutiveRuns.test_four_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x000001DEFE6236F0>
+
+    def test_four_identical(self):
+>       assert run_length_encode(["a", "a", "a", "a"]) == [("a", 4)]
+E       AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 4)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 4)
+E         Left contains 3 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:45: AssertionError
+___________________ TestConsecutiveRuns.test_five_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x000001DEFE623A80>
+
+    def test_five_identical(self):
+>       assert run_length_encode(["a", "a", "a", "a", "a"]) == [("a", 5)]
+E       AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 5)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 5)
+E         Left contains 4 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:48: AssertionError
+______________ TestSeparatedRuns.test_single_run_then_different _______________
+
+self = <test_candidate.TestSeparatedRuns object at 0x000001DEFE7002D0>
+
+    def test_single_run_then_different(self):
+>       assert run_length_encode(["a", "b"]) == [("a", 1), ("b", 1)]
+E       AssertionError: assert [('b', 2)] == [('a', 1), ('b', 1)]
+E         
+E         At index 0 diff: ('b', 2) != ('a', 1)
+E         Right contains one more item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:53: AssertionError
+__________________ TestSeparatedRuns.test_two_runs_separated __________________
+
+self = <test_candidate.TestSeparatedRuns object at 0x000001DEFE700410>
+
+    def test_two_runs_separated(self):
+>       assert run_length_encode(["a", "b", "c"]) == [("a", 1), ("b", 1), ("c", 1)]
+E       AssertionError: assert [('c', 3)] == [('a', 1), ('b', 1), ('c', 1)]
+E         
+E         At index 0 diff: ('c', 3) != ('a', 1)
+E         Right contains 2 more items, first extra item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:56: AssertionError
+_________ TestSeparatedRuns.test_two_runs_separated_identical_strings _________
+
+self = <test_candidate.TestSeparatedRuns object at 0x000001DEFE623820>
+
+    def test_two_runs_separated_identical_strings(self):
+>       assert run_length_encode(["a", "b", "a"]) == [("a", 1), ("b", 1), ("a", 1)]
+E       AssertionError: assert [('a', 3)] == [('a', 1), ('b', 1), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 3) != ('a', 1)
+E         Right contains 2 more items, first extra item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:59: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestConsecutiveRuns::test_two_identical - Assertion...
+FAILED test_candidate.py::TestConsecutiveRuns::test_three_identical - Asserti...
+FAILED test_candidate.py::TestConsecutiveRuns::test_four_identical - Assertio...
+FAILED test_candidate.py::TestConsecutiveRuns::test_five_identical - Assertio...
+FAILED test_candidate.py::TestSeparatedRuns::test_single_run_then_different
+FAILED test_candidate.py::TestSeparatedRuns::test_two_runs_separated - Assert...
+FAILED test_candidate.py::TestSeparatedRuns::test_two_runs_separated_identical_strings
+7 failed, 14 passed in 0.61s

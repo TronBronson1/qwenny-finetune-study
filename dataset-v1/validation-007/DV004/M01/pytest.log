@@ -1,0 +1,124 @@
+......FFF..FF..                                                          [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:43: Failed
+_________________________ test_raises_typeerror[e001] _________________________
+
+args = ([True],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:43: Failed
+_________________________ test_raises_typeerror[e002] _________________________
+
+args = ([1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:43: Failed
+_________________________ test_raises_typeerror[e007] _________________________
+
+args = ([-1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           xor_checksum(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [-1]
+
+    def xor_checksum(values):
+        _types((values,), ('ints',))
+        if any((not 0 <= value <= 255 for value in values)):
+>           raise ValueError('byte')
+E           ValueError: byte
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = ([256],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           xor_checksum(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [256]
+
+    def xor_checksum(values):
+        _types((values,), ('ints',))
+        if any((not 0 <= value <= 255 for value in values)):
+>           raise ValueError('byte')
+E           ValueError: byte
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e001] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e002] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e007] - ValueError: byte
+FAILED test_target.py::test_raises_typeerror[e008] - ValueError: byte
+5 failed, 10 passed in 0.57s

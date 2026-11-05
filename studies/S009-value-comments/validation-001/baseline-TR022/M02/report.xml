@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="12" time="0.429" timestamp="2026-11-04T18:56:45.798884-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert '' == '&quot;&quot;'&#10;  &#10;  - &quot;&quot;">args = ('',), expected = '""'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+&gt;       assert actual == expected
+E       assert '' == '""'
+E         
+E         - ""
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert '&quot;abc&quot;' == 'abc'&#10;  &#10;  - abc&#10;  + &quot;abc&quot;&#10;  ? +   +">args = ('abc',), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+&gt;       assert actual == expected
+E       assert '"abc"' == 'abc'
+E         
+E         - abc
+E         + "abc"
+E         ? +   +
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert '&quot; a &quot;' == ' a '&#10;  &#10;  -  a &#10;  + &quot; a &quot;&#10;  ? +   +">args = (' a ',), expected = ' a '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+&gt;       assert actual == expected
+E       assert '" a "' == ' a '
+E         
+E         -  a 
+E         + " a "
+E         ? +   +
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="assert '&quot;é&quot;' == 'é'&#10;  &#10;  - é&#10;  + &quot;é&quot;">args = ('é',), expected = 'é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+&gt;       assert actual == expected
+E       assert '"é"' == 'é'
+E         
+E         - é
+E         + "é"
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,76 @@
+F.F.F......                                                              [100%]
+================================== FAILURES ===================================
+___________________________ test_values[args0-even] ___________________________
+
+args = (0,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+>       assert actual == expected
+E       AssertionError: assert 'evenx' == 'even'
+E         
+E         - even
+E         + evenx
+E         ?     +
+
+test_target.py:25: AssertionError
+___________________________ test_values[args2-even] ___________________________
+
+args = (2,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+>       assert actual == expected
+E       AssertionError: assert 'evenx' == 'even'
+E         
+E         - even
+E         + evenx
+E         ?     +
+
+test_target.py:25: AssertionError
+___________________________ test_values[args4-even] ___________________________
+
+args = (-2,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+>       assert actual == expected
+E       AssertionError: assert 'evenx' == 'even'
+E         
+E         - even
+E         + evenx
+E         ?     +
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-even] - AssertionError: assert 'even...
+FAILED test_target.py::test_values[args2-even] - AssertionError: assert 'even...
+FAILED test_target.py::test_values[args4-even] - AssertionError: assert 'even...
+3 failed, 8 passed in 0.31s

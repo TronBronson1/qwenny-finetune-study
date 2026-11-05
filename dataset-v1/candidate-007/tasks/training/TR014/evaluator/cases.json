@@ -1,0 +1,82 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('a',)",
+    "expected_python": "'a'",
+    "after_python": "('a',)",
+    "category": "unchanged"
+  },
+  {
+    "id": "v002",
+    "args_python": "('   ',)",
+    "expected_python": "' '",
+    "after_python": "('   ',)",
+    "category": "spaces-only"
+  },
+  {
+    "id": "v003",
+    "args_python": "(' a  b ',)",
+    "expected_python": "' a b '",
+    "after_python": "(' a  b ',)",
+    "category": "edges-and-run"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\t  b',)",
+    "expected_python": "'a\\t b'",
+    "after_python": "('a\\t  b',)",
+    "category": "preserve-tab"
+  },
+  {
+    "id": "v005",
+    "args_python": "('a\\n  b',)",
+    "expected_python": "'a\\n b'",
+    "after_python": "('a\\n  b',)",
+    "category": "preserve-lf"
+  },
+  {
+    "id": "v006",
+    "args_python": "('é  字',)",
+    "expected_python": "'é 字'",
+    "after_python": "('é  字',)",
+    "category": "unicode"
+  },
+  {
+    "id": "v007",
+    "args_python": "('a\\xa0 b',)",
+    "expected_python": "'a\\xa0 b'",
+    "after_python": "('a\\xa0 b',)",
+    "category": "preserve-nbsp"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

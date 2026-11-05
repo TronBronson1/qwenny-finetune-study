@@ -1,0 +1,86 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(TupleChild((0, 0, 0)), (0, 0, 0))",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "789dc33c1c2d81d8414c5e8113e20c3cab2af45394cad1fbfeeb9b128a3a5277"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-arithmetic-48-Add",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "((1, 2, 3), (1, 2, 4))",
+      "expected_python": "-1",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "60d9b5fbea2cb35e6599e2f96244b359f1cbc26b972c3be6c55d750d67f50f4b"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-48-GtE",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "((0, 0, 0), (0, 0, 0))",
+      "expected_python": "0",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "a96d481247e399b9d9e2289ae195e85319cecd747b23db7d1ea8e48e4aa605cf"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "((0, 0, 0), (0, 0, 0))",
+      "expected_python": "0",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "826b6c5aebd122a005703cda182a6e25070957c5f118985555c46e416467e3af"
+  },
+  {
+    "id": "R02",
+    "requirement": "ordinary-nested-int-rejection",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e006]",
+      "case": "e006",
+      "kind": "required-exception-not-raised",
+      "args_python": "((1.5, 0, 0), (0, 0, 0))",
+      "expected_exception": "TypeError",
+      "actual_python": "1"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "8b90d6e7591c93e463f3a9d8c1e932a7409635df33fbae6cd7e99dbeff71d4b1"
+  },
+  {
+    "id": "R03",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e048]",
+      "case": "e048",
+      "kind": "required-exception-wrong-class",
+      "args_python": "(TupleChild((1, -1, 0)), (1, 0, 0))",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "fe7338d8741984b485fdc4625605c385eb61d4bba464383a0acb27eb0f5362f0"
+  }
+]

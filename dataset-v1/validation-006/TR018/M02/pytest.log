@@ -1,0 +1,50 @@
+.....FF......                                                            [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v005] ______________________________
+
+args = ('ab',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('Ã©å­—Ã©',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:31: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('Aa',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('Ã©å­—Ã©',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v005] - assert True == False
+FAILED test_target.py::test_values[v006] - assert True == False
+2 failed, 11 passed in 0.61s

@@ -1,0 +1,260 @@
+FFFFFFFF.........                                                        [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (1,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (4,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (1900,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (2000,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (2023,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (2024,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (2100,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = (9999,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=leap_year(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v007] - AssertionError: assert <class 'int...
+8 failed, 9 passed in 0.62s

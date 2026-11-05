@@ -1,0 +1,109 @@
+FFFFF......................                                              [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('0,0',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert (0,) == (0, 0)
+E         
+E         Right contains one more item: 0
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('-0,1',), expected = (0, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert (0,) == (0, 1)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('-2,3',), expected = (-2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert (-2,) == (-2, 3)
+E         
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('999999999999,-1',), expected = (999999999999, -1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert (999999999999,) == (999999999999, -1)
+E         
+E         Right contains one more item: -1
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('-999999999999,999999999999',), expected = (-999999999999, 999999999999)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert (-999999999999,) == (-999999999999, 999999999999)
+E         
+E         Right contains one more item: 999999999999
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert (0,) == (0, 0)
+FAILED test_target.py::test_values[v001] - assert (0,) == (0, 1)
+FAILED test_target.py::test_values[v002] - assert (-2,) == (-2, 3)
+FAILED test_target.py::test_values[v003] - assert (999999999999,) == (9999999...
+FAILED test_target.py::test_values[v004] - assert (-999999999999,) == (-99999...
+5 failed, 22 passed in 0.65s

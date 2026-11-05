@@ -1,0 +1,102 @@
+[
+  {
+    "node": "test_candidate.py::test_noop",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "int",
+          "repr": "0"
+        },
+        {
+          "type": "int",
+          "repr": "0"
+        },
+        {
+          "type": "int",
+          "repr": "1"
+        },
+        {
+          "type": "int",
+          "repr": "1"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "int",
+        "repr": "0"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "int",
+              "repr": "0"
+            },
+            {
+              "type": "int",
+              "repr": "0"
+            },
+            {
+              "type": "int",
+              "repr": "1"
+            },
+            {
+              "type": "int",
+              "repr": "1"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "int",
+        "repr": "1"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "int",
+              "repr": "0"
+            },
+            {
+              "type": "int",
+              "repr": "0"
+            },
+            {
+              "type": "int",
+              "repr": "1"
+            },
+            {
+              "type": "int",
+              "repr": "1"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  }
+]

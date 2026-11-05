@@ -1,0 +1,260 @@
+......FF...FF...FFFF..                                                   [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = (True, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = (0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args6] _________________________
+
+args = (0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args10] ________________________
+
+args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           wrap_index(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = 0
+
+    def wrap_index(index, length):
+        _types((index, length), ('int', 'int'))
+        if length <= 0:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args11] ________________________
+
+args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           wrap_index(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = 0
+
+    def wrap_index(index, length):
+        _types((index, length), ('int', 'int'))
+        if length <= 0:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args12] ________________________
+
+args = (0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           wrap_index(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = -1
+
+    def wrap_index(index, length):
+        _types((index, length), ('int', 'int'))
+        if length <= 0:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args13] ________________________
+
+args = (0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1)),
+        pytest.param((IntChild(0), 1)),
+        pytest.param((1.5, 1)),
+        pytest.param(('bad', 1)),
+        pytest.param((None, 1)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(1))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((IntChild(0), -1)),
+        pytest.param((0, IntChild(-1))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           wrap_index(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = -1
+
+    def wrap_index(index, length):
+        _types((index, length), ('int', 'int'))
+        if length <= 0:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args6] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args10] - ValueError: length
+FAILED test_target.py::test_raises_typeerror[args11] - ValueError: length
+FAILED test_target.py::test_raises_typeerror[args12] - ValueError: length
+FAILED test_target.py::test_raises_typeerror[args13] - ValueError: length
+8 failed, 14 passed in 0.41s

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="16" time="0.270" timestamp="2026-11-04T07:12:49.215671-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-expected2]" time="0.000" /><testcase classname="test_target" name="test_values[args3-expected3]" time="0.001"><failure message="assert [] == [2, 2]&#10;  &#10;  Right contains 2 more items, first extra item: 2&#10;  Use -v to get more diff">args = ([2, 1, 2, 3], [2, 2, 4]), expected = [2, 2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), []),
+        pytest.param(([1], []), []),
+        pytest.param(([], [1]), []),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2]),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1]),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+&gt;       assert actual == expected
+E       assert [] == [2, 2]
+E         
+E         Right contains 2 more items, first extra item: 2
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-expected4]" time="0.001"><failure message="assert [] == [1, 1]&#10;  &#10;  Right contains 2 more items, first extra item: 1&#10;  Use -v to get more diff">args = ([1, 1, 1], [1, 1]), expected = [1, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), []),
+        pytest.param(([1], []), []),
+        pytest.param(([], [1]), []),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2]),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1]),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+&gt;       assert actual == expected
+E       assert [] == [1, 1]
+E         
+E         Right contains 2 more items, first extra item: 1
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-expected5]" time="0.001"><failure message="assert [] == [-1, 0]&#10;  &#10;  Right contains 2 more items, first extra item: -1&#10;  Use -v to get more diff">args = ([-1, 0, -1], [0, -1]), expected = [-1, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), []),
+        pytest.param(([1], []), []),
+        pytest.param(([], [1]), []),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2]),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1]),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+&gt;       assert actual == expected
+E       assert [] == [-1, 0]
+E         
+E         Right contains 2 more items, first extra item: -1
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /></testsuite></testsuites>

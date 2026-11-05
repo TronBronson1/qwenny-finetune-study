@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="21" time="0.488" timestamp="2026-11-04T13:18:21.716302-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_values[v000]" time="0.001" /><testcase classname="test_candidate" name="test_values[v001]" time="0.001" /><testcase classname="test_candidate" name="test_values[v002]" time="0.001" /><testcase classname="test_candidate" name="test_values[v003]" time="0.001" /><testcase classname="test_candidate" name="test_values[v004]" time="0.001" /><testcase classname="test_candidate" name="test_values[v005]" time="0.001" /><testcase classname="test_candidate" name="test_values[v006]" time="0.001" /><testcase classname="test_candidate" name="test_values[v007]" time="0.001" /><testcase classname="test_candidate" name="test_values[v008]" time="0.001" /><testcase classname="test_candidate" name="test_values[v009]" time="0.004" /><testcase classname="test_candidate" name="test_values[v010]" time="0.001" /><testcase classname="test_candidate" name="test_values[v011]" time="0.007" /><testcase classname="test_candidate" name="test_values[v012]" time="0.001" /><testcase classname="test_candidate" name="test_values[v013]" time="0.001" /><testcase classname="test_candidate" name="test_values[v014]" time="0.001" /><testcase classname="test_candidate" name="test_values[v015]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(""), ""), id="e000"),
+        pytest.param(("", StrChild("")), id="e001"),
+        pytest.param((b"", ""), id="e002"),
+        pytest.param(("", b""), id="e003"),
+        pytest.param((1, 1), id="e004"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:50: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(""), ""), id="e000"),
+        pytest.param(("", StrChild("")), id="e001"),
+        pytest.param((b"", ""), id="e002"),
+        pytest.param(("", b""), id="e003"),
+        pytest.param((1, 1), id="e004"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:50: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[e004]" time="0.000" /></testsuite></testsuites>

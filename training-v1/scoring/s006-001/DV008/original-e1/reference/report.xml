@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="35" time="0.746" timestamp="2026-11-04T13:18:19.260274-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_edit_distance_basic[--0]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_basic[a--1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[-b-1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[abc--3]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[-xyz-3]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[kitten-sitting-3]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[flaw-flaw-0]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[kitten-satinn-4]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_basic[intention-execution-5]" time="0.004" /><testcase classname="test_candidate" name="test_edit_distance_basic[python-bytecode-5]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_basic[test-test-0]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[test-tezt-1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[test-testt-1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[test-ttest-2]" time="0.002"><failure message="assert 1 == 2">left = 'test', right = 'ttest', expected = 2
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+&gt;       assert result == expected
+E       assert 1 == 2
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[ABC-abc-4]" time="0.002"><failure message="assert 3 == 4">left = 'ABC', right = 'abc', expected = 4
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+&gt;       assert result == expected
+E       assert 3 == 4
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[-123-3]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[123-321-3]" time="0.001"><failure message="assert 2 == 3">left = '123', right = '321', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+&gt;       assert result == expected
+E       assert 2 == 3
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1-2_0]" time="0.003" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1-2_1]" time="0.011" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1.5-2.5]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[True-False]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left4-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left5-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left6-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[None-b]" time="0.019" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[(1+2j)-(2+2j)]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[hello-world]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[jello-None]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[None-None]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left12-text]" time="0.005" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left13-text]" time="0.005" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left14-dict_str]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left15-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_does_not_mutate_inputs" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_returns_exact_types" time="0.001" /></testsuite></testsuites>

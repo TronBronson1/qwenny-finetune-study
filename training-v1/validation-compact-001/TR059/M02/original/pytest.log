@@ -1,0 +1,122 @@
+.FFFFF................                                                   [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = ([1], []), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+>       assert actual == expected
+E       assert [] == [1]
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ([], [1]), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+>       assert actual == expected
+E       assert [] == [1]
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ([1, 3], [2, 4]), expected = [1, 2, 3, 4]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+>       assert actual == expected
+E       assert [3, 4] == [1, 2, 3, 4]
+E         
+E         At index 0 diff: 3 != 1
+E         Right contains 2 more items, first extra item: 3
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ([1, 1, 3], [1, 2]), expected = [1, 1, 1, 2, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+>       assert actual == expected
+E       assert [1, 2, 3] == [1, 1, 1, 2, 3]
+E         
+E         At index 1 diff: 2 != 1
+E         Right contains 2 more items, first extra item: 2
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ([-3, 0], [-2, 0]), expected = [-3, -2, 0, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+>       assert actual == expected
+E       assert [0, 0] == [-3, -2, 0, 0]
+E         
+E         At index 0 diff: 0 != -3
+E         Right contains 2 more items, first extra item: 0
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - assert [] == [1]
+FAILED test_target.py::test_values[v002] - assert [] == [1]
+FAILED test_target.py::test_values[v003] - assert [3, 4] == [1, 2, 3, 4]
+FAILED test_target.py::test_values[v004] - assert [1, 2, 3] == [1, 1, 1, 2, 3]
+FAILED test_target.py::test_values[v005] - assert [0, 0] == [-3, -2, 0, 0]
+5 failed, 17 passed in 0.34s

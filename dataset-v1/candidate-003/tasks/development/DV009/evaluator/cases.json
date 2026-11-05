@@ -1,0 +1,110 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([], 0)",
+    "expected_python": "0",
+    "after_python": "([], 0)"
+  },
+  {
+    "id": "v001",
+    "args_python": "([1], 0)",
+    "expected_python": "0",
+    "after_python": "([1], 0)"
+  },
+  {
+    "id": "v002",
+    "args_python": "([1], 1)",
+    "expected_python": "0",
+    "after_python": "([1], 1)"
+  },
+  {
+    "id": "v003",
+    "args_python": "([1], 2)",
+    "expected_python": "1",
+    "after_python": "([1], 2)"
+  },
+  {
+    "id": "v004",
+    "args_python": "([1, 2, 2, 4], 2)",
+    "expected_python": "1",
+    "after_python": "([1, 2, 2, 4], 2)"
+  },
+  {
+    "id": "v005",
+    "args_python": "([1, 2, 2, 4], 3)",
+    "expected_python": "3",
+    "after_python": "([1, 2, 2, 4], 3)"
+  },
+  {
+    "id": "v006",
+    "args_python": "([-3, -1, 0], -4)",
+    "expected_python": "0",
+    "after_python": "([-3, -1, 0], -4)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([]), 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e001",
+    "args_python": "([True], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e002",
+    "args_python": "([IntChild(1)], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e003",
+    "args_python": "((), 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e005",
+    "args_python": "([], True)",
+    "exception": "TypeError",
+    "category": "type:target"
+  },
+  {
+    "id": "e006",
+    "args_python": "([], IntChild(0))",
+    "exception": "TypeError",
+    "category": "type:target"
+  },
+  {
+    "id": "e007",
+    "args_python": "([], 1.5)",
+    "exception": "TypeError",
+    "category": "type:target"
+  },
+  {
+    "id": "e008",
+    "args_python": "([], 'bad')",
+    "exception": "TypeError",
+    "category": "type:target"
+  },
+  {
+    "id": "e009",
+    "args_python": "([], None)",
+    "exception": "TypeError",
+    "category": "type:target"
+  },
+  {
+    "id": "e010",
+    "args_python": "([2, 1], 1)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  }
+]

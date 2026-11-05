@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="17" time="0.277" timestamp="2026-11-04T07:11:45.620830-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-1]" time="0.000" /><testcase classname="test_target" name="test_values[args3-8]" time="0.000" /><testcase classname="test_target" name="test_values[args4-8]" time="0.000" /><testcase classname="test_target" name="test_values[args5-6]" time="0.000" /><testcase classname="test_target" name="test_values[args6-200000000000000000000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:42: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:42: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:42: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:42: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /></testsuite></testsuites>

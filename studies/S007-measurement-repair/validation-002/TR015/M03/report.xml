@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="10" time="0.393" timestamp="2026-11-04T17:04:06.469954-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert 'on' == 'one'&#10;  &#10;  - one&#10;  ?   -&#10;  + on">args = ('one',), expected = 'one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'on' == 'one'
+E         
+E         - one
+E         ?   -
+E         + on
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert 'three two on' == 'three two one'&#10;  &#10;  - three two one&#10;  ?             -&#10;  + three two on">args = ('one two three',), expected = 'three two one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'three two on' == 'three two one'
+E         
+E         - three two one
+E         ?             -
+E         + three two on
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert 'c b ' == 'c b a'&#10;  &#10;  - c b a&#10;  ?     -&#10;  + c b">args = (' a\tb\nc ',), expected = 'c b a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'c b ' == 'c b a'
+E         
+E         - c b a
+E         ?     -
+E         + c b
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert '字 ' == '字 é'&#10;  &#10;  - 字 é&#10;  ?   -&#10;  + 字">args = ('é\u2003字',), expected = '字 é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '字 ' == '字 é'
+E         
+E         - 字 é
+E         ?   -
+E         + 字
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /></testsuite></testsuites>

@@ -1,0 +1,118 @@
+FFFFFF..................                                                 [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = ('00',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 0
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = ('09',), expected = 9
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 9
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = ('0a',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 10
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = ('Af',), expected = 175
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 175
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ('FF',), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 255
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = ('80',), expected = 128
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+>       assert actual == expected
+E       assert None == 128
+
+test_candidate.py:22: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - assert None == 0
+FAILED test_candidate.py::test_renamed_values[v001] - assert None == 9
+FAILED test_candidate.py::test_renamed_values[v002] - assert None == 10
+FAILED test_candidate.py::test_renamed_values[v003] - assert None == 175
+FAILED test_candidate.py::test_renamed_values[v004] - assert None == 255
+FAILED test_candidate.py::test_renamed_values[v005] - assert None == 128
+6 failed, 18 passed in 0.60s

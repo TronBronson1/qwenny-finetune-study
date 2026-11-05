@@ -1,0 +1,82 @@
+.....FFF....................                                             [100%]
+================================== FAILURES ===================================
+________________________ test_raises_indexerror[e014] _________________________
+
+args = ([], 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], index = 0
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 <= index < len(values):
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError
+________________________ test_raises_indexerror[e015] _________________________
+
+args = ([1], -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], index = -1
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 <= index < len(values):
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError
+________________________ test_raises_indexerror[e016] _________________________
+
+args = ([1], 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], index = 1
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 <= index < len(values):
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_indexerror[e014] - ValueError: index
+FAILED test_target.py::test_raises_indexerror[e015] - ValueError: index
+FAILED test_target.py::test_raises_indexerror[e016] - ValueError: index
+3 failed, 25 passed in 0.54s

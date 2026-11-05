@@ -1,0 +1,112 @@
+FFFFF......                                                              [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ([1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=lower_median(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1]
+
+    def lower_median(values):
+        _types((values,), ('ints',))
+        if not values:
+            raise ValueError('empty')
+        ordered = sorted(values)
+>       return ordered[(len(ordered) + 1) // 2]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:57: IndexError
+______________________________ test_values[v001] ______________________________
+
+args = ([4, 1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 4 == 1
+
+test_target.py:28: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ([9, 1, 5],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 9 == 5
+
+test_target.py:28: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ([9, 1, 5, 3],), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 5 == 3
+
+test_target.py:28: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ([-1, -1, 0],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 0 == -1
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - IndexError: list index out of range
+FAILED test_target.py::test_values[v001] - assert 4 == 1
+FAILED test_target.py::test_values[v002] - assert 9 == 5
+FAILED test_target.py::test_values[v003] - assert 5 == 3
+FAILED test_target.py::test_values[v004] - assert 0 == -1
+5 failed, 6 passed in 0.59s

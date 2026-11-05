@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="22" time="0.327" timestamp="2026-11-04T07:13:02.260769-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.003"><failure message="assert None == 0">args = ('0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+&gt;       assert actual == expected
+E       assert None == 0
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-1]" time="0.001"><failure message="assert None == 1">args = ('1',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+&gt;       assert actual == expected
+E       assert None == 1
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-10]" time="0.001"><failure message="assert None == 10">args = ('10',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+&gt;       assert actual == expected
+E       assert None == 10
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-999999999999]" time="0.001"><failure message="assert None == 999999999999">args = ('999999999999',), expected = 999999999999
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+&gt;       assert actual == expected
+E       assert None == 999999999999
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args6]" time="0.000" /></testsuite></testsuites>

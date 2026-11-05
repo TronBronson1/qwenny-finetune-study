@@ -1,0 +1,35 @@
+{
+  "id": "TR050",
+  "split": "training",
+  "family": "row-major-index",
+  "function": "unravel_index",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "index",
+    "rows",
+    "columns"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "8d919f8d5b33ba443a66f8edaca47eae7c5ed2d27c055bfc693a01b1ab03dcdf",
+  "target_sha256": "aa8033a0357ed01a907eefdff1db120a47ba3b85e74f48ac2f18dd413546d6e2",
+  "spec_sha256": "8726839b07463782893bcff71a6b69b0ea023e48b1304ae1bea4bad38d46584f",
+  "answer_sha256": "4607e1a24370d54799caf11e8ccd0645b549fb6ac3375417d629c7634d7bfbba",
+  "valid_test_cases": 5,
+  "exception_test_cases": 19,
+  "oracle_checks": 5,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

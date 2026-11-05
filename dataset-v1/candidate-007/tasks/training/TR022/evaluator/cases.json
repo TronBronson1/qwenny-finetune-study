@@ -1,0 +1,82 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "'\"\"'",
+    "after_python": "('',)",
+    "category": "empty-quoted"
+  },
+  {
+    "id": "v001",
+    "args_python": "('abc',)",
+    "expected_python": "'abc'",
+    "after_python": "('abc',)",
+    "category": "unquoted"
+  },
+  {
+    "id": "v002",
+    "args_python": "('a,b',)",
+    "expected_python": "'\"a,b\"'",
+    "after_python": "('a,b',)",
+    "category": "comma"
+  },
+  {
+    "id": "v003",
+    "args_python": "('a\"b',)",
+    "expected_python": "'\"a\"\"b\"'",
+    "after_python": "('a\"b',)",
+    "category": "quote-doubled"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\rb',)",
+    "expected_python": "'\"a\\rb\"'",
+    "after_python": "('a\\rb',)",
+    "category": "cr"
+  },
+  {
+    "id": "v005",
+    "args_python": "('a\\nb',)",
+    "expected_python": "'\"a\\nb\"'",
+    "after_python": "('a\\nb',)",
+    "category": "lf"
+  },
+  {
+    "id": "v006",
+    "args_python": "(' a ',)",
+    "expected_python": "' a '",
+    "after_python": "(' a ',)",
+    "category": "preserve-space"
+  },
+  {
+    "id": "v007",
+    "args_python": "('é',)",
+    "expected_python": "'é'",
+    "after_python": "('é',)",
+    "category": "unicode"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

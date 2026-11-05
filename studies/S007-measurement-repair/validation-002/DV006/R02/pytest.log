@@ -1,0 +1,124 @@
+..........FFFF....                                                       [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = ('abc',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc'
+
+    def keypad_encode(text):
+        if any((not 'A' <= char <= 'Z' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e009] _________________________
+
+args = ('A B',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'A B'
+
+    def keypad_encode(text):
+        if any((not 'A' <= char <= 'Z' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e010] _________________________
+
+args = ('É',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'É'
+
+    def keypad_encode(text):
+        if any((not 'A' <= char <= 'Z' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e011] _________________________
+
+args = ('Ａ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'Ａ'
+
+    def keypad_encode(text):
+        if any((not 'A' <= char <= 'Z' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e008] - ValueError: character
+FAILED test_target.py::test_raises_typeerror[e009] - ValueError: character
+FAILED test_target.py::test_raises_typeerror[e010] - ValueError: character
+FAILED test_target.py::test_raises_typeerror[e011] - ValueError: character
+4 failed, 14 passed in 0.56s

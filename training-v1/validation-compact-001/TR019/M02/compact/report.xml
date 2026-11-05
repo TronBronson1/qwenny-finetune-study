@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="11" time="0.276" timestamp="2026-11-04T07:12:21.673179-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-]" time="0.001" /><testcase classname="test_target" name="test_values[args1-a]" time="0.001" /><testcase classname="test_target" name="test_values[args2-\n]" time="0.000" /><testcase classname="test_target" name="test_values[args3-\n]" time="0.001"><failure message="AssertionError: assert '\r' == '\n'&#10;  &#10;  Strings contain only whitespace, escaping them using repr()&#10;  - '\n'&#10;  ?   ^&#10;  + '\r'&#10;  ?   ^">args = ('\r',), expected = '\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '\r' == '\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n'
+E         ?   ^
+E         + '\r'
+E         ?   ^
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-\n]" time="0.001" /><testcase classname="test_target" name="test_values[args5-a\nb\nc\nd]" time="0.001"><failure message="AssertionError: assert 'a\nb\rc\nd' == 'a\nb\nc\nd'&#10;  &#10;    a&#10;  - b&#10;  + b&#10;    c&#10;    d">args = ('a\r\nb\rc\nd',), expected = 'a\nb\nc\nd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'a\nb\rc\nd' == 'a\nb\nc\nd'
+E         
+E           a
+E         - b
+E         + b
+E           c
+E           d
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-\n\n]" time="0.001"><failure message="AssertionError: assert '\r\n' == '\n\n'&#10;  &#10;  Strings contain only whitespace, escaping them using repr()&#10;  - '\n\n'&#10;  ?   ^&#10;  + '\r\n'&#10;  ?   ^">args = ('\r\r\n',), expected = '\n\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '\r\n' == '\n\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n\n'
+E         ?   ^
+E         + '\r\n'
+E         ?   ^
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /></testsuite></testsuites>

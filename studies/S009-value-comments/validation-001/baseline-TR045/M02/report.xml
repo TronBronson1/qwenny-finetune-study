@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="10" time="0.498" timestamp="2026-11-04T18:57:58.031687-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert ['/'] == []&#10;  &#10;  Left contains one more item: '/'&#10;  Use -v to get more diff">args = ('/',), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ['/'] == []
+E         
+E         Left contains one more item: '/'
+E         Use -v to get more diff
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert ['//a///b/'] == ['a', 'b']&#10;  &#10;  At index 0 diff: '//a///b/' != 'a'&#10;  Right contains one more item: 'b'&#10;  Use -v to get more diff">args = ('//a///b/',), expected = ['a', 'b']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ['//a///b/'] == ['a', 'b']
+E         
+E         At index 0 diff: '//a///b/' != 'a'
+E         Right contains one more item: 'b'
+E         Use -v to get more diff
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert ['/./../'] == ['.', '..']&#10;  &#10;  At index 0 diff: '/./../' != '.'&#10;  Right contains one more item: '..'&#10;  Use -v to get more diff">args = ('/./../',), expected = ['.', '..']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ['/./../'] == ['.', '..']
+E         
+E         At index 0 diff: '/./../' != '.'
+E         Right contains one more item: '..'
+E         Use -v to get more diff
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert ['a\\b/c'] == ['a\\b', 'c']&#10;  &#10;  At index 0 diff: 'a\\b/c' != 'a\\b'&#10;  Right contains one more item: 'c'&#10;  Use -v to get more diff">args = ('a\\b/c',), expected = ['a\\b', 'c']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ['a\\b/c'] == ['a\\b', 'c']
+E         
+E         At index 0 diff: 'a\\b/c' != 'a\\b'
+E         Right contains one more item: 'c'
+E         Use -v to get more diff
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert ['/ a /字/'] == [' a ', '字']&#10;  &#10;  At index 0 diff: '/ a /字/' != ' a '&#10;  Right contains one more item: '字'&#10;  Use -v to get more diff">args = ('/ a /字/',), expected = [' a ', '字']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ['/ a /字/'] == [' a ', '字']
+E         
+E         At index 0 diff: '/ a /字/' != ' a '
+E         Right contains one more item: '字'
+E         Use -v to get more diff
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

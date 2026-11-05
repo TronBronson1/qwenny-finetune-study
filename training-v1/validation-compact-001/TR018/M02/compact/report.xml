@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="13" time="0.266" timestamp="2026-11-04T07:12:19.560131-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-True]" time="0.001" /><testcase classname="test_target" name="test_values[args1-True]" time="0.001" /><testcase classname="test_target" name="test_values[args2-True]" time="0.000" /><testcase classname="test_target" name="test_values[args3-True]" time="0.000" /><testcase classname="test_target" name="test_values[args4-True]" time="0.000" /><testcase classname="test_target" name="test_values[args5-False]" time="0.001"><failure message="assert True == False">args = ('ab',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True),
+        pytest.param(('a',), True),
+        pytest.param(('aa',), True),
+        pytest.param(('aba',), True),
+        pytest.param(('abba',), True),
+        pytest.param(('ab',), False),
+        pytest.param(('Aa',), False),
+        pytest.param(('a a',), True),
+        pytest.param(('é字é',), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-False]" time="0.001"><failure message="assert True == False">args = ('Aa',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True),
+        pytest.param(('a',), True),
+        pytest.param(('aa',), True),
+        pytest.param(('aba',), True),
+        pytest.param(('abba',), True),
+        pytest.param(('ab',), False),
+        pytest.param(('Aa',), False),
+        pytest.param(('a a',), True),
+        pytest.param(('é字é',), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args7-True]" time="0.001" /><testcase classname="test_target" name="test_values[args8-True]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="18" time="0.293" timestamp="2026-11-03T23:04:27.596829-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_rotate_right_valid_tuple_int" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_valid_tuple_zero" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_valid_tuple_negative" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_valid_tuple_large_steps" time="0.001"><failure message="assert (3, 1, 2) == (1, 2, 3)&#10;  &#10;  At index 0 diff: 3 != 1&#10;  Use -v to get more diff">def test_rotate_right_valid_tuple_large_steps():
+        args = ( (1, 2, 3), 100 )
+&gt;       assert rotate_right(*args) == (1, 2, 3) # 100 % 3 == 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert (3, 1, 2) == (1, 2, 3)
+E         
+E         At index 0 diff: 3 != 1
+E         Use -v to get more diff
+
+test_candidate.py:20: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_empty_tuple" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_empty_tuple_large_steps" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_tuple_subclass_invalid_type" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">def test_rotate_right_tuple_subclass_invalid_type():
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_list_invalid_type" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_string_invalid_type" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_bool_invalid_type" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_float_invalid_type" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_single_element" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_two_elements_right" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_two_elements_left" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_nested_containers_immutable" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_large_steps_wraps_correctly" time="0.001"><failure message="AssertionError: assert ('d', 'a', 'b', 'c') == ('c', 'd', 'a', 'b')&#10;  &#10;  At index 0 diff: 'd' != 'c'&#10;  Use -v to get more diff">def test_rotate_right_large_steps_wraps_correctly():
+        args = ( ("a", "b", "c", "d"), 5 )
+&gt;       assert rotate_right(*args) == ("c", "d", "a", "b") # 5 % 4 == 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('d', 'a', 'b', 'c') == ('c', 'd', 'a', 'b')
+E         
+E         At index 0 diff: 'd' != 'c'
+E         Use -v to get more diff
+
+test_candidate.py:78: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_large_steps_wraps_left" time="0.001"><failure message="AssertionError: assert ('b', 'c', 'd', 'a') == ('d', 'a', 'b', 'c')&#10;  &#10;  At index 0 diff: 'b' != 'd'&#10;  Use -v to get more diff">def test_rotate_right_large_steps_wraps_left():
+        args = ( ("a", "b", "c", "d"), -1 )
+&gt;       assert rotate_right(*args) == ("d", "a", "b", "c")
+E       AssertionError: assert ('b', 'c', 'd', 'a') == ('d', 'a', 'b', 'c')
+E         
+E         At index 0 diff: 'b' != 'd'
+E         Use -v to get more diff
+
+test_candidate.py:82: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_negative_steps_large_magnitude" time="0.000" /></testsuite></testsuites>

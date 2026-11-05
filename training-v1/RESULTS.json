@@ -1,0 +1,84 @@
+{
+  "training": "completed",
+  "candidates": [
+    "Qwenny-E1",
+    "Qwenny-E3",
+    "Qwenny-E5"
+  ],
+  "fresh_import_checks": [
+    {
+      "epoch": 1,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 3,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 5,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "pilot": [
+    {
+      "variant": "base-A",
+      "tasks": 2,
+      "reference_valid_suites": 0,
+      "provisional_executable_passes": 0,
+      "agent_strict_acceptance": 0,
+      "incomplete": 0
+    },
+    {
+      "variant": "base-B",
+      "tasks": 2,
+      "reference_valid_suites": 0,
+      "provisional_executable_passes": 0,
+      "agent_strict_acceptance": 0,
+      "incomplete": 0
+    },
+    {
+      "variant": "epoch-1-C",
+      "tasks": 2,
+      "reference_valid_suites": 1,
+      "provisional_executable_passes": 1,
+      "agent_strict_acceptance": 0,
+      "incomplete": 0
+    },
+    {
+      "variant": "epoch-3-C",
+      "tasks": 2,
+      "reference_valid_suites": 0,
+      "provisional_executable_passes": 0,
+      "agent_strict_acceptance": 0,
+      "incomplete": 1
+    },
+    {
+      "variant": "epoch-5-C",
+      "tasks": 2,
+      "reference_valid_suites": 0,
+      "provisional_executable_passes": 0,
+      "agent_strict_acceptance": 0,
+      "incomplete": 0
+    }
+  ],
+  "quality_conclusion": "No strict-acceptance advantage demonstrated in this two-family one-seed bounded direct-answer pilot. Do not treat lower teacher-forced loss as proof of useful aptitude. Thinking-enabled historical settings, broader regression and final-test scoring remain untested.",
+  "cache_diagnostic": [
+    {
+      "variant": "base",
+      "checked_positions": 5,
+      "argmax_matches": 5,
+      "max_kl": 0.0019014895660802722,
+      "max_abs_logit_difference": 0.5625
+    },
+    {
+      "variant": "epoch-5",
+      "checked_positions": 5,
+      "argmax_matches": 5,
+      "max_kl": 0.0012296047061681747,
+      "max_abs_logit_difference": 0.75
+    }
+  ]
+}

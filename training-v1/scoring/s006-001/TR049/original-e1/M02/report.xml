@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="15" time="0.417" timestamp="2026-11-04T13:18:48.332110-05:00" hostname="Trons"><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_0_0" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_1_2" time="0.001"><failure message="assert 1 is 5&#10; +  where 1 = row_major_offset(1, 2, 2, 3)">self = &lt;test_candidate.TestRowMajorOffset object at 0x000001EDB92DAC10&gt;
+
+    def test_valid_offset_1_2(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+&gt;       assert row_major_offset(row, column, rows, columns) is expected
+E       assert 1 is 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:20: AssertionError</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_max" time="0.001"><failure message="assert 1 is 5&#10; +  where 1 = row_major_offset(1, 2, 2, 3)">self = &lt;test_candidate.TestRowMajorOffset object at 0x000001EDB92D2C40&gt;
+
+    def test_valid_offset_max(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+&gt;       assert row_major_offset(row, column, rows, columns) is expected
+E       assert 1 is 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_row" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_column" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_rows" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_columns" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_rows_zero" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_rows_negative" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_columns_zero" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_columns_negative" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_row_too_large" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_column_too_large" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_row_negative" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_column_negative" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,116 @@
+FFFF..................                                                   [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('[0:0]',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_range(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (0, 0), expected = (0, 0)
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type((0, 0))
+E        +  and   <class 'tuple'> = type((0, 0))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('[0:99]',), expected = (0, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_range(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (0, 99), expected = (0, 99)
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type((0, 99))
+E        +  and   <class 'tuple'> = type((0, 99))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('[3:7]',), expected = (3, 7)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_range(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (3, 7), expected = (3, 7)
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type((3, 7))
+E        +  and   <class 'tuple'> = type((3, 7))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('[99:99]',), expected = (99, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_range(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (99, 99), expected = (99, 99)
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type((99, 99))
+E        +  and   <class 'tuple'> = type((99, 99))
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+4 failed, 18 passed in 0.60s

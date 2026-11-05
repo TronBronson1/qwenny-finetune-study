@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="10" time="0.453" timestamp="2026-11-04T18:59:21.023885-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = ('',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(10)&#10; +  and   &lt;class 'int'&gt; = type(10)">args = ('AEIOUaeiou',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 10, expected = 10
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(10)
+E        +  and   &lt;class 'int'&gt; = type(10)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = ('rhythm',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(4)&#10; +  and   &lt;class 'int'&gt; = type(4)">args = ('Apple pie',), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 4, expected = 4
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(4)
+E        +  and   &lt;class 'int'&gt; = type(4)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = ('éÁy',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(2)&#10; +  and   &lt;class 'int'&gt; = type(2)">args = ('a1 E!',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(2)
+E        +  and   &lt;class 'int'&gt; = type(2)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

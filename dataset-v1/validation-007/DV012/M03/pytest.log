@@ -1,0 +1,48 @@
+..F....F........                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('([]{})',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=balanced_brackets(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:30: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('[](){}',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=balanced_brackets(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:30: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - assert False == True
+FAILED test_target.py::test_values[v007] - assert False == True
+2 failed, 14 passed in 0.55s

@@ -1,0 +1,40 @@
+.....FFF..                                                               [100%]
+================================== FAILURES ===================================
+_________________________ test_subclass_rejects_type __________________________
+
+    def test_subclass_rejects_type():
+        class MyStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:29: Failed
+______________________ test_unicode_preserves_non_ascii _______________________
+
+    def test_unicode_preserves_non_ascii():
+>       assert ascii_upper("héllo") == "héllo"
+E       AssertionError: assert 'HéLLO' == 'héllo'
+E         
+E         - héllo
+E         + HéLLO
+
+test_candidate.py:33: AssertionError
+_________________________ test_mixed_ascii_non_ascii __________________________
+
+    def test_mixed_ascii_non_ascii():
+>       assert ascii_upper("aBc123dé") == "ABC123dé"
+E       AssertionError: assert 'ABC123Dé' == 'ABC123dé'
+E         
+E         - ABC123dé
+E         ?       ^
+E         + ABC123Dé
+E         ?       ^
+
+test_candidate.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_subclass_rejects_type - Failed: DID NOT RAISE ...
+FAILED test_candidate.py::test_unicode_preserves_non_ascii - AssertionError: ...
+FAILED test_candidate.py::test_mixed_ascii_non_ascii - AssertionError: assert...
+3 failed, 7 passed in 0.64s

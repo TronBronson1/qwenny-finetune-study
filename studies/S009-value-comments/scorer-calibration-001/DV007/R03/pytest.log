@@ -1,0 +1,1124 @@
+............................FFFF........FFFFFFFFFFFF....                 [100%]
+================================== FAILURES ===================================
+_____________________ test_renamed_raises_typeerror[e026] _____________________
+
+args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e027] _____________________
+
+args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e028] _____________________
+
+args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e029] _____________________
+
+args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e038] _____________________
+
+args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e039] _____________________
+
+args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e040] _____________________
+
+args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e041] _____________________
+
+args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e042] _____________________
+
+args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e043] _____________________
+
+args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e044] _____________________
+
+args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e045] _____________________
+
+args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e046] _____________________
+
+args = (0, 1, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 1, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e047] _____________________
+
+args = (0, 1, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 1, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e048] _____________________
+
+args = (0, 1, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 1, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e049] _____________________
+
+args = (0, 1, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e026"),
+        pytest.param((0, IntChild(0), 0, 1), id="e027"),
+        pytest.param((0, 0, IntChild(0), 1), id="e028"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e029"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e030"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e031"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e032"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e033"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e034"),
+        pytest.param((2, IntChild(0), 2, 2), id="e035"),
+        pytest.param((2, 0, IntChild(2), 2), id="e036"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e037"),
+        pytest.param((IntChild(0), 0, 1, 0), id="e038"),
+        pytest.param((0, IntChild(0), 1, 0), id="e039"),
+        pytest.param((0, 0, IntChild(1), 0), id="e040"),
+        pytest.param((0, 0, 1, IntChild(0)), id="e041"),
+        pytest.param((IntChild(0), 0, 1, -1), id="e042"),
+        pytest.param((0, IntChild(0), 1, -1), id="e043"),
+        pytest.param((0, 0, IntChild(1), -1), id="e044"),
+        pytest.param((0, 0, 1, IntChild(-1)), id="e045"),
+        pytest.param((IntChild(0), 1, 1, 0), id="e046"),
+        pytest.param((0, IntChild(1), 1, 0), id="e047"),
+        pytest.param((0, 1, IntChild(1), 0), id="e048"),
+        pytest.param((0, 1, 1, IntChild(0)), id="e049"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           grid_neighbors(*args)
+
+test_candidate.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 1, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_raises_typeerror[e026] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e027] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e028] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e029] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e038] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e039] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e040] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e041] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e042] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e043] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e044] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e045] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e046] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e047] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e048] - ValueError: s...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e049] - ValueError: s...
+16 failed, 40 passed in 0.90s

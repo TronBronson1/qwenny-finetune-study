@@ -1,0 +1,20 @@
+.....F..................                                                 [100%]
+================================== FAILURES ===================================
+_______________________ TestTypeError.test_subclass_str _______________________
+
+self = <test_candidate.TestTypeError object at 0x0000021F13889040>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000021F13878C20>
+
+    def test_subclass_str(self, capsys):
+        class MyStr(str):
+            pass
+    
+        obj = MyStr("09:30")
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:34: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestTypeError::test_subclass_str - Failed: DID NOT ...
+1 failed, 23 passed in 0.32s

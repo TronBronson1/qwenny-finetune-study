@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="31" time="0.501" timestamp="2026-11-04T13:18:54.264293-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_values[args0-expected0]" time="0.001"><failure message="assert ([(-1, 0)] == [(1, 0)]&#10;  &#10;  At index 0 diff: (-1, 0) != (1, 0)&#10;  Use -v to get more diff)">args = (0, 0, 1, 1), expected = [(1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+&gt;       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([(-1, 0)] == [(1, 0)]
+E         
+E         At index 0 diff: (-1, 0) != (1, 0)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[args1-expected1]" time="0.001"><failure message="assert ([(0, 0), (1, 1)] == [(1, 1), (2, 0), (0, 0)]&#10;  &#10;  At index 0 diff: (0, 0) != (1, 1)&#10;  Right contains one more item: (0, 0)&#10;  Use -v to get more diff)">args = (1, 0, 2, 2), expected = [(1, 1), (2, 0), (0, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+&gt;       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([(0, 0), (1, 1)] == [(1, 1), (2, 0), (0, 0)]
+E         
+E         At index 0 diff: (0, 0) != (1, 1)
+E         Right contains one more item: (0, 0)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[args2-expected2]" time="0.001"><failure message="assert ([(-1, 0), (0, 1), (1, 0)] == [(1, 0)]&#10;  &#10;  At index 0 diff: (-1, 0) != (1, 0)&#10;  Left contains 2 more items, first extra item: (0, 1)&#10;  Use -v to get more diff)">args = (0, 0, 2, 2), expected = [(1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+&gt;       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([(-1, 0), (0, 1), (1, 0)] == [(1, 0)]
+E         
+E         At index 0 diff: (-1, 0) != (1, 0)
+E         Left contains 2 more items, first extra item: (0, 1)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args5]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args6]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args7]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args10]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args11]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args12]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args13]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args14]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[args15]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args16]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args17]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[args18]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[args0]" time="0.001"><failure message="IndexError: cell">args = (-1, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        ( -1,0,1,1 ),
+        ( 0,-1,1,1 ),
+        ( 0,0,-1,1 ),
+        ( 0,0,0,1 ),
+        ( 0,0,0,0 ),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+&gt;           grid_neighbors(*args)
+
+test_candidate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_candidate" name="test_raises_valueerror[args1]" time="0.001"><failure message="IndexError: cell">args = (0, -1, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        ( -1,0,1,1 ),
+        ( 0,-1,1,1 ),
+        ( 0,0,-1,1 ),
+        ( 0,0,0,1 ),
+        ( 0,0,0,0 ),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+&gt;           grid_neighbors(*args)
+
+test_candidate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = -1, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_candidate" name="test_raises_valueerror[args2]" time="0.001" /><testcase classname="test_candidate" name="test_raises_valueerror[args3]" time="0.001" /><testcase classname="test_candidate" name="test_raises_valueerror[args4]" time="0.001" /><testcase classname="test_candidate" name="test_raises_indexerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE IndexError">args = (1, 1, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        ( 1,1,2,2 ),
+        ( 0,2,2,2 ),
+        ( 2,0,2,2 ),
+        ( 2,2,2,2 ),
+    ])
+    def test_raises_indexerror(args):
+&gt;       with pytest.raises(IndexError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE IndexError
+
+test_candidate.py:60: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_indexerror[args1]" time="0.001" /><testcase classname="test_candidate" name="test_raises_indexerror[args2]" time="0.001" /><testcase classname="test_candidate" name="test_raises_indexerror[args3]" time="0.001" /></testsuite></testsuites>

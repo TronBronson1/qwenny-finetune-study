@@ -1,0 +1,50 @@
+```python
+import copy
+import pytest
+from subject import minute_of_day
+class StrChild(str): pass
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual) == len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+    elif type(expected) is dict:
+        assert actual.keys() == expected.keys()
+        assert all(type(k) is str for k in actual)
+        for key in expected: assert_exact_shape(actual[key],expected[key])
+@pytest.mark.parametrize("args,expected", [
+    pytest.param(('"00:00",', ("",)),),
+    pytest.param(('"23:59",', (1439,)),),
+    pytest.param(('"00:05",', (5,)),),
+    pytest.param(('"12:00",', (720,)),),
+    pytest.param(('"09:30",', (570,)),),
+    pytest.param(('"01:01",', (61,)),),
+])
+def test_values(args,expected):
+    actual=copy.deepcopy(args)
+    minute_of_day(*args)
+    assert actual == expected
+@pytest.mark.parametrize("args", [
+    pytest.param((StrChild("00:00"),)),),
+    pytest.param((("00:00X",)),),
+    pytest.param((("24:00",)),),
+    pytest.param((("00:60",)),),
+    pytest.param((("12X0",)),),
+    pytest.param(((" 00:00",)),),
+])
+def test_raises_typeerror(args):
+    before=copy.deepcopy(args)
+    with pytest.raises(TypeError):
+        minute_of_day(*args)
+    assert args == before
+@pytest.mark.parametrize("args", [
+    pytest.param((("00:60",)),),
+    pytest.param((("24:00",)),),
+    pytest.param(((" 00:00",)),),
+])
+def test_raises_valueerror(args):
+    with pytest.raises(ValueError):
+        minute_of_day(*args)
+```
+
+Cases map explicit argument tuples to expected values, exact types, side‑effects and listed exceptions, including listed post-state shapes. Coverage is finite, not exhaustive. No execution is claimed.<|im_end|>

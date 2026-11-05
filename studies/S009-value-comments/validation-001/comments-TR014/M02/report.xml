@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="12" time="0.410" timestamp="2026-11-04T18:59:16.055175-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert '   ' == ' '&#10;  &#10;  Strings contain only whitespace, escaping them using repr()&#10;  - ' '&#10;  + '   '&#10;  ?   ++">args = ('   ',), expected = ' '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '   ' == ' '
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - ' '
+E         + '   '
+E         ?   ++
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert ' a b' == ' a b '&#10;  &#10;  -  a b &#10;  ?     -&#10;  +  a b">args = (' a  b ',), expected = ' a b '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ' a b' == ' a b '
+E         
+E         -  a b 
+E         ?     -
+E         +  a b
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_values[v006]" time="0.000" /><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert 'a\xa0b' == 'a\xa0 b'&#10;  &#10;  - a  b&#10;  ?   -&#10;  + a b">args = ('a\xa0 b',), expected = 'a\xa0 b'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'a\xa0b' == 'a\xa0 b'
+E         
+E         - a  b
+E         ?   -
+E         + a b
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

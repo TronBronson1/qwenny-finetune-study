@@ -1,0 +1,20 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________________________________ test_value __________________________________
+
+>   def test_value(): assert row_major_offset(0,0,1,1)==0
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:2: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (0, 0, 1, 1)
+
+>   def row_major_offset(*args): raise RuntimeError('unrelated crash')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   RuntimeError: unrelated crash
+
+subject.py:1: RuntimeError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_value - RuntimeError: unrelated crash
+1 failed in 0.43s

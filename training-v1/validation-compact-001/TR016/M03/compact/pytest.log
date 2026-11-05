@@ -1,0 +1,64 @@
+.F.F.F....                                                               [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args1-10] ____________________________
+
+args = ('AEIOUaeiou',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0),
+        pytest.param(('AEIOUaeiou',), 10),
+        pytest.param(('rhythm',), 0),
+        pytest.param(('Apple pie',), 4),
+        pytest.param(('éÁy',), 0),
+        pytest.param(('a1 E!',), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 20 == 10
+
+test_target.py:25: AssertionError
+____________________________ test_values[args3-4] _____________________________
+
+args = ('Apple pie',), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0),
+        pytest.param(('AEIOUaeiou',), 10),
+        pytest.param(('rhythm',), 0),
+        pytest.param(('Apple pie',), 4),
+        pytest.param(('éÁy',), 0),
+        pytest.param(('a1 E!',), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 8 == 4
+
+test_target.py:25: AssertionError
+____________________________ test_values[args5-2] _____________________________
+
+args = ('a1 E!',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0),
+        pytest.param(('AEIOUaeiou',), 10),
+        pytest.param(('rhythm',), 0),
+        pytest.param(('Apple pie',), 4),
+        pytest.param(('éÁy',), 0),
+        pytest.param(('a1 E!',), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 4 == 2
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-10] - assert 20 == 10
+FAILED test_target.py::test_values[args3-4] - assert 8 == 4
+FAILED test_target.py::test_values[args5-2] - assert 4 == 2
+3 failed, 7 passed in 0.32s

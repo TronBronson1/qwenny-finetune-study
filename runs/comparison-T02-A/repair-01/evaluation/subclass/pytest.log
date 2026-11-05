@@ -1,0 +1,21 @@
+..............F                                                          [100%]
+================================== FAILURES ===================================
+__________________ test_minute_of_day_invalid_type[00:00_1] ___________________
+
+text = '00:00'
+
+    @pytest.mark.parametrize("text", [
+        None,
+        1230,
+        b"00:00",
+        _FakeStr("00:00"),
+    ])
+    def test_minute_of_day_invalid_type(text):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_minute_of_day_invalid_type[00:00_1] - Failed: ...
+1 failed, 14 passed in 0.29s

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="24" time="0.475" timestamp="2026-11-04T18:58:33.136463-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_renamed_values[v000]" time="0.001"><failure message="assert None == 0">args = ('00',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 0
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v001]" time="0.001"><failure message="assert None == 9">args = ('09',), expected = 9
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 9
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v002]" time="0.001"><failure message="assert None == 10">args = ('0a',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 10
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v003]" time="0.001"><failure message="assert None == 175">args = ('Af',), expected = 175
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 175
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v004]" time="0.001"><failure message="assert None == 255">args = ('FF',), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 255
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v005]" time="0.001"><failure message="assert None == 128">args = ('80',), expected = 128
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00',), 0, id="v000"),
+        pytest.param(('09',), 9, id="v001"),
+        pytest.param(('0a',), 10, id="v002"),
+        pytest.param(('Af',), 175, id="v003"),
+        pytest.param(('FF',), 255, id="v004"),
+        pytest.param(('80',), 128, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 128
+
+test_candidate.py:22: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e000]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e001]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e002]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e003]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e011]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e012]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e013]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e014]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e015]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e016]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e017]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e004]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e005]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e006]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e007]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e008]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e009]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e010]" time="0.000" /></testsuite></testsuites>

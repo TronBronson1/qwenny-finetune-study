@@ -1,0 +1,109 @@
+F.FFF.F...................                                               [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = (-1, 0, 5), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0),
+        pytest.param((0, 0, 5), 0),
+        pytest.param((3, 0, 5), 3),
+        pytest.param((5, 0, 5), 5),
+        pytest.param((6, 0, 5), 5),
+        pytest.param((4, 2, 2), 2),
+        pytest.param((-5, -4, -2), -4),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=clamp(*args)
+>       assert actual == expected
+E       assert -1 == 0
+
+test_target.py:26: AssertionError
+____________________________ test_values[args2-3] _____________________________
+
+args = (3, 0, 5), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0),
+        pytest.param((0, 0, 5), 0),
+        pytest.param((3, 0, 5), 3),
+        pytest.param((5, 0, 5), 5),
+        pytest.param((6, 0, 5), 5),
+        pytest.param((4, 2, 2), 2),
+        pytest.param((-5, -4, -2), -4),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=clamp(*args)
+>       assert actual == expected
+E       assert 0 == 3
+
+test_target.py:26: AssertionError
+____________________________ test_values[args3-5] _____________________________
+
+args = (5, 0, 5), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0),
+        pytest.param((0, 0, 5), 0),
+        pytest.param((3, 0, 5), 3),
+        pytest.param((5, 0, 5), 5),
+        pytest.param((6, 0, 5), 5),
+        pytest.param((4, 2, 2), 2),
+        pytest.param((-5, -4, -2), -4),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=clamp(*args)
+>       assert actual == expected
+E       assert 0 == 5
+
+test_target.py:26: AssertionError
+____________________________ test_values[args4-5] _____________________________
+
+args = (6, 0, 5), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0),
+        pytest.param((0, 0, 5), 0),
+        pytest.param((3, 0, 5), 3),
+        pytest.param((5, 0, 5), 5),
+        pytest.param((6, 0, 5), 5),
+        pytest.param((4, 2, 2), 2),
+        pytest.param((-5, -4, -2), -4),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=clamp(*args)
+>       assert actual == expected
+E       assert 0 == 5
+
+test_target.py:26: AssertionError
+____________________________ test_values[args6--4] ____________________________
+
+args = (-5, -4, -2), expected = -4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0),
+        pytest.param((0, 0, 5), 0),
+        pytest.param((3, 0, 5), 3),
+        pytest.param((5, 0, 5), 5),
+        pytest.param((6, 0, 5), 5),
+        pytest.param((4, 2, 2), 2),
+        pytest.param((-5, -4, -2), -4),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=clamp(*args)
+>       assert actual == expected
+E       assert -5 == -4
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - assert -1 == 0
+FAILED test_target.py::test_values[args2-3] - assert 0 == 3
+FAILED test_target.py::test_values[args3-5] - assert 0 == 5
+FAILED test_target.py::test_values[args4-5] - assert 0 == 5
+FAILED test_target.py::test_values[args6--4] - assert -5 == -4
+5 failed, 21 passed in 0.34s

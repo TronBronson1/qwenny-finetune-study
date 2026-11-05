@@ -1,0 +1,94 @@
+FFFFF...........................                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0, 1, 1), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0), id="v000"),
+        pytest.param((0, 2, 3), (0, 0), id="v001"),
+        pytest.param((2, 2, 3), (0, 2), id="v002"),
+        pytest.param((3, 2, 3), (1, 0), id="v003"),
+        pytest.param((5, 2, 3), (1, 2), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=unravel_index(*args)
+>       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:21: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (0, 2, 3), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0), id="v000"),
+        pytest.param((0, 2, 3), (0, 0), id="v001"),
+        pytest.param((2, 2, 3), (0, 2), id="v002"),
+        pytest.param((3, 2, 3), (1, 0), id="v003"),
+        pytest.param((5, 2, 3), (1, 2), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=unravel_index(*args)
+>       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:21: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (2, 2, 3), expected = (0, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0), id="v000"),
+        pytest.param((0, 2, 3), (0, 0), id="v001"),
+        pytest.param((2, 2, 3), (0, 2), id="v002"),
+        pytest.param((3, 2, 3), (1, 0), id="v003"),
+        pytest.param((5, 2, 3), (1, 2), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=unravel_index(*args)
+>       assert actual == expected
+E       assert None == (0, 2)
+
+test_target.py:21: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (3, 2, 3), expected = (1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0), id="v000"),
+        pytest.param((0, 2, 3), (0, 0), id="v001"),
+        pytest.param((2, 2, 3), (0, 2), id="v002"),
+        pytest.param((3, 2, 3), (1, 0), id="v003"),
+        pytest.param((5, 2, 3), (1, 2), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=unravel_index(*args)
+>       assert actual == expected
+E       assert None == (1, 0)
+
+test_target.py:21: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (5, 2, 3), expected = (1, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0), id="v000"),
+        pytest.param((0, 2, 3), (0, 0), id="v001"),
+        pytest.param((2, 2, 3), (0, 2), id="v002"),
+        pytest.param((3, 2, 3), (1, 0), id="v003"),
+        pytest.param((5, 2, 3), (1, 2), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=unravel_index(*args)
+>       assert actual == expected
+E       assert None == (1, 2)
+
+test_target.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert None == (0, 0)
+FAILED test_target.py::test_values[v001] - assert None == (0, 0)
+FAILED test_target.py::test_values[v002] - assert None == (0, 2)
+FAILED test_target.py::test_values[v003] - assert None == (1, 0)
+FAILED test_target.py::test_values[v004] - assert None == (1, 2)
+5 failed, 27 passed in 0.64s

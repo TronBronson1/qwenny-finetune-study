@@ -1,0 +1,186 @@
+FFFFFFF..................                                                [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (['mutation-sentinel'], []), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['mutation-sentinel'], []) == ([], [])
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ([1, 'mutation-sentinel'], []), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([1, 'mutation-sentinel'], []) == ([1], [])
+E         
+E         At index 0 diff: [1, 'mutation-sentinel'] != [1]
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (['mutation-sentinel'], [1]), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['mutation-sentinel'], [1]) == ([], [1])
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ([2, 1, 2, 3, 'mutation-sentinel'], [2, 2, 4]), expected = [2, 2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([2, 1, 2, 3,...'], [2, 2, 4]) == ([2, 1, 2, 3], [2, 2, 4])
+E         
+E         At index 0 diff: [2, 1, 2, 3, 'mutation-sentinel'] != [2, 1, 2, 3]
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ([1, 1, 1, 'mutation-sentinel'], [1, 1]), expected = [1, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([1, 1, 1, 'm...nel'], [1, 1]) == ([1, 1, 1], [1, 1])
+E         
+E         At index 0 diff: [1, 1, 1, 'mutation-sentinel'] != [1, 1, 1]
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ([-1, 0, -1, 'mutation-sentinel'], [0, -1]), expected = [-1, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([-1, 0, -1, ...el'], [0, -1]) == ([-1, 0, -1], [0, -1])
+E         
+E         At index 0 diff: [-1, 0, -1, 'mutation-sentinel'] != [-1, 0, -1]
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ([2, 1, 2, 'mutation-sentinel'], [1, 2]), expected = [2, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([2, 1, 2, 'm...nel'], [1, 2]) == ([2, 1, 2], [1, 2])
+E         
+E         At index 0 diff: [2, 1, 2, 'mutation-sentinel'] != [2, 1, 2]
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert (['mutation...
+FAILED test_target.py::test_values[v001] - AssertionError: assert ([1, 'mutat...
+FAILED test_target.py::test_values[v002] - AssertionError: assert (['mutation...
+FAILED test_target.py::test_values[v003] - AssertionError: assert ([2, 1, 2, ...
+FAILED test_target.py::test_values[v004] - AssertionError: assert ([1, 1, 1, ...
+FAILED test_target.py::test_values[v005] - AssertionError: assert ([-1, 0, -1...
+FAILED test_target.py::test_values[v006] - AssertionError: assert ([2, 1, 2, ...
+7 failed, 18 passed in 0.61s

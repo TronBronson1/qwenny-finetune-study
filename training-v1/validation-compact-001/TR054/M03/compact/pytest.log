@@ -1,0 +1,28 @@
+F...........                                                             [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = (0,), expected = '0'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0'),
+        pytest.param((1,), '1'),
+        pytest.param((999,), '999'),
+        pytest.param((1000,), '1_000'),
+        pytest.param((-1000,), '-1_000'),
+        pytest.param((1234567,), '1_234_567'),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=grouped_decimal(*args)
+>       assert actual == expected
+E       AssertionError: assert '-0' == '0'
+E         
+E         - 0
+E         + -0
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - AssertionError: assert '-0' == '0'
+1 failed, 11 passed in 0.30s

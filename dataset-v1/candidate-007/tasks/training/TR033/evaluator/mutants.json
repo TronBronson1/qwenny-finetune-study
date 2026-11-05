@@ -1,0 +1,128 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild([1]), 0)",
+      "expected_exception": "TypeError",
+      "actual_python": "[]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "819f245056ae51b0f8faf270e6347ae0f052069094743cf2fd149962e529f81b"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-arithmetic-48-Sub",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1], 0)",
+      "expected_python": "[]",
+      "actual_python": "[1]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "2456fff8db38249e35dcad24be074dd034fb92e04268244d72b044f2b070900d"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-constant-48-1-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1, 2, 3], 0)",
+      "expected_python": "[2, 3]",
+      "actual_python": "[3]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "4c71ace1dae24c72728da519de23d8c98da80a4052a2065fc605da6856519692"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1], 0)",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "29684b8a886be584cfe6f789964358f44258701712f67786e4fa4139ba18b4cc"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1, 2, 3], 0)",
+      "expected_python": "[2, 3]",
+      "actual_python": "[2, 3]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "1d895e123868897a7685cb33ee35ebe96fa11ec67c7cdfd41e3a9c3a96618d38"
+  },
+  {
+    "id": "R03",
+    "requirement": "valid-input-not-mutated",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1], 0)",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "53c6e7f3b8b03ae6ff43166cdce8d41adf9da440be0991cfd505b53dc012983b"
+  },
+  {
+    "id": "R04",
+    "requirement": "ordinary-nested-int-rejection",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e005]",
+      "case": "e005",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['x'], 0)",
+      "expected_exception": "TypeError",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "2912641df66da8810857d1f8b0881873f585518900daf66df2543dbf6ae3d071"
+  },
+  {
+    "id": "R05",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e003]",
+      "case": "e003",
+      "kind": "required-exception-wrong-class",
+      "args_python": "((), 0)",
+      "expected_exception": "TypeError",
+      "actual_exception": "IndexError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "974ac5c2cf558ad72d72a5b7e7b99538088dbb24566d2b0a2a0fa1fc493ae579"
+  },
+  {
+    "id": "R06",
+    "requirement": "bounds-exception-class",
+    "witness": {
+      "node": "test_target.py::test_raises_indexerror[e014]",
+      "case": "e014",
+      "kind": "required-exception-wrong-class",
+      "args_python": "([], 0)",
+      "expected_exception": "IndexError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "15dbc7d02a5604286a6538baf73a938603d697b8b209d5869e976452fd2a24f7"
+  }
+]

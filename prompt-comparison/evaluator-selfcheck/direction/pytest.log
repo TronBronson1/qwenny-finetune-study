@@ -1,0 +1,60 @@
+...FFFF...........                                                       [100%]
+================================== FAILURES ===================================
+______________________ test_returns[values3-1-expected3] ______________________
+
+values = (1, 2, 3), steps = 1, expected = (3, 1, 2)
+
+    @pytest.mark.parametrize("values,steps,expected", [((),3,()), ((1,),-9,(1,)), ((1,2,3),0,(1,2,3)), ((1,2,3),1,(3,1,2)), ((1,2,3),-1,(2,3,1)), ((1,2,3),7,(3,1,2)), ((1,1,2),1,(2,1,1))])
+    def test_returns(values,steps,expected):
+>       assert rotate_right(values,steps) == expected
+E       assert (2, 3, 1) == (3, 1, 2)
+E         
+E         At index 0 diff: 2 != 3
+E         Use -v to get more diff
+
+test_candidate.py:7: AssertionError
+_____________________ test_returns[values4--1-expected4] ______________________
+
+values = (1, 2, 3), steps = -1, expected = (2, 3, 1)
+
+    @pytest.mark.parametrize("values,steps,expected", [((),3,()), ((1,),-9,(1,)), ((1,2,3),0,(1,2,3)), ((1,2,3),1,(3,1,2)), ((1,2,3),-1,(2,3,1)), ((1,2,3),7,(3,1,2)), ((1,1,2),1,(2,1,1))])
+    def test_returns(values,steps,expected):
+>       assert rotate_right(values,steps) == expected
+E       assert (3, 1, 2) == (2, 3, 1)
+E         
+E         At index 0 diff: 3 != 2
+E         Use -v to get more diff
+
+test_candidate.py:7: AssertionError
+______________________ test_returns[values5-7-expected5] ______________________
+
+values = (1, 2, 3), steps = 7, expected = (3, 1, 2)
+
+    @pytest.mark.parametrize("values,steps,expected", [((),3,()), ((1,),-9,(1,)), ((1,2,3),0,(1,2,3)), ((1,2,3),1,(3,1,2)), ((1,2,3),-1,(2,3,1)), ((1,2,3),7,(3,1,2)), ((1,1,2),1,(2,1,1))])
+    def test_returns(values,steps,expected):
+>       assert rotate_right(values,steps) == expected
+E       assert (2, 3, 1) == (3, 1, 2)
+E         
+E         At index 0 diff: 2 != 3
+E         Use -v to get more diff
+
+test_candidate.py:7: AssertionError
+______________________ test_returns[values6-1-expected6] ______________________
+
+values = (1, 1, 2), steps = 1, expected = (2, 1, 1)
+
+    @pytest.mark.parametrize("values,steps,expected", [((),3,()), ((1,),-9,(1,)), ((1,2,3),0,(1,2,3)), ((1,2,3),1,(3,1,2)), ((1,2,3),-1,(2,3,1)), ((1,2,3),7,(3,1,2)), ((1,1,2),1,(2,1,1))])
+    def test_returns(values,steps,expected):
+>       assert rotate_right(values,steps) == expected
+E       assert (1, 2, 1) == (2, 1, 1)
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+test_candidate.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_returns[values3-1-expected3] - assert (2, 3, 1...
+FAILED test_candidate.py::test_returns[values4--1-expected4] - assert (3, 1, ...
+FAILED test_candidate.py::test_returns[values5-7-expected5] - assert (2, 3, 1...
+FAILED test_candidate.py::test_returns[values6-1-expected6] - assert (1, 2, 1...
+4 failed, 14 passed in 0.23s

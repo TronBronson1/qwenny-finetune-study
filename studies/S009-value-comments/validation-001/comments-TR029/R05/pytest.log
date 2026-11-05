@@ -1,0 +1,164 @@
+....................FFFF..                                               [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = ([1], 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           chunk_list(*args)
+
+test_target.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], width = 0
+
+    def chunk_list(values, width):
+        if width <= 0:
+>           raise ValueError('width')
+E           ValueError: width
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = ([1], 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           chunk_list(*args)
+
+test_target.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], width = 0
+
+    def chunk_list(values, width):
+        if width <= 0:
+>           raise ValueError('width')
+E           ValueError: width
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = ([], -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           chunk_list(*args)
+
+test_target.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], width = -1
+
+    def chunk_list(values, width):
+        if width <= 0:
+>           raise ValueError('width')
+E           ValueError: width
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e019] _________________________
+
+args = ([], -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           chunk_list(*args)
+
+test_target.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], width = -1
+
+    def chunk_list(values, width):
+        if width <= 0:
+>           raise ValueError('width')
+E           ValueError: width
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: width
+FAILED test_target.py::test_raises_typeerror[e017] - ValueError: width
+FAILED test_target.py::test_raises_typeerror[e018] - ValueError: width
+FAILED test_target.py::test_raises_typeerror[e019] - ValueError: width
+4 failed, 22 passed in 0.63s

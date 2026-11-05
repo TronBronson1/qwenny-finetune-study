@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="17" time="0.405" timestamp="2026-11-03T20:16:31.867875-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ([(1, 1)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([(1, 1)],), id="e005"),
+        pytest.param(([(2, 1)],), id="e006"),
+        pytest.param(([(1, 2, 3)],), id="e007"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:53: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /></testsuite></testsuites>

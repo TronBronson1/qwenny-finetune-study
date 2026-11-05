@@ -1,0 +1,487 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Goal:** Write simple, executable Python code following a specific contract exactly.
+    *   **Function:** `rotate_right(values, steps)` (imported from `subject`).
+    *   **Constraints:**
+        *   `values`: Must be an exact built-in `tuple` (reject tuple subclasses like `typing.NamedTuple`, `types.Tuple`, etc.).
+        *   `steps`: Must be an exact built-in `int` (reject `bool` and subclasses).
+        *   Invalid types -> `TypeError` immediately (before value/shape checks).
+        *   Rotation logic: Signed steps, wrap modulo length, negative steps rotate left.
+        *   Empty input -> returns `()`.
+        *   Preserve element identities/order, do not mutate elements (including nested).
+        *   **Output Format:** One complete `pytest` file importing `from subject import rotate_right`.
+        *   **Style:** Explicit argument tuples, separate return-value cases from exception cases. No conditional expression for building argument lists, no duplicate tuples implicitly.
+        *   **Verification:** Check parametrized names against concrete values. For reversed-bounds test, verify actual lower > actual upper.
+        *   **Requirements:** One Python code block, then brief requirement-to-input mapping, then honest finite-coverage limitations.
+        *   **Restriction:** Do not claim execution/completeness.
+        *   **Distinction:** Distinguish tests I inspected from tests I executed. (Note: The prompt says "Write simple, executable Python code... Before returning a test file, check each case...". This implies I need to *write* the code, acting as the test author, but the prompt instruction "Do not claim execution" and "State limitations precisely" suggests I am providing the *text* of the test file, not actually running it in this turn).
+        *   **Crucial Instruction:** "Do not implement, replace, mock or inspect the function. Use only pytest and the standard library." -> I need to write tests *for* a function that exists in `subject.py`. I must not redefine `rotate_right`.
+
+2.  **Deconstruct the Contract & Design Tests:**
+
+    *   **Input 1: `values` (tuple)**
+        *   Must be `type(values) is tuple` or `isinstance(values, tuple)`? The contract says "exact built-in tuple". Usually, this means `type(values) is tuple`, because `NamedTuple` or `deque` might pass `isinstance` depending on imports, but strict subclassing check usually means `type(values) is tuple`. However, `isinstance(tuple, tuple)` is True. Wait, "reject tuple subclasses". This usually implies `type(x) is tuple`. If `list` is passed, that's not a tuple. If `NamedTuple` is passed, that's a subclass.
+        *   Contract: "values: an exact tuple (arbitrary elements; reject tuple subclasses)." -> This implies `type(values) must be tuple`.
+        *   Check for `bool` rejection on `steps`. `bool` is a subclass of `int`.
+        *   Check for type errors.
+        *   Check rotation logic (empty, single, wrap, negative).
+
+    *   **Input 2: `steps` (int)**
+        *   Must be `type(steps) is int`.
+        *   Must reject `bool` (`True` is instance of `int`).
+        *   Subclasses of int? Usually `numpy.int64` etc are not standard library. Contract says "exact built-in int". This implies `type(steps) is int`.
+        *   Negative steps -> Left rotate.
+        *   Positive steps -> Right rotate.
+        *   Wrap modulo length.
+
+    *   **Specific Edge Cases to Cover:**
+        1.  `values` is not a tuple (list, str, etc.) -> TypeError.
+        2.  `values` is a tuple subclass (e.g., `types.Tuple`? Or `typing.Tuple`? Or `NamedTuple`) -> TypeError.
+        3.  `steps` is a `bool` -> TypeError.
+        4.  `steps` is not an `int` (float, str, etc.) -> TypeError.
+        5.  `values` is empty -> returns `()`.
+        6.  `values` is single element, steps -> returns same element.
+        7.  `values` length > 1, steps > length (wrap).
+        8.  Negative steps.
+        9.  Zero steps.
+
+    *   **Parametrization:**
+        *   Explicit tuples in `@pytest.mark.parametrize`.
+        *   Separate success cases from exception cases.
+
+    *   **Constraint Checklist:**
+        *   No conditional expression building lists (e.g., no `[(1,2), (2,1)] if condition else ...`).
+        *   Match parametrized name to argument.
+        *   For reversed bounds test, verify lower > upper (maybe not needed for rotate, but good for sanity check? The prompt mentions "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value." This seems specific to a specific test scenario, maybe related to index bounds. I will include a negative step test or index logic if relevant, but mostly the rotation contract is about slicing logic).
+        *   Do not claim execution/completeness.
+
+3.  **Drafting the Test Code:**
+
+    *   Import: `import pytest`, `from subject import rotate_right`.
+    *   Exceptions test class or function? The prompt asks for "one complete pytest file". I'll use a single test function with parametrized arguments for valid cases, and separate `raises` blocks for invalid cases, or one function with `parametrize` for valid cases and a separate `def test_invalid_type_values`, etc.
+    *   Prompt says: "Keep ordinary return-value cases separate from expected-exception cases."
+    *   Structure:
+        *   `test_rotate_right_valid`: Parametrize inputs that work.
+        *   `test_rotate_right_invalid_values`: `assert` TypeError.
+        *   `test_rotate_right_invalid_steps`: `assert` TypeError (including bool).
+        *   `test_rotate_right_empty`: Specific case.
+        *   `test_rotate_right_single`: Specific case.
+        *   `test_rotate_right_wrap`: Specific case (steps > len).
+        *   `test_rotate_right_negative`: Specific case.
+        *   `test_rotate_right_no_mutate`: Check input after call.
+
+    *   **Constraint:** "reject tuple subclasses".
+        *   How to test this? I need to pass a `NamedTuple`. I need to define one locally or import `typing.Tuple`. `typing.Tuple` is just a hint. `NamedTuple` needs a class. I can define a simple class inheriting from tuple? No, you can't subclass `tuple` easily for instances (except via `types.Tuple` or `namedtuple`).
+        *   Better approach: Use `typing.NamedTuple` or a custom class inheriting from `tuple` (though `tuple` itself doesn't support overriding `__init__` easily in a simple way without `__new__`).
+        *   Simpler interpretation of "exact built-in tuple": `type(values) is tuple`.
+        *   How to test "reject tuple subclasses"? I can pass a `list` (obviously wrong), but specifically `tuple` subclass.
+        *   I can define a helper class `class CustomTuple(tuple): pass`.
+        *   Test: `ct = CustomTuple((1, 2))`. Expect TypeError.
+
+    *   **Constraint:** "reject bool". `isinstance(True, int)` is True.
+    *   **Constraint:** "exact built-in int". `type(steps) is int`.
+
+    *   **Constraint:** "Check each case against its concrete argument values".
+        *   I will explicitly write the arguments in the `@pytest.mark.parametrize`.
+
+    *   **Constraint:** "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+        *   This sounds like a specific test case description I might be expected to implement or acknowledge.
+        *   However, the prompt instruction says: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value. When isolating an invalid input, hold the other arguments valid."
+        *   This sentence seems to imply a specific test logic for validation of arguments that might look like indices? But the contract is `rotate_right`. Maybe it refers to validating a hypothetical `slice`? Or maybe it refers to `steps` bounds?
+        *   Actually, the prompt says "For a reversed-bounds test...". In rotation, bounds aren't really reversed unless we talk about indices. But rotation doesn't take indices.
+        *   Re-reading: "Distinguish tests you inspected from tests you executed. State limitations precisely; do not claim completeness or that one exception-order case proves every validation ordering."
+        *   Okay, I will follow the explicit instruction: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+        *   Wait, does `rotate_right` take lower/upper? No, it takes `values` and `steps`.
+        *   Maybe this instruction is generic for this specific prompt context, but I should try to fit it.
+        *   Perhaps I need to test negative rotation logic (left rotation) to see if the "math" holds (simulating negative bounds logic).
+        *   Or maybe the instruction implies: If I were testing a function that takes low/high, I should check that.
+        *   Let's stick to `rotate_right`. The "reversed-bounds" instruction might be a directive for *me* (the AI) to write tests that verify logic where bounds logic applies. In rotation, `steps % len` matters.
+        *   Actually, I will treat the "reversed-bounds" instruction as a directive for me to check my own test coverage logic or to include a test case that demonstrates a specific edge case related to wrapping logic (e.g. large positive vs negative steps where logic wraps).
+        *   Wait, looking closely at: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value." This sounds like a requirement for a specific test case *if* such a case exists. Since `rotate_right` doesn't take bounds, I should focus on `values` being empty or single element where "order" is trivial.
+        *   Actually, I will interpret this as a constraint for me to ensure I don't write "if low > high" tests unless they exist, but rather write explicit tests. I will include a test that explicitly checks the behavior when step logic involves "wrapping" in a way that might feel like bounds (though rotation doesn't really use bounds).
+        *   Let's stick to the contract strictly.
+        *   Test 1: Valid Tuple, Valid Int, Non-empty, Standard Right Rotate.
+        *   Test 2: Valid Tuple, Valid Int, Empty.
+        *   Test 3: Valid Tuple, Valid Int, Single.
+        *   Test 4: Valid Tuple, Valid Int, Wrap (steps > len).
+        *   Test 5: Valid Tuple, Valid Int, Negative (Left).
+        *   Test 6: Invalid values (List).
+        *   Test 7: Invalid values (Tuple subclass).
+        *   Test 8: Invalid steps (Bool).
+        *   Test 9: Invalid steps (Float).
+        *   Test 10: Check mutation (Ensure output is new object).
+
+    *   **Constraint:** "Keep ordinary return-value cases separate from expected-exception cases." -> I will define `test_valid` and `test_invalid_values` etc.
+    *   **Constraint:** "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly." -> `@pytest.mark.parametrize(['values', 'steps'], [(1, 2), (3, 4)])` style.
+    *   **Constraint:** "Match every parametrized name to a test argument".
+
+4.  **Refining the "Tuple Subclass" and "Exact Int" checks:**
+    *   To check `type(values) is tuple`, I need an argument that is a subclass.
+    *   To check `type(steps) is int`, I need an argument that is a subclass (e.g., `numpy.int64`? No, "exact built-in int". `bool` is a subclass).
+    *   So I will use `True` for `steps` in an exception test.
+    *   For `values`, I'll define a local class `SubTuple(tuple)` to pass as an argument to the exception test.
+
+5.  **Refining "Reversed-Bounds" Instruction:**
+    *   "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   Since `rotate_right` doesn't take bounds, I should probably add a test that conceptually represents a scenario where rotation behaves unexpectedly if bounds weren't wrapped (though impossible here).
+    *   Actually, reading the instruction again: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   This might be an instruction to *me* to verify logic if I were testing a slice. Since I am testing `rotate_right`, I should ensure I don't miss a test where step magnitude interacts with list length in a way that suggests bounds.
+    *   However, I can't invent bounds. I will add a comment or note if this is impossible, or I will treat "steps" as the value to check against "length".
+    *   Wait, is there a specific test case mentioned in the system prompt that I missed? "For a reversed-bounds test..."
+    *   Okay, I'll create a test that checks rotation behavior where the "step" logic effectively moves backwards (negative steps). In terms of "order", moving from end to start.
+    *   Actually, I'll include a test case `test_rotate_left_wrap` or similar to show that "negative steps" are treated as "left" (which effectively inverts the direction of movement). I will ensure the test explicitly verifies the behavior.
+    *   But the instruction says "verify that the actual lower value exceeds the actual upper value". This implies two values. `rotate_right` takes `values` and `steps`. Maybe `values` elements? No.
+    *   Okay, I will assume this instruction is a guideline for *if* I were writing tests for a function like `slice` or `get_range`. For `rotate_right`, I will ensure I cover wrapping cases thoroughly. I will explicitly check that a specific negative step test demonstrates the "lower > upper" behavior logic (i.e., negative index wraps).
+    *   Actually, to be safe and compliant: I will include a test `test_negative_rotation_order` where I check that the element at the "end" moves to the "start" (or similar).
+    *   Let's re-read: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   This is very specific. Maybe I should add a test that checks `steps` vs `len(values)`? If `steps` is interpreted as `start` and `end`? No, it's rotation.
+    *   Okay, I will interpret this as: If I write a test where `steps` > `len(values)`, verify wrapping. If I write a test where `steps` < 0, verify it's treated as negative (left).
+    *   I will add a test `test_reverse_rotation` that explicitly asserts `len` vs `abs(steps)` behavior?
+    *   Actually, I will ignore the "lower > upper" specific text as it doesn't apply directly to `rotate_right` parameters (which are `values`, `steps`, not `low`, `high`). I will acknowledge this limitation in the "Requirements to Input Mapping" section.
+    *   Wait, the prompt says: "Before returning a test file, check each case... For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   This implies the *contract* might be missing bounds, or I should simulate a bounds check.
+    *   I will add a check in the `test_rotate_right` docstring or comments that this specific "lower > upper" verification is *not applicable* to `rotate_right` as defined, but I will check wrapping behavior extensively.
+    *   Wait, better idea: The prompt instruction says "Write simple... code that follows the supplied contract exactly." AND "Before returning a test file... For a reversed-bounds test...".
+    *   Okay, I will check the contract. Contract: `values` (tuple), `steps` (int). No bounds mentioned.
+    *   So I cannot fulfill "For a reversed-bounds test...".
+    *   I will state this limitation in the final text. "Requirement-to-input mapping" is asked for. "Do not claim execution".
+    *   So I will write the code, acknowledge the limitation in the text following the code block.
+
+6.  **Refining "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly":**
+    *   `[(a, b), (c, d)]` is fine. `[(a, b) if condition else (c, d)]` is not.
+    *   Use `@pytest.mark.parametrize` with hardcoded lists.
+
+7.  **Refining "Exact built-in types":**
+    *   Use `assert isinstance(x, MyType)`? No, "exact built-in types". `isinstance(True, int)` is True. `type(True) is bool`. `type(True) is int` is False.
+    *   So `type(steps) is int` check in code.
+    *   `type(values) is tuple` check in code.
+
+8.  **Refining "Preserve element identities":**
+    *   Test: Input list of ints, Output list of ints. `id` check? Or just value check.
+    *   Test: `values = (1, 2)`, `output = rotate_right(values, 1)`. Assert `output` equals `expected`.
+    *   Test: No mutation. `assert values is not output`.
+    *   Test: Nested containers. `values = ([1], [2])`. Output should not mutate inner `[1]`.
+    *   Wait, "Do not mutate any input, including nested containers." -> If input is `[[1]]`, output should be `[[2]]`. Wait, if I rotate `[[1], [2]]` right, I get `[[2], [1]]`.
+    *   Constraint: "Preserve element identities". This usually means the objects returned are the same objects as the input, just reordered.
+    *   So `rotate_right((a, b, c), 1)` should return `(c, a, b)`. The `a` in output should be the `a` from input (identity preserved).
+    *   Since Python tuples are immutable, we create a new tuple anyway. The constraint "do not mutate input" means don't modify `values[0]` if it's a mutable object. We just create a new tuple with elements from `values` in new order.
+
+9.  **Structuring the Output:**
+    *   Code Block.
+    *   Requirement-to-Input Mapping (Brief text).
+    *   Honest Finite-Coverage Limitations (Brief text).
+    *   Distinguish inspected vs executed (Note: I will state "Tests Inspected" and "Tests Executed" if applicable, but since I cannot run, I will state "Tests Written for Execution"). The prompt says "Distinguish tests you inspected from tests you executed." -> Since I am an AI, I inspect them during generation. I will state that these tests are prepared for execution.
+
+10. **Final Check on Constraints:**
+    *   `from subject import rotate_right`.
+    *   `values`: Exact tuple.
+    *   `steps`: Exact int.
+    *   `bool` rejection.
+    *   `TypeError` before checks.
+    *   Empty -> `()`.
+    *   Negative -> Left.
+    *   No mutation.
+    *   Parametrize explicitly.
+    *   No duplicate tuples.
+    *   No claim of execution/completeness.
+
+    *   Wait, one specific instruction: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   If I add a test for `steps` vs `len`, does that count? `steps` isn't a bound.
+    *   I will add a note in the limitations that this specific "lower > upper" verification applies to index-range tests not present in this contract.
+
+    *   Another specific instruction: "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    *   Example: `pytest.param` usage is fine.
+
+    *   Another specific instruction: "Match every parametrized name to a test argument".
+    *   Example: `parametrize(['values', 'steps'], ...)`.
+
+    *   Okay, ready to write.
+
+    *   Wait, "Write simple, executable Python code...".
+    *   I must ensure the code *can* be run (except `pytest` which needs `subject` to exist).
+    *   I need to define `SubTuple` and `FakeInt` inside the test file to facilitate the exception tests, or rely on `pytest.raises` with mock-like structures?
+    *   No, I can define a class inheriting from `tuple` to trigger the `TypeError`.
+    *   No, I can use `typing.NamedTuple`. But `NamedTuple` is not a tuple subclass in the sense of runtime `type` check? `type(NamedTupleInstance)` is `MyTuple`.
+    *   So `type(instance) is tuple` returns False for `NamedTuple`. This satisfies "reject tuple subclasses".
+    *   I can create `class CustomTuple(tuple): pass`. Instance `ct = CustomTuple((1, 2))`. `type(ct) is CustomTuple`. `type(ct) is tuple` is False.
+    *   This works for testing `TypeError`.
+
+    *   For steps: `class FakeInt(int): pass`. Instance `fi = FakeInt(1)`. `type(fi) is FakeInt`. `type(fi) is int` is False.
+    *   `True` is `bool`. `isinstance(True, int)` is True. `type(True) is bool`. `type(True) is int` is False.
+    *   So I need to pass `True` or `False` for the steps TypeError test.
+
+    *   One more: "Keep ordinary return-value cases separate from expected-exception cases."
+    *   I will split the pytest file into `test_rotate_right_success` and `test_rotate_right_failure`.
+    *   I will put `raises` tests in a separate function/class?
+    *   The prompt says "Keep ordinary return-value cases separate from expected-exception cases."
+    *   I can use `@pytest.mark.parametrize` for valid cases in `test_rotate_right_valid`.
+    *   I can use `@pytest.mark.parametrize` for invalid cases in `test_rotate_right_invalid`.
+
+    *   "Distinguish tests you inspected from tests you executed."
+    *   Since I am an AI, I inspect them. I will state "Inspected: ...". "Executed: ..." (None, since I cannot run).
+
+    *   "Use only pytest and the standard library."
+    *   I will define the helper classes `class InvalidTuple(tuple)` inside the file if needed, or import from `typing`? `typing` is stdlib. But `typing.NamedTuple` creates instances that fail `type(x) is tuple`.
+    *   I'll just define a small helper class `class SubTuple(tuple): pass` inside the test file to keep it self-contained.
+
+    *   Wait, "For a reversed-bounds test...".
+    *   If I can't find bounds, I won't write it. I will list it as a limitation.
+
+    *   Final check on imports: `import pytest`. `from subject import rotate_right`.
+
+    *   One constraint: "When isolating an invalid input, hold the other arguments valid."
+    *   So in `test_rotate_right_invalid_steps`, `values` must be a valid tuple.
+    *   In `test_rotate_right_invalid_values`, `steps` must be a valid int.
+
+    *   Okay, plan is solid.
+
+    *   Wait, "Before returning a test file, check each case against its concrete argument values and required result or exception."
+    *   I need to ensure I check the logic before outputting.
+    *   I have done this in thought process.
+
+    *   One detail: "Write one complete pytest file...".
+    *   I will combine everything into one file.
+
+    *   "Do not claim execution."
+    *   I will add a note that the file is ready for execution.
+
+    *   "Do not implement, replace, mock or inspect the function."
+    *   I will only import it.
+
+    *   "Do not mutate any input...".
+    *   I will add a test for this.
+
+    *   "Reversed-bounds test".
+    *   I will add a test `test_rotate_wraps_steps` to cover the wrapping logic (which is the closest thing to bounds).
+    *   I will *not* invent a bounds argument. I will state the limitation.
+
+    *   Wait, "Match every parametrized name to a test argument".
+    *   `parametrize(['values', 'steps'], [...])`.
+    *   In the test body, use `values` and `steps`.
+
+    *   Okay, ready.
+
+    *   Wait, "Check each case against its concrete argument values".
+    *   I will calculate expected values manually in the thought block to ensure the test assertions match.
+    *   e.g. `rotate_right((1, 2, 3), 1)` -> `(3, 1, 2)`.
+    *   `rotate_right((1, 2, 3), 2)` -> `(2, 3, 1)`.
+    *   `rotate_right((1, 2, 3), 0)` -> `(1, 2, 3)`.
+    *   `rotate_right((1,), 1)` -> `(1,)`.
+    *   `rotate_right((), 0)` -> `()`.
+    *   `rotate_right((1, 2), -1)` -> `(1,)` (Left 1).
+    *   `rotate_right((1, 2), -2)` -> `(2, 1)` (Left 2 == Right 0).
+
+    *   Wait, "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   I will check if I can interpret `steps` vs `len` as bounds.
+    *   If `abs(steps)` > `len`, does it wrap? Yes.
+    *   I will add a test comment verifying this logic.
+
+    *   One more thing: "Distinguish tests you inspected from tests you executed."
+    *   Since I am generating code, I inspect. I execute nothing.
+    *   I will write: "Inspected: All cases. Executed: None (Code provided for external runner)."
+
+    *   Wait, "State limitations precisely".
+    *   I will state "Coverage of type validation limited to standard Python tuple/int subclasses; does not cover all possible runtime type injection."
+    *   I will state "No 'lower > upper' test applied as contract lacks bounds parameters."
+
+    *   "Do not build argument lists through conditional expressions".
+    *   Ensure `parametrize` lists are static.
+
+    *   "Do not duplicate tuple elements implicitly".
+    *   Ensure lists in parametrize are distinct.
+
+    *   Okay.
+
+    *   Wait, "Write one complete pytest file...".
+    *   I will put everything in `test_rotate.py`.
+
+    *   Wait, "Use the exact requested import." -> `from subject import rotate_right`.
+
+    *   Okay, let's write it.
+
+    *   One detail: `bool` check. `True` is `int`-ish. `type(True) is bool`.
+    *   I need to pass `True` to the function to trigger the check.
+
+    *   "Reject tuple subclasses". `class SubTuple(tuple): pass`. `type(S())` is `SubTuple`. `isinstance(S(), tuple)` is True.
+    *   If the function checks `type(values) is tuple`, `SubTuple` fails.
+    *   I will pass `SubTuple` to trigger `TypeError`.
+
+    *   Okay, proceeding.
+
+    *   One constraint: "Do not mutate any input, including nested containers."
+    *   I need to check if `output` elements are same objects as `values` elements.
+    *   Since `values` is a tuple, I can check `id()` of elements.
+    *   `id(values[0]) == id(output[0])`.
+    *   For nested: `id(values[0]) == id(output[0])`.
+
+    *   Okay.
+
+    *   "Do not claim completeness".
+    *   I will list limitations.
+
+    *   "Distinguish tests you inspected from tests you executed."
+    *   I will add a sentence about this.
+
+    *   Okay.
+
+    *   Wait, "Before returning a test file, check each case...".
+    *   I have done this.
+    *   I will verify the expected rotation values mentally.
+    *   `values = (0, 1, 2, 3)`, `steps = 1`. Right 1 -> `3, 0, 1, 2`.
+    *   `values = (0, 1, 2, 3)`, `steps = -1`. Left 1 -> `1, 2, 3, 0`.
+    *   `values = (0, 1, 2, 3)`, `steps = 2`. Right 2 -> `2, 3, 0, 1`.
+    *   `values = (0, 1, 2, 3)`, `steps = 5` (len=4). `5 % 4 = 1`. -> `3, 0, 1, 2`.
+    *   `values = (0, 1, 2, 3)`, `steps = -5` (len=4). `-5 % 4 = -1`. -> `1, 2, 3, 0`.
+    *   Empty: `()` -> `()` (any steps?). `len=0`. `0 % 0` is error? `steps` must be modulo length.
+    *   Contract: "Empty input returns ()." -> If `values` is `()`, `len` is 0.
+    *   If `steps=1`, `1 % 0` raises ZeroDivisionError?
+    *   Contract says "Empty input returns ().".
+    *   Does it imply `steps` is ignored if empty?
+    *   "Empty input returns ()."
+    *   "Rotate right by signed steps, wrapping modulo length".
+    *   If length is 0, `steps % 0` fails.
+    *   So for empty input, `steps` value must not matter, return `()`.
+    *   I should treat `steps` as valid int, but if `len==0`, return `()` regardless of `steps`.
+    *   I will add this logic to the test expectations.
+
+    *   Okay, I'm confident.
+
+    *   One more check: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    *   I will explicitly NOT implement this if it contradicts the contract.
+    *   I will note it in limitations.
+    *   Wait, is there a test where I check `len` vs `steps`?
+    *   If `steps > len`, I should verify wrapping.
+    *   I will interpret "reversed-bounds" as "Negative steps" test (Left rotation is essentially reversing the bounds of movement compared to Right).
+    *   I will ensure the negative step test verifies that "lower" (conceptually index) > "upper" (conceptually index) isn't checked because there are no bounds.
+    *   Okay, I'll just add the limitation clearly.
+
+    *   Wait, "Write simple, executable Python code".
+    *   I will make sure the code is valid Python (syntax).
+    *   It won't execute because `subject` doesn't exist. But the *tests* are executable against `subject`.
+
+    *   Okay, final check on imports. `from subject import rotate_right`.
+
+    *   Okay, writing the response.
+</think>
+
+```python
+# test_rotate.py
+import pytest
+from subject import rotate_right
+
+
+class SubTuple(tuple):
+    pass
+
+
+class FakeInt(int):
+    pass
+
+
+class FakeIntSubclass(int):
+    pass
+
+
+@pytest.mark.parametrize(
+    ['values', 'steps'],
+    [
+        ([1], 1),
+        ([1, 2], 1),
+        ([1, 2, 3], 0),
+        ([1, 2, 3], 1),
+        ([1, 2, 3], 2),
+        ([1, 2, 3], 3),
+        ([1, 2, 3], 4),
+        ([1, 2, 3], -1),
+        ([1, 2, 3], -2),
+        ([1, 2, 3], -3),
+        ([1, 2, 3], -4),
+        ([1, 2, 3], 6),
+        ([1, 2, 3], -6),
+        ([], 0),
+        ([], 1),
+        ([1], 0),
+        ([1], 1),
+    ],
+)
+def test_rotate_right_valid(values, steps):
+    """
+    Ordinary return-value cases.
+    Verifies valid tuple and valid int inputs return correctly rotated results.
+    """
+    result = rotate_right(values, steps)
+    
+    # Calculate expected result based on rotation logic
+    expected = rotate_right(values, 0) # Identity
+    n = len(values)
+    if n == 0:
+        expected = ()
+    else:
+        # Right rotate: index i moves to (i + steps) % n
+        # Effectively: result[i] = values[(i - steps) % n]
+        # Python slice logic equivalent to this
+        # Slicing: result = values[-steps:] + values[:-steps]
+        # Handle negative steps correctly for slices
+        if steps < 0:
+            shift = steps % n
+            expected = values[:shift] + values[shift:]
+        else:
+            shift = steps % n
+            expected = values[-shift:] + values[:-shift] if shift != 0 else values
+    
+    assert result == expected
+
+
+@pytest.mark.parametrize(
+    ['values', 'steps'],
+    [
+        (SubTuple([1]), 1),
+        ((1, 2), SubTuple([1])),
+        ([1, 2], 1),
+        ((1, 2), 'float'),
+        ([], True),
+        ([], False),
+        ([], FakeInt(1)),
+        ([], FakeIntSubclass(1)),
+    ],
+)
+def test_rotate_right_invalid_input_type(values, steps):
+    """
+    Expected-exception cases.
+    Verifies TypeError is raised before value/shape checks for invalid types.
+    Isolates invalid input by holding other arguments valid where possible.
+    """
+    with pytest.raises(TypeError):
+        rotate_right(values, steps)
+
+
+@pytest.mark.parametrize(
+    ['values', 'steps'],
+    [
+        ([1, 2], 1),
+        ([1, 2], 3),
+        ([1, 2], -1),
+        ([1, 2], -2),
+        ([], 1),
+        ([], 2),
+        ([], -1),
+    ],
+)
+def test_rotate_right_no_mutation(values, steps):
+    """
+    Verifies no input mutation, including nested containers.
+    Input identity should be preserved in output.
+    """
+    result = rotate_right(values, steps)
+    
+    assert values is not result
+    for v_val, r_val in zip(values, result):
+        assert v_val is r_val
+```
+
+**Requirement-to-Input Mapping**
+*   **Function**: `rotate_right` (imported from `subject`).
+*   **Input**: `values` (must be exact `tuple`), `steps` (must be exact `int`).
+*   **Validation**: `TypeError` raised immediately for non-exact `tuple` or `int` (e.g. subclasses, `bool`, `str`).
+*   **Logic**: Empty input returns `()`. Signed steps wrap modulo length. Negative steps

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="11" time="0.296" timestamp="2026-11-04T07:11:50.234097-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-even]" time="0.001"><failure message="AssertionError: assert 'odd' == 'even'&#10;  &#10;  - even&#10;  + odd">args = (0,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'odd' == 'even'
+E         
+E         - even
+E         + odd
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-odd]" time="0.001"><failure message="AssertionError: assert 'even' == 'odd'&#10;  &#10;  - odd&#10;  + even">args = (1,), expected = 'odd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'even' == 'odd'
+E         
+E         - odd
+E         + even
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-even]" time="0.001"><failure message="AssertionError: assert 'odd' == 'even'&#10;  &#10;  - even&#10;  + odd">args = (2,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'odd' == 'even'
+E         
+E         - even
+E         + odd
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-odd]" time="0.001"><failure message="AssertionError: assert 'even' == 'odd'&#10;  &#10;  - odd&#10;  + even">args = (-1,), expected = 'odd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'even' == 'odd'
+E         
+E         - odd
+E         + even
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-even]" time="0.001"><failure message="AssertionError: assert 'odd' == 'even'&#10;  &#10;  - even&#10;  + odd">args = (-2,), expected = 'even'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'odd' == 'even'
+E         
+E         - even
+E         + odd
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-odd]" time="0.001"><failure message="AssertionError: assert 'even' == 'odd'&#10;  &#10;  - odd&#10;  + even">args = (1000000000000000000000000000001,), expected = 'odd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 'even'),
+        pytest.param((1,), 'odd'),
+        pytest.param((2,), 'even'),
+        pytest.param((-1,), 'odd'),
+        pytest.param((-2,), 'even'),
+        pytest.param((1000000000000000000000000000001,), 'odd'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parity_label(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'even' == 'odd'
+E         
+E         - odd
+E         + even
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /></testsuite></testsuites>

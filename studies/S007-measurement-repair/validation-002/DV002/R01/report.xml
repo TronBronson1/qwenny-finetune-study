@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="29" time="0.436" timestamp="2026-11-04T17:06:18.702454-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = ('00:00',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=minute_of_day(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = ('00:01',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=minute_of_day(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(60)&#10; +  and   &lt;class 'int'&gt; = type(60)">args = ('01:00',), expected = 60
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=minute_of_day(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 60, expected = 60
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(60)
+E        +  and   &lt;class 'int'&gt; = type(60)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(754)&#10; +  and   &lt;class 'int'&gt; = type(754)">args = ('12:34',), expected = 754
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=minute_of_day(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 754, expected = 754
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(754)
+E        +  and   &lt;class 'int'&gt; = type(754)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1439)&#10; +  and   &lt;class 'int'&gt; = type(1439)">args = ('23:59',), expected = 1439
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=minute_of_day(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1439, expected = 1439
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1439)
+E        +  and   &lt;class 'int'&gt; = type(1439)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e013]" time="0.000" /></testsuite></testsuites>

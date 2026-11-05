@@ -1,0 +1,315 @@
+.....F...FFFFFFFF........                                                [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = ('00:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed
+_________________________ test_raises_typeerror[e012] _________________________
+
+args = ('24:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '24:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour > 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = ('23:60',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '23:60'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour > 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = ('1:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = ('00:0',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:0'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = ('00-00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00-00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = (' 00:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ' 00:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = ('00:00\n',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:00\n'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e019] _________________________
+
+args = ('٠٠:٠٠',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00:00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('24:00'),), id="e012"),
+        pytest.param((StrChild('23:60'),), id="e013"),
+        pytest.param((StrChild('1:00'),), id="e014"),
+        pytest.param((StrChild('00:0'),), id="e015"),
+        pytest.param((StrChild('00-00'),), id="e016"),
+        pytest.param((StrChild(' 00:00'),), id="e017"),
+        pytest.param((StrChild('00:00\n'),), id="e018"),
+        pytest.param((StrChild('٠٠:٠٠'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '٠٠:٠٠'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e012] - ValueError: time
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: time
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e017] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e018] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e019] - ValueError: syntax
+9 failed, 16 passed in 0.66s

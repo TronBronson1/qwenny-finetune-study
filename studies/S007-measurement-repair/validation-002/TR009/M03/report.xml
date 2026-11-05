@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="18" time="0.461" timestamp="2026-11-04T17:03:52.657056-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.002"><failure message="assert 1 == 0">args = (0, 0), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert 9 == 8">args = (0, 8), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert 9 == 8">args = (8, 0), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 7 == 6">args = (18, 12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 7 == 6
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert 7 == 6">args = (-18, 12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 7 == 6
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert 7 == 6">args = (18, -12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 7 == 6
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert 7 == 6">args = (-18, -12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 7 == 6
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="assert 2 == 1">args = (7, 13), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /></testsuite></testsuites>

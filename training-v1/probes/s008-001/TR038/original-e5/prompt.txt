@@ -1,0 +1,25 @@
+<|im_start|>system
+Calculate return values from the supplied contract and explicit inputs. Return only the requested JSON array.<|im_end|>
+<|im_start|>user
+Function contract: parse_hex_byte(text).
+
+- text: exact built-in str; reject str subclasses.
+
+Reject invalid specified types with TypeError before shape/value checks.
+
+Require exactly two ASCII hexadecimal digits, case-insensitive; otherwise ValueError. Return the byte value as int.
+
+Return type: exact built-in int.
+
+Calculate the four return values for these argument tuples, in this order:
+1. ('00',)
+2. ('09',)
+3. ('Af',)
+4. ('80',)
+
+Return only one JSON array with exactly four entries, one return value per call. Represent tuples as JSON arrays, including nested tuples. Preserve strings and numbers. Do not write tests, code, reasoning, explanations or a code fence.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

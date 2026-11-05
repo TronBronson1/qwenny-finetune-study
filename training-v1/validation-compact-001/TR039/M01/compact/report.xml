@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="14" time="0.291" timestamp="2026-11-04T07:13:05.532694-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-True]" time="0.001" /><testcase classname="test_target" name="test_values[args1-False]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('true',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('true'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('True'),)),
+        pytest.param((StrChild('false '),)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('1'),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:35: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000"><failure message="ValueError: syntax">args = ('True',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('true'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('True'),)),
+        pytest.param((StrChild('false '),)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('1'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_bool_word(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'True'
+
+    def parse_bool_word(text):
+        _types((text,), ('str',))
+        if text not in ('true', 'false'):
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001"><failure message="ValueError: syntax">args = ('false ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('true'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('True'),)),
+        pytest.param((StrChild('false '),)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('1'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_bool_word(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'false '
+
+    def parse_bool_word(text):
+        _types((text,), ('str',))
+        if text not in ('true', 'false'):
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="ValueError: syntax">args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('true'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('True'),)),
+        pytest.param((StrChild('false '),)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('1'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_bool_word(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parse_bool_word(text):
+        _types((text,), ('str',))
+        if text not in ('true', 'false'):
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001"><failure message="ValueError: syntax">args = ('1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('true'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('True'),)),
+        pytest.param((StrChild('false '),)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('1'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_bool_word(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1'
+
+    def parse_bool_word(text):
+        _types((text,), ('str',))
+        if text not in ('true', 'false'):
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /></testsuite></testsuites>

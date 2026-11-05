@@ -1,0 +1,172 @@
+..FFFFF.F..........                                                      [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('abc',), expected = 'ABC'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AxBxC' == 'ABC'
+E         
+E         - ABC
+E         + AxBxC
+E         ?  + +
+
+test_candidate.py:32: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('ABC',), expected = 'ABC'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AxBxC' == 'ABC'
+E         
+E         - ABC
+E         + AxBxC
+E         ?  + +
+
+test_candidate.py:32: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('Aa1!',), expected = 'Aa1!'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AxAx1x!' == 'Aa1!'
+E         
+E         - Aa1!
+E         + AxAx1x!
+
+test_candidate.py:32: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('αβγ',), expected = 'αβγ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'αxβxγ' == 'αβγ'
+E         
+E         - αβγ
+E         + αxβxγ
+E         ?  + +
+
+test_candidate.py:32: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('123',), expected = '123'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert '1x2x3' == '123'
+E         
+E         - 123
+E         + 1x2x3
+E         ?  + +
+
+test_candidate.py:32: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = ('  ',), expected = '  '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert ' x ' == '  '
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '  '
+E         + ' x '
+E         ?   +
+
+test_candidate.py:32: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_values[v002] - AssertionError: assert 'AxBxC' ...
+FAILED test_candidate.py::test_values[v003] - AssertionError: assert 'AxBxC' ...
+FAILED test_candidate.py::test_values[v004] - AssertionError: assert 'AxAx1x!...
+FAILED test_candidate.py::test_values[v005] - AssertionError: assert 'αxβxγ' ...
+FAILED test_candidate.py::test_values[v006] - AssertionError: assert '1x2x3' ...
+FAILED test_candidate.py::test_values[v008] - AssertionError: assert ' x ' ==...
+6 failed, 13 passed in 0.68s

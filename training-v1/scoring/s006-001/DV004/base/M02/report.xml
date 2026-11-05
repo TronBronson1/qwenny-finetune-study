@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="19" time="0.472" timestamp="2026-11-04T13:18:30.380563-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values0-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values1-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values2-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">bad_values = [1, 1], expected_exc = &lt;class 'TypeError'&gt;
+
+    @pytest.mark.parametrize(
+        "bad_values, expected_exc",
+        [
+            ([True, 1, 0], TypeError),          # Reject bool
+            ([False, 1], TypeError),            # Reject bool
+            ([1, 1.0], TypeError),              # Reject float
+            ([1, 1], TypeError),                # This case is actually valid (ints), skipping
+            ([[1, 2]], TypeError),              # Reject list subclass (list of list)
+            (({},), TypeError),                 # Reject dict subclass
+            (set([1, 2]), TypeError),           # Reject set subclass
+        ],
+    )
+    def test_xor_checksum_rejects_invalid_types(bad_values, expected_exc):
+        """Verify TypeError is raised for invalid types including bools and list subclasses."""
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:23: Failed</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values4-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values5-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_invalid_types[bad_values6-TypeError]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_out_of_range_values[valid_prefix0-256-valid_suffix0]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_out_of_range_values[valid_prefix1--1-valid_suffix1]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_out_of_range_values[valid_prefix2--1-valid_suffix2]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_out_of_range_values[valid_prefix3-256-valid_suffix3]" time="0.001" /><testcase classname="test_candidate" name="test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">valid_prefix = [], bad_value = 5, valid_suffix = [0]
+
+    @pytest.mark.parametrize(
+        "valid_prefix, bad_value, valid_suffix",
+        [
+            ([0], 256, []),        # Value &gt; 255
+            ([255], -1, []),       # Value &lt; 0
+            ([1, 2, 3], -1, [4]), # Negative in middle
+            ([1, 2, 3], 256, []), # High value in middle
+            ([], 5, [0]),          # High value in middle (with empty list check logic)
+        ],
+    )
+    def test_xor_checksum_rejects_out_of_range_values(valid_prefix, bad_value, valid_suffix):
+        """Verify ValueError is raised if any item is not in 0..255."""
+        bad_input = valid_prefix + [bad_value] + valid_suffix
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values0-0-int]" time="0.001"><failure message="assert 1 == 0">values = [], expected_result = 0, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 1 == 0
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values1-0-int]" time="0.001"><failure message="assert 1 == 0">values = [1, 2, 3], expected_result = 0, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 1 == 0
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values2-255-int]" time="0.001"><failure message="assert 254 == 255">values = [0, 255], expected_result = 255, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 254 == 255
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values3-255-int]" time="0.001"><failure message="assert 254 == 255">values = [255, 0], expected_result = 255, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 254 == 255
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values4-4-int]" time="0.001"><failure message="assert 5 == 4">values = [1, 2, 3, 4], expected_result = 4, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 5 == 4
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values5-0-int]" time="0.001"><failure message="assert 1 == 0">values = [0, 0, 0], expected_result = 0, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 1 == 0
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_checksum_valid_inputs[values6-100-int]" time="0.001"><failure message="assert 101 == 100">values = [100, 100, 100], expected_result = 100, expected_type = &lt;class 'int'&gt;
+
+    @pytest.mark.parametrize(
+        "values, expected_result, expected_type",
+        [
+            ([], 0, int),              # Empty list
+            ([1, 2, 3], 0, int),       # 1^2^3 = 0
+            ([0, 255], 255, int),      # 0^255 = 255
+            ([255, 0], 255, int),      # 255^0 = 255
+            ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+            ([0, 0, 0], 0, int),       # All zeros
+            ([100, 100, 100], 100, int), # All same
+        ],
+    )
+    def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+        """Verify successful calculation returns correct int without mutation."""
+        result = xor_checksum(values)
+&gt;       assert result == expected_result
+E       assert 101 == 100
+
+test_candidate.py:67: AssertionError</failure></testcase></testsuite></testsuites>

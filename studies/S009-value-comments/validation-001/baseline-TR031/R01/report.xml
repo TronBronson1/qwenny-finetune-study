@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="25" time="0.461" timestamp="2026-11-04T18:57:12.784960-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([])&#10; +  and   &lt;class 'list'&gt; = type([])">args = ([], []), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [], expected = []
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([])
+E        +  and   &lt;class 'list'&gt; = type([])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([])&#10; +  and   &lt;class 'list'&gt; = type([])">args = ([1], []), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [], expected = []
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([])
+E        +  and   &lt;class 'list'&gt; = type([])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([])&#10; +  and   &lt;class 'list'&gt; = type([])">args = ([], [1]), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [], expected = []
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([])
+E        +  and   &lt;class 'list'&gt; = type([])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([2, 2])&#10; +  and   &lt;class 'list'&gt; = type([2, 2])">args = ([2, 1, 2, 3], [2, 2, 4]), expected = [2, 2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [2, 2], expected = [2, 2]
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([2, 2])
+E        +  and   &lt;class 'list'&gt; = type([2, 2])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([1, 1])&#10; +  and   &lt;class 'list'&gt; = type([1, 1])">args = ([1, 1, 1], [1, 1]), expected = [1, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [1, 1], expected = [1, 1]
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([1, 1])
+E        +  and   &lt;class 'list'&gt; = type([1, 1])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([-1, 0])&#10; +  and   &lt;class 'list'&gt; = type([-1, 0])">args = ([-1, 0, -1], [0, -1]), expected = [-1, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [-1, 0], expected = [-1, 0]
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([-1, 0])
+E        +  and   &lt;class 'list'&gt; = type([-1, 0])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;&#10; +  where &lt;class 'subject._ReturnList'&gt; = type([2, 1])&#10; +  and   &lt;class 'list'&gt; = type([2, 1])">args = ([2, 1, 2], [1, 2]), expected = [2, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+        pytest.param(([2, 1, 2], [1, 2]), [2, 1], id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [2, 1], expected = [2, 1]
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnList'&gt; is &lt;class 'list'&gt;
+E        +  where &lt;class 'subject._ReturnList'&gt; = type([2, 1])
+E        +  and   &lt;class 'list'&gt; = type([2, 1])
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /></testsuite></testsuites>

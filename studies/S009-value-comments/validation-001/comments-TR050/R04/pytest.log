@@ -1,0 +1,58 @@
+.....FF.........................                                         [100%]
+================================== FAILURES ===================================
+________________________ test_raises_indexerror[e016] _________________________
+
+args = (-1, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 2, 3), id="e016"),
+        pytest.param((6, 2, 3), id="e017"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           unravel_index(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = -1, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError
+________________________ test_raises_indexerror[e017] _________________________
+
+args = (6, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 2, 3), id="e016"),
+        pytest.param((6, 2, 3), id="e017"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           unravel_index(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 6, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_indexerror[e016] - ValueError: index
+FAILED test_target.py::test_raises_indexerror[e017] - ValueError: index
+2 failed, 30 passed in 0.55s

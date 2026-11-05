@@ -1,0 +1,116 @@
+{
+  "scope": "Two visible development families, one seed, bounded direct-answer pilot. No repairs or cherry-picked samples.",
+  "posthoc_exact_type_diagnostic_excluded_from_frozen_mutant_score": true,
+  "rows": [
+    {
+      "task": "DV001",
+      "variant": "base-A",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Reference-invalid: incorrect expected negative, nested and oversized rotations.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV001",
+      "variant": "base-B",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Collection failure: missing pytest import; additional invalid cases do not repair it.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-1-C",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Collection failure: parametrization includes error_message but function signature omits it.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-3-C",
+      "reference_valid": null,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": true,
+      "agent_strict_acceptance": false,
+      "reason": "Incomplete at 2048-token cap; no complete Python code block.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-5-C",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Syntax-invalid code, including malformed parametrization and English pseudo-code.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV002",
+      "variant": "base-B",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Collection failure: missing pytest import and inconsistent dynamic subclass name/signature.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-1-C",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "provisional_executable_pass": true,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Reference-valid and 3/3 designated mutants detected, but exact built-in int coverage is missing. A non-bool int-subclass diagnostic passes all 24 model tests, while the gold suite detects it.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-3-C",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Collection failure: malformed parametrize decorator. Only one valid case, inexact output check and unsupported exception-message constraint.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-5-C",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Reference-invalid: malformed strings assigned wrong exception type, valid midnight expected to fail, and wrong function arity.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    },
+    {
+      "task": "DV002",
+      "variant": "base-A",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "provisional_executable_pass": false,
+      "truncated": false,
+      "agent_strict_acceptance": false,
+      "reason": "Reference-invalid: malformed builtin string incorrectly expects TypeError; further type/Unicode coverage gaps.",
+      "review_basis": "Execution/termination failure, or the demonstrated explicit exact-output-type coverage gap. This does not assert a complete review of every prose/category issue."
+    }
+  ]
+}

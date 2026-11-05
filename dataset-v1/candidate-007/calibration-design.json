@@ -1,0 +1,3883 @@
+{
+  "tasks": [
+    {
+      "id": "TR001",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "0a982e5fb736716434dd9a519e254c910797fb75cba00501958af82eadb53569",
+      "valid_cases": 6,
+      "invalid_cases": 21,
+      "oracle_checks": 316,
+      "semantic_categories": [
+        "zero-items",
+        "partial-batch",
+        "exact-capacity",
+        "remainder",
+        "unit-capacity",
+        "large-integer"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR002",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5f04ca2073302d5c83a6a0636114b8363f241ca9c428076dff0c3349de6a7e19",
+      "valid_cases": 10,
+      "invalid_cases": 14,
+      "oracle_checks": 45,
+      "semantic_categories": [
+        "remove-prefix",
+        "whole-prefix",
+        "absent-prefix",
+        "empty-text",
+        "remove-once",
+        "case-sensitive",
+        "start-only",
+        "space-prefix",
+        "unicode-prefix",
+        "long-prefix"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR003",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5858c742e1940e9cee9bb45026bbab99f349af77644d3f5fa8fb8ac97c3504fe",
+      "valid_cases": 7,
+      "invalid_cases": 10,
+      "oracle_checks": 232,
+      "semantic_categories": [
+        "equal",
+        "left-larger",
+        "right-larger",
+        "mixed-sign",
+        "reverse-mixed-sign",
+        "both-negative",
+        "large"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR004",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9390944e5ce7c6ab2f79cf22810662336a3c794ab0cae70ad9c1b9341676b95f",
+      "valid_cases": 7,
+      "invalid_cases": 19,
+      "oracle_checks": 142,
+      "semantic_categories": [
+        "below",
+        "lower-bound",
+        "inside",
+        "upper-bound",
+        "above",
+        "equal-bounds",
+        "negative-bounds"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR005",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "98b6bf4e0f91943c2df3c5eb889d0f3aa7d8ecd9d13d39203740e8ed41384c9a",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 67,
+      "semantic_categories": [
+        "zero",
+        "odd",
+        "even",
+        "negative-odd",
+        "negative-even",
+        "large"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR006",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "143e8adc1473d346d51b4f771343936ef0a89eb2e9fbbb39c5f9b6c3ac6ca3ac",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 18,
+      "semantic_categories": [
+        "zero-factorial",
+        "one",
+        "two",
+        "intermediate",
+        "upper-bound"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR007",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "4e99e8db9fe0e37b6e475fc3dde28c4b971dfb553fbdac6d9ad135bd0aa35a2f",
+      "valid_cases": 6,
+      "invalid_cases": 7,
+      "oracle_checks": 306,
+      "semantic_categories": [
+        "zero",
+        "single-digit",
+        "decimal-zero",
+        "internal-zero",
+        "repeated-digits",
+        "large"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR008",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "923af86681db7e341a51f7823492cb7577a0601f01038cb2aab40e3278125648",
+      "valid_cases": 8,
+      "invalid_cases": 7,
+      "oracle_checks": 209,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "nonsquare",
+        "square",
+        "below-square",
+        "square-sixteen",
+        "above-square",
+        "large-square"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR009",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5798360ad69359c884707c91883644e0abe966b1b818d315f9460b2bc51134a7",
+      "valid_cases": 8,
+      "invalid_cases": 10,
+      "oracle_checks": 297,
+      "semantic_categories": [
+        "both-zero",
+        "left-zero",
+        "right-zero",
+        "ordinary",
+        "negative-left",
+        "negative-right",
+        "both-negative",
+        "coprime"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR010",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1cfcac99581ac2196c25cd429e6f136d64fc02790df2e90dc54708069aaaf0d4",
+      "valid_cases": 7,
+      "invalid_cases": 7,
+      "oracle_checks": 263,
+      "semantic_categories": [
+        "zero",
+        "one-bit",
+        "power-two",
+        "two-bits",
+        "byte-bits",
+        "higher-power",
+        "large-two-bits"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR011",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8689995be8c52ba77af50ef84b3aaa5ffa68ddb53fd4e9ad4933af26a94c1156",
+      "valid_cases": 8,
+      "invalid_cases": 9,
+      "oracle_checks": 508,
+      "semantic_categories": [
+        "lower-bound",
+        "divisible-four",
+        "century-not-leap",
+        "century-leap",
+        "ordinary-not-leap",
+        "ordinary-leap",
+        "future-century",
+        "upper-bound"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR012",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "2f4fe1de8cc0ff04d7d00b44314d1d4ab0d5ebaf8f008c589b926f873199e494",
+      "valid_cases": 7,
+      "invalid_cases": 16,
+      "oracle_checks": 294,
+      "semantic_categories": [
+        "identity",
+        "forward",
+        "wrap",
+        "negative-wrap",
+        "multiple-weeks",
+        "negative-weeks",
+        "forward-wrap"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR013",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "e276e25fb2ce2d8dd2057668f3ab8add373db742f3262c9d493a459b107bbf35",
+      "valid_cases": 8,
+      "invalid_cases": 19,
+      "oracle_checks": 508,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "alphabetic-digit",
+        "carry",
+        "binary",
+        "ternary",
+        "hexadecimal",
+        "octal"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR014",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "b03405f502f6930a3339dfc4c8fbeee17d8b9761a5625e33d5bcfda346a93733",
+      "valid_cases": 8,
+      "invalid_cases": 4,
+      "oracle_checks": 8,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "spaces-only",
+        "edges-and-run",
+        "preserve-tab",
+        "preserve-lf",
+        "unicode",
+        "preserve-nbsp"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR015",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "32316ce0aeede72ba19419f70895db083dadb0e7fd139d423e66435263f2af63",
+      "valid_cases": 6,
+      "invalid_cases": 4,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "whitespace-only",
+        "one-word",
+        "reverse-order",
+        "mixed-whitespace",
+        "unicode-whitespace"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR016",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "3d26194bf14945149810d6e5920feb1be27f1f228150fe3e28356159c37edb77",
+      "valid_cases": 6,
+      "invalid_cases": 4,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "both-ascii-cases",
+        "no-vowels",
+        "mixed-text",
+        "exclude-accent-y",
+        "digits-punctuation"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR017",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "4217f69204e73b918c82e4d0593994dfd2b0b9073b5e41540afaf7300a27ceed",
+      "valid_cases": 7,
+      "invalid_cases": 8,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "equal-length",
+        "left-remainder",
+        "right-remainder",
+        "unicode-space"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR018",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "06eca10dc513152484eaa690243facd166af2aa99092c6d19c418905e26a41ef",
+      "valid_cases": 10,
+      "invalid_cases": 4,
+      "oracle_checks": 10,
+      "semantic_categories": [
+        "empty",
+        "one",
+        "two-equal",
+        "odd-palindrome",
+        "even-palindrome",
+        "not-palindrome",
+        "case-sensitive",
+        "literal-space",
+        "unicode",
+        "literal-punctuation-and-space"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR019",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "892399b264392efb463d4e60f20e1d978db80a647ca1685fe7d01b6694a13714",
+      "valid_cases": 7,
+      "invalid_cases": 4,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "crlf",
+        "cr",
+        "lf",
+        "mixed",
+        "adjacent-cr-crlf"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR020",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6e0512f2d721469a933d6773a204c838acf6d705a69863f6b863d4a2c66c8a9c",
+      "valid_cases": 6,
+      "invalid_cases": 4,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "unchanged",
+        "amp-angle",
+        "both-quotes",
+        "escape-existing-entity",
+        "unicode-combination"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR021",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9d0e430074ac3ef627b0dec246cee04ffebb1183ba951759b132b12172ff7183",
+      "valid_cases": 7,
+      "invalid_cases": 8,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "left-empty",
+        "equal",
+        "partial",
+        "shorter-right",
+        "case-sensitive",
+        "unicode"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR022",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "228c2a61876cf796eae0c32a2ee15ac2ff1f0be9f4739e2d4ef6cf7f68e13c63",
+      "valid_cases": 8,
+      "invalid_cases": 4,
+      "oracle_checks": 8,
+      "semantic_categories": [
+        "empty-quoted",
+        "unquoted",
+        "comma",
+        "quote-doubled",
+        "cr",
+        "lf",
+        "preserve-space",
+        "unicode"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR023",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "576ace0d633b774769f4ac53d3364d350ae0be3edb557d99c0b2e98266b741da",
+      "valid_cases": 6,
+      "invalid_cases": 15,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero-plural",
+        "one-singular",
+        "ordinary-plural",
+        "literal-singular",
+        "literal-suffix",
+        "unicode-noun"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR024",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8864a618efc2825c3b81c4ffe313834e6a29ad8cb5bd092f20c76e8e526177fc",
+      "valid_cases": 5,
+      "invalid_cases": 4,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "ascii-case",
+        "punctuation-digits",
+        "nonascii-unchanged",
+        "newline"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR025",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "470d5b8850b182595e0abca9cd9417b4d6fc3d09107a62e3c35185c2b83700b2",
+      "valid_cases": 6,
+      "invalid_cases": 5,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "separated-runs",
+        "empty-strings",
+        "case-distinct",
+        "unicode"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR026",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d019d92b6961e2b1ef092fd18327dce64089ea3e348d768f8f92e7fe2a6ce445",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "stable-order",
+        "zero-negative",
+        "already-unique"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR027",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "ac4597653f646985bd202a3becf8166e105fe601965174817a0c7bab56819dd1",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "signed-differences",
+        "equal-pair",
+        "negative-values"
+      ],
+      "mutants": 8,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR028",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "641a14bd5440aa4d99d7e92a9489a4dae8267b940402ea27e2212548201d0dea",
+      "valid_cases": 5,
+      "invalid_cases": 9,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "ordinary",
+        "mixed-sign",
+        "zeros"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR029",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8d7d50f40d89af4f4147dc1dc19cf431e269b0a3c5840c5053043ebfa4907e86",
+      "valid_cases": 6,
+      "invalid_cases": 20,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "partial-single",
+        "full-chunks",
+        "last-partial",
+        "unit-width",
+        "oversize-width"
+      ],
+      "mutants": 8,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR030",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "589e6fc5954a65820cfd0954dc5e114b498a8ee00ada62cc244d1955c047c510",
+      "valid_cases": 6,
+      "invalid_cases": 12,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "one-zero-column",
+        "several-zero-columns",
+        "square",
+        "one-row",
+        "one-column"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR031",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "35be1549f44f9ba8207773b3a33f306ba4818194446961b16ba87b5a3d9bb8f0",
+      "valid_cases": 7,
+      "invalid_cases": 18,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "multiplicity",
+        "count-limit",
+        "negative-order",
+        "left-order-not-sorted"
+      ],
+      "mutants": 8,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR032",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "9f3f278ba0ba5b39a79a218b6ca33935a912eecd54f77847c24909f1fcad5e4a",
+      "valid_cases": 6,
+      "invalid_cases": 9,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "zero",
+        "all-signs-stable",
+        "positive-only",
+        "negative-only",
+        "positive-negative-order"
+      ],
+      "mutants": 8,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR033",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d74a5c348300c9f6cb9c4044bb72993fd3b241277200c2b8b52ff38adbfed45e",
+      "valid_cases": 5,
+      "invalid_cases": 23,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "only-item",
+        "first",
+        "middle",
+        "last",
+        "duplicates"
+      ],
+      "mutants": 9,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR034",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "69c3ed81fe440af07015c39236a26a50fa9d606041c9cd6c6fd9ad889ff134ce",
+      "valid_cases": 5,
+      "invalid_cases": 27,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "full",
+        "middle",
+        "reversed-valid",
+        "end-empty"
+      ],
+      "mutants": 9,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR035",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "2fd4e4e2ed9db0c8b457783416d6a680e577a64c67935374e79bd8ae9bded5e4",
+      "valid_cases": 6,
+      "invalid_cases": 9,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "one-pair",
+        "long-run",
+        "separated-equals",
+        "several-runs"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR036",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5df4a861cfdbdbfca217c90b11ee1bdad30d41a8a3238eae7646e4e575ffd6a8",
+      "valid_cases": 5,
+      "invalid_cases": 11,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "single",
+        "even-lower",
+        "odd",
+        "even-unsorted",
+        "negative-duplicate"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR037",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "82fa8ec2774d2d2f6c1cab5ada2f20c5cf74218aa5ee84aac7ba0536010357dd",
+      "valid_cases": 4,
+      "invalid_cases": 22,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "ordinary",
+        "maximum-length"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR038",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "a67fd3d072a552c31c31e3e4fab67a9bfcda7f1434538b4b61e2b82939ad5121",
+      "valid_cases": 6,
+      "invalid_cases": 18,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "decimal-digits",
+        "lowercase",
+        "mixed-case",
+        "byte-upper-bound",
+        "intermediate"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR039",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6889c5f03404a6c3372adfe78733972d0ceb4c615cdbd4d2437fadf269a062bc",
+      "valid_cases": 2,
+      "invalid_cases": 12,
+      "oracle_checks": 2,
+      "semantic_categories": [
+        "true",
+        "false"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR040",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1226006893eb2c2ec71f77b7b018b65b6eeca1b8e8724870fba9a19b75b0f134",
+      "valid_cases": 5,
+      "invalid_cases": 10,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "ordinary",
+        "empty-value",
+        "first-equals-only",
+        "preserve-space",
+        "unicode"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR041",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "e880b0e599653a0c05dfb28b81403bc6bb1c324a88042c802a1045805bb53f9d",
+      "valid_cases": 5,
+      "invalid_cases": 22,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "zeros",
+        "negative-zero",
+        "signed-pair",
+        "maximum-length",
+        "both-components-max-length"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR042",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "607cf304852bee5964dd5d66beed596707a7362ae87980e91769436b5fdeaeb1",
+      "valid_cases": 4,
+      "invalid_cases": 22,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zeros",
+        "ordinary",
+        "upper-bound",
+        "later-components-upper-bound"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR043",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "0aacac662bcab600f0f0b8812e640eeb2a046826c1b54cbc6889caf330fe785d",
+      "valid_cases": 5,
+      "invalid_cases": 16,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "zero",
+        "one",
+        "leading-zeros",
+        "ordinary",
+        "maximum-length"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR044",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "6a09ff90123a2dfa507fbd90d22a281e0222aa1db7cc48f83c8d0dfc2c5692cd",
+      "valid_cases": 4,
+      "invalid_cases": 18,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-width",
+        "full-boundaries",
+        "ordinary",
+        "equal-upper"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR045",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d3beb786a81dbcade28b813f58505d20dd63610fd2dcaee8872c8ff7e124397a",
+      "valid_cases": 6,
+      "invalid_cases": 4,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "separator-only",
+        "repeated-separators",
+        "literal-dot-segments",
+        "literal-backslash",
+        "space-unicode"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR046",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1ef5933568ffa5614ecf064e65d35fc02ded6a80296773c9c15e0392ae08f5f6",
+      "valid_cases": 6,
+      "invalid_cases": 20,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "negative-zero",
+        "positive-zero",
+        "leading-zeros",
+        "negative",
+        "maximum-length"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR047",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "5292887d401d47bf4c0be7aab2b19ca0a4d433fc93b84a8545eb3a919026f03a",
+      "valid_cases": 10,
+      "invalid_cases": 21,
+      "oracle_checks": 10,
+      "semantic_categories": [
+        "empty",
+        "first-overlap",
+        "second-overlap",
+        "third-overlap",
+        "missing-overlap",
+        "whole-string",
+        "absent",
+        "unicode",
+        "literal-case",
+        "no-second-case-match"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR048",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "c8a5c77a907324a4705ac7eba5dc35ffda6e47cf010751621123160857dde4ac",
+      "valid_cases": 7,
+      "invalid_cases": 9,
+      "oracle_checks": 1006,
+      "semantic_categories": [
+        "lower-bound",
+        "last-single",
+        "first-double",
+        "double-boundary",
+        "last-double",
+        "first-triple",
+        "upper-bound"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR049",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "69149d3e3453c50c75ec609dc07010363a425828ac4584e68785ea0f1ab941e6",
+      "valid_cases": 4,
+      "invalid_cases": 45,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "single-cell",
+        "top-right",
+        "bottom-left",
+        "last-offset"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR050",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "8d919f8d5b33ba443a66f8edaca47eae7c5ed2d27c055bfc693a01b1ab03dcdf",
+      "valid_cases": 5,
+      "invalid_cases": 27,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "single-cell",
+        "origin",
+        "end-first-row",
+        "start-second-row",
+        "last-cell"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR051",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "20a81668605c0abf27104a6164f95e1448f065257f016ec516d4aa045a4c34dc",
+      "valid_cases": 6,
+      "invalid_cases": 16,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "unit-length",
+        "positive-wrap",
+        "negative-one",
+        "negative-period",
+        "positive-period",
+        "large"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR052",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "45871de6920fc1b2b90faa84b0b65b41c4eec1aca4fd36eec8dba550acd1df88",
+      "valid_cases": 6,
+      "invalid_cases": 7,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "zero",
+        "last-second",
+        "minute",
+        "last-minute",
+        "hour",
+        "hours-over-day"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR053",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "fc6cb681c37d49dc2531caf16ce0fb67aeec1210f4d9494a6ce96516490e2579",
+      "valid_cases": 9,
+      "invalid_cases": 5,
+      "oracle_checks": 9,
+      "semantic_categories": [
+        "zero",
+        "fractional",
+        "negative-fractional",
+        "last-fraction",
+        "whole-unit",
+        "negative-whole",
+        "ordinary",
+        "large",
+        "negative-units-and-fraction"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR054",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "dfa22bf05ab3f6b3f44bd4d85656342a2873e6a92f06e0bae0b5639cc78f8099",
+      "valid_cases": 7,
+      "invalid_cases": 5,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "zero",
+        "single",
+        "last-ungrouped",
+        "first-grouped",
+        "negative",
+        "several-groups",
+        "large"
+      ],
+      "mutants": 4,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR055",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "1aa067c7b6dcf6e2ab2d364b073fcf0e5480137203e1db03dc47ae303309ed18",
+      "valid_cases": 4,
+      "invalid_cases": 27,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-components",
+        "maximum-components",
+        "ordinary",
+        "mixed-boundaries"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR056",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "080b29e236f69aabbc2f6c2017a0a8846e93cedb3c578baba5ebf006198901f0",
+      "valid_cases": 4,
+      "invalid_cases": 16,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "zero-components",
+        "maximum-components",
+        "ordinary",
+        "mixed-case"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR057",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "d39e6032974d0e0f27d8d6a41bf945082f02b6f09f88a43ccc7f8e5eb7202dce",
+      "valid_cases": 5,
+      "invalid_cases": 14,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "separators-only",
+        "lowercase",
+        "separator-runs",
+        "digits"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR058",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "27b3d655e275be8fc5a14c934f7d3804c47620bc9c7c2b76b0bfcb0b4734bc08",
+      "valid_cases": 4,
+      "invalid_cases": 62,
+      "oracle_checks": 4,
+      "semantic_categories": [
+        "equal",
+        "less",
+        "greater-middle",
+        "lexicographic-major"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR059",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "569569aa685fae699ae8063f32790ce34bd8cc82eef2bc4d19ae01b976f407f0",
+      "valid_cases": 6,
+      "invalid_cases": 24,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "both-empty",
+        "right-empty",
+        "left-empty",
+        "interleaving",
+        "duplicates",
+        "negatives"
+      ],
+      "mutants": 8,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "TR060",
+      "split": "training",
+      "source_reference_unchanged": true,
+      "source_hash": "f282f53fe9db807322981f2925c3694e646c169d90997c64075d9aaa90d9073a",
+      "valid_cases": 5,
+      "invalid_cases": 4,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "ascii-letters-digits",
+        "mixed",
+        "unicode-other",
+        "whitespace-other"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV001",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "8b58928a23dc04938c7bafb492153d581354a43b24065f004289bdd4c29cdc87",
+      "valid_cases": 9,
+      "invalid_cases": 8,
+      "oracle_checks": 9,
+      "semantic_categories": [
+        "empty-zero",
+        "empty-positive",
+        "single-negative",
+        "identity",
+        "right",
+        "left",
+        "wrap",
+        "duplicates",
+        "mutable-elements"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV002",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "824231258a49e60b12d236068864b57b64a4031b0fa68fbd3835af22eb70234e",
+      "valid_cases": 5,
+      "invalid_cases": 24,
+      "oracle_checks": 1445,
+      "semantic_categories": [
+        "midnight",
+        "minute",
+        "hour",
+        "ordinary",
+        "last-minute"
+      ],
+      "mutants": 6,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV003",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "74faaeee28a32b0fb20f8042162f6b3fb4d360b2ab7328a967b8d048bf2588b2",
+      "valid_cases": 9,
+      "invalid_cases": 9,
+      "oracle_checks": 4008,
+      "semantic_categories": [
+        "lower-bound",
+        "iv",
+        "ix",
+        "xl",
+        "xc",
+        "cd",
+        "cm",
+        "combined",
+        "upper-bound"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV004",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "52d9f65d89ea8e7172fa9b84ebebfff91a6163b37b8425ab836619a1b32bdaa0",
+      "valid_cases": 6,
+      "invalid_cases": 13,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "zero",
+        "maximum-byte",
+        "ordinary",
+        "duplicate-cancellation",
+        "repeated-cancellation"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV005",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "123742bf81852a8c19250eac367e7031850873779439b67308a199d9a97ce7d4",
+      "valid_cases": 5,
+      "invalid_cases": 12,
+      "oracle_checks": 5,
+      "semantic_categories": [
+        "empty",
+        "one-pair",
+        "nested",
+        "siblings",
+        "deep"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV006",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "2858c23fa14c7e2f8d6166ed41b949da02230a2da0f3c6525c3a140275fb1687",
+      "valid_cases": 6,
+      "invalid_cases": 12,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "empty",
+        "first-group",
+        "ordinary",
+        "pqrs",
+        "wxyz",
+        "full-alphabet"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV007",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "9db0853bc126331f30b6910f1fe2da4dda760d69761f1e67262d53f6fed66080",
+      "valid_cases": 6,
+      "invalid_cases": 50,
+      "oracle_checks": 6,
+      "semantic_categories": [
+        "single-cell",
+        "top-left",
+        "interior-order",
+        "bottom-right",
+        "single-row",
+        "single-column"
+      ],
+      "mutants": 9,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV008",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "6342f2e34658a651304a8977316bdae472987a7bee7f54eddc38a7fbeb858de9",
+      "valid_cases": 11,
+      "invalid_cases": 8,
+      "oracle_checks": 47,
+      "semantic_categories": [
+        "both-empty",
+        "left-empty",
+        "right-empty",
+        "equal",
+        "substitution",
+        "two-edits",
+        "multistep",
+        "unicode-accent",
+        "ascii-case-sensitive",
+        "unicode-case-sensitive",
+        "literal-codepoints-no-normalization"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV009",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "6b608d5a38645078c8cc9b84e4d72c7144a7bf3563a0fa615feb653b06426217",
+      "valid_cases": 7,
+      "invalid_cases": 17,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "before",
+        "equal",
+        "after",
+        "leftmost-duplicate",
+        "gap",
+        "negative"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV010",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "1684187c3dd5ea7435448d7c25113c9dfb9dd2eb460e474897f381a42c146d92",
+      "valid_cases": 7,
+      "invalid_cases": 21,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "zero",
+        "negative-zero",
+        "addition",
+        "subtraction",
+        "precedence-stack",
+        "negative-product",
+        "long-valid-expression"
+      ],
+      "mutants": 7,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV011",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "202abf5df8b6d0490b2c0b62cc7d22ecb9e0fd26e9e64882a7afe2b220850427",
+      "valid_cases": 7,
+      "invalid_cases": 18,
+      "oracle_checks": 7,
+      "semantic_categories": [
+        "empty",
+        "single",
+        "unordered-touching",
+        "nested",
+        "disjoint",
+        "negative-overlap",
+        "transitive-unordered-union"
+      ],
+      "mutants": 9,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    },
+    {
+      "id": "DV012",
+      "split": "development",
+      "source_reference_unchanged": true,
+      "source_hash": "b4a7982ea66de885124f9098145a1d54bd91ee54ae22a5c6a270f6f5ea764a6a",
+      "valid_cases": 8,
+      "invalid_cases": 8,
+      "oracle_checks": 8,
+      "semantic_categories": [
+        "empty",
+        "single-pair",
+        "nested-all-kinds",
+        "mismatched",
+        "unclosed",
+        "premature-close",
+        "reversed",
+        "concatenated"
+      ],
+      "mutants": 5,
+      "review": "Agent read original contract and valid-case table; added finite witnesses for observed semantic/type gaps. External eight-task findings corroborated separately."
+    }
+  ],
+  "proposed_mutants": [
+    {
+      "task": "TR001",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 3)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR001",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e014]",
+        "case": "e014",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1, 'bad')",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR002",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('abc', 'a')",
+        "expected_python": "'bc'",
+        "actual_python": "'bc'"
+      }
+    },
+    {
+      "task": "TR002",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "('abc', None)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR003",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR004",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(-1, 0, 5)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR004",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(1), 3, 2)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR005",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "'even'",
+        "actual_python": "'even'"
+      }
+    },
+    {
+      "task": "TR006",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "1",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR006",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR007",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR007",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR008",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "True",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR008",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR009",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR010",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR010",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR011",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(1,)",
+        "expected_python": "False",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR011",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR012",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR012",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e012]",
+        "case": "e012",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1), 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR013",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 2)",
+        "expected_python": "'0'",
+        "actual_python": "'0'"
+      }
+    },
+    {
+      "task": "TR013",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(0, True)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR014",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR015",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR016",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR017",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('', '')",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR018",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "True",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR019",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR020",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR021",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('', '')",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR022",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "'\"\"'",
+        "actual_python": "'\"\"'"
+      }
+    },
+    {
+      "task": "TR023",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 'cat')",
+        "expected_python": "'0 cats'",
+        "actual_python": "'0 cats'"
+      }
+    },
+    {
+      "task": "TR023",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1), 'cat')",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR024",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR025",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR025",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(['a'],)",
+        "expected_python": "[('a', 1)]",
+        "actual_python": "[('a', 1)]"
+      }
+    },
+    {
+      "task": "TR025",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR026",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR026",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1],)",
+        "expected_python": "[1]",
+        "actual_python": "[1]"
+      }
+    },
+    {
+      "task": "TR026",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR026",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "['x']"
+      }
+    },
+    {
+      "task": "TR027",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR027",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v002]",
+        "case": "v002",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1, 4, 2],)",
+        "expected_python": "[3, -2]",
+        "actual_python": "[3, -2]"
+      }
+    },
+    {
+      "task": "TR027",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR027",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR027",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR028",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR028",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([5],)",
+        "expected_python": "[5]",
+        "actual_python": "[5]"
+      }
+    },
+    {
+      "task": "TR028",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR028",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "([1.5],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[1.5]"
+      }
+    },
+    {
+      "task": "TR029",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 2)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR029",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1], 2)",
+        "expected_python": "[[1]]",
+        "actual_python": "[[1]]"
+      }
+    },
+    {
+      "task": "TR029",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 2)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR029",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'], 2)",
+        "expected_exception": "TypeError",
+        "actual_python": "[['x']]"
+      }
+    },
+    {
+      "task": "TR029",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(ListChild([1]), 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR030",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR030",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v003]",
+        "case": "v003",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([[1, 2], [3, 4]],)",
+        "expected_python": "[[1, 3], [2, 4]]",
+        "actual_python": "[[1, 3], [2, 4]]"
+      }
+    },
+    {
+      "task": "TR030",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR030",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "([['x']],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[['x']]"
+      }
+    },
+    {
+      "task": "TR031",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], [])",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR031",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v003]",
+        "case": "v003",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([2, 1, 2, 3], [2, 2, 4])",
+        "expected_python": "[2, 2]",
+        "actual_python": "[2, 2]"
+      }
+    },
+    {
+      "task": "TR031",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], [])",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR031",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'], [])",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR031",
+      "requirement": "left-input-order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v006]",
+        "case": "v006",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([2, 1, 2], [1, 2])",
+        "expected_python": "[2, 1]",
+        "actual_python": "[1, 2]"
+      }
+    },
+    {
+      "task": "TR032",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "([], [], [])",
+        "actual_python": "([], [], [])"
+      }
+    },
+    {
+      "task": "TR032",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([0],)",
+        "expected_python": "([], [0], [])",
+        "actual_python": "([], [0], [])"
+      }
+    },
+    {
+      "task": "TR032",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "([], [], [])",
+        "actual_python": "([], [], [])"
+      }
+    },
+    {
+      "task": "TR032",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "([1.5],)",
+        "expected_exception": "TypeError",
+        "actual_python": "([], [], [1.5])"
+      }
+    },
+    {
+      "task": "TR032",
+      "requirement": "stable-positive-order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v005]",
+        "case": "v005",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([3, 1, 0, -1, -3],)",
+        "expected_python": "([-1, -3], [0], [3, 1])",
+        "actual_python": "([-1, -3], [0], [1, 3])"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1], 0)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1, 2, 3], 0)",
+        "expected_python": "[2, 3]",
+        "actual_python": "[2, 3]"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1], 0)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'], 0)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e003]",
+        "case": "e003",
+        "kind": "required-exception-wrong-class",
+        "args_python": "((), 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "IndexError"
+      }
+    },
+    {
+      "task": "TR033",
+      "requirement": "bounds-exception-class",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e014]",
+        "case": "e014",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([], 0)",
+        "expected_exception": "IndexError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 0, 0)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1, 2, 3], 0, 3)",
+        "expected_python": "[1, 2, 3]",
+        "actual_python": "[1, 2, 3]"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 0, 0)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'], 0, 0)",
+        "expected_exception": "TypeError",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([], True, 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "IndexError"
+      }
+    },
+    {
+      "task": "TR034",
+      "requirement": "bounds-exception-class",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e019]",
+        "case": "e019",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([1], -1, 1)",
+        "expected_exception": "IndexError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR035",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR035",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR035",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR036",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1],)",
+        "expected_python": "1",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR036",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1],)",
+        "expected_python": "1",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR036",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'],)",
+        "expected_exception": "TypeError",
+        "actual_python": "'x'"
+      }
+    },
+    {
+      "task": "TR036",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e003]",
+        "case": "e003",
+        "kind": "required-exception-wrong-class",
+        "args_python": "((),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR037",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR037",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e013]",
+        "case": "e013",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild(''),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR037",
+      "requirement": "ascii-digit-boundary",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "('١',)",
+        "expected_exception": "ValueError",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR038",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('00',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR038",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild(''),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR038",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-not-raised",
+        "args_python": "('٣f',)",
+        "expected_exception": "ValueError",
+        "actual_python": "63"
+      }
+    },
+    {
+      "task": "TR039",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('true',)",
+        "expected_python": "True",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR039",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e001]",
+        "case": "e001",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(b'x',)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR040",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('a=b',)",
+        "expected_python": "('a', 'b')",
+        "actual_python": "('a', 'b')"
+      }
+    },
+    {
+      "task": "TR040",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('a=b',)",
+        "expected_python": "('a', 'b')",
+        "actual_python": "('a', 'b')"
+      }
+    },
+    {
+      "task": "TR041",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0,0',)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR041",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0,0',)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR041",
+      "requirement": "ascii-digit-boundary",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-not-raised",
+        "args_python": "('١,2',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(1, 2)"
+      }
+    },
+    {
+      "task": "TR042",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0.0.0',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR042",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0.0.0',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR042",
+      "requirement": "ascii-digit-boundary",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "('1.2.٣',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(1, 2, 3)"
+      }
+    },
+    {
+      "task": "TR043",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR043",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e010]",
+        "case": "e010",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild(''),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR043",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "('١٠',)",
+        "expected_exception": "ValueError",
+        "actual_python": "2"
+      }
+    },
+    {
+      "task": "TR044",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('[0:0]',)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR044",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('[0:0]',)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR044",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-not-raised",
+        "args_python": "('[١:٣]',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(1, 3)"
+      }
+    },
+    {
+      "task": "TR045",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR045",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v002]",
+        "case": "v002",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('//a///b/',)",
+        "expected_python": "['a', 'b']",
+        "actual_python": "['a', 'b']"
+      }
+    },
+    {
+      "task": "TR046",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('0',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR046",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e012]",
+        "case": "e012",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild(''),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR046",
+      "requirement": "ascii-digit-boundary",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "('١',)",
+        "expected_exception": "ValueError",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR047",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('', 'a', 1)",
+        "expected_python": "-1",
+        "actual_python": "-1"
+      }
+    },
+    {
+      "task": "TR047",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "('', None, 1)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR048",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(1,)",
+        "expected_python": "'A'",
+        "actual_python": "'A'"
+      }
+    },
+    {
+      "task": "TR048",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR049",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0, 1, 1)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR049",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e025]",
+        "case": "e025",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0), 0, 0, 2)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR049",
+      "requirement": "bounds-exception-class",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e022]",
+        "case": "e022",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1, 0, 2, 3)",
+        "expected_exception": "IndexError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR050",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 1, 1)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR050",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 1, 1)",
+        "expected_python": "(0, 0)",
+        "actual_python": "(0, 0)"
+      }
+    },
+    {
+      "task": "TR050",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e018]",
+        "case": "e018",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0), 0, 2)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR050",
+      "requirement": "bounds-exception-class",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1, 2, 3)",
+        "expected_exception": "IndexError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR051",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 1)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR051",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e012]",
+        "case": "e012",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0), 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR052",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR052",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR052",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR053",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "'0.00'",
+        "actual_python": "'0.00'"
+      }
+    },
+    {
+      "task": "TR054",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0,)",
+        "expected_python": "'0'",
+        "actual_python": "'0'"
+      }
+    },
+    {
+      "task": "TR055",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0, 0)",
+        "expected_python": "'#000000'",
+        "actual_python": "'#000000'"
+      }
+    },
+    {
+      "task": "TR055",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e018]",
+        "case": "e018",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(-1), 0, 0)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR056",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('#000000',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR056",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('#000000',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR056",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e010]",
+        "case": "e010",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('ffffff'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR056",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-not-raised",
+        "args_python": "('#١٢٣٤٥٦',)",
+        "expected_exception": "ValueError",
+        "actual_python": "(18, 52, 86)"
+      }
+    },
+    {
+      "task": "TR057",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "TR057",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e009]",
+        "case": "e009",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('a/b'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR057",
+      "requirement": "ascii-digit-boundary",
+      "status": "no-relevant-finite-witness",
+      "witness": null
+    },
+    {
+      "task": "TR058",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "((0, 0, 0), (0, 0, 0))",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "TR058",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "((1.5, 0, 0), (0, 0, 0))",
+        "expected_exception": "TypeError",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "TR058",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e048]",
+        "case": "e048",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(TupleChild((1, -1, 0)), (1, 0, 0))",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR059",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], [])",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR059",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([1], [])",
+        "expected_python": "[1]",
+        "actual_python": "[1]"
+      }
+    },
+    {
+      "task": "TR059",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], [])",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "TR059",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e005]",
+        "case": "e005",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['x'], [])",
+        "expected_exception": "TypeError",
+        "actual_python": "['x']"
+      }
+    },
+    {
+      "task": "TR059",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e020]",
+        "case": "e020",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(ListChild([2, 1]), [])",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "TR060",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "TR060",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "(0, 0, 0)",
+        "actual_python": "(0, 0, 0)"
+      }
+    },
+    {
+      "task": "DV001",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "((), 0)",
+        "expected_python": "()",
+        "actual_python": "()"
+      }
+    },
+    {
+      "task": "DV001",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v008]",
+        "case": "v008",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(([1], {'k': 2}), 1)",
+        "expected_python": "({'k': 2}, [1])",
+        "actual_python": "({'k': 2}, [1, 'mutation-sentinel'])"
+      }
+    },
+    {
+      "task": "DV002",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('00:00',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV002",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e016]",
+        "case": "e016",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('1:00'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV002",
+      "requirement": "ascii-digit-boundary",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-not-raised",
+        "args_python": "('٠٠:٠٠',)",
+        "expected_exception": "ValueError",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV003",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(1,)",
+        "expected_python": "'I'",
+        "actual_python": "'I'"
+      }
+    },
+    {
+      "task": "DV003",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV004",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV004",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV004",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([-1.5],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV004",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([-1.5],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV005",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV005",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('(a)'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV006",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "''",
+        "actual_python": "''"
+      }
+    },
+    {
+      "task": "DV006",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e008]",
+        "case": "e008",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('abc'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0, 1, 1)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0, 2, 3)",
+        "expected_python": "[(0, 1), (1, 0)]",
+        "actual_python": "[(0, 1), (1, 0)]"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e026]",
+        "case": "e026",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(IntChild(0), 0, 0, 1)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "bounds-exception-class",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_indexerror[e021]",
+        "case": "e021",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(-1, 0, 2, 2)",
+        "expected_exception": "IndexError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "positive-columns",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e023]",
+        "case": "e023",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(0, 0, 1, 0)",
+        "expected_exception": "ValueError",
+        "actual_exception": "IndexError"
+      }
+    },
+    {
+      "task": "DV007",
+      "requirement": "neighbor-order",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(0, 0, 2, 3)",
+        "expected_python": "[(0, 1), (1, 0)]",
+        "actual_python": "[(1, 0), (0, 1)]"
+      }
+    },
+    {
+      "task": "DV008",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('', '')",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV008",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v008]",
+        "case": "v008",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('A', 'a')",
+        "expected_python": "1",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV009",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 0)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV009",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([], 0)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV009",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-not-raised",
+        "args_python": "([1.5], 0)",
+        "expected_exception": "TypeError",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV009",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e015]",
+        "case": "e015",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(ListChild([2, 1]), 1)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV010",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(['0'],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV010",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "(['0'],)",
+        "expected_python": "0",
+        "actual_python": "0"
+      }
+    },
+    {
+      "task": "DV010",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e003]",
+        "case": "e003",
+        "kind": "required-exception-wrong-class",
+        "args_python": "((),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV010",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_valueerror[e011]",
+        "case": "e011",
+        "kind": "required-exception-not-raised",
+        "args_python": "(['٣'],)",
+        "expected_exception": "ValueError",
+        "actual_python": "3"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "nested-return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v001]",
+        "case": "v001",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([(1, 3)],)",
+        "expected_python": "[(1, 3)]",
+        "actual_python": "[(1, 3)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "valid-input-not-mutated",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "([],)",
+        "expected_python": "[]",
+        "actual_python": "[]"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "ordinary-nested-int-rejection",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e010]",
+        "case": "e010",
+        "kind": "required-exception-not-raised",
+        "args_python": "([(1.5, 2)],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[(1.5, 2)]"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "([(True, 1)],)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    },
+    {
+      "task": "DV011",
+      "requirement": "external-adversarial-witness",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e007]",
+        "case": "e007",
+        "kind": "required-exception-not-raised",
+        "args_python": "([(IntChild(0), 1)],)",
+        "expected_exception": "TypeError",
+        "actual_python": "[(IntChild(0), 1)]"
+      }
+    },
+    {
+      "task": "DV012",
+      "requirement": "return-exact-type",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_values[v000]",
+        "case": "v000",
+        "kind": "result-or-post-state-assertion",
+        "args_python": "('',)",
+        "expected_python": "True",
+        "actual_python": "1"
+      }
+    },
+    {
+      "task": "DV012",
+      "requirement": "type-before-value-priority",
+      "status": "designated",
+      "witness": {
+        "node": "test_target.py::test_raises_typeerror[e006]",
+        "case": "e006",
+        "kind": "required-exception-wrong-class",
+        "args_python": "(StrChild('(a)'),)",
+        "expected_exception": "TypeError",
+        "actual_exception": "ValueError"
+      }
+    }
+  ],
+  "review_limit": "same coordinating agent; no newly claimed independent72-task semantic review"
+}

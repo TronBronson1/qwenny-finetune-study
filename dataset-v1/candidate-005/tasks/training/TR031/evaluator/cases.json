@@ -1,0 +1,98 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([], [])",
+    "expected_python": "[]",
+    "after_python": "([], [])"
+  },
+  {
+    "id": "v001",
+    "args_python": "([1], [])",
+    "expected_python": "[]",
+    "after_python": "([1], [])"
+  },
+  {
+    "id": "v002",
+    "args_python": "([], [1])",
+    "expected_python": "[]",
+    "after_python": "([], [1])"
+  },
+  {
+    "id": "v003",
+    "args_python": "([2, 1, 2, 3], [2, 2, 4])",
+    "expected_python": "[2, 2]",
+    "after_python": "([2, 1, 2, 3], [2, 2, 4])"
+  },
+  {
+    "id": "v004",
+    "args_python": "([1, 1, 1], [1, 1])",
+    "expected_python": "[1, 1]",
+    "after_python": "([1, 1, 1], [1, 1])"
+  },
+  {
+    "id": "v005",
+    "args_python": "([-1, 0, -1], [0, -1])",
+    "expected_python": "[-1, 0]",
+    "after_python": "([-1, 0, -1], [0, -1])"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([]), [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "([True], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "([IntChild(1)], [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "((), [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, [])",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e005",
+    "args_python": "([], ListChild([]))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e006",
+    "args_python": "([], [True])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e007",
+    "args_python": "([], [IntChild(1)])",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e008",
+    "args_python": "([], ())",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e009",
+    "args_python": "([], None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  }
+]

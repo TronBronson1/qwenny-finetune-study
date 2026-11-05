@@ -1,0 +1,110 @@
+.........F............FFFF....                                           [100%]
+================================== FAILURES ===================================
+_____ TestClampInteger.test_valid_inputs_behavior[input_args9-expected9] ______
+
+self = <test_candidate.TestClampInteger object at 0x0000025660A5D5E0>
+input_args = (5, 10, 0), expected = RaisesExc(ValueError)
+
+    @pytest.mark.parametrize("input_args, expected", [
+        # Value within bounds (normal)
+        ((5, 0, 10), 5),
+        # Below lower bound -> clamp to lower
+        ((-3, 0, 10), 0),
+        # Above upper bound -> clamp to upper
+        ((12, 0, 10), 10),
+        # Exact endpoint lower
+        ((0, 0, 10), 0),
+        # Exact endpoint upper
+        ((10, 0, 10), 10),
+        # Equal bounds (single point)
+        ((4, 4, 4), 4),
+        # Negative ranges (value inside)
+        ((-5, -10, 0), -5),
+        # Negative ranges (clamp to lower)
+        ((-15, -10, 0), -10),
+        # Negative ranges (clamp to upper)
+        ((2, -10, 0), 0),
+        # Reversed bounds (ValueError expected)
+        ((5, 10, 0), pytest.raises(ValueError)),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        if isinstance(expected, type):  # Handle pytest.raises wrapper
+            with expected:
+                clamp_integer(*input_args)
+        else:
+>           result = clamp_integer(*input_args)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 5, lower = 10, upper = 0
+
+    def clamp_integer(value, lower, upper):
+        if any(type(item) is not int for item in (value, lower)):
+            raise TypeError("all arguments must be exact built-in integers")
+        if lower > upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:5: ValueError
+_______________ TestClampInteger.test_bad_upper_position[True] ________________
+
+self = <test_candidate.TestClampInteger object at 0x0000025660B36250>
+bad_type_upper = True
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:59: Failed
+_______________ TestClampInteger.test_bad_upper_position[False] _______________
+
+self = <test_candidate.TestClampInteger object at 0x0000025660A87460>
+bad_type_upper = False
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:59: Failed
+_________________ TestClampInteger.test_bad_upper_position[0] _________________
+
+self = <test_candidate.TestClampInteger object at 0x0000025660A87540>
+bad_type_upper = 0
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:59: Failed
+________________ TestClampInteger.test_bad_upper_position[1.5] ________________
+
+self = <test_candidate.TestClampInteger object at 0x0000025660B150D0>
+bad_type_upper = 1.5
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:59: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args9-expected9]
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[True] - F...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[False] - ...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[0] - Fail...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[1.5] - Fa...
+5 failed, 25 passed in 0.26s

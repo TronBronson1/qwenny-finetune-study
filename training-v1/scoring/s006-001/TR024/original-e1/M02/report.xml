@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="26" skipped="0" tests="44" time="0.808" timestamp="2026-11-04T13:18:15.401441-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[abc-ABC]" time="0.001"><failure message="AssertionError: assert 'AxBxC' == 'ABC'&#10;  &#10;  - ABC&#10;  + AxBxC&#10;  ?  + +">test_input = 'abc', expected = 'ABC'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert 'AxBxC' == 'ABC'
+E         
+E         - ABC
+E         + AxBxC
+E         ?  + +
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[AbCd-ABcD]" time="0.001"><failure message="AssertionError: assert 'AxBxCxD' == 'ABcD'&#10;  &#10;  - ABcD&#10;  + AxBxCxD">test_input = 'AbCd', expected = 'ABcD'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert 'AxBxCxD' == 'ABcD'
+E         
+E         - ABcD
+E         + AxBxCxD
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[-]" time="0.001"><failure message="AssertionError: assert '' is not ''">test_input = '', expected = ''
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+        assert result == expected
+&gt;       assert result is not test_input
+E       AssertionError: assert '' is not ''
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[hello \u4e16\u754c-HELLO \u4e16\u754c]" time="0.002"><failure message="AssertionError: assert 'HxExLxLxOx x世x界' == 'HELLO 世界'&#10;  &#10;  - HELLO 世界&#10;  + HxExLxLxOx x世x界">test_input = 'hello 世界', expected = 'HELLO 世界'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert 'HxExLxLxOx x世x界' == 'HELLO 世界'
+E         
+E         - HELLO 世界
+E         + HxExLxLxOx x世x界
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[123!@#-123!@#]" time="0.001"><failure message="AssertionError: assert '1x2x3x!x@x#' == '123!@#'&#10;  &#10;  - 123!@#&#10;  + 1x2x3x!x@x#">test_input = '123!@#', expected = '123!@#'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert '1x2x3x!x@x#' == '123!@#'
+E         
+E         - 123!@#
+E         + 1x2x3x!x@x#
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[A-A]" time="0.001"><failure message="AssertionError: assert 'A' is not 'A'">test_input = 'A', expected = 'A'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+        assert result == expected
+&gt;       assert result is not test_input
+E       AssertionError: assert 'A' is not 'A'
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[z-Z]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[a-A]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[ABC-ABC]" time="0.001"><failure message="AssertionError: assert 'AxBxC' == 'ABC'&#10;  &#10;  - ABC&#10;  + AxBxC&#10;  ?  + +">test_input = 'ABC', expected = 'ABC'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert 'AxBxC' == 'ABC'
+E         
+E         - ABC
+E         + AxBxC
+E         ?  + +
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[!aBc-!ABC]" time="0.001"><failure message="AssertionError: assert '!xAxBxC' == '!ABC'&#10;  &#10;  - !ABC&#10;  + !xAxBxC">test_input = '!aBc', expected = '!ABC'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert '!xAxBxC' == '!ABC'
+E         
+E         - !ABC
+E         + !xAxBxC
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[  hello  world  -  HELLO  WORLD  ]" time="0.001"><failure message="AssertionError: assert ' x xHxExLxLx...WxOxRxLxDx x ' == '  HELLO  WORLD  '&#10;  &#10;  -   HELLO  WORLD  &#10;  +  x xHxExLxLxOx x xWxOxRxLxDx x">test_input = '  hello  world  ', expected = '  HELLO  WORLD  '
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert ' x xHxExLxLx...WxOxRxLxDx x ' == '  HELLO  WORLD  '
+E         
+E         -   HELLO  WORLD  
+E         +  x xHxExLxLxOx x xWxOxRxLxDx x
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[\u65e5\u672c\u8a9e-\u65e5\u672c\u8a9e]" time="0.001"><failure message="AssertionError: assert '日x本x語' == '日本語'&#10;  &#10;  - 日本語&#10;  + 日x本x語&#10;  ?  + +">test_input = '日本語', expected = '日本語'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert '日x本x語' == '日本語'
+E         
+E         - 日本語
+E         + 日x本x語
+E         ?  + +
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[\u4f60\u597d-\u4f60\u597d]" time="0.001"><failure message="AssertionError: assert '你x好' == '你好'&#10;  &#10;  - 你好&#10;  + 你x好&#10;  ?  +">test_input = '你好', expected = '你好'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert '你x好' == '你好'
+E         
+E         - 你好
+E         + 你x好
+E         ?  +
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_correct_str[\uc548\ub155\ud558\uc138\uc694-\uc548\ub155\ud558\uc138\uc694]" time="0.001"><failure message="AssertionError: assert '안x녕x하x세x요' == '안녕하세요'&#10;  &#10;  - 안녕하세요&#10;  + 안x녕x하x세x요">test_input = '안녕하세요', expected = '안녕하세요'
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("abc", "ABC"),
+        ("AbCd", "ABcD"),
+        ("", ""),
+        ("hello 世界", "HELLO 世界"),
+        ("123!@#", "123!@#"),
+        ("A", "A"),
+        ("z", "Z"),
+        ("a", "A"),
+        ("ABC", "ABC"),
+        ("!aBc", "!ABC"),
+        ("  hello  world  ", "  HELLO  WORLD  "),
+        ("日本語", "日本語"),
+        ("你好", "你好"),
+        ("안녕하세요", "안녕하세요"),
+    ])
+    def test_ascii_upper_returns_correct_str(test_input, expected):
+        assert isinstance(test_input, str)
+        result = ascii_upper(test_input)
+        assert isinstance(result, str)
+&gt;       assert result == expected
+E       AssertionError: assert '안x녕x하x세x요' == '안녕하세요'
+E         
+E         - 안녕하세요
+E         + 안x녕x하x세x요
+
+test_candidate.py:24: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[123]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[12.5]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[True]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[None]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input4]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input5]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input6]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input7]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input8]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input9]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[&lt;lambda&gt;]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[test_input11]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_raises_type_error[ab&lt;class 'type'&gt;]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">test_input = "ab&lt;class 'type'&gt;"
+
+    @pytest.mark.parametrize("test_input", [
+        123,
+        12.5,
+        True,
+        None,
+        [],
+        {},
+        ("a",),
+        [1, 2, 3],
+        {1: 2},
+        {"a": "b"},
+        lambda x: x,
+        bytearray(b"abc"),
+        "ab" + str(type(str)),  # Invalid type injection attempt simulation
+    ])
+    def test_ascii_upper_raises_type_error(test_input):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input0]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'a': 'b'}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'a': 'b'}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input1]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = [1, 2, 3]
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input2]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'nested': 'value'}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'nested': 'value'}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input3]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'list': ['x', 'y']}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'list': ['x', 'y']}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input4]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'mixed': '123'}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'mixed': '123'}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input5]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'list': ['a', 'B', 'c']}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'list': ['a', 'B', 'c']}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_does_not_mutate_nested[test_input6]" time="0.001"><failure message="TypeError: exact built-in type required">test_input = {'str': 'Hello', 'int': 10}
+
+    @pytest.mark.parametrize("test_input", [
+        {"a": "b"},
+        [1, 2, 3],
+        {"nested": "value"},
+        {"list": ["x", "y"]},
+        {"mixed": "123"},
+        {"list": ["a", "B", "c"]},
+        {"str": "Hello", "int": 10},
+    ])
+    def test_ascii_upper_does_not_mutate_nested(test_input):
+        import copy
+        original = copy.deepcopy(test_input)
+&gt;       ascii_upper(test_input)
+
+test_candidate.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in ascii_upper
+    _types((text,), ('str',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:9: in _check
+    _exact(value, {'int': int, 'str': str, 'bytes': bytes}[schema])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = {'str': 'Hello', 'int': 10}, kind = &lt;class 'str'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert 'AxBxC' is 'abc'&#10; +  where 'AxBxC' = ascii_upper('abc')">test_input = 'abc'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert 'AxBxC' is 'abc'
+E        +  where 'AxBxC' = ascii_upper('abc')
+
+test_candidate.py:74: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert 'HxExLxLxO' is 'Hello'&#10; +  where 'HxExLxLxO' = ascii_upper('Hello')">test_input = 'Hello'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert 'HxExLxLxO' is 'Hello'
+E        +  where 'HxExLxLxO' = ascii_upper('Hello')
+
+test_candidate.py:74: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert '1x2x3' is '123'&#10; +  where '1x2x3' = ascii_upper('123')">test_input = '123'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert '1x2x3' is '123'
+E        +  where '1x2x3' = ascii_upper('123')
+
+test_candidate.py:74: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[!]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert 'A' is 'a'&#10; +  where 'A' = ascii_upper('a')">test_input = 'a'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert 'A' is 'a'
+E        +  where 'A' = ascii_upper('a')
+
+test_candidate.py:74: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Z]" time="0.001" /><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[1]" time="0.000" /><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert 'AxB' is 'aB'&#10; +  where 'AxB' = ascii_upper('aB')">test_input = 'aB'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert 'AxB' is 'aB'
+E        +  where 'AxB' = ascii_upper('aB')
+
+test_candidate.py:74: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]" time="0.001"><failure message="AssertionError: Input must be returned as-is if fully uppercase&#10;assert 'AxBxCx1x2x3' is 'abc123'&#10; +  where 'AxBxCx1x2x3' = ascii_upper('abc123')">test_input = 'abc123'
+
+    @pytest.mark.parametrize("test_input", [
+        "abc",
+        "Hello",
+        "123",
+        "!",
+        "",
+        "a",
+        "Z",
+        "1",
+        "aB",
+        "abc123",
+    ])
+    def test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase(test_input):
+&gt;       assert ascii_upper(test_input) is test_input, "Input must be returned as-is if fully uppercase"
+E       AssertionError: Input must be returned as-is if fully uppercase
+E       assert 'AxBxCx1x2x3' is 'abc123'
+E        +  where 'AxBxCx1x2x3' = ascii_upper('abc123')
+
+test_candidate.py:74: AssertionError</failure></testcase></testsuite></testsuites>

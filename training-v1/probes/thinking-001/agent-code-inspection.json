@@ -1,0 +1,12 @@
+{
+  "DV001/base": {
+    "approved_for_isolated_execution": true,
+    "sha256": "52847e09b27ae92f6d3016b20d922bbaef0b70e711f62fa8348a8e39d5bfd841",
+    "review": "Full final code read. Only pytest/subject imports, bounded ordinary test functions and harmless subclasses. No file, network, process, dynamic execution, target replacement or introspection. Definitive contract errors: supposed valid/nonmutation cases use lists instead of tuples; wrong negative slicing and rotated-identity checks; truncated mapping. No repairs."
+  },
+  "DV001/original-e5": {
+    "approved_for_isolated_execution": true,
+    "sha256": "65db65bd87aefee459a0c7bfdbc214cfbf4f869b1cccb172c1234b63a58384d1",
+    "review": "Entire final source read. Only copy/pytest/subject imports, inert built-in subclasses, literals, parametrization and test assertions. Safe isolated execution. Undefined nested at module scope causes collection failure; flattened args/expected entries, invalid exception classes and identity assertions are additional contract defects. No repairs."
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="24" time="0.291" timestamp="2026-11-03T21:58:36.696585-05:00" hostname="Trons"><testcase classname="test_candidate.TestTypeError" name="test_list" time="0.001" /><testcase classname="test_candidate.TestTypeError" name="test_int" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_float" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_bytes" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_none" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_subclass_str" time="0.001" /><testcase classname="test_candidate.TestTypeError" name="test_bool" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_length_short" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_length_long" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_wrong_colon_count" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_hour_24" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_hour_negative" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_minute_high" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_minute_low" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_unicode_digits" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_leading_spaces" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_trailing_spaces" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_uppercase_letters" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_reversed_bounds_logic_check" time="0.000" /><testcase classname="test_candidate.TestSuccessCases" name="test_midnight" time="0.000" /><testcase classname="test_candidate.TestSuccessCases" name="test_noon" time="0.000" /><testcase classname="test_candidate.TestSuccessCases" name="test_max_valid_time" time="0.001"><failure message="assert 1321 == 1439">self = &lt;test_candidate.TestSuccessCases object at 0x000001DFAC6603E0&gt;
+
+    def test_max_valid_time(self):
+        result = minute_of_day("23:59")
+&gt;       assert result == 1439
+E       assert 1321 == 1439
+
+test_candidate.py:113: AssertionError</failure></testcase><testcase classname="test_candidate.TestSuccessCases" name="test_zero_minutes_non_zero_hour" time="0.000" /><testcase classname="test_candidate.TestSuccessCases" name="test_minute_boundary_59" time="0.001"><failure message="assert 541 == 659">self = &lt;test_candidate.TestSuccessCases object at 0x000001DFAC5A1A30&gt;
+
+    def test_minute_boundary_59(self):
+        result = minute_of_day("10:59")
+&gt;       assert result == 659
+E       assert 541 == 659
+
+test_candidate.py:123: AssertionError</failure></testcase></testsuite></testsuites>

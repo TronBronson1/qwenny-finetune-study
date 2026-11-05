@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="14" time="0.484" timestamp="2026-11-04T18:56:21.160853-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.002"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = (0,), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = (1,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = (2,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(2)&#10; +  and   &lt;class 'int'&gt; = type(2)">args = (3,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(2)
+E        +  and   &lt;class 'int'&gt; = type(2)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(8)&#10; +  and   &lt;class 'int'&gt; = type(8)">args = (255,), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 8, expected = 8
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(8)
+E        +  and   &lt;class 'int'&gt; = type(8)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = (256,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(2)&#10; +  and   &lt;class 'int'&gt; = type(2)">args = (1267650600228229401496703205377,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=population_count(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(2)
+E        +  and   &lt;class 'int'&gt; = type(2)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /></testsuite></testsuites>

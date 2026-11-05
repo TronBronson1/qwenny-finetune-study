@@ -1,0 +1,71 @@
+......FF...F.                                                            [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = (True,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(-1),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = (0,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(-1),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(-1),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           seconds_to_hms(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = -1
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds < 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - ValueError: domain
+3 failed, 10 passed in 0.31s

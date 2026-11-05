@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="18" time="0.438" timestamp="2026-11-03T20:10:01.822918-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_values[v006]" time="0.000" /><testcase classname="test_target" name="test_values[v007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:47: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:47: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:47: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:47: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /></testsuite></testsuites>

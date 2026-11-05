@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="10" skipped="0" tests="14" time="0.532" timestamp="2026-11-04T18:59:25.677917-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('a',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('aa',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('aba',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('abba',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(0)&#10; +  and   &lt;class 'bool'&gt; = type(False)">args = ('ab',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(0)
+E        +  and   &lt;class 'bool'&gt; = type(False)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(0)&#10; +  and   &lt;class 'bool'&gt; = type(False)">args = ('Aa',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(0)
+E        +  and   &lt;class 'bool'&gt; = type(False)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('a a',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v008]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(1)&#10; +  and   &lt;class 'bool'&gt; = type(True)">args = ('é字é',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(1)
+E        +  and   &lt;class 'bool'&gt; = type(True)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v009]" time="0.001"><failure message="AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;&#10; +  where &lt;class 'int'&gt; = type(0)&#10; +  and   &lt;class 'bool'&gt; = type(False)">args = ('a a!',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+        pytest.param(('a a!',), False, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=is_palindrome(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'int'&gt; is &lt;class 'bool'&gt;
+E        +  where &lt;class 'int'&gt; = type(0)
+E        +  and   &lt;class 'bool'&gt; = type(False)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /></testsuite></testsuites>

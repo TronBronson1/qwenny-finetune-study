@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="12" time="0.459" timestamp="2026-11-04T18:56:46.812038-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('&quot;&quot;')&#10; +  and   &lt;class 'str'&gt; = type('&quot;&quot;')">args = ('',), expected = '""'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '""', expected = '""'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('""')
+E        +  and   &lt;class 'str'&gt; = type('""')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('abc')&#10; +  and   &lt;class 'str'&gt; = type('abc')">args = ('abc',), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'abc', expected = 'abc'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('abc')
+E        +  and   &lt;class 'str'&gt; = type('abc')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('&quot;a,b&quot;')&#10; +  and   &lt;class 'str'&gt; = type('&quot;a,b&quot;')">args = ('a,b',), expected = '"a,b"'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '"a,b"', expected = '"a,b"'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('"a,b"')
+E        +  and   &lt;class 'str'&gt; = type('"a,b"')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('&quot;a&quot;&quot;b&quot;')&#10; +  and   &lt;class 'str'&gt; = type('&quot;a&quot;&quot;b&quot;')">args = ('a"b',), expected = '"a""b"'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '"a""b"', expected = '"a""b"'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('"a""b"')
+E        +  and   &lt;class 'str'&gt; = type('"a""b"')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('&quot;a\rb&quot;')&#10; +  and   &lt;class 'str'&gt; = type('&quot;a\rb&quot;')">args = ('a\rb',), expected = '"a\rb"'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '"a\rb"', expected = '"a\rb"'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('"a\rb"')
+E        +  and   &lt;class 'str'&gt; = type('"a\rb"')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('&quot;a\nb&quot;')&#10; +  and   &lt;class 'str'&gt; = type('&quot;a\nb&quot;')">args = ('a\nb',), expected = '"a\nb"'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '"a\nb"', expected = '"a\nb"'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('"a\nb"')
+E        +  and   &lt;class 'str'&gt; = type('"a\nb"')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type(' a ')&#10; +  and   &lt;class 'str'&gt; = type(' a ')">args = (' a ',), expected = ' a '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ' a ', expected = ' a '
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type(' a ')
+E        +  and   &lt;class 'str'&gt; = type(' a ')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('é')&#10; +  and   &lt;class 'str'&gt; = type('é')">args = ('é',), expected = 'é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'é', expected = 'é'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('é')
+E        +  and   &lt;class 'str'&gt; = type('é')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

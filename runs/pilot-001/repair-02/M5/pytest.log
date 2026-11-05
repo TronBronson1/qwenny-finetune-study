@@ -1,0 +1,67 @@
+.F.....F.F.....................                                          [100%]
+================================== FAILURES ===================================
+_________ TestClampInteger.test_valid_inputs_behavior[input_args1-0] __________
+
+self = <test_candidate.TestClampInteger object at 0x000001A3440DDA90>
+input_args = (-3, 0, 10), expected = 0
+
+    @pytest.mark.parametrize("input_args, expected", [
+        ((5, 0, 10), 5),
+        ((-3, 0, 10), 0),
+        ((12, 0, 10), 10),
+        ((0, 0, 10), 0),
+        ((10, 0, 10), 10),
+        ((4, 4, 4), 4),
+        ((-5, -10, 0), -5),
+        ((-15, -10, 0), -10),
+        ((2, -10, 0), 0),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        result = clamp_integer(*input_args)
+>       assert result == expected
+E       assert -3 == 0
+
+test_candidate.py:26: AssertionError
+________ TestClampInteger.test_valid_inputs_behavior[input_args7--10] _________
+
+self = <test_candidate.TestClampInteger object at 0x000001A344017E50>
+input_args = (-15, -10, 0), expected = -10
+
+    @pytest.mark.parametrize("input_args, expected", [
+        ((5, 0, 10), 5),
+        ((-3, 0, 10), 0),
+        ((12, 0, 10), 10),
+        ((0, 0, 10), 0),
+        ((10, 0, 10), 10),
+        ((4, 4, 4), 4),
+        ((-5, -10, 0), -5),
+        ((-15, -10, 0), -10),
+        ((2, -10, 0), 0),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        result = clamp_integer(*input_args)
+>       assert result == expected
+E       assert -15 == -10
+
+test_candidate.py:26: AssertionError
+__ TestClampInteger.test_reversed_bounds_raises_valueerror[bad_lower_upper0] __
+
+self = <test_candidate.TestClampInteger object at 0x000001A34401D6D0>
+bad_lower_upper = (5, 10)
+
+    @pytest.mark.parametrize("bad_lower_upper", [(5, 10), (0, -5)])
+    def test_reversed_bounds_raises_valueerror(self, bad_lower_upper):
+        """Test that reversed bounds (lower > upper) raises ValueError."""
+        value, lower, upper = bad_lower_upper[0], *bad_lower_upper
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:33: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args1-0]
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args7--10]
+FAILED test_candidate.py::TestClampInteger::test_reversed_bounds_raises_valueerror[bad_lower_upper0]
+3 failed, 28 passed in 0.26s

@@ -1,0 +1,26 @@
+.....................F.F                                                 [100%]
+================================== FAILURES ===================================
+____________________ TestSuccessCases.test_max_valid_time _____________________
+
+self = <test_candidate.TestSuccessCases object at 0x000001DFAC6603E0>
+
+    def test_max_valid_time(self):
+        result = minute_of_day("23:59")
+>       assert result == 1439
+E       assert 1321 == 1439
+
+test_candidate.py:113: AssertionError
+__________________ TestSuccessCases.test_minute_boundary_59 ___________________
+
+self = <test_candidate.TestSuccessCases object at 0x000001DFAC5A1A30>
+
+    def test_minute_boundary_59(self):
+        result = minute_of_day("10:59")
+>       assert result == 659
+E       assert 541 == 659
+
+test_candidate.py:123: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestSuccessCases::test_max_valid_time - assert 1321...
+FAILED test_candidate.py::TestSuccessCases::test_minute_boundary_59 - assert ...
+2 failed, 22 passed in 0.33s

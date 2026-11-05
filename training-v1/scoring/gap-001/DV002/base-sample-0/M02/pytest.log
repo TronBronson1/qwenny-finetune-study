@@ -1,0 +1,89 @@
+FF.F..FF..........                                                       [100%]
+================================== FAILURES ===================================
+_______________ TestMinuteOfDayTypes.test_valid_str_returns_int _______________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000002B2B57F65D0>
+
+    def test_valid_str_returns_int(self):
+        hour, minute = 12, 30
+        value = f"{hour:02d}:{minute:02d}"
+        result = minute_of_day(value)
+        assert isinstance(result, int)
+>       assert result == hour * 60 + minute
+E       assert 690 == ((12 * 60) + 30)
+
+test_candidate.py:11: AssertionError
+_____________ TestMinuteOfDayTypes.test_non_str_raises_type_error _____________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000002B2B57F7750>
+
+    def test_non_str_raises_type_error(self):
+        cases = [
+            (1234, 5678),
+            (12, 34, "int, int"),
+            ("12:34", 56, "str, int"),
+            (None, None, "None"),
+            ([12, 34], None, "list"),
+            (f"{'x':12}:{'y':34}", None, "unicode string"),
+        ]
+    
+>       for arg, _, desc in cases:
+            ^^^^^^^^^^^^
+E       ValueError: not enough values to unpack (expected 3, got 2)
+
+test_candidate.py:23: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[00:01] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002B2B57F7C50>
+arg = '00:01'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+        result = minute_of_day(arg)
+        h = int(arg[:2])
+        m = int(arg[3:])
+>       assert result == h * 60 + m
+E       assert -1 == ((0 * 60) + 1)
+
+test_candidate.py:36: AssertionError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[23:59] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002B2B583D6D0>
+arg = '23:59'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+        result = minute_of_day(arg)
+        h = int(arg[:2])
+        m = int(arg[3:])
+>       assert result == h * 60 + m
+E       assert 1321 == ((23 * 60) + 59)
+
+test_candidate.py:36: AssertionError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[00:59] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002B2B58D1480>
+arg = '00:59'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+        result = minute_of_day(arg)
+        h = int(arg[:2])
+        m = int(arg[3:])
+>       assert result == h * 60 + m
+E       assert -59 == ((0 * 60) + 59)
+
+test_candidate.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_valid_str_returns_int - ...
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_non_str_raises_type_error
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[00:01]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[23:59]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[00:59]
+5 failed, 13 passed in 0.38s

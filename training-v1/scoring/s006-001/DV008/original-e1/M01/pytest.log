@@ -1,0 +1,94 @@
+.............FF.F..................                                      [100%]
+================================== FAILURES ===================================
+___________________ test_edit_distance_basic[test-ttest-2] ____________________
+
+left = 'test', right = 'ttest', expected = 2
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+>       assert result == expected
+E       assert 1 == 2
+
+test_candidate.py:25: AssertionError
+_____________________ test_edit_distance_basic[ABC-abc-4] _____________________
+
+left = 'ABC', right = 'abc', expected = 4
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+>       assert result == expected
+E       assert 3 == 4
+
+test_candidate.py:25: AssertionError
+_____________________ test_edit_distance_basic[123-321-3] _____________________
+
+left = '123', right = '321', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+>       assert result == expected
+E       assert 2 == 3
+
+test_candidate.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_edit_distance_basic[test-ttest-2] - assert 1 == 2
+FAILED test_candidate.py::test_edit_distance_basic[ABC-abc-4] - assert 3 == 4
+FAILED test_candidate.py::test_edit_distance_basic[123-321-3] - assert 2 == 3
+3 failed, 32 passed in 0.87s

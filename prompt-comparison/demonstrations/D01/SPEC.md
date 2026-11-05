@@ -1,0 +1,3 @@
+batches(items, capacity) accepts only exact built-in integers (reject bool and int subclasses). Validate both types before values. items must be >= 0 and capacity > 0, otherwise ValueError. Return the minimum number of capacity-sized batches needed for items; zero items needs zero batches.
+
+Write one complete pytest file using the exact requested import. Do not implement, mock, inspect, or edit the function. No dependencies beyond pytest. Return one Python code block, then a short requirement-to-input mapping and accurate limitations. Do not claim execution unless you executed the tests. Do not claim exhaustive coverage.

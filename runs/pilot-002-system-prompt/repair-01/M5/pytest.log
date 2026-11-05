@@ -1,0 +1,15 @@
+.F..........................                                             [100%]
+================================== FAILURES ===================================
+__________ TestClampIntegerNormalRanges.test_value_below_lower_bound __________
+
+self = <test_candidate.TestClampIntegerNormalRanges object at 0x00000173FDC3D810>
+
+    def test_value_below_lower_bound(self):
+>       assert clamp_integer(-3, 0, 10) == 0
+E       assert -3 == 0
+E        +  where -3 = clamp_integer(-3, 0, 10)
+
+test_candidate.py:17: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerNormalRanges::test_value_below_lower_bound
+1 failed, 27 passed in 0.23s

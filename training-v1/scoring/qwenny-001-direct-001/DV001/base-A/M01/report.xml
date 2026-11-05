@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="17" time="0.381" timestamp="2026-11-03T21:58:30.427912-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_rotate_empty_tuple" time="0.001" /><testcase classname="test_candidate" name="test_rotate_single_element" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_basic" time="0.000" /><testcase classname="test_candidate" name="test_rotate_left_via_negative_steps" time="0.000" /><testcase classname="test_candidate" name="test_rotate_large_wrapping_positive" time="0.000" /><testcase classname="test_candidate" name="test_rotate_large_wrapping_negative" time="0.001"><failure message="AssertionError: assert ('y', 'x') == ('x', 'y')&#10;  &#10;  At index 0 diff: 'y' != 'x'&#10;  Use -v to get more diff">def test_rotate_large_wrapping_negative():
+        values = ("x", "y")
+&gt;       assert rotate_right(values, -3) == ("x", "y") # -3 % 2 = -1 -&gt; effectively shift left 1 / right 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('y', 'x') == ('x', 'y')
+E         
+E         At index 0 diff: 'y' != 'x'
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_rotate_complex_types" time="0.001"><failure message="AssertionError: assert ('str', None, 1, 2.5) == (None, 1, 2.5, 'str')&#10;  &#10;  At index 0 diff: 'str' != None&#10;  Use -v to get more diff">def test_rotate_complex_types():
+        data = [1, 2.5, "str", None]
+        container = tuple(data)
+        result = rotate_right(container, 2)
+        expected = (None, 1, 2.5, "str")
+&gt;       assert result == expected
+E       AssertionError: assert ('str', None, 1, 2.5) == (None, 1, 2.5, 'str')
+E         
+E         At index 0 diff: 'str' != None
+E         Use -v to get more diff
+
+test_candidate.py:34: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_reject_bool_as_steps_is_not_accepted" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">def test_reject_bool_as_steps_is_not_accepted():
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:42: Failed</failure></testcase><testcase classname="test_candidate" name="test_reject_list_as_values_is_not_accepted" time="0.000" /><testcase classname="test_candidate" name="test_reject_string_as_values_is_not_accepted" time="0.000" /><testcase classname="test_candidate" name="test_reject_float_as_steps_is_not_accepted" time="0.000" /><testcase classname="test_candidate" name="test_reject_dict_as_steps_is_not_accepted" time="0.000" /><testcase classname="test_candidate" name="test_reject_tuple_subclass_as_values_is_not_accepted" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">def test_reject_tuple_subclass_as_values_is_not_accepted():
+        class MyTuple(tuple):
+            pass
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:64: Failed</failure></testcase><testcase classname="test_candidate" name="test_reject_int_subclass_as_steps_is_not_accepted" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">def test_reject_int_subclass_as_steps_is_not_accepted():
+        class MyInt(int):
+            pass
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:70: Failed</failure></testcase><testcase classname="test_candidate" name="test_reject_none_as_steps_is_not_accepted" time="0.000" /><testcase classname="test_candidate" name="test_reject_zero_steps_returns_same" time="0.000" /><testcase classname="test_candidate" name="test_reject_large_step_well_behaves" time="0.001"><failure message="assert (3, 1, 2) == (1, 2, 3)&#10;  &#10;  At index 0 diff: 3 != 1&#10;  Use -v to get more diff">def test_reject_large_step_well_behaves():
+        values = (1, 2, 3)
+        result = rotate_right(values, 100)
+&gt;       assert result == (1, 2, 3)
+E       assert (3, 1, 2) == (1, 2, 3)
+E         
+E         At index 0 diff: 3 != 1
+E         Use -v to get more diff
+
+test_candidate.py:84: AssertionError</failure></testcase></testsuite></testsuites>

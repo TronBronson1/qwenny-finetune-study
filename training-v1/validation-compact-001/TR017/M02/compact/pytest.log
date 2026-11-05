@@ -1,0 +1,98 @@
+.FF.FF.........                                                          [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args1-a] _____________________________
+
+args = ('a', ''), expected = 'a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), ''),
+        pytest.param(('a', ''), 'a'),
+        pytest.param(('', 'b'), 'b'),
+        pytest.param(('ab', '12'), 'a1b2'),
+        pytest.param(('abc', '1'), 'a1bc'),
+        pytest.param(('a', '123'), 'a123'),
+        pytest.param(('é字', ' X'), 'é 字X'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert '' == 'a'
+E         
+E         - a
+
+test_target.py:26: AssertionError
+____________________________ test_values[args2-b] _____________________________
+
+args = ('', 'b'), expected = 'b'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), ''),
+        pytest.param(('a', ''), 'a'),
+        pytest.param(('', 'b'), 'b'),
+        pytest.param(('ab', '12'), 'a1b2'),
+        pytest.param(('abc', '1'), 'a1bc'),
+        pytest.param(('a', '123'), 'a123'),
+        pytest.param(('é字', ' X'), 'é 字X'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert '' == 'b'
+E         
+E         - b
+
+test_target.py:26: AssertionError
+___________________________ test_values[args4-a1bc] ___________________________
+
+args = ('abc', '1'), expected = 'a1bc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), ''),
+        pytest.param(('a', ''), 'a'),
+        pytest.param(('', 'b'), 'b'),
+        pytest.param(('ab', '12'), 'a1b2'),
+        pytest.param(('abc', '1'), 'a1bc'),
+        pytest.param(('a', '123'), 'a123'),
+        pytest.param(('é字', ' X'), 'é 字X'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a1' == 'a1bc'
+E         
+E         - a1bc
+E         + a1
+
+test_target.py:26: AssertionError
+___________________________ test_values[args5-a123] ___________________________
+
+args = ('a', '123'), expected = 'a123'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), ''),
+        pytest.param(('a', ''), 'a'),
+        pytest.param(('', 'b'), 'b'),
+        pytest.param(('ab', '12'), 'a1b2'),
+        pytest.param(('abc', '1'), 'a1bc'),
+        pytest.param(('a', '123'), 'a123'),
+        pytest.param(('é字', ' X'), 'é 字X'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a1' == 'a123'
+E         
+E         - a123
+E         + a1
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-a] - AssertionError: assert '' == 'a'
+FAILED test_target.py::test_values[args2-b] - AssertionError: assert '' == 'b'
+FAILED test_target.py::test_values[args4-a1bc] - AssertionError: assert 'a1' ...
+FAILED test_target.py::test_values[args5-a123] - AssertionError: assert 'a1' ...
+4 failed, 11 passed in 0.37s

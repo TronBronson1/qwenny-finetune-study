@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="19" time="0.481" timestamp="2026-11-04T18:58:23.181498-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_renamed_values[v000]" time="0.002"><failure message="AssertionError: assert (['mutation-sentinel'],) == ([],)&#10;  &#10;  At index 0 diff: ['mutation-sentinel'] != []&#10;  Use -v to get more diff">args = (['mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert (['mutation-sentinel'],) == ([],)
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v001]" time="0.001"><failure message="AssertionError: assert ([0, 'mutation-sentinel'],) == ([0],)&#10;  &#10;  At index 0 diff: [0, 'mutation-sentinel'] != [0]&#10;  Use -v to get more diff">args = ([0, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([0, 'mutation-sentinel'],) == ([0],)
+E         
+E         At index 0 diff: [0, 'mutation-sentinel'] != [0]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v002]" time="0.001"><failure message="AssertionError: assert ([255, 'mutation-sentinel'],) == ([255],)&#10;  &#10;  At index 0 diff: [255, 'mutation-sentinel'] != [255]&#10;  Use -v to get more diff">args = ([255, 'mutation-sentinel'],), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([255, 'mutation-sentinel'],) == ([255],)
+E         
+E         At index 0 diff: [255, 'mutation-sentinel'] != [255]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v003]" time="0.001"><failure message="AssertionError: assert ([1, 2, 3, 'm...n-sentinel'],) == ([1, 2, 3],)&#10;  &#10;  At index 0 diff: [1, 2, 3, 'mutation-sentinel'] != [1, 2, 3]&#10;  Use -v to get more diff">args = ([1, 2, 3, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([1, 2, 3, 'm...n-sentinel'],) == ([1, 2, 3],)
+E         
+E         At index 0 diff: [1, 2, 3, 'mutation-sentinel'] != [1, 2, 3]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v004]" time="0.001"><failure message="AssertionError: assert ([5, 5, 'mutation-sentinel'],) == ([5, 5],)&#10;  &#10;  At index 0 diff: [5, 5, 'mutation-sentinel'] != [5, 5]&#10;  Use -v to get more diff">args = ([5, 5, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([5, 5, 'mutation-sentinel'],) == ([5, 5],)
+E         
+E         At index 0 diff: [5, 5, 'mutation-sentinel'] != [5, 5]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v005]" time="0.001"><failure message="AssertionError: assert ([128, 1, 128...n-sentinel'],) == ([128, 1, 128],)&#10;  &#10;  At index 0 diff: [128, 1, 128, 'mutation-sentinel'] != [128, 1, 128]&#10;  Use -v to get more diff">args = ([128, 1, 128, 'mutation-sentinel'],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([128, 1, 128...n-sentinel'],) == ([128, 1, 128],)
+E         
+E         At index 0 diff: [128, 1, 128, 'mutation-sentinel'] != [128, 1, 128]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e000]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e001]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e002]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e003]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e004]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e005]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e006]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e007]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e008]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e011]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e012]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e009]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_valueerror[e010]" time="0.000" /></testsuite></testsuites>

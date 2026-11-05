@@ -1,0 +1,37 @@
+{
+  "DV001/base-greedy-0": {
+    "reviewer": "Codex agent complete source inspection",
+    "sha256": "7e82d52852dc16cec767c8363ca42d0a50f13db748fbde10bda0c32520fe634d",
+    "approved_for_isolated_execution": true,
+    "notes": "Read entire source: subject/pytest only, bounded tests; wrongly rejects normal tuple as subclass.",
+    "category_review_complete": false
+  },
+  "DV001/base-sample-0": {
+    "reviewer": "Codex agent complete source inspection",
+    "sha256": "15b68c24e2168a8df104842d495a379d3679b12dd139ac820cede92d1420f9ef",
+    "approved_for_isolated_execution": true,
+    "notes": "Read entire source: subject/pytest only, bounded tests; wrong rotations and normal-tuple rejection.",
+    "category_review_complete": false
+  },
+  "DV001/epoch-5-sample-0": {
+    "reviewer": "Codex agent complete source inspection",
+    "sha256": "7053aac4876521fccc2024b96e8011e329060bf36a80d80399872a0400a44dbe",
+    "approved_for_isolated_execution": true,
+    "notes": "Read entire source: copy/pytest/subject only, bounded recursive shape helper; wrong negative rotations.",
+    "category_review_complete": false
+  },
+  "DV002/base-sample-0": {
+    "reviewer": "Codex agent complete source inspection",
+    "sha256": "f7f374c6b685b4d9d5e509f41ed3f5b50b9c9d3e5281d0bf6f722f8c21f2fef7",
+    "approved_for_isolated_execution": true,
+    "notes": "Read entire source: subject/pytest only, bounded loops. Inconsistent case tuple lengths cause unpacking failure; no exact-int or str-subclass check.",
+    "category_review_complete": false
+  },
+  "DV002/epoch-5-sample-0": {
+    "reviewer": "Codex agent complete source inspection",
+    "sha256": "9fae291d30d412351080957a16e3f56ff1a6fe3b406d695fff9f5df1a59dd3ee",
+    "approved_for_isolated_execution": true,
+    "notes": "Read entire source: copy/pytest/subject only; syntax-invalid param list, incorrect expected None and exception cases. Invalid syntax cannot execute.",
+    "category_review_complete": false
+  }
+}

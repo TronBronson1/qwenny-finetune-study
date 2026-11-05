@@ -1,0 +1,3 @@
+strip_prefix(text, prefix) accepts only exact built-in strings (reject str subclasses). Validate both types before values. Empty prefix raises ValueError. Remove exactly one case-sensitive literal prefix if present at the start; otherwise return text unchanged. Empty text with nonempty prefix is valid. Whitespace and Unicode are ordinary literal characters.
+
+Write one complete pytest file using the exact requested import. Do not implement, mock, inspect, or edit the function. No dependencies beyond pytest. Return one Python code block, then a short requirement-to-input mapping and accurate limitations. Do not claim execution unless you executed the tests. Do not claim exhaustive coverage.

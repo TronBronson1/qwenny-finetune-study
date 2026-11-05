@@ -1,0 +1,137 @@
+[
+  {
+    "task": "TR038",
+    "split": "training",
+    "function": "parse_hex_byte",
+    "args_repr": "('٣f',)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "ValueError",
+      "message": "syntax"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "63"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "TR043",
+    "split": "training",
+    "function": "parse_binary",
+    "args_repr": "('١٠',)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "ValueError",
+      "message": "syntax"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "2"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "TR044",
+    "split": "training",
+    "function": "parse_range",
+    "args_repr": "('[١:٣]',)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "ValueError",
+      "message": "syntax"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "(1, 3)"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "TR056",
+    "split": "training",
+    "function": "decode_rgb",
+    "args_repr": "('#١٢٣٤٥٦',)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "ValueError",
+      "message": "syntax"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "(18, 52, 86)"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "DV010",
+    "split": "development",
+    "function": "rpn_evaluate",
+    "args_repr": "(['٣'],)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "ValueError",
+      "message": "token"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "3"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "DV008",
+    "split": "development",
+    "function": "edit_distance",
+    "args_repr": "('A', 'a')",
+    "special_type": null,
+    "reference": {
+      "kind": "return",
+      "value": "1"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "0"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "DV011",
+    "split": "development",
+    "function": "interval_union",
+    "args_repr": "([(1, 2)],)",
+    "special_type": "IntChild endpoints",
+    "reference": {
+      "kind": "exception",
+      "exception": "TypeError",
+      "message": "exact built-in type required"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "[(1, 2)]"
+    },
+    "behavioral_difference_confirmed": true
+  },
+  {
+    "task": "TR027",
+    "split": "training",
+    "function": "pairwise_differences",
+    "args_repr": "(['x'],)",
+    "special_type": null,
+    "reference": {
+      "kind": "exception",
+      "exception": "TypeError",
+      "message": "exact built-in type required"
+    },
+    "mutant": {
+      "kind": "return",
+      "value": "[]"
+    },
+    "behavioral_difference_confirmed": true
+  }
+]

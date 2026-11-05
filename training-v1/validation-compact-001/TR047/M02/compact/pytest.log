@@ -1,0 +1,136 @@
+.FFFFF.F.....................                                            [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args1-0] _____________________________
+
+args = ('aaaa', 'aa', 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert -1 == 0
+
+test_target.py:28: AssertionError
+____________________________ test_values[args2-1] _____________________________
+
+args = ('aaaa', 'aa', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert 0 == 1
+
+test_target.py:28: AssertionError
+____________________________ test_values[args3-2] _____________________________
+
+args = ('aaaa', 'aa', 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert 1 == 2
+
+test_target.py:28: AssertionError
+____________________________ test_values[args4--1] ____________________________
+
+args = ('aaaa', 'aa', 4), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert 2 == -1
+
+test_target.py:28: AssertionError
+____________________________ test_values[args5-0] _____________________________
+
+args = ('abc', 'abc', 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert -1 == 0
+
+test_target.py:28: AssertionError
+____________________________ test_values[args7-1] _____________________________
+
+args = ('éé', 'é', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1),
+        pytest.param(('aaaa', 'aa', 1), 0),
+        pytest.param(('aaaa', 'aa', 2), 1),
+        pytest.param(('aaaa', 'aa', 3), 2),
+        pytest.param(('aaaa', 'aa', 4), -1),
+        pytest.param(('abc', 'abc', 1), 0),
+        pytest.param(('abc', 'x', 1), -1),
+        pytest.param(('éé', 'é', 2), 1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=index_of_nth(*args)
+>       assert actual == expected
+E       assert 0 == 1
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-0] - assert -1 == 0
+FAILED test_target.py::test_values[args2-1] - assert 0 == 1
+FAILED test_target.py::test_values[args3-2] - assert 1 == 2
+FAILED test_target.py::test_values[args4--1] - assert 2 == -1
+FAILED test_target.py::test_values[args5-0] - assert -1 == 0
+FAILED test_target.py::test_values[args7-1] - assert 0 == 1
+6 failed, 23 passed in 0.40s

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('true',)",
+    "expected_python": "True",
+    "after_python": "('true',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('false',)",
+    "expected_python": "False",
+    "after_python": "('false',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild('true'),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('True',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e005",
+    "args_python": "('false ',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "('',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e007",
+    "args_python": "('1',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  }
+]

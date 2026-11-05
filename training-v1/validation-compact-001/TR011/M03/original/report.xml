@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="17" time="0.282" timestamp="2026-11-04T07:12:04.787675-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert True == False">args = (1,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=leap_year(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:30: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert False == True">args = (2000,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False, id="v000"),
+        pytest.param((4,), True, id="v001"),
+        pytest.param((1900,), False, id="v002"),
+        pytest.param((2000,), True, id="v003"),
+        pytest.param((2023,), False, id="v004"),
+        pytest.param((2024,), True, id="v005"),
+        pytest.param((2100,), False, id="v006"),
+        pytest.param((9999,), False, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=leap_year(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:30: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_values[v006]" time="0.000" /><testcase classname="test_target" name="test_values[v007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /></testsuite></testsuites>

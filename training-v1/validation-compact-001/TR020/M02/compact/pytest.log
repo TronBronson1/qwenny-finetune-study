@@ -1,0 +1,51 @@
+..F.F.....                                                               [100%]
+================================== FAILURES ===================================
+______________________ test_values[args2-&lt;&amp;&gt;] _______________________
+
+args = ('<&>',), expected = '&lt;&amp;&gt;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abc',), 'abc'),
+        pytest.param(('<&>',), '&lt;&amp;&gt;'),
+        pytest.param(('"\'',), '&quot;&#x27;'),
+        pytest.param(('&amp;',), '&amp;amp;'),
+        pytest.param(("é <a x='1'>",), 'é &lt;a x=&#x27;1&#x27;&gt;'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=escape_html(*args)
+>       assert actual == expected
+E       AssertionError: assert '&lt;&&gt;' == '&lt;&amp;&gt;'
+E         
+E         - &lt;&amp;&gt;
+E         ?      ----
+E         + &lt;&&gt;
+
+test_target.py:25: AssertionError
+________________________ test_values[args4-&amp;amp;] _________________________
+
+args = ('&amp;',), expected = '&amp;amp;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abc',), 'abc'),
+        pytest.param(('<&>',), '&lt;&amp;&gt;'),
+        pytest.param(('"\'',), '&quot;&#x27;'),
+        pytest.param(('&amp;',), '&amp;amp;'),
+        pytest.param(("é <a x='1'>",), 'é &lt;a x=&#x27;1&#x27;&gt;'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=escape_html(*args)
+>       assert actual == expected
+E       AssertionError: assert '&amp;' == '&amp;amp;'
+E         
+E         - &amp;amp;
+E         + &amp;
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args2-&lt;&amp;&gt;] - AssertionError: ass...
+FAILED test_target.py::test_values[args4-&amp;amp;] - AssertionError: assert ...
+2 failed, 8 passed in 0.31s

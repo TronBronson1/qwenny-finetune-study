@@ -1,0 +1,36 @@
+.FF............                                                          [100%]
+================================== FAILURES ===================================
+__________________ TestRowMajorOffset.test_valid_offset_1_2 ___________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x000001EDB92DAC10>
+
+    def test_valid_offset_1_2(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+>       assert row_major_offset(row, column, rows, columns) is expected
+E       assert 1 is 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:20: AssertionError
+__________________ TestRowMajorOffset.test_valid_offset_max ___________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x000001EDB92D2C40>
+
+    def test_valid_offset_max(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+>       assert row_major_offset(row, column, rows, columns) is expected
+E       assert 1 is 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestRowMajorOffset::test_valid_offset_1_2 - assert ...
+FAILED test_candidate.py::TestRowMajorOffset::test_valid_offset_max - assert ...
+2 failed, 13 passed in 0.56s

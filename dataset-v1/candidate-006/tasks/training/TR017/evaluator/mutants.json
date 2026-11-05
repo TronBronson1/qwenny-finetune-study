@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "e007f6f00ce1a4edecfe3371d988895cd167ec28897e07d9d18cd4c220cac178",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''), '')",
+      "expected_exception": "TypeError",
+      "actual_python": "''"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "call-48-max-to-min",
+    "source_sha256": "492210463d4ed469dd5550e4ded059cd9a6f7c598c289a6acf3cf4057e1dbd8e",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('a', '')",
+      "expected_python": "'a'",
+      "actual_python": "''"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "comparison-49-Gt",
+    "source_sha256": "e5426104d0c9342db2eb0bf6f5d83fd9bc149361557984fd4d151d03b7db9cc9",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('a', '')",
+      "expected_python": "'a'",
+      "actual_python": "''"
+    }
+  }
+]

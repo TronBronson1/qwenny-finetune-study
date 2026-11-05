@@ -1,0 +1,88 @@
+FFF...F.................                                                 [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ([], 0), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_bound(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:26: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ([1], 0), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_bound(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:26: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ([1], 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_bound(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:26: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ([-3, -1, 0], -4), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_bound(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert 1 == 0
+FAILED test_target.py::test_values[v001] - assert 1 == 0
+FAILED test_target.py::test_values[v002] - assert 1 == 0
+FAILED test_target.py::test_values[v006] - assert 1 == 0
+4 failed, 20 passed in 0.56s

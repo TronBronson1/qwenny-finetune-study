@@ -1,0 +1,58 @@
+.......FF.......                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v007] ______________________________
+
+args = (1994,), expected = 'MCMXCIV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'MxCMXCIV' == 'MCMXCIV'
+E         
+E         - MCMXCIV
+E         + MxCMXCIV
+E         ?  +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = (3999,), expected = 'MMMCMXCIX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'MxMxMxCMXCIX' == 'MMMCMXCIX'
+E         
+E         - MMMCMXCIX
+E         + MxMxMxCMXCIX
+E         ?  + + +
+
+test_target.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v007] - AssertionError: assert 'MxCMXCIV' ...
+FAILED test_target.py::test_values[v008] - AssertionError: assert 'MxMxMxCMXC...
+2 failed, 14 passed in 0.55s

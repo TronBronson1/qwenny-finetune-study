@@ -1,0 +1,33 @@
+{
+  "id": "DV009",
+  "split": "development",
+  "family": "lower-bound",
+  "function": "lower_bound",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values",
+    "target"
+  ],
+  "schemas": [
+    "ints",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "6b608d5a38645078c8cc9b84e4d72c7144a7bf3563a0fa615feb653b06426217",
+  "target_sha256": "1111c5e1ff6f982dcf9ba01df70bdd7e7fd64fbf3ed6055e9799c9c11ac2cb6a",
+  "spec_sha256": "506a05394b3d98d889dbfa7e74194edcfe809381c446913d8349cbeb6541be85",
+  "answer_sha256": "cd571bcf84d62dc2770a5ca740464b42aed8a19e30527655e0bf7e71eed4a74f",
+  "valid_test_cases": 7,
+  "exception_test_cases": 11,
+  "oracle_checks": 7,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

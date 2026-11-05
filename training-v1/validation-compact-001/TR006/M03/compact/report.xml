@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="14" time="0.279" timestamp="2026-11-04T07:11:53.496949-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-1]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-2]" time="0.001"><failure message="assert 1 == 2">args = (2,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1),
+        pytest.param((1,), 1),
+        pytest.param((2,), 2),
+        pytest.param((5,), 120),
+        pytest.param((12,), 479001600),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=factorial(*args)
+&gt;       assert actual == expected
+E       assert 1 == 2
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-120]" time="0.001"><failure message="assert 60 == 120">args = (5,), expected = 120
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1),
+        pytest.param((1,), 1),
+        pytest.param((2,), 2),
+        pytest.param((5,), 120),
+        pytest.param((12,), 479001600),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=factorial(*args)
+&gt;       assert actual == expected
+E       assert 60 == 120
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-479001600]" time="0.001"><failure message="assert 239500800 == 479001600">args = (12,), expected = 479001600
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1),
+        pytest.param((1,), 1),
+        pytest.param((2,), 2),
+        pytest.param((5,), 120),
+        pytest.param((12,), 479001600),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=factorial(*args)
+&gt;       assert actual == expected
+E       assert 239500800 == 479001600
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /></testsuite></testsuites>

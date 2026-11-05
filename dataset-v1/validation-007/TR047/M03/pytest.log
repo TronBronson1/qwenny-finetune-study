@@ -1,0 +1,147 @@
+..FFF..F....................F                                            [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('aaaa', 'aa', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=index_of_nth(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'aaaa', needle = 'aa', occurrence = 2
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence > 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v003] ______________________________
+
+args = ('aaaa', 'aa', 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=index_of_nth(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'aaaa', needle = 'aa', occurrence = 3
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence > 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v004] ______________________________
+
+args = ('aaaa', 'aa', 4), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=index_of_nth(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'aaaa', needle = 'aa', occurrence = 4
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence > 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v007] ______________________________
+
+args = ('éé', 'é', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=index_of_nth(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'éé', needle = 'é', occurrence = 2
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence > 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[e014] _________________________
+
+args = ('abc', 'a', 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('abc', '', 1), id="e013"),
+        pytest.param(('abc', 'a', 0), id="e014"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:65: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - ValueError: domain
+FAILED test_target.py::test_values[v003] - ValueError: domain
+FAILED test_target.py::test_values[v004] - ValueError: domain
+FAILED test_target.py::test_values[v007] - ValueError: domain
+FAILED test_target.py::test_raises_valueerror[e014] - Failed: DID NOT RAISE V...
+5 failed, 24 passed in 0.59s

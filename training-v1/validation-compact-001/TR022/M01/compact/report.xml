@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="12" time="0.299" timestamp="2026-11-04T07:12:28.061587-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-&quot;&quot;]" time="0.001" /><testcase classname="test_target" name="test_values[args1-abc]" time="0.001" /><testcase classname="test_target" name="test_values[args2-&quot;a,b&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args3-&quot;a&quot;&quot;b&quot;]" time="0.001" /><testcase classname="test_target" name="test_values[args4-&quot;a\rb&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args5-&quot;a\nb&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args6- a ]" time="0.000" /><testcase classname="test_target" name="test_values[args7-\xe9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /></testsuite></testsuites>

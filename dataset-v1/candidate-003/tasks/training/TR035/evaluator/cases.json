@@ -1,0 +1,68 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([],)",
+    "expected_python": "0",
+    "after_python": "([],)"
+  },
+  {
+    "id": "v001",
+    "args_python": "([1],)",
+    "expected_python": "0",
+    "after_python": "([1],)"
+  },
+  {
+    "id": "v002",
+    "args_python": "([1, 1],)",
+    "expected_python": "1",
+    "after_python": "([1, 1],)"
+  },
+  {
+    "id": "v003",
+    "args_python": "([1, 1, 1],)",
+    "expected_python": "2",
+    "after_python": "([1, 1, 1],)"
+  },
+  {
+    "id": "v004",
+    "args_python": "([1, 2, 1],)",
+    "expected_python": "0",
+    "after_python": "([1, 2, 1],)"
+  },
+  {
+    "id": "v005",
+    "args_python": "([1, 1, 2, 2, 2],)",
+    "expected_python": "3",
+    "after_python": "([1, 1, 2, 2, 2],)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([]),)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e001",
+    "args_python": "([True],)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e002",
+    "args_python": "([IntChild(1)],)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e003",
+    "args_python": "((),)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:values"
+  }
+]

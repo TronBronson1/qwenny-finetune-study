@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S009-value-comments\run_controlled.py", line 41, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S009-value-comments\run_controlled.py", line 29, in main
+    run('train-'+arm,['studies/S009-value-comments/train_s009.py','--prepared',str(HERE/'preparation-001'/arm),'--run','runs/'+name],1200)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S009-value-comments\run_controlled.py", line 15, in run
+    proc=subprocess.run([str(python)]+args,cwd=EXP,stdout=log,stderr=subprocess.STDOUT,timeout=min(remaining,limit))
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\subprocess.py", line 671, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\subprocess.py", line 1414, in communicate
+    self.wait(timeout=_deadline_remaining(endtime))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\subprocess.py", line 1445, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\subprocess.py", line 1774, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\lora-feasibility\\.venv\\Scripts\\python.exe', 'studies/S009-value-comments/train_s009.py', '--prepared', 'C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S009-value-comments\\preparation-001\\baseline', '--run', 'runs/qwenny-003-calibrated-baseline']' timed out after 1200 seconds

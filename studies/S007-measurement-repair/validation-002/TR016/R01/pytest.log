@@ -1,0 +1,184 @@
+FFFFFF....                                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('AEIOUaeiou',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 10, expected = 10
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(10)
+E        +  and   <class 'int'> = type(10)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('rhythm',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('Apple pie',), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 4, expected = 4
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(4)
+E        +  and   <class 'int'> = type(4)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('éÁy',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('a1 E!',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(2)
+E        +  and   <class 'int'> = type(2)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+6 failed, 4 passed in 0.56s

@@ -1,0 +1,221 @@
+FFFFFFF.........                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (1,), expected = 'A'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'A', expected = 'A'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('A')
+E        +  and   <class 'str'> = type('A')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (26,), expected = 'Z'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'Z', expected = 'Z'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('Z')
+E        +  and   <class 'str'> = type('Z')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (27,), expected = 'AA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'AA', expected = 'AA'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('AA')
+E        +  and   <class 'str'> = type('AA')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (52,), expected = 'AZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'AZ', expected = 'AZ'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('AZ')
+E        +  and   <class 'str'> = type('AZ')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (702,), expected = 'ZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'ZZ', expected = 'ZZ'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('ZZ')
+E        +  and   <class 'str'> = type('ZZ')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (703,), expected = 'AAA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'AAA', expected = 'AAA'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('AAA')
+E        +  and   <class 'str'> = type('AAA')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (18278,), expected = 'ZZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'ZZZ', expected = 'ZZZ'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('ZZZ')
+E        +  and   <class 'str'> = type('ZZZ')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'sub...
+7 failed, 9 passed in 0.59s

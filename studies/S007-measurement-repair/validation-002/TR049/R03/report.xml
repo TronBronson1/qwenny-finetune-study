@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="49" time="0.468" timestamp="2026-11-04T17:05:43.585898-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_raises_indexerror[e022]" time="0.001"><failure message="ValueError: index">args = (-1, 0, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 2, 3), id="e022"),
+        pytest.param((2, 0, 2, 3), id="e023"),
+        pytest.param((0, 3, 2, 3), id="e024"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           row_major_offset(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 3
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e023]" time="0.001"><failure message="ValueError: index">args = (2, 0, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 2, 3), id="e022"),
+        pytest.param((2, 0, 2, 3), id="e023"),
+        pytest.param((0, 3, 2, 3), id="e024"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           row_major_offset(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 3
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e024]" time="0.001"><failure message="ValueError: index">args = (0, 3, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 2, 3), id="e022"),
+        pytest.param((2, 0, 2, 3), id="e023"),
+        pytest.param((0, 3, 2, 3), id="e024"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           row_major_offset(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 3, rows = 2, columns = 3
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e027]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e028]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e029]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e030]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e031]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e032]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e033]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e034]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e035]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e036]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e037]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e038]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e039]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e040]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e041]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e042]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e043]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e044]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e021]" time="0.000" /></testsuite></testsuites>

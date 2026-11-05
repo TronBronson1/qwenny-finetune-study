@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="49" time="0.463" timestamp="2026-11-03T20:16:04.828924-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert -2 == 2">args = (0, 2, 2, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert -2 == 2
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 1 == 5">args = (1, 2, 2, 3), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert 1 == 5
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e022]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e023]" time="0.000" /><testcase classname="test_target" name="test_raises_indexerror[e024]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e027]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e028]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e029]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e030]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e031]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e032]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e033]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e034]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e035]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e036]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e037]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e038]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e039]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e040]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e041]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e042]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e043]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e044]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e021]" time="0.001" /></testsuite></testsuites>

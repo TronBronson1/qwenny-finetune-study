@@ -1,0 +1,25 @@
+...........................F                                             [100%]
+================================== FAILURES ===================================
+_ TestClampIntegerTypeValidationPrecedence.test_string_value_precedence_over_reversed_bounds _
+
+self = <test_candidate.TestClampIntegerTypeValidationPrecedence object at 0x00000210518FE850>
+
+    def test_string_value_precedence_over_reversed_bounds(self):
+        # Should raise TypeError for invalid value type, not ValueError for bounds
+        with pytest.raises(TypeError):
+>           clamp_integer("bad", 10, 0)
+
+test_candidate.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'bad', lower = 10, upper = 0
+
+    def clamp_integer(value, lower, upper):
+        if lower > upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:3: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerTypeValidationPrecedence::test_string_value_precedence_over_reversed_bounds
+1 failed, 27 passed in 0.22s

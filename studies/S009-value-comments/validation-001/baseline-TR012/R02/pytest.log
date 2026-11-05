@@ -1,0 +1,148 @@
+.................FFFF..                                                  [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e012] _________________________
+
+args = (-1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 0), id="e012"),
+        pytest.param((-1, IntChild(0)), id="e013"),
+        pytest.param((IntChild(7), 0), id="e014"),
+        pytest.param((7, IntChild(0)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           weekday_offset(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = -1, delta = 0
+
+    def weekday_offset(day, delta):
+        if not 0 <= day <= 6:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = (-1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 0), id="e012"),
+        pytest.param((-1, IntChild(0)), id="e013"),
+        pytest.param((IntChild(7), 0), id="e014"),
+        pytest.param((7, IntChild(0)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           weekday_offset(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = -1, delta = 0
+
+    def weekday_offset(day, delta):
+        if not 0 <= day <= 6:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = (7, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 0), id="e012"),
+        pytest.param((-1, IntChild(0)), id="e013"),
+        pytest.param((IntChild(7), 0), id="e014"),
+        pytest.param((7, IntChild(0)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           weekday_offset(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = 7, delta = 0
+
+    def weekday_offset(day, delta):
+        if not 0 <= day <= 6:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = (7, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0), id="e000"),
+        pytest.param((IntChild(0), 0), id="e001"),
+        pytest.param((1.5, 0), id="e002"),
+        pytest.param(('bad', 0), id="e003"),
+        pytest.param((None, 0), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(0)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 0), id="e012"),
+        pytest.param((-1, IntChild(0)), id="e013"),
+        pytest.param((IntChild(7), 0), id="e014"),
+        pytest.param((7, IntChild(0)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           weekday_offset(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = 7, delta = 0
+
+    def weekday_offset(day, delta):
+        if not 0 <= day <= 6:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e012] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: domain
+4 failed, 19 passed in 0.57s

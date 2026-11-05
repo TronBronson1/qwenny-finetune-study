@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="11" time="0.513" timestamp="2026-11-04T18:58:10.957874-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_renamed_values[v000]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('a')&#10; +  and   &lt;class 'str'&gt; = type('a')">args = (['a'],), expected = [('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'a', expected = 'a'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('a')
+E        +  and   &lt;class 'str'&gt; = type('a')
+
+test_candidate.py:9: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('a')&#10; +  and   &lt;class 'str'&gt; = type('a')">args = (['a', 'a', 'b', 'a'],), expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'a', expected = 'a'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('a')
+E        +  and   &lt;class 'str'&gt; = type('a')
+
+test_candidate.py:9: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('')&#10; +  and   &lt;class 'str'&gt; = type('')">args = (['', '', 'x'],), expected = [('', 2), ('x', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('')
+E        +  and   &lt;class 'str'&gt; = type('')
+
+test_candidate.py:9: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('A')&#10; +  and   &lt;class 'str'&gt; = type('A')">args = (['A', 'a'],), expected = [('A', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'A', expected = 'A'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('A')
+E        +  and   &lt;class 'str'&gt; = type('A')
+
+test_candidate.py:9: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('é')&#10; +  and   &lt;class 'str'&gt; = type('é')">args = (['é', 'é', '字'],), expected = [('é', 2), ('字', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:12: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'é', expected = 'é'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('é')
+E        +  and   &lt;class 'str'&gt; = type('é')
+
+test_candidate.py:9: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e000]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e001]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e002]" time="0.000" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e003]" time="0.001" /><testcase classname="test_candidate" name="test_renamed_raises_typeerror[e004]" time="0.001" /></testsuite></testsuites>

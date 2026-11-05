@@ -1,0 +1,33 @@
+{
+  "status": "stopped-failed-gate-or-budget",
+  "process_id": 15168,
+  "started_unix": 1793836959.1686058,
+  "freeze_sha256": "054eb313c1387ffc074f9e8402cf8ab23cd9c2174bb98f7bc477dcdad67cbbe3",
+  "jobs": [
+    {
+      "label": "preflight-baseline",
+      "status": "passed",
+      "start_unix": 1793836959.169387,
+      "maximum_seconds": 600,
+      "exit_code": 0,
+      "seconds": 179.21936082839966
+    },
+    {
+      "label": "preflight-comments",
+      "status": "passed",
+      "start_unix": 1793837138.3898745,
+      "maximum_seconds": 600,
+      "exit_code": 0,
+      "seconds": 244.99574995040894
+    },
+    {
+      "label": "train-baseline",
+      "status": "stopped-budget",
+      "start_unix": 1793837383.3979607,
+      "maximum_seconds": 1200
+    }
+  ],
+  "error": "TimeoutExpired(['C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\lora-feasibility\\\\.venv\\\\Scripts\\\\python.exe', 'studies/S009-value-comments/train_s009.py', '--prepared', 'C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\studies\\\\S009-value-comments\\\\preparation-001\\\\baseline', '--run', 'runs/qwenny-003-calibrated-baseline'], 1199.999995500024)",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S009-value-comments\\run_controlled.py\", line 29, in main\n    run('train-'+arm,['studies/S009-value-comments/train_s009.py','--prepared',str(HERE/'preparation-001'/arm),'--run','runs/'+name],1200)\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S009-value-comments\\run_controlled.py\", line 15, in run\n    proc=subprocess.run([str(python)]+args,cwd=EXP,stdout=log,stderr=subprocess.STDOUT,timeout=min(remaining,limit))\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 671, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1414, in communicate\n    self.wait(timeout=_deadline_remaining(endtime))\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1445, in wait\n    return self._wait(timeout=timeout)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1774, in _wait\n    raise TimeoutExpired(self.args, timeout)\nsubprocess.TimeoutExpired: Command '['C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\lora-feasibility\\\\.venv\\\\Scripts\\\\python.exe', 'studies/S009-value-comments/train_s009.py', '--prepared', 'C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\studies\\\\S009-value-comments\\\\preparation-001\\\\baseline', '--run', 'runs/qwenny-003-calibrated-baseline']' timed out after 1200 seconds\n",
+  "seconds": 1624.3048932999955
+}

@@ -1,0 +1,46 @@
+F..........FF..                                                          [100%]
+================================== FAILURES ===================================
+_______________________ test_grid_neighbors_valid_ints ________________________
+
+    def test_grid_neighbors_valid_ints():
+        row = 1
+        column = 1
+        rows = 2
+        columns = 2
+        result = grid_neighbors(row, column, rows, columns)
+>       assert result == [(0, 1), (1, 1), (1, 0), (1, 2)]
+E       assert [(0, 1), (1, 0)] == [(0, 1), (1, ...1, 0), (1, 2)]
+E         
+E         At index 1 diff: (1, 0) != (1, 1)
+E         Right contains 2 more items, first extra item: (1, 0)
+E         Use -v to get more diff
+
+test_candidate.py:12: AssertionError
+___________ test_grid_neighbors_row_zero_is_valid_when_rows_is_one ____________
+
+    def test_grid_neighbors_row_zero_is_valid_when_rows_is_one():
+        result = grid_neighbors(0, 1, 1, 2)
+>       assert result == [(0, 1), (0, 1), (0, 0), (0, 2)]
+E       assert [(0, 0)] == [(0, 1), (0, ...0, 0), (0, 2)]
+E         
+E         At index 0 diff: (0, 0) != (0, 1)
+E         Right contains 3 more items, first extra item: (0, 1)
+E         Use -v to get more diff
+
+test_candidate.py:60: AssertionError
+________ test_grid_neighbors_column_zero_is_valid_when_columns_is_one _________
+
+    def test_grid_neighbors_column_zero_is_valid_when_columns_is_one():
+        result = grid_neighbors(1, 0, 2, 1)
+>       assert result == [(0, 0), (1, 0), (1, 0), (0, 0)]
+E       assert [(0, 0)] == [(0, 0), (1, ...1, 0), (0, 0)]
+E         
+E         Right contains 3 more items, first extra item: (1, 0)
+E         Use -v to get more diff
+
+test_candidate.py:64: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_grid_neighbors_valid_ints - assert [(0, 1), (1...
+FAILED test_candidate.py::test_grid_neighbors_row_zero_is_valid_when_rows_is_one
+FAILED test_candidate.py::test_grid_neighbors_column_zero_is_valid_when_columns_is_one
+3 failed, 12 passed in 0.59s

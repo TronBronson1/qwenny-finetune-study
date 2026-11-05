@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="13" time="0.454" timestamp="2026-11-03T20:10:16.541212-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert False == True">args = ('aa',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert False == True">args = ('aba',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert False == True">args = ('abba',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert True == False">args = ('ab',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert True == False">args = ('Aa',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="assert False == True">args = ('a a',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v008]" time="0.001"><failure message="assert False == True">args = ('é字é',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('a',), True, id="v001"),
+        pytest.param(('aa',), True, id="v002"),
+        pytest.param(('aba',), True, id="v003"),
+        pytest.param(('abba',), True, id="v004"),
+        pytest.param(('ab',), False, id="v005"),
+        pytest.param(('Aa',), False, id="v006"),
+        pytest.param(('a a',), True, id="v007"),
+        pytest.param(('é字é',), True, id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

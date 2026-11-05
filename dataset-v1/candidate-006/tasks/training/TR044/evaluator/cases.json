@@ -1,0 +1,110 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('[0:0]',)",
+    "expected_python": "(0, 0)",
+    "after_python": "('[0:0]',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('[0:99]',)",
+    "expected_python": "(0, 99)",
+    "after_python": "('[0:99]',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('[3:7]',)",
+    "expected_python": "(3, 7)",
+    "after_python": "('[3:7]',)"
+  },
+  {
+    "id": "v003",
+    "args_python": "('[99:99]',)",
+    "expected_python": "(99, 99)",
+    "after_python": "('[99:99]',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild('[0:0]'),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('[7:3]',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e005",
+    "args_python": "('0:1',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "('[00:1]',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e007",
+    "args_python": "('[0:100]',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e008",
+    "args_python": "('[0:1] ',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e009",
+    "args_python": "(StrChild('[7:3]'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e010",
+    "args_python": "(StrChild('0:1'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e011",
+    "args_python": "(StrChild('[00:1]'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e012",
+    "args_python": "(StrChild('[0:100]'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e013",
+    "args_python": "(StrChild('[0:1] '),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "id": "TR004",
+  "split": "training",
+  "family": "clamp",
+  "function": "clamp",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "value",
+    "low",
+    "high"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "9390944e5ce7c6ab2f79cf22810662336a3c794ab0cae70ad9c1b9341676b95f",
+  "target_sha256": "d87dfa183a59e305d67edf5cb5f406ac29e29702c05242f6ba902024545b3df0",
+  "spec_sha256": "808dfdcb0e012bcfae12ae3b4e3e73825c83a4409da3ef03bb7d466204eb9088",
+  "answer_sha256": "e3623799c8fe35d54167030a4e74357177f93d152c245e5c5896934a9f57521a",
+  "valid_test_cases": 7,
+  "exception_test_cases": 16,
+  "oracle_checks": 142,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

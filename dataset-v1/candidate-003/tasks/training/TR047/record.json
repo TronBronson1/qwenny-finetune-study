@@ -1,0 +1,34 @@
+{
+  "id": "TR047",
+  "split": "training",
+  "family": "index-of-nth",
+  "function": "index_of_nth",
+  "revision": 1,
+  "status": "allocated-before-authoring",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "text",
+    "needle",
+    "occurrence"
+  ],
+  "schemas": [
+    "str",
+    "str",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "5292887d401d47bf4c0be7aab2b19ca0a4d433fc93b84a8545eb3a919026f03a",
+  "target_sha256": "484af7111ed936d3e53b28ace25f503855db7bd8727c131136227114fc722959",
+  "spec_sha256": "dcf9bb7c07b9e32b8894532c9b205de35ce2897f8030ade3a8b2cdf7287bece1",
+  "valid_test_cases": 8,
+  "exception_test_cases": 17,
+  "oracle_checks": 8,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

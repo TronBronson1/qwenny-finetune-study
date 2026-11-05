@@ -1,0 +1,15 @@
+Function contract: run_length_encode(values).
+
+- values: exact list of exact strings; reject list and str subclasses.
+
+Reject invalid specified types with TypeError before shape/value checks.
+
+Return a list of (string, run_length) tuples for consecutive equal strings. Empty input returns []; do not combine separated runs.
+
+Return type: exact built-in list of exact two-item tuples (exact str label, exact int count).
+
+Do not mutate any input or nested mutable elements.
+
+Coverage expectations: include normal cases for empty, single, separated-runs, empty-strings, case-distinct, unicode. Test each input position and each stated nested type level with an ordinary wrong type and a subclass; reject bool wherever exact int is required, holding other inputs valid. Exercise stated invalid domain/shape/bounds rules and mixed-invalid witnesses for the stated validation order. Check exact returned types at the stated levels. Compare valid inputs before and after calls.
+
+Write one complete pytest file importing 'from subject import run_length_encode'. Do not implement, replace, mock or inspect the function. Use only pytest and the standard library. Use complete explicit argument tuples. Return one Python code block, then a brief requirement-to-input mapping and finite-coverage limitations. Do not claim execution.

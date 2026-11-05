@@ -1,0 +1,32 @@
+{
+  "id": "TR059",
+  "split": "training",
+  "family": "merge-sorted",
+  "function": "merge_sorted",
+  "revision": 1,
+  "status": "allocated-before-authoring",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "ints",
+    "ints"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "569569aa685fae699ae8063f32790ce34bd8cc82eef2bc4d19ae01b976f407f0",
+  "target_sha256": "d421e3c44afdf02f11eaa9e8b1a623119b6c25b9c65a6f280da791f60bec3d44",
+  "spec_sha256": "256ce2a591b1602ce8670852b7c3c6623292d4f1d4efe169b182286e66a05940",
+  "valid_test_cases": 6,
+  "exception_test_cases": 14,
+  "oracle_checks": 6,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

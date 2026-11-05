@@ -1,0 +1,60 @@
+...F..F..F.....FF.                                                       [100%]
+================================== FAILURES ===================================
+__________________ test_rotate_right_valid_tuple_large_steps __________________
+
+    def test_rotate_right_valid_tuple_large_steps():
+        args = ( (1, 2, 3), 100 )
+>       assert rotate_right(*args) == (1, 2, 3) # 100 % 3 == 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert (3, 1, 2) == (1, 2, 3)
+E         
+E         At index 0 diff: 3 != 1
+E         Use -v to get more diff
+
+test_candidate.py:20: AssertionError
+________________ test_rotate_right_tuple_subclass_invalid_type ________________
+
+    def test_rotate_right_tuple_subclass_invalid_type():
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed
+_____________________ test_rotate_right_bool_invalid_type _____________________
+
+    def test_rotate_right_bool_invalid_type():
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed
+________________ test_rotate_right_large_steps_wraps_correctly ________________
+
+    def test_rotate_right_large_steps_wraps_correctly():
+        args = ( ("a", "b", "c", "d"), 5 )
+>       assert rotate_right(*args) == ("c", "d", "a", "b") # 5 % 4 == 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('d', 'a', 'b', 'c') == ('c', 'd', 'a', 'b')
+E         
+E         At index 0 diff: 'd' != 'c'
+E         Use -v to get more diff
+
+test_candidate.py:78: AssertionError
+__________________ test_rotate_right_large_steps_wraps_left ___________________
+
+    def test_rotate_right_large_steps_wraps_left():
+        args = ( ("a", "b", "c", "d"), -1 )
+>       assert rotate_right(*args) == ("d", "a", "b", "c")
+E       AssertionError: assert ('b', 'c', 'd', 'a') == ('d', 'a', 'b', 'c')
+E         
+E         At index 0 diff: 'b' != 'd'
+E         Use -v to get more diff
+
+test_candidate.py:82: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_valid_tuple_large_steps - assert ...
+FAILED test_candidate.py::test_rotate_right_tuple_subclass_invalid_type - Fai...
+FAILED test_candidate.py::test_rotate_right_bool_invalid_type - Failed: DID N...
+FAILED test_candidate.py::test_rotate_right_large_steps_wraps_correctly - Ass...
+FAILED test_candidate.py::test_rotate_right_large_steps_wraps_left - Assertio...
+5 failed, 13 passed in 0.33s

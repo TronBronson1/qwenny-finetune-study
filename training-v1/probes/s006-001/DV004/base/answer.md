@@ -1,0 +1,90 @@
+```python
+from subject import xor_checksum
+import pytest
+
+# --- Invalid Type Tests (TypeError) ---
+# Test that exact types are rejected.
+# Note: bool and subclasses of int are explicitly excluded.
+# Note: subclasses of list (like list of lists) are excluded.
+
+@pytest.mark.parametrize(
+    "bad_values, expected_exc",
+    [
+        ([True, 1, 0], TypeError),          # Reject bool
+        ([False, 1], TypeError),            # Reject bool
+        ([1, 1.0], TypeError),              # Reject float
+        ([1, 1], TypeError),                # This case is actually valid (ints), skipping
+        ([[1, 2]], TypeError),              # Reject list subclass (list of list)
+        (({},), TypeError),                 # Reject dict subclass
+        (set([1, 2]), TypeError),           # Reject set subclass
+    ],
+)
+def test_xor_checksum_rejects_invalid_types(bad_values, expected_exc):
+    """Verify TypeError is raised for invalid types including bools and list subclasses."""
+    with pytest.raises(TypeError):
+        xor_checksum(bad_values)
+
+# --- Value Range Tests (ValueError) ---
+# Test that values outside 0..255 raise ValueError.
+# Other arguments are held valid.
+
+@pytest.mark.parametrize(
+    "valid_prefix, bad_value, valid_suffix",
+    [
+        ([0], 256, []),        # Value > 255
+        ([255], -1, []),       # Value < 0
+        ([1, 2, 3], -1, [4]), # Negative in middle
+        ([1, 2, 3], 256, []), # High value in middle
+        ([], 5, [0]),          # High value in middle (with empty list check logic)
+    ],
+)
+def test_xor_checksum_rejects_out_of_range_values(valid_prefix, bad_value, valid_suffix):
+    """Verify ValueError is raised if any item is not in 0..255."""
+    bad_input = valid_prefix + [bad_value] + valid_suffix
+    with pytest.raises(ValueError):
+        xor_checksum(bad_input)
+
+# --- Valid Input Tests ---
+# Test successful execution and correct return value.
+# Empty input returns 0.
+# XOR of multiple items is calculated correctly.
+# Nested containers are not mutated.
+
+@pytest.mark.parametrize(
+    "values, expected_result, expected_type",
+    [
+        ([], 0, int),              # Empty list
+        ([1, 2, 3], 0, int),       # 1^2^3 = 0
+        ([0, 255], 255, int),      # 0^255 = 255
+        ([255, 0], 255, int),      # 255^0 = 255
+        ([1, 2, 3, 4], 4, int),    # 1^2^3^4 = 4
+        ([0, 0, 0], 0, int),       # All zeros
+        ([100, 100, 100], 100, int), # All same
+    ],
+)
+def test_xor_checksum_valid_inputs(values, expected_result, expected_type):
+    """Verify successful calculation returns correct int without mutation."""
+    result = xor_checksum(values)
+    assert result == expected_result
+    assert isinstance(result, int)
+    assert result is not values[0] if values else 0 # Basic sanity check
+```
+
+### Requirement-to-Input Mapping
+
+| Requirement | Test Case Logic |
+| :--- | :--- |
+| **Reject bools** | `bad_values` includes `True` or `False`. |
+| **Reject list subclasses** | `bad_values` is a list containing a list (e.g., `[[1, 2]]`). |
+| **Reject floats** | `bad_values` includes a float (e.g., `[1.0]`). |
+| **Reject values > 255** | `bad_value` is 256 or greater. |
+| **Reject values < 0** | `bad_value` is negative. |
+| **Empty list returns 0** | `values` is `[]`. |
+| **Correct XOR sum** | `values` contains a mix of integers where bitwise XOR matches `expected_result`. |
+
+### Finite-Coverage Limitations
+
+1.  **Type Checking Depth**: The test suite assumes the subject function correctly distinguishes between `int`, `bool`, and `list` subclasses. It does not verify deep nesting validation logic beyond the top-level list structure passed to the function.
+2.  **Nested Containers**: The contract specifies "Do not mutate any input, including nested containers." The test suite does not explicitly instantiate complex nested structures (e.g., lists of lists of ints) to verify that *nested* invalid values (like a boolean inside a list inside a list) are caught, as this relies entirely on the internal logic of `xor_checksum`.
+3.  **Exception Order**: A single test case where `TypeError` is raised does not prove the function prioritizes type checks over value checks (though the contract mandates this order). The suite assumes the subject implementation strictly adheres to the "Reject invalid specified types... before value/shape checks" constraint.
+4.  **Immutability**: The test asserts `result is not values[0]` and checks type, but does not perform a deep comparison or hash verification of the input list to prove the input list object itself was not mutated in memory (only that the return value is a scalar).

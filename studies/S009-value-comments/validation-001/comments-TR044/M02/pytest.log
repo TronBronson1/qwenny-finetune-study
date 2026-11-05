@@ -1,0 +1,86 @@
+.FF............F......                                                   [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = ('[0:99]',), expected = (0, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+>       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:99]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low < high:
+>           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError
+______________________________ test_values[v002] ______________________________
+
+args = ('[3:7]',), expected = (3, 7)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+>       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[3:7]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low < high:
+>           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError
+________________________ test_raises_valueerror[e004] _________________________
+
+args = ('[7:3]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('[7:3]',), id="e004"),
+        pytest.param(('0:1',), id="e005"),
+        pytest.param(('[00:1]',), id="e006"),
+        pytest.param(('[0:100]',), id="e007"),
+        pytest.param(('[0:1] ',), id="e008"),
+        pytest.param(('[١:٣]',), id="e009"),
+        pytest.param(('[１:３]',), id="e010"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:50: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - ValueError: bounds
+FAILED test_target.py::test_values[v002] - ValueError: bounds
+FAILED test_target.py::test_raises_valueerror[e004] - Failed: DID NOT RAISE V...
+3 failed, 19 passed in 0.67s

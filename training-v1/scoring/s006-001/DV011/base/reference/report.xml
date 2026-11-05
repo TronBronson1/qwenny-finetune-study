@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="15" time="0.455" timestamp="2026-11-04T13:18:41.575736-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_single_interval" time="0.001" /><testcase classname="test_candidate" name="test_disjoint_intervals" time="0.001" /><testcase classname="test_candidate" name="test_touching_intervals" time="0.001" /><testcase classname="test_candidate" name="test_overlapping_intervals" time="0.001" /><testcase classname="test_candidate" name="test_unsorted_input" time="0.001"><failure message="assert [(1, 7)] == [(1, 5), (3, 7)]&#10;  &#10;  At index 0 diff: (1, 7) != (1, 5)&#10;  Right contains one more item: (3, 7)&#10;  Use -v to get more diff">def test_unsorted_input():
+        result = interval_union([(3, 7), (1, 5)])
+&gt;       assert result == [(1, 5), (3, 7)]
+E       assert [(1, 7)] == [(1, 5), (3, 7)]
+E         
+E         At index 0 diff: (1, 7) != (1, 5)
+E         Right contains one more item: (3, 7)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_complex_merging" time="0.001" /><testcase classname="test_candidate" name="test_none_type_error" time="0.000" /><testcase classname="test_candidate" name="test_single_tuple_type_error" time="0.000" /><testcase classname="test_candidate" name="test_string_in_list_type_error" time="0.000" /><testcase classname="test_candidate" name="test_wrong_length_type_error" time="0.001"><failure message="ValueError: pair shape">def test_wrong_length_type_error():
+        with pytest.raises(TypeError):
+&gt;           interval_union([(1, 5, 6)])
+
+test_candidate.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:46: in interval_union
+    _types((intervals,), ('pairs',))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ([(1, 5, 6)],), schemas = ('pairs',)
+
+    def _types(values, schemas):
+        for value, schema in zip(values, schemas): _check(value, schema)
+        # Shape/value validation happens after every argument's nested type validation.
+        for value, schema in zip(values, schemas):
+            if schema in ("pair", "tuple3") and len(value) != (2 if schema == "pair" else 3):
+                raise ValueError("tuple shape")
+            if schema == "pairs" and any(len(item) != 2 for item in value):
+&gt;               raise ValueError("pair shape")
+E               ValueError: pair shape
+
+subject.py:43: ValueError</failure></testcase><testcase classname="test_candidate" name="test_nested_list_type_error" time="0.000" /><testcase classname="test_candidate" name="test_low_equal_high" time="0.000" /><testcase classname="test_candidate" name="test_low_greater_than_high" time="0.000" /><testcase classname="test_candidate" name="test_float_values" time="0.000" /><testcase classname="test_candidate" name="test_output_tuple_types" time="0.000" /></testsuite></testsuites>

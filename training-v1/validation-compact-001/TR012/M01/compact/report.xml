@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="23" time="0.355" timestamp="2026-11-04T07:12:05.762867-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-0]" time="0.001" /><testcase classname="test_target" name="test_values[args3-6]" time="0.000" /><testcase classname="test_target" name="test_values[args4-3]" time="0.000" /><testcase classname="test_target" name="test_values[args5-3]" time="0.000" /><testcase classname="test_target" name="test_values[args6-0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.001"><failure message="ValueError: domain">args = (-1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           weekday_offset(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = -1, delta = 0
+
+    def weekday_offset(day, delta):
+        _types((day, delta), ('int', 'int'))
+        if not 0 &lt;= day &lt;= 6:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.001"><failure message="ValueError: domain">args = (-1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           weekday_offset(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = -1, delta = 0
+
+    def weekday_offset(day, delta):
+        _types((day, delta), ('int', 'int'))
+        if not 0 &lt;= day &lt;= 6:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.001"><failure message="ValueError: domain">args = (7, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           weekday_offset(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = 7, delta = 0
+
+    def weekday_offset(day, delta):
+        _types((day, delta), ('int', 'int'))
+        if not 0 &lt;= day &lt;= 6:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.001"><failure message="ValueError: domain">args = (7, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0)),
+        pytest.param((IntChild(0), 0)),
+        pytest.param((1.5, 0)),
+        pytest.param(('bad', 0)),
+        pytest.param((None, 0)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(0))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 0)),
+        pytest.param((-1, IntChild(0))),
+        pytest.param((IntChild(7), 0)),
+        pytest.param((7, IntChild(0))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           weekday_offset(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+day = 7, delta = 0
+
+    def weekday_offset(day, delta):
+        _types((day, delta), ('int', 'int'))
+        if not 0 &lt;= day &lt;= 6:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /></testsuite></testsuites>

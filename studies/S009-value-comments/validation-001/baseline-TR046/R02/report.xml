@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="26" time="0.532" timestamp="2026-11-04T18:58:02.362648-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001"><failure message="ValueError: syntax">args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001"><failure message="ValueError: syntax">args = ('+',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '+'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001"><failure message="ValueError: syntax">args = ('--1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '--1'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001"><failure message="ValueError: syntax">args = ('1 ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1 '
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.001"><failure message="ValueError: syntax">args = ('١',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '١'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.001"><failure message="ValueError: syntax">args = ('1111111111111',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1111111111111'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.001"><failure message="ValueError: syntax">args = ('+١',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '+١'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.001"><failure message="ValueError: syntax">args = ('-１',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e012"),
+        pytest.param((StrChild('+'),), id="e013"),
+        pytest.param((StrChild('--1'),), id="e014"),
+        pytest.param((StrChild('1 '),), id="e015"),
+        pytest.param((StrChild('١'),), id="e016"),
+        pytest.param((StrChild('1111111111111'),), id="e017"),
+        pytest.param((StrChild('+١'),), id="e018"),
+        pytest.param((StrChild('-１'),), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_signed(*args)
+
+test_target.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '-１'
+
+    def parse_signed(text):
+        if re.fullmatch('[+-]?[0-9]{1,12}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /></testsuite></testsuites>

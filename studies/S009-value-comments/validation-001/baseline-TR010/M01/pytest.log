@@ -1,0 +1,71 @@
+.......FF...F.                                                           [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = (True,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:35: Failed
+_________________________ test_raises_typeerror[e001] _________________________
+
+args = (0,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:35: Failed
+_________________________ test_raises_typeerror[e006] _________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           population_count(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1
+
+    def population_count(number):
+        _types((number,), ('int',))
+        if number < 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e001] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e006] - ValueError: domain
+3 failed, 11 passed in 0.57s

@@ -1,0 +1,27 @@
+{
+  "status": "finite-agent-category-map-and-execution-calibrated; independent-review-not-claimed",
+  "model_visible": true,
+  "return_type": "exact built-in three-item tuple of exact built-in ints",
+  "semantic_categories": [
+    {
+      "requirement": "zeros",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "ordinary",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "upper-bound",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "later-components-upper-bound",
+      "gold_case": "v003"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": false,
+  "limitations": "Finite same-agent semantic review. External semantic review covers eight S006 tasks only; this is not independent review of all72."
+}

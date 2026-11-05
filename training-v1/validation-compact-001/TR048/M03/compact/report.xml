@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="16" time="0.300" timestamp="2026-11-04T07:13:27.069336-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-A]" time="0.001"><failure message="AssertionError: assert '' == 'A'&#10;  &#10;  - A">args = (1,), expected = 'A'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '' == 'A'
+E         
+E         - A
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-Z]" time="0.001"><failure message="AssertionError: assert '' == 'Z'&#10;  &#10;  - Z">args = (26,), expected = 'Z'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '' == 'Z'
+E         
+E         - Z
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-AA]" time="0.001"><failure message="AssertionError: assert 'A' == 'AA'&#10;  &#10;  - AA&#10;  + A">args = (27,), expected = 'AA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'A' == 'AA'
+E         
+E         - AA
+E         + A
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-AZ]" time="0.001"><failure message="AssertionError: assert 'A' == 'AZ'&#10;  &#10;  - AZ&#10;  + A">args = (52,), expected = 'AZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'A' == 'AZ'
+E         
+E         - AZ
+E         + A
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-ZZ]" time="0.001"><failure message="AssertionError: assert 'Z' == 'ZZ'&#10;  &#10;  - ZZ&#10;  + Z">args = (702,), expected = 'ZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'Z' == 'ZZ'
+E         
+E         - ZZ
+E         + Z
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-AAA]" time="0.001"><failure message="AssertionError: assert 'AA' == 'AAA'&#10;  &#10;  - AAA&#10;  ?   -&#10;  + AA">args = (703,), expected = 'AAA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'AA' == 'AAA'
+E         
+E         - AAA
+E         ?   -
+E         + AA
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-ZZZ]" time="0.001"><failure message="AssertionError: assert 'ZZ' == 'ZZZ'&#10;  &#10;  - ZZZ&#10;  ?   -&#10;  + ZZ">args = (18278,), expected = 'ZZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'ZZ' == 'ZZZ'
+E         
+E         - ZZZ
+E         ?   -
+E         + ZZ
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /></testsuite></testsuites>

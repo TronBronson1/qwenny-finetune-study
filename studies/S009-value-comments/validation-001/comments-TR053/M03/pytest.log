@@ -1,0 +1,213 @@
+.FFFFFFFF.....                                                           [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = (1,), expected = '0.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-0.01' == '0.01'
+E         
+E         - 0.01
+E         + -0.01
+E         ? +
+
+test_target.py:25: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (-1,), expected = '-0.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '0.01' == '-0.01'
+E         
+E         - -0.01
+E         ? -
+E         + 0.01
+
+test_target.py:25: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (99,), expected = '0.99'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-0.99' == '0.99'
+E         
+E         - 0.99
+E         + -0.99
+E         ? +
+
+test_target.py:25: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (100,), expected = '1.00'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-1.00' == '1.00'
+E         
+E         - 1.00
+E         + -1.00
+E         ? +
+
+test_target.py:25: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (-100,), expected = '-1.00'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '1.00' == '-1.00'
+E         
+E         - -1.00
+E         ? -
+E         + 1.00
+
+test_target.py:25: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (12345,), expected = '123.45'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-123.45' == '123.45'
+E         
+E         - 123.45
+E         + -123.45
+E         ? +
+
+test_target.py:25: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = (1000000000000000000000000000001,)
+expected = '10000000000000000000000000000.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-10000000000...0000000000.01' == '100000000000...0000000000.01'
+E         
+E         - 10000000000000000000000000000.01
+E         + -10000000000000000000000000000.01
+E         ? +
+
+test_target.py:25: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = (-12345,), expected = '-123.45'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00', id="v000"),
+        pytest.param((1,), '0.01', id="v001"),
+        pytest.param((-1,), '-0.01', id="v002"),
+        pytest.param((99,), '0.99', id="v003"),
+        pytest.param((100,), '1.00', id="v004"),
+        pytest.param((-100,), '-1.00', id="v005"),
+        pytest.param((12345,), '123.45', id="v006"),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01', id="v007"),
+        pytest.param((-12345,), '-123.45', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '123.45' == '-123.45'
+E         
+E         - -123.45
+E         ? -
+E         + 123.45
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - AssertionError: assert '-0.01' == ...
+FAILED test_target.py::test_values[v002] - AssertionError: assert '0.01' == '...
+FAILED test_target.py::test_values[v003] - AssertionError: assert '-0.99' == ...
+FAILED test_target.py::test_values[v004] - AssertionError: assert '-1.00' == ...
+FAILED test_target.py::test_values[v005] - AssertionError: assert '1.00' == '...
+FAILED test_target.py::test_values[v006] - AssertionError: assert '-123.45' =...
+FAILED test_target.py::test_values[v007] - AssertionError: assert '-100000000...
+FAILED test_target.py::test_values[v008] - AssertionError: assert '123.45' ==...
+8 failed, 6 passed in 0.59s

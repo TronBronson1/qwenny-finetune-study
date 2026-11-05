@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="27" time="0.329" timestamp="2026-11-04T07:12:09.452457-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001"><failure message="AssertionError: assert '1x' == '1'&#10;  &#10;  - 1&#10;  + 1x">args = (1, 16), expected = '1'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '1x' == '1'
+E         
+E         - 1
+E         + 1x
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-f]" time="0.001"><failure message="AssertionError: assert 'fx' == 'f'&#10;  &#10;  - f&#10;  + fx">args = (15, 16), expected = 'f'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'fx' == 'f'
+E         
+E         - f
+E         + fx
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-10]" time="0.001"><failure message="AssertionError: assert '10x' == '10'&#10;  &#10;  - 10&#10;  + 10x&#10;  ?   +">args = (16, 16), expected = '10'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '10x' == '10'
+E         
+E         - 10
+E         + 10x
+E         ?   +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-11111]" time="0.001"><failure message="AssertionError: assert '11111x' == '11111'&#10;  &#10;  - 11111&#10;  + 11111x&#10;  ?      +">args = (31, 2), expected = '11111'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '11111x' == '11111'
+E         
+E         - 11111
+E         + 11111x
+E         ?      +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-10000]" time="0.001"><failure message="AssertionError: assert '10000x' == '10000'&#10;  &#10;  - 10000&#10;  + 10000x&#10;  ?      +">args = (81, 3), expected = '10000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '10000x' == '10000'
+E         
+E         - 10000
+E         + 10000x
+E         ?      +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-ff]" time="0.001"><failure message="AssertionError: assert 'ffx' == 'ff'&#10;  &#10;  - ff&#10;  + ffx&#10;  ?   +">args = (255, 16), expected = 'ff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'ffx' == 'ff'
+E         
+E         - ff
+E         + ffx
+E         ?   +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args7-100]" time="0.001"><failure message="AssertionError: assert '100x' == '100'&#10;  &#10;  - 100&#10;  + 100x&#10;  ?    +">args = (64, 8), expected = '100'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0'),
+        pytest.param((1, 16), '1'),
+        pytest.param((15, 16), 'f'),
+        pytest.param((16, 16), '10'),
+        pytest.param((31, 2), '11111'),
+        pytest.param((81, 3), '10000'),
+        pytest.param((255, 16), 'ff'),
+        pytest.param((64, 8), '100'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '100x' == '100'
+E         
+E         - 100
+E         + 100x
+E         ?    +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args14]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args15]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /></testsuite></testsuites>

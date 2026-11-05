@@ -1,0 +1,50 @@
+{
+  "status": "preparation-passed-not-training-authorized-by-gates",
+  "selected_training_families": [
+    "TR007",
+    "TR010",
+    "TR038",
+    "TR049"
+  ],
+  "comments": 23,
+  "source_verification": {
+    "handoff_sources": {
+      "HANDOFF_CONTROLLED_TRAINING.md": "e3ff0f47e150340a76f16ce85f2845a641aded1b86fe4b46a1199697c1b85633",
+      "program/NEXT_TRAINING_STUDY.md": "1fd3ebfdd0e40b479e6de964601a44a0714d7989755012d98d2272ddf45acde9",
+      "observer/REPORT_005.md": "1f52e1538cbbd0ea8b98fe0f031397fdcd103d88dcfda88dc2daa0a234922b2d",
+      "dataset-v1/candidate-007/SHA256.json": "3fb896ac4454be77d7ea98a777a50678e9ca4824d8dfe5572ad8aae4a6f438f5",
+      "dataset-v1/candidate-007/model-packets/training-requests.jsonl": "54ad010e02b59c71e8b09a7b5c50cfdab66f5d0363a2c92aa18770dd2ac9cf9c",
+      "dataset-v1/candidate-007/model-packets/development-requests.jsonl": "4d402b3128918c1be82e3af33bc0ce9f7b61e313c43f547e3b7b9c86ff1ccc85",
+      "studies/S007-measurement-repair/PROTOCOL.md": "0abf40c3d86de201291c4257498376c28ccc1b74d9ccfca42369b1afed659e3b",
+      "studies/S007-measurement-repair/calibration-certificate.json": "31d4458c53c1af0d837ff5cebc0555465d93e869935d466d2eb271ec6b2bb2ec",
+      "studies/S007-measurement-repair/validation-002/summary.json": "9178ec7e49d3637d0c63074a4526b2c2f788aba9c7d75d3d03a4c608688e3057",
+      "studies/S007-measurement-repair/TRAINING_FIT_OVERLAY.json": "923b94101151ae272125ac25d8f05d9aff0f6ecb9247ce1dcc129dade8c0f46b",
+      "studies/S007-measurement-repair/length-preview-002/messages.json": "a7c371adde4cb9ece63cb80f07fbcfb5b5ebbb14c8ff6210550df79b45e3a2ca",
+      "studies/S007-measurement-repair/length-preview-002/validation.json": "f70e83b7472edef55dbe6bfc4f39ba39d8fe5b10e10d2040bd915cc57133f696",
+      "studies/S007-measurement-repair/token-profile.json": "c50a4380c0ccb52e1c5c43a7fefd02a5157a276add94634f06fa69ed6bf4f056",
+      "studies/S008-fixed-input-values/results.json": "9f1fb01dfc8de50a62d6fb55ec78c0078d9342ed597ac053ac9ded7d0e4eba8f",
+      "studies/S008-fixed-input-values/INTERPRETATION.md": "34eab6c0e7202790bccb6970f08f845405ed7a352e46818cf7fb0ae415b18f87",
+      "studies/S008-fixed-input-values/result-sha256.json": "e1bc80416a88d76331b436842977cdc887b4c8ae24b5868e422115c72eb9510d",
+      "training-v1/PLAN.md": "51c8e01d3486bbe043098bda5ca73607b2b431eb613ef162c69d3262dbeea147",
+      "training-v1/runtime.py": "b623be3b9fa5088369df1ab5c04047e2560c576e98f4abc09489f9bb4e52ebd0",
+      "training-v1/prepare_data.py": "d998c993050df02083e314eb1e85604c333b25efdba059d11a4f652ab9a2ba9b",
+      "training-v1/train.py": "9b4925b96b797ad0149ccfb952a6907fa86dd8757f4ea865a88764599f694612",
+      "dataset-v1/export_reviewed.py": "3280dbc430ee3ece8b99a016cd47236c8f5111a1ef8501afed778b8eace00a72",
+      "lora-feasibility/packages.lock.txt": "ef7acb0d0c75bcbae5571114cb3a4b933f13efddc23a868201e63acb5093853a"
+    },
+    "candidate_files_verified": 1280,
+    "candidate_manifest_sha256": "3fb896ac4454be77d7ea98a777a50678e9ca4824d8dfe5572ad8aae4a6f438f5"
+  },
+  "variant_exports": {
+    "baseline": "25f3bd7994dcaf73d88cc520caeed8534f5b59f9df352efec584b337a973faa1",
+    "comments": "c3d9473b7301790307b3d072d39e0bd23cc075220bb9a076b0da0fbabdaeb844"
+  },
+  "script_sha256": "35a2525e5f7605f0315163c43c6afeff70c9a04be40d9de1045c65ffff9c2a93",
+  "remaining_gates": [
+    "all-reference/mutant runtime validation",
+    "model-suite v2 scorer calibration",
+    "frozen protocol and cost ceiling",
+    "actual GPU preflight",
+    "paired training and import verification"
+  ]
+}

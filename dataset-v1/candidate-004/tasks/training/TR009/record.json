@@ -1,0 +1,33 @@
+{
+  "id": "TR009",
+  "split": "training",
+  "family": "signed-gcd",
+  "function": "signed_gcd",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "5798360ad69359c884707c91883644e0abe966b1b818d315f9460b2bc51134a7",
+  "target_sha256": "85284455935053d2b42e98ccbc9a19b27ebbf5f0945a48293b008e08631ed85b",
+  "spec_sha256": "db3ecac0d6387840f7100b2cdc160fdde0028e298eec4fceca5e7446537a0522",
+  "answer_sha256": "151938060e8833580cdcb8fa7d7a867c5c9c909d9159d26dbacc33b6d99753d6",
+  "valid_test_cases": 8,
+  "exception_test_cases": 10,
+  "oracle_checks": 297,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

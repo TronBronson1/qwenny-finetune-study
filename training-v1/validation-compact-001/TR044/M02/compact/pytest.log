@@ -1,0 +1,86 @@
+.FF..........F....                                                       [100%]
+================================== FAILURES ===================================
+________________________ test_values[args1-expected1] _________________________
+
+args = ('[0:99]',), expected = (0, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:99]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low < high:
+>           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError
+________________________ test_values[args2-expected2] _________________________
+
+args = ('[3:7]',), expected = (3, 7)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[3:7]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low < high:
+>           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError
+________________________ test_raises_valueerror[args0] ________________________
+
+args = ('[7:3]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('[7:3]',)),
+        pytest.param(('0:1',)),
+        pytest.param(('[00:1]',)),
+        pytest.param(('[0:100]',)),
+        pytest.param(('[0:1] ',)),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:48: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-expected1] - ValueError: bounds
+FAILED test_target.py::test_values[args2-expected2] - ValueError: bounds
+FAILED test_target.py::test_raises_valueerror[args0] - Failed: DID NOT RAISE ...
+3 failed, 15 passed in 0.34s

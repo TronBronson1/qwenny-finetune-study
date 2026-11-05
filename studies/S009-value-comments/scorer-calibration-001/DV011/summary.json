@@ -1,0 +1,5734 @@
+{
+  "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+  "review": {
+    "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+    "approved_for_isolated_execution": true,
+    "meaningful_contract_assertions": true,
+    "basis": "S007 calibrated gold plus agent inspection; node names changed only. No independent review claimed."
+  },
+  "reference_valid": true,
+  "variants": [
+    {
+      "variant": "reference",
+      "exit_code": 0,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": true,
+      "candidate_witnesses": [],
+      "seconds": 1.3503996999934316,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "d54dd7824b0d8962037306580bbeeba8b43a883f9592b418278e0c8c63a560cc"
+    },
+    {
+      "variant": "M01",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": []
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": []
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": []
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": []
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "TupleChild",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "TupleChild",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "TupleChild",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "bool",
+                          "repr": "True"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "bool",
+                        "repr": "True"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "bool",
+                          "repr": "True"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e007]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e007]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "IntChild",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "IntChild",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "IntChild",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "IntChild",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e008]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e008]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "IntChild",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "IntChild",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "IntChild",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "IntChild",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e015]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e015]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e016]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e016]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e017]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e017]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.8046288000186905,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "f31351feca90515f5d8ba98c158bfb743101e1a27f47129656e643c2e6210fb6"
+    },
+    {
+      "variant": "M02",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_valueerror[e012]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_valueerror[e012]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "ValueError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6128644999989774,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "4e9c8cc305897ad0ad781635a814c8a9d7b48a2c064a0afebf97883f946b2b0d"
+    },
+    {
+      "variant": "M03",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_valueerror[e013]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_valueerror[e013]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "ValueError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.773666900000535,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "649c28d3d06ed4f35725096dc163ccdd852debeea499b7468f5af96a5f403c94"
+    },
+    {
+      "variant": "R01",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": []
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": []
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": []
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": []
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": []
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v004]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v004]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "4"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v005]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v005]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "7"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnList",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.7948702999856323,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "49a5cee33c5e9aa42827de47b78e745f3a73d36370b8cb10844d914d2ca38479"
+    },
+    {
+      "variant": "R02",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v004]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v004]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "4"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v005]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v005]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "7"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "_ReturnInt",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.7449349999951664,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "bbcb794e9dc66f55090d4bb988c2fd1275a73eb180d7062d46a6e399a1ad9ce7"
+    },
+    {
+      "variant": "R03",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": []
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": []
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": []
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": []
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "3"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v004]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v004]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "4"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "4"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "6"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "4"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v005]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v005]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-3"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "-1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "-3"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-3"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "-1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "5"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "7"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "6"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "7"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "7"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "6"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "str",
+                          "repr": "'mutation-sentinel'"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.7628578000003472,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "62cee8475d7e6148e097c8e09ed23f5fe0738b38e370c0927dddd98f91a0aaf2"
+    },
+    {
+      "variant": "R04",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e010]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e010]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "float",
+                          "repr": "1.5"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "float",
+                              "repr": "1.5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "float",
+                        "repr": "1.5"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "2"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "float",
+                              "repr": "1.5"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e011]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e011]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "float",
+                          "repr": "1.5"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "float",
+                              "repr": "1.5"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "float",
+                        "repr": "1.5"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "float",
+                              "repr": "1.5"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6615011999965645,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "21714e4b57e5a8b193a76366b3a95ecae4051bb4a5c7c4a7b4ceab0c0f5ee89c"
+    },
+    {
+      "variant": "R05",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "bool",
+                          "repr": "True"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "bool",
+                              "repr": "True"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e015]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e015]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e016]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e016]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e017]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e017]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "ListChild",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "2"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "3"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "ListChild",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "2"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "3"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.7860807999968529,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "ba0b849d1a17bed46074f308aacea30722ea6135dd56250899ad0f2805ec81ff"
+    },
+    {
+      "variant": "R06",
+      "exit_code": 1,
+      "test_cases": 25,
+      "calls": 25,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e007]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e007]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "IntChild",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "int",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "IntChild",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "IntChild",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "int",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "IntChild",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "int",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e008]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e008]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "tuple",
+                      "items": [
+                        {
+                          "type": "int",
+                          "repr": "0"
+                        },
+                        {
+                          "type": "IntChild",
+                          "repr": "1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "IntChild",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "list",
+                "items": [
+                  {
+                    "type": "tuple",
+                    "items": [
+                      {
+                        "type": "int",
+                        "repr": "0"
+                      },
+                      {
+                        "type": "IntChild",
+                        "repr": "1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "list",
+                      "items": [
+                        {
+                          "type": "tuple",
+                          "items": [
+                            {
+                              "type": "int",
+                              "repr": "0"
+                            },
+                            {
+                              "type": "IntChild",
+                              "repr": "1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6044913999794517,
+      "source_sha256": "829d1538579832088461ffde21e029d7b50369be67dab08b582f0c7cbe4b320f",
+      "trace_sha256": "a026a379549ff87b443dfdc2e9879079ef2f455772bedb025efde7e878723ccb"
+    }
+  ],
+  "designated_mutants": 9,
+  "eligible_candidate_mutants": 9,
+  "strict_acceptance": "pending hash-bound requirement/prose and witness review",
+  "policy": "No mutant credit for reference-invalid suites. Node names bind actual generated calls only. Valid-input crashes are ineligible. Related validation-class mismatches only on reference-invalid inputs. Trace candidates require semantic review before final credit."
+}

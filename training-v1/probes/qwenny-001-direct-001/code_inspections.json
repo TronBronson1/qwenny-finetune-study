@@ -1,0 +1,76 @@
+{
+  "DV001/base-A": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "9e81c9268453f192ff7214eb81ce1dd5fca9093ec3b7afc454eca57007a8da1b",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports only subject/pytest; no filesystem/network/dynamic execution. Main guard does not run under pytest. Incorrect negative/oversized/nested expected rotations observed; no strict acceptance claimed.",
+    "category_review_complete": false
+  },
+  "DV001/base-B": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "1edda340525712249f560bdb1f62ae6513a5c4e64c9ae744f36d8874dc319547",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports only subject; pytest is missing, so collection is expected to fail. List-valued valid cases and incorrect tuple rejection also observed. Safe for isolated execution, not accepted as correct.",
+    "category_review_complete": false
+  },
+  "DV001/epoch-1-C": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "5bdfd292e45ffe5e43f9f855af3d46276066ad87ce363872a2b6d19a7b38bae4",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports only subject/pytest; no external operations. Parametrization names include error_message but function signature omits it; incorrect nonmutation and nested expected-result assertions observed. Safe for isolated execution, not accepted as correct.",
+    "category_review_complete": false
+  },
+  "DV001/epoch-5-C": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "c5e35d9fcd546b8f855c8c9f3b1495a530bdd2b8f597c07cf0065560acef7d11",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Source is unparseable and therefore cannot execute as a Python module; collecting it will record the syntax failure. Contains malformed pytest.param parentheses, English pseudo-code in a test function and invalid with syntax. No attempt made to repair it. SyntaxError line 19: closing parenthesis ')' does not match opening parenthesis '[' on line 18",
+    "category_review_complete": false
+  },
+  "DV002/base-B": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "59067bc2aab4431c04fb1a4d69245e84bcbf9d6627e3830332af1b32173614e1",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports only subject, no file/network operations. One top-level for loop is over the fixed singleton literal. Missing pytest import, inconsistent dynamic class name and parametrization signature cause collection failure. Exact output int type is not enforced (isinstance only). No repair performed.",
+    "category_review_complete": false
+  },
+  "DV002/epoch-1-C": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "a67eb142f87e6112a8f0276821c318570ba640ddbd3e188c2752bfd1706be177",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports only subject/pytest. Fixed literal cases, class methods and a guarded pytest.main; no file/network/dynamic operations. Value expectations inspected and appear reference-correct. Returned int checks use isinstance (plus bool exclusion only once), so other int subclasses are accepted. Wrong-separator case has length 4, confounding separator and length. No malformed Str subclass precedence witness.",
+    "identified_strict_gaps": [
+      "No exact built-in int assertion; int subclasses can pass.",
+      "No valid-length wrong-separator witness.",
+      "No malformed-string subclass type-before-value witness."
+    ],
+    "category_review_complete": false
+  },
+  "DV002/epoch-3-C": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "9e234e8cd4c0522aaecf353484a882b54c4a2f2fad9d72ba2c8a57997e6587a7",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code and mapping. Imports copy.deepcopy, pytest, builtins.int and typing.Union only. No external operations. Parametrize decorator is missing a comma and applies a list subscript to a string; collection failure expected. Only one valid case, isinstance output check, and an unspecified exception-message requirement. Mapping acknowledges omitted value cases. No repair performed.",
+    "category_review_complete": false
+  },
+  "DV002/epoch-5-C": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "3b5b77b081d969a0279acd0359b298d258d9dfa431eea7e89264e7b612d1c66e",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code. Imports copy/pytest/subject only, fixed literal data and bounded recursive shape helper; no external operations. Several malformed builtin strings incorrectly expect TypeError, valid midnight incorrectly expects ValueError, and final test supplies two arguments to the one-argument function then treats int output as iterable. Reference failure expected; no repair performed.",
+    "category_review_complete": false
+  },
+  "DV002/base-A": {
+    "reviewer": "Codex agent source inspection",
+    "sha256": "17d5979ce21e2d0a0596ac5356eb190d480530c15a4830e00fd2df771a3e9e6e",
+    "approved_for_isolated_execution": true,
+    "notes": "Agent read complete code and mapping. Imports subject/pytest only; fixed parametrized literal table, small class methods and guarded pytest.main; no external operations. A malformed builtin string 09:15a wrongly expects TypeError, despite an inline comment noticing the error. No Str subclass or Unicode-digit literal is actually tested, and isinstance does not enforce exact int. The mapping claims imply coverage not present. No repair performed.",
+    "identified_strict_gaps": [
+      "Wrong expected exception for a malformed builtin string.",
+      "No actual Str subclass test.",
+      "No actual Unicode-digit test.",
+      "No exact built-in int assertion."
+    ],
+    "category_review_complete": false
+  }
+}

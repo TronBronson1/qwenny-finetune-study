@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="12" time="0.268" timestamp="2026-11-04T07:13:39.405972-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-999]" time="0.000" /><testcase classname="test_target" name="test_values[args3-1_000]" time="0.000" /><testcase classname="test_target" name="test_values[args4--1_000]" time="0.001"><failure message="AssertionError: assert '--1_000' == '-1_000'&#10;  &#10;  - -1_000&#10;  + --1_000&#10;  ? +">args = (-1000,), expected = '-1_000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0'),
+        pytest.param((1,), '1'),
+        pytest.param((999,), '999'),
+        pytest.param((1000,), '1_000'),
+        pytest.param((-1000,), '-1_000'),
+        pytest.param((1234567,), '1_234_567'),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=grouped_decimal(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '--1_000' == '-1_000'
+E         
+E         - -1_000
+E         + --1_000
+E         ? +
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-1_234_567]" time="0.001" /><testcase classname="test_target" name="test_values[args6-1_000_000_000_000_000_000_000_000_000_000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /></testsuite></testsuites>

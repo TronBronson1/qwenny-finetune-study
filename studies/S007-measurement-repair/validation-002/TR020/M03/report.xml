@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="10" time="0.388" timestamp="2026-11-04T17:04:16.434221-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert '&lt;&amp;amp;&amp;gt;' == '&amp;lt;&amp;amp;&amp;gt;'&#10;  &#10;  - &amp;lt;&amp;amp;&amp;gt;&#10;  ? ^^^^&#10;  + &lt;&amp;amp;&amp;gt;&#10;  ? ^">args = ('&lt;&amp;&gt;',), expected = '&amp;lt;&amp;amp;&amp;gt;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('&lt;&amp;&gt;',), '&amp;lt;&amp;amp;&amp;gt;', id="v002"),
+        pytest.param(('"\'',), '&amp;quot;&amp;#x27;', id="v003"),
+        pytest.param(('&amp;amp;',), '&amp;amp;amp;', id="v004"),
+        pytest.param(("é &lt;a x='1'&gt;",), 'é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=escape_html(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '&lt;&amp;amp;&amp;gt;' == '&amp;lt;&amp;amp;&amp;gt;'
+E         
+E         - &amp;lt;&amp;amp;&amp;gt;
+E         ? ^^^^
+E         + &lt;&amp;amp;&amp;gt;
+E         ? ^
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert 'é &lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;' == 'é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;'&#10;  &#10;  - é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;&#10;  ?   ^^^^&#10;  + é &lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;&#10;  ?   ^">args = ("é &lt;a x='1'&gt;",), expected = 'é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('&lt;&amp;&gt;',), '&amp;lt;&amp;amp;&amp;gt;', id="v002"),
+        pytest.param(('"\'',), '&amp;quot;&amp;#x27;', id="v003"),
+        pytest.param(('&amp;amp;',), '&amp;amp;amp;', id="v004"),
+        pytest.param(("é &lt;a x='1'&gt;",), 'é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=escape_html(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'é &lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;' == 'é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;'
+E         
+E         - é &amp;lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;
+E         ?   ^^^^
+E         + é &lt;a x=&amp;#x27;1&amp;#x27;&amp;gt;
+E         ?   ^
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

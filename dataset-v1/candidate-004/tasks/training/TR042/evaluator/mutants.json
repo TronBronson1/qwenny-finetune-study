@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "818f2c26f8bc8bdd9f92406d52220ffc055df9ba8dfeaf232f0f949415441470",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild('0.0.0'),)",
+      "expected_exception": "TypeError",
+      "actual_python": "(0, 0, 0)"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "omit-last-return-item-49",
+    "source_sha256": "fc2662b40b711f9010a731aa5cdd9ddbb703dec4bfbae3a3998b72c748cb94de",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "(0, 0)"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "missing-return-49",
+    "source_sha256": "4c611146a4db38d1301eae0b5bb33a215c9cf3aeba9f9d4c569287acf74e14ef",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0.0.0',)",
+      "expected_python": "(0, 0, 0)",
+      "actual_python": "None"
+    }
+  }
+]

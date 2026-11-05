@@ -1,0 +1,132 @@
+..F.....FF....................                                           [100%]
+================================== FAILURES ===================================
+_________ TestClampInteger.test_valid_inputs_behavior[input_args2-10] _________
+
+self = <test_candidate.TestClampInteger object at 0x000001EDE8601480>
+input_args = (12, 0, 10), expected = 10
+
+    @pytest.mark.parametrize("input_args, expected", [
+        # Value within bounds (normal)
+        ((5, 0, 10), 5),
+        # Below lower bound -> clamp to lower
+        ((-3, 0, 10), 0),
+        # Above upper bound -> clamp to upper
+        ((12, 0, 10), 10),
+        # Exact endpoint lower
+        ((0, 0, 10), 0),
+        # Exact endpoint upper
+        ((10, 0, 10), 10),
+        # Equal bounds (single point)
+        ((4, 4, 4), 4),
+        # Negative ranges (value inside)
+        ((-5, -10, 0), -5),
+        # Negative ranges (clamp to lower)
+        ((-15, -10, 0), -10),
+        # Negative ranges (clamp to upper)
+        ((2, -10, 0), 0),
+        # Reversed bounds (ValueError expected)
+        ((5, 10, 0), pytest.raises(ValueError)),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        if isinstance(expected, type):  # Handle pytest.raises wrapper
+            with expected:
+                clamp_integer(*input_args)
+        else:
+            result = clamp_integer(*input_args)
+>           assert result == expected
+E           assert 12 == 10
+
+test_candidate.py:41: AssertionError
+_________ TestClampInteger.test_valid_inputs_behavior[input_args8-0] __________
+
+self = <test_candidate.TestClampInteger object at 0x000001EDE8678150>
+input_args = (2, -10, 0), expected = 0
+
+    @pytest.mark.parametrize("input_args, expected", [
+        # Value within bounds (normal)
+        ((5, 0, 10), 5),
+        # Below lower bound -> clamp to lower
+        ((-3, 0, 10), 0),
+        # Above upper bound -> clamp to upper
+        ((12, 0, 10), 10),
+        # Exact endpoint lower
+        ((0, 0, 10), 0),
+        # Exact endpoint upper
+        ((10, 0, 10), 10),
+        # Equal bounds (single point)
+        ((4, 4, 4), 4),
+        # Negative ranges (value inside)
+        ((-5, -10, 0), -5),
+        # Negative ranges (clamp to lower)
+        ((-15, -10, 0), -10),
+        # Negative ranges (clamp to upper)
+        ((2, -10, 0), 0),
+        # Reversed bounds (ValueError expected)
+        ((5, 10, 0), pytest.raises(ValueError)),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        if isinstance(expected, type):  # Handle pytest.raises wrapper
+            with expected:
+                clamp_integer(*input_args)
+        else:
+            result = clamp_integer(*input_args)
+>           assert result == expected
+E           assert 2 == 0
+
+test_candidate.py:41: AssertionError
+_____ TestClampInteger.test_valid_inputs_behavior[input_args9-expected9] ______
+
+self = <test_candidate.TestClampInteger object at 0x000001EDE858D5E0>
+input_args = (5, 10, 0), expected = RaisesExc(ValueError)
+
+    @pytest.mark.parametrize("input_args, expected", [
+        # Value within bounds (normal)
+        ((5, 0, 10), 5),
+        # Below lower bound -> clamp to lower
+        ((-3, 0, 10), 0),
+        # Above upper bound -> clamp to upper
+        ((12, 0, 10), 10),
+        # Exact endpoint lower
+        ((0, 0, 10), 0),
+        # Exact endpoint upper
+        ((10, 0, 10), 10),
+        # Equal bounds (single point)
+        ((4, 4, 4), 4),
+        # Negative ranges (value inside)
+        ((-5, -10, 0), -5),
+        # Negative ranges (clamp to lower)
+        ((-15, -10, 0), -10),
+        # Negative ranges (clamp to upper)
+        ((2, -10, 0), 0),
+        # Reversed bounds (ValueError expected)
+        ((5, 10, 0), pytest.raises(ValueError)),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+        if isinstance(expected, type):  # Handle pytest.raises wrapper
+            with expected:
+                clamp_integer(*input_args)
+        else:
+>           result = clamp_integer(*input_args)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 5, lower = 10, upper = 0
+
+    def clamp_integer(value, lower, upper):
+        if any(type(item) is not int for item in (value, lower, upper)):
+            raise TypeError("all arguments must be exact built-in integers")
+        if lower > upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:5: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args2-10]
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args8-0]
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args9-expected9]
+3 failed, 27 passed in 0.25s

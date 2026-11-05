@@ -1,0 +1,82 @@
+................FFF..FFF..                                               [100%]
+================================== FAILURES ===================================
+_ TestClampIntegerInvalidTypesUpperPosition.test_true_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x000001F52DF7E210>
+
+    def test_true_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, True))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:69: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_false_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x000001F52DF7E350>
+
+    def test_false_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, False))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:72: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_float_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x000001F52DF323F0>
+
+    def test_float_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, 1.5))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:75: Failed
+__ TestClampIntegerIntSubclassInvalid.test_subclass_value_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000001F52DF7E490>
+
+    def test_subclass_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+
+test_candidate.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+                                                   ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:91: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_lower_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000001F52DF7E5D0>
+
+    def test_subclass_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+
+test_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+                                                      ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:94: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_upper_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000001F52DF32650>
+
+    def test_subclass_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+
+test_candidate.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+                                                         ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:97: NameError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_true_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_false_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_float_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_upper_raises_type_error
+6 failed, 20 passed in 0.26s

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="27" time="0.421" timestamp="2026-11-04T17:03:33.362817-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert -1 == 1">args = (1, 3), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=batches(*args)
+&gt;       assert actual == expected
+E       assert -1 == 1
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 0 == 2">args = (4, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=batches(*args)
+&gt;       assert actual == expected
+E       assert 0 == 2
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert 333333333333333333333333333332 == 333333333333333333333333333334">args = (1000000000000000000000000000000, 3)
+expected = 333333333333333333333333333334
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=batches(*args)
+&gt;       assert actual == expected
+E       assert 333333333333333333333333333332 == 333333333333333333333333333334
+
+test_target.py:22: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /></testsuite></testsuites>

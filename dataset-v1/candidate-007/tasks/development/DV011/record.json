@@ -1,0 +1,33 @@
+{
+  "id": "DV011",
+  "split": "development",
+  "family": "interval-union",
+  "function": "interval_union",
+  "revision": 2,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "intervals"
+  ],
+  "schemas": [
+    "pairs"
+  ],
+  "review_status": "finite-agent-calibration-passed; revised candidate not independently reviewed",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-006 plus documented external adversarial fixture proposals; no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "202abf5df8b6d0490b2c0b62cc7d22ecb9e0fd26e9e64882a7afe2b220850427",
+  "target_sha256": "e769d5701b1b60ac6e125ed815d6dd898ab20dfcf04b9f3bb3cd9fe2f4e23a27",
+  "spec_sha256": "b48523f6b3c55b9f58e0c12a7abd699e992cd91244d19b9e9a1e5c9afaaa5818",
+  "answer_sha256": "d7f77b807884b531a2f9e0fbcba6e92a241a3ad75d88e0724b061bcb2d07a38b",
+  "valid_test_cases": 7,
+  "exception_test_cases": 18,
+  "type_before_value_witnesses": 3,
+  "oracle_checks": 7,
+  "designated_mutants": 9,
+  "pytest_validation": "passed S007 validation-002; gold identical after newline normalization; reference/mutants byte-identical",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-006"
+}

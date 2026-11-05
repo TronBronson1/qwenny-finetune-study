@@ -1,0 +1,86 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild('0,0'),)",
+      "expected_exception": "TypeError",
+      "actual_python": "(0, 0)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "fa585386eec931ed290246a5465ff44cd21b1619f015d291c8b1ce75e4cf2310"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-omit-last-return-item-50",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0,0',)",
+      "expected_python": "(0, 0)",
+      "actual_python": "(0,)"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "2160d3cd558fae0265ab0e1b8a80bb0f80bb416ecb7a80367f9474fb1749626e"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-missing-return-50",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0,0',)",
+      "expected_python": "(0, 0)",
+      "actual_python": "None"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "76451dea6a4250264f457e371fb435b652c61d11163496dd0fc2d1ed468f586e"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0,0',)",
+      "expected_python": "(0, 0)",
+      "actual_python": "(0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "be7b32e2358d44d11251c56b7f803ce3bfb97a799b34a711ff059474f4a3d17d"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('0,0',)",
+      "expected_python": "(0, 0)",
+      "actual_python": "(0, 0)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "c6fb500d59ff47a53b613b3684455cd9f83458279e1c036e33f7279d54224c1b"
+  },
+  {
+    "id": "R03",
+    "requirement": "ascii-digit-boundary",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e009]",
+      "case": "e009",
+      "kind": "required-exception-not-raised",
+      "args_python": "('١,2',)",
+      "expected_exception": "ValueError",
+      "actual_python": "(1, 2)"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "51e40ad80a6ca056bd492e7af19937d4976df86695a8249acf6c9c2d0da42585"
+  }
+]

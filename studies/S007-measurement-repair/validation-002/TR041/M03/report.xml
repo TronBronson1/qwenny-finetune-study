@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="27" time="0.444" timestamp="2026-11-04T17:05:19.895953-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert None == (0, 0)">args = ('0,0',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+&gt;       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert None == (0, 1)">args = ('-0,1',), expected = (0, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+&gt;       assert actual == expected
+E       assert None == (0, 1)
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert None == (-2, 3)">args = ('-2,3',), expected = (-2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+&gt;       assert actual == expected
+E       assert None == (-2, 3)
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert None == (999999999999, -1)">args = ('999999999999,-1',), expected = (999999999999, -1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+&gt;       assert actual == expected
+E       assert None == (999999999999, -1)
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert None == (-999999999999, 999999999999)">args = ('-999999999999,999999999999',), expected = (-999999999999, 999999999999)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+&gt;       assert actual == expected
+E       assert None == (-999999999999, 999999999999)
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.001" /></testsuite></testsuites>

@@ -1,0 +1,32 @@
+{
+  "id": "DV008",
+  "split": "development",
+  "family": "edit-distance",
+  "function": "edit_distance",
+  "revision": 1,
+  "status": "allocated-before-authoring",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "str",
+    "str"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "6342f2e34658a651304a8977316bdae472987a7bee7f54eddc38a7fbeb858de9",
+  "target_sha256": "c4220d571959f53b3270703e2576689f5d18e521db8b6e15232f2daa1dc1fa1f",
+  "spec_sha256": "f3c7d6507977d82a6ac6a5041943ad9a0f247aedb0a05fe54f33a294cc5806ef",
+  "valid_test_cases": 8,
+  "exception_test_cases": 8,
+  "oracle_checks": 44,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

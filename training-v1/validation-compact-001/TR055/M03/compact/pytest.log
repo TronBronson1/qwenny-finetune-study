@@ -1,0 +1,92 @@
+FFFF...........................                                          [100%]
+================================== FAILURES ===================================
+_________________________ test_values[args0-#000000] __________________________
+
+args = (0, 0, 0), expected = '#000000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000'),
+        pytest.param((255, 255, 255), '#ffffff'),
+        pytest.param((1, 2, 3), '#010203'),
+        pytest.param((0, 128, 255), '#0080ff'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=encode_rgb(*args)
+>       assert actual == expected
+E       AssertionError: assert '#00000' == '#000000'
+E         
+E         - #000000
+E         ?       -
+E         + #00000
+
+test_target.py:23: AssertionError
+_________________________ test_values[args1-#ffffff] __________________________
+
+args = (255, 255, 255), expected = '#ffffff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000'),
+        pytest.param((255, 255, 255), '#ffffff'),
+        pytest.param((1, 2, 3), '#010203'),
+        pytest.param((0, 128, 255), '#0080ff'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=encode_rgb(*args)
+>       assert actual == expected
+E       AssertionError: assert '#fffff' == '#ffffff'
+E         
+E         - #ffffff
+E         ?       -
+E         + #fffff
+
+test_target.py:23: AssertionError
+_________________________ test_values[args2-#010203] __________________________
+
+args = (1, 2, 3), expected = '#010203'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000'),
+        pytest.param((255, 255, 255), '#ffffff'),
+        pytest.param((1, 2, 3), '#010203'),
+        pytest.param((0, 128, 255), '#0080ff'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=encode_rgb(*args)
+>       assert actual == expected
+E       AssertionError: assert '#01020' == '#010203'
+E         
+E         - #010203
+E         ?       -
+E         + #01020
+
+test_target.py:23: AssertionError
+_________________________ test_values[args3-#0080ff] __________________________
+
+args = (0, 128, 255), expected = '#0080ff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000'),
+        pytest.param((255, 255, 255), '#ffffff'),
+        pytest.param((1, 2, 3), '#010203'),
+        pytest.param((0, 128, 255), '#0080ff'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=encode_rgb(*args)
+>       assert actual == expected
+E       AssertionError: assert '#0080f' == '#0080ff'
+E         
+E         - #0080ff
+E         ?       -
+E         + #0080f
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-#000000] - AssertionError: assert '#...
+FAILED test_target.py::test_values[args1-#ffffff] - AssertionError: assert '#...
+FAILED test_target.py::test_values[args2-#010203] - AssertionError: assert '#...
+FAILED test_target.py::test_values[args3-#0080ff] - AssertionError: assert '#...
+4 failed, 27 passed in 0.34s

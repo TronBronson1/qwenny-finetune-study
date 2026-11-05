@@ -1,0 +1,79 @@
+.........FFF..                                                           [100%]
+================================== FAILURES ===================================
+_________________ test_rotate_right_invalid_types[values1-1] __________________
+
+values = (1, 2, 3), steps = 1
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed
+________________ test_rotate_right_invalid_types[values2-True] ________________
+
+values = (1, 2, 3), steps = True
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed
+_______________ test_rotate_right_invalid_types[values3-False] ________________
+
+values = (1, 2, 3), steps = False
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_invalid_types[values1-1] - Failed...
+FAILED test_candidate.py::test_rotate_right_invalid_types[values2-True] - Fai...
+FAILED test_candidate.py::test_rotate_right_invalid_types[values3-False] - Fa...
+3 failed, 11 passed in 0.35s

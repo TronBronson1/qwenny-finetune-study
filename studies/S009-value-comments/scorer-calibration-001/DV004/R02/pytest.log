@@ -1,0 +1,154 @@
+FFFFFF.............                                                      [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = (['mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['mutation-sentinel'],) == ([],)
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = ([0, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([0, 'mutation-sentinel'],) == ([0],)
+E         
+E         At index 0 diff: [0, 'mutation-sentinel'] != [0]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = ([255, 'mutation-sentinel'],), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([255, 'mutation-sentinel'],) == ([255],)
+E         
+E         At index 0 diff: [255, 'mutation-sentinel'] != [255]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = ([1, 2, 3, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([1, 2, 3, 'm...n-sentinel'],) == ([1, 2, 3],)
+E         
+E         At index 0 diff: [1, 2, 3, 'mutation-sentinel'] != [1, 2, 3]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ([5, 5, 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([5, 5, 'mutation-sentinel'],) == ([5, 5],)
+E         
+E         At index 0 diff: [5, 5, 'mutation-sentinel'] != [5, 5]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = ([128, 1, 128, 'mutation-sentinel'],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert ([128, 1, 128...n-sentinel'],) == ([128, 1, 128],)
+E         
+E         At index 0 diff: [128, 1, 128, 'mutation-sentinel'] != [128, 1, 128]
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v003] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v004] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v005] - AssertionError: assert ...
+6 failed, 13 passed in 0.60s

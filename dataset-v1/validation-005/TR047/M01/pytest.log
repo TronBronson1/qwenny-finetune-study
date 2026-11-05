@@ -1,0 +1,192 @@
+........F...F...FF...FF..                                                [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = ('', 'a', 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:53: Failed
+_________________________ test_raises_typeerror[e004] _________________________
+
+args = ('', 'a', 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:53: Failed
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = ('', 'a', True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:53: Failed
+_________________________ test_raises_typeerror[e009] _________________________
+
+args = ('', 'a', 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:53: Failed
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = ('abc', '', True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           index_of_nth(*args)
+
+test_target.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc', needle = '', occurrence = True
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence < 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = ('abc', 'a', 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''), 'a', 1), id="e000"),
+        pytest.param((b'x', 'a', 1), id="e001"),
+        pytest.param((1, 'a', 1), id="e002"),
+        pytest.param((None, 'a', 1), id="e003"),
+        pytest.param(('', StrChild('a'), 1), id="e004"),
+        pytest.param(('', b'x', 1), id="e005"),
+        pytest.param(('', 1, 1), id="e006"),
+        pytest.param(('', None, 1), id="e007"),
+        pytest.param(('', 'a', True), id="e008"),
+        pytest.param(('', 'a', IntChild(1)), id="e009"),
+        pytest.param(('', 'a', 1.5), id="e010"),
+        pytest.param(('', 'a', 'bad'), id="e011"),
+        pytest.param(('', 'a', None), id="e012"),
+        pytest.param(('abc', '', True), id="e015"),
+        pytest.param(('abc', StrChild('a'), 0), id="e016"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           index_of_nth(*args)
+
+test_target.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc', needle = 'a', occurrence = 0
+
+    def index_of_nth(text, needle, occurrence):
+        _types((text, needle, occurrence), ('str', 'str', 'int'))
+        if not needle or occurrence < 1:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e004] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e008] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e009] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: domain
+6 failed, 19 passed in 0.68s

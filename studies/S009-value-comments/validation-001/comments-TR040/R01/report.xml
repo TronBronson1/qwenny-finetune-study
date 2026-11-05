@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="15" time="0.422" timestamp="2026-11-04T19:00:31.868741-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;&#10; +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', 'b'))&#10; +  and   &lt;class 'tuple'&gt; = type(('a', 'b'))">args = ('a=b',), expected = ('a', 'b')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', 'b'), expected = ('a', 'b')
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;
+E        +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', 'b'))
+E        +  and   &lt;class 'tuple'&gt; = type(('a', 'b'))
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;&#10; +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', ''))&#10; +  and   &lt;class 'tuple'&gt; = type(('a', ''))">args = ('a=',), expected = ('a', '')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', ''), expected = ('a', '')
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;
+E        +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', ''))
+E        +  and   &lt;class 'tuple'&gt; = type(('a', ''))
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;&#10; +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', 'b=c'))&#10; +  and   &lt;class 'tuple'&gt; = type(('a', 'b=c'))">args = ('a=b=c',), expected = ('a', 'b=c')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', 'b=c'), expected = ('a', 'b=c')
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;
+E        +  where &lt;class 'subject._ReturnTuple'&gt; = type(('a', 'b=c'))
+E        +  and   &lt;class 'tuple'&gt; = type(('a', 'b=c'))
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;&#10; +  where &lt;class 'subject._ReturnTuple'&gt; = type((' a ', ' b '))&#10; +  and   &lt;class 'tuple'&gt; = type((' a ', ' b '))">args = (' a = b ',), expected = (' a ', ' b ')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (' a ', ' b '), expected = (' a ', ' b ')
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;
+E        +  where &lt;class 'subject._ReturnTuple'&gt; = type((' a ', ' b '))
+E        +  and   &lt;class 'tuple'&gt; = type((' a ', ' b '))
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;&#10; +  where &lt;class 'subject._ReturnTuple'&gt; = type(('é', '字'))&#10; +  and   &lt;class 'tuple'&gt; = type(('é', '字'))">args = ('é=字',), expected = ('é', '字')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('é', '字'), expected = ('é', '字')
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnTuple'&gt; is &lt;class 'tuple'&gt;
+E        +  where &lt;class 'subject._ReturnTuple'&gt; = type(('é', '字'))
+E        +  and   &lt;class 'tuple'&gt; = type(('é', '字'))
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /></testsuite></testsuites>

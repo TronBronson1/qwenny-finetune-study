@@ -1,0 +1,62 @@
+..........FF..                                                           [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e007] _________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e007"),
+        pytest.param((IntChild(13),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           factorial(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1
+
+    def factorial(number):
+        if not 0 <= number <= 12:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = (13,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e007"),
+        pytest.param((IntChild(13),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           factorial(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 13
+
+    def factorial(number):
+        if not 0 <= number <= 12:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e007] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e008] - ValueError: domain
+2 failed, 12 passed in 0.56s

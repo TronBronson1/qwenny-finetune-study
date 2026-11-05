@@ -1,0 +1,16 @@
+TR001 batches cases 22 mutants 3
+TR002 strip_prefix cases 21 mutants 3
+TR003 absolute_distance cases 17 mutants 3
+TR004 clamp cases 23 mutants 3
+TR005 parity_label cases 11 mutants 3
+TR006 factorial cases 12 mutants 3
+TR007 digit_sum cases 12 mutants 3
+TR008 is_square cases 14 mutants 3
+Traceback (most recent call last):
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\dataset-v1\assemble.py", line 369, in <module>
+    if __name__=="__main__": main()
+                             ^^^^^^
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\dataset-v1\assemble.py", line 337, in main
+    assert len(mutants)==3,(task.name,"not enough witnessed mutants",mutants)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('signed_gcd', 'not enough witnessed mutants', [{'id': 'M01', 'defect': 'weaken-exact-type', 'source_sha256': '10f82133b73e05a7b00cc2ae448219cc9811471c95fd550c75f9292a28fbee49', 'witness': {'node': 'test_target.py::test_raises_typeerror[e000]', 'case': 'e000', 'kind': 'required-exception-not-raised', 'args_python': '(True, 0)', 'expected_exception': 'TypeError', 'actual_python': '1'}}, {'id': 'M02', 'defect': 'missing-return-49', 'source_sha256': '0368e6e2720dce657eea1b4976f1088a327c9d5b596994f4be51486116cd5f60', 'witness': {'node': 'test_target.py::test_values[v000]', 'case': 'v000', 'kind': 'result-or-post-state-assertion', 'args_python': '(0, 0)', 'expected_python': '0', 'actual_python': 'None'}}])

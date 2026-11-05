@@ -1,0 +1,92 @@
+........FFFF.F..                                                         [100%]
+================================== FAILURES ===================================
+___________ TestValidInputEncoding.test_all_same_returns_one_tuple ____________
+
+self = <test_candidate.TestValidInputEncoding object at 0x000002B250F735C0>
+
+    def test_all_same_returns_one_tuple(self):
+        result = run_length_encode(["a", "a", "a"])
+>       assert result == [("a", 3)]
+E       AssertionError: assert [('a', 1), ('a', 1), ('a', 1)] == [('a', 3)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 3)
+E         Left contains 2 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:53: AssertionError
+___________ TestValidInputEncoding.test_two_runs_returns_two_tuples ___________
+
+self = <test_candidate.TestValidInputEncoding object at 0x000002B250F73820>
+
+    def test_two_runs_returns_two_tuples(self):
+        result = run_length_encode(["a", "a", "b", "b", "a"])
+>       assert result == [("a", 2), ("b", 2), ("a", 1)]
+E       AssertionError: assert [('a', 1), ('b', 2), ('a', 2)] == [('a', 2), ('b', 2), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 2)
+E         Use -v to get more diff
+
+test_candidate.py:57: AssertionError
+________ TestValidInputEncoding.test_runs_not_combined_when_separated _________
+
+self = <test_candidate.TestValidInputEncoding object at 0x000002B250FA5370>
+
+    def test_runs_not_combined_when_separated(self):
+        result = run_length_encode(["a", "a", "b", "b", "a"])
+        # Ensure no implicit merging of non-consecutive equal strings
+        assert len(result) == 3
+>       assert result == [("a", 2), ("b", 2), ("a", 1)]
+E       AssertionError: assert [('a', 1), ('b', 2), ('a', 2)] == [('a', 2), ('b', 2), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 2)
+E         Use -v to get more diff
+
+test_candidate.py:63: AssertionError
+______ TestValidInputEncoding.test_run_length_correct_for_various_counts ______
+
+self = <test_candidate.TestValidInputEncoding object at 0x000002B250EC78A0>
+
+    def test_run_length_correct_for_various_counts(self):
+        result = run_length_encode(["x"] * 10)
+>       assert result == [("x", 10)]
+E       AssertionError: assert [('x', 1), ('...('x', 1), ...] == [('x', 10)]
+E         
+E         At index 0 diff: ('x', 1) != ('x', 10)
+E         Left contains 9 more items, first extra item: ('x', 1)
+E         Use -v to get more diff
+
+test_candidate.py:67: AssertionError
+_________ TestValidInputEncoding.test_no_mutation_of_nested_structure _________
+
+self = <test_candidate.TestValidInputEncoding object at 0x000002B250EE7C50>
+
+    def test_no_mutation_of_nested_structure(self):
+        input_data = [["nested", "strings"]]
+        original_id = id(input_data)
+>       run_length_encode(input_data)
+
+test_candidate.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in run_length_encode
+    _types((values,), ('strs',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:16: in _check
+    _exact(item, str)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = ['nested', 'strings'], kind = <class 'str'>
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestValidInputEncoding::test_all_same_returns_one_tuple
+FAILED test_candidate.py::TestValidInputEncoding::test_two_runs_returns_two_tuples
+FAILED test_candidate.py::TestValidInputEncoding::test_runs_not_combined_when_separated
+FAILED test_candidate.py::TestValidInputEncoding::test_run_length_correct_for_various_counts
+FAILED test_candidate.py::TestValidInputEncoding::test_no_mutation_of_nested_structure
+5 failed, 11 passed in 0.63s

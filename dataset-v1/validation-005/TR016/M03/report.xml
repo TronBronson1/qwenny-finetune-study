@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="10" time="0.412" timestamp="2026-11-03T20:10:13.221375-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert 20 == 10">args = ('AEIOUaeiou',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+&gt;       assert actual == expected
+E       assert 20 == 10
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 8 == 4">args = ('Apple pie',), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+&gt;       assert actual == expected
+E       assert 8 == 4
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert 4 == 2">args = ('a1 E!',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=count_vowels(*args)
+&gt;       assert actual == expected
+E       assert 4 == 2
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

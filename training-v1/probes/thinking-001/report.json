@@ -1,0 +1,167 @@
+{
+  "status": "completed",
+  "scope": "Two visible development families; bounded local thinking-enabled control, not historical LM Studio replication or final-test evaluation.",
+  "thinking": true,
+  "seed": 42,
+  "temperature": 1.0,
+  "top_k": 20,
+  "top_p": 0.95,
+  "presence_penalty": 0.0,
+  "repetition_penalty": 1.0,
+  "max_new_tokens": 8192,
+  "context_limit": 16134,
+  "completed": [
+    {
+      "task": "DV001",
+      "variant": "base",
+      "prompt_tokens": 368,
+      "prompt_sha256": "35f410474832273239affe51b08421e8234ba15bb63beff67866798d45edbdab",
+      "generated_tokens": 8192,
+      "reasoning_tokens_before_close": 7246,
+      "final_tokens_after_close": 945,
+      "thinking_closed": true,
+      "seconds": 1394.6089999999967,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793799021.0854871,
+        "allocated": 5881740800,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 882601984,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV001",
+      "variant": "original-e5",
+      "prompt_tokens": 368,
+      "prompt_sha256": "35f410474832273239affe51b08421e8234ba15bb63beff67866798d45edbdab",
+      "generated_tokens": 6904,
+      "reasoning_tokens_before_close": 6461,
+      "final_tokens_after_close": 442,
+      "thinking_closed": true,
+      "seconds": 1027.5929999999935,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793800048.6298323,
+        "allocated": 5881730560,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1010397184,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV001",
+      "variant": "compact-e5",
+      "prompt_tokens": 368,
+      "prompt_sha256": "35f410474832273239affe51b08421e8234ba15bb63beff67866798d45edbdab",
+      "generated_tokens": 8192,
+      "reasoning_tokens_before_close": null,
+      "final_tokens_after_close": 0,
+      "thinking_closed": false,
+      "seconds": 1234.7339999999967,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793801283.3331702,
+        "allocated": 5881740800,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1135316992,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "original-e5",
+      "prompt_tokens": 359,
+      "prompt_sha256": "db9cce961f486af1370048e8677d2c4d5c22c7c7abe8036ffbaca2049f2d5172",
+      "generated_tokens": 8192,
+      "reasoning_tokens_before_close": null,
+      "final_tokens_after_close": 0,
+      "thinking_closed": false,
+      "seconds": 1237.125,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793802520.5112016,
+        "allocated": 5881740800,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1040355328,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "compact-e5",
+      "prompt_tokens": 359,
+      "prompt_sha256": "db9cce961f486af1370048e8677d2c4d5c22c7c7abe8036ffbaca2049f2d5172",
+      "generated_tokens": 8192,
+      "reasoning_tokens_before_close": null,
+      "final_tokens_after_close": 0,
+      "thinking_closed": false,
+      "seconds": 1030.765000000014,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793803551.2758687,
+        "allocated": 5881740800,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1107800064,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "base",
+      "prompt_tokens": 359,
+      "prompt_sha256": "db9cce961f486af1370048e8677d2c4d5c22c7c7abe8036ffbaca2049f2d5172",
+      "generated_tokens": 8192,
+      "reasoning_tokens_before_close": 7829,
+      "final_tokens_after_close": 362,
+      "thinking_closed": true,
+      "seconds": 912.3439999999828,
+      "terminated": false,
+      "truncated": true,
+      "python_blocks": 0,
+      "memory": {
+        "unix_time": 1793804463.6276257,
+        "allocated": 5881740800,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1141190656,
+        "total": 10736893952
+      }
+    }
+  ],
+  "reload_checks": [
+    {
+      "adapter": "original-e5",
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "adapter": "compact-e5",
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "current_task": "DV002",
+  "current_variant": "base"
+}

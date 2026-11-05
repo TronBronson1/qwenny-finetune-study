@@ -1,0 +1,160 @@
+{
+  "status": "prospective-operationalization-of-frozen-contract-measure",
+  "prepared_utc": "2026-11-05T00:11:36.020910+00:00",
+  "records": [
+    {
+      "task": "TR024",
+      "requirements": [
+        "value:empty",
+        "value:ascii-case",
+        "value:punctuation-digits",
+        "value:nonascii-unchanged",
+        "value:newline",
+        "ordinary-wrong-types-all-positions",
+        "subclass-rejection-all-positions",
+        "exact-return-types"
+      ],
+      "denominator": 8,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "DV008",
+      "requirements": [
+        "value:both-empty",
+        "value:left-empty",
+        "value:right-empty",
+        "value:equal",
+        "value:substitution",
+        "value:two-edits",
+        "value:multistep",
+        "value:unicode-accent",
+        "value:ascii-case-sensitive",
+        "value:unicode-case-sensitive",
+        "value:literal-codepoints-no-normalization",
+        "ordinary-wrong-types-both-positions",
+        "subclass-rejection-both-positions",
+        "exact-return-types"
+      ],
+      "denominator": 14,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "TR025",
+      "requirements": [
+        "value:empty",
+        "value:single",
+        "value:separated-runs",
+        "value:empty-strings",
+        "value:case-distinct",
+        "value:unicode",
+        "ordinary-wrong-types-all-levels",
+        "subclass-rejection-all-levels",
+        "exact-return-types-and-shape",
+        "input-nonmutation"
+      ],
+      "denominator": 10,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "DV004",
+      "requirements": [
+        "value:empty",
+        "value:zero",
+        "value:maximum-byte",
+        "value:ordinary",
+        "value:duplicate-cancellation",
+        "value:repeated-cancellation",
+        "ordinary-wrong-types-all-levels",
+        "subclass-rejection-all-levels",
+        "bool-rejection-at-int-level",
+        "byte-range-rejection",
+        "type-before-invalid-value",
+        "exact-return-types",
+        "input-nonmutation"
+      ],
+      "denominator": 13,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "TR038",
+      "requirements": [
+        "value:zero",
+        "value:decimal-digits",
+        "value:lowercase",
+        "value:mixed-case",
+        "value:byte-upper-bound",
+        "value:intermediate",
+        "ordinary-wrong-types-all-positions",
+        "subclass-rejection-all-positions",
+        "invalid-length-and-nonhex-and-nonascii",
+        "type-before-invalid-value",
+        "exact-return-types"
+      ],
+      "denominator": 11,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "DV011",
+      "requirements": [
+        "value:empty",
+        "value:single",
+        "value:unordered-touching",
+        "value:nested",
+        "value:disjoint",
+        "value:negative-overlap",
+        "value:transitive-unordered-union",
+        "ordinary-wrong-types-all-levels",
+        "subclass-rejection-all-levels",
+        "bool-rejection-at-int-level",
+        "pair-arity-rejection",
+        "invalid-interval-low-high",
+        "type-before-invalid-shape-or-value",
+        "exact-return-types-and-shape",
+        "input-nonmutation"
+      ],
+      "denominator": 15,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "TR049",
+      "requirements": [
+        "value:single-cell",
+        "value:top-right",
+        "value:bottom-left",
+        "value:last-offset",
+        "ordinary-wrong-types-all-positions",
+        "subclass-rejection-all-positions",
+        "bool-rejection-all-positions",
+        "positive-dimensions-both-positions",
+        "cell-bounds-both-positions",
+        "type-before-invalid-value-or-bounds",
+        "exact-return-types"
+      ],
+      "denominator": 11,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    },
+    {
+      "task": "DV007",
+      "requirements": [
+        "value:single-cell",
+        "value:top-left",
+        "value:interior-order",
+        "value:bottom-right",
+        "value:single-row",
+        "value:single-column",
+        "ordinary-wrong-types-all-positions",
+        "subclass-rejection-all-positions",
+        "bool-rejection-all-positions",
+        "positive-dimensions-both-positions",
+        "cell-bounds-both-positions",
+        "dimensions-before-bounds",
+        "type-before-invalid-value-or-bounds",
+        "exact-return-types-and-shape"
+      ],
+      "denominator": 14,
+      "gold_support": "All supported under finite S007 gold/category review and current scorer fixture calibration; no exhaustive or independent proof."
+    }
+  ],
+  "rule": "Each value category requires a correct assertion on a concrete case meeting that category. Each grouped non-value requirement requires all stated argument positions/type levels for that group; ordinary types and subclasses are separate. A stated invalid-domain/shape/bounds rule needs at least one contract-invalid witness per applicable argument/level, not exhaustive enumeration of all invalid values, unless an explicit named normal category or contract requirement demands distinctions. Mixed-invalid witnesses demonstrate stated priority. Exact return types/shape need explicit checks at every stated level. Nonmutation needs before/after comparisons. Inputs/assertions must be executable and reference-valid to count as demonstrated evidence; separately preserve intended static evidence for invalid suites. Task macro is mean of supported/denominator per task over eight planned tasks; missing/truncated/invalid get zero demonstrated evidence. Strict still requires every applicable requirement, all eligible fixtures, primary validity, instruction/prose compliance. No future threshold/category additions after observing outputs.",
+  "no_new_scored_task_outputs_exist": true
+}

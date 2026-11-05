@@ -1,0 +1,33 @@
+....F..............                                                      [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v004] ______________________________
+
+args = ('Aa1!',), expected = 'Aa1!'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'A', id="v001"),
+        pytest.param(('abc',), 'ABC', id="v002"),
+        pytest.param(('ABC',), 'ABC', id="v003"),
+        pytest.param(('Aa1!',), 'Aa1!', id="v004"),
+        pytest.param(('αβγ',), 'αβγ', id="v005"),
+        pytest.param(('123',), '123', id="v006"),
+        pytest.param(('',), '', id="v007"),
+        pytest.param(('  ',), '  ', id="v008"),
+        pytest.param(('🔍',), '🔍', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AA1!' == 'Aa1!'
+E         
+E         - Aa1!
+E         ?  ^
+E         + AA1!
+E         ?  ^
+
+test_candidate.py:32: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_values[v004] - AssertionError: assert 'AA1!' =...
+1 failed, 18 passed in 0.63s

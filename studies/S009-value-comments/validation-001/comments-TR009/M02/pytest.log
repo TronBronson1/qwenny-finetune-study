@@ -1,0 +1,46 @@
+.....FF...........                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v005] ______________________________
+
+args = (18, -12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+>       assert actual == expected
+E       assert -6 == 6
+
+test_target.py:24: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (-18, -12), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 8), 8, id="v001"),
+        pytest.param((8, 0), 8, id="v002"),
+        pytest.param((18, 12), 6, id="v003"),
+        pytest.param((-18, 12), 6, id="v004"),
+        pytest.param((18, -12), 6, id="v005"),
+        pytest.param((-18, -12), 6, id="v006"),
+        pytest.param((7, 13), 1, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=signed_gcd(*args)
+>       assert actual == expected
+E       assert -6 == 6
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v005] - assert -6 == 6
+FAILED test_target.py::test_values[v006] - assert -6 == 6
+2 failed, 16 passed in 0.54s

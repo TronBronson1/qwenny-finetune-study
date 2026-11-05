@@ -1,0 +1,36 @@
+{
+  "id": "TR055",
+  "split": "training",
+  "family": "rgb-hex-codec",
+  "function": "encode_rgb",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "1aa067c7b6dcf6e2ab2d364b073fcf0e5480137203e1db03dc47ae303309ed18",
+  "target_sha256": "d842aef8ae4b63d2fb4021ea3286a41622f6a73a94a96d9e1afb8b5f4ba73cc6",
+  "spec_sha256": "39efaae884762488abedabf25a104734d5fadbee0c7df6e0c72fe1cc1a4f1781",
+  "answer_sha256": "5879c154d387a7adf2a3152d9dfeb54ea5e7724ce15f23e51a29cbd53b284e6e",
+  "valid_test_cases": 4,
+  "exception_test_cases": 27,
+  "type_before_value_witnesses": 9,
+  "oracle_checks": 4,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

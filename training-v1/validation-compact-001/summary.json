@@ -1,0 +1,5407 @@
+{
+  "status": "passed",
+  "original_compact_outcomes_identical": true,
+  "paired_implementations": 240,
+  "pytest_processes": 480,
+  "reference_suites": 60,
+  "reference_test_cases": 1035,
+  "designated_mutants": 180,
+  "results": [
+    {
+      "task": "TR001",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR001",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 10,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 10,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 10,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 10,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR002",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR003",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 9,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 9,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR004",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 18,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR005",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR006",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR007",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR008",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR009",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR010",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 2,
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR011",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 2,
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR012",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 8,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR013",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 16,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR014",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR015",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR016",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR017",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 9,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 9,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 9,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 9,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR018",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR019",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR020",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR021",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR022",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR023",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 13,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR024",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR025",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR026",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR027",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR028",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 9,
+        "test_target::test_raises_typeerror::passed": 5,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 9,
+        "test_target::test_raises_typeerror::passed": 5,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR029",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 2,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 2,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR030",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR031",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 10
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR032",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::failure": 11,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::failure": 11,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR033",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 16
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::failure": 13,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::failure": 13,
+        "test_target::test_raises_typeerror::passed": 8
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR034",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 21
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 2
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR035",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 2,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 2,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR036",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR037",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 11,
+        "test_target::test_raises_valueerror::passed": 7
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR038",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR039",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 1,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR040",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR041",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR042",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR043",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 6,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::failure": 1,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR044",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 5
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR045",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 7,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR046",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 10,
+        "test_target::test_raises_valueerror::passed": 6
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR047",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 19,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR048",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::failure": 28,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::failure": 28,
+        "test_target::test_raises_typeerror::passed": 12,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR049",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_indexerror::passed": 3,
+        "test_target::test_raises_typeerror::passed": 40,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::failure": 15,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::failure": 15,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR050",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_indexerror::passed": 2,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 8,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 1,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR051",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 3,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::failure": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR052",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 6,
+        "test_target::test_raises_typeerror::passed": 6,
+        "test_target::test_raises_valueerror::passed": 1
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 8,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR053",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 7,
+        "test_target::test_raises_typeerror::failure": 2,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR054",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 5
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 15,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 15,
+        "test_target::test_raises_typeerror::passed": 9,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR055",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 4,
+        "test_target::test_raises_typeerror::passed": 24,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 5,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 2,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR056",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 8,
+        "test_target::test_raises_valueerror::passed": 4
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 4,
+        "test_target::test_raises_typeerror::passed": 3,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR057",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 7,
+        "test_target::test_raises_valueerror::passed": 3
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 4,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 4,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 4,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 1,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR058",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 1,
+        "test_target::test_values::passed": 3,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 4,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 6,
+        "test_target::test_raises_typeerror::failure": 10,
+        "test_target::test_raises_typeerror::passed": 4,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 1,
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::passed": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::failure": 2
+      }
+    },
+    {
+      "task": "TR059",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 3,
+        "test_target::test_raises_typeerror::passed": 14,
+        "test_target::test_raises_valueerror::failure": 2
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "reference",
+      "form": "original",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "reference",
+      "form": "compact",
+      "exit_code": 0,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M01",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M01",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 5,
+        "test_target::test_raises_typeerror::failure": 1,
+        "test_target::test_raises_typeerror::passed": 3
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M02",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M02",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::failure": 5,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M03",
+      "form": "original",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    },
+    {
+      "task": "TR060",
+      "variant": "M03",
+      "form": "compact",
+      "exit_code": 1,
+      "outcomes": {
+        "test_target::test_values::passed": 3,
+        "test_target::test_values::failure": 2,
+        "test_target::test_raises_typeerror::passed": 4
+      }
+    }
+  ]
+}

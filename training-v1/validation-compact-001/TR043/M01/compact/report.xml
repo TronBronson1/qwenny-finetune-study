@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="17" time="0.290" timestamp="2026-11-04T07:13:14.419200-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-1]" time="0.000" /><testcase classname="test_target" name="test_values[args3-10]" time="0.000" /><testcase classname="test_target" name="test_values[args4-4294967295]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('0',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('2'),)),
+        pytest.param((StrChild(' 1'),)),
+        pytest.param((StrChild('111111111111111111111111111111111'),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:38: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001"><failure message="ValueError: syntax">args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('2'),)),
+        pytest.param((StrChild(' 1'),)),
+        pytest.param((StrChild('111111111111111111111111111111111'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_binary(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parse_binary(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[01]{1,32}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001"><failure message="ValueError: syntax">args = ('2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('2'),)),
+        pytest.param((StrChild(' 1'),)),
+        pytest.param((StrChild('111111111111111111111111111111111'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_binary(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '2'
+
+    def parse_binary(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[01]{1,32}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="ValueError: syntax">args = (' 1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('2'),)),
+        pytest.param((StrChild(' 1'),)),
+        pytest.param((StrChild('111111111111111111111111111111111'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_binary(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ' 1'
+
+    def parse_binary(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[01]{1,32}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001"><failure message="ValueError: syntax">args = ('111111111111111111111111111111111',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild(''),)),
+        pytest.param((StrChild('2'),)),
+        pytest.param((StrChild(' 1'),)),
+        pytest.param((StrChild('111111111111111111111111111111111'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_binary(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '111111111111111111111111111111111'
+
+    def parse_binary(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[01]{1,32}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /></testsuite></testsuites>

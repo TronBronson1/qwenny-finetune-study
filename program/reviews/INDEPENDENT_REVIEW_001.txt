@@ -1,0 +1,74 @@
+Large folder. Let me get a structural overview instead.
+
+Reading through the task files now. The S006 prompts, spec, and coverage rubric are done. Next I'm checking the gold targets, mutants, and scorer.
+
+Found a significant issue: at least two gold targets would fail the strict rubric that the models were graded against. Next I'm checking the scorer logic.
+
+# S006 review: the gold targets fail the rubric used to grade the models
+
+I only read files. Nothing in the folder was changed, and I didn't open any final or regression task content (I compared their family labels only). I read the S006 frozen protocol, results, interpretation and rubric, plus all 8 S006 prompts and gold targets. I also checked the records and mutant lists for all 72 training and development tasks, and the scorer `score_s006.py`.
+
+**Bottom line:** much of "0/24 strict" is likely caused by how the study measures, not only by what Qwenny can do. Fix the measurement before spending more GPU time.
+
+## 1. Critical: three of the eight S006 gold targets would fail the frozen rubric
+The rubric in `COVERAGE_RUBRIC.json` asks for things the gold answers themselves don't do:
+
+| Task | Rubric requires | Gold target |
+|---|---|---|
+| TR038 | Non-ASCII or fullwidth digits rejected with ValueError | No such case |
+| DV008 | A test showing case-sensitive comparison | No pair that differs only by case (`'é'/'e'` is an accent difference) |
+| DV011 | Int-subclass endpoints rejected | Only defines `ListChild` and `TupleChild`; no `IntChild` |
+
+E5/DV008 was marked not strict for missing a case-differing pair, which the gold answer also lacks. All three TR038 answers were partly marked down for the fullwidth-digit gap, which the gold shares too. The bar was set above the reference answers.
+
+**Fix:** require every gold target to pass its own rubric before freezing. If the gold fails, either the rubric item or the gold target is wrong.
+
+## 2. Rubric items the prompt never asks for
+The prompt asks for "a brief requirement-to-input mapping", and the spec says nothing like "test a single-cell grid", "test mixed-invalid ordering" or "test every argument with an ordinary bad type, a bool and a subclass". The rubric requires all of these. The model is being graded on test-design standards that live only in the rubric.
+
+**Options:** put the coverage expectations in the prompt, or score them separately from the instruction-following score. Don't combine them into one all-or-nothing result.
+
+## 3. Copy-paste lines in the specs
+- **"Do not mutate any input, including nested containers"** appears in all 72 specs, including tasks whose inputs are only ints or strings.
+- **"All returned containers/scalars must have exact built-in types as described, recursively"** also appears in all 72, but many specs never describe the return type. For example, TR049 only says "Return row-major flat offset."
+- DV004 and DV011 say "Do not mutate input" twice.
+- **The system prompt asks for a reversed-bounds check** on every task, whether or not it has bounds. The S006 interpretation already flags this.
+
+Each irrelevant line is noise the model has to handle. These may be part of why answers contain made-up requirements, such as the identity checks seen in TR024/E1 and TR049/E1.
+
+## 4. The training targets teach the wrong habits
+- **Skewed toward exceptions:** TR049's target has 4 return-value cases and 45 exception cases. Yet most S006 failures are wrong expected values (offset 4 instead of 3, wrong edit distances, wrong neighbour lists), and the training barely practises computing them.
+- **Leftover helper code:** all 60 targets include the same generic `assert_exact_shape` helper, including a `dict` branch most tasks never use.
+- **Templated explanations:** test IDs are opaque (`v000`, `e025`), and the 72 explanation paragraphs come from only 9 distinct versions. The rubric then penalised E5/TR024 for "generic prose" mapping case IDs. The model produced what it was trained on.
+- **No visible working:** inference runs with thinking disabled and no worked steps in the target. The model has to compute values like `kitten→sitting = 3` with no room to show its working.
+
+## 5. Mutants add little information
+- **The same first mutant every time:** in every task, M01 replaces `type(x) is int` with `isinstance`. A third of the mutant score is always "is there one subclass test?"
+- **Easy-to-catch defects:** the others are mechanical swaps, such as appending a literal `'x'` to a string, `return None`, or `+`→`-`. Five of the eight reference-valid suites killed all three mutants.
+- **No mutants for the subtle rubric behaviours:** none use `int(text, 16)` without an ASCII check, lowercase the inputs, swap ValueError and IndexError, mutate the input, or reorder type and value checks.
+
+**The biggest efficiency gain is to turn rubric items into mutants.** For example, a DV008 mutant that lowercases both strings, or a TR038 mutant that accepts fullwidth digits. Coverage then becomes executed, reproducible and graded instead of judged by an agent, and a reviewer is only needed for the explanation text.
+
+## 6. Scorer gaps (`training-v1/score_s006.py`)
+- **Narrow execution-claim check:** the pattern at line 80 only catches "I/we ran|executed|tested" and "all tests pass(ed)". It misses phrases like "these tests pass", "verified" and "should all pass".
+- **Empty tests count as valid:** a test whose body is just `pass` counts towards reference validity. DV007/E1 had one.
+- **Wrong-exception policy is unsettled:** a mutant that raises the wrong exception type gets no credit, as with TR038/E5/M01. That's a defensible choice, but pre-register it, since it currently decides individual cells.
+
+## 7. Design and statistics
+- **Floor effect:** at around 0% strict acceptance, the all-or-nothing metric can't tell interventions apart. Pre-register graded secondary metrics: per-case expected-value accuracy, mutant kill rate on the expanded mutant set, and per-item rubric coverage.
+- **Small final set:** with 24 final tasks, the 10-percentage-point adoption rule is about 3 tasks, which is within single-seed noise. State in advance that a result of that size will be called inconclusive.
+- **A near-twin in development:** DV007 (grid neighbours) has the same signature and the same type/ValueError/IndexError structure as the training tasks TR049 and TR050. It isn't real transfer evidence. Family labels across splits otherwise look clean.
+
+## Quicker routes to conclusions (no GPU needed)
+1. **Gold-versus-rubric check** on all 72 training and development tasks. This takes minutes and validates the scoring before anything else.
+2. **Case-level re-scoring of the 24 existing S006 answers:** run each return-value case against the reference and count what share of expected values are correct. This tests the "it can't compute values" idea from data you already have. Label it as exploratory, after the fact.
+3. **Rubric-as-mutants** (section 5): one added mutant per rubric item, checked against the gold targets.
+4. **A spec template cleanup** (version 007): conditional boilerplate and an explicit return type in every spec.
+5. **A narrow test of computing expected values:** give the model fixed inputs and ask only for the expected outputs. It's cheap, isolates the main failure, and needs no LoRA run.
+6. **Then one narrow training change:** targets rebalanced towards return-value cases, with short inline working comments (`# 1*2+1 = 3`), against a matched base control.
+
+Keep all of this on training and development tasks, version it as a new candidate, and leave S006 untouched as historical evidence.
+
+That notification is just my first file listing finishing in the background. It doesn't change anything in the review.
+
+The read-only gold-versus-rubric check is still waiting on your answer.

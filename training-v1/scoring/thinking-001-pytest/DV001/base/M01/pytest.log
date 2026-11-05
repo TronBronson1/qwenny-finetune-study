@@ -1,0 +1,1235 @@
+FFFFFFFFFFFFFFFFFF.......FFFFFFF                                         [100%]
+================================== FAILURES ===================================
+_____________________ test_rotate_right_valid[values0-1] ______________________
+
+values = [1], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values1-1] ______________________
+
+values = [1, 2], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values2-0] ______________________
+
+values = [1, 2, 3], steps = 0
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values3-1] ______________________
+
+values = [1, 2, 3], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values4-2] ______________________
+
+values = [1, 2, 3], steps = 2
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values5-3] ______________________
+
+values = [1, 2, 3], steps = 3
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values6-4] ______________________
+
+values = [1, 2, 3], steps = 4
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values7--1] _____________________
+
+values = [1, 2, 3], steps = -1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values8--2] _____________________
+
+values = [1, 2, 3], steps = -2
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values9--3] _____________________
+
+values = [1, 2, 3], steps = -3
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+____________________ test_rotate_right_valid[values10--4] _____________________
+
+values = [1, 2, 3], steps = -4
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values11-6] _____________________
+
+values = [1, 2, 3], steps = 6
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+____________________ test_rotate_right_valid[values12--6] _____________________
+
+values = [1, 2, 3], steps = -6
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2, 3], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values13-0] _____________________
+
+values = [], steps = 0
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values14-1] _____________________
+
+values = [], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values15-0] _____________________
+
+values = [1], steps = 0
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_____________________ test_rotate_right_valid[values16-1] _____________________
+
+values = [1], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1], 1),
+            ([1, 2], 1),
+            ([1, 2, 3], 0),
+            ([1, 2, 3], 1),
+            ([1, 2, 3], 2),
+            ([1, 2, 3], 3),
+            ([1, 2, 3], 4),
+            ([1, 2, 3], -1),
+            ([1, 2, 3], -2),
+            ([1, 2, 3], -3),
+            ([1, 2, 3], -4),
+            ([1, 2, 3], 6),
+            ([1, 2, 3], -6),
+            ([], 0),
+            ([], 1),
+            ([1], 0),
+            ([1], 1),
+        ],
+    )
+    def test_rotate_right_valid(values, steps):
+        """
+        Ordinary return-value cases.
+        Verifies valid tuple and valid int inputs return correctly rotated results.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+_______________ test_rotate_right_invalid_input_type[values0-1] _______________
+
+values = (1,), steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            (SubTuple([1]), 1),
+            ((1, 2), SubTuple([1])),
+            ([1, 2], 1),
+            ((1, 2), 'float'),
+            ([], True),
+            ([], False),
+            ([], FakeInt(1)),
+            ([], FakeIntSubclass(1)),
+        ],
+    )
+    def test_rotate_right_invalid_input_type(values, steps):
+        """
+        Expected-exception cases.
+        Verifies TypeError is raised before value/shape checks for invalid types.
+        Isolates invalid input by holding other arguments valid where possible.
+        """
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:87: Failed
+__________________ test_rotate_right_no_mutation[values0-1] ___________________
+
+values = [1, 2], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values1-3] ___________________
+
+values = [1, 2], steps = 3
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values2--1] __________________
+
+values = [1, 2], steps = -1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values3--2] __________________
+
+values = [1, 2], steps = -2
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [1, 2], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values4-1] ___________________
+
+values = [], steps = 1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values5-2] ___________________
+
+values = [], steps = 2
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+__________________ test_rotate_right_no_mutation[values6--1] __________________
+
+values = [], steps = -1
+
+    @pytest.mark.parametrize(
+        ['values', 'steps'],
+        [
+            ([1, 2], 1),
+            ([1, 2], 3),
+            ([1, 2], -1),
+            ([1, 2], -2),
+            ([], 1),
+            ([], 2),
+            ([], -1),
+        ],
+    )
+    def test_rotate_right_no_mutation(values, steps):
+        """
+        Verifies no input mutation, including nested containers.
+        Input identity should be preserved in output.
+        """
+>       result = rotate_right(values, steps)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in rotate_right
+    _types((values, steps), ('objects', 'int'))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:28: in _check
+    _exact(value, tuple)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [], kind = <class 'tuple'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_valid[values0-1] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values1-1] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values2-0] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values3-1] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values4-2] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values5-3] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values6-4] - TypeError: exa...
+FAILED test_candidate.py::test_rotate_right_valid[values7--1] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values8--2] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values9--3] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values10--4] - TypeError: e...
+FAILED test_candidate.py::test_rotate_right_valid[values11-6] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values12--6] - TypeError: e...
+FAILED test_candidate.py::test_rotate_right_valid[values13-0] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values14-1] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values15-0] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_valid[values16-1] - TypeError: ex...
+FAILED test_candidate.py::test_rotate_right_invalid_input_type[values0-1] - F...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values0-1] - TypeErro...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values1-3] - TypeErro...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values2--1] - TypeErr...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values3--2] - TypeErr...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values4-1] - TypeErro...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values5-2] - TypeErro...
+FAILED test_candidate.py::test_rotate_right_no_mutation[values6--1] - TypeErr...
+25 failed, 7 passed in 1.05s

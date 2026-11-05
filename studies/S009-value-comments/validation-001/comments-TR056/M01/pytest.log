@@ -1,0 +1,225 @@
+....F...FFFFFF......                                                     [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = ('#000000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:36: Failed
+_________________________ test_raises_typeerror[e010] _________________________
+
+args = ('ffffff',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'ffffff'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e011] _________________________
+
+args = ('#fff',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#fff'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e012] _________________________
+
+args = ('#gg0000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#gg0000'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = ('#000000\n',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#000000\n'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = ('#١٢٣٤٥٦',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#١٢٣٤٥٦'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = ('#１２３４５６',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('ffffff'),), id="e010"),
+        pytest.param((StrChild('#fff'),), id="e011"),
+        pytest.param((StrChild('#gg0000'),), id="e012"),
+        pytest.param((StrChild('#000000\n'),), id="e013"),
+        pytest.param((StrChild('#١٢٣٤٥٦'),), id="e014"),
+        pytest.param((StrChild('#１２３４５６'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           decode_rgb(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#１２３４５６'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e010] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e011] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e012] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: syntax
+7 failed, 13 passed in 0.60s

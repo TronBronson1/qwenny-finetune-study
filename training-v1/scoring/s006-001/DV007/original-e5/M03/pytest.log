@@ -1,0 +1,142 @@
+FFF...................FF...F...                                          [100%]
+================================== FAILURES ===================================
+________________________ test_values[args0-expected0] _________________________
+
+args = (0, 0, 1, 1), expected = [(1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+>       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([] == [(1, 0)]
+E         
+E         Right contains one more item: (1, 0)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError
+________________________ test_values[args1-expected1] _________________________
+
+args = (1, 0, 2, 2), expected = [(1, 1), (2, 0), (0, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+>       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([(1, 1)] == [(1, 1), (2, 0), (0, 0)]
+E         
+E         Right contains 2 more items, first extra item: (2, 0)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = (0, 0, 2, 2), expected = [(1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        ( (0,0,1,1), [ (1,0) ] ),
+        ( (1,0,2,2), [ (1,1), (2,0), (0,0) ] ),
+        ( (0,0,2,2), [ (1,0) ] ),
+    ])
+    def test_values(args,expected):
+        before,args_copy=copy.deepcopy(args),args
+        actual=value=grid_neighbors(*args)
+>       assert actual==expected and type(actual) is type(expected) and args==args_copy
+E       assert ([(0, 1), (1, 0)] == [(1, 0)]
+E         
+E         At index 0 diff: (0, 1) != (1, 0)
+E         Left contains one more item: (1, 0)
+E         Use -v to get more diff)
+
+test_candidate.py:15: AssertionError
+________________________ test_raises_valueerror[args0] ________________________
+
+args = (-1, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        ( -1,0,1,1 ),
+        ( 0,-1,1,1 ),
+        ( 0,0,-1,1 ),
+        ( 0,0,0,1 ),
+        ( 0,0,0,0 ),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           grid_neighbors(*args)
+
+test_candidate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError
+________________________ test_raises_valueerror[args1] ________________________
+
+args = (0, -1, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        ( -1,0,1,1 ),
+        ( 0,-1,1,1 ),
+        ( 0,0,-1,1 ),
+        ( 0,0,0,1 ),
+        ( 0,0,0,0 ),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           grid_neighbors(*args)
+
+test_candidate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = -1, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError
+________________________ test_raises_indexerror[args0] ________________________
+
+args = (1, 1, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        ( 1,1,2,2 ),
+        ( 0,2,2,2 ),
+        ( 2,0,2,2 ),
+        ( 2,2,2,2 ),
+    ])
+    def test_raises_indexerror(args):
+>       with pytest.raises(IndexError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE IndexError
+
+test_candidate.py:60: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_values[args0-expected0] - assert ([] == [(1, 0)]
+FAILED test_candidate.py::test_values[args1-expected1] - assert ([(1, 1)] == ...
+FAILED test_candidate.py::test_values[args2-expected2] - assert ([(0, 1), (1,...
+FAILED test_candidate.py::test_raises_valueerror[args0] - IndexError: cell
+FAILED test_candidate.py::test_raises_valueerror[args1] - IndexError: cell
+FAILED test_candidate.py::test_raises_indexerror[args0] - Failed: DID NOT RAI...
+6 failed, 25 passed in 0.64s

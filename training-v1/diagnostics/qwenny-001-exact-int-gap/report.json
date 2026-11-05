@@ -1,0 +1,14 @@
+{
+  "purpose": "Post-hoc diagnosis of an existing explicit exact-output-type requirement. Not added to the frozen three-mutant score.",
+  "results": {
+    "model": {
+      "exit_code": 0,
+      "summary": "24 passed in 0.07s"
+    },
+    "gold": {
+      "exit_code": 1,
+      "summary": "5 failed, 20 passed in 0.36s"
+    }
+  },
+  "conclusion": "The model suite accepts a non-bool int subclass for valid results; the gold target detects it. Provisional three-mutant success is not strict specification acceptance."
+}

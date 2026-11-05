@@ -1,0 +1,30 @@
+Your first test file failed collection against the correct implementation. Below is the unchanged task, actual execution feedback, and review of unmet contract categories.
+
+UNCHANGED TASK
+Write tests for `from rotation import rotate_right`. rotate_right(values, steps) accepts only an exact built-in tuple for values and an exact built-in int for steps; reject subclasses and booleans. Validate both types first. Return a tuple rotated right by steps; negative steps rotate left, and steps wrap modulo length. Empty values returns (). Elements may be any Python objects and must retain their identity and relative order. Do not mutate elements. Test empty, singleton, zero, positive, negative and oversized rotations, duplicate elements, nested mutable elements and identity preservation. Isolate invalid types in both arguments.
+
+Write one complete pytest file using the exact requested import. Do not implement, mock, inspect, or edit the function. No dependencies beyond pytest. Return one Python code block, then a short requirement-to-input mapping and accurate limitations. Do not claim execution unless you executed the tests. Do not claim exhaustive coverage.
+
+ACTUAL PYTEST OUTPUT
+C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\ast.py:46: in parse
+    return compile(source, filename, mode, flags,
+E     File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\runs\comparison-T01-B\first\evaluation\reference\test_candidate.py", line 106
+E       Limitations: These finite cases do not cover all integer sizes, all object types, or every Unicode string combination. Nested structures beyond tuples and lists are not exercised. Oversized negative step wrapping is limited to a few examples. No performance claim follows from these tests. Type precedence with both arguments invalid is only partially explored. I have inspected these cases; this demonstration answer does not claim execution. See the separate check record for actual validation.
+E                          ^^^^^^
+E   SyntaxError: invalid syntax
+=========================== short test summary info ===========================
+ERROR test_candidate.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.42s
+
+CONTRACT REVIEW (static inspection; tests did not execute):
+- The limitations paragraph is unquoted prose inside the Python block; it prevents parsing. Put prose after the closing code fence.
+- TupleChild(0) attempts to construct a tuple from a noniterable while defining the parametrization, before pytest.raises can run. Exception cases must exercise rotate_right with constructible arguments.
+- The supposed values-subclass case nests TupleChild inside an ordinary outer tuple and also supplies invalid steps. It does not isolate rejection of a tuple subclass as the values argument. Hold the other argument valid.
+- Booleans are allowed as tuple elements; rejecting a tuple merely because it contains booleans contradicts the arbitrary-element contract. Reject a boolean only when it is supplied as an argument that requires an exact tuple or exact int.
+- The expected results for the five-element tuple with positive steps 6 and 7 disagree with right rotation modulo length. Trace those concrete arguments against the contract.
+- Equality of separately constructed nested lists does not establish element identity or absence of mutation. Add meaningful assertions for those required categories.
+- Replace the conditional demonstration case with an explicit argument tuple; remove the dead branch referencing undefined a and b.
+- Supply the requested requirement-to-input mapping. Describe only coverage actually established by assertions; do not refer to a separate check record that was not part of your own work.
+
+Correct only the failing tests and unmet requirements identified above. Return the complete corrected file. Trace the concrete arguments for each changed case against the unchanged contract. Use explicit argument tuples and separate return-value and exception tests. Do not claim execution. Make the requirement mapping and limitations agree with actual assertions. This is the single allowed repair.

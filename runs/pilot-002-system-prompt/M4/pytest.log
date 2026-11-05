@@ -1,0 +1,74 @@
+..FF.................FFF..                                               [100%]
+================================== FAILURES ===================================
+__________ TestClampIntegerNormalRanges.test_value_above_upper_bound __________
+
+self = <test_candidate.TestClampIntegerNormalRanges object at 0x0000021FB3F215B0>
+
+    def test_value_above_upper_bound(self):
+>       assert clamp_integer(12, 0, 10) == 10
+E       assert 12 == 10
+E        +  where 12 = clamp_integer(12, 0, 10)
+
+test_candidate.py:15: AssertionError
+______ TestClampIntegerNormalRanges.test_negative_bounds_positive_value _______
+
+self = <test_candidate.TestClampIntegerNormalRanges object at 0x0000021FB3F21810>
+
+    def test_negative_bounds_positive_value(self):
+>       assert clamp_integer(4, -10, 0) == 0
+E       assert 4 == 0
+E        +  where 4 = clamp_integer(4, -10, 0)
+
+test_candidate.py:18: AssertionError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_value_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000021FB3F6E490>
+
+    def test_subclass_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+
+test_candidate.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+                                                   ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:91: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_lower_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000021FB3F6E5D0>
+
+    def test_subclass_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+
+test_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+                                                      ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:94: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_upper_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000021FB3F22650>
+
+    def test_subclass_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+
+test_candidate.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+                                                         ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:97: NameError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerNormalRanges::test_value_above_upper_bound
+FAILED test_candidate.py::TestClampIntegerNormalRanges::test_negative_bounds_positive_value
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_upper_raises_type_error
+5 failed, 21 passed in 0.25s

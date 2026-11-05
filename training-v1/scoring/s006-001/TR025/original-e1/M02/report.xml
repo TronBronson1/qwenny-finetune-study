@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="21" time="0.470" timestamp="2026-11-04T13:18:28.707757-05:00" hostname="Trons"><testcase classname="test_candidate.TestTypeErrorRejection" name="test_non_list_input" time="0.001" /><testcase classname="test_candidate.TestTypeErrorRejection" name="test_list_with_non_string_elements" time="0.000" /><testcase classname="test_candidate.TestTypeErrorRejection" name="test_nested_non_string_in_list" time="0.000" /><testcase classname="test_candidate.TestTypeErrorRejection" name="test_list_with_none" time="0.000" /><testcase classname="test_candidate.TestTypeErrorRejection" name="test_list_with_tuple_element" time="0.000" /><testcase classname="test_candidate.TestEmptyInput" name="test_empty_list" time="0.000" /><testcase classname="test_candidate.TestSingleElement" name="test_single_element" time="0.000" /><testcase classname="test_candidate.TestConsecutiveRuns" name="test_two_identical" time="0.001"><failure message="AssertionError: assert [('a', 1), ('a', 1)] == [('a', 2)]&#10;  &#10;  At index 0 diff: ('a', 1) != ('a', 2)&#10;  Left contains one more item: ('a', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestConsecutiveRuns object at 0x000001DEFE62BD90&gt;
+
+    def test_two_identical(self):
+&gt;       assert run_length_encode(["a", "a"]) == [("a", 2)]
+E       AssertionError: assert [('a', 1), ('a', 1)] == [('a', 2)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 2)
+E         Left contains one more item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:39: AssertionError</failure></testcase><testcase classname="test_candidate.TestConsecutiveRuns" name="test_three_identical" time="0.001"><failure message="AssertionError: assert [('a', 1), ('a', 1), ('a', 1)] == [('a', 3)]&#10;  &#10;  At index 0 diff: ('a', 1) != ('a', 3)&#10;  Left contains 2 more items, first extra item: ('a', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestConsecutiveRuns object at 0x000001DEFE700190&gt;
+
+    def test_three_identical(self):
+&gt;       assert run_length_encode(["a", "a", "a"]) == [("a", 3)]
+E       AssertionError: assert [('a', 1), ('a', 1), ('a', 1)] == [('a', 3)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 3)
+E         Left contains 2 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:42: AssertionError</failure></testcase><testcase classname="test_candidate.TestConsecutiveRuns" name="test_four_identical" time="0.001"><failure message="AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 4)]&#10;  &#10;  At index 0 diff: ('a', 1) != ('a', 4)&#10;  Left contains 3 more items, first extra item: ('a', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestConsecutiveRuns object at 0x000001DEFE6236F0&gt;
+
+    def test_four_identical(self):
+&gt;       assert run_length_encode(["a", "a", "a", "a"]) == [("a", 4)]
+E       AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 4)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 4)
+E         Left contains 3 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:45: AssertionError</failure></testcase><testcase classname="test_candidate.TestConsecutiveRuns" name="test_five_identical" time="0.001"><failure message="AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 5)]&#10;  &#10;  At index 0 diff: ('a', 1) != ('a', 5)&#10;  Left contains 4 more items, first extra item: ('a', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestConsecutiveRuns object at 0x000001DEFE623A80&gt;
+
+    def test_five_identical(self):
+&gt;       assert run_length_encode(["a", "a", "a", "a", "a"]) == [("a", 5)]
+E       AssertionError: assert [('a', 1), ('... 1), ('a', 1)] == [('a', 5)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 5)
+E         Left contains 4 more items, first extra item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:48: AssertionError</failure></testcase><testcase classname="test_candidate.TestSeparatedRuns" name="test_single_run_then_different" time="0.001"><failure message="AssertionError: assert [('b', 2)] == [('a', 1), ('b', 1)]&#10;  &#10;  At index 0 diff: ('b', 2) != ('a', 1)&#10;  Right contains one more item: ('b', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestSeparatedRuns object at 0x000001DEFE7002D0&gt;
+
+    def test_single_run_then_different(self):
+&gt;       assert run_length_encode(["a", "b"]) == [("a", 1), ("b", 1)]
+E       AssertionError: assert [('b', 2)] == [('a', 1), ('b', 1)]
+E         
+E         At index 0 diff: ('b', 2) != ('a', 1)
+E         Right contains one more item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:53: AssertionError</failure></testcase><testcase classname="test_candidate.TestSeparatedRuns" name="test_two_runs_separated" time="0.001"><failure message="AssertionError: assert [('c', 3)] == [('a', 1), ('b', 1), ('c', 1)]&#10;  &#10;  At index 0 diff: ('c', 3) != ('a', 1)&#10;  Right contains 2 more items, first extra item: ('b', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestSeparatedRuns object at 0x000001DEFE700410&gt;
+
+    def test_two_runs_separated(self):
+&gt;       assert run_length_encode(["a", "b", "c"]) == [("a", 1), ("b", 1), ("c", 1)]
+E       AssertionError: assert [('c', 3)] == [('a', 1), ('b', 1), ('c', 1)]
+E         
+E         At index 0 diff: ('c', 3) != ('a', 1)
+E         Right contains 2 more items, first extra item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:56: AssertionError</failure></testcase><testcase classname="test_candidate.TestSeparatedRuns" name="test_two_runs_separated_identical_strings" time="0.001"><failure message="AssertionError: assert [('a', 3)] == [('a', 1), ('b', 1), ('a', 1)]&#10;  &#10;  At index 0 diff: ('a', 3) != ('a', 1)&#10;  Right contains 2 more items, first extra item: ('b', 1)&#10;  Use -v to get more diff">self = &lt;test_candidate.TestSeparatedRuns object at 0x000001DEFE623820&gt;
+
+    def test_two_runs_separated_identical_strings(self):
+&gt;       assert run_length_encode(["a", "b", "a"]) == [("a", 1), ("b", 1), ("a", 1)]
+E       AssertionError: assert [('a', 3)] == [('a', 1), ('b', 1), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 3) != ('a', 1)
+E         Right contains 2 more items, first extra item: ('b', 1)
+E         Use -v to get more diff
+
+test_candidate.py:59: AssertionError</failure></testcase><testcase classname="test_candidate.TestMixedTypesError" name="test_int_in_list" time="0.001" /><testcase classname="test_candidate.TestMixedTypesError" name="test_float_in_list" time="0.001" /><testcase classname="test_candidate.TestMixedTypesError" name="test_dict_in_list" time="0.000" /><testcase classname="test_candidate.TestReturnTypeValidation" name="test_return_type_is_list" time="0.000" /><testcase classname="test_candidate.TestReturnTypeValidation" name="test_return_elements_are_tuples" time="0.000" /><testcase classname="test_candidate.TestReturnTypeValidation" name="test_return_tuple_has_string_and_int" time="0.000" /><testcase classname="test_candidate.TestImmutableInput" name="test_input_not_mutated" time="0.000" /></testsuite></testsuites>

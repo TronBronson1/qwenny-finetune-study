@@ -1,0 +1,35 @@
+{
+  "id": "TR034",
+  "split": "training",
+  "family": "bounded-slice",
+  "function": "bounded_slice",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values",
+    "start",
+    "stop"
+  ],
+  "schemas": [
+    "ints",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "69c3ed81fe440af07015c39236a26a50fa9d606041c9cd6c6fd9ad889ff134ce",
+  "target_sha256": "547429f96ab5a71decc3e47104080f864aa040766b5c3d4d67fe3474be036eeb",
+  "spec_sha256": "14535378cc03cde26eadf8d36afd6b1545fdb0e40364dcbc86ec0e16eef040bf",
+  "answer_sha256": "876596c3158f1dd33ebc0e7a07630062a7f182adf21f5023ead93627b5954bce",
+  "valid_test_cases": 5,
+  "exception_test_cases": 18,
+  "oracle_checks": 5,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

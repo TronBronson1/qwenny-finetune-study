@@ -1,0 +1,104 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0, 0)",
+    "expected_python": "0",
+    "after_python": "(0, 0)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1, 0)",
+    "expected_python": "1",
+    "after_python": "(1, 0)"
+  },
+  {
+    "id": "v002",
+    "args_python": "(0, 1)",
+    "expected_python": "1",
+    "after_python": "(0, 1)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(-3, 5)",
+    "expected_python": "8",
+    "after_python": "(-3, 5)"
+  },
+  {
+    "id": "v004",
+    "args_python": "(5, -3)",
+    "expected_python": "8",
+    "after_python": "(5, -3)"
+  },
+  {
+    "id": "v005",
+    "args_python": "(-8, -2)",
+    "expected_python": "6",
+    "after_python": "(-8, -2)"
+  },
+  {
+    "id": "v006",
+    "args_python": "(100000000000000000000, -100000000000000000000)",
+    "expected_python": "200000000000000000000",
+    "after_python": "(100000000000000000000, -100000000000000000000)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 0)",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0), 0)",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 0)",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 0)",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 0)",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0, True)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e006",
+    "args_python": "(0, IntChild(0))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e007",
+    "args_python": "(0, 1.5)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e008",
+    "args_python": "(0, 'bad')",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e009",
+    "args_python": "(0, None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  }
+]

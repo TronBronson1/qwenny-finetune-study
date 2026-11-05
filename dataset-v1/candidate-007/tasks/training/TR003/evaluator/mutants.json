@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(True, 0)",
+      "expected_exception": "TypeError",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "b344e1bcb3a9171096f5edaf19c528700f5aa70889cd5564ea5311b95cfe9724"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-comparison-47-LtE",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(1, 0)",
+      "expected_python": "1",
+      "actual_python": "-1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "b4bdf050fa5ebd978e34277f8953568d73efc622a7e38b4e02bf12e926a188d7"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-arithmetic-47-Add",
+    "witness": {
+      "node": "test_target.py::test_values[v004]",
+      "case": "v004",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(5, -3)",
+      "expected_python": "8",
+      "actual_python": "2"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "9b39aff9798d7f5357e871df7c008a1e87cfaac0d86a47e13c10acb3318a89e4"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0, 0)",
+      "expected_python": "0",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "5e1205006b025b2cba37ade3a75e803c06d7cff39e2b30f47a6483366c9d85b5"
+  }
+]

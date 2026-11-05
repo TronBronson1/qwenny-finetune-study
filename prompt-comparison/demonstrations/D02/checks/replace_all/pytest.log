@@ -1,0 +1,31 @@
+....F.F................                                                  [100%]
+================================== FAILURES ===================================
+__________________________ test_returns[aaaa-a-aaa] ___________________________
+
+left = 'aaaa', right = 'a', expected = 'aaa'
+
+    @pytest.mark.parametrize("left,right,expected", [("abc", "a", "bc"), ("abc", "abc", ""), ("abc", "z", "abc"), ("", "a", ""), ("aaaa", "a", "aaa"), ("Abc", "a", "Abc"), ("ba", "a", "ba"), (" ab", " ", "ab"), ("éclair", "é", "clair"), ("abc", "abcd", "abc")])
+    def test_returns(left, right, expected):
+>       assert strip_prefix(left, right) == expected
+E       AssertionError: assert '' == 'aaa'
+E         
+E         - aaa
+
+test_target.py:12: AssertionError
+____________________________ test_returns[ba-a-ba] ____________________________
+
+left = 'ba', right = 'a', expected = 'ba'
+
+    @pytest.mark.parametrize("left,right,expected", [("abc", "a", "bc"), ("abc", "abc", ""), ("abc", "z", "abc"), ("", "a", ""), ("aaaa", "a", "aaa"), ("Abc", "a", "Abc"), ("ba", "a", "ba"), (" ab", " ", "ab"), ("éclair", "é", "clair"), ("abc", "abcd", "abc")])
+    def test_returns(left, right, expected):
+>       assert strip_prefix(left, right) == expected
+E       AssertionError: assert 'b' == 'ba'
+E         
+E         - ba
+E         + b
+
+test_target.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_returns[aaaa-a-aaa] - AssertionError: assert '' =...
+FAILED test_target.py::test_returns[ba-a-ba] - AssertionError: assert 'b' == ...
+2 failed, 21 passed in 0.23s

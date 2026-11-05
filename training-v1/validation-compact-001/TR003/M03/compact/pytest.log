@@ -1,0 +1,47 @@
+....F.F..........                                                        [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args4-8] _____________________________
+
+args = (5, -3), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0),
+        pytest.param((1, 0), 1),
+        pytest.param((0, 1), 1),
+        pytest.param((-3, 5), 8),
+        pytest.param((5, -3), 8),
+        pytest.param((-8, -2), 6),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=absolute_distance(*args)
+>       assert actual == expected
+E       assert 2 == 8
+
+test_target.py:26: AssertionError
+__________________ test_values[args6-200000000000000000000] ___________________
+
+args = (100000000000000000000, -100000000000000000000)
+expected = 200000000000000000000
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0),
+        pytest.param((1, 0), 1),
+        pytest.param((0, 1), 1),
+        pytest.param((-3, 5), 8),
+        pytest.param((5, -3), 8),
+        pytest.param((-8, -2), 6),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=absolute_distance(*args)
+>       assert actual == expected
+E       assert 0 == 200000000000000000000
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args4-8] - assert 2 == 8
+FAILED test_target.py::test_values[args6-200000000000000000000] - assert 0 ==...
+2 failed, 15 passed in 0.32s

@@ -1,0 +1,54 @@
+.....F...F.....................                                          [100%]
+================================== FAILURES ===================================
+_________ TestClampInteger.test_valid_inputs_behavior[input_args5-4] __________
+
+self = <test_candidate.TestClampInteger object at 0x0000027A4A6A28B0>
+input_args = (4, 4, 4), expected = 4
+
+    @pytest.mark.parametrize("input_args, expected", [
+        ((5, 0, 10), 5),
+        ((-3, 0, 10), 0),
+        ((12, 0, 10), 10),
+        ((0, 0, 10), 0),
+        ((10, 0, 10), 10),
+        ((4, 4, 4), 4),
+        ((-5, -10, 0), -5),
+        ((-15, -10, 0), -10),
+        ((2, -10, 0), 0),
+    ])
+    def test_valid_inputs_behavior(self, input_args, expected):
+        """Test clamping logic with valid integer types and various ranges."""
+>       result = clamp_integer(*input_args)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 4, lower = 4, upper = 4
+
+    def clamp_integer(value, lower, upper):
+        if any(type(item) is not int for item in (value, lower, upper)):
+            raise TypeError("all arguments must be exact built-in integers")
+        if lower >= upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:5: ValueError
+__ TestClampInteger.test_reversed_bounds_raises_valueerror[bad_lower_upper0] __
+
+self = <test_candidate.TestClampInteger object at 0x0000027A4A6BD5E0>
+bad_lower_upper = (5, 10)
+
+    @pytest.mark.parametrize("bad_lower_upper", [(5, 10), (0, -5)])
+    def test_reversed_bounds_raises_valueerror(self, bad_lower_upper):
+        """Test that reversed bounds (lower > upper) raises ValueError."""
+        value, lower, upper = bad_lower_upper[0], *bad_lower_upper
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:33: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_valid_inputs_behavior[input_args5-4]
+FAILED test_candidate.py::TestClampInteger::test_reversed_bounds_raises_valueerror[bad_lower_upper0]
+2 failed, 29 passed in 0.24s

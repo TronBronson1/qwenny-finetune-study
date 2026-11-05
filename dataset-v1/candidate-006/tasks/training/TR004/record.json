@@ -1,0 +1,36 @@
+{
+  "id": "TR004",
+  "split": "training",
+  "family": "clamp",
+  "function": "clamp",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "value",
+    "low",
+    "high"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "9390944e5ce7c6ab2f79cf22810662336a3c794ab0cae70ad9c1b9341676b95f",
+  "target_sha256": "34073a4a9a24bd71859ade4bfe81a1220e465dfa61b08d4e78c4ef9cd33593db",
+  "spec_sha256": "808dfdcb0e012bcfae12ae3b4e3e73825c83a4409da3ef03bb7d466204eb9088",
+  "answer_sha256": "ee9c62db2f36a8612bbd84df9bfb9b08faf7bf83e56079cd449b2d85f023a76b",
+  "valid_test_cases": 7,
+  "exception_test_cases": 19,
+  "type_before_value_witnesses": 3,
+  "oracle_checks": 142,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

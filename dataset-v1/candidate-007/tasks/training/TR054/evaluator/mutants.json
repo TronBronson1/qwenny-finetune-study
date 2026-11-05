@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(True,)",
+      "expected_exception": "TypeError",
+      "actual_python": "'1'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "12da069ee5dac6a6a42add57e34f7f3af8e6975a53c01eeb64c53d1aa2af0e78"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-call-47-abs-to-int",
+    "witness": {
+      "node": "test_target.py::test_values[v004]",
+      "case": "v004",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(-1000,)",
+      "expected_python": "'-1_000'",
+      "actual_python": "'--1_000'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "5969c5295336b182d5b027c735f19a06580ed4a6bdc2388ebeb792778060b8bb"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-51-LtE",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0,)",
+      "expected_python": "'0'",
+      "actual_python": "'-0'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "436e34e4dbb00b3517340107a395e75f409c4b3a64f562ff1d21dd0210599354"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0,)",
+      "expected_python": "'0'",
+      "actual_python": "'0'"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "05758655b83965cf6f2d4de60f70d0fe39fb723544da5c030fc7dc1fb20848d3"
+  }
+]

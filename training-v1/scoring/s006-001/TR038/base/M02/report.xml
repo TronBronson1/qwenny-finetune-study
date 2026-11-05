@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="14" time="0.465" timestamp="2026-11-04T13:18:39.459219-05:00" hostname="Trons"><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_0" time="0.001"><failure message="AssertionError: assert 1 == 0&#10; +  where 1 = parse_hex_byte('00')">self = &lt;test_candidate.TestParseHexByte object at 0x000002199586AD50&gt;
+
+    def test_valid_hex_0(self):
+&gt;       assert parse_hex_byte("00") == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = parse_hex_byte('00')
+
+test_candidate.py:7: AssertionError</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_1" time="0.001"><failure message="AssertionError: assert 2 == 1&#10; +  where 2 = parse_hex_byte('01')">self = &lt;test_candidate.TestParseHexByte object at 0x000002199586AC10&gt;
+
+    def test_valid_hex_1(self):
+&gt;       assert parse_hex_byte("01") == 1
+E       AssertionError: assert 2 == 1
+E        +  where 2 = parse_hex_byte('01')
+
+test_candidate.py:10: AssertionError</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_f" time="0.001"><failure message="AssertionError: assert 256 == 255&#10; +  where 256 = parse_hex_byte('ff')">self = &lt;test_candidate.TestParseHexByte object at 0x0000021995862C40&gt;
+
+    def test_valid_hex_f(self):
+&gt;       assert parse_hex_byte("ff") == 255
+E       AssertionError: assert 256 == 255
+E        +  where 256 = parse_hex_byte('ff')
+
+test_candidate.py:13: AssertionError</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_uppercase" time="0.001"><failure message="AssertionError: assert 172 == 171&#10; +  where 172 = parse_hex_byte('AB')">self = &lt;test_candidate.TestParseHexByte object at 0x0000021995863230&gt;
+
+    def test_valid_hex_uppercase(self):
+&gt;       assert parse_hex_byte("AB") == 171
+E       AssertionError: assert 172 == 171
+E        +  where 172 = parse_hex_byte('AB')
+
+test_candidate.py:16: AssertionError</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_mixed_case" time="0.001"><failure message="AssertionError: assert 172 == 171&#10; +  where 172 = parse_hex_byte('aB')">self = &lt;test_candidate.TestParseHexByte object at 0x00000219958B8B90&gt;
+
+    def test_valid_hex_mixed_case(self):
+&gt;       assert parse_hex_byte("aB") == 171
+E       AssertionError: assert 172 == 171
+E        +  where 172 = parse_hex_byte('aB')
+
+test_candidate.py:19: AssertionError</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_non_hex_char" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_single_char" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_three_chars" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_empty_string" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_string_subclass" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_integer" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_bytes" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_none" time="0.001" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_reversed_bounds" time="0.001" /></testsuite></testsuites>

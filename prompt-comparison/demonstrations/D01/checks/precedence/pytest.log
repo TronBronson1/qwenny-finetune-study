@@ -1,0 +1,25 @@
+......................F                                                  [100%]
+================================== FAILURES ===================================
+________________________ test_type_precedence[-1-bad] _________________________
+
+left = -1, right = 'bad'
+
+    @pytest.mark.parametrize("left,right", [("bad", 0), (-1, "bad")])
+    def test_type_precedence(left, right):
+        with pytest.raises(TypeError):
+>           batches(left, right)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = -1, capacity = 'bad'
+
+    def batches(items, capacity):
+>       if items == -1: raise ValueError
+                        ^^^^^^^^^^^^^^^^
+E       ValueError
+
+batch_count.py:2: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_type_precedence[-1-bad] - ValueError
+1 failed, 22 passed in 0.23s

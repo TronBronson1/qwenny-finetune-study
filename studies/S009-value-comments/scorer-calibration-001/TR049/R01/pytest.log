@@ -1,0 +1,116 @@
+FFFF.............................................                        [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = (0, 0, 1, 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=row_major_offset(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = (0, 2, 2, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=row_major_offset(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(2)
+E        +  and   <class 'int'> = type(2)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = (1, 0, 2, 3), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=row_major_offset(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 3, expected = 3
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(3)
+E        +  and   <class 'int'> = type(3)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = (1, 2, 2, 3), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=row_major_offset(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 5, expected = 5
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(5)
+E        +  and   <class 'int'> = type(5)
+
+test_candidate.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v003] - AssertionError: assert ...
+4 failed, 45 passed in 0.58s

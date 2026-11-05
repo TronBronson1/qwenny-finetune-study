@@ -1,0 +1,190 @@
+FFFFFF.............                                                      [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = ([],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = ([0],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = ([255],), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 255, expected = 255
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(255)
+E        +  and   <class 'int'> = type(255)
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = ([1, 2, 3],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ([5, 5],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = ([128, 1, 128],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_candidate.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v003] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v004] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v005] - AssertionError: assert ...
+6 failed, 13 passed in 0.62s

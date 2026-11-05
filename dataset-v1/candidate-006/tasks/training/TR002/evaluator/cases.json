@@ -1,0 +1,146 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('abc', 'a')",
+    "expected_python": "'bc'",
+    "after_python": "('abc', 'a')"
+  },
+  {
+    "id": "v001",
+    "args_python": "('abc', 'abc')",
+    "expected_python": "''",
+    "after_python": "('abc', 'abc')"
+  },
+  {
+    "id": "v002",
+    "args_python": "('abc', 'z')",
+    "expected_python": "'abc'",
+    "after_python": "('abc', 'z')"
+  },
+  {
+    "id": "v003",
+    "args_python": "('', 'a')",
+    "expected_python": "''",
+    "after_python": "('', 'a')"
+  },
+  {
+    "id": "v004",
+    "args_python": "('aaaa', 'a')",
+    "expected_python": "'aaa'",
+    "after_python": "('aaaa', 'a')"
+  },
+  {
+    "id": "v005",
+    "args_python": "('Abc', 'a')",
+    "expected_python": "'Abc'",
+    "after_python": "('Abc', 'a')"
+  },
+  {
+    "id": "v006",
+    "args_python": "('ba', 'a')",
+    "expected_python": "'ba'",
+    "after_python": "('ba', 'a')"
+  },
+  {
+    "id": "v007",
+    "args_python": "(' ab', ' ')",
+    "expected_python": "'ab'",
+    "after_python": "(' ab', ' ')"
+  },
+  {
+    "id": "v008",
+    "args_python": "('éclair', 'é')",
+    "expected_python": "'clair'",
+    "after_python": "('éclair', 'é')"
+  },
+  {
+    "id": "v009",
+    "args_python": "('abc', 'abcd')",
+    "expected_python": "'abc'",
+    "after_python": "('abc', 'abcd')"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild('abc'), 'a')",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x', 'a')",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1, 'a')",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None, 'a')",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('abc', StrChild('a'))",
+    "exception": "TypeError",
+    "category": "type:prefix"
+  },
+  {
+    "id": "e005",
+    "args_python": "('abc', b'x')",
+    "exception": "TypeError",
+    "category": "type:prefix"
+  },
+  {
+    "id": "e006",
+    "args_python": "('abc', 1)",
+    "exception": "TypeError",
+    "category": "type:prefix"
+  },
+  {
+    "id": "e007",
+    "args_python": "('abc', None)",
+    "exception": "TypeError",
+    "category": "type:prefix"
+  },
+  {
+    "id": "e008",
+    "args_python": "('abc', '')",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e009",
+    "args_python": "('', '')",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e010",
+    "args_python": "(StrChild('abc'), '')",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e011",
+    "args_python": "('abc', StrChild(''))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e012",
+    "args_python": "(StrChild(''), '')",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e013",
+    "args_python": "('', StrChild(''))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

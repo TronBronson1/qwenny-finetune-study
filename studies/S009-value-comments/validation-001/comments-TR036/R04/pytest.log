@@ -1,0 +1,100 @@
+........FF....F.                                                         [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e003] _________________________
+
+args = ((),)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((['x'],), id="e005"),
+        pytest.param(([1.5],), id="e006"),
+        pytest.param(([-1.5],), id="e007"),
+        pytest.param(([None],), id="e008"),
+        pytest.param((ListChild([]),), id="e010"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           lower_median(*args)
+
+test_target.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ()
+
+    def lower_median(values):
+        if not values:
+>           raise ValueError('empty')
+E           ValueError: empty
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e004] _________________________
+
+args = (None,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((['x'],), id="e005"),
+        pytest.param(([1.5],), id="e006"),
+        pytest.param(([-1.5],), id="e007"),
+        pytest.param(([None],), id="e008"),
+        pytest.param((ListChild([]),), id="e010"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           lower_median(*args)
+
+test_target.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = None
+
+    def lower_median(values):
+        if not values:
+>           raise ValueError('empty')
+E           ValueError: empty
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e010] _________________________
+
+args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((['x'],), id="e005"),
+        pytest.param(([1.5],), id="e006"),
+        pytest.param(([-1.5],), id="e007"),
+        pytest.param(([None],), id="e008"),
+        pytest.param((ListChild([]),), id="e010"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           lower_median(*args)
+
+test_target.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = []
+
+    def lower_median(values):
+        if not values:
+>           raise ValueError('empty')
+E           ValueError: empty
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e003] - ValueError: empty
+FAILED test_target.py::test_raises_typeerror[e004] - ValueError: empty
+FAILED test_target.py::test_raises_typeerror[e010] - ValueError: empty
+3 failed, 13 passed in 0.53s

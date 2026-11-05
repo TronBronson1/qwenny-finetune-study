@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="27" time="0.497" timestamp="2026-11-04T18:59:13.314032-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert '' == '0'&#10;  &#10;  - 0">args = (0, 2), expected = '0'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '' == '0'
+E         
+E         - 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert '0' == '1'&#10;  &#10;  - 1&#10;  + 0">args = (1, 16), expected = '1'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == '1'
+E         
+E         - 1
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert '0' == 'f'&#10;  &#10;  - f&#10;  + 0">args = (15, 16), expected = 'f'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == 'f'
+E         
+E         - f
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert '0' == '10'&#10;  &#10;  - 10&#10;  + 0">args = (16, 16), expected = '10'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == '10'
+E         
+E         - 10
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert '0' == '11111'&#10;  &#10;  - 11111&#10;  + 0">args = (31, 2), expected = '11111'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == '11111'
+E         
+E         - 11111
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert '0' == '10000'&#10;  &#10;  - 10000&#10;  + 0">args = (81, 3), expected = '10000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == '10000'
+E         
+E         - 10000
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert '0' == 'ff'&#10;  &#10;  - ff&#10;  + 0">args = (255, 16), expected = 'ff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == 'ff'
+E         
+E         - ff
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert '0' == '100'&#10;  &#10;  - 100&#10;  + 0">args = (64, 8), expected = '100'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 2), '0', id="v000"),
+        pytest.param((1, 16), '1', id="v001"),
+        pytest.param((15, 16), 'f', id="v002"),
+        pytest.param((16, 16), '10', id="v003"),
+        pytest.param((31, 2), '11111', id="v004"),
+        pytest.param((81, 3), '10000', id="v005"),
+        pytest.param((255, 16), 'ff', id="v006"),
+        pytest.param((64, 8), '100', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=int_to_base(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '0' == '100'
+E         
+E         - 100
+E         + 0
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /></testsuite></testsuites>

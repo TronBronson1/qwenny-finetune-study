@@ -1,0 +1,1 @@
+lambda text: text.translate(str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ','22233344455566677778889999'))

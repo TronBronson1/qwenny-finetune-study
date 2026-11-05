@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="15" time="0.430" timestamp="2026-11-04T17:05:16.902785-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.002"><failure message="AssertionError: assert ('a',) == ('a', 'b')&#10;  &#10;  Right contains one more item: 'b'&#10;  Use -v to get more diff">args = ('a=b',), expected = ('a', 'b')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b')
+E         
+E         Right contains one more item: 'b'
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert ('a',) == ('a', '')&#10;  &#10;  Right contains one more item: ''&#10;  Use -v to get more diff">args = ('a=',), expected = ('a', '')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', '')
+E         
+E         Right contains one more item: ''
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert ('a',) == ('a', 'b=c')&#10;  &#10;  Right contains one more item: 'b=c'&#10;  Use -v to get more diff">args = ('a=b=c',), expected = ('a', 'b=c')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b=c')
+E         
+E         Right contains one more item: 'b=c'
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert (' a ',) == (' a ', ' b ')&#10;  &#10;  Right contains one more item: ' b '&#10;  Use -v to get more diff">args = (' a = b ',), expected = (' a ', ' b ')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert (' a ',) == (' a ', ' b ')
+E         
+E         Right contains one more item: ' b '
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert ('é',) == ('é', '字')&#10;  &#10;  Right contains one more item: '字'&#10;  Use -v to get more diff">args = ('é=字',), expected = ('é', '字')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ('é',) == ('é', '字')
+E         
+E         Right contains one more item: '字'
+E         Use -v to get more diff
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /></testsuite></testsuites>

@@ -1,0 +1,324 @@
+....FFF..FFF..FFFF..                                                     [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ((0, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = ((True, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args2] _________________________
+
+args = ((1, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = ((0, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ((0, 0, 0), (True, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args7] _________________________
+
+args = ((0, 0, 0), (1, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed
+________________________ test_raises_typeerror[args10] ________________________
+
+args = ((1, 2), (1, 2, 3))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           compare_versions(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in compare_versions
+    _types((left, right), ('tuple3', 'tuple3'))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ((1, 2), (1, 2, 3)), schemas = ('tuple3', 'tuple3')
+
+    def _types(values, schemas):
+        for value, schema in zip(values, schemas):
+            _check(value, schema)
+        for value, schema in zip(values, schemas):
+            if schema in ('pair', 'tuple3') and len(value) != (2 if schema == 'pair' else 3):
+>               raise ValueError('tuple shape')
+E               ValueError: tuple shape
+
+subject.py:48: ValueError
+________________________ test_raises_typeerror[args11] ________________________
+
+args = ((1, 2), (1, 2, 3))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           compare_versions(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in compare_versions
+    _types((left, right), ('tuple3', 'tuple3'))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ((1, 2), (1, 2, 3)), schemas = ('tuple3', 'tuple3')
+
+    def _types(values, schemas):
+        for value, schema in zip(values, schemas):
+            _check(value, schema)
+        for value, schema in zip(values, schemas):
+            if schema in ('pair', 'tuple3') and len(value) != (2 if schema == 'pair' else 3):
+>               raise ValueError('tuple shape')
+E               ValueError: tuple shape
+
+subject.py:48: ValueError
+________________________ test_raises_typeerror[args12] ________________________
+
+args = ((1, -1, 0), (1, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           compare_versions(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (1, -1, 0), right = (1, 0, 0)
+
+    def compare_versions(left, right):
+        _types((left, right), ('tuple3', 'tuple3'))
+        if any((value < 0 for value in left + right)):
+>           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args13] ________________________
+
+args = ((1, -1, 0), (1, 0, 0))
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((TupleChild((0, 0, 0)), (0, 0, 0))),
+        pytest.param(((True, 0, 0), (0, 0, 0))),
+        pytest.param(((IntChild(1), 0, 0), (0, 0, 0))),
+        pytest.param(([0, 0, 0], (0, 0, 0))),
+        pytest.param((None, (0, 0, 0))),
+        pytest.param(((0, 0, 0), TupleChild((0, 0, 0)))),
+        pytest.param(((0, 0, 0), (True, 0, 0))),
+        pytest.param(((0, 0, 0), (IntChild(1), 0, 0))),
+        pytest.param(((0, 0, 0), [0, 0, 0])),
+        pytest.param(((0, 0, 0), None)),
+        pytest.param((TupleChild((1, 2)), (1, 2, 3))),
+        pytest.param(((1, 2), TupleChild((1, 2, 3)))),
+        pytest.param((TupleChild((1, -1, 0)), (1, 0, 0))),
+        pytest.param(((1, -1, 0), TupleChild((1, 0, 0)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           compare_versions(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (1, -1, 0), right = (1, 0, 0)
+
+    def compare_versions(left, right):
+        _types((left, right), ('tuple3', 'tuple3'))
+        if any((value < 0 for value in left + right)):
+>           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args2] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args6] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args7] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args10] - ValueError: tuple shape
+FAILED test_target.py::test_raises_typeerror[args11] - ValueError: tuple shape
+FAILED test_target.py::test_raises_typeerror[args12] - ValueError: component
+FAILED test_target.py::test_raises_typeerror[args13] - ValueError: component
+10 failed, 10 passed in 0.40s

@@ -1,0 +1,246 @@
+FFFFFFFFF.........                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (1,), expected = 'I'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xI' == 'I'
+E         
+E         - I
+E         + xI
+
+test_target.py:31: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (4,), expected = 'IV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xIV' == 'IV'
+E         
+E         - IV
+E         + xIV
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (9,), expected = 'IX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xIX' == 'IX'
+E         
+E         - IX
+E         + xIX
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (40,), expected = 'XL'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xXL' == 'XL'
+E         
+E         - XL
+E         + xXL
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (90,), expected = 'XC'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xXC' == 'XC'
+E         
+E         - XC
+E         + xXC
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (400,), expected = 'CD'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xCD' == 'CD'
+E         
+E         - CD
+E         + xCD
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (900,), expected = 'CM'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xCM' == 'CM'
+E         
+E         - CM
+E         + xCM
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = (1994,), expected = 'MCMXCIV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xMCMXCIV' == 'MCMXCIV'
+E         
+E         - MCMXCIV
+E         + xMCMXCIV
+E         ? +
+
+test_target.py:31: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = (3999,), expected = 'MMMCMXCIX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert 'xMMMCMXCIX' == 'MMMCMXCIX'
+E         
+E         - MMMCMXCIX
+E         + xMMMCMXCIX
+E         ? +
+
+test_target.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert 'xI' == 'I'
+FAILED test_target.py::test_values[v001] - AssertionError: assert 'xIV' == 'IV'
+FAILED test_target.py::test_values[v002] - AssertionError: assert 'xIX' == 'IX'
+FAILED test_target.py::test_values[v003] - AssertionError: assert 'xXL' == 'XL'
+FAILED test_target.py::test_values[v004] - AssertionError: assert 'xXC' == 'XC'
+FAILED test_target.py::test_values[v005] - AssertionError: assert 'xCD' == 'CD'
+FAILED test_target.py::test_values[v006] - AssertionError: assert 'xCM' == 'CM'
+FAILED test_target.py::test_values[v007] - AssertionError: assert 'xMCMXCIV' ...
+FAILED test_target.py::test_values[v008] - AssertionError: assert 'xMMMCMXCIX...
+9 failed, 9 passed in 0.61s

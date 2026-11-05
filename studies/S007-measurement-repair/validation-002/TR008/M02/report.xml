@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="15" time="0.459" timestamp="2026-11-04T17:03:49.614374-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert False == True">args = (0,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert False == True">args = (1,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert True == False">args = (2,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert False == True">args = (4,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert True == False">args = (15,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert False == True">args = (16,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert True == False">args = (17,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="assert False == True">args = (100,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True, id="v000"),
+        pytest.param((1,), True, id="v001"),
+        pytest.param((2,), False, id="v002"),
+        pytest.param((4,), True, id="v003"),
+        pytest.param((15,), False, id="v004"),
+        pytest.param((16,), True, id="v005"),
+        pytest.param((17,), False, id="v006"),
+        pytest.param((100,), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /></testsuite></testsuites>

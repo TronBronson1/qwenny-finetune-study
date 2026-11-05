@@ -1,0 +1,24 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________________________________ test_value __________________________________
+
+>   def test_value(): assert row_major_offset(0,0,1,1)==0
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:2: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (0, 0, 1, 1)
+
+>   def row_major_offset(*args): raise RuntimeError('unrelated valid-input crash')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   RuntimeError: unrelated valid-input crash
+
+subject.py:1: RuntimeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_value - RuntimeError: unrelated valid-input crash
+1 failed in 0.48s

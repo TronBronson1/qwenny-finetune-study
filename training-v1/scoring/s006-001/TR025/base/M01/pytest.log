@@ -1,0 +1,74 @@
+...FFF.......F..                                                         [100%]
+================================== FAILURES ===================================
+_ TestStringSubclassRejection.test_list_of_strings_subclass_raises_type_error _
+
+self = <test_candidate.TestStringSubclassRejection object at 0x000002010507AAD0>
+
+    def test_list_of_strings_subclass_raises_type_error(self):
+        class CustomStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:24: Failed
+_ TestStringSubclassRejection.test_list_of_subclass_raises_type_error_even_if_content_is_valid_str _
+
+self = <test_candidate.TestStringSubclassRejection object at 0x000002010507AE90>
+
+    def test_list_of_subclass_raises_type_error_even_if_content_is_valid_str(self):
+        class CustomStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed
+_ TestStringSubclassRejection.test_list_of_strings_containing_subclass_raises_type_error _
+
+self = <test_candidate.TestStringSubclassRejection object at 0x0000020105072EA0>
+
+    def test_list_of_strings_containing_subclass_raises_type_error(self):
+        class CustomStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:38: Failed
+_________ TestValidInputEncoding.test_no_mutation_of_nested_structure _________
+
+self = <test_candidate.TestValidInputEncoding object at 0x0000020104FC7C50>
+
+    def test_no_mutation_of_nested_structure(self):
+        input_data = [["nested", "strings"]]
+        original_id = id(input_data)
+>       run_length_encode(input_data)
+
+test_candidate.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in run_length_encode
+    _types((values,), ('strs',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:16: in _check
+    _exact(item, str)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = ['nested', 'strings'], kind = <class 'str'>
+
+    def _exact(value, kind):
+        if not isinstance(value, kind):
+>           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestStringSubclassRejection::test_list_of_strings_subclass_raises_type_error
+FAILED test_candidate.py::TestStringSubclassRejection::test_list_of_subclass_raises_type_error_even_if_content_is_valid_str
+FAILED test_candidate.py::TestStringSubclassRejection::test_list_of_strings_containing_subclass_raises_type_error
+FAILED test_candidate.py::TestValidInputEncoding::test_no_mutation_of_nested_structure
+4 failed, 12 passed in 0.59s

@@ -1,0 +1,109 @@
+.FFFFFF........FF                                                        [100%]
+================================== FAILURES ===================================
+_________________________ test_rotate_single_element __________________________
+
+    def test_rotate_single_element():
+>       assert rotate_right((5,), 10) == (5,)
+E       assert () == (5,)
+E         
+E         Right contains one more item: 5
+E         Use -v to get more diff
+
+test_candidate.py:10: AssertionError
+___________________________ test_rotate_right_basic ___________________________
+
+    def test_rotate_right_basic():
+        values = (1, 2, 3)
+>       assert rotate_right(values, 1) == (3, 1, 2)
+E       assert (3, 1) == (3, 1, 2)
+E         
+E         Right contains one more item: 2
+E         Use -v to get more diff
+
+test_candidate.py:14: AssertionError
+_____________________ test_rotate_left_via_negative_steps _____________________
+
+    def test_rotate_left_via_negative_steps():
+        values = (1, 2, 3)
+        # -1 step rotates right by length-1 (equivalent to left by 1)
+>       assert rotate_right(values, -1) == (2, 3, 1)
+E       assert (2, 3) == (2, 3, 1)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_candidate.py:19: AssertionError
+_____________________ test_rotate_large_wrapping_positive _____________________
+
+    def test_rotate_large_wrapping_positive():
+        values = ("a", "b")
+>       assert rotate_right(values, 5) == ("b", "a")  # 5 % 2 = 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('b',) == ('b', 'a')
+E         
+E         Right contains one more item: 'a'
+E         Use -v to get more diff
+
+test_candidate.py:23: AssertionError
+_____________________ test_rotate_large_wrapping_negative _____________________
+
+    def test_rotate_large_wrapping_negative():
+        values = ("x", "y")
+>       assert rotate_right(values, -3) == ("x", "y") # -3 % 2 = -1 -> effectively shift left 1 / right 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('y',) == ('x', 'y')
+E         
+E         At index 0 diff: 'y' != 'x'
+E         Right contains one more item: 'y'
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_rotate_complex_types __________________________
+
+    def test_rotate_complex_types():
+        data = [1, 2.5, "str", None]
+        container = tuple(data)
+        result = rotate_right(container, 2)
+        expected = (None, 1, 2.5, "str")
+>       assert result == expected
+E       AssertionError: assert ('str', None, 1) == (None, 1, 2.5, 'str')
+E         
+E         At index 0 diff: 'str' != None
+E         Right contains one more item: 'str'
+E         Use -v to get more diff
+
+test_candidate.py:34: AssertionError
+_____________________ test_reject_zero_steps_returns_same _____________________
+
+    def test_reject_zero_steps_returns_same():
+        values = (1, 2, 3, 4)
+>       assert rotate_right(values, 0) == values
+E       assert (1, 2, 3) == (1, 2, 3, 4)
+E         
+E         Right contains one more item: 4
+E         Use -v to get more diff
+
+test_candidate.py:79: AssertionError
+_____________________ test_reject_large_step_well_behaves _____________________
+
+    def test_reject_large_step_well_behaves():
+        values = (1, 2, 3)
+        result = rotate_right(values, 100)
+>       assert result == (1, 2, 3)
+E       assert (3, 1) == (1, 2, 3)
+E         
+E         At index 0 diff: 3 != 1
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_candidate.py:84: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_single_element - assert () == (5,)
+FAILED test_candidate.py::test_rotate_right_basic - assert (3, 1) == (3, 1, 2)
+FAILED test_candidate.py::test_rotate_left_via_negative_steps - assert (2, 3)...
+FAILED test_candidate.py::test_rotate_large_wrapping_positive - AssertionErro...
+FAILED test_candidate.py::test_rotate_large_wrapping_negative - AssertionErro...
+FAILED test_candidate.py::test_rotate_complex_types - AssertionError: assert ...
+FAILED test_candidate.py::test_reject_zero_steps_returns_same - assert (1, 2,...
+FAILED test_candidate.py::test_reject_large_step_well_behaves - assert (3, 1)...
+8 failed, 9 passed in 0.43s

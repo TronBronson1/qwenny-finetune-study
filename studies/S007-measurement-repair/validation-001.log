@@ -1,0 +1,29 @@
+Traceback (most recent call last):
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S007-measurement-repair\validate_repair.py", line 84, in <module>
+    if __name__=="__main__": main()
+                             ~~~~^^
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S007-measurement-repair\validate_repair.py", line 59, in main
+    for result in pool.map(execute,jobs):
+                  ~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\_base.py", line 672, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\_base.py", line 312, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\_base.py", line 447, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\_base.py", line 396, in __get_result
+    raise self._exception
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\jalar\Desktop\Chat AI Lab\AI Labwork\Qwen\Fine Tuning Test\studies\S007-measurement-repair\validate_repair.py", line 27, in execute
+    work=OUT/ident/variant; work.mkdir(parents=True)
+                            ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.15-64\Lib\pathlib\__init__.py", line 1210, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S007-measurement-repair\\validation-001\\TR001\\M01'

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="15" time="0.352" timestamp="2026-11-04T12:22:31.767095-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_values[v000]" time="0.001" /><testcase classname="test_candidate" name="test_values[v001]" time="0.001" /><testcase classname="test_candidate" name="test_values[v002]" time="0.001" /><testcase classname="test_candidate" name="test_values[v003]" time="0.000" /><testcase classname="test_candidate" name="test_values[v004]" time="0.000" /><testcase classname="test_candidate" name="test_values[v005]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ([True],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e002]" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">args = ([1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e007]" time="0.001"><failure message="ValueError: byte">args = ([-1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           xor_checksum(*args)
+
+test_candidate.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [-1]
+
+    def xor_checksum(values):
+        _types((values,), ('ints',))
+        if any((not 0 &lt;= value &lt;= 255 for value in values)):
+&gt;           raise ValueError('byte')
+E           ValueError: byte
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e008]" time="0.001"><failure message="ValueError: byte">args = ([256],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([-1]),), id="e007"),
+        pytest.param((ListChild([256]),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           xor_checksum(*args)
+
+test_candidate.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [256]
+
+    def xor_checksum(values):
+        _types((values,), ('ints',))
+        if any((not 0 &lt;= value &lt;= 255 for value in values)):
+&gt;           raise ValueError('byte')
+E           ValueError: byte
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_candidate" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[e006]" time="0.000" /></testsuite></testsuites>

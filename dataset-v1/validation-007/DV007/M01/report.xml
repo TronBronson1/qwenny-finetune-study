@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="20" skipped="0" tests="41" time="0.696" timestamp="2026-11-03T20:16:26.920211-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_raises_indexerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_indexerror[e022]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="IndexError: cell">args = (True, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = True, column = 0, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001"><failure message="IndexError: cell">args = (0, True, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = True, rows = 1, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, True, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 1, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:75: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.000"><failure message="ValueError: shape">args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e024]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e027]" time="0.001"><failure message="IndexError: cell">args = (-1, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e028]" time="0.001"><failure message="IndexError: cell">args = (-1, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e029]" time="0.001"><failure message="IndexError: cell">args = (-1, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e030]" time="0.001"><failure message="IndexError: cell">args = (-1, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e031]" time="0.001"><failure message="IndexError: cell">args = (2, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e032]" time="0.001"><failure message="IndexError: cell">args = (2, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e033]" time="0.001"><failure message="IndexError: cell">args = (2, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e034]" time="0.001"><failure message="IndexError: cell">args = (2, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((1.5, 0, 1, 1), id="e002"),
+        pytest.param(('bad', 0, 1, 1), id="e003"),
+        pytest.param((None, 0, 1, 1), id="e004"),
+        pytest.param((0, True, 1, 1), id="e005"),
+        pytest.param((0, IntChild(0), 1, 1), id="e006"),
+        pytest.param((0, 1.5, 1, 1), id="e007"),
+        pytest.param((0, 'bad', 1, 1), id="e008"),
+        pytest.param((0, None, 1, 1), id="e009"),
+        pytest.param((0, 0, True, 1), id="e010"),
+        pytest.param((0, 0, IntChild(1), 1), id="e011"),
+        pytest.param((0, 0, 1.5, 1), id="e012"),
+        pytest.param((0, 0, 'bad', 1), id="e013"),
+        pytest.param((0, 0, None, 1), id="e014"),
+        pytest.param((0, 0, 1, True), id="e015"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e016"),
+        pytest.param((0, 0, 1, 1.5), id="e017"),
+        pytest.param((0, 0, 1, 'bad'), id="e018"),
+        pytest.param((0, 0, 1, None), id="e019"),
+        pytest.param((IntChild(0), 0, 0, 1), id="e023"),
+        pytest.param((0, IntChild(0), 0, 1), id="e024"),
+        pytest.param((0, 0, IntChild(0), 1), id="e025"),
+        pytest.param((0, 0, 0, IntChild(1)), id="e026"),
+        pytest.param((IntChild(-1), 0, 2, 2), id="e027"),
+        pytest.param((-1, IntChild(0), 2, 2), id="e028"),
+        pytest.param((-1, 0, IntChild(2), 2), id="e029"),
+        pytest.param((-1, 0, 2, IntChild(2)), id="e030"),
+        pytest.param((IntChild(2), 0, 2, 2), id="e031"),
+        pytest.param((2, IntChild(0), 2, 2), id="e032"),
+        pytest.param((2, 0, IntChild(2), 2), id="e033"),
+        pytest.param((2, 0, 2, IntChild(2)), id="e034"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e020]" time="0.000" /></testsuite></testsuites>

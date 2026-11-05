@@ -1,0 +1,288 @@
+{
+  "scope": "Two visible development families, seed 42, bounded direct-answer pilot; no strict acceptance claim without category/prose review.",
+  "results": [
+    {
+      "task": "DV001",
+      "variant": "base-greedy-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_rotate_right_invalid_types[values1-1]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_rotate_right_invalid_types[values1-1]",
+            "test_rotate_right_invalid_types[values2-True]",
+            "test_rotate_right_invalid_types[values3-False]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_rotate_right_valid[values2-1-expected2]",
+            "test_rotate_right_valid[values3-1-expected3]",
+            "test_rotate_right_valid[values6--2-expected6]",
+            "test_rotate_right_valid[values7-100-expected7]",
+            "test_rotate_right_invalid_types[values1-1]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_rotate_right_valid[values1-1-expected1]",
+            "test_rotate_right_valid[values2-1-expected2]",
+            "test_rotate_right_valid[values3-1-expected3]",
+            "test_rotate_right_valid[values4--1-expected4]",
+            "test_rotate_right_valid[values5-4-expected5]",
+            "test_rotate_right_valid[values6--2-expected6]",
+            "test_rotate_right_valid[values7-100-expected7]",
+            "test_rotate_right_invalid_types[values1-1]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-5-greedy-0",
+      "truncated": true,
+      "format_valid": false,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "execution": "no-single-code-block",
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV001",
+      "variant": "base-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_rotate_right_valid_tuple_large_steps",
+            "test_rotate_right_tuple_subclass_invalid_type",
+            "test_rotate_right_large_steps_wraps_correctly",
+            "test_rotate_right_large_steps_wraps_left"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_rotate_right_valid_tuple_large_steps",
+            "test_rotate_right_tuple_subclass_invalid_type",
+            "test_rotate_right_bool_invalid_type",
+            "test_rotate_right_large_steps_wraps_correctly",
+            "test_rotate_right_large_steps_wraps_left"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_rotate_right_valid_tuple_int",
+            "test_rotate_right_tuple_subclass_invalid_type",
+            "test_rotate_right_two_elements_right",
+            "test_rotate_right_nested_containers_immutable",
+            "test_rotate_right_large_steps_wraps_correctly",
+            "test_rotate_right_large_steps_wraps_left"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_rotate_right_valid_tuple_int",
+            "test_rotate_right_valid_tuple_zero",
+            "test_rotate_right_valid_tuple_negative",
+            "test_rotate_right_valid_tuple_large_steps",
+            "test_rotate_right_tuple_subclass_invalid_type",
+            "test_rotate_right_single_element",
+            "test_rotate_right_two_elements_right",
+            "test_rotate_right_two_elements_left",
+            "test_rotate_right_nested_containers_immutable",
+            "test_rotate_right_large_steps_wraps_correctly",
+            "test_rotate_right_large_steps_wraps_left",
+            "test_rotate_right_negative_steps_large_magnitude"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV001",
+      "variant": "epoch-5-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 8,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v004]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 8,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v004]",
+            "test_raises_typeerror[e000]",
+            "test_raises_typeerror[e001]",
+            "test_raises_typeerror[e002]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 8,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v002]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 8,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-5-greedy-0",
+      "truncated": true,
+      "format_valid": false,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "execution": "no-single-code-block",
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV002",
+      "variant": "base-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_valid_str_returns_int",
+            "test_edge_cases_valid[00:01]",
+            "test_edge_cases_valid[23:59]",
+            "test_edge_cases_valid[00:59]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 18,
+          "relevant_failures": [
+            "test_malformed_strings_raise_value_error[24:00]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV002",
+      "variant": "epoch-5-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV002",
+      "variant": "base-greedy-0",
+      "truncated": true,
+      "format_valid": false,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "execution": "no-single-code-block",
+      "provisional_executable_pass": false
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(-1, 0, 5)",
+    "expected_python": "0",
+    "after_python": "(-1, 0, 5)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(0, 0, 5)",
+    "expected_python": "0",
+    "after_python": "(0, 0, 5)"
+  },
+  {
+    "id": "v002",
+    "args_python": "(3, 0, 5)",
+    "expected_python": "3",
+    "after_python": "(3, 0, 5)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(5, 0, 5)",
+    "expected_python": "5",
+    "after_python": "(5, 0, 5)"
+  },
+  {
+    "id": "v004",
+    "args_python": "(6, 0, 5)",
+    "expected_python": "5",
+    "after_python": "(6, 0, 5)"
+  },
+  {
+    "id": "v005",
+    "args_python": "(4, 2, 2)",
+    "expected_python": "2",
+    "after_python": "(4, 2, 2)"
+  },
+  {
+    "id": "v006",
+    "args_python": "(-5, -4, -2)",
+    "expected_python": "-4",
+    "after_python": "(-5, -4, -2)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 0, 5)",
+    "exception": "TypeError",
+    "category": "type:value"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(-1), 0, 5)",
+    "exception": "TypeError",
+    "category": "type:value"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 0, 5)",
+    "exception": "TypeError",
+    "category": "type:value"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 0, 5)",
+    "exception": "TypeError",
+    "category": "type:value"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 0, 5)",
+    "exception": "TypeError",
+    "category": "type:value"
+  },
+  {
+    "id": "e005",
+    "args_python": "(-1, True, 5)",
+    "exception": "TypeError",
+    "category": "type:low"
+  },
+  {
+    "id": "e006",
+    "args_python": "(-1, IntChild(0), 5)",
+    "exception": "TypeError",
+    "category": "type:low"
+  },
+  {
+    "id": "e007",
+    "args_python": "(-1, 1.5, 5)",
+    "exception": "TypeError",
+    "category": "type:low"
+  },
+  {
+    "id": "e008",
+    "args_python": "(-1, 'bad', 5)",
+    "exception": "TypeError",
+    "category": "type:low"
+  },
+  {
+    "id": "e009",
+    "args_python": "(-1, None, 5)",
+    "exception": "TypeError",
+    "category": "type:low"
+  },
+  {
+    "id": "e010",
+    "args_python": "(-1, 0, True)",
+    "exception": "TypeError",
+    "category": "type:high"
+  },
+  {
+    "id": "e011",
+    "args_python": "(-1, 0, IntChild(5))",
+    "exception": "TypeError",
+    "category": "type:high"
+  },
+  {
+    "id": "e012",
+    "args_python": "(-1, 0, 1.5)",
+    "exception": "TypeError",
+    "category": "type:high"
+  },
+  {
+    "id": "e013",
+    "args_python": "(-1, 0, 'bad')",
+    "exception": "TypeError",
+    "category": "type:high"
+  },
+  {
+    "id": "e014",
+    "args_python": "(-1, 0, None)",
+    "exception": "TypeError",
+    "category": "type:high"
+  },
+  {
+    "id": "e015",
+    "args_python": "(1, 3, 2)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  }
+]

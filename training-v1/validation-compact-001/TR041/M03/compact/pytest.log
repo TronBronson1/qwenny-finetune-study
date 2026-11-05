@@ -1,0 +1,76 @@
+FFFF................                                                     [100%]
+================================== FAILURES ===================================
+________________________ test_values[args0-expected0] _________________________
+
+args = ('0,0',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0)),
+        pytest.param(('-0,1',), (0, 1)),
+        pytest.param(('-2,3',), (-2, 3)),
+        pytest.param(('999999999999,-1',), (999999999999, -1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:23: AssertionError
+________________________ test_values[args1-expected1] _________________________
+
+args = ('-0,1',), expected = (0, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0)),
+        pytest.param(('-0,1',), (0, 1)),
+        pytest.param(('-2,3',), (-2, 3)),
+        pytest.param(('999999999999,-1',), (999999999999, -1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert None == (0, 1)
+
+test_target.py:23: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = ('-2,3',), expected = (-2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0)),
+        pytest.param(('-0,1',), (0, 1)),
+        pytest.param(('-2,3',), (-2, 3)),
+        pytest.param(('999999999999,-1',), (999999999999, -1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert None == (-2, 3)
+
+test_target.py:23: AssertionError
+________________________ test_values[args3-expected3] _________________________
+
+args = ('999999999999,-1',), expected = (999999999999, -1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0)),
+        pytest.param(('-0,1',), (0, 1)),
+        pytest.param(('-2,3',), (-2, 3)),
+        pytest.param(('999999999999,-1',), (999999999999, -1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_int_pair(*args)
+>       assert actual == expected
+E       assert None == (999999999999, -1)
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-expected0] - assert None == (0, 0)
+FAILED test_target.py::test_values[args1-expected1] - assert None == (0, 1)
+FAILED test_target.py::test_values[args2-expected2] - assert None == (-2, 3)
+FAILED test_target.py::test_values[args3-expected3] - assert None == (9999999...
+4 failed, 16 passed in 0.36s

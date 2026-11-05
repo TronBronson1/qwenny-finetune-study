@@ -1,0 +1,56 @@
+.......FFFF..........                                                    [100%]
+================================== FAILURES ===================================
+___________________ TestConsecutiveRuns.test_two_identical ____________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x0000023FB573BD90>
+
+    def test_two_identical(self):
+>       assert run_length_encode(["a", "a"]) == [("a", 2)]
+E       AssertionError: assert [('a', 0)] == [('a', 2)]
+E         
+E         At index 0 diff: ('a', 0) != ('a', 2)
+E         Use -v to get more diff
+
+test_candidate.py:39: AssertionError
+__________________ TestConsecutiveRuns.test_three_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x0000023FB5810190>
+
+    def test_three_identical(self):
+>       assert run_length_encode(["a", "a", "a"]) == [("a", 3)]
+E       AssertionError: assert [('a', -1)] == [('a', 3)]
+E         
+E         At index 0 diff: ('a', -1) != ('a', 3)
+E         Use -v to get more diff
+
+test_candidate.py:42: AssertionError
+___________________ TestConsecutiveRuns.test_four_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x0000023FB57336F0>
+
+    def test_four_identical(self):
+>       assert run_length_encode(["a", "a", "a", "a"]) == [("a", 4)]
+E       AssertionError: assert [('a', -2)] == [('a', 4)]
+E         
+E         At index 0 diff: ('a', -2) != ('a', 4)
+E         Use -v to get more diff
+
+test_candidate.py:45: AssertionError
+___________________ TestConsecutiveRuns.test_five_identical ___________________
+
+self = <test_candidate.TestConsecutiveRuns object at 0x0000023FB5733A80>
+
+    def test_five_identical(self):
+>       assert run_length_encode(["a", "a", "a", "a", "a"]) == [("a", 5)]
+E       AssertionError: assert [('a', -3)] == [('a', 5)]
+E         
+E         At index 0 diff: ('a', -3) != ('a', 5)
+E         Use -v to get more diff
+
+test_candidate.py:48: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestConsecutiveRuns::test_two_identical - Assertion...
+FAILED test_candidate.py::TestConsecutiveRuns::test_three_identical - Asserti...
+FAILED test_candidate.py::TestConsecutiveRuns::test_four_identical - Assertio...
+FAILED test_candidate.py::TestConsecutiveRuns::test_five_identical - Assertio...
+4 failed, 17 passed in 0.57s

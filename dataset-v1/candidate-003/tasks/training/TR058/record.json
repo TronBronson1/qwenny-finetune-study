@@ -1,0 +1,32 @@
+{
+  "id": "TR058",
+  "split": "training",
+  "family": "semantic-version",
+  "function": "compare_versions",
+  "revision": 1,
+  "status": "allocated-before-authoring",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "tuple3",
+    "tuple3"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "27b3d655e275be8fc5a14c934f7d3804c47620bc9c7c2b76b0bfcb0b4734bc08",
+  "target_sha256": "f6e48aa71f476e2c406f4614206bb80de57ea8f2450a5218b46b8d851d704dea",
+  "spec_sha256": "6bfd31a89ee1ccbf33c32bd4a8eba4daf511bb99d2d1cb5e4a3857ef09c94726",
+  "valid_test_cases": 4,
+  "exception_test_cases": 12,
+  "oracle_checks": 4,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

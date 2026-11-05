@@ -1,0 +1,72 @@
+FFFF......................                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('0.0.0',), expected = (0, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0.0.0',), (0, 0, 0), id="v000"),
+        pytest.param(('1.2.3',), (1, 2, 3), id="v001"),
+        pytest.param(('999.0.10',), (999, 0, 10), id="v002"),
+        pytest.param(('0.999.999',), (0, 999, 999), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_version(*args)
+>       assert actual == expected
+E       assert None == (0, 0, 0)
+
+test_target.py:20: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('1.2.3',), expected = (1, 2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0.0.0',), (0, 0, 0), id="v000"),
+        pytest.param(('1.2.3',), (1, 2, 3), id="v001"),
+        pytest.param(('999.0.10',), (999, 0, 10), id="v002"),
+        pytest.param(('0.999.999',), (0, 999, 999), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_version(*args)
+>       assert actual == expected
+E       assert None == (1, 2, 3)
+
+test_target.py:20: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('999.0.10',), expected = (999, 0, 10)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0.0.0',), (0, 0, 0), id="v000"),
+        pytest.param(('1.2.3',), (1, 2, 3), id="v001"),
+        pytest.param(('999.0.10',), (999, 0, 10), id="v002"),
+        pytest.param(('0.999.999',), (0, 999, 999), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_version(*args)
+>       assert actual == expected
+E       assert None == (999, 0, 10)
+
+test_target.py:20: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('0.999.999',), expected = (0, 999, 999)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0.0.0',), (0, 0, 0), id="v000"),
+        pytest.param(('1.2.3',), (1, 2, 3), id="v001"),
+        pytest.param(('999.0.10',), (999, 0, 10), id="v002"),
+        pytest.param(('0.999.999',), (0, 999, 999), id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_version(*args)
+>       assert actual == expected
+E       assert None == (0, 999, 999)
+
+test_target.py:20: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert None == (0, 0, 0)
+FAILED test_target.py::test_values[v001] - assert None == (1, 2, 3)
+FAILED test_target.py::test_values[v002] - assert None == (999, 0, 10)
+FAILED test_target.py::test_values[v003] - assert None == (0, 999, 999)
+4 failed, 22 passed in 0.56s

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "''"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "533d95cabe71c2dee33007d5317b62e350b3150a801b41bc44c50a91e104b3eb"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-literal-47-suffix",
+    "witness": {
+      "node": "test_target.py::test_values[v003]",
+      "case": "v003",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('\\r',)",
+      "expected_python": "'\\n'",
+      "actual_python": "'\\r'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "efaa010b14238bdd7acc08740e20cd9873c8a0d512201609b07ed4416fb0b032"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-literal-47-suffix",
+    "witness": {
+      "node": "test_target.py::test_values[v003]",
+      "case": "v003",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('\\r',)",
+      "expected_python": "'\\n'",
+      "actual_python": "'\\nx'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "8f46f75556a59c558bf7c597f631c698b5129f8770281cd71300676c1dc20bf0"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "''",
+      "actual_python": "''"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "f8f480587fba0711ebd9150cd1c25f94078ba2b08d400e78590eaa17e7645f6a"
+  }
+]

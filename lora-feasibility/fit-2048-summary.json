@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "sequence": 2048,
+  "batch": 1,
+  "rank": 4,
+  "loss_chunk": 128,
+  "steps": [
+    {
+      "step": 1,
+      "loss": 0.03349132835865021,
+      "seconds": 4.311999999990803
+    },
+    {
+      "step": 2,
+      "loss": 0.033400341868400574,
+      "seconds": 4.328000000008615
+    },
+    {
+      "step": 3,
+      "loss": 0.032801732420921326,
+      "seconds": 4.5
+    }
+  ],
+  "median_step_seconds": 4.328000000008615,
+  "cpu_embedding": {
+    "module": "model.language_model.embed_tokens",
+    "device": "cpu",
+    "dtype": "torch.bfloat16",
+    "parameters": 1017118720,
+    "weight_bytes": 2034237440,
+    "policy": "Explicit CPU lookup with output copied to input device. Initial load device_map describes loading, not this manual post-load placement."
+  },
+  "embedding_equivalence": [
+    {
+      "tokens": 4,
+      "last_token_max_abs_difference": 0.0
+    },
+    {
+      "tokens": 4,
+      "last_token_max_abs_difference": 0.0
+    }
+  ],
+  "chunk_validation": {
+    "tokens": 64,
+    "standard_loss": 0.9906919598579407,
+    "chunked_loss": 0.9906920194625854,
+    "gradient_relative_l2_difference": 0.0157233247414859
+  },
+  "reload_max_abs_diff": 0.0,
+  "training_peak_allocated_bytes": 7655221760,
+  "training_peak_reserved_bytes": 8088715264,
+  "training_min_stage_cuda_free_bytes": 837885952,
+  "overall_peak_allocated_bytes": 7940962816,
+  "overall_sampled_min_free_MiB": 1299,
+  "training_sampled_min_free_MiB": 1299,
+  "windows_training_samples": 9,
+  "windows_training_peak_shared_bytes": 85983232,
+  "windows_training_peak_dedicated_bytes": 8354439168,
+  "baseline": {
+    "outcome": "interrupted-by-agent",
+    "last_recorded_phase": "backward:1",
+    "completed_updates": 0,
+    "reason": "2048-token forward exhausted CUDA free-memory headroom and Windows shared usage remained around 0.6 GiB; backward update 1 showed no recorded stage completion for over two minutes. Stopped owned trial to avoid prolonged paging. Not an observed CUDA OOM. No successful backward/save/reload result is claimed.",
+    "utc_time": "2026-11-04T01:33:52.789717+00:00"
+  },
+  "baseline_peak_sampled_process_shared_bytes": 656408576,
+  "limitation": "Three synthetic full-token-loss updates; no long-run or larger-scope guarantee. Windows/nvidia samples can miss peaks. Actual assistant-only masks and reasoning policy remain separate pre-training checks."
+}

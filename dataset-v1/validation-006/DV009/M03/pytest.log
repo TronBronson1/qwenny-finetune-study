@@ -1,0 +1,111 @@
+....FFF..........F                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v004] ______________________________
+
+args = ([1, 2, 2, 4], 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=lower_bound(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2, 2, 4], target = 2
+
+    def lower_bound(values, target):
+        _types((values, target), ('ints', 'int'))
+        if any((values[i] < values[i + 1] for i in range(len(values) - 1))):
+>           raise ValueError('order')
+E           ValueError: order
+
+subject.py:55: ValueError
+______________________________ test_values[v005] ______________________________
+
+args = ([1, 2, 2, 4], 3), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=lower_bound(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2, 2, 4], target = 3
+
+    def lower_bound(values, target):
+        _types((values, target), ('ints', 'int'))
+        if any((values[i] < values[i + 1] for i in range(len(values) - 1))):
+>           raise ValueError('order')
+E           ValueError: order
+
+subject.py:55: ValueError
+______________________________ test_values[v006] ______________________________
+
+args = ([-3, -1, 0], -4), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0), 0, id="v000"),
+        pytest.param(([1], 0), 0, id="v001"),
+        pytest.param(([1], 1), 0, id="v002"),
+        pytest.param(([1], 2), 1, id="v003"),
+        pytest.param(([1, 2, 2, 4], 2), 1, id="v004"),
+        pytest.param(([1, 2, 2, 4], 3), 3, id="v005"),
+        pytest.param(([-3, -1, 0], -4), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=lower_bound(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [-3, -1, 0], target = -4
+
+    def lower_bound(values, target):
+        _types((values, target), ('ints', 'int'))
+        if any((values[i] < values[i + 1] for i in range(len(values) - 1))):
+>           raise ValueError('order')
+E           ValueError: order
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[e010] _________________________
+
+args = ([2, 1], 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([2, 1], 1), id="e010"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v004] - ValueError: order
+FAILED test_target.py::test_values[v005] - ValueError: order
+FAILED test_target.py::test_values[v006] - ValueError: order
+FAILED test_target.py::test_raises_valueerror[e010] - Failed: DID NOT RAISE V...
+4 failed, 14 passed in 0.62s

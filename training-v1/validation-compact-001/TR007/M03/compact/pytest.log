@@ -1,0 +1,124 @@
+FFFFFF.......                                                            [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = (0,), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:25: AssertionError
+____________________________ test_values[args1-7] _____________________________
+
+args = (7,), expected = 7
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 8 == 7
+
+test_target.py:25: AssertionError
+____________________________ test_values[args2-1] _____________________________
+
+args = (10,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:25: AssertionError
+____________________________ test_values[args3-2] _____________________________
+
+args = (101,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:25: AssertionError
+____________________________ test_values[args4-27] ____________________________
+
+args = (999,), expected = 27
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 28 == 27
+
+test_target.py:25: AssertionError
+____________________________ test_values[args5-8] _____________________________
+
+args = (1000000000000000000000000000007,), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((7,), 7),
+        pytest.param((10,), 1),
+        pytest.param((101,), 2),
+        pytest.param((999,), 27),
+        pytest.param((1000000000000000000000000000007,), 8),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+>       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - assert 1 == 0
+FAILED test_target.py::test_values[args1-7] - assert 8 == 7
+FAILED test_target.py::test_values[args2-1] - assert 2 == 1
+FAILED test_target.py::test_values[args3-2] - assert 3 == 2
+FAILED test_target.py::test_values[args4-27] - assert 28 == 27
+FAILED test_target.py::test_values[args5-8] - assert 9 == 8
+6 failed, 7 passed in 0.36s

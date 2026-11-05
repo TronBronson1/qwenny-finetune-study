@@ -1,0 +1,38 @@
+{
+  "source_sha256": "479630623af806197c72ddfba33e75517cc1b68d03965a9ce5a8d61e62cdd81d",
+  "review": {
+    "source_sha256": "479630623af806197c72ddfba33e75517cc1b68d03965a9ce5a8d61e62cdd81d",
+    "approved_for_isolated_execution": true,
+    "meaningful_contract_assertions": true,
+    "basis": "Trusted calibration control"
+  },
+  "reference_valid": true,
+  "variants": [
+    {
+      "variant": "reference",
+      "exit_code": 0,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": true,
+      "candidate_witnesses": [],
+      "seconds": 1.2345464999962132,
+      "source_sha256": "479630623af806197c72ddfba33e75517cc1b68d03965a9ce5a8d61e62cdd81d",
+      "trace_sha256": "d852a56af09f80c3e05ab9c61fee01ee2c84174f0b8cc142c3becbdb92136143"
+    },
+    {
+      "variant": "M01",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.5496723000251222,
+      "source_sha256": "479630623af806197c72ddfba33e75517cc1b68d03965a9ce5a8d61e62cdd81d",
+      "trace_sha256": "82d472aad29a67b32e57a321730f3210a9933424daf15f2bf93dcbfd662502b3"
+    }
+  ],
+  "designated_mutants": 1,
+  "eligible_candidate_mutants": 0,
+  "strict_acceptance": "pending hash-bound requirement/prose and witness review",
+  "policy": "No mutant credit for reference-invalid suites. Node names bind actual generated calls only. Valid-input crashes are ineligible. Related validation-class mismatches only on reference-invalid inputs. Trace candidates require semantic review before final credit."
+}

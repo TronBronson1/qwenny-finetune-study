@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="24" time="0.321" timestamp="2026-11-03T21:58:36.699633-05:00" hostname="Trons"><testcase classname="test_candidate.TestTypeError" name="test_list" time="0.001" /><testcase classname="test_candidate.TestTypeError" name="test_int" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_float" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_bytes" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_none" time="0.000" /><testcase classname="test_candidate.TestTypeError" name="test_subclass_str" time="0.001" /><testcase classname="test_candidate.TestTypeError" name="test_bool" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_length_short" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_length_long" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_wrong_colon_count" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_hour_24" time="0.000"><failure message="Failed: DID NOT RAISE ValueError">self = &lt;test_candidate.TestValueError object at 0x000001E456FA0180&gt;
+
+    def test_invalid_hour_24(self):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:59: Failed</failure></testcase><testcase classname="test_candidate.TestValueError" name="test_invalid_hour_negative" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_minute_high" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_invalid_minute_low" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_unicode_digits" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_leading_spaces" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_trailing_spaces" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_uppercase_letters" time="0.000" /><testcase classname="test_candidate.TestValueError" name="test_reversed_bounds_logic_check" time="0.000"><failure message="Failed: DID NOT RAISE ValueError">self = &lt;test_candidate.TestValueError object at 0x000001E456FAADD0&gt;
+
+    def test_reversed_bounds_logic_check(self):
+        """Verify that a reversed-bounds concept (e.g., hour &gt; 23 or minute &gt; 59) raises ValueError."""
+        # Explicitly testing hour=24, which exceeds 23
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:93: Failed</failure></testcase><testcase classname="test_candidate.TestSuccessCases" name="test_midnight" time="0.000"><failure message="ValueError: time">self = &lt;test_candidate.TestSuccessCases object at 0x000001E456EB7D90&gt;
+
+    def test_midnight(self):
+&gt;       result = minute_of_day("00:00")
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour &lt; 23 or minute &gt; 59:
+&gt;           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError</failure></testcase><testcase classname="test_candidate.TestSuccessCases" name="test_noon" time="0.000"><failure message="ValueError: time">self = &lt;test_candidate.TestSuccessCases object at 0x000001E456EB7ED0&gt;
+
+    def test_noon(self):
+&gt;       result = minute_of_day("12:00")
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour &lt; 23 or minute &gt; 59:
+&gt;           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError</failure></testcase><testcase classname="test_candidate.TestSuccessCases" name="test_max_valid_time" time="0.000" /><testcase classname="test_candidate.TestSuccessCases" name="test_zero_minutes_non_zero_hour" time="0.000"><failure message="ValueError: time">self = &lt;test_candidate.TestSuccessCases object at 0x000001E456FA0510&gt;
+
+    def test_zero_minutes_non_zero_hour(self):
+&gt;       result = minute_of_day("05:00")
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '05:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour &lt; 23 or minute &gt; 59:
+&gt;           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError</failure></testcase><testcase classname="test_candidate.TestSuccessCases" name="test_minute_boundary_59" time="0.000"><failure message="ValueError: time">self = &lt;test_candidate.TestSuccessCases object at 0x000001E456EEDA30&gt;
+
+    def test_minute_boundary_59(self):
+&gt;       result = minute_of_day("10:59")
+                 ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '10:59'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour &lt; 23 or minute &gt; 59:
+&gt;           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError</failure></testcase></testsuite></testsuites>

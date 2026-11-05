@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="15" skipped="0" tests="31" time="0.405" timestamp="2026-11-04T07:13:41.460253-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, True, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:57: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.001"><failure message="ValueError: component">args = (-1, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = -1, green = 0, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.001"><failure message="ValueError: component">args = (-1, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = -1, green = 0, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.001"><failure message="ValueError: component">args = (-1, 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = -1, green = 0, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.001"><failure message="ValueError: component">args = (0, 256, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 256, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.001"><failure message="ValueError: component">args = (0, 256, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 256, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.001"><failure message="ValueError: component">args = (0, 256, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 256, blue = 0
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e024]" time="0.001"><failure message="ValueError: component">args = (0, 0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 0, blue = -1
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.001"><failure message="ValueError: component">args = (0, 0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 0, blue = -1
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.001"><failure message="ValueError: component">args = (0, 0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 0), id="e000"),
+        pytest.param((IntChild(0), 0, 0), id="e001"),
+        pytest.param((1.5, 0, 0), id="e002"),
+        pytest.param(('bad', 0, 0), id="e003"),
+        pytest.param((None, 0, 0), id="e004"),
+        pytest.param((0, True, 0), id="e005"),
+        pytest.param((0, IntChild(0), 0), id="e006"),
+        pytest.param((0, 1.5, 0), id="e007"),
+        pytest.param((0, 'bad', 0), id="e008"),
+        pytest.param((0, None, 0), id="e009"),
+        pytest.param((0, 0, True), id="e010"),
+        pytest.param((0, 0, IntChild(0)), id="e011"),
+        pytest.param((0, 0, 1.5), id="e012"),
+        pytest.param((0, 0, 'bad'), id="e013"),
+        pytest.param((0, 0, None), id="e014"),
+        pytest.param((IntChild(-1), 0, 0), id="e018"),
+        pytest.param((-1, IntChild(0), 0), id="e019"),
+        pytest.param((-1, 0, IntChild(0)), id="e020"),
+        pytest.param((IntChild(0), 256, 0), id="e021"),
+        pytest.param((0, IntChild(256), 0), id="e022"),
+        pytest.param((0, 256, IntChild(0)), id="e023"),
+        pytest.param((IntChild(0), 0, -1), id="e024"),
+        pytest.param((0, IntChild(0), -1), id="e025"),
+        pytest.param((0, 0, IntChild(-1)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           encode_rgb(*args)
+
+test_target.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+red = 0, green = 0, blue = -1
+
+    def encode_rgb(red, green, blue):
+        _types((red, green, blue), ('int', 'int', 'int'))
+        if any((not 0 &lt;= value &lt;= 255 for value in (red, green, blue))):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e015]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e017]" time="0.000" /></testsuite></testsuites>

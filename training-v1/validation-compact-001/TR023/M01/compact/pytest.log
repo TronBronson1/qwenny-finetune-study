@@ -1,0 +1,226 @@
+......FF...F...FFFF..                                                    [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = (True, 'cat')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = (0, 'cat')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = (0, 'cat')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:45: Failed
+________________________ test_raises_typeerror[args9] _________________________
+
+args = (-1, 'cat')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           plural_count(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, noun = 'cat'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun == '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args10] ________________________
+
+args = (-1, 'cat')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           plural_count(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, noun = 'cat'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun == '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args11] ________________________
+
+args = (1, '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           plural_count(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 1, noun = ''
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun == '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args12] ________________________
+
+args = (1, '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 'cat')),
+        pytest.param((IntChild(0), 'cat')),
+        pytest.param((1.5, 'cat')),
+        pytest.param(('bad', 'cat')),
+        pytest.param((None, 'cat')),
+        pytest.param((0, StrChild('cat'))),
+        pytest.param((0, b'x')),
+        pytest.param((0, 1)),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 'cat')),
+        pytest.param((-1, StrChild('cat'))),
+        pytest.param((IntChild(1), '')),
+        pytest.param((1, StrChild(''))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           plural_count(*args)
+
+test_target.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 1, noun = ''
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun == '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args9] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[args10] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[args11] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[args12] - ValueError: domain
+7 failed, 14 passed in 0.36s

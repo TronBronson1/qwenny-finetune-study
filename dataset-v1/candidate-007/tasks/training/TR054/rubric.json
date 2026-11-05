@@ -1,0 +1,39 @@
+{
+  "status": "finite-agent-category-map-and-execution-calibrated; independent-review-not-claimed",
+  "model_visible": true,
+  "return_type": "exact built-in str",
+  "semantic_categories": [
+    {
+      "requirement": "zero",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "single",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "last-ungrouped",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "first-grouped",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "negative",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "several-groups",
+      "gold_case": "v005"
+    },
+    {
+      "requirement": "large",
+      "gold_case": "v006"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": false,
+  "limitations": "Finite same-agent semantic review. External semantic review covers eight S006 tasks only; this is not independent review of all72."
+}

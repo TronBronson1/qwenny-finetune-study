@@ -1,0 +1,78 @@
+F.....F.....F.FFF.                                                       [100%]
+================================== FAILURES ===================================
+______________________ test_rotate_right_valid_tuple_int ______________________
+
+    def test_rotate_right_valid_tuple_int():
+        args = ( (1, 2, 3), 1 )
+>       assert rotate_right(*args) == (3, 1, 2)
+E       assert (1, 2, 3) == (3, 1, 2)
+E         
+E         At index 0 diff: 1 != 3
+E         Use -v to get more diff
+
+test_candidate.py:8: AssertionError
+________________ test_rotate_right_tuple_subclass_invalid_type ________________
+
+    def test_rotate_right_tuple_subclass_invalid_type():
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed
+____________________ test_rotate_right_two_elements_right _____________________
+
+    def test_rotate_right_two_elements_right():
+        args = ( ("x", "y"), 1 )
+>       assert rotate_right(*args) == ("y", "x")
+E       AssertionError: assert ('x', 'y') == ('y', 'x')
+E         
+E         At index 0 diff: 'x' != 'y'
+E         Use -v to get more diff
+
+test_candidate.py:58: AssertionError
+________________ test_rotate_right_nested_containers_immutable ________________
+
+    def test_rotate_right_nested_containers_immutable():
+        # Ensure input tuple is not mutated, even if result is constructed differently
+        nested_input = ( [1, 2], [3, 4] )
+        result = rotate_right( nested_input, 1 )
+    
+        # Verify result structure
+>       assert result == ( [3, 4], [1, 2] )
+E       assert ([1, 2], [3, 4]) == ([3, 4], [1, 2])
+E         
+E         At index 0 diff: [1, 2] != [3, 4]
+E         Use -v to get more diff
+
+test_candidate.py:70: AssertionError
+________________ test_rotate_right_large_steps_wraps_correctly ________________
+
+    def test_rotate_right_large_steps_wraps_correctly():
+        args = ( ("a", "b", "c", "d"), 5 )
+>       assert rotate_right(*args) == ("c", "d", "a", "b") # 5 % 4 == 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('d', 'a', 'b', 'c') == ('c', 'd', 'a', 'b')
+E         
+E         At index 0 diff: 'd' != 'c'
+E         Use -v to get more diff
+
+test_candidate.py:78: AssertionError
+__________________ test_rotate_right_large_steps_wraps_left ___________________
+
+    def test_rotate_right_large_steps_wraps_left():
+        args = ( ("a", "b", "c", "d"), -1 )
+>       assert rotate_right(*args) == ("d", "a", "b", "c")
+E       AssertionError: assert ('b', 'c', 'd', 'a') == ('d', 'a', 'b', 'c')
+E         
+E         At index 0 diff: 'b' != 'd'
+E         Use -v to get more diff
+
+test_candidate.py:82: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_valid_tuple_int - assert (1, 2, 3...
+FAILED test_candidate.py::test_rotate_right_tuple_subclass_invalid_type - Fai...
+FAILED test_candidate.py::test_rotate_right_two_elements_right - AssertionErr...
+FAILED test_candidate.py::test_rotate_right_nested_containers_immutable - ass...
+FAILED test_candidate.py::test_rotate_right_large_steps_wraps_correctly - Ass...
+FAILED test_candidate.py::test_rotate_right_large_steps_wraps_left - Assertio...
+6 failed, 12 passed in 0.34s

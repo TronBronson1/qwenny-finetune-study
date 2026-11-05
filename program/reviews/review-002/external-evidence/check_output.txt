@@ -1,0 +1,75 @@
+tasks checked: 72; with at least one automatic finding: 28
+ 20  type-rejection gap
+  5  spec restricts to ASCII but no case uses a non-ASCII character
+  3  spec says case-sensitive but no value case with strings differing only
+  3  spec mentions empty input but no empty value case
+  3  MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm 
+  2  spec mentions Unicode but no value case uses a non-ASCII character
+
+TR002 strip-prefix ['str', 'str'] val=10 exc=14
+    - spec says case-sensitive but no value case with strings differing only by case
+TR018 is-palindrome ['str'] val=9 exc=4
+    - spec says case-sensitive but no value case with strings differing only by case
+TR023 plural-count ['int', 'str'] val=6 exc=15
+    - spec mentions empty input but no empty value case
+TR026 stable-unique ['ints'] val=5 exc=5
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR027 pairwise-differences ['ints'] val=5 exc=5
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR028 prefix-sums ['ints'] val=5 exc=5
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR029 chunk-list ['ints', 'int'] val=6 exc=16
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR030 transpose ['matrix'] val=6 exc=8
+    - type-rejection gap: matrix [arg.item.item] missing ['ordinary']
+TR031 multiset-intersection ['ints', 'ints'] val=6 exc=10
+    - type-rejection gap: left [arg.item] missing ['ordinary']
+    - type-rejection gap: right [arg.item] missing ['ordinary']
+TR032 partition-sign ['ints'] val=5 exc=5
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR033 remove-at ['ints', 'int'] val=5 exc=19
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR034 bounded-slice ['ints', 'int', 'int'] val=5 exc=23
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR035 adjacent-equal-count ['ints'] val=6 exc=5
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+TR036 lower-median ['ints'] val=5 exc=7
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+    - spec mentions empty input but no empty value case
+TR038 parse-hex-byte ['str'] val=6 exc=14
+    - spec restricts to ASCII but no case uses a non-ASCII character
+TR040 parse-key-value ['str'] val=5 exc=10
+    - spec mentions empty input but no empty value case
+TR042 semantic-version ['str'] val=3 exc=14
+    - spec mentions Unicode but no value case uses a non-ASCII character
+TR043 parse-binary ['str'] val=5 exc=12
+    - spec restricts to ASCII but no case uses a non-ASCII character
+TR044 parse-range ['str'] val=4 exc=14
+    - spec restricts to ASCII but no case uses a non-ASCII character
+TR049 row-major-index ['int', 'int', 'int', 'int'] val=4 exc=45
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness
+TR050 row-major-index ['int', 'int', 'int'] val=5 exc=27
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness
+TR056 rgb-hex-codec ['str'] val=4 exc=12
+    - spec restricts to ASCII but no case uses a non-ASCII character
+TR058 semantic-version ['tuple3', 'tuple3'] val=4 exc=16
+    - type-rejection gap: left [arg.item] missing ['ordinary']
+    - type-rejection gap: right [arg.item] missing ['ordinary']
+TR059 merge-sorted ['ints', 'ints'] val=6 exc=16
+    - type-rejection gap: left [arg.item] missing ['ordinary']
+    - type-rejection gap: right [arg.item] missing ['ordinary']
+DV002 strict-clock-parsing ['str'] val=5 exc=20
+    - spec mentions Unicode but no value case uses a non-ASCII character
+DV004 xor-checksum ['ints'] val=6 exc=9
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+DV007 grid-neighbors ['int', 'int', 'int', 'int'] val=6 exc=35
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness
+DV008 edit-distance ['str', 'str'] val=8 exc=8
+    - spec says case-sensitive but no value case with strings differing only by case
+DV009 lower-bound ['ints', 'int'] val=7 exc=13
+    - type-rejection gap: values [arg.item] missing ['ordinary']
+DV010 rpn-evaluate ['strs'] val=6 exc=17
+    - spec restricts to ASCII but no case uses a non-ASCII character
+DV011 interval-union ['pairs'] val=6 exc=11
+    - type-rejection gap: intervals [arg.item] missing ['ordinary']
+    - type-rejection gap: intervals [arg.item.item] missing ['subclass']

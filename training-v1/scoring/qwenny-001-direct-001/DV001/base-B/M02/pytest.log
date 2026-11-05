@@ -1,0 +1,11 @@
+
+=================================== ERRORS ====================================
+_____________________ ERROR collecting test_candidate.py ______________________
+test_candidate.py:6: in <module>
+    @pytest.mark.parametrize("values,steps,expected", [([1, 2, 3], 0, (1, 2, 3)), ([1, 2, 3], 1, (3, 1, 2)), ([1, 2, 3], 2, (2, 3, 1)), ([1, 2, 3], -1, (2, 1, 3)), ([1, 2, 3], 4, (3, 1, 2)), ([], 5, ())])
+     ^^^^^^
+E   NameError: name 'pytest' is not defined
+=========================== short test summary info ===========================
+ERROR test_candidate.py - NameError: name 'pytest' is not defined
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.42s

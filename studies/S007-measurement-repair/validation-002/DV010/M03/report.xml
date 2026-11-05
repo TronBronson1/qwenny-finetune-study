@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="28" time="0.495" timestamp="2026-11-04T17:06:42.519034-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="ValueError: arity">args = (['0'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['0']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: arity">args = (['-0'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['-0']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: arity">args = (['2', '3', '+'],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['2', '3', '+']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="ValueError: arity">args = (['2', '3', '-'],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['2', '3', '-']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="ValueError: arity">args = (['2', '3', '4', '*', '+'],), expected = 14
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['2', '3', '4', '*', '+']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="ValueError: arity">args = (['-2', '3', '*'],), expected = -6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['-2', '3', '*']
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="ValueError: arity">args = (['1', '1', '1', '1', '1', '1', ...],), expected = 16
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=rpn_evaluate(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['1', '1', '1', '1', '1', '1', ...]
+
+    def rpn_evaluate(tokens):
+        _types((tokens,), ('strs',))
+        if not 1 &lt;= len(tokens) &lt;= 32:
+            raise ValueError('length')
+        stack = []
+        for token in tokens:
+            if token in ('+', '-', '*'):
+                if len(stack) &lt; 2:
+                    raise ValueError('arity')
+                right = stack.pop()
+                left = stack.pop()
+                stack.append({'+': operator.add, '-': operator.sub, '*': operator.mul}[token](left, right))
+            elif re.fullmatch('-?(?:0|[1-9][0-9]{0,3})', token):
+                stack.append(int(token))
+            else:
+                raise ValueError('token')
+        if len(stack) != 2:
+&gt;           raise ValueError('arity')
+E           ValueError: arity
+
+subject.py:69: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = (['1', '2'],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([],), id="e005"),
+        pytest.param((['+'],), id="e006"),
+        pytest.param((['1', '2'],), id="e007"),
+        pytest.param((['01'],), id="e008"),
+        pytest.param((['1', '/'],), id="e009"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],), id="e010"),
+        pytest.param((['٣'],), id="e011"),
+        pytest.param((['３'],), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:60: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /></testsuite></testsuites>

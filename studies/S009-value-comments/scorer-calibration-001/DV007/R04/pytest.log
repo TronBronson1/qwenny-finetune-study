@@ -1,0 +1,66 @@
+......FF................................................                 [100%]
+================================== FAILURES ===================================
+____________________ test_renamed_raises_indexerror[e021] _____________________
+
+args = (-1, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 2, 2), id="e021"),
+        pytest.param((2, 0, 2, 2), id="e022"),
+    ])
+    def test_renamed_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           grid_neighbors(*args)
+
+test_candidate.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise ValueError('cell')
+E           ValueError: cell
+
+subject.py:57: ValueError
+____________________ test_renamed_raises_indexerror[e022] _____________________
+
+args = (2, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 2, 2), id="e021"),
+        pytest.param((2, 0, 2, 2), id="e022"),
+    ])
+    def test_renamed_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           grid_neighbors(*args)
+
+test_candidate.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 2, column = 0, rows = 2, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise ValueError('cell')
+E           ValueError: cell
+
+subject.py:57: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_raises_indexerror[e021] - ValueError: ...
+FAILED test_candidate.py::test_renamed_raises_indexerror[e022] - ValueError: ...
+2 failed, 54 passed in 0.65s

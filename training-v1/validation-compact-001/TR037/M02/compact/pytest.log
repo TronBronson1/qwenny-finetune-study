@@ -1,0 +1,76 @@
+FFFF..................                                                   [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = ('0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:23: AssertionError
+____________________________ test_values[args1-1] _____________________________
+
+args = ('1',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:23: AssertionError
+____________________________ test_values[args2-10] ____________________________
+
+args = ('10',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 11 == 10
+
+test_target.py:23: AssertionError
+_______________________ test_values[args3-999999999999] _______________________
+
+args = ('999999999999',), expected = 999999999999
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('10',), 10),
+        pytest.param(('999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 1000000000000 == 999999999999
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - assert 1 == 0
+FAILED test_target.py::test_values[args1-1] - assert 2 == 1
+FAILED test_target.py::test_values[args2-10] - assert 11 == 10
+FAILED test_target.py::test_values[args3-999999999999] - assert 1000000000000...
+4 failed, 18 passed in 0.33s

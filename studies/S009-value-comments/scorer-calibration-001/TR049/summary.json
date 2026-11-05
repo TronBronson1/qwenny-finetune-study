@@ -1,0 +1,5028 @@
+{
+  "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+  "review": {
+    "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+    "approved_for_isolated_execution": true,
+    "meaningful_contract_assertions": true,
+    "basis": "S007 calibrated gold plus agent inspection; node names changed only. No independent review claimed."
+  },
+  "reference_valid": true,
+  "variants": [
+    {
+      "variant": "reference",
+      "exit_code": 0,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": true,
+      "candidate_witnesses": [],
+      "seconds": 1.4463807999854907,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "ba4c91ee0634f7d19a1991e73f18ff76faabad726b060287427f1c1a755dac90"
+    },
+    {
+      "variant": "M01",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "bool",
+                  "repr": "True"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e005]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e005]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "bool",
+                  "repr": "True"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e010]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e010]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "bool",
+                  "repr": "True"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e011]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e011]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e015]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e015]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "bool",
+                  "repr": "True"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "bool",
+                      "repr": "True"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e016]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e016]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e025]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e025]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e026]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e026]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e027]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e027]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e028]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e028]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e029]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e029]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e030]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e030]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e031]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e031]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e032]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e032]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e033]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e033]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "-1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e034]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e034]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "-1"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e035]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e035]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "-1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e036]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e036]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "-1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e037]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e037]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e038]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e038]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e039]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e039]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e040]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e040]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e041]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e041]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e042]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e042]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "3"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e043]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e043]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e044]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e044]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "IndexError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 2.181772300013108,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "7cce93bae83a6d591792df5f3be93508f815f3db8a69280e0dbf2dedc15b7976"
+    },
+    {
+      "variant": "M02",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "2"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "-2"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "5"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6732162999978755,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "157ef9d2ab5b30ee07b9d15edf683159f4444b199a8091716cfacac175455727"
+    },
+    {
+      "variant": "M03",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "2"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "5"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "4"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "5"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "6"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.7198987000156194,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "5e1a89981e6d44e82f5ea4f932760738eea9c3dfcf8c0e2e0aad71ed1956a029"
+    },
+    {
+      "variant": "R01",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "2"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "2"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "3"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "5"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "5"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6671196999959648,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "4d4e8217a7ca58f5bc8e93fc05bbe7b097f695fbb60ede5178a3f873c4dd9681"
+    },
+    {
+      "variant": "R02",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e025]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e025]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e026]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e026]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e027]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e027]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e028]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e028]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e029]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e029]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e030]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e030]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e031]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e031]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_typeerror[e032]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e032]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "IntChild",
+                  "repr": "0"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "IntChild",
+                      "repr": "0"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.8490915999864228,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "0916fa59298b46f26ebed82684da5aac450156d6fed96be57b33ab58d99aae41"
+    },
+    {
+      "variant": "R03",
+      "exit_code": 1,
+      "test_cases": 49,
+      "calls": 49,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_indexerror[e022]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_indexerror[e022]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "-1"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "IndexError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "-1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_indexerror[e023]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_indexerror[e023]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "IndexError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-wrong-class",
+          "test": "test_renamed_raises_indexerror[e024]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_indexerror[e024]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                },
+                {
+                  "type": "int",
+                  "repr": "2"
+                },
+                {
+                  "type": "int",
+                  "repr": "3"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "IndexError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "exception": "ValueError"
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "2"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "3"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6742183000023942,
+      "source_sha256": "3765c3d35591d4decff4fb2d1c22ea39a9dbfd311d6a805c1225bbbed834a758",
+      "trace_sha256": "1f354c45b8019cef4b5a5a625e14bcb8bd11f5f054f9973dae8d0eb64c25e681"
+    }
+  ],
+  "designated_mutants": 6,
+  "eligible_candidate_mutants": 6,
+  "strict_acceptance": "pending hash-bound requirement/prose and witness review",
+  "policy": "No mutant credit for reference-invalid suites. Node names bind actual generated calls only. Valid-input crashes are ineligible. Related validation-class mismatches only on reference-invalid inputs. Trace candidates require semantic review before final credit."
+}

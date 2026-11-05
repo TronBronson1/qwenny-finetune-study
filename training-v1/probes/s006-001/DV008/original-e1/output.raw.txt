@@ -1,0 +1,80 @@
+```python
+from subject import edit_distance
+import pytest
+
+@pytest.mark.parametrize("left, right, expected", [
+    ("", "", 0),
+    ("a", "", 1),
+    ("", "b", 1),
+    ("abc", "", 3),
+    ("", "xyz", 3),
+    ("kitten", "sitting", 3),
+    ("flaw", "flaw", 0),
+    ("kitten", "satinn", 4),
+    ("intention", "execution", 5),
+    ("python", "bytecode", 5),
+    ("test", "test", 0),
+    ("test", "tezt", 1),
+    ("test", "testt", 1),
+    ("test", "ttest", 2),
+    ("ABC", "abc", 4),
+    ("", "123", 3),
+    ("123", "321", 3),
+])
+def test_edit_distance_basic(left, right, expected):
+    result = edit_distance(left, right)
+    assert result == expected
+    assert type(result) == int
+
+@pytest.mark.parametrize("left, right", [
+    ("1", 2),
+    (1, 2),
+    (1.5, 2.5),
+    (True, False),
+    (["a"], "b"),
+    (("a",), "b"),
+    ({"a": 1}, "b"),
+    (None, "b"),
+    (1 + 2j, 2 + 2j),
+    (b"hello", "world"),
+    ("hello".replace("h", "j"), None),
+    (None, None),
+    (object(), "text"),
+    (range(1, 5), "text"),
+    ({"key": "value"}, "dict_str"),
+    (set(["a"]), "b"),
+])
+def test_edit_distance_rejects_invalid_types(left, right):
+    with pytest.raises(TypeError):
+        edit_distance(left, right)
+
+def test_edit_distance_does_not_mutate_inputs():
+    left = "cat"
+    right = "dog"
+    left_copy = left
+    right_copy = right
+    
+    edit_distance(left, right)
+    
+    assert left == left_copy
+    assert right == right_copy
+
+def test_edit_distance_returns_exact_types():
+    result = edit_distance("a", "a")
+    assert type(result) is int
+```
+
+### Requirement-to-Input Mapping
+- `left`: Passed directly to `edit_distance` as first positional argument; must be a built-in `str`.
+- `right`: Passed directly to `edit_distance` as second positional argument; must be a built-in `str`.
+- `expected`: Computed via known Levenshtein logic for valid cases (cost=1 for insert/delete/substitute, 0 for matches).
+- `TypeError` cases: One or both arguments set to non-string built-ins or subclasses.
+
+### Coverage Limitations
+This test suite covers:
+- Basic valid string pairs (including empty strings and Unicode case sensitivity).
+- Specific invalid type cases for both arguments (int, float, bool, list, tuple, dict, None, complex, bytes, object, range, set).
+- A single mutation test using a concrete string pair (`"cat"`, `"dog"`).
+- Exact return type verification for a specific valid case.
+
+It does **not** claim to exhaustively cover all possible invalid type scenarios (e.g., custom subclasses of `str`, edge cases involving very long strings, or all possible subclass hierarchies of built-ins). It does not inspect `edit_distance` internals; it only asserts contract compliance based on supplied inputs.<|im_end|>

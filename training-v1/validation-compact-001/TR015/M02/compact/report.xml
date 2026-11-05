@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="10" time="0.275" timestamp="2026-11-04T07:12:12.733430-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-]" time="0.001" /><testcase classname="test_target" name="test_values[args1-]" time="0.001" /><testcase classname="test_target" name="test_values[args2-one]" time="0.000" /><testcase classname="test_target" name="test_values[args3-three two one]" time="0.001"><failure message="AssertionError: assert 'three xtwo xone' == 'three two one'&#10;  &#10;  - three two one&#10;  + three xtwo xone&#10;  ?       +    +">args = ('one two three',), expected = 'three two one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'three xtwo xone' == 'three two one'
+E         
+E         - three two one
+E         + three xtwo xone
+E         ?       +    +
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-c b a]" time="0.001"><failure message="AssertionError: assert 'c xb xa' == 'c b a'&#10;  &#10;  - c b a&#10;  + c xb xa&#10;  ?   +  +">args = (' a\tb\nc ',), expected = 'c b a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'c xb xa' == 'c b a'
+E         
+E         - c b a
+E         + c xb xa
+E         ?   +  +
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-\u5b57 \xe9]" time="0.001"><failure message="AssertionError: assert '字 xé' == '字 é'&#10;  &#10;  - 字 é&#10;  + 字 xé&#10;  ?   +">args = ('é\u2003字',), expected = '字 é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '字 xé' == '字 é'
+E         
+E         - 字 é
+E         + 字 xé
+E         ?   +
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /></testsuite></testsuites>

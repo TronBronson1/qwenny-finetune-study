@@ -1,0 +1,93 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0,)",
+    "expected_python": "0",
+    "after_python": "(0,)",
+    "category": "zero"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1,)",
+    "expected_python": "1",
+    "after_python": "(1,)",
+    "category": "one-bit"
+  },
+  {
+    "id": "v002",
+    "args_python": "(2,)",
+    "expected_python": "1",
+    "after_python": "(2,)",
+    "category": "power-two"
+  },
+  {
+    "id": "v003",
+    "args_python": "(3,)",
+    "expected_python": "2",
+    "after_python": "(3,)",
+    "category": "two-bits"
+  },
+  {
+    "id": "v004",
+    "args_python": "(255,)",
+    "expected_python": "8",
+    "after_python": "(255,)",
+    "category": "byte-bits"
+  },
+  {
+    "id": "v005",
+    "args_python": "(256,)",
+    "expected_python": "1",
+    "after_python": "(256,)",
+    "category": "higher-power"
+  },
+  {
+    "id": "v006",
+    "args_python": "(1267650600228229401496703205377,)",
+    "expected_python": "2",
+    "after_python": "(1267650600228229401496703205377,)",
+    "category": "large-two-bits"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0),)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e005",
+    "args_python": "(-1,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "(IntChild(-1),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

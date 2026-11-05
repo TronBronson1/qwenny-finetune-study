@@ -1,0 +1,867 @@
+{
+  "status": "selected-before-generation",
+  "rule": "Exclude DV001/DV002; one lowest-ID representative per family; sort by supervised target token count then ID; choose indices 0, floor((n-1)/3), floor(2*(n-1)/3), n-1 independently per split.",
+  "limits": "Length-spanning purposive sample, not random or category-balanced. Schemas reported for audit; no representativeness claim. Development targets already used for loss.",
+  "pools": {
+    "training": {
+      "eligible": [
+        {
+          "id": "TR024",
+          "family": "ascii-upper",
+          "split": "training",
+          "target_tokens": 455,
+          "schemas": [
+            "str"
+          ],
+          "function": "ascii_upper",
+          "prompt_tokens": 325,
+          "messages_sha256": "255df8c7020dbc3b419a21b516f9e0b2301885d9dfb10f6f4b83068e7132f1e9",
+          "prompt_sha256": "7257eb9f49c281f525f9d9c2dda481293ee8a2a2e72b956cca6c7f9afa2579c8",
+          "prompt_ids_sha256": "64c97a397dd72ee73bce7b090ac74f183bf15db1f7893e1d83403ffbadac2abc",
+          "matches_original_training_messages": true
+        },
+        {
+          "id": "TR015",
+          "family": "reverse-words",
+          "split": "training",
+          "target_tokens": 472,
+          "schemas": [
+            "str"
+          ],
+          "function": "reverse_words"
+        },
+        {
+          "id": "TR016",
+          "family": "count-vowels",
+          "split": "training",
+          "target_tokens": 475,
+          "schemas": [
+            "str"
+          ],
+          "function": "count_vowels"
+        },
+        {
+          "id": "TR045",
+          "family": "path-segments",
+          "split": "training",
+          "target_tokens": 476,
+          "schemas": [
+            "str"
+          ],
+          "function": "path_segments"
+        },
+        {
+          "id": "TR060",
+          "family": "count-ascii-categories",
+          "split": "training",
+          "target_tokens": 483,
+          "schemas": [
+            "str"
+          ],
+          "function": "count_ascii_categories"
+        },
+        {
+          "id": "TR027",
+          "family": "pairwise-differences",
+          "split": "training",
+          "target_tokens": 486,
+          "schemas": [
+            "ints"
+          ],
+          "function": "pairwise_differences"
+        },
+        {
+          "id": "TR014",
+          "family": "collapse-spaces",
+          "split": "training",
+          "target_tokens": 492,
+          "schemas": [
+            "str"
+          ],
+          "function": "collapse_spaces"
+        },
+        {
+          "id": "TR020",
+          "family": "escape-html",
+          "split": "training",
+          "target_tokens": 492,
+          "schemas": [
+            "str"
+          ],
+          "function": "escape_html"
+        },
+        {
+          "id": "TR028",
+          "family": "prefix-sums",
+          "split": "training",
+          "target_tokens": 496,
+          "schemas": [
+            "ints"
+          ],
+          "function": "prefix_sums"
+        },
+        {
+          "id": "TR005",
+          "family": "parity-label",
+          "split": "training",
+          "target_tokens": 499,
+          "schemas": [
+            "int"
+          ],
+          "function": "parity_label"
+        },
+        {
+          "id": "TR019",
+          "family": "normalize-newlines",
+          "split": "training",
+          "target_tokens": 499,
+          "schemas": [
+            "str"
+          ],
+          "function": "normalize_newlines"
+        },
+        {
+          "id": "TR026",
+          "family": "stable-unique",
+          "split": "training",
+          "target_tokens": 504,
+          "schemas": [
+            "ints"
+          ],
+          "function": "stable_unique"
+        },
+        {
+          "id": "TR018",
+          "family": "is-palindrome",
+          "split": "training",
+          "target_tokens": 511,
+          "schemas": [
+            "str"
+          ],
+          "function": "is_palindrome"
+        },
+        {
+          "id": "TR022",
+          "family": "quote-csv-field",
+          "split": "training",
+          "target_tokens": 512,
+          "schemas": [
+            "str"
+          ],
+          "function": "quote_csv_field"
+        },
+        {
+          "id": "TR035",
+          "family": "adjacent-equal-count",
+          "split": "training",
+          "target_tokens": 513,
+          "schemas": [
+            "ints"
+          ],
+          "function": "adjacent_equal_count"
+        },
+        {
+          "id": "TR032",
+          "family": "partition-sign",
+          "split": "training",
+          "target_tokens": 522,
+          "schemas": [
+            "ints"
+          ],
+          "function": "partition_sign"
+        },
+        {
+          "id": "TR039",
+          "family": "parse-bool-word",
+          "split": "training",
+          "target_tokens": 553,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_bool_word"
+        },
+        {
+          "id": "TR021",
+          "family": "common-prefix",
+          "split": "training",
+          "target_tokens": 554,
+          "schemas": [
+            "str",
+            "str"
+          ],
+          "function": "common_prefix"
+        },
+        {
+          "id": "TR025",
+          "family": "run-length-encode",
+          "split": "training",
+          "target_tokens": 554,
+          "schemas": [
+            "strs"
+          ],
+          "function": "run_length_encode",
+          "prompt_tokens": 337,
+          "messages_sha256": "6999d4b30da8c0ec39e431bb4b273d43e38c7cf8a40168afd8254ee2731932d5",
+          "prompt_sha256": "41209fb82e881ffc8f6117a40671130e6bceec52083fd3ae51ff1aff91118461",
+          "prompt_ids_sha256": "2bfa10303f0a8a9425a8c0f194d4919e33bd0168d078c88ab3ecaef6a416bd5d",
+          "matches_original_training_messages": true
+        },
+        {
+          "id": "TR036",
+          "family": "lower-median",
+          "split": "training",
+          "target_tokens": 554,
+          "schemas": [
+            "ints"
+          ],
+          "function": "lower_median"
+        },
+        {
+          "id": "TR006",
+          "family": "factorial",
+          "split": "training",
+          "target_tokens": 558,
+          "schemas": [
+            "int"
+          ],
+          "function": "factorial"
+        },
+        {
+          "id": "TR008",
+          "family": "is-square",
+          "split": "training",
+          "target_tokens": 563,
+          "schemas": [
+            "int"
+          ],
+          "function": "is_square"
+        },
+        {
+          "id": "TR007",
+          "family": "digit-sum",
+          "split": "training",
+          "target_tokens": 569,
+          "schemas": [
+            "int"
+          ],
+          "function": "digit_sum"
+        },
+        {
+          "id": "TR017",
+          "family": "interleave-strings",
+          "split": "training",
+          "target_tokens": 569,
+          "schemas": [
+            "str",
+            "str"
+          ],
+          "function": "interleave_strings"
+        },
+        {
+          "id": "TR010",
+          "family": "population-count",
+          "split": "training",
+          "target_tokens": 584,
+          "schemas": [
+            "int"
+          ],
+          "function": "population_count"
+        },
+        {
+          "id": "TR057",
+          "family": "make-slug",
+          "split": "training",
+          "target_tokens": 585,
+          "schemas": [
+            "str"
+          ],
+          "function": "make_slug"
+        },
+        {
+          "id": "TR054",
+          "family": "grouped-decimal",
+          "split": "training",
+          "target_tokens": 589,
+          "schemas": [
+            "int"
+          ],
+          "function": "grouped_decimal"
+        },
+        {
+          "id": "TR052",
+          "family": "seconds-to-hms",
+          "split": "training",
+          "target_tokens": 593,
+          "schemas": [
+            "int"
+          ],
+          "function": "seconds_to_hms"
+        },
+        {
+          "id": "TR053",
+          "family": "format-cents",
+          "split": "training",
+          "target_tokens": 598,
+          "schemas": [
+            "int"
+          ],
+          "function": "format_cents"
+        },
+        {
+          "id": "TR040",
+          "family": "parse-key-value",
+          "split": "training",
+          "target_tokens": 599,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_key_value"
+        },
+        {
+          "id": "TR048",
+          "family": "spreadsheet-column",
+          "split": "training",
+          "target_tokens": 603,
+          "schemas": [
+            "int"
+          ],
+          "function": "spreadsheet_column"
+        },
+        {
+          "id": "TR011",
+          "family": "leap-year",
+          "split": "training",
+          "target_tokens": 618,
+          "schemas": [
+            "int"
+          ],
+          "function": "leap_year"
+        },
+        {
+          "id": "TR031",
+          "family": "multiset-intersection",
+          "split": "training",
+          "target_tokens": 620,
+          "schemas": [
+            "ints",
+            "ints"
+          ],
+          "function": "multiset_intersection"
+        },
+        {
+          "id": "TR030",
+          "family": "transpose",
+          "split": "training",
+          "target_tokens": 621,
+          "schemas": [
+            "matrix"
+          ],
+          "function": "transpose"
+        },
+        {
+          "id": "TR009",
+          "family": "signed-gcd",
+          "split": "training",
+          "target_tokens": 639,
+          "schemas": [
+            "int",
+            "int"
+          ],
+          "function": "signed_gcd"
+        },
+        {
+          "id": "TR003",
+          "family": "absolute-distance",
+          "split": "training",
+          "target_tokens": 667,
+          "schemas": [
+            "int",
+            "int"
+          ],
+          "function": "absolute_distance"
+        },
+        {
+          "id": "TR038",
+          "family": "parse-hex-byte",
+          "split": "training",
+          "target_tokens": 678,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_hex_byte",
+          "prompt_tokens": 328,
+          "messages_sha256": "19a5e3073f973c72d0791c71755289f36a0dd19d197c3f08c2042b524dec331e",
+          "prompt_sha256": "3d226bcef1836cb46d8ac9c569e20c4adfebb445e41cbe0f45eedc54f6c8c4e4",
+          "prompt_ids_sha256": "721501c412dc6103d9529433f4122454b9fdea009b5e445b581b234d8c7f9ef0",
+          "matches_original_training_messages": true
+        },
+        {
+          "id": "TR044",
+          "family": "parse-range",
+          "split": "training",
+          "target_tokens": 690,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_range"
+        },
+        {
+          "id": "TR042",
+          "family": "semantic-version",
+          "split": "training",
+          "target_tokens": 694,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_version"
+        },
+        {
+          "id": "TR043",
+          "family": "parse-binary",
+          "split": "training",
+          "target_tokens": 717,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_binary"
+        },
+        {
+          "id": "TR023",
+          "family": "plural-count",
+          "split": "training",
+          "target_tokens": 725,
+          "schemas": [
+            "int",
+            "str"
+          ],
+          "function": "plural_count"
+        },
+        {
+          "id": "TR041",
+          "family": "parse-int-pair",
+          "split": "training",
+          "target_tokens": 736,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_int_pair"
+        },
+        {
+          "id": "TR037",
+          "family": "parse-unsigned",
+          "split": "training",
+          "target_tokens": 743,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_unsigned"
+        },
+        {
+          "id": "TR046",
+          "family": "parse-signed",
+          "split": "training",
+          "target_tokens": 746,
+          "schemas": [
+            "str"
+          ],
+          "function": "parse_signed"
+        },
+        {
+          "id": "TR012",
+          "family": "modular-index",
+          "split": "training",
+          "target_tokens": 753,
+          "schemas": [
+            "int",
+            "int"
+          ],
+          "function": "weekday_offset"
+        },
+        {
+          "id": "TR002",
+          "family": "strip-prefix",
+          "split": "training",
+          "target_tokens": 760,
+          "schemas": [
+            "str",
+            "str"
+          ],
+          "function": "strip_prefix"
+        },
+        {
+          "id": "TR029",
+          "family": "chunk-list",
+          "split": "training",
+          "target_tokens": 768,
+          "schemas": [
+            "ints",
+            "int"
+          ],
+          "function": "chunk_list"
+        },
+        {
+          "id": "TR059",
+          "family": "merge-sorted",
+          "split": "training",
+          "target_tokens": 786,
+          "schemas": [
+            "ints",
+            "ints"
+          ],
+          "function": "merge_sorted"
+        },
+        {
+          "id": "TR033",
+          "family": "remove-at",
+          "split": "training",
+          "target_tokens": 800,
+          "schemas": [
+            "ints",
+            "int"
+          ],
+          "function": "remove_at"
+        },
+        {
+          "id": "TR013",
+          "family": "int-to-base",
+          "split": "training",
+          "target_tokens": 855,
+          "schemas": [
+            "int",
+            "int"
+          ],
+          "function": "int_to_base"
+        },
+        {
+          "id": "TR004",
+          "family": "clamp",
+          "split": "training",
+          "target_tokens": 875,
+          "schemas": [
+            "int",
+            "int",
+            "int"
+          ],
+          "function": "clamp"
+        },
+        {
+          "id": "TR001",
+          "family": "batches",
+          "split": "training",
+          "target_tokens": 876,
+          "schemas": [
+            "int",
+            "int"
+          ],
+          "function": "batches"
+        },
+        {
+          "id": "TR034",
+          "family": "bounded-slice",
+          "split": "training",
+          "target_tokens": 940,
+          "schemas": [
+            "ints",
+            "int",
+            "int"
+          ],
+          "function": "bounded_slice"
+        },
+        {
+          "id": "TR047",
+          "family": "index-of-nth",
+          "split": "training",
+          "target_tokens": 942,
+          "schemas": [
+            "str",
+            "str",
+            "int"
+          ],
+          "function": "index_of_nth"
+        },
+        {
+          "id": "TR055",
+          "family": "rgb-hex-codec",
+          "split": "training",
+          "target_tokens": 1016,
+          "schemas": [
+            "int",
+            "int",
+            "int"
+          ],
+          "function": "encode_rgb"
+        },
+        {
+          "id": "TR049",
+          "family": "row-major-index",
+          "split": "training",
+          "target_tokens": 1554,
+          "schemas": [
+            "int",
+            "int",
+            "int",
+            "int"
+          ],
+          "function": "row_major_offset",
+          "prompt_tokens": 399,
+          "messages_sha256": "09e07e6307827a7ad4db49f8ae9b413f7437d7bda445e1c23c22811e3ea082b0",
+          "prompt_sha256": "d1854ceb506af132dc52d161a5ad932db1d08c79808c40c3225b52e648cb62a0",
+          "prompt_ids_sha256": "0fc30dc492aa84159531387ba5d60f9a66d6bdabc21ce9614abb4fe58fafb452",
+          "matches_original_training_messages": true
+        }
+      ],
+      "selected_indices": [
+        0,
+        18,
+        36,
+        55
+      ]
+    },
+    "development": {
+      "eligible": [
+        {
+          "id": "DV008",
+          "family": "edit-distance",
+          "split": "development",
+          "target_tokens": 575,
+          "schemas": [
+            "str",
+            "str"
+          ],
+          "function": "edit_distance",
+          "prompt_tokens": 352,
+          "messages_sha256": "ae023532a37f1460dd4df23a4045054704cb11db2326555712fb48f6467e31e2",
+          "prompt_sha256": "9ad421cde6a278a74d4d0f13e98cc4dfb304d364ad266cc20705ba0bcf7951b8",
+          "prompt_ids_sha256": "14e58a8d5d7fdb42963ea0540028acdd912501a77188ee14bc1e35228c6d0739"
+        },
+        {
+          "id": "DV005",
+          "family": "bracket-structure",
+          "split": "development",
+          "target_tokens": 606,
+          "schemas": [
+            "str"
+          ],
+          "function": "parenthesis_depth"
+        },
+        {
+          "id": "DV004",
+          "family": "xor-checksum",
+          "split": "development",
+          "target_tokens": 608,
+          "schemas": [
+            "ints"
+          ],
+          "function": "xor_checksum",
+          "prompt_tokens": 344,
+          "messages_sha256": "6df46fb93b27117d2d0bae1a72a2bd9a56b1188965ce6fd9119135f503ef8326",
+          "prompt_sha256": "24161b27e0d01a9401a5493d2f582f5f5781f102743d0cd3599cd0568464efb6",
+          "prompt_ids_sha256": "bf13fd064fde99904240d1586efb83ae6ea1a4d992ba8334d8056266a188d31e"
+        },
+        {
+          "id": "DV006",
+          "family": "keypad-encode",
+          "split": "development",
+          "target_tokens": 629,
+          "schemas": [
+            "str"
+          ],
+          "function": "keypad_encode"
+        },
+        {
+          "id": "DV003",
+          "family": "roman-encode",
+          "split": "development",
+          "target_tokens": 640,
+          "schemas": [
+            "int"
+          ],
+          "function": "roman_encode"
+        },
+        {
+          "id": "DV011",
+          "family": "interval-union",
+          "split": "development",
+          "target_tokens": 720,
+          "schemas": [
+            "pairs"
+          ],
+          "function": "interval_union",
+          "prompt_tokens": 351,
+          "messages_sha256": "559848a4f9996eac90ba47d932baefe2359f8dcc99e01a3fb267f8da9461536b",
+          "prompt_sha256": "4f30590962f12bf9c27a97a37cc55c4d75849182213fe47ec6739f2d9abe542b",
+          "prompt_ids_sha256": "f850a59a982d72e5bf2ba28bd27836fd3619e4463988aee65ef26e137a12b443"
+        },
+        {
+          "id": "DV009",
+          "family": "lower-bound",
+          "split": "development",
+          "target_tokens": 729,
+          "schemas": [
+            "ints",
+            "int"
+          ],
+          "function": "lower_bound"
+        },
+        {
+          "id": "DV010",
+          "family": "rpn-evaluate",
+          "split": "development",
+          "target_tokens": 962,
+          "schemas": [
+            "strs"
+          ],
+          "function": "rpn_evaluate"
+        },
+        {
+          "id": "DV007",
+          "family": "grid-neighbors",
+          "split": "development",
+          "target_tokens": 1409,
+          "schemas": [
+            "int",
+            "int",
+            "int",
+            "int"
+          ],
+          "function": "grid_neighbors",
+          "prompt_tokens": 406,
+          "messages_sha256": "7037c80c5f78eb90ffe6f53a08893319f4cd9c9a28493dd21860ec5f85bc7034",
+          "prompt_sha256": "20ba95dd83c90c05be98a2a065876570a7a9f00d0e681c77326b83886ac77dbe",
+          "prompt_ids_sha256": "d67704cd377de62aca94a1a656224466eceaa55877e0d347b2aca4bae3dd47cc"
+        }
+      ],
+      "selected_indices": [
+        0,
+        2,
+        5,
+        8
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "id": "TR024",
+      "family": "ascii-upper",
+      "split": "training",
+      "target_tokens": 455,
+      "schemas": [
+        "str"
+      ],
+      "function": "ascii_upper",
+      "prompt_tokens": 325,
+      "messages_sha256": "255df8c7020dbc3b419a21b516f9e0b2301885d9dfb10f6f4b83068e7132f1e9",
+      "prompt_sha256": "7257eb9f49c281f525f9d9c2dda481293ee8a2a2e72b956cca6c7f9afa2579c8",
+      "prompt_ids_sha256": "64c97a397dd72ee73bce7b090ac74f183bf15db1f7893e1d83403ffbadac2abc",
+      "matches_original_training_messages": true
+    },
+    {
+      "id": "TR025",
+      "family": "run-length-encode",
+      "split": "training",
+      "target_tokens": 554,
+      "schemas": [
+        "strs"
+      ],
+      "function": "run_length_encode",
+      "prompt_tokens": 337,
+      "messages_sha256": "6999d4b30da8c0ec39e431bb4b273d43e38c7cf8a40168afd8254ee2731932d5",
+      "prompt_sha256": "41209fb82e881ffc8f6117a40671130e6bceec52083fd3ae51ff1aff91118461",
+      "prompt_ids_sha256": "2bfa10303f0a8a9425a8c0f194d4919e33bd0168d078c88ab3ecaef6a416bd5d",
+      "matches_original_training_messages": true
+    },
+    {
+      "id": "TR038",
+      "family": "parse-hex-byte",
+      "split": "training",
+      "target_tokens": 678,
+      "schemas": [
+        "str"
+      ],
+      "function": "parse_hex_byte",
+      "prompt_tokens": 328,
+      "messages_sha256": "19a5e3073f973c72d0791c71755289f36a0dd19d197c3f08c2042b524dec331e",
+      "prompt_sha256": "3d226bcef1836cb46d8ac9c569e20c4adfebb445e41cbe0f45eedc54f6c8c4e4",
+      "prompt_ids_sha256": "721501c412dc6103d9529433f4122454b9fdea009b5e445b581b234d8c7f9ef0",
+      "matches_original_training_messages": true
+    },
+    {
+      "id": "TR049",
+      "family": "row-major-index",
+      "split": "training",
+      "target_tokens": 1554,
+      "schemas": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "function": "row_major_offset",
+      "prompt_tokens": 399,
+      "messages_sha256": "09e07e6307827a7ad4db49f8ae9b413f7437d7bda445e1c23c22811e3ea082b0",
+      "prompt_sha256": "d1854ceb506af132dc52d161a5ad932db1d08c79808c40c3225b52e648cb62a0",
+      "prompt_ids_sha256": "0fc30dc492aa84159531387ba5d60f9a66d6bdabc21ce9614abb4fe58fafb452",
+      "matches_original_training_messages": true
+    },
+    {
+      "id": "DV008",
+      "family": "edit-distance",
+      "split": "development",
+      "target_tokens": 575,
+      "schemas": [
+        "str",
+        "str"
+      ],
+      "function": "edit_distance",
+      "prompt_tokens": 352,
+      "messages_sha256": "ae023532a37f1460dd4df23a4045054704cb11db2326555712fb48f6467e31e2",
+      "prompt_sha256": "9ad421cde6a278a74d4d0f13e98cc4dfb304d364ad266cc20705ba0bcf7951b8",
+      "prompt_ids_sha256": "14e58a8d5d7fdb42963ea0540028acdd912501a77188ee14bc1e35228c6d0739"
+    },
+    {
+      "id": "DV004",
+      "family": "xor-checksum",
+      "split": "development",
+      "target_tokens": 608,
+      "schemas": [
+        "ints"
+      ],
+      "function": "xor_checksum",
+      "prompt_tokens": 344,
+      "messages_sha256": "6df46fb93b27117d2d0bae1a72a2bd9a56b1188965ce6fd9119135f503ef8326",
+      "prompt_sha256": "24161b27e0d01a9401a5493d2f582f5f5781f102743d0cd3599cd0568464efb6",
+      "prompt_ids_sha256": "bf13fd064fde99904240d1586efb83ae6ea1a4d992ba8334d8056266a188d31e"
+    },
+    {
+      "id": "DV011",
+      "family": "interval-union",
+      "split": "development",
+      "target_tokens": 720,
+      "schemas": [
+        "pairs"
+      ],
+      "function": "interval_union",
+      "prompt_tokens": 351,
+      "messages_sha256": "559848a4f9996eac90ba47d932baefe2359f8dcc99e01a3fb267f8da9461536b",
+      "prompt_sha256": "4f30590962f12bf9c27a97a37cc55c4d75849182213fe47ec6739f2d9abe542b",
+      "prompt_ids_sha256": "f850a59a982d72e5bf2ba28bd27836fd3619e4463988aee65ef26e137a12b443"
+    },
+    {
+      "id": "DV007",
+      "family": "grid-neighbors",
+      "split": "development",
+      "target_tokens": 1409,
+      "schemas": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "function": "grid_neighbors",
+      "prompt_tokens": 406,
+      "messages_sha256": "7037c80c5f78eb90ffe6f53a08893319f4cd9c9a28493dd21860ec5f85bc7034",
+      "prompt_sha256": "20ba95dd83c90c05be98a2a065876570a7a9f00d0e681c77326b83886ac77dbe",
+      "prompt_ids_sha256": "d67704cd377de62aca94a1a656224466eceaa55877e0d347b2aca4bae3dd47cc"
+    }
+  ]
+}

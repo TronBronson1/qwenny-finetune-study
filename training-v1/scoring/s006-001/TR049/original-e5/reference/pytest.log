@@ -1,0 +1,367 @@
+..F................FFFF....FFFFFF                                        [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = (1, 1, 2, 2), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 0, 2, 2), 0, id="v001"),
+        pytest.param((1, 1, 2, 2), 4, id="v002"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+>       assert actual == expected
+E       assert 3 == 4
+
+test_candidate.py:25: AssertionError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = (0, 0, 0, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((0, True, 1, 1), id="e002"),
+        pytest.param((0, IntChild(0), 1, 1), id="e003"),
+        pytest.param((0, 0, True, 1), id="e004"),
+        pytest.param((0, 0, IntChild(1), 1), id="e005"),
+        pytest.param((0, 0, 1, True), id="e006"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e007"),
+        pytest.param((0, 0, 1.0, 1), id="e008"),
+        pytest.param((0, 0, 1, b'1'), id="e009"),
+        pytest.param((0, 0, None, 1), id="e010"),
+        pytest.param((0, 0, 1, None), id="e011"),
+        pytest.param((b'0', 0, 1, 1), id="e012"),
+        pytest.param((0.0, 0, 1, 1), id="e013"),
+        pytest.param((None, 0, 1, 1), id="e014"),
+        pytest.param((0, None, 1, 1), id="e015"),
+        pytest.param((0, 0, 0, 1), id="e016"),
+        pytest.param((0, 0, 1, 0), id="e017"),
+        pytest.param((0, 0, -1, 1), id="e018"),
+        pytest.param((0, 0, 1, -1), id="e019"),
+        pytest.param((0, 0, 0.0, 1), id="e020"),
+        pytest.param((0, 0, 1.0, 0), id="e021"),
+        pytest.param((0, 0, True, 1), id="e022"),
+        pytest.param((0, 0, 1, True), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           row_major_offset(*args)
+
+test_candidate.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 0, columns = 1
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+>       if rows <= 0 or columns <= 0: raise ValueError("shape")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: shape
+
+subject.py:47: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((0, True, 1, 1), id="e002"),
+        pytest.param((0, IntChild(0), 1, 1), id="e003"),
+        pytest.param((0, 0, True, 1), id="e004"),
+        pytest.param((0, 0, IntChild(1), 1), id="e005"),
+        pytest.param((0, 0, 1, True), id="e006"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e007"),
+        pytest.param((0, 0, 1.0, 1), id="e008"),
+        pytest.param((0, 0, 1, b'1'), id="e009"),
+        pytest.param((0, 0, None, 1), id="e010"),
+        pytest.param((0, 0, 1, None), id="e011"),
+        pytest.param((b'0', 0, 1, 1), id="e012"),
+        pytest.param((0.0, 0, 1, 1), id="e013"),
+        pytest.param((None, 0, 1, 1), id="e014"),
+        pytest.param((0, None, 1, 1), id="e015"),
+        pytest.param((0, 0, 0, 1), id="e016"),
+        pytest.param((0, 0, 1, 0), id="e017"),
+        pytest.param((0, 0, -1, 1), id="e018"),
+        pytest.param((0, 0, 1, -1), id="e019"),
+        pytest.param((0, 0, 0.0, 1), id="e020"),
+        pytest.param((0, 0, 1.0, 0), id="e021"),
+        pytest.param((0, 0, True, 1), id="e022"),
+        pytest.param((0, 0, 1, True), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           row_major_offset(*args)
+
+test_candidate.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+>       if rows <= 0 or columns <= 0: raise ValueError("shape")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: shape
+
+subject.py:47: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = (0, 0, -1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((0, True, 1, 1), id="e002"),
+        pytest.param((0, IntChild(0), 1, 1), id="e003"),
+        pytest.param((0, 0, True, 1), id="e004"),
+        pytest.param((0, 0, IntChild(1), 1), id="e005"),
+        pytest.param((0, 0, 1, True), id="e006"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e007"),
+        pytest.param((0, 0, 1.0, 1), id="e008"),
+        pytest.param((0, 0, 1, b'1'), id="e009"),
+        pytest.param((0, 0, None, 1), id="e010"),
+        pytest.param((0, 0, 1, None), id="e011"),
+        pytest.param((b'0', 0, 1, 1), id="e012"),
+        pytest.param((0.0, 0, 1, 1), id="e013"),
+        pytest.param((None, 0, 1, 1), id="e014"),
+        pytest.param((0, None, 1, 1), id="e015"),
+        pytest.param((0, 0, 0, 1), id="e016"),
+        pytest.param((0, 0, 1, 0), id="e017"),
+        pytest.param((0, 0, -1, 1), id="e018"),
+        pytest.param((0, 0, 1, -1), id="e019"),
+        pytest.param((0, 0, 0.0, 1), id="e020"),
+        pytest.param((0, 0, 1.0, 0), id="e021"),
+        pytest.param((0, 0, True, 1), id="e022"),
+        pytest.param((0, 0, 1, True), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           row_major_offset(*args)
+
+test_candidate.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = -1, columns = 1
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+>       if rows <= 0 or columns <= 0: raise ValueError("shape")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: shape
+
+subject.py:47: ValueError
+_________________________ test_raises_typeerror[e019] _________________________
+
+args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 0, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+        pytest.param((0, True, 1, 1), id="e002"),
+        pytest.param((0, IntChild(0), 1, 1), id="e003"),
+        pytest.param((0, 0, True, 1), id="e004"),
+        pytest.param((0, 0, IntChild(1), 1), id="e005"),
+        pytest.param((0, 0, 1, True), id="e006"),
+        pytest.param((0, 0, 1, IntChild(1)), id="e007"),
+        pytest.param((0, 0, 1.0, 1), id="e008"),
+        pytest.param((0, 0, 1, b'1'), id="e009"),
+        pytest.param((0, 0, None, 1), id="e010"),
+        pytest.param((0, 0, 1, None), id="e011"),
+        pytest.param((b'0', 0, 1, 1), id="e012"),
+        pytest.param((0.0, 0, 1, 1), id="e013"),
+        pytest.param((None, 0, 1, 1), id="e014"),
+        pytest.param((0, None, 1, 1), id="e015"),
+        pytest.param((0, 0, 0, 1), id="e016"),
+        pytest.param((0, 0, 1, 0), id="e017"),
+        pytest.param((0, 0, -1, 1), id="e018"),
+        pytest.param((0, 0, 1, -1), id="e019"),
+        pytest.param((0, 0, 0.0, 1), id="e020"),
+        pytest.param((0, 0, 1.0, 0), id="e021"),
+        pytest.param((0, 0, True, 1), id="e022"),
+        pytest.param((0, 0, 1, True), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           row_major_offset(*args)
+
+test_candidate.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+>       if rows <= 0 or columns <= 0: raise ValueError("shape")
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: shape
+
+subject.py:47: ValueError
+________________________ test_raises_valueerror[e024] _________________________
+
+args = (-1, 0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           row_major_offset(*args)
+
+test_candidate.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = -1, column = 0, rows = 1, columns = 1
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0: raise ValueError("shape")
+>       if not 0 <= row < rows or not 0 <= column < columns: raise IndexError("index")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: index
+
+subject.py:48: IndexError
+________________________ test_raises_valueerror[e025] _________________________
+
+args = (1, 100, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           row_major_offset(*args)
+
+test_candidate.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 1, column = 100, rows = 2, columns = 2
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0: raise ValueError("shape")
+>       if not 0 <= row < rows or not 0 <= column < columns: raise IndexError("index")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: index
+
+subject.py:48: IndexError
+________________________ test_raises_valueerror[e026] _________________________
+
+args = (100, 0, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           row_major_offset(*args)
+
+test_candidate.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 100, column = 0, rows = 2, columns = 2
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0: raise ValueError("shape")
+>       if not 0 <= row < rows or not 0 <= column < columns: raise IndexError("index")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: index
+
+subject.py:48: IndexError
+________________________ test_raises_valueerror[e027] _________________________
+
+args = (0, 1, 1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:68: Failed
+________________________ test_raises_valueerror[e028] _________________________
+
+args = (1, 1, 2, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:68: Failed
+________________________ test_raises_valueerror[e029] _________________________
+
+args = (1, 0, 1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 0, 1, 1), id="e024"),
+        pytest.param((1, 100, 2, 2), id="e025"),
+        pytest.param((100, 0, 2, 2), id="e026"),
+        pytest.param((0, 1, 1, 2), id="e027"),
+        pytest.param((1, 1, 2, 2), id="e028"),
+        pytest.param((1, 0, 1, 2), id="e029"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+>           row_major_offset(*args)
+
+test_candidate.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 1, column = 0, rows = 1, columns = 2
+
+    def row_major_offset(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0: raise ValueError("shape")
+>       if not 0 <= row < rows or not 0 <= column < columns: raise IndexError("index")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: index
+
+subject.py:48: IndexError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_values[v002] - assert 3 == 4
+FAILED test_candidate.py::test_raises_typeerror[e016] - ValueError: shape
+FAILED test_candidate.py::test_raises_typeerror[e017] - ValueError: shape
+FAILED test_candidate.py::test_raises_typeerror[e018] - ValueError: shape
+FAILED test_candidate.py::test_raises_typeerror[e019] - ValueError: shape
+FAILED test_candidate.py::test_raises_valueerror[e024] - IndexError: index
+FAILED test_candidate.py::test_raises_valueerror[e025] - IndexError: index
+FAILED test_candidate.py::test_raises_valueerror[e026] - IndexError: index
+FAILED test_candidate.py::test_raises_valueerror[e027] - Failed: DID NOT RAIS...
+FAILED test_candidate.py::test_raises_valueerror[e028] - Failed: DID NOT RAIS...
+FAILED test_candidate.py::test_raises_valueerror[e029] - IndexError: index
+11 failed, 22 passed in 0.69s

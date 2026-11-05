@@ -1,0 +1,121 @@
+.FFFFF..........                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = ('ABC',), expected = '222'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert '333' == '222'
+E         
+E         - 222
+E         + 333
+
+test_target.py:28: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('HELLO',), expected = '43556'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert '54667' == '43556'
+E         
+E         - 43556
+E         + 54667
+
+test_target.py:28: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('PQRS',), expected = '7777'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert '8888' == '7777'
+E         
+E         - 7777
+E         + 8888
+
+test_target.py:28: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('WXYZ',), expected = '9999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert '10101010' == '9999'
+E         
+E         - 9999
+E         + 10101010
+
+test_target.py:28: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), expected = '22233344455566677778889999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert '333444555666...8899910101010' == '22233344455566677778889999'
+E         
+E         - 22233344455566677778889999
+E         ? ---               ^      ^
+E         + 333444555666777888899910101010
+E         ?                ^      ^^^^^^^^
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - AssertionError: assert '333' == '222'
+FAILED test_target.py::test_values[v002] - AssertionError: assert '54667' == ...
+FAILED test_target.py::test_values[v003] - AssertionError: assert '8888' == '...
+FAILED test_target.py::test_values[v004] - AssertionError: assert '10101010' ...
+FAILED test_target.py::test_values[v005] - AssertionError: assert '3334445556...
+5 failed, 11 passed in 0.54s

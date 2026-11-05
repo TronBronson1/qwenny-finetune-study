@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="13" time="0.414" timestamp="2026-11-04T17:03:46.897014-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:34: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:34: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001"><failure message="ValueError: domain">args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           digit_sum(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1
+
+    def digit_sum(number):
+        _types((number,), ('int',))
+        if number &lt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /></testsuite></testsuites>

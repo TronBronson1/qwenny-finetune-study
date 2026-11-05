@@ -1,0 +1,260 @@
+FFFFFFFF........                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('()',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('([]{})',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('([)]',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('(',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (']',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('}{',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = False
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(0)
+E        +  and   <class 'bool'> = type(False)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('[](){}',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True, id="v000"),
+        pytest.param(('()',), True, id="v001"),
+        pytest.param(('([]{})',), True, id="v002"),
+        pytest.param(('([)]',), False, id="v003"),
+        pytest.param(('(',), False, id="v004"),
+        pytest.param((']',), False, id="v005"),
+        pytest.param(('}{',), False, id="v006"),
+        pytest.param(('[](){}',), True, id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=balanced_brackets(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = True
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'int'> is <class 'bool'>
+E        +  where <class 'int'> = type(1)
+E        +  and   <class 'bool'> = type(True)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'int...
+FAILED test_target.py::test_values[v007] - AssertionError: assert <class 'int...
+8 failed, 8 passed in 0.57s

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="22" time="0.307" timestamp="2026-11-04T07:12:44.794629-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert [[]] == [[1]]&#10;  &#10;  At index 0 diff: [] != [1]&#10;  Use -v to get more diff">args = ([1], 2), expected = [[1]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=chunk_list(*args)
+&gt;       assert actual == expected
+E       assert [[]] == [[1]]
+E         
+E         At index 0 diff: [] != [1]
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert [[1, 2], []] == [[1, 2], [3, 4]]&#10;  &#10;  At index 1 diff: [] != [3, 4]&#10;  Use -v to get more diff">args = ([1, 2, 3, 4], 2), expected = [[1, 2], [3, 4]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=chunk_list(*args)
+&gt;       assert actual == expected
+E       assert [[1, 2], []] == [[1, 2], [3, 4]]
+E         
+E         At index 1 diff: [] != [3, 4]
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert [[1], []] == [[1, 2], [3]]&#10;  &#10;  At index 0 diff: [1] != [1, 2]&#10;  Use -v to get more diff">args = ([1, 2, 3], 2), expected = [[1, 2], [3]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=chunk_list(*args)
+&gt;       assert actual == expected
+E       assert [[1], []] == [[1, 2], [3]]
+E         
+E         At index 0 diff: [1] != [1, 2]
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert [[1], []] == [[1], [2]]&#10;  &#10;  At index 1 diff: [] != [2]&#10;  Use -v to get more diff">args = ([1, 2], 1), expected = [[1], [2]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=chunk_list(*args)
+&gt;       assert actual == expected
+E       assert [[1], []] == [[1], [2]]
+E         
+E         At index 1 diff: [] != [2]
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert [[]] == [[1, 2]]&#10;  &#10;  At index 0 diff: [] != [1, 2]&#10;  Use -v to get more diff">args = ([1, 2], 9), expected = [[1, 2]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=chunk_list(*args)
+&gt;       assert actual == expected
+E       assert [[]] == [[1, 2]]
+E         
+E         At index 0 diff: [] != [1, 2]
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /></testsuite></testsuites>

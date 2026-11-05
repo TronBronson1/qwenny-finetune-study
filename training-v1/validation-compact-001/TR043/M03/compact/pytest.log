@@ -1,0 +1,99 @@
+FFFFF............                                                        [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = ('0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('001',), 1),
+        pytest.param(('1010',), 10),
+        pytest.param(('11111111111111111111111111111111',), 4294967295),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:24: AssertionError
+____________________________ test_values[args1-1] _____________________________
+
+args = ('1',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('001',), 1),
+        pytest.param(('1010',), 10),
+        pytest.param(('11111111111111111111111111111111',), 4294967295),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:24: AssertionError
+____________________________ test_values[args2-1] _____________________________
+
+args = ('001',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('001',), 1),
+        pytest.param(('1010',), 10),
+        pytest.param(('11111111111111111111111111111111',), 4294967295),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:24: AssertionError
+____________________________ test_values[args3-10] ____________________________
+
+args = ('1010',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('001',), 1),
+        pytest.param(('1010',), 10),
+        pytest.param(('11111111111111111111111111111111',), 4294967295),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 11 == 10
+
+test_target.py:24: AssertionError
+________________________ test_values[args4-4294967295] ________________________
+
+args = ('11111111111111111111111111111111',), expected = 4294967295
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('1',), 1),
+        pytest.param(('001',), 1),
+        pytest.param(('1010',), 10),
+        pytest.param(('11111111111111111111111111111111',), 4294967295),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 4294967296 == 4294967295
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - assert 1 == 0
+FAILED test_target.py::test_values[args1-1] - assert 2 == 1
+FAILED test_target.py::test_values[args2-1] - assert 2 == 1
+FAILED test_target.py::test_values[args3-10] - assert 11 == 10
+FAILED test_target.py::test_values[args4-4294967295] - assert 4294967296 == 4...
+5 failed, 12 passed in 0.36s

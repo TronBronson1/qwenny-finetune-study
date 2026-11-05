@@ -1,0 +1,66 @@
+[
+  {
+    "task": "DV001",
+    "variant": "base-greedy-0",
+    "strict_accepted": false,
+    "reason": "Correct implementation: 13 passed, 1 failed. A normal tuple is wrongly classified as a rejected tuple subclass.",
+    "answer_sha256": "9519b9860695a9c3083ea4ee3045b673ec113d688cc003f056f51a34b8575b75",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV001",
+    "variant": "epoch-5-greedy-0",
+    "strict_accepted": false,
+    "reason": "Truncated at 2048 tokens inside an enormous integer; no complete code block. Earlier negative and wrapping expected rotations are also wrong.",
+    "answer_sha256": "07cf7e3d765ed45b4bdf684ec025b06857040a00809e78c2b79b3649df4b40c8",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV001",
+    "variant": "base-sample-0",
+    "strict_accepted": false,
+    "reason": "Correct implementation: 14 passed, 4 failed. Wrong large/negative rotation values and normal-tuple rejection.",
+    "answer_sha256": "64228db41a40a36f53455b21efc726a915d35a034d1f4f6d242529e20570e9cc",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV001",
+    "variant": "epoch-5-sample-0",
+    "strict_accepted": false,
+    "reason": "Correct implementation: 6 passed, 2 failed. Wrong expected values for negative rotation, including -100 modulo 3.",
+    "answer_sha256": "aa10ffbce051786da0d7a6784afe1f84a676a90c73d552b8b697af65fcd1db27",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV002",
+    "variant": "epoch-5-greedy-0",
+    "strict_accepted": false,
+    "reason": "Truncated at 2048 tokens while enumerating valid times; no complete code block or assertions.",
+    "answer_sha256": "a3b8b73198dd0518d3caf1a8de0eca006f9a8087a33c004e7de6c1409ad1dbf4",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV002",
+    "variant": "base-sample-0",
+    "strict_accepted": false,
+    "reason": "Correct implementation: 17 passed, 1 failed. Invalid-type cases contain inconsistent tuple lengths, causing unpacking failure. Exact built-in return type and str-subclass coverage are also absent.",
+    "answer_sha256": "1e6fcc3772c5b2f8c26d8797d1956503bf0fc6f9a6fc42d1d0491523b6ddaf80",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV002",
+    "variant": "epoch-5-sample-0",
+    "strict_accepted": false,
+    "reason": "Syntax error during collection. Source also expects None for valid/invalid times and rejected types instead of required integer values/exceptions.",
+    "answer_sha256": "ba807614cefc6257165f7ea35233e419d810cf0b78a352f18788a4cfff45f337",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  },
+  {
+    "task": "DV002",
+    "variant": "base-greedy-0",
+    "strict_accepted": false,
+    "reason": "Truncated at 2048 tokens with an unfinished function and no closed code block. Earlier tests both accept and reject valid 01:59.",
+    "answer_sha256": "a1909496b10057e5428bb9776d3a887f6295ecc11855d37a53c680fba74e08db",
+    "review_scope": "Definitive rejection; exhaustive missing-category audit is unnecessary after reference/syntax/completion failure."
+  }
+]

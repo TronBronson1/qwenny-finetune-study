@@ -1,0 +1,159 @@
+[
+  {
+    "id": "v000",
+    "args_python": "([],)",
+    "expected_python": "[]",
+    "after_python": "([],)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "([(1, 3)],)",
+    "expected_python": "[(1, 3)]",
+    "after_python": "([(1, 3)],)",
+    "category": "single"
+  },
+  {
+    "id": "v002",
+    "args_python": "([(3, 5), (1, 3)],)",
+    "expected_python": "[(1, 5)]",
+    "after_python": "([(3, 5), (1, 3)],)",
+    "category": "unordered-touching"
+  },
+  {
+    "id": "v003",
+    "args_python": "([(1, 5), (2, 3)],)",
+    "expected_python": "[(1, 5)]",
+    "after_python": "([(1, 5), (2, 3)],)",
+    "category": "nested"
+  },
+  {
+    "id": "v004",
+    "args_python": "([(1, 2), (4, 6)],)",
+    "expected_python": "[(1, 2), (4, 6)]",
+    "after_python": "([(1, 2), (4, 6)],)",
+    "category": "disjoint"
+  },
+  {
+    "id": "v005",
+    "args_python": "([(-3, 0), (-1, 2)],)",
+    "expected_python": "[(-3, 2)]",
+    "after_python": "([(-3, 0), (-1, 2)],)",
+    "category": "negative-overlap"
+  },
+  {
+    "id": "v006",
+    "args_python": "([(5, 7), (1, 3), (2, 6)],)",
+    "expected_python": "[(1, 7)]",
+    "after_python": "([(5, 7), (1, 3), (2, 6)],)",
+    "category": "transitive-unordered-union"
+  },
+  {
+    "id": "e000",
+    "args_python": "(ListChild([]),)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e001",
+    "args_python": "([TupleChild((0, 1))],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e002",
+    "args_python": "([(0, True)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e003",
+    "args_python": "([(0, 'x')],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e005",
+    "args_python": "([1],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e006",
+    "args_python": "([(True, 1)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e007",
+    "args_python": "([(IntChild(0), 1)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e008",
+    "args_python": "([(0, IntChild(1))],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e009",
+    "args_python": "([('x', 1)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e010",
+    "args_python": "([(1.5, 2)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e011",
+    "args_python": "([(0, 1.5)],)",
+    "exception": "TypeError",
+    "category": "type:intervals"
+  },
+  {
+    "id": "e012",
+    "args_python": "([(1, 1)],)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e013",
+    "args_python": "([(2, 1)],)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e014",
+    "args_python": "([(1, 2, 3)],)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e015",
+    "args_python": "(ListChild([(1, 1)]),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e016",
+    "args_python": "(ListChild([(2, 1)]),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e017",
+    "args_python": "(ListChild([(1, 2, 3)]),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

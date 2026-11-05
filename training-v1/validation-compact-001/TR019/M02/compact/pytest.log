@@ -1,0 +1,85 @@
+...F.FF....                                                              [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args3-\n] ____________________________
+
+args = ('\r',), expected = '\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+>       assert actual == expected
+E       AssertionError: assert '\r' == '\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n'
+E         ?   ^
+E         + '\r'
+E         ?   ^
+
+test_target.py:26: AssertionError
+________________________ test_values[args5-a\nb\nc\nd] ________________________
+
+args = ('a\r\nb\rc\nd',), expected = 'a\nb\nc\nd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\nb\rc\nd' == 'a\nb\nc\nd'
+E         
+E           a
+E         - b
+E         + b
+E           c
+E           d
+
+test_target.py:26: AssertionError
+___________________________ test_values[args6-\n\n] ___________________________
+
+args = ('\r\r\n',), expected = '\n\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('a',), 'a'),
+        pytest.param(('\r\n',), '\n'),
+        pytest.param(('\r',), '\n'),
+        pytest.param(('\n',), '\n'),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd'),
+        pytest.param(('\r\r\n',), '\n\n'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+>       assert actual == expected
+E       AssertionError: assert '\r\n' == '\n\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n\n'
+E         ?   ^
+E         + '\r\n'
+E         ?   ^
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args3-\n] - AssertionError: assert '\r' ==...
+FAILED test_target.py::test_values[args5-a\nb\nc\nd] - AssertionError: assert...
+FAILED test_target.py::test_values[args6-\n\n] - AssertionError: assert '\r\n...
+3 failed, 8 passed in 0.32s

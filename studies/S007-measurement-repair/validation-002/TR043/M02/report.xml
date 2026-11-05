@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="21" time="0.449" timestamp="2026-11-04T17:05:25.361302-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 30 == 10">args = ('1010',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('001',), 1, id="v002"),
+        pytest.param(('1010',), 10, id="v003"),
+        pytest.param(('11111111111111111111111111111111',), 4294967295, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_binary(*args)
+&gt;       assert actual == expected
+E       assert 30 == 10
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert 926510094425920 == 4294967295">args = ('11111111111111111111111111111111',), expected = 4294967295
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('001',), 1, id="v002"),
+        pytest.param(('1010',), 10, id="v003"),
+        pytest.param(('11111111111111111111111111111111',), 4294967295, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_binary(*args)
+&gt;       assert actual == expected
+E       assert 926510094425920 == 4294967295
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.001" /></testsuite></testsuites>

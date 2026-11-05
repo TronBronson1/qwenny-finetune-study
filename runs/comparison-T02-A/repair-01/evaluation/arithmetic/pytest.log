@@ -1,0 +1,38 @@
+.FF............                                                          [100%]
+================================== FAILURES ===================================
+_____________________ test_minute_of_day_valid[12:30-750] _____________________
+
+text = '12:30', expected = 750
+
+    @pytest.mark.parametrize("text,expected", [
+        ("00:00", 0),
+        ("12:30", 750),
+        ("23:59", 1439),
+    ])
+    def test_minute_of_day_valid(text, expected):
+        result = minute_of_day(text)
+        assert type(result) is int
+>       assert result == expected
+E       assert 42 == 750
+
+test_candidate.py:18: AssertionError
+____________________ test_minute_of_day_valid[23:59-1439] _____________________
+
+text = '23:59', expected = 1439
+
+    @pytest.mark.parametrize("text,expected", [
+        ("00:00", 0),
+        ("12:30", 750),
+        ("23:59", 1439),
+    ])
+    def test_minute_of_day_valid(text, expected):
+        result = minute_of_day(text)
+        assert type(result) is int
+>       assert result == expected
+E       assert 82 == 1439
+
+test_candidate.py:18: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_minute_of_day_valid[12:30-750] - assert 42 == 750
+FAILED test_candidate.py::test_minute_of_day_valid[23:59-1439] - assert 82 ==...
+2 failed, 13 passed in 0.30s

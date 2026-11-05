@@ -1,0 +1,69 @@
+import copy
+import pytest
+from subject import row_major_offset
+
+class IntChild(int): pass
+
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual) == len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+    elif type(expected) is dict:
+        assert actual.keys() == expected.keys()
+        assert all(type(k) is str for k in actual)
+        for key in expected: assert_exact_shape(actual[key],expected[key])
+
+@pytest.mark.parametrize("args,expected", [
+    pytest.param((0, 0, 1, 1), 0, id="v000"),
+    pytest.param((0, 0, 2, 2), 0, id="v001"),
+    pytest.param((1, 1, 2, 2), 4, id="v002"),
+])
+def test_values(args,expected):
+    before=copy.deepcopy(args)
+    actual=row_major_offset(*args)
+    assert actual == expected
+    assert_exact_shape(actual,expected)
+    assert args == before
+
+@pytest.mark.parametrize("args", [
+    pytest.param((True, 0, 1, 1), id="e000"),
+    pytest.param((IntChild(0), 0, 1, 1), id="e001"),
+    pytest.param((0, True, 1, 1), id="e002"),
+    pytest.param((0, IntChild(0), 1, 1), id="e003"),
+    pytest.param((0, 0, True, 1), id="e004"),
+    pytest.param((0, 0, IntChild(1), 1), id="e005"),
+    pytest.param((0, 0, 1, True), id="e006"),
+    pytest.param((0, 0, 1, IntChild(1)), id="e007"),
+    pytest.param((0, 0, 1.0, 1), id="e008"),
+    pytest.param((0, 0, 1, b'1'), id="e009"),
+    pytest.param((0, 0, None, 1), id="e010"),
+    pytest.param((0, 0, 1, None), id="e011"),
+    pytest.param((b'0', 0, 1, 1), id="e012"),
+    pytest.param((0.0, 0, 1, 1), id="e013"),
+    pytest.param((None, 0, 1, 1), id="e014"),
+    pytest.param((0, None, 1, 1), id="e015"),
+    pytest.param((0, 0, 0, 1), id="e016"),
+    pytest.param((0, 0, 1, 0), id="e017"),
+    pytest.param((0, 0, -1, 1), id="e018"),
+    pytest.param((0, 0, 1, -1), id="e019"),
+    pytest.param((0, 0, 0.0, 1), id="e020"),
+    pytest.param((0, 0, 1.0, 0), id="e021"),
+    pytest.param((0, 0, True, 1), id="e022"),
+    pytest.param((0, 0, 1, True), id="e023"),
+])
+def test_raises_typeerror(args):
+    with pytest.raises(TypeError):
+        row_major_offset(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((-1, 0, 1, 1), id="e024"),
+    pytest.param((1, 100, 2, 2), id="e025"),
+    pytest.param((100, 0, 2, 2), id="e026"),
+    pytest.param((0, 1, 1, 2), id="e027"),
+    pytest.param((1, 1, 2, 2), id="e028"),
+    pytest.param((1, 0, 1, 2), id="e029"),
+])
+def test_raises_valueerror(args):
+    with pytest.raises(ValueError):
+        row_major_offset(*args)

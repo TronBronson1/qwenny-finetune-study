@@ -1,0 +1,72 @@
+FFFF......................                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('10',), 10, id="v002"),
+        pytest.param(('999999999999',), 999999999999, id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:20: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('1',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('10',), 10, id="v002"),
+        pytest.param(('999999999999',), 999999999999, id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:20: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('10',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('10',), 10, id="v002"),
+        pytest.param(('999999999999',), 999999999999, id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 11 == 10
+
+test_target.py:20: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('999999999999',), expected = 999999999999
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('10',), 10, id="v002"),
+        pytest.param(('999999999999',), 999999999999, id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=parse_unsigned(*args)
+>       assert actual == expected
+E       assert 1000000000000 == 999999999999
+
+test_target.py:20: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert 1 == 0
+FAILED test_target.py::test_values[v001] - assert 2 == 1
+FAILED test_target.py::test_values[v002] - assert 11 == 10
+FAILED test_target.py::test_values[v003] - assert 1000000000000 == 999999999999
+4 failed, 22 passed in 0.54s

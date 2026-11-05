@@ -1,0 +1,191 @@
+FFFFFF.....                                                              [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = ([],), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [], expected = []
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([])
+E        +  and   <class 'list'> = type([])
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = (['a'],), expected = [('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [('a', 1)], expected = [('a', 1)]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([('a', 1)])
+E        +  and   <class 'list'> = type([('a', 1)])
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = (['a', 'a', 'b', 'a'],), expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [('a', 2), ('b', 1), ('a', 1)]
+expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([('a', 2), ('b', 1), ('a', 1)])
+E        +  and   <class 'list'> = type([('a', 2), ('b', 1), ('a', 1)])
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = (['', '', 'x'],), expected = [('', 2), ('x', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [('', 2), ('x', 1)], expected = [('', 2), ('x', 1)]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([('', 2), ('x', 1)])
+E        +  and   <class 'list'> = type([('', 2), ('x', 1)])
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = (['A', 'a'],), expected = [('A', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [('A', 1), ('a', 1)], expected = [('A', 1), ('a', 1)]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([('A', 1), ('a', 1)])
+E        +  and   <class 'list'> = type([('A', 1), ('a', 1)])
+
+test_candidate.py:9: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = (['é', 'é', '字'],), expected = [('é', 2), ('字', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [('é', 2), ('字', 1)], expected = [('é', 2), ('字', 1)]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([('é', 2), ('字', 1)])
+E        +  and   <class 'list'> = type([('é', 2), ('字', 1)])
+
+test_candidate.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v003] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v004] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v005] - AssertionError: assert ...
+6 failed, 5 passed in 0.70s

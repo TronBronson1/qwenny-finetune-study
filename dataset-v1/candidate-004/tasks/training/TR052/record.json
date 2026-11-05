@@ -1,0 +1,31 @@
+{
+  "id": "TR052",
+  "split": "training",
+  "family": "seconds-to-hms",
+  "function": "seconds_to_hms",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "seconds"
+  ],
+  "schemas": [
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "45871de6920fc1b2b90faa84b0b65b41c4eec1aca4fd36eec8dba550acd1df88",
+  "target_sha256": "414b831931109dccfbc85ddadb7be4e8cc3b17d166ea16e9fcd6d01eae52294a",
+  "spec_sha256": "82e1f6890a2cbb508bc99d893bb5f951b81aa8a3b62212688a2ce1b7a3868834",
+  "answer_sha256": "2af66002148e0308e515a3b7ead8452cfdd151252df1d02e321ed86ba80319e7",
+  "valid_test_cases": 6,
+  "exception_test_cases": 6,
+  "oracle_checks": 6,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

@@ -1,0 +1,171 @@
+.FFFFF.............F..                                                   [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = (1, 3), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=batches(*args)
+               ^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 1, capacity = 3
+
+    def batches(items, capacity):
+        _types((items, capacity), ('int', 'int'))
+        if items > 0 or capacity <= 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v002] ______________________________
+
+args = (3, 3), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=batches(*args)
+               ^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 3, capacity = 3
+
+    def batches(items, capacity):
+        _types((items, capacity), ('int', 'int'))
+        if items > 0 or capacity <= 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v003] ______________________________
+
+args = (4, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=batches(*args)
+               ^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 4, capacity = 3
+
+    def batches(items, capacity):
+        _types((items, capacity), ('int', 'int'))
+        if items > 0 or capacity <= 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v004] ______________________________
+
+args = (7, 1), expected = 7
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=batches(*args)
+               ^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 7, capacity = 1
+
+    def batches(items, capacity):
+        _types((items, capacity), ('int', 'int'))
+        if items > 0 or capacity <= 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v005] ______________________________
+
+args = (1000000000000000000000000000000, 3)
+expected = 333333333333333333333333333334
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 3), 0, id="v000"),
+        pytest.param((1, 3), 1, id="v001"),
+        pytest.param((3, 3), 1, id="v002"),
+        pytest.param((4, 3), 2, id="v003"),
+        pytest.param((7, 1), 7, id="v004"),
+        pytest.param((1000000000000000000000000000000, 3), 333333333333333333333333333334, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=batches(*args)
+               ^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 1000000000000000000000000000000, capacity = 3
+
+    def batches(items, capacity):
+        _types((items, capacity), ('int', 'int'))
+        if items > 0 or capacity <= 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[e010] _________________________
+
+args = (-1, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 3), id="e010"),
+        pytest.param((2, 0), id="e011"),
+        pytest.param((2, -1), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:57: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - ValueError: domain
+FAILED test_target.py::test_values[v002] - ValueError: domain
+FAILED test_target.py::test_values[v003] - ValueError: domain
+FAILED test_target.py::test_values[v004] - ValueError: domain
+FAILED test_target.py::test_values[v005] - ValueError: domain
+FAILED test_target.py::test_raises_valueerror[e010] - Failed: DID NOT RAISE V...
+6 failed, 16 passed in 0.72s

@@ -1,0 +1,155 @@
+FFFFFF.....                                                              [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (['mutation-sentinel'],), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['mutation-sentinel'],) == ([],)
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (['a', 'mutation-sentinel'],), expected = [('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['a', 'mutation-sentinel'],) == (['a'],)
+E         
+E         At index 0 diff: ['a', 'mutation-sentinel'] != ['a']
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (['a', 'a', 'b', 'a', 'mutation-sentinel'],)
+expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['a', 'a', '...n-sentinel'],) == (['a', 'a', 'b', 'a'],)
+E         
+E         At index 0 diff: ['a', 'a', 'b', 'a', 'mutation-sentinel'] != ['a', 'a', 'b', 'a']
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (['', '', 'x', 'mutation-sentinel'],), expected = [('', 2), ('x', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['', '', 'x'...n-sentinel'],) == (['', '', 'x'],)
+E         
+E         At index 0 diff: ['', '', 'x', 'mutation-sentinel'] != ['', '', 'x']
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (['A', 'a', 'mutation-sentinel'],), expected = [('A', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['A', 'a', '...n-sentinel'],) == (['A', 'a'],)
+E         
+E         At index 0 diff: ['A', 'a', 'mutation-sentinel'] != ['A', 'a']
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (['é', 'é', '字', 'mutation-sentinel'],), expected = [('é', 2), ('字', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['é', 'é', '...n-sentinel'],) == (['é', 'é', '字'],)
+E         
+E         At index 0 diff: ['é', 'é', '字', 'mutation-sentinel'] != ['é', 'é', '字']
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert (['mutation...
+FAILED test_target.py::test_values[v001] - AssertionError: assert (['a', 'mut...
+FAILED test_target.py::test_values[v002] - AssertionError: assert (['a', 'a',...
+FAILED test_target.py::test_values[v003] - AssertionError: assert (['', '', '...
+FAILED test_target.py::test_values[v004] - AssertionError: assert (['A', 'a',...
+FAILED test_target.py::test_values[v005] - AssertionError: assert (['é', 'é',...
+6 failed, 5 passed in 0.59s

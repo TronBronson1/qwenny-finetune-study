@@ -1,0 +1,145 @@
+FFF.....FFF                                                              [100%]
+================================== FAILURES ===================================
+____________________ test_edit_distance_both_valid_strings ____________________
+
+    def test_edit_distance_both_valid_strings():
+>       assert edit_distance("kitten", "sitting") == 3
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'kitten', right = 'sitting'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+_____________________ test_edit_distance_empty_vs_single ______________________
+
+    def test_edit_distance_empty_vs_single():
+>       assert edit_distance("", "a") == 1
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = '', right = 'a'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+                current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+            previous = current
+>       return previous[-1]
+               ^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:60: IndexError
+______________________ test_edit_distance_equal_strings _______________________
+
+    def test_edit_distance_equal_strings():
+>       assert edit_distance("abc", "abc") == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'abc', right = 'abc'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+______________________ test_edit_distance_unicode_chars _______________________
+
+    def test_edit_distance_unicode_chars():
+        # Test 'cherry' vs 'cherry' (same) -> 0
+>       assert edit_distance("cherry", "cherry") == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'cherry', right = 'cherry'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+______________________ test_edit_distance_mixed_unicode _______________________
+
+    def test_edit_distance_mixed_unicode():
+>       assert edit_distance("café", "café") == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'café', right = 'café'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+_____________________ test_edit_distance_specific_values ______________________
+
+    def test_edit_distance_specific_values():
+>       assert edit_distance("cat", "cut") == 1
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'cat', right = 'cut'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_edit_distance_both_valid_strings - IndexError:...
+FAILED test_candidate.py::test_edit_distance_empty_vs_single - IndexError: li...
+FAILED test_candidate.py::test_edit_distance_equal_strings - IndexError: list...
+FAILED test_candidate.py::test_edit_distance_unicode_chars - IndexError: list...
+FAILED test_candidate.py::test_edit_distance_mixed_unicode - IndexError: list...
+FAILED test_candidate.py::test_edit_distance_specific_values - IndexError: li...
+6 failed, 5 passed in 0.57s

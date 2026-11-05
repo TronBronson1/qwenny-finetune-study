@@ -1,0 +1,1 @@
+This scoring launch used the training Python, which has no pytest. All execution logs report No module named pytest. Do not use its summary for model-quality claims. Unchanged saved outputs were scored with the established pytest interpreter under ../thinking-001-pytest. No generation was repeated.

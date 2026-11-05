@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="28" time="0.472" timestamp="2026-11-04T17:06:42.588621-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = (['0'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(0)&#10; +  and   &lt;class 'int'&gt; = type(0)">args = (['-0'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(0)
+E        +  and   &lt;class 'int'&gt; = type(0)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(5)&#10; +  and   &lt;class 'int'&gt; = type(5)">args = (['2', '3', '+'],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 5, expected = 5
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(5)
+E        +  and   &lt;class 'int'&gt; = type(5)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(-1)&#10; +  and   &lt;class 'int'&gt; = type(-1)">args = (['2', '3', '-'],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -1, expected = -1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(-1)
+E        +  and   &lt;class 'int'&gt; = type(-1)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(14)&#10; +  and   &lt;class 'int'&gt; = type(14)">args = (['2', '3', '4', '*', '+'],), expected = 14
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 14, expected = 14
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(14)
+E        +  and   &lt;class 'int'&gt; = type(14)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(-6)&#10; +  and   &lt;class 'int'&gt; = type(-6)">args = (['-2', '3', '*'],), expected = -6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -6, expected = -6
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(-6)
+E        +  and   &lt;class 'int'&gt; = type(-6)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(16)&#10; +  and   &lt;class 'int'&gt; = type(16)">args = (['1', '1', '1', '1', '1', '1', ...],), expected = 16
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 16, expected = 16
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(16)
+E        +  and   &lt;class 'int'&gt; = type(16)
+
+test_target.py:9: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /></testsuite></testsuites>

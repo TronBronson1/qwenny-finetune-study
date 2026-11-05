@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "755151dc4181aa80ba2c20193667c4923835a9c81d33c4bfe8d531a45cbb41cf",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "constant-48-0-plus-one",
+    "source_sha256": "31febf11863177be55bb216af29b208e56def5f3d0fbdd972fecc78a229a5414",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e005]",
+      "case": "e005",
+      "kind": "required-exception-not-raised",
+      "args_python": "(')',)",
+      "expected_exception": "ValueError",
+      "actual_python": "1"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "comparison-51-Gt",
+    "source_sha256": "b840f1db875bae768b327461fa07ac40a383936fa6dbc4c8c9056103c63fd1b6",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e006]",
+      "case": "e006",
+      "kind": "required-exception-not-raised",
+      "args_python": "(')(',)",
+      "expected_exception": "ValueError",
+      "actual_python": "0"
+    }
+  }
+]

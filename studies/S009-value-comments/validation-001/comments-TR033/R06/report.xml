@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="28" time="0.443" timestamp="2026-11-04T19:00:11.451413-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e014]" time="0.001"><failure message="ValueError: index">args = ([], 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], index = 0
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 &lt;= index &lt; len(values):
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e015]" time="0.001"><failure message="ValueError: index">args = ([1], -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], index = -1
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 &lt;= index &lt; len(values):
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e016]" time="0.001"><failure message="ValueError: index">args = ([1], 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([], 0), id="e014"),
+        pytest.param(([1], -1), id="e015"),
+        pytest.param(([1], 1), id="e016"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           remove_at(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], index = 1
+
+    def remove_at(values, index):
+        _types((values, index), ('ints', 'int'))
+        if not 0 &lt;= index &lt; len(values):
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.001" /></testsuite></testsuites>

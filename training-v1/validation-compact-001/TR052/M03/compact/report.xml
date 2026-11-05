@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="13" time="0.289" timestamp="2026-11-04T07:13:36.141743-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001"><failure message="assert (0, 0) == (0, 0, 0)&#10;  &#10;  Right contains one more item: 0&#10;  Use -v to get more diff">args = (0,), expected = (0, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (0, 0) == (0, 0, 0)
+E         
+E         Right contains one more item: 0
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001"><failure message="assert (0, 0) == (0, 0, 59)&#10;  &#10;  Right contains one more item: 59&#10;  Use -v to get more diff">args = (59,), expected = (0, 0, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (0, 0) == (0, 0, 59)
+E         
+E         Right contains one more item: 59
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-expected2]" time="0.001"><failure message="assert (0, 1) == (0, 1, 0)&#10;  &#10;  Right contains one more item: 0&#10;  Use -v to get more diff">args = (60,), expected = (0, 1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (0, 1) == (0, 1, 0)
+E         
+E         Right contains one more item: 0
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-expected3]" time="0.001"><failure message="assert (0, 59) == (0, 59, 59)&#10;  &#10;  Right contains one more item: 59&#10;  Use -v to get more diff">args = (3599,), expected = (0, 59, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (0, 59) == (0, 59, 59)
+E         
+E         Right contains one more item: 59
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-expected4]" time="0.001"><failure message="assert (1, 0) == (1, 0, 0)&#10;  &#10;  Right contains one more item: 0&#10;  Use -v to get more diff">args = (3600,), expected = (1, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (1, 0) == (1, 0, 0)
+E         
+E         Right contains one more item: 0
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-expected5]" time="0.001"><failure message="assert (25, 1) == (25, 1, 1)&#10;  &#10;  Right contains one more item: 1&#10;  Use -v to get more diff">args = (90061,), expected = (25, 1, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=seconds_to_hms(*args)
+&gt;       assert actual == expected
+E       assert (25, 1) == (25, 1, 1)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /></testsuite></testsuites>

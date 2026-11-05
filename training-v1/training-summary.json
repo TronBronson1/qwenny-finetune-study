@@ -1,0 +1,171 @@
+{
+  "status": "trained-and-fresh-reload-verified",
+  "base": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "training_samples": 300,
+  "distinct_training_tasks": 60,
+  "optimizer_updates": 75,
+  "epochs": 5,
+  "elapsed_training_and_checkpoint_evaluation_seconds": 694.9679999999935,
+  "epoch_mean_training_losses": {
+    "1": 0.9299458076556524,
+    "2": 0.7384460096557935,
+    "3": 0.5196310666700205,
+    "4": 0.27855610599120456,
+    "5": 0.12719051813085874
+  },
+  "median_microbatch_seconds": 2.0,
+  "training_peak_allocated_bytes": 7586631680,
+  "training_peak_reserved_bytes": 8126464000,
+  "min_microbatch_stage_cuda_free_bytes": 434257920,
+  "windows_peak_process_shared_bytes_during_training_interval": 85983232,
+  "reload_checks": [
+    {
+      "epoch": 1,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 3,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 5,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "development_base": {
+    "A": 0.8933799689014753,
+    "B": 0.7899087692300478
+  },
+  "development_checkpoints": [
+    {
+      "epoch": 1,
+      "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-1",
+      "samples_seen": 60,
+      "optimizer_updates": 15,
+      "development_loss": {
+        "A": 0.7698377793033918,
+        "B": 0.7082222501436869
+      }
+    },
+    {
+      "epoch": 3,
+      "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-3",
+      "samples_seen": 180,
+      "optimizer_updates": 45,
+      "development_loss": {
+        "A": 0.381603275736173,
+        "B": 0.43056973318258923
+      }
+    },
+    {
+      "epoch": 5,
+      "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-5",
+      "samples_seen": 300,
+      "optimizer_updates": 75,
+      "development_loss": {
+        "A": 0.13292522014429173,
+        "B": 0.22184536357720694
+      }
+    }
+  ],
+  "quality_claim": "None. Teacher-forced likelihood is not executable acceptance, regression safety or reasoning preservation. Final-test families are untouched by the model.",
+  "candidates": [
+    {
+      "name": "Qwenny E1",
+      "training_epochs": 1,
+      "same_trajectory": true,
+      "base": "Qwen/Qwen3.5-9B",
+      "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "rank": 4,
+      "alpha": 8,
+      "trainable_parameters": 557056,
+      "input_embedding": "Frozen BF16 CPU lookup; transformer/head/adapters CUDA",
+      "base_quantization": "NF4 with double quantization; BF16 compute",
+      "supervision": "Visible assistant answer and im_end only; prompt and empty thinking wrapper ignored",
+      "training_task_count": 60,
+      "samples_seen": 60,
+      "optimizer_updates": 15,
+      "development_teacher_forced_loss": {
+        "A": 0.7698377793033918,
+        "B": 0.7082222501436869
+      },
+      "fresh_reload": {
+        "epoch": 1,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      "source_checkpoint": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-1",
+      "files": {
+        "adapter_config.json": "e12e85b759fe8d0cc50a7d0c08ba2338cedbe1b2139f1f57bf083cb9c55a5ebe",
+        "adapter_model.safetensors": "b6b0da50c5c086f757242216d8c1ff06c91259a913ef5f97b58eb9ee84ce2fa1"
+      },
+      "deployment": "PEFT adapter only, not a standalone GGUF. No LM Studio deployment/import has been verified."
+    },
+    {
+      "name": "Qwenny E3",
+      "training_epochs": 3,
+      "same_trajectory": true,
+      "base": "Qwen/Qwen3.5-9B",
+      "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "rank": 4,
+      "alpha": 8,
+      "trainable_parameters": 557056,
+      "input_embedding": "Frozen BF16 CPU lookup; transformer/head/adapters CUDA",
+      "base_quantization": "NF4 with double quantization; BF16 compute",
+      "supervision": "Visible assistant answer and im_end only; prompt and empty thinking wrapper ignored",
+      "training_task_count": 60,
+      "samples_seen": 180,
+      "optimizer_updates": 45,
+      "development_teacher_forced_loss": {
+        "A": 0.381603275736173,
+        "B": 0.43056973318258923
+      },
+      "fresh_reload": {
+        "epoch": 3,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      "source_checkpoint": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-3",
+      "files": {
+        "adapter_config.json": "e12e85b759fe8d0cc50a7d0c08ba2338cedbe1b2139f1f57bf083cb9c55a5ebe",
+        "adapter_model.safetensors": "95d1ae78c6214094a89b99e59e7bbc415c0a8b9d9e2d1ef3f668433fdc85798b"
+      },
+      "deployment": "PEFT adapter only, not a standalone GGUF. No LM Studio deployment/import has been verified."
+    },
+    {
+      "name": "Qwenny E5",
+      "training_epochs": 5,
+      "same_trajectory": true,
+      "base": "Qwen/Qwen3.5-9B",
+      "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "rank": 4,
+      "alpha": 8,
+      "trainable_parameters": 557056,
+      "input_embedding": "Frozen BF16 CPU lookup; transformer/head/adapters CUDA",
+      "base_quantization": "NF4 with double quantization; BF16 compute",
+      "supervision": "Visible assistant answer and im_end only; prompt and empty thinking wrapper ignored",
+      "training_task_count": 60,
+      "samples_seen": 300,
+      "optimizer_updates": 75,
+      "development_teacher_forced_loss": {
+        "A": 0.13292522014429173,
+        "B": 0.22184536357720694
+      },
+      "fresh_reload": {
+        "epoch": 5,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      "source_checkpoint": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-001\\checkpoints\\epoch-5",
+      "files": {
+        "adapter_config.json": "e12e85b759fe8d0cc50a7d0c08ba2338cedbe1b2139f1f57bf083cb9c55a5ebe",
+        "adapter_model.safetensors": "9d896a4d88a72671abf577518fef277dbe696217fa7017302f0c86b37cb6d044"
+      },
+      "deployment": "PEFT adapter only, not a standalone GGUF. No LM Studio deployment/import has been verified."
+    }
+  ]
+}

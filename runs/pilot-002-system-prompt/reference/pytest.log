@@ -1,0 +1,52 @@
+.....................FFF..                                               [100%]
+================================== FAILURES ===================================
+__ TestClampIntegerIntSubclassInvalid.test_subclass_value_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000029A01DAE490>
+
+    def test_subclass_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+
+test_candidate.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+                                                   ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:91: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_lower_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000029A01DAE5D0>
+
+    def test_subclass_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+
+test_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+                                                      ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:94: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_upper_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000029A01D62650>
+
+    def test_subclass_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+
+test_candidate.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+                                                         ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:97: NameError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_upper_raises_type_error
+3 failed, 23 passed in 0.25s

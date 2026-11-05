@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="8" skipped="0" tests="15" time="0.310" timestamp="2026-11-04T07:11:56.944662-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-True]" time="0.001"><failure message="assert False == True">args = (0,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-True]" time="0.001"><failure message="assert False == True">args = (1,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-False]" time="0.001"><failure message="assert True == False">args = (2,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-True]" time="0.001"><failure message="assert False == True">args = (4,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-False]" time="0.001"><failure message="assert True == False">args = (15,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-True]" time="0.001"><failure message="assert False == True">args = (16,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-False]" time="0.001"><failure message="assert True == False">args = (17,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert True == False
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args7-True]" time="0.001"><failure message="assert False == True">args = (100,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+&gt;       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /></testsuite></testsuites>

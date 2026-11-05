@@ -1,0 +1,172 @@
+FFFFFF...F..F.F                                                          [100%]
+================================== FAILURES ===================================
+____________________________ test_single_interval _____________________________
+
+    def test_single_interval():
+>       result = interval_union([(1, 5)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 5)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+___________________________ test_disjoint_intervals ___________________________
+
+    def test_disjoint_intervals():
+>       result = interval_union([(1, 2), (4, 6)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 2), (4, 6)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+___________________________ test_touching_intervals ___________________________
+
+    def test_touching_intervals():
+>       result = interval_union([(1, 2), (2, 5)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 2), (2, 5)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_________________________ test_overlapping_intervals __________________________
+
+    def test_overlapping_intervals():
+>       result = interval_union([(1, 5), (3, 7)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 5), (3, 7)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_____________________________ test_unsorted_input _____________________________
+
+    def test_unsorted_input():
+>       result = interval_union([(3, 7), (1, 5)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(3, 7), (1, 5)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+____________________________ test_complex_merging _____________________________
+
+    def test_complex_merging():
+>       result = interval_union([(1, 10), (5, 6), (8, 12), (15, 16)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 10), (5, 6), (8, 12), (15, 16)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+________________________ test_wrong_length_type_error _________________________
+
+    def test_wrong_length_type_error():
+        with pytest.raises(TypeError):
+>           interval_union([(1, 5, 6)])
+
+test_candidate.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in interval_union
+    _types((intervals,), ('pairs',))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ([(1, 5, 6)],), schemas = ('pairs',)
+
+    def _types(values, schemas):
+        for value, schema in zip(values, schemas):
+            _check(value, schema)
+        for value, schema in zip(values, schemas):
+            if schema in ('pair', 'tuple3') and len(value) != (2 if schema == 'pair' else 3):
+                raise ValueError('tuple shape')
+            if schema == 'pairs' and any((len(item) != 2 for item in value)):
+>               raise ValueError('pair shape')
+E               ValueError: pair shape
+
+subject.py:50: ValueError
+_________________________ test_low_greater_than_high __________________________
+
+    def test_low_greater_than_high():
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:72: Failed
+___________________________ test_output_tuple_types ___________________________
+
+    def test_output_tuple_types():
+>       result = interval_union([(1, 5), (10, 20)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 5), (10, 20)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_single_interval - ValueError: interval
+FAILED test_candidate.py::test_disjoint_intervals - ValueError: interval
+FAILED test_candidate.py::test_touching_intervals - ValueError: interval
+FAILED test_candidate.py::test_overlapping_intervals - ValueError: interval
+FAILED test_candidate.py::test_unsorted_input - ValueError: interval
+FAILED test_candidate.py::test_complex_merging - ValueError: interval
+FAILED test_candidate.py::test_wrong_length_type_error - ValueError: pair shape
+FAILED test_candidate.py::test_low_greater_than_high - Failed: DID NOT RAISE ...
+FAILED test_candidate.py::test_output_tuple_types - ValueError: interval
+9 failed, 6 passed in 0.67s

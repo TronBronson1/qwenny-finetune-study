@@ -1,0 +1,31 @@
+<|im_start|>system
+Calculate return values from the supplied contract and explicit inputs. Return only the requested JSON array.<|im_end|>
+<|im_start|>user
+Function contract: row_major_offset(row, column, rows, columns).
+
+- row: exact built-in int; reject bool and int subclasses.
+
+- column: exact built-in int; reject bool and int subclasses.
+
+- rows: exact built-in int; reject bool and int subclasses.
+
+- columns: exact built-in int; reject bool and int subclasses.
+
+Reject invalid specified types with TypeError before shape/value checks.
+
+Require rows > 0 and columns > 0, otherwise ValueError. Then require 0 <= row < rows and 0 <= column < columns, otherwise IndexError. Return row-major flat offset.
+
+Return type: exact built-in int.
+
+Calculate the four return values for these argument tuples, in this order:
+1. (0, 0, 1, 1)
+2. (0, 2, 2, 3)
+3. (1, 0, 2, 3)
+4. (1, 2, 2, 3)
+
+Return only one JSON array with exactly four entries, one return value per call. Represent tuples as JSON arrays, including nested tuples. Preserve strings and numbers. Do not write tests, code, reasoning, explanations or a code fence.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

@@ -1,0 +1,38 @@
+.............F.....                                                      [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e007] _________________________
+
+args = ([-1.5],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([True],), id="e001"),
+        pytest.param(([IntChild(1)],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((['x'],), id="e005"),
+        pytest.param(([1.5],), id="e006"),
+        pytest.param(([-1.5],), id="e007"),
+        pytest.param(([None],), id="e008"),
+        pytest.param((ListChild([-1]),), id="e011"),
+        pytest.param((ListChild([256]),), id="e012"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           xor_checksum(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [-1.5]
+
+    def xor_checksum(values):
+        _types((values,), ('ints',))
+>       if any(not 0 <= value <= 255 for value in values): raise ValueError("byte")
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: byte
+
+subject.py:47: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e007] - ValueError: byte
+1 failed, 18 passed in 0.52s

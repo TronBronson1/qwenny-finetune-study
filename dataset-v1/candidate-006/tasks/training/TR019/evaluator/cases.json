@@ -1,0 +1,68 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('a',)",
+    "expected_python": "'a'",
+    "after_python": "('a',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('\\r\\n',)",
+    "expected_python": "'\\n'",
+    "after_python": "('\\r\\n',)"
+  },
+  {
+    "id": "v003",
+    "args_python": "('\\r',)",
+    "expected_python": "'\\n'",
+    "after_python": "('\\r',)"
+  },
+  {
+    "id": "v004",
+    "args_python": "('\\n',)",
+    "expected_python": "'\\n'",
+    "after_python": "('\\n',)"
+  },
+  {
+    "id": "v005",
+    "args_python": "('a\\r\\nb\\rc\\nd',)",
+    "expected_python": "'a\\nb\\nc\\nd'",
+    "after_python": "('a\\r\\nb\\rc\\nd',)"
+  },
+  {
+    "id": "v006",
+    "args_python": "('\\r\\r\\n',)",
+    "expected_python": "'\\n\\n'",
+    "after_python": "('\\r\\r\\n',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

@@ -1,0 +1,44 @@
+..F.F.F..........                                                        [100%]
+================================== FAILURES ===================================
+___________________________ test_rotate_right_basic ___________________________
+
+    def test_rotate_right_basic():
+        values = (1, 2, 3)
+>       assert rotate_right(values, 1) == (3, 1, 2)
+E       assert (1, 2, 3) == (3, 1, 2)
+E         
+E         At index 0 diff: 1 != 3
+E         Use -v to get more diff
+
+test_candidate.py:14: AssertionError
+_____________________ test_rotate_large_wrapping_positive _____________________
+
+    def test_rotate_large_wrapping_positive():
+        values = ("a", "b")
+>       assert rotate_right(values, 5) == ("b", "a")  # 5 % 2 = 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('a', 'b') == ('b', 'a')
+E         
+E         At index 0 diff: 'a' != 'b'
+E         Use -v to get more diff
+
+test_candidate.py:23: AssertionError
+__________________________ test_rotate_complex_types __________________________
+
+    def test_rotate_complex_types():
+        data = [1, 2.5, "str", None]
+        container = tuple(data)
+        result = rotate_right(container, 2)
+        expected = (None, 1, 2.5, "str")
+>       assert result == expected
+E       AssertionError: assert (1, 2.5, 'str', None) == (None, 1, 2.5, 'str')
+E         
+E         At index 0 diff: 1 != None
+E         Use -v to get more diff
+
+test_candidate.py:34: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_basic - assert (1, 2, 3) == (3, 1...
+FAILED test_candidate.py::test_rotate_large_wrapping_positive - AssertionErro...
+FAILED test_candidate.py::test_rotate_complex_types - AssertionError: assert ...
+3 failed, 14 passed in 0.40s

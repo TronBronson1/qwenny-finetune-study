@@ -1,0 +1,117 @@
+FFFFFFFF...........                                                      [100%]
+================================== FAILURES ===================================
+________________ TestIntervalUnionValues.test_single_interval _________________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB6168AD50>
+
+    def test_single_interval(self):
+        args, expected = ([(1, 5)]), [(1, 5)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:46: in interval_union
+    _types((intervals,), ('pairs',))
+subject.py:37: in _types
+    for value, schema in zip(values, schemas): _check(value, schema)
+                                               ^^^^^^^^^^^^^^^^^^^^^
+subject.py:12: in _check
+    _exact(value, list)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = (1, 5), kind = <class 'list'>
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+>           raise TypeError("exact built-in type required")
+E           TypeError: exact built-in type required
+
+subject.py:6: TypeError
+_______________ TestIntervalUnionValues.test_touching_intervals _______________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB6168AC10>
+
+    def test_touching_intervals(self):
+        args, expected = ([(1, 2), (2, 3)]), [(1, 3)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:17: TypeError
+_____________ TestIntervalUnionValues.test_overlapping_intervals ______________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB61682C40>
+
+    def test_overlapping_intervals(self):
+        args, expected = ([(1, 5), (3, 7)]), [(1, 7)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:22: TypeError
+_______________ TestIntervalUnionValues.test_disjoint_intervals _______________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB61682EA0>
+
+    def test_disjoint_intervals(self):
+        args, expected = ([(1, 3), (5, 7)]), [(1, 3), (5, 7)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:27: TypeError
+_________________ TestIntervalUnionValues.test_complex_merge __________________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB616B1370>
+
+    def test_complex_merge(self):
+        args, expected = ([(1, 3), (2, 6), (8, 10)]), [(1, 6), (8, 10)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:32: TypeError
+__________________ TestIntervalUnionValues.test_empty_input ___________________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB616E47C0>
+
+    def test_empty_input(self):
+        args, expected = ([], [])
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() missing 1 required positional argument: 'intervals'
+
+test_candidate.py:37: TypeError
+________________ TestIntervalUnionValues.test_three_way_merge _________________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB616E4C00>
+
+    def test_three_way_merge(self):
+        args, expected = ([(1, 5), (4, 8), (6, 10)]), [(1, 10)]
+>       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:42: TypeError
+______________ TestIntervalUnionValues.test_input_is_unmodified _______________
+
+self = <test_candidate.TestIntervalUnionValues object at 0x000001EB616F4150>
+
+    def test_input_is_unmodified(self):
+        orig = copy.deepcopy([(1, 5), (3, 7), (2, 4)])
+>       actual = interval_union(*orig)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:47: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestIntervalUnionValues::test_single_interval - Typ...
+FAILED test_candidate.py::TestIntervalUnionValues::test_touching_intervals - ...
+FAILED test_candidate.py::TestIntervalUnionValues::test_overlapping_intervals
+FAILED test_candidate.py::TestIntervalUnionValues::test_disjoint_intervals - ...
+FAILED test_candidate.py::TestIntervalUnionValues::test_complex_merge - TypeE...
+FAILED test_candidate.py::TestIntervalUnionValues::test_empty_input - TypeErr...
+FAILED test_candidate.py::TestIntervalUnionValues::test_three_way_merge - Typ...
+FAILED test_candidate.py::TestIntervalUnionValues::test_input_is_unmodified
+8 failed, 11 passed in 0.65s

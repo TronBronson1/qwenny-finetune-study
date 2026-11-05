@@ -1,0 +1,70 @@
+.....................FFF..                                               [100%]
+================================== FAILURES ===================================
+________________________ test_raises_valueerror[e008] _________________________
+
+args = ('1.2.٣',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1.2',), id="e004"),
+        pytest.param(('1.2.3.4',), id="e005"),
+        pytest.param(('01.2.3',), id="e006"),
+        pytest.param(('1.2.1000',), id="e007"),
+        pytest.param(('1.2.٣',), id="e008"),
+        pytest.param(('١.2.3',), id="e009"),
+        pytest.param(('1.２.3',), id="e010"),
+        pytest.param(('0.1000.0',), id="e011"),
+        pytest.param(('0.0.1000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed
+________________________ test_raises_valueerror[e009] _________________________
+
+args = ('١.2.3',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1.2',), id="e004"),
+        pytest.param(('1.2.3.4',), id="e005"),
+        pytest.param(('01.2.3',), id="e006"),
+        pytest.param(('1.2.1000',), id="e007"),
+        pytest.param(('1.2.٣',), id="e008"),
+        pytest.param(('١.2.3',), id="e009"),
+        pytest.param(('1.２.3',), id="e010"),
+        pytest.param(('0.1000.0',), id="e011"),
+        pytest.param(('0.0.1000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed
+________________________ test_raises_valueerror[e010] _________________________
+
+args = ('1.２.3',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1.2',), id="e004"),
+        pytest.param(('1.2.3.4',), id="e005"),
+        pytest.param(('01.2.3',), id="e006"),
+        pytest.param(('1.2.1000',), id="e007"),
+        pytest.param(('1.2.٣',), id="e008"),
+        pytest.param(('١.2.3',), id="e009"),
+        pytest.param(('1.２.3',), id="e010"),
+        pytest.param(('0.1000.0',), id="e011"),
+        pytest.param(('0.0.1000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_valueerror[e008] - Failed: DID NOT RAISE V...
+FAILED test_target.py::test_raises_valueerror[e009] - Failed: DID NOT RAISE V...
+FAILED test_target.py::test_raises_valueerror[e010] - Failed: DID NOT RAISE V...
+3 failed, 23 passed in 0.57s

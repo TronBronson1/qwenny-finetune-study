@@ -1,0 +1,406 @@
+..........F...F....F.........F...F....F...........................       [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ((1.5, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+________________________ test_raises_typeerror[args10] ________________________
+
+args = ((0, 1.5, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+________________________ test_raises_typeerror[args15] ________________________
+
+args = ((0, 0, 1.5), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+________________________ test_raises_typeerror[args25] ________________________
+
+args = ((0, 0, 0), (1.5, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+________________________ test_raises_typeerror[args29] ________________________
+
+args = ((0, 0, 0), (0, 1.5, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+________________________ test_raises_typeerror[args34] ________________________
+
+args = ((0, 0, 0), (0, 0, 1.5))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:80: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args6] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args10] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args15] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args25] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args29] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args34] - Failed: DID NOT RAISE ...
+6 failed, 60 passed in 0.72s

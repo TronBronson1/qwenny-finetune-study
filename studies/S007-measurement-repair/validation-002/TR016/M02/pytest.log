@@ -1,0 +1,118 @@
+FFFFFF....                                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:22: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('AEIOUaeiou',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 11 == 10
+
+test_target.py:22: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('rhythm',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:22: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('Apple pie',), expected = 4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 5 == 4
+
+test_target.py:22: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('éÁy',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:22: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('a1 E!',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('AEIOUaeiou',), 10, id="v001"),
+        pytest.param(('rhythm',), 0, id="v002"),
+        pytest.param(('Apple pie',), 4, id="v003"),
+        pytest.param(('éÁy',), 0, id="v004"),
+        pytest.param(('a1 E!',), 2, id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=count_vowels(*args)
+>       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:22: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert 1 == 0
+FAILED test_target.py::test_values[v001] - assert 11 == 10
+FAILED test_target.py::test_values[v002] - assert 1 == 0
+FAILED test_target.py::test_values[v003] - assert 5 == 4
+FAILED test_target.py::test_values[v004] - assert 1 == 0
+FAILED test_target.py::test_values[v005] - assert 3 == 2
+6 failed, 4 passed in 0.56s

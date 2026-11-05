@@ -1,0 +1,305 @@
+{
+  "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+  "review": {
+    "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+    "approved_for_isolated_execution": true,
+    "meaningful_contract_assertions": true,
+    "basis": "Explicit scorer negative control"
+  },
+  "reference_valid": false,
+  "variants": [
+    {
+      "variant": "reference",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.6097672999894712,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "896460d22f32f592d32892b7bab265b081b5c8da1283e7424f058198f08a20e5"
+    },
+    {
+      "variant": "M01",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.6452266999986023,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "896460d22f32f592d32892b7bab265b081b5c8da1283e7424f058198f08a20e5"
+    },
+    {
+      "variant": "M02",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.5349968999798875,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "896460d22f32f592d32892b7bab265b081b5c8da1283e7424f058198f08a20e5"
+    },
+    {
+      "variant": "M03",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_wrong",
+          "call": {
+            "node": "test_candidate.py::test_wrong",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6080458000069484,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "d111ee4e183e06c3116521248374b426116392e153e541723dcf1ca96c5f26b6"
+    },
+    {
+      "variant": "R01",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_wrong",
+          "call": {
+            "node": "test_candidate.py::test_wrong",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "0"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                },
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "0"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    },
+                    {
+                      "type": "int",
+                      "repr": "1"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.522147200012114,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "af6dee997c9606e68be2e46b146ff110f253853c916168d1fb2969edc888a0fb"
+    },
+    {
+      "variant": "R02",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.5815607999975327,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "896460d22f32f592d32892b7bab265b081b5c8da1283e7424f058198f08a20e5"
+    },
+    {
+      "variant": "R03",
+      "exit_code": 1,
+      "test_cases": 1,
+      "calls": 1,
+      "reference_valid": false,
+      "candidate_witnesses": [],
+      "seconds": 1.5186200000171084,
+      "source_sha256": "31eec7c4d582720113c35b915bc80655e73ede73134bd292ab96595340822701",
+      "trace_sha256": "896460d22f32f592d32892b7bab265b081b5c8da1283e7424f058198f08a20e5"
+    }
+  ],
+  "designated_mutants": 6,
+  "eligible_candidate_mutants": null,
+  "strict_acceptance": "pending hash-bound requirement/prose and witness review",
+  "policy": "No mutant credit for reference-invalid suites. Node names bind actual generated calls only. Valid-input crashes are ineligible. Related validation-class mismatches only on reference-invalid inputs. Trace candidates require semantic review before final credit."
+}

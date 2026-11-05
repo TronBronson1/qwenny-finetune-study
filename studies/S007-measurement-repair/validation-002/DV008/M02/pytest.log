@@ -1,0 +1,28 @@
+..F................                                                      [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('abc', ''), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+>       assert actual == expected
+E       assert 4 == 3
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - assert 4 == 3
+1 failed, 18 passed in 0.52s

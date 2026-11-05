@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(True,)",
+      "expected_exception": "TypeError",
+      "actual_python": "'0.01'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "fd47121a7eb44ccf12b76ff849a7433f3d7044e6e368b3a0cf0ef5d9632fc1f6"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-comparison-47-LtE",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0,)",
+      "expected_python": "'0.00'",
+      "actual_python": "'-0.00'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "f88952af68f85682bc81bc942938da75034d96938053c6004abc87f842e36fb5"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-47-Gt",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(1,)",
+      "expected_python": "'0.01'",
+      "actual_python": "'-0.01'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "21018b882de16d8fc22d267b6bdcb122bdef422872ab0a984deb0ccd2ccd8090"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0,)",
+      "expected_python": "'0.00'",
+      "actual_python": "'0.00'"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "efc77ef05e033d53033e03ff7e052e0ea145e08f6df2bdf88f06461c80cfef5d"
+  }
+]

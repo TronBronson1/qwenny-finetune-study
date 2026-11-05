@@ -1,0 +1,111 @@
+..F..FF..F..............                                                 [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('abc', 'z'), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=strip_prefix(*args)
+>       assert actual == expected
+E       AssertionError: assert 'ab' == 'abc'
+E         
+E         - abc
+E         ?   -
+E         + ab
+
+test_target.py:26: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('Abc', 'a'), expected = 'Abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=strip_prefix(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Ab' == 'Abc'
+E         
+E         - Abc
+E         ?   -
+E         + Ab
+
+test_target.py:26: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('ba', 'a'), expected = 'ba'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=strip_prefix(*args)
+>       assert actual == expected
+E       AssertionError: assert 'b' == 'ba'
+E         
+E         - ba
+E         + b
+
+test_target.py:26: AssertionError
+______________________________ test_values[v009] ______________________________
+
+args = ('abc', 'abcd'), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=strip_prefix(*args)
+>       assert actual == expected
+E       AssertionError: assert 'ab' == 'abc'
+E         
+E         - abc
+E         ?   -
+E         + ab
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - AssertionError: assert 'ab' == 'abc'
+FAILED test_target.py::test_values[v005] - AssertionError: assert 'Ab' == 'Abc'
+FAILED test_target.py::test_values[v006] - AssertionError: assert 'b' == 'ba'
+FAILED test_target.py::test_values[v009] - AssertionError: assert 'ab' == 'abc'
+4 failed, 20 passed in 0.57s

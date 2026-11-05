@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="30" time="0.499" timestamp="2026-11-04T17:06:11.852267-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.001"><failure message="ValueError: order">args = ([2, 1], [])
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), []), id="e000"),
+        pytest.param(([True], []), id="e001"),
+        pytest.param(([IntChild(1)], []), id="e002"),
+        pytest.param(((), []), id="e003"),
+        pytest.param((None, []), id="e004"),
+        pytest.param((['x'], []), id="e005"),
+        pytest.param(([1.5], []), id="e006"),
+        pytest.param(([-1.5], []), id="e007"),
+        pytest.param(([None], []), id="e008"),
+        pytest.param(([], ListChild([])), id="e009"),
+        pytest.param(([], [True]), id="e010"),
+        pytest.param(([], [IntChild(1)]), id="e011"),
+        pytest.param(([], ()), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param(([], ['x']), id="e014"),
+        pytest.param(([], [1.5]), id="e015"),
+        pytest.param(([], [-1.5]), id="e016"),
+        pytest.param(([], [None]), id="e017"),
+        pytest.param((ListChild([2, 1]), []), id="e020"),
+        pytest.param(([2, 1], ListChild([])), id="e021"),
+        pytest.param((ListChild([]), [1, 0]), id="e022"),
+        pytest.param(([], ListChild([1, 0])), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           merge_sorted(*args)
+
+test_target.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = [2, 1], right = []
+
+    def merge_sorted(left, right):
+        if any((values[i] &gt; values[i + 1] for values in (left, right) for i in range(len(values) - 1))):
+&gt;           raise ValueError('order')
+E           ValueError: order
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.001"><failure message="ValueError: order">args = ([2, 1], [])
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), []), id="e000"),
+        pytest.param(([True], []), id="e001"),
+        pytest.param(([IntChild(1)], []), id="e002"),
+        pytest.param(((), []), id="e003"),
+        pytest.param((None, []), id="e004"),
+        pytest.param((['x'], []), id="e005"),
+        pytest.param(([1.5], []), id="e006"),
+        pytest.param(([-1.5], []), id="e007"),
+        pytest.param(([None], []), id="e008"),
+        pytest.param(([], ListChild([])), id="e009"),
+        pytest.param(([], [True]), id="e010"),
+        pytest.param(([], [IntChild(1)]), id="e011"),
+        pytest.param(([], ()), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param(([], ['x']), id="e014"),
+        pytest.param(([], [1.5]), id="e015"),
+        pytest.param(([], [-1.5]), id="e016"),
+        pytest.param(([], [None]), id="e017"),
+        pytest.param((ListChild([2, 1]), []), id="e020"),
+        pytest.param(([2, 1], ListChild([])), id="e021"),
+        pytest.param((ListChild([]), [1, 0]), id="e022"),
+        pytest.param(([], ListChild([1, 0])), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           merge_sorted(*args)
+
+test_target.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = [2, 1], right = []
+
+    def merge_sorted(left, right):
+        if any((values[i] &gt; values[i + 1] for values in (left, right) for i in range(len(values) - 1))):
+&gt;           raise ValueError('order')
+E           ValueError: order
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.001"><failure message="ValueError: order">args = ([], [1, 0])
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), []), id="e000"),
+        pytest.param(([True], []), id="e001"),
+        pytest.param(([IntChild(1)], []), id="e002"),
+        pytest.param(((), []), id="e003"),
+        pytest.param((None, []), id="e004"),
+        pytest.param((['x'], []), id="e005"),
+        pytest.param(([1.5], []), id="e006"),
+        pytest.param(([-1.5], []), id="e007"),
+        pytest.param(([None], []), id="e008"),
+        pytest.param(([], ListChild([])), id="e009"),
+        pytest.param(([], [True]), id="e010"),
+        pytest.param(([], [IntChild(1)]), id="e011"),
+        pytest.param(([], ()), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param(([], ['x']), id="e014"),
+        pytest.param(([], [1.5]), id="e015"),
+        pytest.param(([], [-1.5]), id="e016"),
+        pytest.param(([], [None]), id="e017"),
+        pytest.param((ListChild([2, 1]), []), id="e020"),
+        pytest.param(([2, 1], ListChild([])), id="e021"),
+        pytest.param((ListChild([]), [1, 0]), id="e022"),
+        pytest.param(([], ListChild([1, 0])), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           merge_sorted(*args)
+
+test_target.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = [], right = [1, 0]
+
+    def merge_sorted(left, right):
+        if any((values[i] &gt; values[i + 1] for values in (left, right) for i in range(len(values) - 1))):
+&gt;           raise ValueError('order')
+E           ValueError: order
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.001"><failure message="ValueError: order">args = ([], [1, 0])
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), []), id="e000"),
+        pytest.param(([True], []), id="e001"),
+        pytest.param(([IntChild(1)], []), id="e002"),
+        pytest.param(((), []), id="e003"),
+        pytest.param((None, []), id="e004"),
+        pytest.param((['x'], []), id="e005"),
+        pytest.param(([1.5], []), id="e006"),
+        pytest.param(([-1.5], []), id="e007"),
+        pytest.param(([None], []), id="e008"),
+        pytest.param(([], ListChild([])), id="e009"),
+        pytest.param(([], [True]), id="e010"),
+        pytest.param(([], [IntChild(1)]), id="e011"),
+        pytest.param(([], ()), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param(([], ['x']), id="e014"),
+        pytest.param(([], [1.5]), id="e015"),
+        pytest.param(([], [-1.5]), id="e016"),
+        pytest.param(([], [None]), id="e017"),
+        pytest.param((ListChild([2, 1]), []), id="e020"),
+        pytest.param(([2, 1], ListChild([])), id="e021"),
+        pytest.param((ListChild([]), [1, 0]), id="e022"),
+        pytest.param(([], ListChild([1, 0])), id="e023"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           merge_sorted(*args)
+
+test_target.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = [], right = [1, 0]
+
+    def merge_sorted(left, right):
+        if any((values[i] &gt; values[i + 1] for values in (left, right) for i in range(len(values) - 1))):
+&gt;           raise ValueError('order')
+E           ValueError: order
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e018]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e019]" time="0.001" /></testsuite></testsuites>

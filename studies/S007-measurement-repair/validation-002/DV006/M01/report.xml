@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="18" time="0.442" timestamp="2026-11-04T17:06:28.839178-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:36: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001"><failure message="ValueError: character">args = ('abc',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc'
+
+    def keypad_encode(text):
+        _types((text,), ('str',))
+        if any((not 'A' &lt;= char &lt;= 'Z' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001"><failure message="ValueError: character">args = ('A B',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'A B'
+
+    def keypad_encode(text):
+        _types((text,), ('str',))
+        if any((not 'A' &lt;= char &lt;= 'Z' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="ValueError: character">args = ('É',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'É'
+
+    def keypad_encode(text):
+        _types((text,), ('str',))
+        if any((not 'A' &lt;= char &lt;= 'Z' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="ValueError: character">args = ('Ａ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('abc'),), id="e008"),
+        pytest.param((StrChild('A B'),), id="e009"),
+        pytest.param((StrChild('É'),), id="e010"),
+        pytest.param((StrChild('Ａ'),), id="e011"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           keypad_encode(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'Ａ'
+
+    def keypad_encode(text):
+        _types((text,), ('str',))
+        if any((not 'A' &lt;= char &lt;= 'Z' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /></testsuite></testsuites>

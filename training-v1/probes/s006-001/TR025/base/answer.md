@@ -1,0 +1,121 @@
+```python
+from subject import run_length_encode
+import pytest
+
+
+class TestTypeErrorRejection:
+    def test_none_input_raises_type_error(self):
+        with pytest.raises(TypeError):
+            run_length_encode(None)
+
+    def test_int_input_raises_type_error(self):
+        with pytest.raises(TypeError):
+            run_length_encode([1, 2, 3])
+
+    def test_mixed_types_input_raises_type_error(self):
+        with pytest.raises(TypeError):
+            run_length_encode(["a", 1, "a"])
+
+
+class TestStringSubclassRejection:
+    def test_list_of_strings_subclass_raises_type_error(self):
+        class CustomStr(str):
+            pass
+
+        with pytest.raises(TypeError):
+            run_length_encode(["a" if False else CustomStr("a")])
+
+    def test_list_of_subclass_raises_type_error_even_if_content_is_valid_str(self):
+        class CustomStr(str):
+            pass
+
+        with pytest.raises(TypeError):
+            run_length_encode([CustomStr("a"), CustomStr("a")])
+
+    def test_list_of_strings_containing_subclass_raises_type_error(self):
+        class CustomStr(str):
+            pass
+
+        with pytest.raises(TypeError):
+            run_length_encode(["a", "b", CustomStr("a")])
+
+
+class TestValidInputEncoding:
+    def test_empty_input_returns_empty_list(self):
+        result = run_length_encode([])
+        assert result == []
+
+    def test_single_element_returns_single_tuple(self):
+        result = run_length_encode(["a"])
+        assert result == [("a", 1)]
+
+    def test_all_same_returns_one_tuple(self):
+        result = run_length_encode(["a", "a", "a"])
+        assert result == [("a", 3)]
+
+    def test_two_runs_returns_two_tuples(self):
+        result = run_length_encode(["a", "a", "b", "b", "a"])
+        assert result == [("a", 2), ("b", 2), ("a", 1)]
+
+    def test_runs_not_combined_when_separated(self):
+        result = run_length_encode(["a", "a", "b", "b", "a"])
+        # Ensure no implicit merging of non-consecutive equal strings
+        assert len(result) == 3
+        assert result == [("a", 2), ("b", 2), ("a", 1)]
+
+    def test_run_length_correct_for_various_counts(self):
+        result = run_length_encode(["x"] * 10)
+        assert result == [("x", 10)]
+
+    def test_no_mutation_of_input(self):
+        input_data = ["z", "z", "z"]
+        original_id = id(input_data)
+        run_length_encode(input_data)
+        assert id(input_data) == original_id
+
+    def test_no_mutation_of_nested_structure(self):
+        input_data = [["nested", "strings"]]
+        original_id = id(input_data)
+        run_length_encode(input_data)
+        assert id(input_data) == original_id
+        assert input_data == [["nested", "strings"]]
+
+
+class TestInvalidBoundsRejection:
+    def test_empty_list_raises_nothing(self):
+        # Empty list is valid; only list must be a list, not None.
+        result = run_length_encode([])
+        assert result == []
+
+    def test_non_list_input_raises_type_error_before_content_check(self):
+        with pytest.raises(TypeError):
+            run_length_encode("not a list")
+
+
+# Note: We do not test subclass validation on nested elements beyond what
+# the contract specifies (exact list of exact strings). The contract does not
+# define behavior for nested structures containing non-str elements, so we
+# rely on the explicit TypeError rejection for non-string elements at the
+# top level of the provided list and for the list itself.
+```
+
+**Requirement-to-Input Mapping**
+
+| Requirement                          | Tested Input Scenario                                      |
+|--------------------------------------|------------------------------------------------------------|
+| `values` must be an exact list       | `run_length_encode([])`, `run_length_encode(["a"])`        |
+| Elements must be exact strings       | `run_length_encode(["a", "b"])`                           |
+| Reject `None` as input               | `run_length_encode(None)`                                  |
+| Reject ints as elements              | `run_length_encode([1, 2])`                                |
+| Reject list subclasses               | `run_length_encode([CustomStr("a"), CustomStr("b")])`     |
+| Reject string subclasses             | `run_length_encode(["a", CustomStr("b")])`                |
+| Empty input returns `[]`             | `run_length_encode([])`                                     |
+| No mutation of input                 | `run_length_encode(input_data)` (check id & content)      |
+| Consecutive runs combined            | `run_length_encode(["a", "a", "a"])` → `[("a", 3)]`       |
+| Separated runs not combined          | `run_length_encode(["a", "b", "a"])` → `[("a",1), ("b",1), ("a",1)]` |
+
+**Finite Coverage Limitations**
+
+- The contract does not specify behavior for nested lists containing non-string elements (e.g., `["a", ["b"]]`). This test suite assumes the provided implementation raises a `TypeError` for such inputs without explicit testing.
+- Subclass rejection is only tested for the outer list and individual string elements, not for other possible container types if the implementation allowed deeper nesting beyond what the contract describes.
+- No tests cover scenarios where the function is called with unhashable types or other exotic Python objects that are neither `list` nor contain strings, as the contract only explicitly mandates rejection for non-list inputs and non-string elements.

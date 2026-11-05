@@ -1,0 +1,1147 @@
+[
+  {
+    "node": "test_candidate.py::test_renamed_values[v000]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": []
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": []
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": []
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v001]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'a'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v002]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'a'"
+            },
+            {
+              "type": "str",
+              "repr": "'a'"
+            },
+            {
+              "type": "str",
+              "repr": "'b'"
+            },
+            {
+              "type": "str",
+              "repr": "'a'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "2"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'b'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'b'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "0"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'b'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'b'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v003]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "str",
+              "repr": "''"
+            },
+            {
+              "type": "str",
+              "repr": "''"
+            },
+            {
+              "type": "str",
+              "repr": "'x'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "''"
+              },
+              {
+                "type": "int",
+                "repr": "2"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'x'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "'x'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "''"
+              },
+              {
+                "type": "int",
+                "repr": "0"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'x'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "'x'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v004]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'A'"
+            },
+            {
+              "type": "str",
+              "repr": "'a'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'A'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'A'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'A'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'a'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'A'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v005]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'\u00e9'"
+            },
+            {
+              "type": "str",
+              "repr": "'\u00e9'"
+            },
+            {
+              "type": "str",
+              "repr": "'\u5b57'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'\u00e9'"
+              },
+              {
+                "type": "int",
+                "repr": "2"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'\u5b57'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'\u00e9'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'\u00e9'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'\u5b57'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "list",
+        "items": [
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'\u00e9'"
+              },
+              {
+                "type": "int",
+                "repr": "0"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "items": [
+              {
+                "type": "str",
+                "repr": "'\u5b57'"
+              },
+              {
+                "type": "int",
+                "repr": "1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'\u00e9'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'\u00e9'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'\u5b57'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e000]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "ListChild",
+          "items": []
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "ListChild",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "ListChild",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e001]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "StrChild",
+              "repr": "'x'"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "StrChild",
+                  "repr": "'x'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "StrChild",
+                  "repr": "'x'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e002]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "type": "int",
+              "repr": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "list",
+              "items": [
+                {
+                  "type": "int",
+                  "repr": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e003]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": []
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "tuple",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "tuple",
+              "items": []
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e004]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "NoneType",
+          "repr": "None"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "NoneType",
+              "repr": "None"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "NoneType",
+              "repr": "None"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  }
+]

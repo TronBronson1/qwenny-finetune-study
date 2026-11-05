@@ -1,0 +1,17 @@
+.........F......                                                         [100%]
+================================== FAILURES ===================================
+_____________ TestParseHexByte.test_invalid_type_string_subclass ______________
+
+self = <test_candidate.TestParseHexByte object at 0x00000228A0789E50>
+
+    def test_invalid_type_string_subclass(self):
+        class MyStr(str):
+            pass
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:40: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestParseHexByte::test_invalid_type_string_subclass
+1 failed, 15 passed in 0.55s

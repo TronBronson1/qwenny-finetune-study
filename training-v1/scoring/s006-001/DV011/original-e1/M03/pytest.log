@@ -1,0 +1,364 @@
+FFFFFFFF.........                                                        [100%]
+================================== FAILURES ===================================
+_______________ test_interval_union_valid[intervals0-expected0] _______________
+
+intervals = [(-1, 1)], expected = [(-1, 1)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(-1, 1)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals1-expected1] _______________
+
+intervals = [(0, 2), (5, 8)], expected = [(0, 2), (5, 8)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 2), (5, 8)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals2-expected2] _______________
+
+intervals = [(0, 5), (2, 6)], expected = [(0, 6)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 5), (2, 6)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals3-expected3] _______________
+
+intervals = [(0, 2), (2, 5)], expected = [(0, 5)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 2), (2, 5)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals4-expected4] _______________
+
+intervals = [(3, 5), (0, 2), (1, 2)], expected = [(0, 2), (1, 2), (3, 5)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(3, 5), (0, 2), (1, 2)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals5-expected5] _______________
+
+intervals = [(0, 2), (1, 3)], expected = [(0, 3)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 2), (1, 3)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals6-expected6] _______________
+
+intervals = [(0, 10), (2, 5)], expected = [(0, 10)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 10), (2, 5)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+_______________ test_interval_union_valid[intervals7-expected7] _______________
+
+intervals = [(0, 3), (2, 5), (6, 8)], expected = [(0, 5), (6, 8)]
+
+    @pytest.mark.parametrize("intervals,expected", [
+        # Single interval
+        ([(-1, 1)], [(-1, 1)]),
+        # Multiple disjoint intervals
+        ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+        # Overlapping intervals (merge)
+        ([(0, 5), (2, 6)], [(0, 6)]),
+        # Touching intervals (merge)
+        ([(0, 2), (2, 5)], [(0, 5)]),
+        # Unsorted input intervals
+        ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+        # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+        # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+        # Testing merging of multiple disjoint points is impossible per contract (low<high).
+        # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+        # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+        ([(0, 2), (1, 3)], [(0, 3)]),
+        # Nested intervals
+        ([(0, 10), (2, 5)], [(0, 10)]),
+        # Complex merging
+        ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+        # Empty list
+        ([], []),
+    ])
+    def test_interval_union_valid(intervals, expected):
+>       result = interval_union(intervals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(0, 3), (2, 5), (6, 8)]
+
+    def interval_union(intervals):
+        _types((intervals,), ('pairs',))
+        if any((low <= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_interval_union_valid[intervals0-expected0] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals1-expected1] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals2-expected2] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals3-expected3] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals4-expected4] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals5-expected5] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals6-expected6] - V...
+FAILED test_candidate.py::test_interval_union_valid[intervals7-expected7] - V...
+8 failed, 9 passed in 0.63s

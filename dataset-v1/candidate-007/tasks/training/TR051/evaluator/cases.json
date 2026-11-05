@@ -1,0 +1,140 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0, 1)",
+    "expected_python": "0",
+    "after_python": "(0, 1)",
+    "category": "unit-length"
+  },
+  {
+    "id": "v001",
+    "args_python": "(3, 3)",
+    "expected_python": "0",
+    "after_python": "(3, 3)",
+    "category": "positive-wrap"
+  },
+  {
+    "id": "v002",
+    "args_python": "(-1, 3)",
+    "expected_python": "2",
+    "after_python": "(-1, 3)",
+    "category": "negative-one"
+  },
+  {
+    "id": "v003",
+    "args_python": "(-4, 3)",
+    "expected_python": "2",
+    "after_python": "(-4, 3)",
+    "category": "negative-period"
+  },
+  {
+    "id": "v004",
+    "args_python": "(8, 3)",
+    "expected_python": "2",
+    "after_python": "(8, 3)",
+    "category": "positive-period"
+  },
+  {
+    "id": "v005",
+    "args_python": "(100000000000000000000, 7)",
+    "expected_python": "2",
+    "after_python": "(100000000000000000000, 7)",
+    "category": "large"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 1)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0), 1)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 1)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 1)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 1)",
+    "exception": "TypeError",
+    "category": "type:index"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0, True)",
+    "exception": "TypeError",
+    "category": "type:length"
+  },
+  {
+    "id": "e006",
+    "args_python": "(0, IntChild(1))",
+    "exception": "TypeError",
+    "category": "type:length"
+  },
+  {
+    "id": "e007",
+    "args_python": "(0, 1.5)",
+    "exception": "TypeError",
+    "category": "type:length"
+  },
+  {
+    "id": "e008",
+    "args_python": "(0, 'bad')",
+    "exception": "TypeError",
+    "category": "type:length"
+  },
+  {
+    "id": "e009",
+    "args_python": "(0, None)",
+    "exception": "TypeError",
+    "category": "type:length"
+  },
+  {
+    "id": "e010",
+    "args_python": "(0, 0)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e011",
+    "args_python": "(0, -1)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e012",
+    "args_python": "(IntChild(0), 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e013",
+    "args_python": "(0, IntChild(0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e014",
+    "args_python": "(IntChild(0), -1)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e015",
+    "args_python": "(0, IntChild(-1))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

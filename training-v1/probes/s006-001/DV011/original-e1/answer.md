@@ -1,0 +1,68 @@
+```python
+from subject import interval_union
+import pytest
+
+@pytest.mark.parametrize("intervals,expected", [
+    # Single interval
+    ([(-1, 1)], [(-1, 1)]),
+    # Multiple disjoint intervals
+    ([(0, 2), (5, 8)], [(0, 2), (5, 8)]),
+    # Overlapping intervals (merge)
+    ([(0, 5), (2, 6)], [(0, 6)]),
+    # Touching intervals (merge)
+    ([(0, 2), (2, 5)], [(0, 5)]),
+    # Unsorted input intervals
+    ([(3, 5), (0, 2), (1, 2)], [(0, 2), (1, 2), (3, 5)]),
+    # Single point interval (should be merged or kept depending on logic, here kept as disjoint set if not touching others)
+    # Note: Contract says low < high. A single point (1, 1) would be ValueError.
+    # Testing merging of multiple disjoint points is impossible per contract (low<high).
+    # Testing merging of intervals that result in a gap filled is impossible per contract definition of half-open union usually.
+    # Standard half-open union logic: [0, 2) U [1, 3) -> [0, 3).
+    ([(0, 2), (1, 3)], [(0, 3)]),
+    # Nested intervals
+    ([(0, 10), (2, 5)], [(0, 10)]),
+    # Complex merging
+    ([(0, 3), (2, 5), (6, 8)], [(0, 5), (6, 8)]),
+    # Empty list
+    ([], []),
+])
+def test_interval_union_valid(intervals, expected):
+    result = interval_union(intervals)
+    assert result == expected
+
+@pytest.mark.parametrize("intervals", [
+    # Invalid types
+    ("not a list", None),
+    ([1, 2], None),
+    ([(1,)], None),
+    ([(1, 2, 3)], None),
+    ([(1, "2")], None),
+    # Invalid value logic (low >= high)
+    ([(1, 1)], None),
+    ([(1, 0)], None),
+    # Non-iterable elements (simulated by passing a list containing non-tuple)
+    ([1], None), # List of ints instead of tuples
+])
+def test_interval_union_invalid(intervals):
+    with pytest.raises((TypeError, ValueError)):
+        interval_union(intervals)
+
+```
+
+### Requirement-to-Input Mapping
+*   **Type Checks**: Explicitly tests `TypeError` for non-list input, list elements not being tuples, and tuple elements not being ints (inferred from `1, 2` vs `1, "2"`).
+*   **Value Checks**: Explicitly tests `ValueError` for cases where the first element of a tuple is not strictly less than the second (e.g., `(1, 1)`, `(1, 0)`).
+*   **Logic Checks**:
+    *   Tests sorting of arbitrary input order.
+    *   Tests merging of overlapping intervals (`[0, 5)` U `[2, 6)`).
+    *   Tests merging of touching intervals (`[0, 2)` U `[2, 5)`).
+    *   Tests merging of nested intervals (`[0, 10)` U `[2, 5)`).
+    *   Tests handling of empty input.
+    *   Tests handling of half-open overlaps (`[0, 2)` U `[1, 3)` -> `[0, 3)`).
+
+### Finite-Coverage Limitations
+*   **Nested Containers**: The function contract specifies an exact list of two-int tuples. This implementation only tests top-level lists and tuples. It does not test recursive validity of nested lists (e.g., `[[1, 2], [3, 4]]` if the contract implied recursion deeper than top-level, though the contract implies `intervals` is a list of tuples).
+*   **Specific Exception Order**: The `test_interval_union_invalid` tests assert that `TypeError` or `ValueError` is raised, but not the specific type or order if both could theoretically apply to a single malformed input (e.g., a string tuple vs an int tuple with bad order). The pytest order of arguments in the `raises` context manager is preserved, but specific exception class matching for complex mixed invalidity is not granularly asserted.
+*   **Floating Point**: The tests use integer coordinates. No tests exist for floating-point coordinates (e.g., `[(0.0, 0.5), (0.5, 1.0)]`).
+*   **Negative Bounds**: While `test_interval_union_valid` includes `(-1, 1)`, the coverage of negative infinity or specific negative boundary merging logic is limited to that single case.
+*   **Mutability**: The contract forbids mutation. This test suite does not explicitly verify the original `intervals` list remains unchanged post-call, relying solely on the assumption that the implementation respects the contract's side-effect constraints.

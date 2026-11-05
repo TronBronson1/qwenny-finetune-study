@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="19" time="0.393" timestamp="2026-11-04T17:06:04.047168-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert 'hello-xworld' == 'hello-world'&#10;  &#10;  - hello-world&#10;  + hello-xworld&#10;  ?       +">args = ('Hello World',), expected = 'hello-world'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param((' --_ ',), '', id="v001"),
+        pytest.param(('Hello World',), 'hello-world', id="v002"),
+        pytest.param((' A__b--C ',), 'a-b-c', id="v003"),
+        pytest.param(('X9',), 'x9', id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=make_slug(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'hello-xworld' == 'hello-world'
+E         
+E         - hello-world
+E         + hello-xworld
+E         ?       +
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert 'a-xb-xc' == 'a-b-c'&#10;  &#10;  - a-b-c&#10;  + a-xb-xc&#10;  ?   +  +">args = (' A__b--C ',), expected = 'a-b-c'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param((' --_ ',), '', id="v001"),
+        pytest.param(('Hello World',), 'hello-world', id="v002"),
+        pytest.param((' A__b--C ',), 'a-b-c', id="v003"),
+        pytest.param(('X9',), 'x9', id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=make_slug(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'a-xb-xc' == 'a-b-c'
+E         
+E         - a-b-c
+E         + a-xb-xc
+E         ?   +  +
+
+test_target.py:21: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /></testsuite></testsuites>

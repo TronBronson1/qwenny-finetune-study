@@ -1,0 +1,35 @@
+{
+  "id": "TR055",
+  "split": "training",
+  "family": "rgb-hex-codec",
+  "function": "encode_rgb",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "1aa067c7b6dcf6e2ab2d364b073fcf0e5480137203e1db03dc47ae303309ed18",
+  "target_sha256": "9af5b35a80c3848adf8e2c96a2b29f35a3fb8fe5a7a3b2d2102b7858dc48e342",
+  "spec_sha256": "39efaae884762488abedabf25a104734d5fadbee0c7df6e0c72fe1cc1a4f1781",
+  "answer_sha256": "011a39c2b6e75fcb055a259ce50ea979df83cf8f65c260b6c169e04d5b508ca6",
+  "valid_test_cases": 4,
+  "exception_test_cases": 21,
+  "oracle_checks": 4,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

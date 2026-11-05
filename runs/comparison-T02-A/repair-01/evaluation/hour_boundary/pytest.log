@@ -1,0 +1,25 @@
+......F........                                                          [100%]
+================================== FAILURES ===================================
+__________________ test_minute_of_day_invalid_format[24:00] ___________________
+
+text = '24:00'
+
+    @pytest.mark.parametrize("text", [
+        " 00:00",
+        "00:00 ",
+        "12:60",
+        "24:00",
+        "99:99",
+        "0:00",
+        "00:0",
+        "\uff10\uff11:\uff12\uff13",
+    ])
+    def test_minute_of_day_invalid_format(text):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:32: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_minute_of_day_invalid_format[24:00] - Failed: ...
+1 failed, 14 passed in 0.30s

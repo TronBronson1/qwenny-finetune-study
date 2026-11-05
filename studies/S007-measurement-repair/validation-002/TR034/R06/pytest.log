@@ -1,0 +1,54 @@
+.....FF.........................                                         [100%]
+================================== FAILURES ===================================
+________________________ test_raises_indexerror[e019] _________________________
+
+args = ([1], -1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([1], -1, 1), id="e019"),
+        pytest.param(([1], 0, 2), id="e020"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           bounded_slice(*args)
+
+test_target.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = -1, stop = 1
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError
+________________________ test_raises_indexerror[e020] _________________________
+
+args = ([1], 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([1], -1, 1), id="e019"),
+        pytest.param(([1], 0, 2), id="e020"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+>           bounded_slice(*args)
+
+test_target.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = 0, stop = 2
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise ValueError('index')
+E           ValueError: index
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_indexerror[e019] - ValueError: index
+FAILED test_target.py::test_raises_indexerror[e020] - ValueError: index
+2 failed, 30 passed in 0.54s

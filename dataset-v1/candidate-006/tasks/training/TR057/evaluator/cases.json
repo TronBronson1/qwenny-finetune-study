@@ -1,0 +1,92 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(' --_ ',)",
+    "expected_python": "''",
+    "after_python": "(' --_ ',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('Hello World',)",
+    "expected_python": "'hello-world'",
+    "after_python": "('Hello World',)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(' A__b--C ',)",
+    "expected_python": "'a-b-c'",
+    "after_python": "(' A__b--C ',)"
+  },
+  {
+    "id": "v004",
+    "args_python": "('X9',)",
+    "expected_python": "'x9'",
+    "after_python": "('X9',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('a/b',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e005",
+    "args_python": "('é',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "('a\\tb',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e007",
+    "args_python": "(StrChild('a/b'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e008",
+    "args_python": "(StrChild('é'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e009",
+    "args_python": "(StrChild('a\\tb'),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

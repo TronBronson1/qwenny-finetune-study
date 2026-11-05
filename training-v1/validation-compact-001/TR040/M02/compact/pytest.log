@@ -1,0 +1,114 @@
+FFFFF..........                                                          [100%]
+================================== FAILURES ===================================
+________________________ test_values[args0-expected0] _________________________
+
+args = ('a=b',), expected = ('a', 'b')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b')),
+        pytest.param(('a=',), ('a', '')),
+        pytest.param(('a=b=c',), ('a', 'b=c')),
+        pytest.param((' a = b ',), (' a ', ' b ')),
+        pytest.param(('é=字',), ('é', '字')),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b')
+E         
+E         Right contains one more item: 'b'
+E         Use -v to get more diff
+
+test_target.py:24: AssertionError
+________________________ test_values[args1-expected1] _________________________
+
+args = ('a=',), expected = ('a', '')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b')),
+        pytest.param(('a=',), ('a', '')),
+        pytest.param(('a=b=c',), ('a', 'b=c')),
+        pytest.param((' a = b ',), (' a ', ' b ')),
+        pytest.param(('é=字',), ('é', '字')),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', '')
+E         
+E         Right contains one more item: ''
+E         Use -v to get more diff
+
+test_target.py:24: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = ('a=b=c',), expected = ('a', 'b=c')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b')),
+        pytest.param(('a=',), ('a', '')),
+        pytest.param(('a=b=c',), ('a', 'b=c')),
+        pytest.param((' a = b ',), (' a ', ' b ')),
+        pytest.param(('é=字',), ('é', '字')),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b=c')
+E         
+E         Right contains one more item: 'b=c'
+E         Use -v to get more diff
+
+test_target.py:24: AssertionError
+________________________ test_values[args3-expected3] _________________________
+
+args = (' a = b ',), expected = (' a ', ' b ')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b')),
+        pytest.param(('a=',), ('a', '')),
+        pytest.param(('a=b=c',), ('a', 'b=c')),
+        pytest.param((' a = b ',), (' a ', ' b ')),
+        pytest.param(('é=字',), ('é', '字')),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert (' a ',) == (' a ', ' b ')
+E         
+E         Right contains one more item: ' b '
+E         Use -v to get more diff
+
+test_target.py:24: AssertionError
+________________________ test_values[args4-expected4] _________________________
+
+args = ('é=字',), expected = ('é', '字')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b')),
+        pytest.param(('a=',), ('a', '')),
+        pytest.param(('a=b=c',), ('a', 'b=c')),
+        pytest.param((' a = b ',), (' a ', ' b ')),
+        pytest.param(('é=字',), ('é', '字')),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('é',) == ('é', '字')
+E         
+E         Right contains one more item: '字'
+E         Use -v to get more diff
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-expected0] - AssertionError: assert ...
+FAILED test_target.py::test_values[args1-expected1] - AssertionError: assert ...
+FAILED test_target.py::test_values[args2-expected2] - AssertionError: assert ...
+FAILED test_target.py::test_values[args3-expected3] - AssertionError: assert ...
+FAILED test_target.py::test_values[args4-expected4] - AssertionError: assert ...
+5 failed, 10 passed in 0.34s

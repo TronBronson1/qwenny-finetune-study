@@ -1,0 +1,19 @@
+.....F.................                                                  [100%]
+================================== FAILURES ===================================
+___________________________ test_returns[Abc-a-Abc] ___________________________
+
+left = 'Abc', right = 'a', expected = 'Abc'
+
+    @pytest.mark.parametrize("left,right,expected", [("abc", "a", "bc"), ("abc", "abc", ""), ("abc", "z", "abc"), ("", "a", ""), ("aaaa", "a", "aaa"), ("Abc", "a", "Abc"), ("ba", "a", "ba"), (" ab", " ", "ab"), ("éclair", "é", "clair"), ("abc", "abcd", "abc")])
+    def test_returns(left, right, expected):
+>       assert strip_prefix(left, right) == expected
+E       AssertionError: assert 'bc' == 'Abc'
+E         
+E         - Abc
+E         ? -
+E         + bc
+
+test_target.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_returns[Abc-a-Abc] - AssertionError: assert 'bc' ...
+1 failed, 22 passed in 0.25s

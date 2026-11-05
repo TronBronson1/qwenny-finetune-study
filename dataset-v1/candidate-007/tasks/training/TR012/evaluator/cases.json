@@ -1,0 +1,147 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0, 0)",
+    "expected_python": "0",
+    "after_python": "(0, 0)",
+    "category": "identity"
+  },
+  {
+    "id": "v001",
+    "args_python": "(0, 1)",
+    "expected_python": "1",
+    "after_python": "(0, 1)",
+    "category": "forward"
+  },
+  {
+    "id": "v002",
+    "args_python": "(6, 1)",
+    "expected_python": "0",
+    "after_python": "(6, 1)",
+    "category": "wrap"
+  },
+  {
+    "id": "v003",
+    "args_python": "(0, -1)",
+    "expected_python": "6",
+    "after_python": "(0, -1)",
+    "category": "negative-wrap"
+  },
+  {
+    "id": "v004",
+    "args_python": "(3, 14)",
+    "expected_python": "3",
+    "after_python": "(3, 14)",
+    "category": "multiple-weeks"
+  },
+  {
+    "id": "v005",
+    "args_python": "(3, -14)",
+    "expected_python": "3",
+    "after_python": "(3, -14)",
+    "category": "negative-weeks"
+  },
+  {
+    "id": "v006",
+    "args_python": "(6, 8)",
+    "expected_python": "0",
+    "after_python": "(6, 8)",
+    "category": "forward-wrap"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 0)",
+    "exception": "TypeError",
+    "category": "type:day"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0), 0)",
+    "exception": "TypeError",
+    "category": "type:day"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 0)",
+    "exception": "TypeError",
+    "category": "type:day"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 0)",
+    "exception": "TypeError",
+    "category": "type:day"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 0)",
+    "exception": "TypeError",
+    "category": "type:day"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0, True)",
+    "exception": "TypeError",
+    "category": "type:delta"
+  },
+  {
+    "id": "e006",
+    "args_python": "(0, IntChild(0))",
+    "exception": "TypeError",
+    "category": "type:delta"
+  },
+  {
+    "id": "e007",
+    "args_python": "(0, 1.5)",
+    "exception": "TypeError",
+    "category": "type:delta"
+  },
+  {
+    "id": "e008",
+    "args_python": "(0, 'bad')",
+    "exception": "TypeError",
+    "category": "type:delta"
+  },
+  {
+    "id": "e009",
+    "args_python": "(0, None)",
+    "exception": "TypeError",
+    "category": "type:delta"
+  },
+  {
+    "id": "e010",
+    "args_python": "(-1, 0)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e011",
+    "args_python": "(7, 0)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e012",
+    "args_python": "(IntChild(-1), 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e013",
+    "args_python": "(-1, IntChild(0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e014",
+    "args_python": "(IntChild(7), 0)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  },
+  {
+    "id": "e015",
+    "args_python": "(7, IntChild(0))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

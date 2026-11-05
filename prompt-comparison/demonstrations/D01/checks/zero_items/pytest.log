@@ -1,0 +1,27 @@
+F......................                                                  [100%]
+================================== FAILURES ===================================
+_____________________________ test_returns[0-3-0] _____________________________
+
+left = 0, right = 3, expected = 0
+
+    @pytest.mark.parametrize("left,right,expected", [(0, 3, 0), (1, 3, 1), (3, 3, 1), (4, 3, 2), (7, 1, 7), (10**30, 3, 333333333333333333333333333334)])
+    def test_returns(left, right, expected):
+>       assert batches(left, right) == expected
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 0, capacity = 3
+
+    def batches(items, capacity):
+        if type(items) is not int or type(capacity) is not int:
+            raise TypeError
+        if items <= 0 or capacity <= 0:
+>           raise ValueError
+E           ValueError
+
+batch_count.py:5: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_returns[0-3-0] - ValueError
+1 failed, 22 passed in 0.24s

@@ -1,0 +1,260 @@
+{
+  "status": "completed",
+  "training": {
+    "status": "trained-and-import-verified",
+    "run": "qwenny-002-compact",
+    "base": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "epochs": 5,
+    "samples": 300,
+    "distinct_tasks": 60,
+    "optimizer_updates": 75,
+    "elapsed_training_and_checkpoint_evaluation_seconds": 608.2809999999881,
+    "epoch_mean_training_losses": {
+      "1": 0.8472894345720609,
+      "2": 0.6369604443510374,
+      "3": 0.40710378090540567,
+      "4": 0.19980482781926792,
+      "5": 0.12260495830948154
+    },
+    "training_peak_allocated_bytes": 7280687104,
+    "training_peak_reserved_bytes": 8095006720,
+    "min_stage_cuda_free_bytes": 801038336,
+    "windows_peak_shared_bytes": 85983232,
+    "fresh_imports": [
+      {
+        "epoch": 1,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      }
+    ],
+    "development_base": {
+      "A": 0.8933799689014753,
+      "B": 0.7899087692300478
+    },
+    "development_checkpoints": [
+      {
+        "epoch": 1,
+        "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-002-compact\\checkpoints\\epoch-1",
+        "samples_seen": 60,
+        "optimizer_updates": 15,
+        "development_loss": {
+          "A": 0.8062497898936272,
+          "B": 0.7266826430956522
+        }
+      },
+      {
+        "epoch": 3,
+        "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-002-compact\\checkpoints\\epoch-3",
+        "samples_seen": 180,
+        "optimizer_updates": 45,
+        "development_loss": {
+          "A": 0.5697108109792074,
+          "B": 0.526776226858298
+        }
+      },
+      {
+        "epoch": 5,
+        "path": "C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\training-v1\\runs\\qwenny-002-compact\\checkpoints\\epoch-5",
+        "samples_seen": 300,
+        "optimizer_updates": 75,
+        "development_loss": {
+          "A": 0.544885573287805,
+          "B": 0.49731825043757755
+        }
+      }
+    ],
+    "target_token_reduction_fraction": 0.22829096400704763,
+    "comparison": "Same examples, updates, base and numerical training runtime; fewer supervised tokens. Development targets unchanged. Compact train loss is not directly comparable to old-format train loss.",
+    "pilot_scope": "Predeclared E5 only, two visible development families, sample0 seed42; see scoring folder for strict acceptance.",
+    "quality_claim": "No general aptitude conclusion."
+  },
+  "validation": {
+    "status": "passed",
+    "original_compact_outcomes_identical": true,
+    "paired_implementations": 240,
+    "pytest_processes": 480,
+    "reference_suites": 60,
+    "reference_test_cases": 1035,
+    "designated_mutants": 180
+  },
+  "generation": {
+    "status": "completed",
+    "scope": "Predeclared compact-format E5 diagnostic on two visible development tasks; no final evaluation.",
+    "training_run": "runs/qwenny-002-compact",
+    "thinking": false,
+    "seed": 42,
+    "temperature": 1.0,
+    "top_k": 20,
+    "top_p": 0.95,
+    "presence_penalty": 0.0,
+    "repetition_penalty": 1.0,
+    "max_new_tokens": 2048,
+    "context_limit": 16134,
+    "completed": [
+      {
+        "task": "DV001",
+        "variant": "compact-epoch-5-sample-0",
+        "prompt_tokens": 370,
+        "generated_tokens": 530,
+        "seconds": 60.375,
+        "terminated": true,
+        "truncated": false,
+        "python_blocks": 1,
+        "memory": {
+          "unix_time": 1793795317.8733284,
+          "allocated": 5883908096,
+          "reserved": 7992246272,
+          "peak_allocated": 7922842112,
+          "peak_reserved": 7992246272,
+          "cuda_free": 1015455744,
+          "total": 10736893952
+        }
+      },
+      {
+        "task": "DV002",
+        "variant": "compact-epoch-5-sample-0",
+        "prompt_tokens": 361,
+        "generated_tokens": 537,
+        "seconds": 60.875,
+        "terminated": true,
+        "truncated": false,
+        "python_blocks": 1,
+        "memory": {
+          "unix_time": 1793795378.7396069,
+          "allocated": 5883908096,
+          "reserved": 7994343424,
+          "peak_allocated": 7922842112,
+          "peak_reserved": 7994343424,
+          "cuda_free": 1013358592,
+          "total": 10736893952
+        }
+      }
+    ],
+    "reload_checks": [
+      {
+        "epoch": 1,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 3,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      },
+      {
+        "epoch": 5,
+        "max_abs_logit_difference": 0.0,
+        "passed": true
+      }
+    ],
+    "current_task": "DV002",
+    "current_variant": "compact-epoch-5-sample-0"
+  },
+  "scoring": [
+    {
+      "task": "DV001",
+      "variant": "compact-epoch-5-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV002",
+      "variant": "compact-epoch-5-sample-0",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending category/prose review; this is not final-test scoring",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    }
+  ],
+  "acceptance": [
+    {
+      "task": "DV001",
+      "variant": "compact-epoch-5-sample-0",
+      "strict_accepted": false,
+      "reason": "Syntax-invalid nested-tuple case. Also wrong wrapped rotations and incomplete function argument tuples.",
+      "answer_sha256": "7ff34e74709659797968352e3e9fa39f132053b995545697253c7e1f7d527043",
+      "scope": "Definitive syntax rejection; additional contract defects noted without repairing output."
+    },
+    {
+      "task": "DV002",
+      "variant": "compact-epoch-5-sample-0",
+      "strict_accepted": false,
+      "reason": "Syntax-invalid exception cases. Also malformed value parametrization, discarded return value, and wrong exception categories.",
+      "answer_sha256": "55eb7f75055b7a7cfb2cf9d7751e05585796a00cc3c96ef07e924cb234327a32",
+      "scope": "Definitive syntax rejection; additional contract defects noted without repairing output."
+    }
+  ],
+  "strict_accepted": 0,
+  "pilot_tasks": 2,
+  "final_test_used": false,
+  "scope": "Exploratory presentation-only ablation, two visible development families/one seed. No general quality gain demonstrated."
+}

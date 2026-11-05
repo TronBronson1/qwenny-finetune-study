@@ -1,0 +1,73 @@
+...FFF..........                                                         [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v003] ______________________________
+
+args = ([2, 1, 2, 3], [2, 2, 4]), expected = [2, 2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+>       assert actual == expected
+E       assert [] == [2, 2]
+E         
+E         Right contains 2 more items, first extra item: 2
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ([1, 1, 1], [1, 1]), expected = [1, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+>       assert actual == expected
+E       assert [] == [1, 1]
+E         
+E         Right contains 2 more items, first extra item: 1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ([-1, 0, -1], [0, -1]), expected = [-1, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [], id="v001"),
+        pytest.param(([], [1]), [], id="v002"),
+        pytest.param(([2, 1, 2, 3], [2, 2, 4]), [2, 2], id="v003"),
+        pytest.param(([1, 1, 1], [1, 1]), [1, 1], id="v004"),
+        pytest.param(([-1, 0, -1], [0, -1]), [-1, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=multiset_intersection(*args)
+>       assert actual == expected
+E       assert [] == [-1, 0]
+E         
+E         Right contains 2 more items, first extra item: -1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v003] - assert [] == [2, 2]
+FAILED test_target.py::test_values[v004] - assert [] == [1, 1]
+FAILED test_target.py::test_values[v005] - assert [] == [-1, 0]
+3 failed, 13 passed in 0.31s

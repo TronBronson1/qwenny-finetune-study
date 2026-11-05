@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="24" time="0.467" timestamp="2026-11-04T18:58:47.017940-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_values[v006]" time="0.000" /><testcase classname="test_target" name="test_values[v007]" time="0.000" /><testcase classname="test_target" name="test_values[v008]" time="0.000" /><testcase classname="test_target" name="test_values[v009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('abc', 'a')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('abc', 'a')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:44: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="ValueError: empty prefix">args = ('abc', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           strip_prefix(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc', prefix = ''
+
+    def strip_prefix(text, prefix):
+        _types((text, prefix), ('str', 'str'))
+        if not prefix:
+&gt;           raise ValueError('empty prefix')
+E           ValueError: empty prefix
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="ValueError: empty prefix">args = ('abc', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           strip_prefix(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'abc', prefix = ''
+
+    def strip_prefix(text, prefix):
+        _types((text, prefix), ('str', 'str'))
+        if not prefix:
+&gt;           raise ValueError('empty prefix')
+E           ValueError: empty prefix
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001"><failure message="ValueError: empty prefix">args = ('', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           strip_prefix(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', prefix = ''
+
+    def strip_prefix(text, prefix):
+        _types((text, prefix), ('str', 'str'))
+        if not prefix:
+&gt;           raise ValueError('empty prefix')
+E           ValueError: empty prefix
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001"><failure message="ValueError: empty prefix">args = ('', '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('abc'), 'a'), id="e000"),
+        pytest.param((b'x', 'a'), id="e001"),
+        pytest.param((1, 'a'), id="e002"),
+        pytest.param((None, 'a'), id="e003"),
+        pytest.param(('abc', StrChild('a')), id="e004"),
+        pytest.param(('abc', b'x'), id="e005"),
+        pytest.param(('abc', 1), id="e006"),
+        pytest.param(('abc', None), id="e007"),
+        pytest.param((StrChild('abc'), ''), id="e010"),
+        pytest.param(('abc', StrChild('')), id="e011"),
+        pytest.param((StrChild(''), ''), id="e012"),
+        pytest.param(('', StrChild('')), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           strip_prefix(*args)
+
+test_target.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', prefix = ''
+
+    def strip_prefix(text, prefix):
+        _types((text, prefix), ('str', 'str'))
+        if not prefix:
+&gt;           raise ValueError('empty prefix')
+E           ValueError: empty prefix
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /></testsuite></testsuites>

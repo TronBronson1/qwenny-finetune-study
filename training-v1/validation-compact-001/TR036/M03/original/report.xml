@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="12" time="0.292" timestamp="2026-11-04T07:13:00.186309-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="IndexError: list index out of range">args = ([1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=lower_median(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1]
+
+    def lower_median(values):
+        _types((values,), ('ints',))
+        if not values:
+            raise ValueError('empty')
+        ordered = sorted(values)
+&gt;       return ordered[(len(ordered) + 1) // 2]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert 4 == 1">args = ([4, 1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+&gt;       assert actual == expected
+E       assert 4 == 1
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert 9 == 5">args = ([9, 1, 5],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+&gt;       assert actual == expected
+E       assert 9 == 5
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 5 == 3">args = ([9, 1, 5, 3],), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+&gt;       assert actual == expected
+E       assert 5 == 3
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert 0 == -1">args = ([-1, -1, 0],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1, id="v000"),
+        pytest.param(([4, 1],), 1, id="v001"),
+        pytest.param(([9, 1, 5],), 5, id="v002"),
+        pytest.param(([9, 1, 5, 3],), 3, id="v003"),
+        pytest.param(([-1, -1, 0],), -1, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+&gt;       assert actual == expected
+E       assert 0 == -1
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /></testsuite></testsuites>

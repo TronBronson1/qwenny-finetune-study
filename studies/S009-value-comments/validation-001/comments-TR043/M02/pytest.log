@@ -1,0 +1,40 @@
+...FF................                                                    [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v003] ______________________________
+
+args = ('1010',), expected = 10
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('001',), 1, id="v002"),
+        pytest.param(('1010',), 10, id="v003"),
+        pytest.param(('11111111111111111111111111111111',), 4294967295, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 30 == 10
+
+test_target.py:21: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('11111111111111111111111111111111',), expected = 4294967295
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0, id="v000"),
+        pytest.param(('1',), 1, id="v001"),
+        pytest.param(('001',), 1, id="v002"),
+        pytest.param(('1010',), 10, id="v003"),
+        pytest.param(('11111111111111111111111111111111',), 4294967295, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_binary(*args)
+>       assert actual == expected
+E       assert 926510094425920 == 4294967295
+
+test_target.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v003] - assert 30 == 10
+FAILED test_target.py::test_values[v004] - assert 926510094425920 == 4294967295
+2 failed, 19 passed in 0.55s

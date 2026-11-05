@@ -1,0 +1,208 @@
+FFFFFF.......                                                            [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0,), expected = (0, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (59,), expected = (0, 0, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (60,), expected = (0, 1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (3599,), expected = (0, 59, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (3600,), expected = (1, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (90061,), expected = (25, 1, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=seconds_to_hms(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 25, expected = 25
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(25)
+E        +  and   <class 'int'> = type(25)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+6 failed, 7 passed in 0.58s

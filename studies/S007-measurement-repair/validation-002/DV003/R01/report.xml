@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="18" time="0.477" timestamp="2026-11-04T17:06:21.975008-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('I')&#10; +  and   &lt;class 'str'&gt; = type('I')">args = (1,), expected = 'I'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'I', expected = 'I'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('I')
+E        +  and   &lt;class 'str'&gt; = type('I')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('IV')&#10; +  and   &lt;class 'str'&gt; = type('IV')">args = (4,), expected = 'IV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'IV', expected = 'IV'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('IV')
+E        +  and   &lt;class 'str'&gt; = type('IV')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('IX')&#10; +  and   &lt;class 'str'&gt; = type('IX')">args = (9,), expected = 'IX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'IX', expected = 'IX'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('IX')
+E        +  and   &lt;class 'str'&gt; = type('IX')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('XL')&#10; +  and   &lt;class 'str'&gt; = type('XL')">args = (40,), expected = 'XL'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'XL', expected = 'XL'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('XL')
+E        +  and   &lt;class 'str'&gt; = type('XL')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('XC')&#10; +  and   &lt;class 'str'&gt; = type('XC')">args = (90,), expected = 'XC'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'XC', expected = 'XC'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('XC')
+E        +  and   &lt;class 'str'&gt; = type('XC')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('CD')&#10; +  and   &lt;class 'str'&gt; = type('CD')">args = (400,), expected = 'CD'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'CD', expected = 'CD'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('CD')
+E        +  and   &lt;class 'str'&gt; = type('CD')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('CM')&#10; +  and   &lt;class 'str'&gt; = type('CM')">args = (900,), expected = 'CM'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'CM', expected = 'CM'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('CM')
+E        +  and   &lt;class 'str'&gt; = type('CM')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('MCMXCIV')&#10; +  and   &lt;class 'str'&gt; = type('MCMXCIV')">args = (1994,), expected = 'MCMXCIV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'MCMXCIV', expected = 'MCMXCIV'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('MCMXCIV')
+E        +  and   &lt;class 'str'&gt; = type('MCMXCIV')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v008]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('MMMCMXCIX')&#10; +  and   &lt;class 'str'&gt; = type('MMMCMXCIX')">args = (3999,), expected = 'MMMCMXCIX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        actual=roman_encode(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'MMMCMXCIX', expected = 'MMMCMXCIX'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('MMMCMXCIX')
+E        +  and   &lt;class 'str'&gt; = type('MMMCMXCIX')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /></testsuite></testsuites>

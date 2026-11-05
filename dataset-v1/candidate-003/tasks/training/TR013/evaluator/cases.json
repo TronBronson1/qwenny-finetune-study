@@ -1,0 +1,134 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0, 2)",
+    "expected_python": "'0'",
+    "after_python": "(0, 2)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1, 16)",
+    "expected_python": "'1'",
+    "after_python": "(1, 16)"
+  },
+  {
+    "id": "v002",
+    "args_python": "(15, 16)",
+    "expected_python": "'f'",
+    "after_python": "(15, 16)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(16, 16)",
+    "expected_python": "'10'",
+    "after_python": "(16, 16)"
+  },
+  {
+    "id": "v004",
+    "args_python": "(31, 2)",
+    "expected_python": "'11111'",
+    "after_python": "(31, 2)"
+  },
+  {
+    "id": "v005",
+    "args_python": "(81, 3)",
+    "expected_python": "'10000'",
+    "after_python": "(81, 3)"
+  },
+  {
+    "id": "v006",
+    "args_python": "(255, 16)",
+    "expected_python": "'ff'",
+    "after_python": "(255, 16)"
+  },
+  {
+    "id": "v007",
+    "args_python": "(64, 8)",
+    "expected_python": "'100'",
+    "after_python": "(64, 8)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 2)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0), 2)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 2)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 2)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 2)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0, True)",
+    "exception": "TypeError",
+    "category": "type:base"
+  },
+  {
+    "id": "e006",
+    "args_python": "(0, IntChild(2))",
+    "exception": "TypeError",
+    "category": "type:base"
+  },
+  {
+    "id": "e007",
+    "args_python": "(0, 1.5)",
+    "exception": "TypeError",
+    "category": "type:base"
+  },
+  {
+    "id": "e008",
+    "args_python": "(0, 'bad')",
+    "exception": "TypeError",
+    "category": "type:base"
+  },
+  {
+    "id": "e009",
+    "args_python": "(0, None)",
+    "exception": "TypeError",
+    "category": "type:base"
+  },
+  {
+    "id": "e010",
+    "args_python": "(-1, 2)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e011",
+    "args_python": "(2, 1)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e012",
+    "args_python": "(2, 17)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e013",
+    "args_python": "(-1, True)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="11" time="0.337" timestamp="2026-11-04T12:22:10.440218-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_values[v000]" time="0.001" /><testcase classname="test_candidate" name="test_values[v001]" time="0.001" /><testcase classname="test_candidate" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert [('a', 1), ('a', 3)] == [('a', 2), ('b', 1), ('a', 1)]&#10;  &#10;  At index 0 diff: ('a', 1) != ('a', 2)&#10;  Right contains one more item: ('a', 1)&#10;  Use -v to get more diff">args = (['a', 'a', 'b', 'a'],), expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert [('a', 1), ('a', 3)] == [('a', 2), ('b', 1), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 1) != ('a', 2)
+E         Right contains one more item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert [('', 1), ('x', 2)] == [('', 2), ('x', 1)]&#10;  &#10;  At index 0 diff: ('', 1) != ('', 2)&#10;  Use -v to get more diff">args = (['', '', 'x'],), expected = [('', 2), ('x', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert [('', 1), ('x', 2)] == [('', 2), ('x', 1)]
+E         
+E         At index 0 diff: ('', 1) != ('', 2)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert [('a', 2)] == [('A', 1), ('a', 1)]&#10;  &#10;  At index 0 diff: ('a', 2) != ('A', 1)&#10;  Right contains one more item: ('a', 1)&#10;  Use -v to get more diff">args = (['A', 'a'],), expected = [('A', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert [('a', 2)] == [('A', 1), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 2) != ('A', 1)
+E         Right contains one more item: ('a', 1)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v005]" time="0.002"><failure message="AssertionError: assert [('é', 1), ('字', 2)] == [('é', 2), ('字', 1)]&#10;  &#10;  At index 0 diff: ('é', 1) != ('é', 2)&#10;  Use -v to get more diff">args = (['é', 'é', '字'],), expected = [('é', 2), ('字', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['é', 'é', '字'],), [('é', 2), ('字', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert [('é', 1), ('字', 2)] == [('é', 2), ('字', 1)]
+E         
+E         At index 0 diff: ('é', 1) != ('é', 2)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e004]" time="0.000" /></testsuite></testsuites>

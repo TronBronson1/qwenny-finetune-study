@@ -1,0 +1,408 @@
+FF.FFFFFFFF........                                                      [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = ('', ''), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = '', right = ''
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+                current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+            previous = current
+>       return previous[-1]
+               ^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:60: IndexError
+__________________________ test_renamed_values[v001] __________________________
+
+args = ('', 'abc'), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=edit_distance(*args)
+>       assert actual == expected
+E       assert 1 == 3
+
+test_candidate.py:27: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = ('cat', 'cat'), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'cat', right = 'cat'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ('cat', 'cut'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'cat', right = 'cut'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v005] __________________________
+
+args = ('ab', 'ba'), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'ab', right = 'ba'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v006] __________________________
+
+args = ('kitten', 'sitting'), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'kitten', right = 'sitting'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v007] __________________________
+
+args = ('é', 'e'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'é', right = 'e'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v008] __________________________
+
+args = ('A', 'a'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'A', right = 'a'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v009] __________________________
+
+args = ('é', 'É'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'é', right = 'É'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+__________________________ test_renamed_values[v010] __________________________
+
+args = ('é', 'é'), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_renamed_values(args,expected):
+>       actual=edit_distance(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'é', right = 'é'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+>               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v001] - assert 1 == 3
+FAILED test_candidate.py::test_renamed_values[v003] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v004] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v005] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v006] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v007] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v008] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v009] - IndexError: list index ...
+FAILED test_candidate.py::test_renamed_values[v010] - IndexError: list index ...
+10 failed, 9 passed in 0.84s

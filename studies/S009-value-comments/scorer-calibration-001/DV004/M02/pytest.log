@@ -1,0 +1,124 @@
+FFFFFF.............                                                      [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v000] __________________________
+
+args = ([],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_candidate.py:25: AssertionError
+__________________________ test_renamed_values[v001] __________________________
+
+args = ([0],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_candidate.py:25: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = ([255],), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 254 == 255
+
+test_candidate.py:25: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = ([1, 2, 3],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_candidate.py:25: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ([5, 5],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_candidate.py:25: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = ([128, 1, 128],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0, id="v000"),
+        pytest.param(([0],), 0, id="v001"),
+        pytest.param(([255],), 255, id="v002"),
+        pytest.param(([1, 2, 3],), 0, id="v003"),
+        pytest.param(([5, 5],), 0, id="v004"),
+        pytest.param(([128, 1, 128],), 1, id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=xor_checksum(*args)
+>       assert actual == expected
+E       assert 0 == 1
+
+test_candidate.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v000] - assert 1 == 0
+FAILED test_candidate.py::test_renamed_values[v001] - assert 1 == 0
+FAILED test_candidate.py::test_renamed_values[v002] - assert 254 == 255
+FAILED test_candidate.py::test_renamed_values[v003] - assert 1 == 0
+FAILED test_candidate.py::test_renamed_values[v004] - assert 1 == 0
+FAILED test_candidate.py::test_renamed_values[v005] - assert 0 == 1
+6 failed, 13 passed in 0.63s

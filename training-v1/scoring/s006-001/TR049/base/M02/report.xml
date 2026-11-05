@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="26" time="0.434" timestamp="2026-11-04T13:18:46.550028-05:00" hostname="Trons"><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_0_0" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_1_2" time="0.001"><failure message="assert 1 == 5&#10; +  where 1 = row_major_offset(1, 2, 2, 3)">self = &lt;test_candidate.TestRowMajorOffset object at 0x0000025FAC1CAC10&gt;
+
+    def test_valid_offset_1_2(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+&gt;       assert row_major_offset(row, column, rows, columns) == expected
+E       assert 1 == 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:20: AssertionError</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_max" time="0.001"><failure message="assert 1 == 5&#10; +  where 1 = row_major_offset(1, 2, 2, 3)">self = &lt;test_candidate.TestRowMajorOffset object at 0x0000025FAC1C2C40&gt;
+
+    def test_valid_offset_max(self):
+        row = 1
+        column = 2
+        rows = 2
+        columns = 3
+        expected = 5
+&gt;       assert row_major_offset(row, column, rows, columns) == expected
+E       assert 1 == 5
+E        +  where 1 = row_major_offset(1, 2, 2, 3)
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_row_bool" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_column_bool" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_rows_bool" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_columns_bool" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_row_float" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_column_float" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_rows_float" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_columns_float" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_row_string" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_column_string" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_rows_string" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_columns_string" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_value_rows_zero" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_value_rows_negative" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_value_columns_zero" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_value_columns_negative" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_index_row_too_large" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_index_row_negative" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_index_column_too_large" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_index_column_negative" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_reversed_bounds_row_exceeds_rows" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_reversed_bounds_column_exceeds_columns" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_reversed_bounds_multiple_invalid" time="0.000" /></testsuite></testsuites>

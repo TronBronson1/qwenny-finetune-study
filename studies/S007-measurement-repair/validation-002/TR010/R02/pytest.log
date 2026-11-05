@@ -1,0 +1,32 @@
+............F.                                                           [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e006] _________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           population_count(*args)
+
+test_target.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1
+
+    def population_count(number):
+        if number < 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e006] - ValueError: domain
+1 failed, 13 passed in 0.55s

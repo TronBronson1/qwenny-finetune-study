@@ -1,0 +1,33 @@
+{
+  "id": "DV001",
+  "split": "development",
+  "family": "sequence-rotation",
+  "function": "rotate_right",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values",
+    "steps"
+  ],
+  "schemas": [
+    "objects",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": true,
+  "source_sha256": "8b58928a23dc04938c7bafb492153d581354a43b24065f004289bdd4c29cdc87",
+  "target_sha256": "5fd34609ae2c2ae8d0e4a2e235748c4f23f7297aec561501ca4cfc386e911db0",
+  "spec_sha256": "cb5cc72026c45bd312075be2580485b52408ee258106948f1a4db4e96c16dd2d",
+  "answer_sha256": "d45914be8fd9a459e90746ff8f1ecbb3d586e02d2147530b352f52d4d3c99811",
+  "valid_test_cases": 9,
+  "exception_test_cases": 8,
+  "oracle_checks": 9,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

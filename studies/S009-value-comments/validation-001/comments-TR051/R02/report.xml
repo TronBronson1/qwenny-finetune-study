@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="22" time="0.434" timestamp="2026-11-04T19:01:04.183427-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001"><failure message="ValueError: length">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1), id="e000"),
+        pytest.param((IntChild(0), 1), id="e001"),
+        pytest.param((1.5, 1), id="e002"),
+        pytest.param(('bad', 1), id="e003"),
+        pytest.param((None, 1), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(1)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(0), 0), id="e012"),
+        pytest.param((0, IntChild(0)), id="e013"),
+        pytest.param((IntChild(0), -1), id="e014"),
+        pytest.param((0, IntChild(-1)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           wrap_index(*args)
+
+test_target.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = 0
+
+    def wrap_index(index, length):
+        if length &lt;= 0:
+&gt;           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001"><failure message="ValueError: length">args = (0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1), id="e000"),
+        pytest.param((IntChild(0), 1), id="e001"),
+        pytest.param((1.5, 1), id="e002"),
+        pytest.param(('bad', 1), id="e003"),
+        pytest.param((None, 1), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(1)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(0), 0), id="e012"),
+        pytest.param((0, IntChild(0)), id="e013"),
+        pytest.param((IntChild(0), -1), id="e014"),
+        pytest.param((0, IntChild(-1)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           wrap_index(*args)
+
+test_target.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = 0
+
+    def wrap_index(index, length):
+        if length &lt;= 0:
+&gt;           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001"><failure message="ValueError: length">args = (0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1), id="e000"),
+        pytest.param((IntChild(0), 1), id="e001"),
+        pytest.param((1.5, 1), id="e002"),
+        pytest.param(('bad', 1), id="e003"),
+        pytest.param((None, 1), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(1)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(0), 0), id="e012"),
+        pytest.param((0, IntChild(0)), id="e013"),
+        pytest.param((IntChild(0), -1), id="e014"),
+        pytest.param((0, IntChild(-1)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           wrap_index(*args)
+
+test_target.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = -1
+
+    def wrap_index(index, length):
+        if length &lt;= 0:
+&gt;           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001"><failure message="ValueError: length">args = (0, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1), id="e000"),
+        pytest.param((IntChild(0), 1), id="e001"),
+        pytest.param((1.5, 1), id="e002"),
+        pytest.param(('bad', 1), id="e003"),
+        pytest.param((None, 1), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(1)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(0), 0), id="e012"),
+        pytest.param((0, IntChild(0)), id="e013"),
+        pytest.param((IntChild(0), -1), id="e014"),
+        pytest.param((0, IntChild(-1)), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           wrap_index(*args)
+
+test_target.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, length = -1
+
+    def wrap_index(index, length):
+        if length &lt;= 0:
+&gt;           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /></testsuite></testsuites>

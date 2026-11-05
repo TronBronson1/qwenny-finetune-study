@@ -1,0 +1,28 @@
+.....F.F...                                                              [100%]
+================================== FAILURES ===================================
+___________________ test_edit_distance_left_subclass_string ___________________
+
+    def test_edit_distance_left_subclass_string():
+        class MyStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:28: Failed
+__________________ test_edit_distance_right_subclass_string ___________________
+
+    def test_edit_distance_right_subclass_string():
+        class MyStr(str):
+            pass
+    
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:39: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_edit_distance_left_subclass_string - Failed: D...
+FAILED test_candidate.py::test_edit_distance_right_subclass_string - Failed: ...
+2 failed, 9 passed in 0.53s

@@ -1,0 +1,78 @@
+{
+  "tasks": [
+    {
+      "id": "TR024",
+      "split": "training",
+      "family": "ascii-upper",
+      "function": "ascii_upper",
+      "prompt_tokens": 288,
+      "prompt_sha256": "6b66e5bfbcfba066876fb0b00d61f3ef3b9ef14e3e072b42ed7ab57d6b4631da",
+      "prompt_ids_sha256": "06b2e4c3d8b6d29d6f156a16e2a1270d8ab8b4d760962f954428e6300df269d6"
+    },
+    {
+      "id": "DV008",
+      "split": "development",
+      "family": "edit-distance",
+      "function": "edit_distance",
+      "prompt_tokens": 364,
+      "prompt_sha256": "e525208b17241f0e4ac1ed25fcc9ba15d7767b8fd7aac72df70ed4b9a41c4b49",
+      "prompt_ids_sha256": "cd429545443388bbee5b2abe3595eec39c46a44bafc5a1000ec010c943238742"
+    },
+    {
+      "id": "TR025",
+      "split": "training",
+      "family": "run-length-encode",
+      "function": "run_length_encode",
+      "prompt_tokens": 332,
+      "prompt_sha256": "6c21cba0a98fa265caa7983966f9e1c8fcbd50d27ba06af399d7b431c46b113c",
+      "prompt_ids_sha256": "9a45594572ce696fd3f0442bed653569ab193697b8bf4b98add948ff5d22c99b"
+    },
+    {
+      "id": "DV004",
+      "split": "development",
+      "family": "xor-checksum",
+      "function": "xor_checksum",
+      "prompt_tokens": 321,
+      "prompt_sha256": "d0cf6ab0b904da617effa11fa5f146cb33e0ea0e606b605dd05942285e432a24",
+      "prompt_ids_sha256": "b4ad8c8830df78affe1d5ba061cdb0fce2c7520179e455bafc5ca3b7ab013f15"
+    },
+    {
+      "id": "TR038",
+      "split": "training",
+      "family": "parse-hex-byte",
+      "function": "parse_hex_byte",
+      "prompt_tokens": 291,
+      "prompt_sha256": "84cb205c3ad21e023ceb34fa1f7daa669601515031613ae428cb534bc273efa4",
+      "prompt_ids_sha256": "b4b38ee6917963c98fba43061e2e2399dc8df118e774a7f1a2a94f18768970c6"
+    },
+    {
+      "id": "DV011",
+      "split": "development",
+      "family": "interval-union",
+      "function": "interval_union",
+      "prompt_tokens": 355,
+      "prompt_sha256": "47f8b36df6e54e2be9ad46a44bdc95e109f792209f94e95f9f61629f1a016e38",
+      "prompt_ids_sha256": "84993fd4c7b3f82d0338984a603754ddc5f1cf844d7cfd6b8134338504d7b8c9"
+    },
+    {
+      "id": "TR049",
+      "split": "training",
+      "family": "row-major-index",
+      "function": "row_major_offset",
+      "prompt_tokens": 357,
+      "prompt_sha256": "00602982e645884f795d2313f7f7487a362ac14f883c800854334ef57894489b",
+      "prompt_ids_sha256": "1986fe7ea9bd01f77d5d98311c6beec0ad0e38abef7226d8298515fab24a9acc"
+    },
+    {
+      "id": "DV007",
+      "split": "development",
+      "family": "grid-neighbors",
+      "function": "grid_neighbors",
+      "prompt_tokens": 380,
+      "prompt_sha256": "10476fbd9e13ce9b1e771becdc25f08f108287c34232340ecf3d7002c8c06dd3",
+      "prompt_ids_sha256": "b625b510b01ae7cabc7d5c3e1adabdd0b6d61fc338b7f06733bcbe9eb8951d97"
+    }
+  ],
+  "selection": "Same eight visible purposive tasks proposed in handoff; interleaved training/development. No new model outputs used.",
+  "unicode_clarification": "DV008 inference-only explicit code-point/no-normalization wording; identical across inference arms; original archived results unchanged."
+}

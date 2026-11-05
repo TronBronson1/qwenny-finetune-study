@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "c317fd7190335718c24e4417d5ceb6817282e5487598ed3aa2a527407982b444"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-constant-47-0-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "0",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "b03d1107084cb0ee2bca033eeed2681cba9308d40605bdce8ce2698a4e55ef13"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-constant-49-1-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('AEIOUaeiou',)",
+      "expected_python": "10",
+      "actual_python": "20"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "928e24f875616c2c420b7fa0371d504ca1d66724ecea6d9153a4eb12e91d625e"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "0",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "2085d5f516d4d6f3f72f3109bc5a5ee5970fd785fd66e540913f1ccd03a87e88"
+  }
+]

@@ -1,0 +1,40 @@
+.......FF.......F.                                                       [100%]
+================================== FAILURES ===================================
+____________________________ test_types[values0-1] ____________________________
+
+values = [], steps = 1
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+_____________________________ test_types[None-1] ______________________________
+
+values = None, steps = 1
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+__________________________ test_types[values9-True] ___________________________
+
+values = (), steps = True
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+=========================== short test summary info ===========================
+FAILED test_checked.py::test_types[values0-1] - Failed: DID NOT RAISE TypeError
+FAILED test_checked.py::test_types[None-1] - Failed: DID NOT RAISE TypeError
+FAILED test_checked.py::test_types[values9-True] - Failed: DID NOT RAISE Type...
+3 failed, 15 passed in 0.24s

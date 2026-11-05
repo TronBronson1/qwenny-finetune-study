@@ -1,0 +1,124 @@
+FFFFFF................                                                   [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-0] _____________________________
+
+args = ('0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:25: AssertionError
+____________________________ test_values[args1-0] _____________________________
+
+args = ('-0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:25: AssertionError
+____________________________ test_values[args2-0] _____________________________
+
+args = ('+0',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:25: AssertionError
+____________________________ test_values[args3-12] ____________________________
+
+args = ('0012',), expected = 12
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert 13 == 12
+
+test_target.py:25: AssertionError
+___________________________ test_values[args4--12] ____________________________
+
+args = ('-12',), expected = -12
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert -11 == -12
+
+test_target.py:25: AssertionError
+_______________________ test_values[args5-999999999999] _______________________
+
+args = ('+999999999999',), expected = 999999999999
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0',), 0),
+        pytest.param(('-0',), 0),
+        pytest.param(('+0',), 0),
+        pytest.param(('0012',), 12),
+        pytest.param(('-12',), -12),
+        pytest.param(('+999999999999',), 999999999999),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_signed(*args)
+>       assert actual == expected
+E       assert 1000000000000 == 999999999999
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-0] - assert 1 == 0
+FAILED test_target.py::test_values[args1-0] - assert 1 == 0
+FAILED test_target.py::test_values[args2-0] - assert 1 == 0
+FAILED test_target.py::test_values[args3-12] - assert 13 == 12
+FAILED test_target.py::test_values[args4--12] - assert -11 == -12
+FAILED test_target.py::test_values[args5-999999999999] - assert 1000000000000...
+6 failed, 16 passed in 0.36s

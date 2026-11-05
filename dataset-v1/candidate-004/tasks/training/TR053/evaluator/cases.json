@@ -1,0 +1,80 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0,)",
+    "expected_python": "'0.00'",
+    "after_python": "(0,)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1,)",
+    "expected_python": "'0.01'",
+    "after_python": "(1,)"
+  },
+  {
+    "id": "v002",
+    "args_python": "(-1,)",
+    "expected_python": "'-0.01'",
+    "after_python": "(-1,)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(99,)",
+    "expected_python": "'0.99'",
+    "after_python": "(99,)"
+  },
+  {
+    "id": "v004",
+    "args_python": "(100,)",
+    "expected_python": "'1.00'",
+    "after_python": "(100,)"
+  },
+  {
+    "id": "v005",
+    "args_python": "(-100,)",
+    "expected_python": "'-1.00'",
+    "after_python": "(-100,)"
+  },
+  {
+    "id": "v006",
+    "args_python": "(12345,)",
+    "expected_python": "'123.45'",
+    "after_python": "(12345,)"
+  },
+  {
+    "id": "v007",
+    "args_python": "(1000000000000000000000000000001,)",
+    "expected_python": "'10000000000000000000000000000.01'",
+    "after_python": "(1000000000000000000000000000001,)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:cents"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0),)",
+    "exception": "TypeError",
+    "category": "type:cents"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:cents"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:cents"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:cents"
+  }
+]

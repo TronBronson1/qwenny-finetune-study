@@ -1,0 +1,80 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "True",
+    "after_python": "('',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('a',)",
+    "expected_python": "True",
+    "after_python": "('a',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('aa',)",
+    "expected_python": "True",
+    "after_python": "('aa',)"
+  },
+  {
+    "id": "v003",
+    "args_python": "('aba',)",
+    "expected_python": "True",
+    "after_python": "('aba',)"
+  },
+  {
+    "id": "v004",
+    "args_python": "('abba',)",
+    "expected_python": "True",
+    "after_python": "('abba',)"
+  },
+  {
+    "id": "v005",
+    "args_python": "('ab',)",
+    "expected_python": "False",
+    "after_python": "('ab',)"
+  },
+  {
+    "id": "v006",
+    "args_python": "('Aa',)",
+    "expected_python": "False",
+    "after_python": "('Aa',)"
+  },
+  {
+    "id": "v007",
+    "args_python": "('a a',)",
+    "expected_python": "True",
+    "after_python": "('a a',)"
+  },
+  {
+    "id": "v008",
+    "args_python": "('é字é',)",
+    "expected_python": "True",
+    "after_python": "('é字é',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

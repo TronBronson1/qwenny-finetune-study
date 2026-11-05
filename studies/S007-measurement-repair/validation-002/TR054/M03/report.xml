@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="12" time="0.366" timestamp="2026-11-04T17:05:55.929172-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert '-0' == '0'&#10;  &#10;  - 0&#10;  + -0">args = (0,), expected = '0'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '-0' == '0'
+E         
+E         - 0
+E         + -0
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.000" /><testcase classname="test_target" name="test_values[v005]" time="0.000" /><testcase classname="test_target" name="test_values[v006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /></testsuite></testsuites>

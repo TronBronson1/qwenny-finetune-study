@@ -1,0 +1,68 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('a',)",
+    "expected_python": "'a'",
+    "after_python": "('a',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('   ',)",
+    "expected_python": "' '",
+    "after_python": "('   ',)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(' a  b ',)",
+    "expected_python": "' a b '",
+    "after_python": "(' a  b ',)"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\t  b',)",
+    "expected_python": "'a\\t b'",
+    "after_python": "('a\\t  b',)"
+  },
+  {
+    "id": "v005",
+    "args_python": "('a\\n  b',)",
+    "expected_python": "'a\\n b'",
+    "after_python": "('a\\n  b',)"
+  },
+  {
+    "id": "v006",
+    "args_python": "('é  字',)",
+    "expected_python": "'é 字'",
+    "after_python": "('é  字',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

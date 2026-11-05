@@ -1,0 +1,189 @@
+.FFFFF..................................................                 [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v001] __________________________
+
+args = (0, 0, 2, 3), expected = [(0, 1), (1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = (1, 1, 3, 3), expected = [(0, 1), (1, 2), (2, 1), (1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = (2, 2, 3, 3), expected = [(1, 2), (2, 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = (0, 1, 1, 3), expected = [(0, 2), (0, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:7: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = (1, 0, 3, 1), expected = [(0, 0), (2, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_candidate.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+test_candidate.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_candidate.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v003] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v004] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v005] - AssertionError: assert ...
+5 failed, 51 passed in 0.73s

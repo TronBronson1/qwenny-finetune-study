@@ -1,0 +1,27 @@
+...F...................                                                  [100%]
+================================== FAILURES ===================================
+______________________________ test_returns[-a-] ______________________________
+
+left = '', right = 'a', expected = ''
+
+    @pytest.mark.parametrize("left,right,expected", [("abc", "a", "bc"), ("abc", "abc", ""), ("abc", "z", "abc"), ("", "a", ""), ("aaaa", "a", "aaa"), ("Abc", "a", "Abc"), ("ba", "a", "ba"), (" ab", " ", "ab"), ("éclair", "é", "clair"), ("abc", "abcd", "abc")])
+    def test_returns(left, right, expected):
+>       assert strip_prefix(left, right) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '', prefix = 'a'
+
+    def strip_prefix(text, prefix):
+        if type(text) is not str or type(prefix) is not str:
+            raise TypeError
+        if prefix == "" or text == "":
+>           raise ValueError
+E           ValueError
+
+prefix_tools.py:5: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_returns[-a-] - ValueError
+1 failed, 22 passed in 0.23s

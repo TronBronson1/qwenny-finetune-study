@@ -1,0 +1,87 @@
+......FFF...FFF........                                                  [100%]
+================================== FAILURES ===================================
+_____________________________ test_types[True-3] ______________________________
+
+left = True, right = 3
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+_____________________________ test_types[False-3] _____________________________
+
+left = False, right = 3
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+______________________________ test_types[2-3_0] ______________________________
+
+left = 2, right = 3
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+_____________________________ test_types[2-True] ______________________________
+
+left = 2, right = True
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+_____________________________ test_types[2-False] _____________________________
+
+left = 2, right = False
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+        with pytest.raises(TypeError):
+>           batches(left, right)
+
+test_target.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+items = 2, capacity = False
+
+    def batches(items, capacity):
+        if not isinstance(items, int) or not isinstance(capacity, int):
+            raise TypeError
+        if items < 0 or capacity <= 0:
+>           raise ValueError
+E           ValueError
+
+batch_count.py:5: ValueError
+______________________________ test_types[2-3_2] ______________________________
+
+left = 2, right = 3
+
+    @pytest.mark.parametrize("left,right", [(True, 3), (False, 3), (IntChild(2), 3), (1.5, 3), ("2", 3), (None, 3), (2, True), (2, False), (2, IntChild(3)), (2, 1.5), (2, "3"), (2, None)])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_types[True-3] - Failed: DID NOT RAISE TypeError
+FAILED test_target.py::test_types[False-3] - Failed: DID NOT RAISE TypeError
+FAILED test_target.py::test_types[2-3_0] - Failed: DID NOT RAISE TypeError
+FAILED test_target.py::test_types[2-True] - Failed: DID NOT RAISE TypeError
+FAILED test_target.py::test_types[2-False] - ValueError
+FAILED test_target.py::test_types[2-3_2] - Failed: DID NOT RAISE TypeError
+6 failed, 17 passed in 0.27s

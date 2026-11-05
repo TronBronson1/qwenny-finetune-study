@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="32" time="0.300" timestamp="2026-11-04T07:13:31.707960-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001"><failure message="assert None == (0, 0)">args = (0, 1, 1), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0)),
+        pytest.param((0, 2, 3), (0, 0)),
+        pytest.param((2, 2, 3), (0, 2)),
+        pytest.param((3, 2, 3), (1, 0)),
+        pytest.param((5, 2, 3), (1, 2)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=unravel_index(*args)
+&gt;       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001"><failure message="assert None == (0, 0)">args = (0, 2, 3), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0)),
+        pytest.param((0, 2, 3), (0, 0)),
+        pytest.param((2, 2, 3), (0, 2)),
+        pytest.param((3, 2, 3), (1, 0)),
+        pytest.param((5, 2, 3), (1, 2)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=unravel_index(*args)
+&gt;       assert actual == expected
+E       assert None == (0, 0)
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-expected2]" time="0.001"><failure message="assert None == (0, 2)">args = (2, 2, 3), expected = (0, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0)),
+        pytest.param((0, 2, 3), (0, 0)),
+        pytest.param((2, 2, 3), (0, 2)),
+        pytest.param((3, 2, 3), (1, 0)),
+        pytest.param((5, 2, 3), (1, 2)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=unravel_index(*args)
+&gt;       assert actual == expected
+E       assert None == (0, 2)
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-expected3]" time="0.001"><failure message="assert None == (1, 0)">args = (3, 2, 3), expected = (1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0)),
+        pytest.param((0, 2, 3), (0, 0)),
+        pytest.param((2, 2, 3), (0, 2)),
+        pytest.param((3, 2, 3), (1, 0)),
+        pytest.param((5, 2, 3), (1, 2)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=unravel_index(*args)
+&gt;       assert actual == expected
+E       assert None == (1, 0)
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-expected4]" time="0.001"><failure message="assert None == (1, 2)">args = (5, 2, 3), expected = (1, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 1, 1), (0, 0)),
+        pytest.param((0, 2, 3), (0, 0)),
+        pytest.param((2, 2, 3), (0, 2)),
+        pytest.param((3, 2, 3), (1, 0)),
+        pytest.param((5, 2, 3), (1, 2)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=unravel_index(*args)
+&gt;       assert actual == expected
+E       assert None == (1, 2)
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_indexerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args14]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args15]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args16]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args17]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args18]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args19]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args20]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args21]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args22]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args23]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /></testsuite></testsuites>

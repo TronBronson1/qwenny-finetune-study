@@ -1,0 +1,109 @@
+..........F.F....F..........                                             [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e003] _________________________
+
+args = ((),)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild(['0']),), id="e000"),
+        pytest.param(([StrChild('x')],), id="e001"),
+        pytest.param(([1],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([]),), id="e013"),
+        pytest.param((ListChild(['+']),), id="e014"),
+        pytest.param((ListChild(['1', '2']),), id="e015"),
+        pytest.param((ListChild(['01']),), id="e016"),
+        pytest.param((ListChild(['1', '/']),), id="e017"),
+        pytest.param((ListChild(['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']),), id="e018"),
+        pytest.param((ListChild(['٣']),), id="e019"),
+        pytest.param((ListChild(['３']),), id="e020"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           rpn_evaluate(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ()
+
+    def rpn_evaluate(tokens):
+        if not 1 <= len(tokens) <= 32:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild(['0']),), id="e000"),
+        pytest.param(([StrChild('x')],), id="e001"),
+        pytest.param(([1],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([]),), id="e013"),
+        pytest.param((ListChild(['+']),), id="e014"),
+        pytest.param((ListChild(['1', '2']),), id="e015"),
+        pytest.param((ListChild(['01']),), id="e016"),
+        pytest.param((ListChild(['1', '/']),), id="e017"),
+        pytest.param((ListChild(['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']),), id="e018"),
+        pytest.param((ListChild(['٣']),), id="e019"),
+        pytest.param((ListChild(['３']),), id="e020"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           rpn_evaluate(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = []
+
+    def rpn_evaluate(tokens):
+        if not 1 <= len(tokens) <= 32:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = (['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild(['0']),), id="e000"),
+        pytest.param(([StrChild('x')],), id="e001"),
+        pytest.param(([1],), id="e002"),
+        pytest.param(((),), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((ListChild([]),), id="e013"),
+        pytest.param((ListChild(['+']),), id="e014"),
+        pytest.param((ListChild(['1', '2']),), id="e015"),
+        pytest.param((ListChild(['01']),), id="e016"),
+        pytest.param((ListChild(['1', '/']),), id="e017"),
+        pytest.param((ListChild(['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']),), id="e018"),
+        pytest.param((ListChild(['٣']),), id="e019"),
+        pytest.param((ListChild(['３']),), id="e020"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           rpn_evaluate(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+tokens = ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1']
+
+    def rpn_evaluate(tokens):
+        if not 1 <= len(tokens) <= 32:
+>           raise ValueError('length')
+E           ValueError: length
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e003] - ValueError: length
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: length
+FAILED test_target.py::test_raises_typeerror[e018] - ValueError: length
+3 failed, 25 passed in 0.58s

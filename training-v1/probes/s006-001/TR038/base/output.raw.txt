@@ -1,0 +1,77 @@
+```python
+from subject import parse_hex_byte
+import pytest
+
+
+class TestParseHexByte:
+    def test_valid_hex_0(self):
+        assert parse_hex_byte("00") == 0
+
+    def test_valid_hex_1(self):
+        assert parse_hex_byte("01") == 1
+
+    def test_valid_hex_f(self):
+        assert parse_hex_byte("ff") == 255
+
+    def test_valid_hex_uppercase(self):
+        assert parse_hex_byte("AB") == 171
+
+    def test_valid_hex_mixed_case(self):
+        assert parse_hex_byte("aB") == 171
+
+    def test_invalid_non_hex_char(self):
+        with pytest.raises(ValueError):
+            parse_hex_byte("1G")
+
+    def test_invalid_single_char(self):
+        with pytest.raises(ValueError):
+            parse_hex_byte("1")
+
+    def test_invalid_three_chars(self):
+        with pytest.raises(ValueError):
+            parse_hex_byte("123")
+
+    def test_invalid_empty_string(self):
+        with pytest.raises(ValueError):
+            parse_hex_byte("")
+
+    def test_invalid_type_string_subclass(self):
+        class MyStr(str):
+            pass
+        with pytest.raises(TypeError):
+            parse_hex_byte(MyStr("00"))
+
+    def test_invalid_type_integer(self):
+        with pytest.raises(TypeError):
+            parse_hex_byte(0)
+
+    def test_invalid_type_bytes(self):
+        with pytest.raises(TypeError):
+            parse_hex_byte(b"00")
+
+    def test_invalid_type_none(self):
+        with pytest.raises(TypeError):
+            parse_hex_byte(None)
+
+    def test_invalid_reversed_bounds(self):
+        # This test validates the behavior when the input is a string representing 
+        # a number that would be invalid if interpreted as a bounds check, 
+        # but strictly speaking, parse_hex_byte operates on single byte representation.
+        # Since the contract requires exactly two ASCII hex digits, we cannot test 
+        # "lower value exceeds upper value" in the mathematical sense because 
+        # the input is a flat string, not a tuple of bounds. 
+        # Therefore, we verify that non-2-char strings are rejected.
+        with pytest.raises(ValueError):
+            parse_hex_byte("000")  # Three chars -> invalid
+```
+
+### Requirement-to-Input Mapping
+- **Input Type Check**: `str` instance is mandatory. Subclasses of `str`, `int`, `bytes`, `None`, or any other type raise `TypeError`.
+- **Value/Shape Check**: Exactly two ASCII hexadecimal digits (`0-9`, `a-f`, `A-F`) are required. Any deviation raises `ValueError`.
+- **Output**: A built-in Python `int` representing the byte value.
+
+### Finite Coverage Limitations
+1. **Input Space Exhaustion**: While 256 possible byte values (`0x00` to `0xff`) are covered, the test suite does not explicitly test every single valid hex combination (e.g., `1a`, `2b`, etc.). It covers representative cases.
+2. **Ordering/Limit Logic**: The prompt mentioned verifying that the "actual lower value exceeds the actual upper value." Since `parse_hex_byte` accepts a single string argument rather than a tuple of bounds, there is no logical scenario within the contract where a "lower" value can exceed an "upper" value internally. Invalid inputs are handled via length and character validity, not via numeric comparison ordering.
+3. **Subclass Handling**: Only `MyStr` and `bytes` subclasses are explicitly tested for type rejection. Other subclasses (e.g., `ImmutableStr`) are not tested, though the contract implies rejection for any subclass.
+4. **Nested Containers**: The contract forbids mutating nested containers, but the function is restricted to exact `str` input, making the existence of nested containers within the input impossible.<|im_end|>

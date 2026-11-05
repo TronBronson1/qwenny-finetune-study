@@ -1,0 +1,73 @@
+..FF.F..................................................                 [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v002] __________________________
+
+args = (1, 1, 3, 3), expected = [(0, 1), (1, 2), (2, 1), (1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(1, 2), (2, 1), (1, 0)] == [(0, 1), (1, ...2, 1), (1, 0)]
+E         
+E         At index 0 diff: (1, 2) != (0, 1)
+E         Right contains one more item: (1, 0)
+E         Use -v to get more diff
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v003] __________________________
+
+args = (2, 2, 3, 3), expected = [(1, 2), (2, 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(2, 1)] == [(1, 2), (2, 1)]
+E         
+E         At index 0 diff: (2, 1) != (1, 2)
+E         Right contains one more item: (2, 1)
+E         Use -v to get more diff
+
+test_candidate.py:22: AssertionError
+__________________________ test_renamed_values[v005] __________________________
+
+args = (1, 0, 3, 1), expected = [(0, 0), (2, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(2, 0)] == [(0, 0), (2, 0)]
+E         
+E         At index 0 diff: (2, 0) != (0, 0)
+E         Right contains one more item: (2, 0)
+E         Use -v to get more diff
+
+test_candidate.py:22: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v002] - assert [(1, 2), (2, 1),...
+FAILED test_candidate.py::test_renamed_values[v003] - assert [(2, 1)] == [(1,...
+FAILED test_candidate.py::test_renamed_values[v005] - assert [(2, 0)] == [(0,...
+3 failed, 53 passed in 0.63s

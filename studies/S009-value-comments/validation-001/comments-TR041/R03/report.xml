@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="27" time="0.427" timestamp="2026-11-04T19:00:35.453194-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ('١,2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1',), id="e004"),
+        pytest.param(('1,2,3',), id="e005"),
+        pytest.param(('01,2',), id="e006"),
+        pytest.param(('+1,2',), id="e007"),
+        pytest.param(('1, 2',), id="e008"),
+        pytest.param(('١,2',), id="e009"),
+        pytest.param(('٣,4',), id="e010"),
+        pytest.param(('3,４',), id="e011"),
+        pytest.param(('0,1000000000000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:55: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ('٣,4',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1',), id="e004"),
+        pytest.param(('1,2,3',), id="e005"),
+        pytest.param(('01,2',), id="e006"),
+        pytest.param(('+1,2',), id="e007"),
+        pytest.param(('1, 2',), id="e008"),
+        pytest.param(('١,2',), id="e009"),
+        pytest.param(('٣,4',), id="e010"),
+        pytest.param(('3,４',), id="e011"),
+        pytest.param(('0,1000000000000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:55: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ('3,４',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('1',), id="e004"),
+        pytest.param(('1,2,3',), id="e005"),
+        pytest.param(('01,2',), id="e006"),
+        pytest.param(('+1,2',), id="e007"),
+        pytest.param(('1, 2',), id="e008"),
+        pytest.param(('١,2',), id="e009"),
+        pytest.param(('٣,4',), id="e010"),
+        pytest.param(('3,４',), id="e011"),
+        pytest.param(('0,1000000000000',), id="e012"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:55: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e012]" time="0.000" /></testsuite></testsuites>

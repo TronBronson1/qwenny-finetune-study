@@ -1,0 +1,140 @@
+..FFFF....                                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('//a///b/',), expected = ['a', 'b']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'a', expected = 'a'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('a')
+E        +  and   <class 'str'> = type('a')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('/./../',), expected = ['.', '..']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '.', expected = '.'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('.')
+E        +  and   <class 'str'> = type('.')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('a\\b/c',), expected = ['a\\b', 'c']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'a\\b', expected = 'a\\b'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('a\\b')
+E        +  and   <class 'str'> = type('a\\b')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('/ a /字/',), expected = [' a ', '字']
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), [], id="v000"),
+        pytest.param(('/',), [], id="v001"),
+        pytest.param(('//a///b/',), ['a', 'b'], id="v002"),
+        pytest.param(('/./../',), ['.', '..'], id="v003"),
+        pytest.param(('a\\b/c',), ['a\\b', 'c'], id="v004"),
+        pytest.param(('/ a /字/',), [' a ', '字'], id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=path_segments(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ' a ', expected = ' a '
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type(' a ')
+E        +  and   <class 'str'> = type(' a ')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+4 failed, 6 passed in 0.56s

@@ -1,0 +1,83 @@
+{
+  "python": "3.15.0 (tags/v3.15.0:d220409, Oct  9 2026, 11:55:56) [MSC v.1951 64 bit (AMD64)]",
+  "pytest": "pytest 9.2.0",
+  "reviewer": "Codex; authored and checked locally, no independent human review yet",
+  "demonstrations": {
+    "D01": [
+      {
+        "implementation": "reference",
+        "exit_code": 0,
+        "witness": null,
+        "summary": "23 passed in 0.04s"
+      },
+      {
+        "implementation": "floor",
+        "exit_code": 1,
+        "witness": "(1, 3) -> 1",
+        "summary": "3 failed, 20 passed in 0.24s"
+      },
+      {
+        "implementation": "extra_batch",
+        "exit_code": 1,
+        "witness": "(3, 3) -> 1",
+        "summary": "3 failed, 20 passed in 0.24s"
+      },
+      {
+        "implementation": "bool_subclass",
+        "exit_code": 1,
+        "witness": "(True, 3) -> TypeError",
+        "summary": "6 failed, 17 passed in 0.27s"
+      },
+      {
+        "implementation": "zero_items",
+        "exit_code": 1,
+        "witness": "(0, 3) -> 0",
+        "summary": "1 failed, 22 passed in 0.24s"
+      },
+      {
+        "implementation": "precedence",
+        "exit_code": 1,
+        "witness": "(-1, \"bad\") -> TypeError",
+        "summary": "1 failed, 22 passed in 0.23s"
+      }
+    ],
+    "D02": [
+      {
+        "implementation": "reference",
+        "exit_code": 0,
+        "witness": null,
+        "summary": "23 passed in 0.04s"
+      },
+      {
+        "implementation": "replace_all",
+        "exit_code": 1,
+        "witness": "(\"aaaa\", \"a\") -> \"aaa\"",
+        "summary": "2 failed, 21 passed in 0.23s"
+      },
+      {
+        "implementation": "case_insensitive",
+        "exit_code": 1,
+        "witness": "(\"Abc\", \"a\") -> \"Abc\"",
+        "summary": "1 failed, 22 passed in 0.25s"
+      },
+      {
+        "implementation": "subclass",
+        "exit_code": 1,
+        "witness": "(StrChild(\"a\"), \"a\") -> TypeError",
+        "summary": "2 failed, 21 passed in 0.26s"
+      },
+      {
+        "implementation": "empty_text",
+        "exit_code": 1,
+        "witness": "(\"\", \"a\") -> \"\"",
+        "summary": "1 failed, 22 passed in 0.23s"
+      },
+      {
+        "implementation": "precedence",
+        "exit_code": 1,
+        "witness": "(None, \"\") -> TypeError",
+        "summary": "1 failed, 22 passed in 0.23s"
+      }
+    ]
+  }
+}

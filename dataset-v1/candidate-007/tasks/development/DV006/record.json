@@ -1,0 +1,33 @@
+{
+  "id": "DV006",
+  "split": "development",
+  "family": "keypad-encode",
+  "function": "keypad_encode",
+  "revision": 2,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "text"
+  ],
+  "schemas": [
+    "str"
+  ],
+  "review_status": "finite-agent-calibration-passed; revised candidate not independently reviewed",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-006 plus documented external adversarial fixture proposals; no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "2858c23fa14c7e2f8d6166ed41b949da02230a2da0f3c6525c3a140275fb1687",
+  "target_sha256": "871c8775ccb9a206f6f8f3dacc9f710c0ffbd24283eb79bf75645f65012f98ac",
+  "spec_sha256": "9e3449bc92a5b4b217cadeb41dca5e40e85a0df3fd2e105f8479d291ce514fe8",
+  "answer_sha256": "ffad333947bb0046b7705d63d8daac50b187ebf1f6d673ffd31ac110909e460c",
+  "valid_test_cases": 6,
+  "exception_test_cases": 12,
+  "type_before_value_witnesses": 4,
+  "oracle_checks": 6,
+  "designated_mutants": 5,
+  "pytest_validation": "passed S007 validation-002; gold identical after newline normalization; reference/mutants byte-identical",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-006"
+}

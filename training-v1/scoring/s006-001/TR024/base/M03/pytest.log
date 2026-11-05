@@ -1,0 +1,28 @@
+......FF..                                                               [100%]
+================================== FAILURES ===================================
+______________________ test_unicode_preserves_non_ascii _______________________
+
+    def test_unicode_preserves_non_ascii():
+>       assert ascii_upper("héllo") == "héllo"
+E       AssertionError: assert 'HéLLO' == 'héllo'
+E         
+E         - héllo
+E         + HéLLO
+
+test_candidate.py:33: AssertionError
+_________________________ test_mixed_ascii_non_ascii __________________________
+
+    def test_mixed_ascii_non_ascii():
+>       assert ascii_upper("aBc123dé") == "ABC123dé"
+E       AssertionError: assert 'aBC123Dé' == 'ABC123dé'
+E         
+E         - ABC123dé
+E         ? ^     ^
+E         + aBC123Dé
+E         ? ^     ^
+
+test_candidate.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_unicode_preserves_non_ascii - AssertionError: ...
+FAILED test_candidate.py::test_mixed_ascii_non_ascii - AssertionError: assert...
+2 failed, 8 passed in 0.64s

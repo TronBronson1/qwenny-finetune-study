@@ -1,0 +1,155 @@
+..FFFFFF....                                                             [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('   ',), expected = ' '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert '   ' == ' '
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - ' '
+E         + '   '
+E         ?   ++
+
+test_target.py:24: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (' a  b ',), expected = ' a b '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert '    ' == ' a b '
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - ' a b '
+E         + '    '
+
+test_target.py:24: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('a\t  b',), expected = 'a\t b'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\t  ' == 'a\t b'
+E         
+E         - a	 b
+E         ?  	 ^
+E         + a	  
+E         ?  	 ^
+
+test_target.py:24: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('a\n  b',), expected = 'a\n b'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\n  ' == 'a\n b'
+E         
+E           a
+E         -  b
+E         +
+
+test_target.py:24: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('é  字',), expected = 'é 字'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert 'é  ' == 'é 字'
+E         
+E         - é 字
+E         + é
+
+test_target.py:24: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('a\xa0 b',), expected = 'a\xa0 b'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('   ',), ' ', id="v002"),
+        pytest.param((' a  b ',), ' a b ', id="v003"),
+        pytest.param(('a\t  b',), 'a\t b', id="v004"),
+        pytest.param(('a\n  b',), 'a\n b', id="v005"),
+        pytest.param(('é  字',), 'é 字', id="v006"),
+        pytest.param(('a\xa0 b',), 'a\xa0 b', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=collapse_spaces(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\xa0 ' == 'a\xa0 b'
+E         
+E         - a  b
+E         ?    -
+E         + a
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - AssertionError: assert '   ' == ' '
+FAILED test_target.py::test_values[v003] - AssertionError: assert '    ' == '...
+FAILED test_target.py::test_values[v004] - AssertionError: assert 'a\t  ' == ...
+FAILED test_target.py::test_values[v005] - AssertionError: assert 'a\n  ' == ...
+FAILED test_target.py::test_values[v006] - AssertionError: assert 'é  ' == 'é...
+FAILED test_target.py::test_values[v007] - AssertionError: assert 'a\xa0 ' ==...
+6 failed, 6 passed in 0.58s

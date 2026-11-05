@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="16" time="0.328" timestamp="2026-11-04T07:13:43.631327-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.002" /><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-expected2]" time="0.001" /><testcase classname="test_target" name="test_values[args3-expected3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('#000000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('ffffff'),)),
+        pytest.param((StrChild('#fff'),)),
+        pytest.param((StrChild('#gg0000'),)),
+        pytest.param((StrChild('#000000\n'),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001"><failure message="ValueError: syntax">args = ('ffffff',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('ffffff'),)),
+        pytest.param((StrChild('#fff'),)),
+        pytest.param((StrChild('#gg0000'),)),
+        pytest.param((StrChild('#000000\n'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           decode_rgb(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'ffffff'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001"><failure message="ValueError: syntax">args = ('#fff',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('ffffff'),)),
+        pytest.param((StrChild('#fff'),)),
+        pytest.param((StrChild('#gg0000'),)),
+        pytest.param((StrChild('#000000\n'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           decode_rgb(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#fff'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="ValueError: syntax">args = ('#gg0000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('ffffff'),)),
+        pytest.param((StrChild('#fff'),)),
+        pytest.param((StrChild('#gg0000'),)),
+        pytest.param((StrChild('#000000\n'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           decode_rgb(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#gg0000'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001"><failure message="ValueError: syntax">args = ('#000000\n',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('#000000'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('ffffff'),)),
+        pytest.param((StrChild('#fff'),)),
+        pytest.param((StrChild('#gg0000'),)),
+        pytest.param((StrChild('#000000\n'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           decode_rgb(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '#000000\n'
+
+    def decode_rgb(text):
+        _types((text,), ('str',))
+        if re.fullmatch('#[0-9a-fA-F]{6}', text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,48 @@
+F..F.............                                                        [100%]
+================================== FAILURES ===================================
+__________________________ test_values[args0-False] ___________________________
+
+args = (1,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False),
+        pytest.param((4,), True),
+        pytest.param((1900,), False),
+        pytest.param((2000,), True),
+        pytest.param((2023,), False),
+        pytest.param((2024,), True),
+        pytest.param((2100,), False),
+        pytest.param((9999,), False),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=leap_year(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:27: AssertionError
+___________________________ test_values[args3-True] ___________________________
+
+args = (2000,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), False),
+        pytest.param((4,), True),
+        pytest.param((1900,), False),
+        pytest.param((2000,), True),
+        pytest.param((2023,), False),
+        pytest.param((2024,), True),
+        pytest.param((2100,), False),
+        pytest.param((9999,), False),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=leap_year(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-False] - assert True == False
+FAILED test_target.py::test_values[args3-True] - assert False == True
+2 failed, 15 passed in 0.33s

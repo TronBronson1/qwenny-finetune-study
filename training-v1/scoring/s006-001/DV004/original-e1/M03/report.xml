@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="15" skipped="0" tests="22" time="0.710" timestamp="2026-11-04T13:18:32.377547-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_bool_rejected" time="0.001" /><testcase classname="test_candidate" name="test_int_subclass_rejected" time="0.001" /><testcase classname="test_candidate" name="test_list_subclass_rejected" time="0.001" /><testcase classname="test_candidate" name="test_empty_returns_zero" time="0.001"><failure message="assert 1 == 0&#10; +  where 1 = xor_checksum([])">def test_empty_returns_zero():
+&gt;       assert xor_checksum([]) == 0
+E       assert 1 == 0
+E        +  where 1 = xor_checksum([])
+
+test_candidate.py:35: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_single_byte_returns_value" time="0.001"><failure message="assert 66 == 65&#10; +  where 66 = xor_checksum([65])">def test_single_byte_returns_value():
+&gt;       assert xor_checksum([65]) == 65
+E       assert 66 == 65
+E        +  where 66 = xor_checksum([65])
+
+test_candidate.py:39: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_two_bytes" time="0.001"><failure message="assert 4 == 3&#10; +  where 4 = xor_checksum([1, 2])">def test_xor_two_bytes():
+&gt;       assert xor_checksum([1, 2]) == 3
+E       assert 4 == 3
+E        +  where 4 = xor_checksum([1, 2])
+
+test_candidate.py:43: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_three_bytes" time="0.001"><failure message="assert 1 == 0&#10; +  where 1 = xor_checksum([1, 2, 3])">def test_xor_three_bytes():
+&gt;       assert xor_checksum([1, 2, 3]) == 0  # 1^2^3 = 0
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 1 == 0
+E        +  where 1 = xor_checksum([1, 2, 3])
+
+test_candidate.py:48: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_xor_with_zero" time="0.001"><failure message="assert 4 == 3&#10; +  where 4 = xor_checksum([0, 1, 2])">def test_xor_with_zero():
+&gt;       assert xor_checksum([0, 1, 2]) == 3
+E       assert 4 == 3
+E        +  where 4 = xor_checksum([0, 1, 2])
+
+test_candidate.py:52: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_identical_values_even_count" time="0.001"><failure message="assert 1 == 5&#10; +  where 1 = xor_checksum([5, 5, 5, 5])">def test_identical_values_even_count():
+&gt;       assert xor_checksum([5, 5, 5, 5]) == 5
+E       assert 1 == 5
+E        +  where 1 = xor_checksum([5, 5, 5, 5])
+
+test_candidate.py:56: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_identical_values_odd_count" time="0.001"><failure message="assert 6 == 5&#10; +  where 6 = xor_checksum([5, 5, 5])">def test_identical_values_odd_count():
+&gt;       assert xor_checksum([5, 5, 5]) == 5
+E       assert 6 == 5
+E        +  where 6 = xor_checksum([5, 5, 5])
+
+test_candidate.py:59: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_max_byte" time="0.001"><failure message="assert 256 == 255&#10; +  where 256 = xor_checksum([255])">def test_max_byte():
+&gt;       assert xor_checksum([255]) == 255
+E       assert 256 == 255
+E        +  where 256 = xor_checksum([255])
+
+test_candidate.py:63: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_mixed_bytes" time="0.001"><failure message="assert 84 == 55&#10; +  where 84 = xor_checksum([255, 100, 200])">def test_mixed_bytes():
+&gt;       assert xor_checksum([255, 100, 200]) == 55  # 255 ^ 100 = 155; 155 ^ 200 = 55
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 84 == 55
+E        +  where 84 = xor_checksum([255, 100, 200])
+
+test_candidate.py:67: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_input_not_mutated" time="0.001"><failure message="assert 1 == 0">def test_input_not_mutated():
+        original = [10, 20, 30]
+        result = xor_checksum(original)
+        assert original == [10, 20, 30]
+&gt;       assert result == 0  # 10^20^30 = 0
+        ^^^^^^^^^^^^^^^^^^
+E       assert 1 == 0
+
+test_candidate.py:75: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_output_is_int" time="0.001" /><testcase classname="test_candidate" name="test_value_negative_raises" time="0.001" /><testcase classname="test_candidate" name="test_value_greater_than_255_raises" time="0.001" /><testcase classname="test_candidate" name="test_value_greater_than_255_in_list_raises" time="0.001" /><testcase classname="test_candidate" name="test_float_value_raises" time="0.001"><failure message="TypeError: exact built-in type required">def test_float_value_raises():
+        with pytest.raises(ValueError):
+&gt;           xor_checksum([0.5])
+
+test_candidate.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in xor_checksum
+    _types((values,), ('ints',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:14: in _check
+    _exact(item, int)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 0.5, kind = &lt;class 'int'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_string_value_raises" time="0.000"><failure message="TypeError: exact built-in type required">def test_string_value_raises():
+        with pytest.raises(ValueError):
+&gt;           xor_checksum(["a"])
+
+test_candidate.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in xor_checksum
+    _types((values,), ('ints',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:14: in _check
+    _exact(item, int)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'a', kind = &lt;class 'int'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_none_value_raises" time="0.001"><failure message="TypeError: exact built-in type required">def test_none_value_raises():
+        with pytest.raises(ValueError):
+&gt;           xor_checksum([None])
+
+test_candidate.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in xor_checksum
+    _types((values,), ('ints',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:14: in _check
+    _exact(item, int)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = None, kind = &lt;class 'int'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_nested_list_element_raises" time="0.001"><failure message="TypeError: exact built-in type required">def test_nested_list_element_raises():
+        with pytest.raises(ValueError):
+&gt;           xor_checksum([1, MyList([2])])
+
+test_candidate.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in xor_checksum
+    _types((values,), ('ints',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:14: in _check
+    _exact(item, int)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = [2], kind = &lt;class 'int'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate" name="test_int_subclass_large_value_raises" time="0.001"><failure message="TypeError: exact built-in type required">def test_int_subclass_large_value_raises():
+        with pytest.raises(ValueError):
+&gt;           xor_checksum([MyInt(256)])
+
+test_candidate.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in xor_checksum
+    _types((values,), ('ints',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:14: in _check
+    _exact(item, int)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 256, kind = &lt;class 'int'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase></testsuite></testsuites>

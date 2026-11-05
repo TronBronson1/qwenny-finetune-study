@@ -1,0 +1,229 @@
+FFFFFF.F.F.......F                                                       [100%]
+================================== FAILURES ===================================
+_______________ TestMinuteOfDayTypes.test_valid_str_returns_int _______________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000002252A6A65D0>
+
+    def test_valid_str_returns_int(self):
+        hour, minute = 12, 30
+        value = f"{hour:02d}:{minute:02d}"
+>       result = minute_of_day(value)
+                 ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:30'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayTypes.test_non_str_raises_type_error _____________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000002252A6A7750>
+
+    def test_non_str_raises_type_error(self):
+        cases = [
+            (1234, 5678),
+            (12, 34, "int, int"),
+            ("12:34", 56, "str, int"),
+            (None, None, "None"),
+            ([12, 34], None, "list"),
+            (f"{'x':12}:{'y':34}", None, "unicode string"),
+        ]
+    
+>       for arg, _, desc in cases:
+            ^^^^^^^^^^^^
+E       ValueError: not enough values to unpack (expected 3, got 2)
+
+test_candidate.py:23: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[00:00] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A6A7B10>
+arg = '00:00'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+>       result = minute_of_day(arg)
+                 ^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[00:01] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A6A7C50>
+arg = '00:01'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+>       result = minute_of_day(arg)
+                 ^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:01'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[01:00] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A69EB10>
+arg = '01:00'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+>       result = minute_of_day(arg)
+                 ^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '01:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[12:00] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A69E9E0>
+arg = '12:00'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+>       result = minute_of_day(arg)
+                 ^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayValues.test_edge_cases_valid[00:59] ______________
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A781480>
+arg = '00:59'
+
+    @pytest.mark.parametrize("arg", [
+        "00:00", "00:01", "01:00", "12:00", "23:59", "00:59", "23:00"
+    ])
+    def test_edge_cases_valid(self, arg):
+>       result = minute_of_day(arg)
+                 ^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:59'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+____ TestMinuteOfDayValues.test_malformed_strings_raise_value_error[24:00] ____
+
+self = <test_candidate.TestMinuteOfDayValues object at 0x000002252A606C50>
+arg = '24:00'
+
+    @pytest.mark.parametrize("arg", [
+        "24:00", "00:60", "13:00x", "1:2", "23:59 ", "12 30", "12-30", "12:3"
+    ])
+    def test_malformed_strings_raise_value_error(self, arg):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:42: Failed
+____________________ TestMutability.test_input_not_mutated ____________________
+
+self = <test_candidate.TestMutability object at 0x000002252A764050>
+
+    def test_input_not_mutated(self):
+        original = "12:34"
+>       minute_of_day(original)
+
+test_candidate.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:34'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_valid_str_returns_int - ...
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_non_str_raises_type_error
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[00:00]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[00:01]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[01:00]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[12:00]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_edge_cases_valid[00:59]
+FAILED test_candidate.py::TestMinuteOfDayValues::test_malformed_strings_raise_value_error[24:00]
+FAILED test_candidate.py::TestMutability::test_input_not_mutated - ValueError...
+9 failed, 9 passed in 0.42s

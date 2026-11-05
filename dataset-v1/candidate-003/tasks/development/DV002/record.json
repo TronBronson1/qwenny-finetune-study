@@ -1,0 +1,30 @@
+{
+  "id": "DV002",
+  "split": "development",
+  "family": "strict-clock-parsing",
+  "function": "minute_of_day",
+  "revision": 1,
+  "status": "allocated-before-authoring",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "text"
+  ],
+  "schemas": [
+    "str"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": true,
+  "source_sha256": "824231258a49e60b12d236068864b57b64a4031b0fa68fbd3835af22eb70234e",
+  "target_sha256": "13c28ac21c4b27b8b0b9022405a3f857512c1755e34f419ebaedb53b077a030c",
+  "spec_sha256": "401b69b9a24a00188bb7d44ffab2c941bd6c7fcf681e448751f674af69cb6127",
+  "valid_test_cases": 5,
+  "exception_test_cases": 12,
+  "oracle_checks": 1445,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

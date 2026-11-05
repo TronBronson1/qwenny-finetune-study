@@ -1,0 +1,52 @@
+....F....F.F...                                                          [100%]
+================================== FAILURES ===================================
+_____________________________ test_unsorted_input _____________________________
+
+    def test_unsorted_input():
+        result = interval_union([(3, 7), (1, 5)])
+>       assert result == [(1, 5), (3, 7)]
+E       assert [(1, 7)] == [(1, 5), (3, 7)]
+E         
+E         At index 0 diff: (1, 7) != (1, 5)
+E         Right contains one more item: (3, 7)
+E         Use -v to get more diff
+
+test_candidate.py:29: AssertionError
+________________________ test_wrong_length_type_error _________________________
+
+    def test_wrong_length_type_error():
+        with pytest.raises(TypeError):
+>           interval_union([(1, 5, 6)])
+
+test_candidate.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in interval_union
+    _types((intervals,), ('pairs',))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = ([(1, 5, 6)],), schemas = ('pairs',)
+
+    def _types(values, schemas):
+        for value, schema in zip(values, schemas):
+            _check(value, schema)
+        for value, schema in zip(values, schemas):
+            if schema in ('pair', 'tuple3') and len(value) != (2 if schema == 'pair' else 3):
+                raise ValueError('tuple shape')
+            if schema == 'pairs' and any((len(item) != 2 for item in value)):
+>               raise ValueError('pair shape')
+E               ValueError: pair shape
+
+subject.py:50: ValueError
+_____________________________ test_low_equal_high _____________________________
+
+    def test_low_equal_high():
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:67: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_unsorted_input - assert [(1, 7)] == [(1, 5), (...
+FAILED test_candidate.py::test_wrong_length_type_error - ValueError: pair shape
+FAILED test_candidate.py::test_low_equal_high - Failed: DID NOT RAISE ValueError
+3 failed, 12 passed in 0.61s

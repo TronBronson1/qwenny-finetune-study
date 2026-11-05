@@ -1,0 +1,40 @@
+.........F...................F.                                          [100%]
+================================== FAILURES ===================================
+__ TestClampInteger.test_reversed_bounds_raises_valueerror[bad_lower_upper0] __
+
+self = <test_candidate.TestClampInteger object at 0x0000016DDD2ED5E0>
+bad_lower_upper = (5, 10)
+
+    @pytest.mark.parametrize("bad_lower_upper", [(5, 10), (0, -5)])
+    def test_reversed_bounds_raises_valueerror(self, bad_lower_upper):
+        """Test that reversed bounds (lower > upper) raises ValueError."""
+        value, lower, upper = bad_lower_upper[0], *bad_lower_upper
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:33: Failed
+_ TestClampInteger.test_type_precedence_with_string_value_and_reversed_bounds _
+
+self = <test_candidate.TestClampInteger object at 0x0000016DDD3DDD10>
+
+    def test_type_precedence_with_string_value_and_reversed_bounds(self):
+        """Verify TypeError is raised for bad types even if bounds are invalid."""
+        with pytest.raises(TypeError):
+>           clamp_integer("bad", 10, 0)
+
+test_candidate.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 'bad', lower = 10, upper = 0
+
+    def clamp_integer(value, lower, upper):
+        if lower > upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:3: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_reversed_bounds_raises_valueerror[bad_lower_upper0]
+FAILED test_candidate.py::TestClampInteger::test_type_precedence_with_string_value_and_reversed_bounds
+2 failed, 29 passed in 0.24s

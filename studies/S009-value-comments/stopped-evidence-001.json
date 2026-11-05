@@ -1,0 +1,152 @@
+{
+  "status": "stopped-no-paired-quality-comparison",
+  "execution": {
+    "status": "stopped-failed-gate-or-budget",
+    "process_id": 15168,
+    "started_unix": 1793836959.1686058,
+    "freeze_sha256": "054eb313c1387ffc074f9e8402cf8ab23cd9c2174bb98f7bc477dcdad67cbbe3",
+    "jobs": [
+      {
+        "label": "preflight-baseline",
+        "status": "passed",
+        "start_unix": 1793836959.169387,
+        "maximum_seconds": 600,
+        "exit_code": 0,
+        "seconds": 179.21936082839966
+      },
+      {
+        "label": "preflight-comments",
+        "status": "passed",
+        "start_unix": 1793837138.3898745,
+        "maximum_seconds": 600,
+        "exit_code": 0,
+        "seconds": 244.99574995040894
+      },
+      {
+        "label": "train-baseline",
+        "status": "stopped-budget",
+        "start_unix": 1793837383.3979607,
+        "maximum_seconds": 1200
+      }
+    ],
+    "error": "TimeoutExpired(['C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\lora-feasibility\\\\.venv\\\\Scripts\\\\python.exe', 'studies/S009-value-comments/train_s009.py', '--prepared', 'C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\studies\\\\S009-value-comments\\\\preparation-001\\\\baseline', '--run', 'runs/qwenny-003-calibrated-baseline'], 1199.999995500024)",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S009-value-comments\\run_controlled.py\", line 29, in main\n    run('train-'+arm,['studies/S009-value-comments/train_s009.py','--prepared',str(HERE/'preparation-001'/arm),'--run','runs/'+name],1200)\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\Desktop\\Chat AI Lab\\AI Labwork\\Qwen\\Fine Tuning Test\\studies\\S009-value-comments\\run_controlled.py\", line 15, in run\n    proc=subprocess.run([str(python)]+args,cwd=EXP,stdout=log,stderr=subprocess.STDOUT,timeout=min(remaining,limit))\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 671, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1414, in communicate\n    self.wait(timeout=_deadline_remaining(endtime))\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1445, in wait\n    return self._wait(timeout=timeout)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\jalar\\AppData\\Local\\Python\\pythoncore-3.15-64\\Lib\\subprocess.py\", line 1774, in _wait\n    raise TimeoutExpired(self.args, timeout)\nsubprocess.TimeoutExpired: Command '['C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\lora-feasibility\\\\.venv\\\\Scripts\\\\python.exe', 'studies/S009-value-comments/train_s009.py', '--prepared', 'C:\\\\Users\\\\jalar\\\\Desktop\\\\Chat AI Lab\\\\AI Labwork\\\\Qwen\\\\Fine Tuning Test\\\\studies\\\\S009-value-comments\\\\preparation-001\\\\baseline', '--run', 'runs/qwenny-003-calibrated-baseline']' timed out after 1200 seconds\n",
+    "seconds": 1624.3048932999955
+  },
+  "baseline": {
+    "run": "qwenny-003-calibrated-baseline",
+    "last_in_process_report_status": "training",
+    "in_process_status_note": "Controller timeout is authoritative. Forced termination can leave the last child report showing training; no status was rewritten.",
+    "logged_completed_microbatches": 213,
+    "last_logged_optimizer_updates": 53,
+    "logged_input_tokens": 217219,
+    "logged_supervised_tokens": 149563,
+    "logged_microbatch_seconds": 707.70100000003,
+    "peak_allocated_bytes": 7531739136,
+    "peak_reserved_bytes": 8120172544,
+    "minimum_reported_cuda_free_bytes": 0,
+    "positive_free_samples": 209,
+    "zero_free_samples": 4,
+    "median_batch_seconds_positive_free": 2.6719999999913853,
+    "median_batch_seconds_zero_free": 34.3519999999844,
+    "windows_process_memory_rows": 0,
+    "checkpoints": [
+      {
+        "epoch": 1,
+        "files": {
+          "adapter_config.json": "b4de36cf3a6e7d03c14e9e96fd41da189ad355d49f450be0fd2aa2286624c494",
+          "adapter_model.safetensors": "901817a94bf67e01fa1c65fcf5695c4ba82806952275a382708c5a74eedbdeea",
+          "README.md": "271ff759f223f41a20045d88c95739e95a4621413a43c4a7f3f465d6372267dc",
+          "reload-probe.pt": "6bb3f02128242de0dc97746262f5b5084b0bb68fdabdf5ddd923bd25568b900d",
+          "training-state.pt": "5cb5ad04a78f07d82340e7ff900b60bcd7260e3e9ad59ec2afe3a6a125412158"
+        },
+        "fresh_import_status": "not attempted; orchestration stopped before import/inference"
+      },
+      {
+        "epoch": 3,
+        "files": {
+          "adapter_config.json": "b4de36cf3a6e7d03c14e9e96fd41da189ad355d49f450be0fd2aa2286624c494",
+          "adapter_model.safetensors": "9f8e5950c256b777654c97cecfbbda98f32177ef2c6844245c4cea993d9274c9",
+          "README.md": "271ff759f223f41a20045d88c95739e95a4621413a43c4a7f3f465d6372267dc",
+          "reload-probe.pt": "aa179c8c963650fb4a9a8119530cdd86cf899b97d85e5c26693579067953db1c",
+          "training-state.pt": "c4ebf86fcf4371f3e1e9c17e86282d9dd8542d76afc4255dffe1556054c02919"
+        },
+        "fresh_import_status": "not attempted; orchestration stopped before import/inference"
+      }
+    ]
+  },
+  "comment_training": "not started",
+  "preflights": {
+    "baseline": {
+      "status": "preflight-passed",
+      "initial_adapter_sha256": "ccbcec6aa257f813a89d8a0a269bbc2125a3312ba63231bf009af67420a6e80d",
+      "masked_loss_validation": {
+        "record": "TR049",
+        "window_tokens": 64,
+        "standard": 3.631913661956787,
+        "chunked": 3.631913661956787,
+        "gradient_relative_l2_difference": 0.012872622136697829
+      },
+      "full_actual_example_preflight": {
+        "id": "TR049",
+        "input_tokens": 1880,
+        "target_tokens": 1522,
+        "loss": 0.3277752101421356,
+        "memory": {
+          "unix_time": 1793837109.7433715,
+          "allocated": 5921033728,
+          "reserved": 8115978240,
+          "peak_allocated": 7922842112,
+          "peak_reserved": 8115978240,
+          "cuda_free": 387641344,
+          "total": 10736893952
+        }
+      },
+      "generation_smoke": {
+        "tokens": 2,
+        "text": "blue<|im_end|>",
+        "terminated": true
+      }
+    },
+    "comments": {
+      "status": "preflight-passed",
+      "initial_adapter_sha256": "ccbcec6aa257f813a89d8a0a269bbc2125a3312ba63231bf009af67420a6e80d",
+      "masked_loss_validation": {
+        "record": "TR049",
+        "window_tokens": 64,
+        "standard": 3.631913661956787,
+        "chunked": 3.631913661956787,
+        "gradient_relative_l2_difference": 0.012872622136697829
+      },
+      "full_actual_example_preflight": {
+        "id": "TR049",
+        "input_tokens": 1920,
+        "target_tokens": 1562,
+        "loss": 0.32813793420791626,
+        "memory": {
+          "unix_time": 1793837332.421467,
+          "allocated": 5921689088,
+          "reserved": 8115978240,
+          "peak_allocated": 7922842112,
+          "peak_reserved": 8115978240,
+          "cuda_free": 200978432,
+          "total": 10736893952
+        }
+      },
+      "generation_smoke": {
+        "tokens": 2,
+        "text": "blue<|im_end|>",
+        "terminated": true
+      }
+    }
+  },
+  "inference": {
+    "planned": 24,
+    "attempted": 0,
+    "unattempted": 24,
+    "reason": "Training budget stop before E5 and before second arm; no generation launched"
+  },
+  "quality_result": "Not measured. All planned cells remain unattempted; do not interpret planned-denominator zeros as observed model incapability.",
+  "memory_interpretation": "Timing slowdown coincides with reported CUDA-free memory reaching zero. Driver and allocator measures differ; available evidence does not identify another process, establish causal mechanism or prove shared-memory spill.",
+  "script_sha256": "a7390ebbf4d8cc581a5279ba063f92711235599f27938fbf929f936cc099326f"
+}

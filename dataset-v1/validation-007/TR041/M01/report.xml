@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="20" time="0.466" timestamp="2026-11-03T20:15:53.970805-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('0,0',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:43: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="ValueError: syntax">args = ('1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="ValueError: syntax">args = ('1,2,3',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1,2,3'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001"><failure message="ValueError: syntax">args = ('01,2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '01,2'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001"><failure message="ValueError: syntax">args = ('+1,2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '+1,2'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001"><failure message="ValueError: syntax">args = ('1, 2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1, 2'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.001"><failure message="ValueError: syntax">args = ('١,2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0,0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('1'),), id="e010"),
+        pytest.param((StrChild('1,2,3'),), id="e011"),
+        pytest.param((StrChild('01,2'),), id="e012"),
+        pytest.param((StrChild('+1,2'),), id="e013"),
+        pytest.param((StrChild('1, 2'),), id="e014"),
+        pytest.param((StrChild('١,2'),), id="e015"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_int_pair(*args)
+
+test_target.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '١,2'
+
+    def parse_int_pair(text):
+        _types((text,), ('str',))
+        part = '-?(?:0|[1-9][0-9]{0,11})'
+        if re.fullmatch(part + ',' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /></testsuite></testsuites>

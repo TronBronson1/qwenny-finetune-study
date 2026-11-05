@@ -1,0 +1,48 @@
+...FFFF........                                                          [100%]
+================================== FAILURES ===================================
+__________________ TestRowMajorOffset.test_invalid_type_row ___________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x00000267E6DC3230>
+
+    def test_invalid_type_row(self):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed
+_________________ TestRowMajorOffset.test_invalid_type_column _________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x00000267E6E15370>
+
+    def test_invalid_type_column(self):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:35: Failed
+__________________ TestRowMajorOffset.test_invalid_type_rows __________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x00000267E6E287C0>
+
+    def test_invalid_type_rows(self):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:39: Failed
+________________ TestRowMajorOffset.test_invalid_type_columns _________________
+
+self = <test_candidate.TestRowMajorOffset object at 0x00000267E6E29370>
+
+    def test_invalid_type_columns(self):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestRowMajorOffset::test_invalid_type_row - Failed:...
+FAILED test_candidate.py::TestRowMajorOffset::test_invalid_type_column - Fail...
+FAILED test_candidate.py::TestRowMajorOffset::test_invalid_type_rows - Failed...
+FAILED test_candidate.py::TestRowMajorOffset::test_invalid_type_columns - Fai...
+4 failed, 11 passed in 0.59s

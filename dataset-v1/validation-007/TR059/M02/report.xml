@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="22" time="0.482" timestamp="2026-11-03T20:16:17.703018-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert [] == [1]&#10;  &#10;  Right contains one more item: 1&#10;  Use -v to get more diff">args = ([1], []), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+&gt;       assert actual == expected
+E       assert [] == [1]
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert [] == [1]&#10;  &#10;  Right contains one more item: 1&#10;  Use -v to get more diff">args = ([], [1]), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+&gt;       assert actual == expected
+E       assert [] == [1]
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert [3, 4] == [1, 2, 3, 4]&#10;  &#10;  At index 0 diff: 3 != 1&#10;  Right contains 2 more items, first extra item: 3&#10;  Use -v to get more diff">args = ([1, 3], [2, 4]), expected = [1, 2, 3, 4]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+&gt;       assert actual == expected
+E       assert [3, 4] == [1, 2, 3, 4]
+E         
+E         At index 0 diff: 3 != 1
+E         Right contains 2 more items, first extra item: 3
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert [1, 2, 3] == [1, 1, 1, 2, 3]&#10;  &#10;  At index 1 diff: 2 != 1&#10;  Right contains 2 more items, first extra item: 2&#10;  Use -v to get more diff">args = ([1, 1, 3], [1, 2]), expected = [1, 1, 1, 2, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+&gt;       assert actual == expected
+E       assert [1, 2, 3] == [1, 1, 1, 2, 3]
+E         
+E         At index 1 diff: 2 != 1
+E         Right contains 2 more items, first extra item: 2
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert [0, 0] == [-3, -2, 0, 0]&#10;  &#10;  At index 0 diff: 0 != -3&#10;  Right contains 2 more items, first extra item: 0&#10;  Use -v to get more diff">args = ([-3, 0], [-2, 0]), expected = [-3, -2, 0, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+&gt;       assert actual == expected
+E       assert [0, 0] == [-3, -2, 0, 0]
+E         
+E         At index 0 diff: 0 != -3
+E         Right contains 2 more items, first extra item: 0
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /></testsuite></testsuites>

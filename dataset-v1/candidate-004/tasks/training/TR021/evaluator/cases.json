@@ -1,0 +1,92 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('', '')",
+    "expected_python": "''",
+    "after_python": "('', '')"
+  },
+  {
+    "id": "v001",
+    "args_python": "('', 'a')",
+    "expected_python": "''",
+    "after_python": "('', 'a')"
+  },
+  {
+    "id": "v002",
+    "args_python": "('abc', 'abc')",
+    "expected_python": "'abc'",
+    "after_python": "('abc', 'abc')"
+  },
+  {
+    "id": "v003",
+    "args_python": "('abc', 'abd')",
+    "expected_python": "'ab'",
+    "after_python": "('abc', 'abd')"
+  },
+  {
+    "id": "v004",
+    "args_python": "('abc', 'a')",
+    "expected_python": "'a'",
+    "after_python": "('abc', 'a')"
+  },
+  {
+    "id": "v005",
+    "args_python": "('Ab', 'ab')",
+    "expected_python": "''",
+    "after_python": "('Ab', 'ab')"
+  },
+  {
+    "id": "v006",
+    "args_python": "('é字a', 'é字b')",
+    "expected_python": "'é字'",
+    "after_python": "('é字a', 'é字b')"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''), '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x', '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1, '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None, '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "('', StrChild(''))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e005",
+    "args_python": "('', b'x')",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e006",
+    "args_python": "('', 1)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e007",
+    "args_python": "('', None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "id": "DV007",
+  "split": "development",
+  "family": "grid-neighbors",
+  "function": "grid_neighbors",
+  "revision": 2,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "row",
+    "column",
+    "rows",
+    "columns"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "finite-agent-calibration-passed; revised candidate not independently reviewed",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-006 plus documented external adversarial fixture proposals; no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "9db0853bc126331f30b6910f1fe2da4dda760d69761f1e67262d53f6fed66080",
+  "target_sha256": "eff6d5f99d55293a4b7da49af41b9afb64b845782087f0100d40b9554f53a068",
+  "spec_sha256": "1000ad3cdd6b90a9afd180bb3e9e82945a2cbc044bc01163e35f49c882d53a87",
+  "answer_sha256": "431dbd8c1d91d11b9ef05c9b9966489816008bcc6a105d4909f000309a1b083c",
+  "valid_test_cases": 6,
+  "exception_test_cases": 50,
+  "type_before_value_witnesses": 24,
+  "oracle_checks": 6,
+  "designated_mutants": 9,
+  "pytest_validation": "passed S007 validation-002; gold identical after newline normalization; reference/mutants byte-identical",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-006"
+}

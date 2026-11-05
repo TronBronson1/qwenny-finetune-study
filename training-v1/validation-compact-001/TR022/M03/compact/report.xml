@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="12" time="0.275" timestamp="2026-11-04T07:12:29.246064-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-&quot;&quot;]" time="0.001"><failure message="assert '' == '&quot;&quot;'&#10;  &#10;  - &quot;&quot;">args = ('',), expected = '""'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""'),
+        pytest.param(('abc',), 'abc'),
+        pytest.param(('a,b',), '"a,b"'),
+        pytest.param(('a"b',), '"a""b"'),
+        pytest.param(('a\rb',), '"a\rb"'),
+        pytest.param(('a\nb',), '"a\nb"'),
+        pytest.param((' a ',), ' a '),
+        pytest.param(('é',), 'é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=quote_csv_field(*args)
+&gt;       assert actual == expected
+E       assert '' == '""'
+E         
+E         - ""
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-abc]" time="0.001" /><testcase classname="test_target" name="test_values[args2-&quot;a,b&quot;]" time="0.001" /><testcase classname="test_target" name="test_values[args3-&quot;a&quot;&quot;b&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args4-&quot;a\rb&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args5-&quot;a\nb&quot;]" time="0.000" /><testcase classname="test_target" name="test_values[args6- a ]" time="0.000" /><testcase classname="test_target" name="test_values[args7-\xe9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /></testsuite></testsuites>

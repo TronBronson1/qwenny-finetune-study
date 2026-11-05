@@ -1,0 +1,48 @@
+.FF.........................                                             [100%]
+================================== FAILURES ===================================
+________________________ test_values[args1-expected1] _________________________
+
+args = ([1, 2, 3], 0, 3), expected = [1, 2, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0, 0), []),
+        pytest.param(([1, 2, 3], 0, 3), [1, 2, 3]),
+        pytest.param(([1, 2, 3], 1, 2), [2]),
+        pytest.param(([1, 2, 3], 2, 1), []),
+        pytest.param(([1, 2, 3], 3, 3), []),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=bounded_slice(*args)
+>       assert actual == expected
+E       assert [1, 2] == [1, 2, 3]
+E         
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = ([1, 2, 3], 1, 2), expected = [2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 0, 0), []),
+        pytest.param(([1, 2, 3], 0, 3), [1, 2, 3]),
+        pytest.param(([1, 2, 3], 1, 2), [2]),
+        pytest.param(([1, 2, 3], 2, 1), []),
+        pytest.param(([1, 2, 3], 3, 3), []),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=bounded_slice(*args)
+>       assert actual == expected
+E       assert [] == [2]
+E         
+E         Right contains one more item: 2
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-expected1] - assert [1, 2] == [1, 2, 3]
+FAILED test_target.py::test_values[args2-expected2] - assert [] == [2]
+2 failed, 26 passed in 0.32s

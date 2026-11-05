@@ -1,0 +1,153 @@
+FFFF.............F.......                                                [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('00:00',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=minute_of_day(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+______________________________ test_values[v001] ______________________________
+
+args = ('00:01',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=minute_of_day(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:01'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+______________________________ test_values[v002] ______________________________
+
+args = ('01:00',), expected = 60
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=minute_of_day(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '01:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+______________________________ test_values[v003] ______________________________
+
+args = ('12:34',), expected = 754
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('00:00',), 0, id="v000"),
+        pytest.param(('00:01',), 1, id="v001"),
+        pytest.param(('01:00',), 60, id="v002"),
+        pytest.param(('12:34',), 754, id="v003"),
+        pytest.param(('23:59',), 1439, id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=minute_of_day(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:34'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+________________________ test_raises_valueerror[e004] _________________________
+
+args = ('24:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('24:00',), id="e004"),
+        pytest.param(('23:60',), id="e005"),
+        pytest.param(('1:00',), id="e006"),
+        pytest.param(('00:0',), id="e007"),
+        pytest.param(('00-00',), id="e008"),
+        pytest.param((' 00:00',), id="e009"),
+        pytest.param(('00:00\n',), id="e010"),
+        pytest.param(('٠٠:٠٠',), id="e011"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:60: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - ValueError: time
+FAILED test_target.py::test_values[v001] - ValueError: time
+FAILED test_target.py::test_values[v002] - ValueError: time
+FAILED test_target.py::test_values[v003] - ValueError: time
+FAILED test_target.py::test_raises_valueerror[e004] - Failed: DID NOT RAISE V...
+5 failed, 20 passed in 0.58s

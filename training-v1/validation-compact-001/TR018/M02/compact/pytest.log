@@ -1,0 +1,50 @@
+.....FF......                                                            [100%]
+================================== FAILURES ===================================
+__________________________ test_values[args5-False] ___________________________
+
+args = ('ab',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True),
+        pytest.param(('a',), True),
+        pytest.param(('aa',), True),
+        pytest.param(('aba',), True),
+        pytest.param(('abba',), True),
+        pytest.param(('ab',), False),
+        pytest.param(('Aa',), False),
+        pytest.param(('a a',), True),
+        pytest.param(('é字é',), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:28: AssertionError
+__________________________ test_values[args6-False] ___________________________
+
+args = ('Aa',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), True),
+        pytest.param(('a',), True),
+        pytest.param(('aa',), True),
+        pytest.param(('aba',), True),
+        pytest.param(('abba',), True),
+        pytest.param(('ab',), False),
+        pytest.param(('Aa',), False),
+        pytest.param(('a a',), True),
+        pytest.param(('é字é',), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_palindrome(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args5-False] - assert True == False
+FAILED test_target.py::test_values[args6-False] - assert True == False
+2 failed, 11 passed in 0.31s

@@ -1,0 +1,364 @@
+........FF...FF...FFFFFF...                                              [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = (True, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed
+_________________________ test_raises_typeerror[e001] _________________________
+
+args = (0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed
+_________________________ test_raises_typeerror[e005] _________________________
+
+args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 0, base = True
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e006] _________________________
+
+args = (0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:46: Failed
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = (-1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, base = 2
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = (-1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, base = 2
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = (2, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 1
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = (2, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 1
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = (2, 17)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 17
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = (2, 17)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2), id="e000"),
+        pytest.param((IntChild(0), 2), id="e001"),
+        pytest.param((1.5, 2), id="e002"),
+        pytest.param(('bad', 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((0, True), id="e005"),
+        pytest.param((0, IntChild(2)), id="e006"),
+        pytest.param((0, 1.5), id="e007"),
+        pytest.param((0, 'bad'), id="e008"),
+        pytest.param((0, None), id="e009"),
+        pytest.param((IntChild(-1), 2), id="e013"),
+        pytest.param((-1, IntChild(2)), id="e014"),
+        pytest.param((IntChild(2), 1), id="e015"),
+        pytest.param((2, IntChild(1)), id="e016"),
+        pytest.param((IntChild(2), 17), id="e017"),
+        pytest.param((2, IntChild(17)), id="e018"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           int_to_base(*args)
+
+test_target.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 17
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number < 0 or not 2 <= base <= 16:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e001] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e005] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e006] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e017] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e018] - ValueError: domain
+10 failed, 17 passed in 0.66s

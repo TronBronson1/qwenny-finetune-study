@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="16" time="0.478" timestamp="2026-11-03T20:11:30.704409-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert 'xI' == 'I'&#10;  &#10;  - I&#10;  + xI">args = (1,), expected = 'I'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xI' == 'I'
+E         
+E         - I
+E         + xI
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert 'xIV' == 'IV'&#10;  &#10;  - IV&#10;  + xIV&#10;  ? +">args = (4,), expected = 'IV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xIV' == 'IV'
+E         
+E         - IV
+E         + xIV
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert 'xIX' == 'IX'&#10;  &#10;  - IX&#10;  + xIX&#10;  ? +">args = (9,), expected = 'IX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xIX' == 'IX'
+E         
+E         - IX
+E         + xIX
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert 'xXL' == 'XL'&#10;  &#10;  - XL&#10;  + xXL&#10;  ? +">args = (40,), expected = 'XL'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xXL' == 'XL'
+E         
+E         - XL
+E         + xXL
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert 'xXC' == 'XC'&#10;  &#10;  - XC&#10;  + xXC&#10;  ? +">args = (90,), expected = 'XC'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xXC' == 'XC'
+E         
+E         - XC
+E         + xXC
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert 'xCD' == 'CD'&#10;  &#10;  - CD&#10;  + xCD&#10;  ? +">args = (400,), expected = 'CD'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xCD' == 'CD'
+E         
+E         - CD
+E         + xCD
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert 'xCM' == 'CM'&#10;  &#10;  - CM&#10;  + xCM&#10;  ? +">args = (900,), expected = 'CM'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xCM' == 'CM'
+E         
+E         - CM
+E         + xCM
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001"><failure message="AssertionError: assert 'xMCMXCIV' == 'MCMXCIV'&#10;  &#10;  - MCMXCIV&#10;  + xMCMXCIV&#10;  ? +">args = (1994,), expected = 'MCMXCIV'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xMCMXCIV' == 'MCMXCIV'
+E         
+E         - MCMXCIV
+E         + xMCMXCIV
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v008]" time="0.001"><failure message="AssertionError: assert 'xMMMCMXCIX' == 'MMMCMXCIX'&#10;  &#10;  - MMMCMXCIX&#10;  + xMMMCMXCIX&#10;  ? +">args = (3999,), expected = 'MMMCMXCIX'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'I', id="v000"),
+        pytest.param((4,), 'IV', id="v001"),
+        pytest.param((9,), 'IX', id="v002"),
+        pytest.param((40,), 'XL', id="v003"),
+        pytest.param((90,), 'XC', id="v004"),
+        pytest.param((400,), 'CD', id="v005"),
+        pytest.param((900,), 'CM', id="v006"),
+        pytest.param((1994,), 'MCMXCIV', id="v007"),
+        pytest.param((3999,), 'MMMCMXCIX', id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=roman_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'xMMMCMXCIX' == 'MMMCMXCIX'
+E         
+E         - MMMCMXCIX
+E         + xMMMCMXCIX
+E         ? +
+
+test_target.py:31: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /></testsuite></testsuites>

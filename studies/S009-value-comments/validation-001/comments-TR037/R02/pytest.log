@@ -1,0 +1,319 @@
+........FFFFFFFFF.........                                               [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = ('00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = ('+1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '+1'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = (' 1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ' 1'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = ('١',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '١'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e018] _________________________
+
+args = ('1\n',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1\n'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e019] _________________________
+
+args = ('1000000000000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1000000000000'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e020] _________________________
+
+args = ('٣',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '٣'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e021] _________________________
+
+args = ('３',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e013"),
+        pytest.param((StrChild('00'),), id="e014"),
+        pytest.param((StrChild('+1'),), id="e015"),
+        pytest.param((StrChild(' 1'),), id="e016"),
+        pytest.param((StrChild('١'),), id="e017"),
+        pytest.param((StrChild('1\n'),), id="e018"),
+        pytest.param((StrChild('1000000000000'),), id="e019"),
+        pytest.param((StrChild('٣'),), id="e020"),
+        pytest.param((StrChild('３'),), id="e021"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_unsigned(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '３'
+
+    def parse_unsigned(text):
+        if re.fullmatch('(?:0|[1-9][0-9]{0,11})', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e017] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e018] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e019] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e020] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e021] - ValueError: syntax
+9 failed, 17 passed in 0.66s

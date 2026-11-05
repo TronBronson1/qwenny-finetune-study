@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="14" time="0.310" timestamp="2026-11-03T23:04:26.396091-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_rotate_right_valid[values0-0-expected0]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_valid[values1-1-expected1]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_valid[values2-1-expected2]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_valid[values3-1-expected3]" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_valid[values4--1-expected4]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_valid[values5-4-expected5]" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_valid[values6--2-expected6]" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_valid[values7-100-expected7]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values0-1]" time="0.000" /><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values1-1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">values = (1, 2, 3), steps = 1
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values2-True]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">values = (1, 2, 3), steps = True
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values3-False]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">values = (1, 2, 3), steps = False
+
+    @pytest.mark.parametrize("values, steps", [
+        # List instead of tuple
+        ([1, 2, 3], 1),
+        # Tuple subclass
+        (tuple([1, 2, 3]), 1),
+        # Bool instead of int
+        ((1, 2, 3), True),
+        # Bool subclass (if applicable, though bool is subclass of int)
+        ((1, 2, 3), False),
+        # Float instead of int
+        ((1, 2, 3), 1.5),
+        # None instead of int
+        ((1, 2, 3), None),
+    ])
+    def test_rotate_right_invalid_types(values, steps):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:45: Failed</failure></testcase><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values4-1.5]" time="0.001" /><testcase classname="test_candidate" name="test_rotate_right_invalid_types[values5-None]" time="0.001" /></testsuite></testsuites>

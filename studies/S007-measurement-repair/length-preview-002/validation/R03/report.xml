@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="14" skipped="0" tests="66" time="0.552" timestamp="2026-11-04T17:19:31.508283-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1--1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-1]" time="0.001" /><testcase classname="test_target" name="test_values[args3-1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args14]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args15]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args16]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args17]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args18]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args19]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args20]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args21]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args22]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args23]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args24]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args25]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args26]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args27]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args28]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args29]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args30]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args31]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args32]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args33]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args34]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args35]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args36]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args37]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args38]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args39]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args40]" time="0.000"><failure message="ValueError: component">args = ((1, -1, 0), (1, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (1, -1, 0), right = (1, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args41]" time="0.001"><failure message="ValueError: component">args = ((1, -1, 0), (1, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (1, -1, 0), right = (1, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args42]" time="0.001"><failure message="ValueError: component">args = ((-1, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (-1, 0, 0), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args43]" time="0.001"><failure message="ValueError: component">args = ((-1, 0, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (-1, 0, 0), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args44]" time="0.001"><failure message="ValueError: component">args = ((0, -1, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, -1, 0), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args45]" time="0.001"><failure message="ValueError: component">args = ((0, -1, 0), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, -1, 0), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args46]" time="0.001"><failure message="ValueError: component">args = ((0, 0, -1), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, -1), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args47]" time="0.001"><failure message="ValueError: component">args = ((0, 0, -1), (0, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, -1), right = (0, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args48]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (-1, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (-1, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args49]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (-1, 0, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (-1, 0, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args50]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (0, -1, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (0, -1, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args51]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (0, -1, 0))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (0, -1, 0)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args52]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (0, 0, -1))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (0, 0, -1)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args53]" time="0.001"><failure message="ValueError: component">args = ((0, 0, 0), (0, 0, -1))
+
+    @pytest.mark.parametrize("args",[
+        pytest.param((TupleChild((0,0,0)),(0,0,0))),
+        pytest.param(((True,0,0),(0,0,0))),
+        pytest.param(((IntChild(1),0,0),(0,0,0))),
+        pytest.param(([0,0,0],(0,0,0))),
+        pytest.param((None,(0,0,0))),
+        pytest.param((('x',0,0),(0,0,0))),
+        pytest.param(((1.5,0,0),(0,0,0))),
+        pytest.param(((None,0,0),(0,0,0))),
+        pytest.param(((IntChild(0),0,0),(0,0,0))),
+        pytest.param(((0,'x',0),(0,0,0))),
+        pytest.param(((0,1.5,0),(0,0,0))),
+        pytest.param(((0,None,0),(0,0,0))),
+        pytest.param(((0,True,0),(0,0,0))),
+        pytest.param(((0,IntChild(0),0),(0,0,0))),
+        pytest.param(((0,0,'x'),(0,0,0))),
+        pytest.param(((0,0,1.5),(0,0,0))),
+        pytest.param(((0,0,None),(0,0,0))),
+        pytest.param(((0,0,True),(0,0,0))),
+        pytest.param(((0,0,IntChild(0)),(0,0,0))),
+        pytest.param(((0,0,0),TupleChild((0,0,0)))),
+        pytest.param(((0,0,0),(True,0,0))),
+        pytest.param(((0,0,0),(IntChild(1),0,0))),
+        pytest.param(((0,0,0),[0,0,0])),
+        pytest.param(((0,0,0),None)),
+        pytest.param(((0,0,0),('x',0,0))),
+        pytest.param(((0,0,0),(1.5,0,0))),
+        pytest.param(((0,0,0),(None,0,0))),
+        pytest.param(((0,0,0),(IntChild(0),0,0))),
+        pytest.param(((0,0,0),(0,'x',0))),
+        pytest.param(((0,0,0),(0,1.5,0))),
+        pytest.param(((0,0,0),(0,None,0))),
+        pytest.param(((0,0,0),(0,True,0))),
+        pytest.param(((0,0,0),(0,IntChild(0),0))),
+        pytest.param(((0,0,0),(0,0,'x'))),
+        pytest.param(((0,0,0),(0,0,1.5))),
+        pytest.param(((0,0,0),(0,0,None))),
+        pytest.param(((0,0,0),(0,0,True))),
+        pytest.param(((0,0,0),(0,0,IntChild(0)))),
+        pytest.param((TupleChild((1,2)),(1,2,3))),
+        pytest.param(((1,2),TupleChild((1,2,3)))),
+        pytest.param((TupleChild((1,-1,0)),(1,0,0))),
+        pytest.param(((1,-1,0),TupleChild((1,0,0)))),
+        pytest.param((TupleChild((-1,0,0)),(0,0,0))),
+        pytest.param(((-1,0,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,-1,0)),(0,0,0))),
+        pytest.param(((0,-1,0),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,-1)),(0,0,0))),
+        pytest.param(((0,0,-1),TupleChild((0,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(-1,0,0))),
+        pytest.param(((0,0,0),TupleChild((-1,0,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,-1,0))),
+        pytest.param(((0,0,0),TupleChild((0,-1,0)))),
+        pytest.param((TupleChild((0,0,0)),(0,0,-1))),
+        pytest.param(((0,0,0),TupleChild((0,0,-1)))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           compare_versions(*args)
+
+test_target.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = (0, 0, 0), right = (0, 0, -1)
+
+    def compare_versions(left, right):
+        if any((value &lt; 0 for value in left + right)):
+&gt;           raise ValueError('component')
+E           ValueError: component
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args7]" time="0.000" /></testsuite></testsuites>

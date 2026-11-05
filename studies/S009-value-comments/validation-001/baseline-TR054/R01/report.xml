@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="12" time="0.463" timestamp="2026-11-04T18:58:24.935092-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('0')&#10; +  and   &lt;class 'str'&gt; = type('0')">args = (0,), expected = '0'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '0', expected = '0'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('0')
+E        +  and   &lt;class 'str'&gt; = type('0')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('1')&#10; +  and   &lt;class 'str'&gt; = type('1')">args = (1,), expected = '1'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '1', expected = '1'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('1')
+E        +  and   &lt;class 'str'&gt; = type('1')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('999')&#10; +  and   &lt;class 'str'&gt; = type('999')">args = (999,), expected = '999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '999', expected = '999'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('999')
+E        +  and   &lt;class 'str'&gt; = type('999')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('1_000')&#10; +  and   &lt;class 'str'&gt; = type('1_000')">args = (1000,), expected = '1_000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '1_000', expected = '1_000'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('1_000')
+E        +  and   &lt;class 'str'&gt; = type('1_000')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('-1_000')&#10; +  and   &lt;class 'str'&gt; = type('-1_000')">args = (-1000,), expected = '-1_000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '-1_000', expected = '-1_000'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('-1_000')
+E        +  and   &lt;class 'str'&gt; = type('-1_000')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('1_234_567')&#10; +  and   &lt;class 'str'&gt; = type('1_234_567')">args = (1234567,), expected = '1_234_567'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '1_234_567', expected = '1_234_567'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('1_234_567')
+E        +  and   &lt;class 'str'&gt; = type('1_234_567')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;&#10; +  where &lt;class 'subject._ReturnStr'&gt; = type('1_000_000_000_000_000_000_000_000_000_000')&#10; +  and   &lt;class 'str'&gt; = type('1_000_000_000_000_000_000_000_000_000_000')">args = (1000000000000000000000000000000,)
+expected = '1_000_000_000_000_000_000_000_000_000_000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0', id="v000"),
+        pytest.param((1,), '1', id="v001"),
+        pytest.param((999,), '999', id="v002"),
+        pytest.param((1000,), '1_000', id="v003"),
+        pytest.param((-1000,), '-1_000', id="v004"),
+        pytest.param((1234567,), '1_234_567', id="v005"),
+        pytest.param((1000000000000000000000000000000,), '1_000_000_000_000_000_000_000_000_000_000', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=grouped_decimal(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '1_000_000_000_000_000_000_000_000_000_000'
+expected = '1_000_000_000_000_000_000_000_000_000_000'
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnStr'&gt; is &lt;class 'str'&gt;
+E        +  where &lt;class 'subject._ReturnStr'&gt; = type('1_000_000_000_000_000_000_000_000_000_000')
+E        +  and   &lt;class 'str'&gt; = type('1_000_000_000_000_000_000_000_000_000_000')
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /></testsuite></testsuites>

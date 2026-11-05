@@ -1,0 +1,91 @@
+{
+  "status": "completed",
+  "scope": "Numerical diagnostic only, not extra scored task samples or training.",
+  "results": [
+    {
+      "variant": "base",
+      "rows": [
+        {
+          "step": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "kl_full_to_cached": 0.0,
+          "argmax_matches": true
+        },
+        {
+          "step": 1,
+          "max_abs_difference": 0.5625,
+          "mean_abs_difference": 0.0541548989713192,
+          "kl_full_to_cached": 1.9178980892320396e-07,
+          "argmax_matches": true
+        },
+        {
+          "step": 3,
+          "max_abs_difference": 0.3125,
+          "mean_abs_difference": 0.03914686664938927,
+          "kl_full_to_cached": 0.0019014895660802722,
+          "argmax_matches": true
+        },
+        {
+          "step": 7,
+          "max_abs_difference": 0.25,
+          "mean_abs_difference": 0.030916471034288406,
+          "kl_full_to_cached": 7.983441463466079e-08,
+          "argmax_matches": true
+        },
+        {
+          "step": 15,
+          "max_abs_difference": 0.25,
+          "mean_abs_difference": 0.028985900804400444,
+          "kl_full_to_cached": 0.0003152631688863039,
+          "argmax_matches": true
+        }
+      ],
+      "greedy_diagnostic_generated_tokens": 16,
+      "interpretation": "BF16/full-matrix versus incremental paths need not be bit-identical; inspect divergence rather than assume a cache bug."
+    },
+    {
+      "variant": "epoch-5",
+      "rows": [
+        {
+          "step": 0,
+          "max_abs_difference": 0.0,
+          "mean_abs_difference": 0.0,
+          "kl_full_to_cached": 0.0,
+          "argmax_matches": true
+        },
+        {
+          "step": 1,
+          "max_abs_difference": 0.75,
+          "mean_abs_difference": 0.0996280238032341,
+          "kl_full_to_cached": 5.287009116727859e-06,
+          "argmax_matches": true
+        },
+        {
+          "step": 3,
+          "max_abs_difference": 0.4375,
+          "mean_abs_difference": 0.0595245286822319,
+          "kl_full_to_cached": 1.148624960478628e-05,
+          "argmax_matches": true
+        },
+        {
+          "step": 7,
+          "max_abs_difference": 0.390625,
+          "mean_abs_difference": 0.058479372411966324,
+          "kl_full_to_cached": 0.0012296047061681747,
+          "argmax_matches": true
+        },
+        {
+          "step": 15,
+          "max_abs_difference": 0.359375,
+          "mean_abs_difference": 0.051100954413414,
+          "kl_full_to_cached": 0.00015560214524157345,
+          "argmax_matches": true
+        }
+      ],
+      "greedy_diagnostic_generated_tokens": 16,
+      "interpretation": "BF16/full-matrix versus incremental paths need not be bit-identical; inspect divergence rather than assume a cache bug."
+    }
+  ],
+  "current_variant": "epoch-5"
+}

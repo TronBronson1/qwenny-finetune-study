@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "train_rows": 60,
+  "development_rows": 24,
+  "max_train_tokens": 1954,
+  "max_development_tokens": 2993,
+  "total_train_input_tokens": 60552,
+  "total_train_target_tokens": 39730,
+  "no_truncation": true,
+  "prompt_and_empty_reasoning_markup_masked": true,
+  "decoded_target_matches_every_answer": true,
+  "policy": "Condition on the checkpoint's empty reasoning wrapper; supervise only authored visible assistant answer and im_end. Do not teach fabricated reasoning or supervise empty thinking decisions. This is answer-only SFT, not a guarantee of preserving thinking behavior.",
+  "historical_LM_Studio_settings": "unchanged; historical thinking-enabled controls remain separate",
+  "token_ids": {
+    "<|endoftext|>": 248044,
+    "<|im_start|>": 248045,
+    "<|im_end|>": 248046,
+    "<think>": 248068,
+    "</think>": 248069
+  },
+  "model_config_eos": 248044,
+  "generation_stop_policy": "Explicitly stop on im_end and endoftext; tokenizer EOS and model config EOS differ intentionally in the checkpoint.",
+  "train_jsonl_sha256": "e6151a1d347f5a5927adcbcbe803be605676df5b2c44645eb6ca16c70fb2e5a6",
+  "development_jsonl_sha256": "76259ff9b19975e4642fe721390564ae74c637e7321af784875a0930d1ad1260"
+}

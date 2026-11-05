@@ -1,0 +1,116 @@
+FFFF...........................                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0, 0, 0), expected = '#000000'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000', id="v000"),
+        pytest.param((255, 255, 255), '#ffffff', id="v001"),
+        pytest.param((1, 2, 3), '#010203', id="v002"),
+        pytest.param((0, 128, 255), '#0080ff', id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=encode_rgb(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '#000000', expected = '#000000'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('#000000')
+E        +  and   <class 'str'> = type('#000000')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (255, 255, 255), expected = '#ffffff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000', id="v000"),
+        pytest.param((255, 255, 255), '#ffffff', id="v001"),
+        pytest.param((1, 2, 3), '#010203', id="v002"),
+        pytest.param((0, 128, 255), '#0080ff', id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=encode_rgb(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '#ffffff', expected = '#ffffff'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('#ffffff')
+E        +  and   <class 'str'> = type('#ffffff')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (1, 2, 3), expected = '#010203'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000', id="v000"),
+        pytest.param((255, 255, 255), '#ffffff', id="v001"),
+        pytest.param((1, 2, 3), '#010203', id="v002"),
+        pytest.param((0, 128, 255), '#0080ff', id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=encode_rgb(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '#010203', expected = '#010203'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('#010203')
+E        +  and   <class 'str'> = type('#010203')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (0, 128, 255), expected = '#0080ff'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 0), '#000000', id="v000"),
+        pytest.param((255, 255, 255), '#ffffff', id="v001"),
+        pytest.param((1, 2, 3), '#010203', id="v002"),
+        pytest.param((0, 128, 255), '#0080ff', id="v003"),
+    ])
+    def test_values(args,expected):
+        actual=encode_rgb(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '#0080ff', expected = '#0080ff'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('#0080ff')
+E        +  and   <class 'str'> = type('#0080ff')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+4 failed, 27 passed in 0.58s

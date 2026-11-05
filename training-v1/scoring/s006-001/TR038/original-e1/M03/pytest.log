@@ -1,0 +1,59 @@
+FFFFF...........                                                         [100%]
+================================== FAILURES ===================================
+______________________ TestParseHexByte.test_valid_hex_0 ______________________
+
+self = <test_candidate.TestParseHexByte object at 0x0000024B5F44AE90>
+
+    def test_valid_hex_0(self):
+>       assert parse_hex_byte("00") == 0
+E       AssertionError: assert None == 0
+E        +  where None = parse_hex_byte('00')
+
+test_candidate.py:7: AssertionError
+______________________ TestParseHexByte.test_valid_hex_1 ______________________
+
+self = <test_candidate.TestParseHexByte object at 0x0000024B5F44AD50>
+
+    def test_valid_hex_1(self):
+>       assert parse_hex_byte("01") == 1
+E       AssertionError: assert None == 1
+E        +  where None = parse_hex_byte('01')
+
+test_candidate.py:10: AssertionError
+______________________ TestParseHexByte.test_valid_hex_f ______________________
+
+self = <test_candidate.TestParseHexByte object at 0x0000024B5F442C40>
+
+    def test_valid_hex_f(self):
+>       assert parse_hex_byte("ff") == 255
+E       AssertionError: assert None == 255
+E        +  where None = parse_hex_byte('ff')
+
+test_candidate.py:13: AssertionError
+__________________ TestParseHexByte.test_valid_hex_uppercase __________________
+
+self = <test_candidate.TestParseHexByte object at 0x0000024B5F443230>
+
+    def test_valid_hex_uppercase(self):
+>       assert parse_hex_byte("AA") == 170
+E       AssertionError: assert None == 170
+E        +  where None = parse_hex_byte('AA')
+
+test_candidate.py:16: AssertionError
+_________________ TestParseHexByte.test_valid_hex_mixed_case __________________
+
+self = <test_candidate.TestParseHexByte object at 0x0000024B5F468B90>
+
+    def test_valid_hex_mixed_case(self):
+>       assert parse_hex_byte("aB") == 171
+E       AssertionError: assert None == 171
+E        +  where None = parse_hex_byte('aB')
+
+test_candidate.py:19: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestParseHexByte::test_valid_hex_0 - AssertionError...
+FAILED test_candidate.py::TestParseHexByte::test_valid_hex_1 - AssertionError...
+FAILED test_candidate.py::TestParseHexByte::test_valid_hex_f - AssertionError...
+FAILED test_candidate.py::TestParseHexByte::test_valid_hex_uppercase - Assert...
+FAILED test_candidate.py::TestParseHexByte::test_valid_hex_mixed_case - Asser...
+5 failed, 11 passed in 0.58s

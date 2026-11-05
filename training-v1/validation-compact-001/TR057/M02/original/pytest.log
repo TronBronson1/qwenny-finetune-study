@@ -1,0 +1,50 @@
+..FF...........                                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ('Hello World',), expected = 'hello-world'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param((' --_ ',), '', id="v001"),
+        pytest.param(('Hello World',), 'hello-world', id="v002"),
+        pytest.param((' A__b--C ',), 'a-b-c', id="v003"),
+        pytest.param(('X9',), 'x9', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=make_slug(*args)
+>       assert actual == expected
+E       AssertionError: assert 'hello world' == 'hello-world'
+E         
+E         - hello-world
+E         ?      ^
+E         + hello world
+E         ?      ^
+
+test_target.py:27: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (' A__b--C ',), expected = 'a-b-c'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param((' --_ ',), '', id="v001"),
+        pytest.param(('Hello World',), 'hello-world', id="v002"),
+        pytest.param((' A__b--C ',), 'a-b-c', id="v003"),
+        pytest.param(('X9',), 'x9', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=make_slug(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a__b--c' == 'a-b-c'
+E         
+E         - a-b-c
+E         + a__b--c
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - AssertionError: assert 'hello worl...
+FAILED test_target.py::test_values[v003] - AssertionError: assert 'a__b--c' =...
+2 failed, 13 passed in 0.31s

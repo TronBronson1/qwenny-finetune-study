@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="15" time="0.274" timestamp="2026-11-04T07:13:45.974537-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-]" time="0.001" /><testcase classname="test_target" name="test_values[args1-]" time="0.001" /><testcase classname="test_target" name="test_values[args2-hello-world]" time="0.001"><failure message="AssertionError: assert 'hello world' == 'hello-world'&#10;  &#10;  - hello-world&#10;  ?      ^&#10;  + hello world&#10;  ?      ^">args = ('Hello World',), expected = 'hello-world'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param((' --_ ',), ''),
+        pytest.param(('Hello World',), 'hello-world'),
+        pytest.param((' A__b--C ',), 'a-b-c'),
+        pytest.param(('X9',), 'x9'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=make_slug(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'hello world' == 'hello-world'
+E         
+E         - hello-world
+E         ?      ^
+E         + hello world
+E         ?      ^
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-a-b-c]" time="0.001"><failure message="AssertionError: assert 'a__b--c' == 'a-b-c'&#10;  &#10;  - a-b-c&#10;  + a__b--c">args = (' A__b--C ',), expected = 'a-b-c'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param((' --_ ',), ''),
+        pytest.param(('Hello World',), 'hello-world'),
+        pytest.param((' A__b--C ',), 'a-b-c'),
+        pytest.param(('X9',), 'x9'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=make_slug(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'a__b--c' == 'a-b-c'
+E         
+E         - a-b-c
+E         + a__b--c
+
+test_target.py:24: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-x9]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="32" time="0.424" timestamp="2026-11-04T17:05:47.239725-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e016]" time="0.001"><failure message="ValueError: index">args = (-1, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 2, 3), id="e016"),
+        pytest.param((6, 2, 3), id="e017"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           unravel_index(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = -1, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= index &lt; rows * columns:
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[e017]" time="0.001"><failure message="ValueError: index">args = (6, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 2, 3), id="e016"),
+        pytest.param((6, 2, 3), id="e017"),
+    ])
+    def test_raises_indexerror(args):
+        with pytest.raises(IndexError):
+&gt;           unravel_index(*args)
+
+test_target.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 6, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= index &lt; rows * columns:
+&gt;           raise ValueError('index')
+E           ValueError: index
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e024]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e015]" time="0.000" /></testsuite></testsuites>

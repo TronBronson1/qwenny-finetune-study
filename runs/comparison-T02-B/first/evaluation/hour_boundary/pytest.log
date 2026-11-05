@@ -1,0 +1,24 @@
+.........F......                                                         [100%]
+================================== FAILURES ===================================
+_____________________________ test_values[24:00] ______________________________
+
+text = '24:00'
+
+    @pytest.mark.parametrize("text", [
+        ("24:00"),
+        ("23:60"),
+        (" 00:00"),
+        ("00:00 "),
+        ("1-00:00"),
+        ("abc:def"),
+        ("٠٠:٠٠"),
+    ])
+    def test_values(text):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:37: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_values[24:00] - Failed: DID NOT RAISE ValueError
+1 failed, 15 passed in 0.31s

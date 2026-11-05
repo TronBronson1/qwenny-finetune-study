@@ -1,0 +1,192 @@
+```python
+import copy
+import pytest
+from subject import xor_checksum
+
+class IntChild(int): pass
+class ListChild(list): pass
+
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual) == len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+    elif type(expected) is dict:
+        assert actual.keys() == expected.keys()
+        assert all(type(k) in (str,int,bool) for k in actual)
+        for key in expected: assert_exact_shape(actual[key],expected[key])
+
+@pytest.mark.parametrize("args,expected", [
+    pytest.param((-1,), (0,)), id="v000"
+], explicit=True)
+def test_values000_values000_values000(expected, args):
+    before = copy.deepcopy(args)
+    actual = xor_checksum(*args)
+    assert actual == expected
+    assert_exact_shape(actual,expected)
+    assert args == before
+
+@pytest.mark.parametrize("args", [
+    pytest.param((ListChild([1]),),), id="v001"
+], explicit=True)
+def test_values001_raises001_values001(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((bool(True),),), id="v002"
+], explicit=True)
+def test_values002_raises002_values002(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((IntChild(1),),), id="v003"
+], explicit=True)
+def test_values003_raises003_values003(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((1.5,),), id="v004"
+], explicit=True)
+def test_values004_raises004_values004(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((ListChild(),),), id="v005"
+], explicit=True)
+def test_values005_raises005_values005(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((None,),), id="v006"
+], explicit=True)
+def test_values006_raises006_values006(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((type('X')(1),),), id="v007"
+], explicit=True)
+def test_values007_raises007_values007(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((ListChild([1,2]),),), id="v008"
+], explicit=True)
+def test_values008_raises008_values008(args):
+    with pytest.raises(TypeError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([],),), id="v009"
+], explicit=True)
+def test_values009_raises009_values009(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([0],),), id="v010"
+], explicit=True)
+def test_values010_raises010_values010(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([0,255],),), id="v011"
+], explicit=True)
+def test_values011_raises011_values011(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([0,256],),), id="v012"
+], explicit=True)
+def test_values012_raises012_values012(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([1.0],),), id="v013"
+], explicit=True)
+def test_values013_raises013_values013(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([0])],),), id="v014"
+], explicit=True)
+def test_values014_raises014_values014(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([255])],),), id="v015"
+], explicit=True)
+def test_values015_raises015_values015(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([256])],),), id="v016"
+], explicit=True)
+def test_values016_raises016_values016(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([False])],),), id="v017"
+], explicit=True)
+def test_values017_raises017_values017(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([1.5])],),), id="v018"
+], explicit=True)
+def test_values018_raises018_values018(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([type('Y')()],),), id="v019"
+], explicit=True)
+def test_values019_raises019_values019(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([type('Z')()])],),), id="v020"
+], explicit=True)
+def test_values020_raises020_values020(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([ListChild([1])])],),), id="v021"
+], explicit=True)
+def test_values021_raises021_values021(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([ListChild([])])],),), id="v022"
+], explicit=True)
+def test_values022_raises022_values022(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(([ListChild([ListChild([type('A')()])])],),), id="v023"
+], explicit=True)
+def test_values023_raises023_values023(args):
+    with pytest.raises(ValueError):
+        xor_checksum(*args)
+])
+```
+
+Explicit return/post-state cases v000..v023 cover the listed contracts and boundaries. Separate explicit exception tuples isolate invalid types, specified invalid values and any listed type-before-value witnesses. Nested returned types and bounds are checked explicitly. These are finite cases, not exhaustive coverage or proof of correctness. No execution is claimed by this answer.

@@ -1,0 +1,114 @@
+.....F...FFF...                                                          [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('a/b'),)),
+        pytest.param((StrChild('é'),)),
+        pytest.param((StrChild('a\tb'),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed
+________________________ test_raises_typeerror[args4] _________________________
+
+args = ('a/b',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('a/b'),)),
+        pytest.param((StrChild('é'),)),
+        pytest.param((StrChild('a\tb'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           make_slug(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'a/b'
+
+    def make_slug(text):
+        _types((text,), ('str',))
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args5] _________________________
+
+args = ('é',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('a/b'),)),
+        pytest.param((StrChild('é'),)),
+        pytest.param((StrChild('a\tb'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           make_slug(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'é'
+
+    def make_slug(text):
+        _types((text,), ('str',))
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ('a\tb',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('a/b'),)),
+        pytest.param((StrChild('é'),)),
+        pytest.param((StrChild('a\tb'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           make_slug(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'a\tb'
+
+    def make_slug(text):
+        _types((text,), ('str',))
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+>           raise ValueError('character')
+E           ValueError: character
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args4] - ValueError: character
+FAILED test_target.py::test_raises_typeerror[args5] - ValueError: character
+FAILED test_target.py::test_raises_typeerror[args6] - ValueError: character
+4 failed, 11 passed in 0.33s

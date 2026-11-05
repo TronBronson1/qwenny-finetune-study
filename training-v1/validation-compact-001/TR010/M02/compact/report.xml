@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="14" time="0.323" timestamp="2026-11-04T07:12:01.420872-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001"><failure message="assert 1 == 0">args = (0,), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-1]" time="0.001"><failure message="assert 2 == 1">args = (1,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-1]" time="0.001"><failure message="assert 2 == 1">args = (2,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-2]" time="0.001"><failure message="assert 3 == 2">args = (3,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-8]" time="0.001"><failure message="assert 9 == 8">args = (255,), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args5-1]" time="0.001"><failure message="assert 2 == 1">args = (256,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args6-2]" time="0.001"><failure message="assert 3 == 2">args = (1267650600228229401496703205377,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0),
+        pytest.param((1,), 1),
+        pytest.param((2,), 1),
+        pytest.param((3,), 2),
+        pytest.param((255,), 8),
+        pytest.param((256,), 1),
+        pytest.param((1267650600228229401496703205377,), 2),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+&gt;       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /></testsuite></testsuites>

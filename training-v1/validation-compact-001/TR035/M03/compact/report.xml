@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="11" time="0.262" timestamp="2026-11-04T07:12:57.932316-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-0]" time="0.001" /><testcase classname="test_target" name="test_values[args2-1]" time="0.001"><failure message="assert 2 == 1">args = ([1, 1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0),
+        pytest.param(([1],), 0),
+        pytest.param(([1, 1],), 1),
+        pytest.param(([1, 1, 1],), 2),
+        pytest.param(([1, 2, 1],), 0),
+        pytest.param(([1, 1, 2, 2, 2],), 3),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=adjacent_equal_count(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-2]" time="0.001"><failure message="assert 4 == 2">args = ([1, 1, 1],), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0),
+        pytest.param(([1],), 0),
+        pytest.param(([1, 1],), 1),
+        pytest.param(([1, 1, 1],), 2),
+        pytest.param(([1, 2, 1],), 0),
+        pytest.param(([1, 1, 2, 2, 2],), 3),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=adjacent_equal_count(*args)
+&gt;       assert actual == expected
+E       assert 4 == 2
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-0]" time="0.001" /><testcase classname="test_target" name="test_values[args5-3]" time="0.001"><failure message="assert 6 == 3">args = ([1, 1, 2, 2, 2],), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), 0),
+        pytest.param(([1],), 0),
+        pytest.param(([1, 1],), 1),
+        pytest.param(([1, 1, 1],), 2),
+        pytest.param(([1, 2, 1],), 0),
+        pytest.param(([1, 1, 2, 2, 2],), 3),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=adjacent_equal_count(*args)
+&gt;       assert actual == expected
+E       assert 6 == 3
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /></testsuite></testsuites>

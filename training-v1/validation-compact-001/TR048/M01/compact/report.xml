@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="16" time="0.293" timestamp="2026-11-04T07:13:25.931758-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-A]" time="0.001" /><testcase classname="test_target" name="test_values[args1-Z]" time="0.001" /><testcase classname="test_target" name="test_values[args2-AA]" time="0.001" /><testcase classname="test_target" name="test_values[args3-AZ]" time="0.000" /><testcase classname="test_target" name="test_values[args4-ZZ]" time="0.000" /><testcase classname="test_target" name="test_values[args5-AAA]" time="0.000" /><testcase classname="test_target" name="test_values[args6-ZZZ]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(1),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((IntChild(18279),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(1),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((IntChild(18279),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000"><failure message="ValueError: domain">args = (0,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(1),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((IntChild(18279),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           spreadsheet_column(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 0
+
+    def spreadsheet_column(number):
+        _types((number,), ('int',))
+        if not 1 &lt;= number &lt;= 18278:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="ValueError: domain">args = (18279,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,)),
+        pytest.param((IntChild(1),)),
+        pytest.param((1.5,)),
+        pytest.param(('bad',)),
+        pytest.param((None,)),
+        pytest.param((IntChild(0),)),
+        pytest.param((IntChild(18279),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           spreadsheet_column(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 18279
+
+    def spreadsheet_column(number):
+        _types((number,), ('int',))
+        if not 1 &lt;= number &lt;= 18278:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /></testsuite></testsuites>

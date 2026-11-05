@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="56" time="0.460" timestamp="2026-11-04T17:06:34.594306-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.000" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e021]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e022]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e027]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e028]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e029]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e030]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e031]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e032]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e033]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e034]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e035]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e036]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e037]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e038]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e039]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e040]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e041]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e042]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e043]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e044]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e045]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e046]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e047]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e048]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e049]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e020]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e023]" time="0.001"><failure message="IndexError: cell">args = (0, 0, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((0, 0, 0, 1), id="e020"),
+        pytest.param((0, 0, 1, 0), id="e023"),
+        pytest.param((0, 0, 1, -1), id="e024"),
+        pytest.param((0, 1, 1, 0), id="e025"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0: raise ValueError("shape")
+&gt;       if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns: raise IndexError("cell")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: cell
+
+subject.py:48: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e024]" time="0.001"><failure message="IndexError: cell">args = (0, 0, 1, -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((0, 0, 0, 1), id="e020"),
+        pytest.param((0, 0, 1, 0), id="e023"),
+        pytest.param((0, 0, 1, -1), id="e024"),
+        pytest.param((0, 1, 1, 0), id="e025"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 0, rows = 1, columns = -1
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0: raise ValueError("shape")
+&gt;       if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns: raise IndexError("cell")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: cell
+
+subject.py:48: IndexError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e025]" time="0.001"><failure message="IndexError: cell">args = (0, 1, 1, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((0, 0, 0, 1), id="e020"),
+        pytest.param((0, 0, 1, 0), id="e023"),
+        pytest.param((0, 0, 1, -1), id="e024"),
+        pytest.param((0, 1, 1, 0), id="e025"),
+    ])
+    def test_raises_valueerror(args):
+        with pytest.raises(ValueError):
+&gt;           grid_neighbors(*args)
+
+test_target.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 0, column = 1, rows = 1, columns = 0
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0: raise ValueError("shape")
+&gt;       if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns: raise IndexError("cell")
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: cell
+
+subject.py:48: IndexError</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(True, 'cat')",
+      "expected_exception": "TypeError",
+      "actual_python": "'True cat'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "6e5297a577aa284fbe67390f2676ca5406c464f074f2f4389aec962d8cd04bf9"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-comparison-47-Gt",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e009]",
+      "case": "e009",
+      "kind": "required-exception-not-raised",
+      "args_python": "(-1, 'cat')",
+      "expected_exception": "ValueError",
+      "actual_python": "'-1 cats'"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "9f762673d2ed4b3ae5bc6ab34be4600c32bcc9c287211325538b750c5898cc75"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-47-NotEq",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e010]",
+      "case": "e010",
+      "kind": "required-exception-not-raised",
+      "args_python": "(1, '')",
+      "expected_exception": "ValueError",
+      "actual_python": "'1 '"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "d8ef4ff3a8fce56747d23ae05ba311ae489b9ff8d6380f7981703d2aaf1b98d7"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(0, 'cat')",
+      "expected_python": "'0 cats'",
+      "actual_python": "'0 cats'"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "8fa4986fb980e87f6618e363a6fca3eb834151fdc38c15638acbbc576eeac0ce"
+  },
+  {
+    "id": "R02",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e011]",
+      "case": "e011",
+      "kind": "required-exception-wrong-class",
+      "args_python": "(IntChild(-1), 'cat')",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "203083c8b2f615dbcd25fedb771e4d63a1ba7e05c4771c1d9b4afb4a5a226d20"
+  }
+]

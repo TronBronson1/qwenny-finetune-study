@@ -1,0 +1,526 @@
+.......FFF..FF...FF...FFFFFF                                             [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ([], 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:59: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = ([True], 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:59: Failed
+________________________ test_raises_typeerror[args2] _________________________
+
+args = ([1], 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:59: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = ([], True, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], start = True, stop = 0
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ([], 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:59: Failed
+________________________ test_raises_typeerror[args10] ________________________
+
+args = ([], 0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], start = 0, stop = True
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args11] ________________________
+
+args = ([], 0, 0)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:59: Failed
+________________________ test_raises_typeerror[args15] ________________________
+
+args = ([1], -1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = -1, stop = 1
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args16] ________________________
+
+args = ([1], -1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = -1, stop = 1
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args17] ________________________
+
+args = ([1], -1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = -1, stop = 1
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args18] ________________________
+
+args = ([1], 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = 0, stop = 2
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args19] ________________________
+
+args = ([1], 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = 0, stop = 2
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+________________________ test_raises_typeerror[args20] ________________________
+
+args = ([1], 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 0, 0)),
+        pytest.param(([True], 0, 0)),
+        pytest.param(([IntChild(1)], 0, 0)),
+        pytest.param(((), 0, 0)),
+        pytest.param((None, 0, 0)),
+        pytest.param(([], True, 0)),
+        pytest.param(([], IntChild(0), 0)),
+        pytest.param(([], 1.5, 0)),
+        pytest.param(([], 'bad', 0)),
+        pytest.param(([], None, 0)),
+        pytest.param(([], 0, True)),
+        pytest.param(([], 0, IntChild(0))),
+        pytest.param(([], 0, 1.5)),
+        pytest.param(([], 0, 'bad')),
+        pytest.param(([], 0, None)),
+        pytest.param((ListChild([1]), -1, 1)),
+        pytest.param(([1], IntChild(-1), 1)),
+        pytest.param(([1], -1, IntChild(1))),
+        pytest.param((ListChild([1]), 0, 2)),
+        pytest.param(([1], IntChild(0), 2)),
+        pytest.param(([1], 0, IntChild(2))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           bounded_slice(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], start = 0, stop = 2
+
+    def bounded_slice(values, start, stop):
+        _types((values, start, stop), ('ints', 'int', 'int'))
+        if not 0 <= start <= len(values) or not 0 <= stop <= len(values):
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:55: IndexError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args2] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args6] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args10] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args11] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args15] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args16] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args17] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args18] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args19] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args20] - IndexError: index
+13 failed, 15 passed in 0.42s

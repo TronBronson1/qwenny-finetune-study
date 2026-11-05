@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="18" time="0.293" timestamp="2026-11-04T07:13:17.922934-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001"><failure message="ValueError: invalid literal for int() with base 10: ''">args = ('[0:0]',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:0]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+&gt;       low, high = map(int, text[2:-1].split(':'))
+        ^^^^^^^^^
+E       ValueError: invalid literal for int() with base 10: ''
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001"><failure message="ValueError: invalid literal for int() with base 10: ''">args = ('[0:99]',), expected = (0, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:99]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+&gt;       low, high = map(int, text[2:-1].split(':'))
+        ^^^^^^^^^
+E       ValueError: invalid literal for int() with base 10: ''
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_values[args2-expected2]" time="0.001"><failure message="ValueError: invalid literal for int() with base 10: ''">args = ('[3:7]',), expected = (3, 7)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[3:7]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+&gt;       low, high = map(int, text[2:-1].split(':'))
+        ^^^^^^^^^
+E       ValueError: invalid literal for int() with base 10: ''
+
+subject.py:57: ValueError</failure></testcase><testcase classname="test_target" name="test_values[args3-expected3]" time="0.001"><failure message="assert (9, 99) == (99, 99)&#10;  &#10;  At index 0 diff: 9 != 99&#10;  Use -v to get more diff">args = ('[99:99]',), expected = (99, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0)),
+        pytest.param(('[0:99]',), (0, 99)),
+        pytest.param(('[3:7]',), (3, 7)),
+        pytest.param(('[99:99]',), (99, 99)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_range(*args)
+&gt;       assert actual == expected
+E       assert (9, 99) == (99, 99)
+E         
+E         At index 0 diff: 9 != 99
+E         Use -v to get more diff
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args4]" time="0.000" /></testsuite></testsuites>

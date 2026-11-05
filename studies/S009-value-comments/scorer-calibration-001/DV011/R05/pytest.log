@@ -1,0 +1,170 @@
+.............F.....FFF...                                                [100%]
+================================== FAILURES ===================================
+_____________________ test_renamed_raises_typeerror[e006] _____________________
+
+args = ([(True, 1)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([TupleChild((0, 1))],), id="e001"),
+        pytest.param(([(0, True)],), id="e002"),
+        pytest.param(([(0, 'x')],), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param(([1],), id="e005"),
+        pytest.param(([(True, 1)],), id="e006"),
+        pytest.param(([(IntChild(0), 1)],), id="e007"),
+        pytest.param(([(0, IntChild(1))],), id="e008"),
+        pytest.param(([('x', 1)],), id="e009"),
+        pytest.param(([(1.5, 2)],), id="e010"),
+        pytest.param(([(0, 1.5)],), id="e011"),
+        pytest.param((ListChild([(1, 1)]),), id="e015"),
+        pytest.param((ListChild([(2, 1)]),), id="e016"),
+        pytest.param((ListChild([(1, 2, 3)]),), id="e017"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           interval_union(*args)
+
+test_candidate.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(True, 1)]
+
+    def interval_union(intervals):
+        if any((low >= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e015] _____________________
+
+args = ([(1, 1)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([TupleChild((0, 1))],), id="e001"),
+        pytest.param(([(0, True)],), id="e002"),
+        pytest.param(([(0, 'x')],), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param(([1],), id="e005"),
+        pytest.param(([(True, 1)],), id="e006"),
+        pytest.param(([(IntChild(0), 1)],), id="e007"),
+        pytest.param(([(0, IntChild(1))],), id="e008"),
+        pytest.param(([('x', 1)],), id="e009"),
+        pytest.param(([(1.5, 2)],), id="e010"),
+        pytest.param(([(0, 1.5)],), id="e011"),
+        pytest.param((ListChild([(1, 1)]),), id="e015"),
+        pytest.param((ListChild([(2, 1)]),), id="e016"),
+        pytest.param((ListChild([(1, 2, 3)]),), id="e017"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           interval_union(*args)
+
+test_candidate.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(1, 1)]
+
+    def interval_union(intervals):
+        if any((low >= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e016] _____________________
+
+args = ([(2, 1)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([TupleChild((0, 1))],), id="e001"),
+        pytest.param(([(0, True)],), id="e002"),
+        pytest.param(([(0, 'x')],), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param(([1],), id="e005"),
+        pytest.param(([(True, 1)],), id="e006"),
+        pytest.param(([(IntChild(0), 1)],), id="e007"),
+        pytest.param(([(0, IntChild(1))],), id="e008"),
+        pytest.param(([('x', 1)],), id="e009"),
+        pytest.param(([(1.5, 2)],), id="e010"),
+        pytest.param(([(0, 1.5)],), id="e011"),
+        pytest.param((ListChild([(1, 1)]),), id="e015"),
+        pytest.param((ListChild([(2, 1)]),), id="e016"),
+        pytest.param((ListChild([(1, 2, 3)]),), id="e017"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           interval_union(*args)
+
+test_candidate.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+intervals = [(2, 1)]
+
+    def interval_union(intervals):
+        if any((low >= high for low, high in intervals)):
+>           raise ValueError('interval')
+E           ValueError: interval
+
+subject.py:54: ValueError
+_____________________ test_renamed_raises_typeerror[e017] _____________________
+
+args = ([(1, 2, 3)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),), id="e000"),
+        pytest.param(([TupleChild((0, 1))],), id="e001"),
+        pytest.param(([(0, True)],), id="e002"),
+        pytest.param(([(0, 'x')],), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param(([1],), id="e005"),
+        pytest.param(([(True, 1)],), id="e006"),
+        pytest.param(([(IntChild(0), 1)],), id="e007"),
+        pytest.param(([(0, IntChild(1))],), id="e008"),
+        pytest.param(([('x', 1)],), id="e009"),
+        pytest.param(([(1.5, 2)],), id="e010"),
+        pytest.param(([(0, 1.5)],), id="e011"),
+        pytest.param((ListChild([(1, 1)]),), id="e015"),
+        pytest.param((ListChild([(2, 1)]),), id="e016"),
+        pytest.param((ListChild([(1, 2, 3)]),), id="e017"),
+    ])
+    def test_renamed_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           interval_union(*args)
+
+test_candidate.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:30: in wrapped
+    value=original(*args,**kwargs); item['actual']={'return':snapshot(value)}; return value
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+subject.py:53: in interval_union
+    if any((low >= high for low, high in intervals)):
+       ^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+.0 = [(1, 2, 3)]
+
+>   if any((low >= high for low, high in intervals)):
+                            ^^^^^^^^^
+E   ValueError: too many values to unpack (expected 2, got 3)
+
+subject.py:53: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_raises_typeerror[e006] - ValueError: i...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e015] - ValueError: i...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e016] - ValueError: i...
+FAILED test_candidate.py::test_renamed_raises_typeerror[e017] - ValueError: t...
+4 failed, 21 passed in 0.62s

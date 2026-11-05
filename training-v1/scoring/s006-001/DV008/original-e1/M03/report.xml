@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="17" skipped="0" tests="35" time="0.977" timestamp="2026-11-04T13:18:19.402030-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_edit_distance_basic[--0]" time="0.001"><failure message="IndexError: list index out of range">left = '', right = '', expected = 0
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = '', right = ''
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+                current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+            previous = current
+&gt;       return previous[-1]
+               ^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:60: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[a--1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[-b-1]" time="0.001"><failure message="IndexError: list index out of range">left = '', right = 'b', expected = 1
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = '', right = 'b'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+                current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+            previous = current
+&gt;       return previous[-1]
+               ^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:60: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[abc--3]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_basic[-xyz-3]" time="0.001"><failure message="assert 1 == 3">left = '', right = 'xyz', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+&gt;       assert result == expected
+E       assert 1 == 3
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[kitten-sitting-3]" time="0.001"><failure message="IndexError: list index out of range">left = 'kitten', right = 'sitting', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'kitten', right = 'sitting'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[flaw-flaw-0]" time="0.001"><failure message="IndexError: list index out of range">left = 'flaw', right = 'flaw', expected = 0
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'flaw', right = 'flaw'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[kitten-satinn-4]" time="0.001"><failure message="IndexError: list index out of range">left = 'kitten', right = 'satinn', expected = 4
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'kitten', right = 'satinn'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[intention-execution-5]" time="0.001"><failure message="IndexError: list index out of range">left = 'intention', right = 'execution', expected = 5
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'intention', right = 'execution'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[python-bytecode-5]" time="0.001"><failure message="IndexError: list index out of range">left = 'python', right = 'bytecode', expected = 5
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'python', right = 'bytecode'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[test-test-0]" time="0.001"><failure message="IndexError: list index out of range">left = 'test', right = 'test', expected = 0
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'test', right = 'test'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[test-tezt-1]" time="0.001"><failure message="IndexError: list index out of range">left = 'test', right = 'tezt', expected = 1
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'test', right = 'tezt'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[test-testt-1]" time="0.001"><failure message="IndexError: list index out of range">left = 'test', right = 'testt', expected = 1
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'test', right = 'testt'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[test-ttest-2]" time="0.001"><failure message="IndexError: list index out of range">left = 'test', right = 'ttest', expected = 2
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'test', right = 'ttest'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[ABC-abc-4]" time="0.001"><failure message="IndexError: list index out of range">left = 'ABC', right = 'abc', expected = 4
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'ABC', right = 'abc'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[-123-3]" time="0.001"><failure message="assert 1 == 3">left = '', right = '123', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+        result = edit_distance(left, right)
+&gt;       assert result == expected
+E       assert 1 == 3
+
+test_candidate.py:25: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_basic[123-321-3]" time="0.001"><failure message="IndexError: list index out of range">left = '123', right = '321', expected = 3
+
+    @pytest.mark.parametrize("left, right, expected", [
+        ("", "", 0),
+        ("a", "", 1),
+        ("", "b", 1),
+        ("abc", "", 3),
+        ("", "xyz", 3),
+        ("kitten", "sitting", 3),
+        ("flaw", "flaw", 0),
+        ("kitten", "satinn", 4),
+        ("intention", "execution", 5),
+        ("python", "bytecode", 5),
+        ("test", "test", 0),
+        ("test", "tezt", 1),
+        ("test", "testt", 1),
+        ("test", "ttest", 2),
+        ("ABC", "abc", 4),
+        ("", "123", 3),
+        ("123", "321", 3),
+    ])
+    def test_edit_distance_basic(left, right, expected):
+&gt;       result = edit_distance(left, right)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = '123', right = '321'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1-2_0]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1-2_1]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[1.5-2.5]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[True-False]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left4-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left5-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left6-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[None-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[(1+2j)-(2+2j)]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[hello-world]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[jello-None]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[None-None]" time="0.002" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left12-text]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left13-text]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left14-dict_str]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_rejects_invalid_types[left15-b]" time="0.001" /><testcase classname="test_candidate" name="test_edit_distance_does_not_mutate_inputs" time="0.001"><failure message="IndexError: list index out of range">def test_edit_distance_does_not_mutate_inputs():
+        left = "cat"
+        right = "dog"
+        left_copy = left
+        right_copy = right
+    
+&gt;       edit_distance(left, right)
+
+test_candidate.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'cat', right = 'dog'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase><testcase classname="test_candidate" name="test_edit_distance_returns_exact_types" time="0.001"><failure message="IndexError: list index out of range">def test_edit_distance_returns_exact_types():
+&gt;       result = edit_distance("a", "a")
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'a', right = 'a'
+
+    def edit_distance(left, right):
+        _types((left, right), ('str', 'str'))
+        previous = list(range(len(right) - 1))
+        for i, a in enumerate(left, 1):
+            current = [i]
+            for j, b in enumerate(right, 1):
+&gt;               current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (a != b)))
+                                                    ^^^^^^^^^^^
+E               IndexError: list index out of range
+
+subject.py:58: IndexError</failure></testcase></testsuite></testsuites>

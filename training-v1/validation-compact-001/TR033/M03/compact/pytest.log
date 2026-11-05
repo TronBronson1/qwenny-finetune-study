@@ -1,0 +1,49 @@
+.FF.....................                                                 [100%]
+================================== FAILURES ===================================
+________________________ test_values[args1-expected1] _________________________
+
+args = ([1, 2, 3], 0), expected = [2, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1], 0), []),
+        pytest.param(([1, 2, 3], 0), [2, 3]),
+        pytest.param(([1, 2, 3], 1), [1, 3]),
+        pytest.param(([1, 2, 3], 2), [1, 2]),
+        pytest.param(([2, 2], 1), [2]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=remove_at(*args)
+>       assert actual == expected
+E       assert [3] == [2, 3]
+E         
+E         At index 0 diff: 3 != 2
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = ([1, 2, 3], 1), expected = [1, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1], 0), []),
+        pytest.param(([1, 2, 3], 0), [2, 3]),
+        pytest.param(([1, 2, 3], 1), [1, 3]),
+        pytest.param(([1, 2, 3], 2), [1, 2]),
+        pytest.param(([2, 2], 1), [2]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=remove_at(*args)
+>       assert actual == expected
+E       assert [1] == [1, 3]
+E         
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-expected1] - assert [3] == [2, 3]
+FAILED test_target.py::test_values[args2-expected2] - assert [1] == [1, 3]
+2 failed, 22 passed in 0.31s

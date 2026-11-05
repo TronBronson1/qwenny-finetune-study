@@ -1,0 +1,149 @@
+FFFFF..........                                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('a=b',), expected = ('a', 'b')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', 'b'), expected = ('a', 'b')
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type(('a', 'b'))
+E        +  and   <class 'tuple'> = type(('a', 'b'))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('a=',), expected = ('a', '')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', ''), expected = ('a', '')
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type(('a', ''))
+E        +  and   <class 'tuple'> = type(('a', ''))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('a=b=c',), expected = ('a', 'b=c')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('a', 'b=c'), expected = ('a', 'b=c')
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type(('a', 'b=c'))
+E        +  and   <class 'tuple'> = type(('a', 'b=c'))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (' a = b ',), expected = (' a ', ' b ')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = (' a ', ' b '), expected = (' a ', ' b ')
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type((' a ', ' b '))
+E        +  and   <class 'tuple'> = type((' a ', ' b '))
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('é=字',), expected = ('é', '字')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('é=字',), ('é', '字'), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_key_value(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = ('é', '字'), expected = ('é', '字')
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnTuple'> is <class 'tuple'>
+E        +  where <class 'subject._ReturnTuple'> = type(('é', '字'))
+E        +  and   <class 'tuple'> = type(('é', '字'))
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+5 failed, 10 passed in 0.61s

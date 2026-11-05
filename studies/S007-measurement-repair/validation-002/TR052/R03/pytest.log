@@ -1,0 +1,32 @@
+...........F.                                                            [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e006] _________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(0),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(-1),), id="e006"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           seconds_to_hms(*args)
+
+test_target.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = -1
+
+    def seconds_to_hms(seconds):
+        if seconds < 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e006] - ValueError: domain
+1 failed, 12 passed in 0.53s

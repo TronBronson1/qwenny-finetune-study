@@ -1,0 +1,72 @@
+.FF.F....                                                                [100%]
+================================== FAILURES ===================================
+__________________________ test_renamed_values[v001] __________________________
+
+args = ('abcXYZ',), expected = 'ABCXYZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'aBCXYZ' == 'ABCXYZ'
+E         
+E         - ABCXYZ
+E         ? ^
+E         + aBCXYZ
+E         ? ^
+
+test_candidate.py:21: AssertionError
+__________________________ test_renamed_values[v002] __________________________
+
+args = ('z-a 9',), expected = 'Z-A 9'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Z-a 9' == 'Z-A 9'
+E         
+E         - Z-A 9
+E         ?   ^
+E         + Z-a 9
+E         ?   ^
+
+test_candidate.py:21: AssertionError
+__________________________ test_renamed_values[v004] __________________________
+
+args = ('a\nb',), expected = 'A\nB'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_renamed_values(args,expected):
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\nB' == 'A\nB'
+E         
+E         - A
+E         + a
+E           B
+
+test_candidate.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_values[v001] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v002] - AssertionError: assert ...
+FAILED test_candidate.py::test_renamed_values[v004] - AssertionError: assert ...
+3 failed, 6 passed in 0.54s

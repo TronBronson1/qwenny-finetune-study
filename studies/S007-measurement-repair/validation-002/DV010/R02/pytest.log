@@ -1,0 +1,186 @@
+FFFFFFF.....................                                             [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (['0', 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['0', 'mutation-sentinel'],) == (['0'],)
+E         
+E         At index 0 diff: ['0', 'mutation-sentinel'] != ['0']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (['-0', 'mutation-sentinel'],), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['-0', 'mutation-sentinel'],) == (['-0'],)
+E         
+E         At index 0 diff: ['-0', 'mutation-sentinel'] != ['-0']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (['2', '3', '+', 'mutation-sentinel'],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['2', '3', '...n-sentinel'],) == (['2', '3', '+'],)
+E         
+E         At index 0 diff: ['2', '3', '+', 'mutation-sentinel'] != ['2', '3', '+']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (['2', '3', '-', 'mutation-sentinel'],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['2', '3', '...n-sentinel'],) == (['2', '3', '-'],)
+E         
+E         At index 0 diff: ['2', '3', '-', 'mutation-sentinel'] != ['2', '3', '-']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (['2', '3', '4', '*', '+', 'mutation-sentinel'],), expected = 14
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['2', '3', '...n-sentinel'],) == (['2', '3', '4', '*', '+'],)
+E         
+E         At index 0 diff: ['2', '3', '4', '*', '+', 'mutation-sentinel'] != ['2', '3', '4', '*', '+']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (['-2', '3', '*', 'mutation-sentinel'],), expected = -6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['-2', '3', ...n-sentinel'],) == (['-2', '3', '*'],)
+E         
+E         At index 0 diff: ['-2', '3', '*', 'mutation-sentinel'] != ['-2', '3', '*']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (['1', '1', '1', '1', '1', '1', ...],), expected = 16
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((['0'],), 0, id="v000"),
+        pytest.param((['-0'],), 0, id="v001"),
+        pytest.param((['2', '3', '+'],), 5, id="v002"),
+        pytest.param((['2', '3', '-'],), -1, id="v003"),
+        pytest.param((['2', '3', '4', '*', '+'],), 14, id="v004"),
+        pytest.param((['-2', '3', '*'],), -6, id="v005"),
+        pytest.param((['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+'],), 16, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rpn_evaluate(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+>       assert args == before
+E       AssertionError: assert (['1', '1', '...', '1', ...],) == (['1', '1', '...', '1', ...],)
+E         
+E         At index 0 diff: ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', 'mutation-sentinel'] != ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+', '+']
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert (['0', 'mut...
+FAILED test_target.py::test_values[v001] - AssertionError: assert (['-0', 'mu...
+FAILED test_target.py::test_values[v002] - AssertionError: assert (['2', '3',...
+FAILED test_target.py::test_values[v003] - AssertionError: assert (['2', '3',...
+FAILED test_target.py::test_values[v004] - AssertionError: assert (['2', '3',...
+FAILED test_target.py::test_values[v005] - AssertionError: assert (['-2', '3'...
+FAILED test_target.py::test_values[v006] - AssertionError: assert (['1', '1',...
+7 failed, 21 passed in 0.61s

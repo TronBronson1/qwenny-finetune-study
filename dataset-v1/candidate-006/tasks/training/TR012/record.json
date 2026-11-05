@@ -1,0 +1,34 @@
+{
+  "id": "TR012",
+  "split": "training",
+  "family": "modular-index",
+  "function": "weekday_offset",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "day",
+    "delta"
+  ],
+  "schemas": [
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "2f4fe1de8cc0ff04d7d00b44314d1d4ab0d5ebaf8f008c589b926f873199e494",
+  "target_sha256": "ffc94c0bebd445205b1d07a1d1754999a026e4ff94364b12bdcfec5da51ba950",
+  "spec_sha256": "f0e53e854351641c3ff9728516ddf209b2f8e6d4b7664b536bd031383b5233c8",
+  "answer_sha256": "2a715cbe1e64ba600f72da20684f527d411680b444871958b7b6006cfa82e575",
+  "valid_test_cases": 7,
+  "exception_test_cases": 16,
+  "type_before_value_witnesses": 4,
+  "oracle_checks": 294,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

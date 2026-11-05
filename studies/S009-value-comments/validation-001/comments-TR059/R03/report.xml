@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="30" time="0.470" timestamp="2026-11-04T19:01:25.698488-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.002"><failure message="AssertionError: assert (['mutation-sentinel'], []) == ([], [])&#10;  &#10;  At index 0 diff: ['mutation-sentinel'] != []&#10;  Use -v to get more diff">args = (['mutation-sentinel'], []), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert (['mutation-sentinel'], []) == ([], [])
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert ([1, 'mutation-sentinel'], []) == ([1], [])&#10;  &#10;  At index 0 diff: [1, 'mutation-sentinel'] != [1]&#10;  Use -v to get more diff">args = ([1, 'mutation-sentinel'], []), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([1, 'mutation-sentinel'], []) == ([1], [])
+E         
+E         At index 0 diff: [1, 'mutation-sentinel'] != [1]
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert (['mutation-sentinel'], [1]) == ([], [1])&#10;  &#10;  At index 0 diff: ['mutation-sentinel'] != []&#10;  Use -v to get more diff">args = (['mutation-sentinel'], [1]), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert (['mutation-sentinel'], [1]) == ([], [1])
+E         
+E         At index 0 diff: ['mutation-sentinel'] != []
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert ([1, 3, 'muta...nel'], [2, 4]) == ([1, 3], [2, 4])&#10;  &#10;  At index 0 diff: [1, 3, 'mutation-sentinel'] != [1, 3]&#10;  Use -v to get more diff">args = ([1, 3, 'mutation-sentinel'], [2, 4]), expected = [1, 2, 3, 4]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([1, 3, 'muta...nel'], [2, 4]) == ([1, 3], [2, 4])
+E         
+E         At index 0 diff: [1, 3, 'mutation-sentinel'] != [1, 3]
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert ([1, 1, 3, 'm...nel'], [1, 2]) == ([1, 1, 3], [1, 2])&#10;  &#10;  At index 0 diff: [1, 1, 3, 'mutation-sentinel'] != [1, 1, 3]&#10;  Use -v to get more diff">args = ([1, 1, 3, 'mutation-sentinel'], [1, 2]), expected = [1, 1, 1, 2, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([1, 1, 3, 'm...nel'], [1, 2]) == ([1, 1, 3], [1, 2])
+E         
+E         At index 0 diff: [1, 1, 3, 'mutation-sentinel'] != [1, 1, 3]
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert ([-3, 0, 'mut...el'], [-2, 0]) == ([-3, 0], [-2, 0])&#10;  &#10;  At index 0 diff: [-3, 0, 'mutation-sentinel'] != [-3, 0]&#10;  Use -v to get more diff">args = ([-3, 0, 'mutation-sentinel'], [-2, 0]), expected = [-3, -2, 0, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], []), [], id="v000"),
+        pytest.param(([1], []), [1], id="v001"),
+        pytest.param(([], [1]), [1], id="v002"),
+        pytest.param(([1, 3], [2, 4]), [1, 2, 3, 4], id="v003"),
+        pytest.param(([1, 1, 3], [1, 2]), [1, 1, 1, 2, 3], id="v004"),
+        pytest.param(([-3, 0], [-2, 0]), [-3, -2, 0, 0], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=merge_sorted(*args)
+        assert actual == expected
+        assert_exact_shape(actual,expected)
+&gt;       assert args == before
+E       AssertionError: assert ([-3, 0, 'mut...el'], [-2, 0]) == ([-3, 0], [-2, 0])
+E         
+E         At index 0 diff: [-3, 0, 'mutation-sentinel'] != [-3, 0]
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e018]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e019]" time="0.001" /></testsuite></testsuites>

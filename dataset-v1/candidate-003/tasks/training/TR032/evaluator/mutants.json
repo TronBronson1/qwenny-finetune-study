@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "c2fd185af92acf124d68e5624c70e57896749f556a95f88237cc832452b50242",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild([]),)",
+      "expected_exception": "TypeError",
+      "actual_python": "([], [], [])"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "comparison-47-LtE",
+    "source_sha256": "7bc8c1df551e3d4bd6d4a95325b6086a46f939d7888a9805fcc71eeeaa407593",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([0],)",
+      "expected_python": "([], [0], [])",
+      "actual_python": "([0], [0], [])"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "comparison-47-Gt",
+    "source_sha256": "b843366639705946237e67f3591b6f76da484318ab3a563626d01c5cffb56d44",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([-1, 2, 0, -3, 2, 0],)",
+      "expected_python": "([-1, -3], [0, 0], [2, 2])",
+      "actual_python": "([2, 2], [0, 0], [2, 2])"
+    }
+  }
+]

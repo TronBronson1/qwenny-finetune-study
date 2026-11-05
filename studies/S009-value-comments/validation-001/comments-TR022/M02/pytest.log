@@ -1,0 +1,101 @@
+FF....FF....                                                             [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = '""'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+>       assert actual == expected
+E       assert '' == '""'
+E         
+E         - ""
+
+test_target.py:24: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('abc',), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+>       assert actual == expected
+E       assert '"abc"' == 'abc'
+E         
+E         - abc
+E         + "abc"
+E         ? +   +
+
+test_target.py:24: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (' a ',), expected = ' a '
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+>       assert actual == expected
+E       assert '" a "' == ' a '
+E         
+E         -  a 
+E         + " a "
+E         ? +   +
+
+test_target.py:24: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('é',), expected = 'é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+>       assert actual == expected
+E       assert '"é"' == 'é'
+E         
+E         - é
+E         + "é"
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert '' == '""'
+FAILED test_target.py::test_values[v001] - assert '"abc"' == 'abc'
+FAILED test_target.py::test_values[v006] - assert '" a "' == ' a '
+FAILED test_target.py::test_values[v007] - assert '"é"' == 'é'
+4 failed, 8 passed in 0.56s

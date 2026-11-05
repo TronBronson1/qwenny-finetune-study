@@ -1,0 +1,505 @@
+{
+  "status": "completed",
+  "scope": "Two visible development families, one seed; direct-answer investigation, not final evaluation.",
+  "new_answers": 8,
+  "reused_answers": 4,
+  "new_strict_accepted": 0,
+  "new_reference_valid": 0,
+  "new_truncations": 3,
+  "cells": [
+    {
+      "task": "DV001",
+      "model": "base",
+      "decoder": "greedy-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/gap-001",
+      "variant": "base-greedy-0"
+    },
+    {
+      "task": "DV001",
+      "model": "epoch-5",
+      "decoder": "greedy-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": true,
+      "source": "scoring/gap-001",
+      "variant": "epoch-5-greedy-0"
+    },
+    {
+      "task": "DV001",
+      "model": "base",
+      "decoder": "sample-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/gap-001",
+      "variant": "base-sample-0"
+    },
+    {
+      "task": "DV001",
+      "model": "epoch-5",
+      "decoder": "sample-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/gap-001",
+      "variant": "epoch-5-sample-0"
+    },
+    {
+      "task": "DV002",
+      "model": "epoch-5",
+      "decoder": "greedy-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": true,
+      "source": "scoring/gap-001",
+      "variant": "epoch-5-greedy-0"
+    },
+    {
+      "task": "DV002",
+      "model": "base",
+      "decoder": "sample-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/gap-001",
+      "variant": "base-sample-0"
+    },
+    {
+      "task": "DV002",
+      "model": "epoch-5",
+      "decoder": "sample-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/gap-001",
+      "variant": "epoch-5-sample-0"
+    },
+    {
+      "task": "DV002",
+      "model": "base",
+      "decoder": "greedy-0",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": true,
+      "source": "scoring/gap-001",
+      "variant": "base-greedy-0"
+    },
+    {
+      "task": "DV001",
+      "model": "base",
+      "decoder": "sample-1.5",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/qwenny-001-direct-001",
+      "variant": "base-A"
+    },
+    {
+      "task": "DV001",
+      "model": "epoch-5",
+      "decoder": "sample-1.5",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/qwenny-001-direct-001",
+      "variant": "epoch-5-C"
+    },
+    {
+      "task": "DV002",
+      "model": "epoch-5",
+      "decoder": "sample-1.5",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/qwenny-001-direct-001",
+      "variant": "epoch-5-C"
+    },
+    {
+      "task": "DV002",
+      "model": "base",
+      "decoder": "sample-1.5",
+      "strict_accepted": false,
+      "reference_valid": false,
+      "truncated": false,
+      "source": "scoring/qwenny-001-direct-001",
+      "variant": "base-A"
+    }
+  ],
+  "likelihood": [
+    {
+      "id": "DV001-base",
+      "overall": {
+        "tokens": 782,
+        "raw_nll": 0.927790267652822,
+        "presence15_nll": 0.9489861906809308,
+        "raw_top1_accuracy": 0.8005115089514067,
+        "presence15_top1_accuracy": 0.7941176470588235,
+        "sample0_reference_tokens_excluded": 67,
+        "sample15_reference_tokens_excluded": 62,
+        "expected_different_draws_from_gold_raw_distribution": 184.62468096184455
+      },
+      "by_category": {
+        "exact_type_assertion": {
+          "tokens": 26,
+          "raw_nll": 0.953320101018807,
+          "presence15_nll": 0.9499623384975936,
+          "raw_top1_accuracy": 0.7692307692307693,
+          "presence15_top1_accuracy": 0.8076923076923077,
+          "sample0_reference_tokens_excluded": 3,
+          "sample15_reference_tokens_excluded": 3,
+          "expected_different_draws_from_gold_raw_distribution": 8.368392247124575
+        },
+        "expected_exception_class": {
+          "tokens": 1,
+          "raw_nll": 0.007713532540947199,
+          "presence15_nll": 0.0034956559538841248,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.007683873176574707
+        },
+        "expected_value_literals": {
+          "tokens": 60,
+          "raw_nll": 0.12283191633873305,
+          "presence15_nll": 0.11550480072833125,
+          "raw_top1_accuracy": 0.9333333333333333,
+          "presence15_top1_accuracy": 0.9333333333333333,
+          "sample0_reference_tokens_excluded": 1,
+          "sample15_reference_tokens_excluded": 1,
+          "expected_different_draws_from_gold_raw_distribution": 3.1083593647927046
+        },
+        "literal_inputs": {
+          "tokens": 135,
+          "raw_nll": 0.8210420197374199,
+          "presence15_nll": 0.7947795335127416,
+          "raw_top1_accuracy": 0.7703703703703704,
+          "presence15_top1_accuracy": 0.7703703703703704,
+          "sample0_reference_tokens_excluded": 10,
+          "sample15_reference_tokens_excluded": 7,
+          "expected_different_draws_from_gold_raw_distribution": 35.836970362608554
+        },
+        "mapping_or_prose": {
+          "tokens": 73,
+          "raw_nll": 3.727337078106022,
+          "presence15_nll": 3.814016781010177,
+          "raw_top1_accuracy": 0.410958904109589,
+          "presence15_top1_accuracy": 0.3835616438356164,
+          "sample0_reference_tokens_excluded": 27,
+          "sample15_reference_tokens_excluded": 27,
+          "expected_different_draws_from_gold_raw_distribution": 52.0187848911587
+        },
+        "other_code_scaffolding": {
+          "tokens": 486,
+          "raw_nll": 0.6384949597377103,
+          "presence15_nll": 0.6680893331096194,
+          "raw_top1_accuracy": 0.8518518518518519,
+          "presence15_top1_accuracy": 0.8436213991769548,
+          "sample0_reference_tokens_excluded": 26,
+          "sample15_reference_tokens_excluded": 24,
+          "expected_different_draws_from_gold_raw_distribution": 85.16856967931278
+        },
+        "turn_end": {
+          "tokens": 1,
+          "raw_nll": 0.12320836633443832,
+          "presence15_nll": 0.06451868265867233,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.1159205436706543
+        }
+      },
+      "interpretation": "Categories are approximate AST/source spans, not semantic correctness labels. A different token or literal may be a valid alternative. Target-excluded counts concern this one reference continuation, not all valid answers.",
+      "task": "DV001",
+      "variant": "base"
+    },
+    {
+      "id": "DV001-epoch-5",
+      "overall": {
+        "tokens": 782,
+        "raw_nll": 0.31519868364375625,
+        "presence15_nll": 0.30471779331737564,
+        "raw_top1_accuracy": 0.9271099744245525,
+        "presence15_top1_accuracy": 0.9245524296675192,
+        "sample0_reference_tokens_excluded": 20,
+        "sample15_reference_tokens_excluded": 16,
+        "expected_different_draws_from_gold_raw_distribution": 71.3161144700191
+      },
+      "by_category": {
+        "exact_type_assertion": {
+          "tokens": 26,
+          "raw_nll": 0.22452341864436676,
+          "presence15_nll": 0.23933922232579483,
+          "raw_top1_accuracy": 0.9615384615384616,
+          "presence15_top1_accuracy": 0.9615384615384616,
+          "sample0_reference_tokens_excluded": 1,
+          "sample15_reference_tokens_excluded": 1,
+          "expected_different_draws_from_gold_raw_distribution": 1.471686881966889
+        },
+        "expected_exception_class": {
+          "tokens": 1,
+          "raw_nll": 0.004119245335459709,
+          "presence15_nll": 0.0023586330935359,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.004110753536224365
+        },
+        "expected_value_literals": {
+          "tokens": 60,
+          "raw_nll": 0.2022592774805427,
+          "presence15_nll": 0.19162391045664626,
+          "raw_top1_accuracy": 0.95,
+          "presence15_top1_accuracy": 0.95,
+          "sample0_reference_tokens_excluded": 1,
+          "sample15_reference_tokens_excluded": 1,
+          "expected_different_draws_from_gold_raw_distribution": 3.201388981178752
+        },
+        "literal_inputs": {
+          "tokens": 135,
+          "raw_nll": 0.8239143309036013,
+          "presence15_nll": 0.7708030604666823,
+          "raw_top1_accuracy": 0.7851851851851852,
+          "presence15_top1_accuracy": 0.7851851851851852,
+          "sample0_reference_tokens_excluded": 9,
+          "sample15_reference_tokens_excluded": 7,
+          "expected_different_draws_from_gold_raw_distribution": 33.26367132272571
+        },
+        "mapping_or_prose": {
+          "tokens": 73,
+          "raw_nll": 0.08856378404686426,
+          "presence15_nll": 0.09356382263781785,
+          "raw_top1_accuracy": 0.9863013698630136,
+          "presence15_top1_accuracy": 0.9863013698630136,
+          "sample0_reference_tokens_excluded": 1,
+          "sample15_reference_tokens_excluded": 1,
+          "expected_different_draws_from_gold_raw_distribution": 2.746115291491151
+        },
+        "other_code_scaffolding": {
+          "tokens": 486,
+          "raw_nll": 0.22801034579480065,
+          "presence15_nll": 0.22567407376401835,
+          "raw_top1_accuracy": 0.9526748971193416,
+          "presence15_top1_accuracy": 0.948559670781893,
+          "sample0_reference_tokens_excluded": 8,
+          "sample15_reference_tokens_excluded": 6,
+          "expected_different_draws_from_gold_raw_distribution": 30.627675441696056
+        },
+        "turn_end": {
+          "tokens": 1,
+          "raw_nll": 0.0014668668154627085,
+          "presence15_nll": 0.0005292683490552008,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.0014657974243164062
+        }
+      },
+      "interpretation": "Categories are approximate AST/source spans, not semantic correctness labels. A different token or literal may be a valid alternative. Target-excluded counts concern this one reference continuation, not all valid answers.",
+      "task": "DV001",
+      "variant": "epoch-5"
+    },
+    {
+      "id": "DV002-base",
+      "overall": {
+        "tokens": 845,
+        "raw_nll": 0.7862151119728357,
+        "presence15_nll": 0.8161258414667171,
+        "raw_top1_accuracy": 0.8520710059171598,
+        "presence15_top1_accuracy": 0.8331360946745562,
+        "sample0_reference_tokens_excluded": 58,
+        "sample15_reference_tokens_excluded": 57,
+        "expected_different_draws_from_gold_raw_distribution": 161.6943574713706
+      },
+      "by_category": {
+        "exact_type_assertion": {
+          "tokens": 20,
+          "raw_nll": 0.817959344965493,
+          "presence15_nll": 0.7985133723686886,
+          "raw_top1_accuracy": 0.7,
+          "presence15_top1_accuracy": 0.75,
+          "sample0_reference_tokens_excluded": 1,
+          "sample15_reference_tokens_excluded": 1,
+          "expected_different_draws_from_gold_raw_distribution": 7.052925723604858
+        },
+        "expected_exception_class": {
+          "tokens": 2,
+          "raw_nll": 0.014858107169857249,
+          "presence15_nll": 0.007694485291722231,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.02929610013961792
+        },
+        "expected_value_literals": {
+          "tokens": 11,
+          "raw_nll": 0.007805558980552715,
+          "presence15_nll": 0.005845756586495554,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.08369606733322144
+        },
+        "literal_inputs": {
+          "tokens": 223,
+          "raw_nll": 0.5419697353525269,
+          "presence15_nll": 0.5656212377637188,
+          "raw_top1_accuracy": 0.9013452914798207,
+          "presence15_top1_accuracy": 0.8654708520179372,
+          "sample0_reference_tokens_excluded": 8,
+          "sample15_reference_tokens_excluded": 6,
+          "expected_different_draws_from_gold_raw_distribution": 35.505120285744965
+        },
+        "mapping_or_prose": {
+          "tokens": 73,
+          "raw_nll": 3.7888550385712185,
+          "presence15_nll": 3.8637116042797834,
+          "raw_top1_accuracy": 0.4246575342465753,
+          "presence15_top1_accuracy": 0.410958904109589,
+          "sample0_reference_tokens_excluded": 27,
+          "sample15_reference_tokens_excluded": 27,
+          "expected_different_draws_from_gold_raw_distribution": 50.425487135325966
+        },
+        "other_code_scaffolding": {
+          "tokens": 515,
+          "raw_nll": 0.48611550608097126,
+          "presence15_nll": 0.5152298012152517,
+          "raw_top1_accuracy": 0.8932038834951457,
+          "presence15_top1_accuracy": 0.8776699029126214,
+          "sample0_reference_tokens_excluded": 22,
+          "sample15_reference_tokens_excluded": 23,
+          "expected_different_draws_from_gold_raw_distribution": 68.51924146813235
+        },
+        "turn_end": {
+          "tokens": 1,
+          "raw_nll": 0.08185092359781265,
+          "presence15_nll": 0.04854553937911987,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.07859069108963013
+        }
+      },
+      "interpretation": "Categories are approximate AST/source spans, not semantic correctness labels. A different token or literal may be a valid alternative. Target-excluded counts concern this one reference continuation, not all valid answers.",
+      "task": "DV002",
+      "variant": "base"
+    },
+    {
+      "id": "DV002-epoch-5",
+      "overall": {
+        "tokens": 845,
+        "raw_nll": 0.09957393788572624,
+        "presence15_nll": 0.10571615788634335,
+        "raw_top1_accuracy": 0.9798816568047337,
+        "presence15_top1_accuracy": 0.9751479289940829,
+        "sample0_reference_tokens_excluded": 7,
+        "sample15_reference_tokens_excluded": 6,
+        "expected_different_draws_from_gold_raw_distribution": 31.298528595998505
+      },
+      "by_category": {
+        "exact_type_assertion": {
+          "tokens": 20,
+          "raw_nll": 0.002437765830131866,
+          "presence15_nll": 0.005265318865894741,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.04860043525695801
+        },
+        "expected_exception_class": {
+          "tokens": 2,
+          "raw_nll": 0.005144908791407943,
+          "presence15_nll": 0.0038660885766148567,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.010263264179229736
+        },
+        "expected_value_literals": {
+          "tokens": 11,
+          "raw_nll": 0.003062857847205371,
+          "presence15_nll": 0.0036638946771745395,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 0.03341633081436157
+        },
+        "literal_inputs": {
+          "tokens": 223,
+          "raw_nll": 0.2969305630434024,
+          "presence15_nll": 0.3170963304793569,
+          "raw_top1_accuracy": 0.9417040358744395,
+          "presence15_top1_accuracy": 0.9237668161434978,
+          "sample0_reference_tokens_excluded": 5,
+          "sample15_reference_tokens_excluded": 4,
+          "expected_different_draws_from_gold_raw_distribution": 23.035982353318104
+        },
+        "mapping_or_prose": {
+          "tokens": 73,
+          "raw_nll": 0.021765009246926745,
+          "presence15_nll": 0.01981424902856644,
+          "raw_top1_accuracy": 0.9863013698630136,
+          "presence15_top1_accuracy": 0.9863013698630136,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 1.2547237575054169
+        },
+        "other_code_scaffolding": {
+          "tokens": 515,
+          "raw_nll": 0.03153953938185274,
+          "presence15_nll": 0.03304442951728437,
+          "raw_top1_accuracy": 0.9941747572815534,
+          "presence15_top1_accuracy": 0.9941747572815534,
+          "sample0_reference_tokens_excluded": 2,
+          "sample15_reference_tokens_excluded": 2,
+          "expected_different_draws_from_gold_raw_distribution": 6.915525527205318
+        },
+        "turn_end": {
+          "tokens": 1,
+          "raw_nll": 1.6927575416048057e-05,
+          "presence15_nll": 8.940656698541716e-06,
+          "raw_top1_accuracy": 1.0,
+          "presence15_top1_accuracy": 1.0,
+          "sample0_reference_tokens_excluded": 0,
+          "sample15_reference_tokens_excluded": 0,
+          "expected_different_draws_from_gold_raw_distribution": 1.6927719116210938e-05
+        }
+      },
+      "interpretation": "Categories are approximate AST/source spans, not semantic correctness labels. A different token or literal may be a valid alternative. Target-excluded counts concern this one reference continuation, not all valid answers.",
+      "task": "DV002",
+      "variant": "epoch-5"
+    }
+  ],
+  "loss_decomposition": [
+    {
+      "task": "DV001",
+      "total_nll_reduction": 479.0466186950895,
+      "prose_and_other_code_share": 0.9709409370419182
+    },
+    {
+      "task": "DV002",
+      "total_nll_reduction": 580.2117921036074,
+      "prose_and_other_code_share": 0.8774454465065568
+    }
+  ],
+  "training_performed": false,
+  "final_test_used": false,
+  "limitations": [
+    "No thinking-enabled control",
+    "Not a full decoder factorial",
+    "No precision or long-cache causal comparison",
+    "No general aptitude conclusion"
+  ]
+}

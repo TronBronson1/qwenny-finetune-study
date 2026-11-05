@@ -1,0 +1,28 @@
+..................FF........                                             [100%]
+================================== FAILURES ===================================
+___________________ test_values[\uff10\uff11:\uff10\uff12] ____________________
+
+text = '０１:０２'
+
+    @pytest.mark.parametrize("text", ["24:00","23:60","99:00","00:99","1:02","01:2","01-02","01:020",""," 01:02","01:02 ","+1:02","01:-2","０１:０２","٠١:٠٢","aa:bb"])
+    def test_values(text):
+>       with pytest.raises(ValueError): minute_of_day(text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_checked.py:10: Failed
+___________________ test_values[\u0660\u0661:\u0660\u0662] ____________________
+
+text = '٠١:٠٢'
+
+    @pytest.mark.parametrize("text", ["24:00","23:60","99:00","00:99","1:02","01:2","01-02","01:020",""," 01:02","01:02 ","+1:02","01:-2","０１:０２","٠١:٠٢","aa:bb"])
+    def test_values(text):
+>       with pytest.raises(ValueError): minute_of_day(text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_checked.py:10: Failed
+=========================== short test summary info ===========================
+FAILED test_checked.py::test_values[\uff10\uff11:\uff10\uff12] - Failed: DID ...
+FAILED test_checked.py::test_values[\u0660\u0661:\u0660\u0662] - Failed: DID ...
+2 failed, 26 passed in 0.23s

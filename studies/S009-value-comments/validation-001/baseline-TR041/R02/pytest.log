@@ -1,0 +1,169 @@
+FFFFF......................                                              [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('0,0',), expected = (0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('-0,1',), expected = (0, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('-2,3',), expected = (-2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -2, expected = -2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-2)
+E        +  and   <class 'int'> = type(-2)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('999999999999,-1',), expected = (999999999999, -1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 999999999999, expected = 999999999999
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(999999999999)
+E        +  and   <class 'int'> = type(999999999999)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('-999999999999,999999999999',), expected = (-999999999999, 999999999999)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('0,0',), (0, 0), id="v000"),
+        pytest.param(('-0,1',), (0, 1), id="v001"),
+        pytest.param(('-2,3',), (-2, 3), id="v002"),
+        pytest.param(('999999999999,-1',), (999999999999, -1), id="v003"),
+        pytest.param(('-999999999999,999999999999',), (-999999999999, 999999999999), id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=parse_int_pair(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_target.py:10: in assert_exact_shape
+    for a,b in zip(actual,expected): assert_exact_shape(a,b)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -999999999999, expected = -999999999999
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-999999999999)
+E        +  and   <class 'int'> = type(-999999999999)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+5 failed, 22 passed in 0.61s

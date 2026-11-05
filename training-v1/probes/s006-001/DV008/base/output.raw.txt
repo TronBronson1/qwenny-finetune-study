@@ -1,0 +1,82 @@
+```python
+from subject import edit_distance
+import pytest
+
+# --- Type validation tests ---
+
+def test_edit_distance_both_valid_strings():
+    assert edit_distance("kitten", "sitting") == 3
+
+def test_edit_distance_empty_vs_single():
+    assert edit_distance("", "a") == 1
+
+def test_edit_distance_equal_strings():
+    assert edit_distance("abc", "abc") == 0
+
+def test_edit_distance_one_empty():
+    assert edit_distance("test", "") == 4
+
+# --- ValueError / Invalid Type tests ---
+
+def test_edit_distance_left_not_string():
+    with pytest.raises(TypeError):
+        edit_distance(123, "right")
+
+def test_edit_distance_left_subclass_string():
+    class MyStr(str):
+        pass
+    
+    with pytest.raises(TypeError):
+        edit_distance(MyStr("left"), "right")
+
+def test_edit_distance_right_not_string():
+    with pytest.raises(TypeError):
+        edit_distance("left", 456)
+
+def test_edit_distance_right_subclass_string():
+    class MyStr(str):
+        pass
+    
+    with pytest.raises(TypeError):
+        edit_distance("left", MyStr("right"))
+
+# --- Unicode and Case-sensitivity tests ---
+
+def test_edit_distance_unicode_chars():
+    # Test 'cherry' vs 'cherry' (same) -> 0
+    assert edit_distance("cherry", "cherry") == 0
+    # Test 'cherry' vs 'cherry' (different case) -> 1 ('y' vs 'Y')
+    assert edit_distance("Cherry", "cherry") == 1
+
+def test_edit_distance_mixed_unicode():
+    assert edit_distance("café", "café") == 0
+    assert edit_distance("café", "Café") == 1
+
+# --- Explicit value checks (no parameterized expansion) ---
+
+def test_edit_distance_specific_values():
+    assert edit_distance("cat", "cut") == 1
+    assert edit_distance("cat", "bat") == 1
+    assert edit_distance("cat", "dog") == 3
+    assert edit_distance("horse", "ros") == 3
+```
+
+### Requirement-to-Input Mapping
+
+| Contract Requirement | Test Input Examples |
+| :--- | :--- |
+| **Exact built-in `str` for `left`** | `"kitten"`, `""`, `"abc"` |
+| **Exact built-in `str` for `right`** | `"sitting"`, `"a"`, `""` |
+| **Reject non-string `left`** | `123`, `None`, `[]` (passed as first arg) |
+| **Reject string subclass `left`** | `MyStr("left")` (custom class extending `str`) |
+| **Reject non-string `right`** | `"left"`, `456`, `["right"]` (passed as second arg) |
+| **Reject string subclass `right`** | `"left"`, `MyStr("right")` (custom class extending `str`) |
+| **Case-sensitive comparison** | `"Cherry"` vs `"cherry"`, `"café"` vs `"Café"` |
+| **Standard Levenshtein cost (1, 1, 1)** | `"cat"` vs `"cut"` (sub), `"horse"` vs `"ros"` (sub, del, ins) |
+
+### Honest Finite-Coverage Limitations
+
+1.  **Single Exception Order Assumption**: The `TypeError` tests assume that `TypeError` is raised immediately upon type validation failure, before any value-based logic. If the implementation performs value checks first, some invalid type scenarios might not raise `TypeError` but instead `ValueError` or `AttributeError` depending on the specific failure mode.
+2.  **Nested Structure Invalidation**: The contract states "Do not mutate any input, including nested containers." However, `edit_distance` contracts typically imply string-only inputs. If the function accepts a more complex contract involving nested containers (e.g., list of strings) and the user passes a nested structure that is mutated internally, this code cannot verify the *non-mutation* property without mocking or using `unittest.mock.patch` to assert on the original arguments, which was not requested.
+3.  **Edge Cases**: Boundary conditions for extremely long strings or strings composed entirely of non-breaking spaces are not explicitly tested beyond the basic empty string check.
+4.  **No Parameterized Tuples**: As per instructions, no `@pytest.mark.parametrize` is used to dynamically generate test cases from lists. Each test function explicitly defines its own argument values.<|im_end|>

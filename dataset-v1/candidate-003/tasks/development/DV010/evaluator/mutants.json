@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "0c57a403abd8a9060aab620ff751c8469503602fb0f95929d5e5dcfd29dafcc6",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild(['0']),)",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "comparison-57-Eq",
+    "source_sha256": "77a3487b010b445814e4c6639a8b9ac63696a2611aff4821fad3bfb0c0daac8c",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e007]",
+      "case": "e007",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['1', '2'],)",
+      "expected_exception": "ValueError",
+      "actual_python": "1"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "constant-57-1-plus-one",
+    "source_sha256": "527f02741354889e8a0a5582227540ff53a81a318b5add8bcb4e88c0e9bbc276",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e007]",
+      "case": "e007",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['1', '2'],)",
+      "expected_exception": "ValueError",
+      "actual_python": "1"
+    }
+  }
+]

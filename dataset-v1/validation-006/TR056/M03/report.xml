@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="12" time="0.397" timestamp="2026-11-03T20:11:15.679359-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert (4095, 4095, 255) == (255, 255, 255)&#10;  &#10;  At index 0 diff: 4095 != 255&#10;  Use -v to get more diff">args = ('#ffffff',), expected = (255, 255, 255)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0), id="v000"),
+        pytest.param(('#ffffff',), (255, 255, 255), id="v001"),
+        pytest.param(('#010203',), (1, 2, 3), id="v002"),
+        pytest.param(('#00aAFF',), (0, 170, 255), id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+&gt;       assert actual == expected
+E       assert (4095, 4095, 255) == (255, 255, 255)
+E         
+E         At index 0 diff: 4095 != 255
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert (16, 32, 3) == (1, 2, 3)&#10;  &#10;  At index 0 diff: 16 != 1&#10;  Use -v to get more diff">args = ('#010203',), expected = (1, 2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0), id="v000"),
+        pytest.param(('#ffffff',), (255, 255, 255), id="v001"),
+        pytest.param(('#010203',), (1, 2, 3), id="v002"),
+        pytest.param(('#00aAFF',), (0, 170, 255), id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+&gt;       assert actual == expected
+E       assert (16, 32, 3) == (1, 2, 3)
+E         
+E         At index 0 diff: 16 != 1
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert (10, 2735, 255) == (0, 170, 255)&#10;  &#10;  At index 0 diff: 10 != 0&#10;  Use -v to get more diff">args = ('#00aAFF',), expected = (0, 170, 255)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0), id="v000"),
+        pytest.param(('#ffffff',), (255, 255, 255), id="v001"),
+        pytest.param(('#010203',), (1, 2, 3), id="v002"),
+        pytest.param(('#00aAFF',), (0, 170, 255), id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+&gt;       assert actual == expected
+E       assert (10, 2735, 255) == (0, 170, 255)
+E         
+E         At index 0 diff: 10 != 0
+E         Use -v to get more diff
+
+test_target.py:26: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /></testsuite></testsuites>

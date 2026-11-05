@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="15" time="0.455" timestamp="2026-11-04T13:18:48.056225-05:00" hostname="Trons"><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_0_0" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_1_2" time="0.001" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_valid_offset_max" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_row" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">self = &lt;test_candidate.TestRowMajorOffset object at 0x00000267E6DC3230&gt;
+
+    def test_invalid_type_row(self):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_column" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">self = &lt;test_candidate.TestRowMajorOffset object at 0x00000267E6E15370&gt;
+
+    def test_invalid_type_column(self):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:35: Failed</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_rows" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">self = &lt;test_candidate.TestRowMajorOffset object at 0x00000267E6E287C0&gt;
+
+    def test_invalid_type_rows(self):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:39: Failed</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_invalid_type_columns" time="0.000"><failure message="Failed: DID NOT RAISE TypeError">self = &lt;test_candidate.TestRowMajorOffset object at 0x00000267E6E29370&gt;
+
+    def test_invalid_type_columns(self):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:43: Failed</failure></testcase><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_rows_zero" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_rows_negative" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_columns_zero" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_value_error_columns_negative" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_row_too_large" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_column_too_large" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_row_negative" time="0.000" /><testcase classname="test_candidate.TestRowMajorOffset" name="test_index_error_column_negative" time="0.000" /></testsuite></testsuites>

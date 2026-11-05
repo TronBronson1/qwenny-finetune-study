@@ -1,0 +1,32 @@
+{
+  "id": "TR011",
+  "split": "training",
+  "family": "leap-year",
+  "function": "leap_year",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "year"
+  ],
+  "schemas": [
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "8689995be8c52ba77af50ef84b3aaa5ffa68ddb53fd4e9ad4933af26a94c1156",
+  "target_sha256": "8eebae0d7723d35aca92e5f322a0ca859a83c16b666919edf955080393264d78",
+  "spec_sha256": "4fcb8ff2a259ffeb79ca7db4c72ece3c41bdaed4b57068d143cc9dddace736e4",
+  "answer_sha256": "442c9504a9acdb121da9e29af3aec7a9c153272a27da37dd1ce93dd2f4cc4533",
+  "valid_test_cases": 8,
+  "exception_test_cases": 9,
+  "type_before_value_witnesses": 2,
+  "oracle_checks": 508,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

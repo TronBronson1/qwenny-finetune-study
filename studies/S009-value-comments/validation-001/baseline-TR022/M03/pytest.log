@@ -1,0 +1,27 @@
+F...........                                                             [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = '""'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '""', id="v000"),
+        pytest.param(('abc',), 'abc', id="v001"),
+        pytest.param(('a,b',), '"a,b"', id="v002"),
+        pytest.param(('a"b',), '"a""b"', id="v003"),
+        pytest.param(('a\rb',), '"a\rb"', id="v004"),
+        pytest.param(('a\nb',), '"a\nb"', id="v005"),
+        pytest.param((' a ',), ' a ', id="v006"),
+        pytest.param(('é',), 'é', id="v007"),
+    ])
+    def test_values(args,expected):
+        actual=quote_csv_field(*args)
+>       assert actual == expected
+E       assert '' == '""'
+E         
+E         - ""
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert '' == '""'
+1 failed, 11 passed in 0.54s

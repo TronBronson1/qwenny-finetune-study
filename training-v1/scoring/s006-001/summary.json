@@ -1,0 +1,1347 @@
+{
+  "scope": "S006 exploratory familiar-training/development diagnostic, seed42, no final/regression evaluation; strict acceptance requires separate frozen coverage/prose review.",
+  "results": [
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_subclass_rejects_type",
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_string_type",
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[abc-ABC]",
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[hello \\u4e16\\u754c-HELLO \\u4e16\\u754c]",
+            "test_ascii_upper_returns_correct_str[123!@#-123!@#]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_returns_correct_str[ABC-ABC]",
+            "test_ascii_upper_returns_correct_str[!aBc-!ABC]",
+            "test_ascii_upper_returns_correct_str[  hello  world  -  HELLO  WORLD  ]",
+            "test_ascii_upper_returns_correct_str[\\u65e5\\u672c\\u8a9e-\\u65e5\\u672c\\u8a9e]",
+            "test_ascii_upper_returns_correct_str[\\u4f60\\u597d-\\u4f60\\u597d]",
+            "test_ascii_upper_returns_correct_str[\\uc548\\ub155\\ud558\\uc138\\uc694-\\uc548\\ub155\\ud558\\uc138\\uc694]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[abc-ABC]",
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_returns_correct_str[a-A]",
+            "test_ascii_upper_returns_correct_str[!aBc-!ABC]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v004]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v004]",
+            "test_raises_typeerror[e000]",
+            "test_raises_typeerror[e004]",
+            "test_raises_typeerror[e005]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]",
+            "test_values[v005]",
+            "test_values[v006]",
+            "test_values[v008]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v001]",
+            "test_values[v002]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[a--1]",
+            "test_edit_distance_basic[abc--3]",
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[-xyz-3]",
+            "test_edit_distance_basic[-123-3]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_raises_typeerror[e000]",
+            "test_raises_typeerror[e001]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v004]",
+            "test_values[v008]",
+            "test_values[v009]",
+            "test_values[v012]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_values[v003]",
+            "test_values[v005]",
+            "test_values[v011]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 11,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": [
+            "test_edit_distance_left_subclass_string",
+            "test_edit_distance_right_subclass_string"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": [
+            "test_edit_distance_one_empty"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_list_of_strings_subclass_raises_type_error",
+            "test_list_of_subclass_raises_type_error_even_if_content_is_valid_str",
+            "test_list_of_strings_containing_subclass_raises_type_error"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_all_same_returns_one_tuple",
+            "test_two_runs_returns_two_tuples",
+            "test_runs_not_combined_when_separated",
+            "test_run_length_correct_for_various_counts"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_all_same_returns_one_tuple",
+            "test_two_runs_returns_two_tuples",
+            "test_runs_not_combined_when_separated",
+            "test_run_length_correct_for_various_counts"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_two_identical",
+            "test_three_identical",
+            "test_four_identical",
+            "test_five_identical",
+            "test_single_run_then_different",
+            "test_two_runs_separated",
+            "test_two_runs_separated_identical_strings"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_two_identical",
+            "test_three_identical",
+            "test_four_identical",
+            "test_five_identical"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values0-TypeError]",
+            "test_xor_checksum_rejects_invalid_types[bad_values1-TypeError]",
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values1-0-int]",
+            "test_xor_checksum_valid_inputs[values2-255-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values4-4-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values1-0-int]",
+            "test_xor_checksum_valid_inputs[values2-255-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values4-4-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_identical_values_even_count",
+            "test_mixed_bytes"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_bool_rejected",
+            "test_int_subclass_rejected",
+            "test_identical_values_even_count",
+            "test_mixed_bytes"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_empty_returns_zero",
+            "test_single_byte_returns_value",
+            "test_xor_two_bytes",
+            "test_xor_three_bytes",
+            "test_xor_with_zero",
+            "test_identical_values_even_count",
+            "test_identical_values_odd_count",
+            "test_max_byte",
+            "test_mixed_bytes",
+            "test_input_not_mutated"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_empty_returns_zero",
+            "test_single_byte_returns_value",
+            "test_xor_two_bytes",
+            "test_xor_three_bytes",
+            "test_xor_with_zero",
+            "test_identical_values_even_count",
+            "test_identical_values_odd_count",
+            "test_max_byte",
+            "test_mixed_bytes",
+            "test_input_not_mutated"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_invalid_type_string_subclass"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 14,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_invalid_type_string_subclass"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_low_ge_high_raises"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_low_gte_high_raises"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input",
+            "test_low_equal_high"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_low_greater_than_high"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 26,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_invalid_type_row_bool",
+            "test_invalid_type_column_bool",
+            "test_invalid_type_rows_bool",
+            "test_invalid_type_columns_bool"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_valid_offset_0_0",
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 15,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_invalid_type_row",
+            "test_invalid_type_column",
+            "test_invalid_type_rows",
+            "test_invalid_type_columns"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_valid_offset_0_0",
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_typeerror[e001]",
+            "test_raises_typeerror[e003]",
+            "test_raises_typeerror[e004]",
+            "test_raises_typeerror[e005]",
+            "test_raises_typeerror[e006]",
+            "test_raises_typeerror[e007]",
+            "test_raises_typeerror[e022]",
+            "test_raises_typeerror[e023]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]",
+            "test_grid_neighbors[True-0-3-3-None]",
+            "test_grid_neighbors[0-True-3-3-None]",
+            "test_grid_neighbors[0-0-True-3-None]",
+            "test_grid_neighbors[0-0-3-True-None]",
+            "test_grid_neighbors[False-0-3-3-None]",
+            "test_grid_neighbors[False-False-3-3-None]",
+            "test_bool_rejected"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-1-1-expected1]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-2-2-expected3]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[2-2-3-3-expected12]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-4-4-expected16]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_typeerror[args2]",
+            "test_raises_typeerror[args3]",
+            "test_raises_typeerror[args8]",
+            "test_raises_typeerror[args9]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_is_bool",
+            "test_grid_neighbors_column_is_bool",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false
+    }
+  ]
+}

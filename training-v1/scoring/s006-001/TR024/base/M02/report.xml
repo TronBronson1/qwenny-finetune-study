@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="10" time="0.499" timestamp="2026-11-04T13:18:13.611788-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_string_type" time="0.001"><failure message="AssertionError: assert 'HxExLxLxO' == 'HELLO'&#10;  &#10;  - HELLO&#10;  + HxExLxLxO">def test_string_type():
+&gt;       assert ascii_upper("hello") == "HELLO"
+E       AssertionError: assert 'HxExLxLxO' == 'HELLO'
+E         
+E         - HELLO
+E         + HxExLxLxO
+
+test_candidate.py:7: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_integer_rejects_type" time="0.000" /><testcase classname="test_candidate" name="test_float_rejects_type" time="0.001" /><testcase classname="test_candidate" name="test_list_rejects_type" time="0.000" /><testcase classname="test_candidate" name="test_dict_rejects_type" time="0.001" /><testcase classname="test_candidate" name="test_subclass_rejects_type" time="0.001" /><testcase classname="test_candidate" name="test_unicode_preserves_non_ascii" time="0.001"><failure message="AssertionError: assert 'HxéxLxLxO' == 'héllo'&#10;  &#10;  - héllo&#10;  + HxéxLxLxO">def test_unicode_preserves_non_ascii():
+&gt;       assert ascii_upper("héllo") == "héllo"
+E       AssertionError: assert 'HxéxLxLxO' == 'héllo'
+E         
+E         - héllo
+E         + HxéxLxLxO
+
+test_candidate.py:33: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_mixed_ascii_non_ascii" time="0.001"><failure message="AssertionError: assert 'AxBxCx1x2x3xDxé' == 'ABC123dé'&#10;  &#10;  - ABC123dé&#10;  + AxBxCx1x2x3xDxé">def test_mixed_ascii_non_ascii():
+&gt;       assert ascii_upper("aBc123dé") == "ABC123dé"
+E       AssertionError: assert 'AxBxCx1x2x3xDxé' == 'ABC123dé'
+E         
+E         - ABC123dé
+E         + AxBxCx1x2x3xDxé
+
+test_candidate.py:36: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_string_immutability" time="0.001" /><testcase classname="test_candidate" name="test_nested_container_immutability" time="0.001" /></testsuite></testsuites>

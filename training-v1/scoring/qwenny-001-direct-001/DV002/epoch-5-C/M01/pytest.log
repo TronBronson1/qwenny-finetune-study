@@ -1,0 +1,249 @@
+..FFFFFFF.FF                                                             [100%]
+================================== FAILURES ===================================
+__________________ test_raises_typeerror_before_value[e001] ___________________
+
+args = ('x',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'x'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+__________________ test_raises_typeerror_before_value[e002] ___________________
+
+args = ('xx:x',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'xx:x'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+__________________ test_raises_typeerror_before_value[e003] ___________________
+
+args = ('25:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '25:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour > 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+__________________ test_raises_typeerror_before_value[e004] ___________________
+
+args = ('00:60',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:60'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour > 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+__________________ test_raises_typeerror_before_value[e005] ___________________
+
+args = ('12:7a',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:7a'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+__________________ test_raises_typeerror_before_value[e006] ___________________
+
+args = ('1-2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1-2'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+__________________ test_raises_typeerror_before_value[e007] ___________________
+
+args = ('ab:cd',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('x'),), id="e001"),
+        pytest.param(('xx:x',), id="e002"),
+        pytest.param(('25:00',), id="e003"),
+        pytest.param(('00:60',), id="e004"),
+        pytest.param(('12:7a',), id="e005"),
+        pytest.param(('1-2',), id="e006"),
+        pytest.param(('ab:cd',), id="e007"),
+    ])
+    def test_raises_typeerror_before_value(args):
+        with pytest.raises(TypeError):
+>           minute_of_day(*args)
+
+test_candidate.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'ab:cd'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[e009] _________________________
+
+args = ('00:00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('24:00',), id="e008"),
+        pytest.param(('00:00',), id="e009"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:46: Failed
+___________________ test_returned_order_is_preserved[b001] ____________________
+
+args = ('00:00', '23:59')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('00:00', '23:59'), id="b001"),
+    ])
+    def test_returned_order_is_preserved(args):
+>       actual=minute_of_day(*args)
+               ^^^^^^^^^^^^^^^^^^^^
+E       TypeError: minute_of_day() takes 1 positional argument but 2 were given
+
+test_candidate.py:53: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_raises_typeerror_before_value[e001] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e002] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e003] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e004] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e005] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e006] - ValueErr...
+FAILED test_candidate.py::test_raises_typeerror_before_value[e007] - ValueErr...
+FAILED test_candidate.py::test_raises_valueerror[e009] - Failed: DID NOT RAIS...
+FAILED test_candidate.py::test_returned_order_is_preserved[b001] - TypeError:...
+9 failed, 3 passed in 0.39s

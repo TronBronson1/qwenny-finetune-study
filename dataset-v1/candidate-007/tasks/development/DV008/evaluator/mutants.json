@@ -1,0 +1,72 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''), '')",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "d94859194347d0c060827b3ea68285ce5b3e3440c3badd100925f523e130d48e"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-constant-48-1-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('abc', '')",
+      "expected_python": "3",
+      "actual_python": "4"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "d3a4ecc764e3f174be7f7822497146d88af242d2697e5ed3c1fb44eed4821912"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-arithmetic-47-Sub",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('', 'abc')",
+      "expected_python": "3",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "4d299ed87c50634c37466778ab424e5f2b6913122b385c26206e4cb43495adf6"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('', '')",
+      "expected_python": "0",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "2796f71f22d843bffa20e2cf0cddaa066cebdbcac427168a1447226b2e2f8c91"
+  },
+  {
+    "id": "R02",
+    "requirement": "external-adversarial-witness",
+    "witness": {
+      "node": "test_target.py::test_values[v008]",
+      "case": "v008",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('A', 'a')",
+      "expected_python": "1",
+      "actual_python": "0"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "9cc9ccd8b4a7f2c27bfda0673970e7a08507e79862b24226fde54721a7a47a46"
+  }
+]

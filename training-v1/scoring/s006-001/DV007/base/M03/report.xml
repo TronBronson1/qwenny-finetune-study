@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="15" time="0.413" timestamp="2026-11-04T13:18:56.075173-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_grid_neighbors_valid_ints" time="0.001"><failure message="assert [(1, 0)] == [(0, 1), (1, ...1, 0), (1, 2)]&#10;  &#10;  At index 0 diff: (1, 0) != (0, 1)&#10;  Right contains 3 more items, first extra item: (1, 1)&#10;  Use -v to get more diff">def test_grid_neighbors_valid_ints():
+        row = 1
+        column = 1
+        rows = 2
+        columns = 2
+        result = grid_neighbors(row, column, rows, columns)
+&gt;       assert result == [(0, 1), (1, 1), (1, 0), (1, 2)]
+E       assert [(1, 0)] == [(0, 1), (1, ...1, 0), (1, 2)]
+E         
+E         At index 0 diff: (1, 0) != (0, 1)
+E         Right contains 3 more items, first extra item: (1, 1)
+E         Use -v to get more diff
+
+test_candidate.py:12: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors_row_is_bool" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors_column_is_bool" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors_rows_is_bool" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors_columns_is_bool" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors_zero_rows" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_negative_rows" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_zero_columns" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_negative_columns" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_row_out_of_bounds" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_column_out_of_bounds" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_row_zero_is_valid_when_rows_is_one" time="0.001"><failure message="assert [(0, 0)] == [(0, 1), (0, ...0, 0), (0, 2)]&#10;  &#10;  At index 0 diff: (0, 0) != (0, 1)&#10;  Right contains 3 more items, first extra item: (0, 1)&#10;  Use -v to get more diff">def test_grid_neighbors_row_zero_is_valid_when_rows_is_one():
+        result = grid_neighbors(0, 1, 1, 2)
+&gt;       assert result == [(0, 1), (0, 1), (0, 0), (0, 2)]
+E       assert [(0, 0)] == [(0, 1), (0, ...0, 0), (0, 2)]
+E         
+E         At index 0 diff: (0, 0) != (0, 1)
+E         Right contains 3 more items, first extra item: (0, 1)
+E         Use -v to get more diff
+
+test_candidate.py:60: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors_column_zero_is_valid_when_columns_is_one" time="0.001"><failure message="assert [] == [(0, 0), (1, ...1, 0), (0, 0)]&#10;  &#10;  Right contains 4 more items, first extra item: (0, 0)&#10;  Use -v to get more diff">def test_grid_neighbors_column_zero_is_valid_when_columns_is_one():
+        result = grid_neighbors(1, 0, 2, 1)
+&gt;       assert result == [(0, 0), (1, 0), (1, 0), (0, 0)]
+E       assert [] == [(0, 0), (1, ...1, 0), (0, 0)]
+E         
+E         Right contains 4 more items, first extra item: (0, 0)
+E         Use -v to get more diff
+
+test_candidate.py:64: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors_row_exceeds_rows" time="0.000" /><testcase classname="test_candidate" name="test_grid_neighbors_column_exceeds_columns" time="0.000" /></testsuite></testsuites>

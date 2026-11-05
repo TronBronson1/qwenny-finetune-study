@@ -1,0 +1,92 @@
+.FF..F.F.......                                                          [100%]
+================================== FAILURES ===================================
+___________________________ test_values[args1-True] ___________________________
+
+args = (1,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError
+__________________________ test_values[args2-False] ___________________________
+
+args = (2,), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:27: AssertionError
+___________________________ test_values[args5-True] ___________________________
+
+args = (16,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError
+___________________________ test_values[args7-True] ___________________________
+
+args = (100,), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), True),
+        pytest.param((1,), True),
+        pytest.param((2,), False),
+        pytest.param((4,), True),
+        pytest.param((15,), False),
+        pytest.param((16,), True),
+        pytest.param((17,), False),
+        pytest.param((100,), True),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=is_square(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-True] - assert False == True
+FAILED test_target.py::test_values[args2-False] - assert True == False
+FAILED test_target.py::test_values[args5-True] - assert False == True
+FAILED test_target.py::test_values[args7-True] - assert False == True
+4 failed, 11 passed in 0.32s

@@ -1,0 +1,34 @@
+.............F..                                                         [100%]
+================================== FAILURES ===================================
+_________ TestValidInputEncoding.test_no_mutation_of_nested_structure _________
+
+self = <test_candidate.TestValidInputEncoding object at 0x000001C8CB817C50>
+
+    def test_no_mutation_of_nested_structure(self):
+        input_data = [["nested", "strings"]]
+        original_id = id(input_data)
+>       run_length_encode(input_data)
+
+test_candidate.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:46: in run_length_encode
+    _types((values,), ('strs',))
+subject.py:37: in _types
+    for value, schema in zip(values, schemas): _check(value, schema)
+                                               ^^^^^^^^^^^^^^^^^^^^^
+subject.py:15: in _check
+    elif schema == "strs": _exact(item, str)
+                           ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = ['nested', 'strings'], kind = <class 'str'>
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+>           raise TypeError("exact built-in type required")
+E           TypeError: exact built-in type required
+
+subject.py:6: TypeError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestValidInputEncoding::test_no_mutation_of_nested_structure
+1 failed, 15 passed in 0.55s

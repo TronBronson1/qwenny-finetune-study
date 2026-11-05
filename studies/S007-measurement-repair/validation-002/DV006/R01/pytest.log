@@ -1,0 +1,184 @@
+FFFFFF............                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('ABC',), expected = '222'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '222', expected = '222'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('222')
+E        +  and   <class 'str'> = type('222')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('HELLO',), expected = '43556'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '43556', expected = '43556'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('43556')
+E        +  and   <class 'str'> = type('43556')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('PQRS',), expected = '7777'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '7777', expected = '7777'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('7777')
+E        +  and   <class 'str'> = type('7777')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('WXYZ',), expected = '9999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '9999', expected = '9999'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('9999')
+E        +  and   <class 'str'> = type('9999')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), expected = '22233344455566677778889999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=keypad_encode(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '22233344455566677778889999', expected = '22233344455566677778889999'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('22233344455566677778889999')
+E        +  and   <class 'str'> = type('22233344455566677778889999')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+6 failed, 12 passed in 0.59s

@@ -1,0 +1,45 @@
+....F.F..........                                                        [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v004] ______________________________
+
+args = (5, -3), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+>       assert actual == expected
+E       assert 2 == 8
+
+test_target.py:23: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (100000000000000000000, -100000000000000000000)
+expected = 200000000000000000000
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+>       assert actual == expected
+E       assert 0 == 200000000000000000000
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v004] - assert 2 == 8
+FAILED test_target.py::test_values[v006] - assert 0 == 200000000000000000000
+2 failed, 15 passed in 0.55s

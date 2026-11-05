@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="13" time="0.476" timestamp="2026-11-03T20:11:35.370624-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert '2x2x2' == '222'&#10;  &#10;  - 222&#10;  + 2x2x2&#10;  ?  + +">args = ('ABC',), expected = '222'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '2x2x2' == '222'
+E         
+E         - 222
+E         + 2x2x2
+E         ?  + +
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert '4x3x5x5x6' == '43556'&#10;  &#10;  - 43556&#10;  + 4x3x5x5x6">args = ('HELLO',), expected = '43556'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '4x3x5x5x6' == '43556'
+E         
+E         - 43556
+E         + 4x3x5x5x6
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert '7x7x7x7' == '7777'&#10;  &#10;  - 7777&#10;  + 7x7x7x7">args = ('PQRS',), expected = '7777'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '7x7x7x7' == '7777'
+E         
+E         - 7777
+E         + 7x7x7x7
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert '9x9x9x9' == '9999'&#10;  &#10;  - 9999&#10;  + 9x9x9x9">args = ('WXYZ',), expected = '9999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '9x9x9x9' == '9999'
+E         
+E         - 9999
+E         + 9x9x9x9
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert '2x2x2x3x3x3x...8x8x8x9x9x9x9' == '22233344455566677778889999'&#10;  &#10;  - 22233344455566677778889999&#10;  + 2x2x2x3x3x3x4x4x4x5x5x5x6x6x6x7x7x7x7x8x8x8x9x9x9x9">args = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), expected = '22233344455566677778889999'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('ABC',), '222', id="v001"),
+        pytest.param(('HELLO',), '43556', id="v002"),
+        pytest.param(('PQRS',), '7777', id="v003"),
+        pytest.param(('WXYZ',), '9999', id="v004"),
+        pytest.param(('ABCDEFGHIJKLMNOPQRSTUVWXYZ',), '22233344455566677778889999', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=keypad_encode(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '2x2x2x3x3x3x...8x8x8x9x9x9x9' == '22233344455566677778889999'
+E         
+E         - 22233344455566677778889999
+E         + 2x2x2x3x3x3x4x4x4x5x5x5x6x6x6x7x7x7x7x8x8x8x9x9x9x9
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /></testsuite></testsuites>

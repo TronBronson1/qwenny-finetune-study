@@ -1,0 +1,31 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+hf-cache/
+
+# Model weights, adapters, optimizer/RNG state
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+*.ckpt
+lora-feasibility/checkpoint/
+lora-feasibility/runs/
+training-v1/runs/
+training-v1/candidates/
+training-v1/prepared-*/
+
+# Sealed held-out benchmark: never publish
+**/tasks/final/
+**/tasks/regression/
+**/EV[0-9][0-9][0-9]/
+**/RG[0-9][0-9][0-9]/
+tasks_final.py
+tasks_regression.py
+final-requests.jsonl
+regression-requests.jsonl
+family_plan.json

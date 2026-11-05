@@ -1,0 +1,114 @@
+FFFFF.......                                                             [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('a=b',), expected = ('a', 'b')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('Ã©=å­—',), ('Ã©', 'å­—'), id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b')
+E         
+E         Right contains one more item: 'b'
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('a=',), expected = ('a', '')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('Ã©=å­—',), ('Ã©', 'å­—'), id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', '')
+E         
+E         Right contains one more item: ''
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('a=b=c',), expected = ('a', 'b=c')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('Ã©=å­—',), ('Ã©', 'å­—'), id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('a',) == ('a', 'b=c')
+E         
+E         Right contains one more item: 'b=c'
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (' a = b ',), expected = (' a ', ' b ')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('Ã©=å­—',), ('Ã©', 'å­—'), id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert (' a ',) == (' a ', ' b ')
+E         
+E         Right contains one more item: ' b '
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('Ã©=å­—',), expected = ('Ã©', 'å­—')
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('a=b',), ('a', 'b'), id="v000"),
+        pytest.param(('a=',), ('a', ''), id="v001"),
+        pytest.param(('a=b=c',), ('a', 'b=c'), id="v002"),
+        pytest.param((' a = b ',), (' a ', ' b '), id="v003"),
+        pytest.param(('Ã©=å­—',), ('Ã©', 'å­—'), id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_key_value(*args)
+>       assert actual == expected
+E       AssertionError: assert ('Ã©',) == ('Ã©', 'å­—')
+E         
+E         Right contains one more item: 'å­—'
+E         Use -v to get more diff
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert ('a',) == (...
+FAILED test_target.py::test_values[v001] - AssertionError: assert ('a',) == (...
+FAILED test_target.py::test_values[v002] - AssertionError: assert ('a',) == (...
+FAILED test_target.py::test_values[v003] - AssertionError: assert (' a ',) ==...
+FAILED test_target.py::test_values[v004] - AssertionError: assert ('Ã©',) == (...
+5 failed, 7 passed in 0.58s

@@ -1,0 +1,1943 @@
+{
+  "study": "S006",
+  "run": "s006-001",
+  "status": "completed",
+  "scope": "Exploratory purposive four-family familiar-training and four-family development diagnostic, one seed. No candidate selection, causal mechanism, or general aptitude claim.",
+  "groups": [
+    {
+      "split": "training",
+      "variant": "base",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 2,
+      "reference_and_mutants": 2,
+      "strict_accepted": 0
+    },
+    {
+      "split": "training",
+      "variant": "original-e1",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 3,
+      "reference_and_mutants": 2,
+      "strict_accepted": 0
+    },
+    {
+      "split": "training",
+      "variant": "original-e5",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 1,
+      "reference_and_mutants": 0,
+      "strict_accepted": 0
+    },
+    {
+      "split": "development",
+      "variant": "base",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 1,
+      "reference_and_mutants": 0,
+      "strict_accepted": 0
+    },
+    {
+      "split": "development",
+      "variant": "original-e1",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 0,
+      "reference_and_mutants": 0,
+      "strict_accepted": 0
+    },
+    {
+      "split": "development",
+      "variant": "original-e5",
+      "planned": 4,
+      "attempted": 4,
+      "completed": 4,
+      "reference_valid": 1,
+      "reference_and_mutants": 1,
+      "strict_accepted": 0
+    }
+  ],
+  "results": [
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_subclass_rejects_type",
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_string_type",
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 10,
+          "relevant_failures": [
+            "test_unicode_preserves_non_ascii",
+            "test_mixed_ascii_non_ascii"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1029,
+      "seconds": 120.51600000000326,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "bfe16928609a44684151738fe4a16f060b37f4678cdedeb25c6a150256c06a65",
+        "answer_sha256": "4a36b9f621a40295ed81d91c1d84bac4ec3932993edde006e39d5b339c96404b",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813212.3329194,
+        "coverage_status": "incomplete",
+        "notes": "Wrong expected values for mixed ASCII/non-ASCII strings; conditional assert can assert a truthy string rather than compare; unsupported new-object identity requirement. Empty string and exact output str type missing. Source read completely; no unsafe operations observed.",
+        "execution_claim_review": "none observed",
+        "reason": null
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[abc-ABC]",
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[hello \\u4e16\\u754c-HELLO \\u4e16\\u754c]",
+            "test_ascii_upper_returns_correct_str[123!@#-123!@#]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_returns_correct_str[ABC-ABC]",
+            "test_ascii_upper_returns_correct_str[!aBc-!ABC]",
+            "test_ascii_upper_returns_correct_str[  hello  world  -  HELLO  WORLD  ]",
+            "test_ascii_upper_returns_correct_str[\\u65e5\\u672c\\u8a9e-\\u65e5\\u672c\\u8a9e]",
+            "test_ascii_upper_returns_correct_str[\\u4f60\\u597d-\\u4f60\\u597d]",
+            "test_ascii_upper_returns_correct_str[\\uc548\\ub155\\ud558\\uc138\\uc694-\\uc548\\ub155\\ud558\\uc138\\uc694]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[a]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 44,
+          "relevant_failures": [
+            "test_ascii_upper_returns_correct_str[abc-ABC]",
+            "test_ascii_upper_returns_correct_str[AbCd-ABcD]",
+            "test_ascii_upper_returns_correct_str[-]",
+            "test_ascii_upper_returns_correct_str[A-A]",
+            "test_ascii_upper_returns_correct_str[a-A]",
+            "test_ascii_upper_returns_correct_str[!aBc-!ABC]",
+            "test_ascii_upper_raises_type_error[ab<class 'type'>]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[Hello]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[123]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[aB]",
+            "test_ascii_upper_returns_same_object_when_input_is_ascii_uppercase[abc123]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1166,
+      "seconds": 142.34399999998277,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "04a516c5deeca4b50978d470675e286d5e058415d4a1614178e3f749a4800216",
+        "answer_sha256": "f091f15bc854c5ee7f6000eaf1556b25bc7521b647062b8f7e87f0641a2d7e7d",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813373.7714288,
+        "coverage_status": "incomplete",
+        "notes": "Wrong AbCd expected value; rejects an actual str as invalid; calls valid-only function with dict/list without expected exception; contradictory and unsupported string identity assertions. Missing str-subclass rejection and exact output str test (isinstance insufficient). Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; unsupported strict-adherence and exact-output-type coverage statements.",
+        "reason": null
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR024",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v004]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v004]",
+            "test_raises_typeerror[e000]",
+            "test_raises_typeerror[e004]",
+            "test_raises_typeerror[e005]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]",
+            "test_values[v005]",
+            "test_values[v006]",
+            "test_values[v008]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_values[v001]",
+            "test_values[v002]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 626,
+      "seconds": 78.03099999998813,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "8495d1cfa1af9d2c651a1ffecd6a8879087973c90f5072f5de5648d338c7b51a",
+        "answer_sha256": "259771ee6b24c1b0af4f6757b6382e8744bb753f114a4fd90c3ba44da2592abb",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813442.368714,
+        "coverage_status": "incomplete",
+        "notes": "One wrong mixed-case expected result: Aa1! must become AA1!, not Aa1!. Exact output-type helper and input subclass tests present. Generic prose maps case IDs without a concrete requirement-specific map. Full source read; no unsafe operations.",
+        "execution_claim_review": "none observed",
+        "reason": null
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[a--1]",
+            "test_edit_distance_basic[abc--3]",
+            "test_edit_distance_basic[test-ttest-2]",
+            "test_edit_distance_basic[ABC-abc-4]",
+            "test_edit_distance_basic[123-321-3]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 35,
+          "relevant_failures": [
+            "test_edit_distance_basic[-xyz-3]",
+            "test_edit_distance_basic[-123-3]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 816,
+      "seconds": 101.07799999997951,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "9a356f600b347b593338b324afcdd322178131e44a0b86fb1b0d774e165b3fa1",
+        "answer_sha256": "9adaac27cc17c5ef97b41cf31e6bd00c51fbd5f23cd518cc5361ccd55abf3fe0",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813539.0646913,
+        "coverage_status": "incomplete",
+        "notes": "Wrong distances include test->ttest expected2 rather than1, ABC->abc expected4 rather than3, and 123->321 expected3 rather than2. No str-subclass rejection at either position, no literal non-ASCII examples. Exact int return tested. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose asserts Unicode coverage without a non-ASCII test and mentions subclasses without actual subclass cases.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_raises_typeerror[e000]",
+            "test_raises_typeerror[e001]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_values[v004]",
+            "test_values[v008]",
+            "test_values[v009]",
+            "test_values[v012]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_values[v003]",
+            "test_values[v005]",
+            "test_values[v011]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true,
+      "generated_tokens": 679,
+      "seconds": 86.375,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "cbf46187d07c88fbe6bd01a971a671c7f87ff9fc795e724fc4b800a1df9e1733",
+        "answer_sha256": "1ce670b7eb0a906f28d8275e0bc490e99f8492c57ecf4deadcbc03199fa385e7",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813626.529856,
+        "coverage_status": "incomplete",
+        "notes": "Values appear correct and exact int return plus str-subclass rejection at both positions are present. Japanese-to-empty checks literal Unicode length, but no case-differing pair tests explicit case sensitivity, so frozen required coverage is incomplete. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "none observed",
+        "reason": null,
+        "prose_status": "valid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "frozen contract coverage incomplete/not fully assessed"
+      ]
+    },
+    {
+      "task": "DV008",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 11,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": [
+            "test_edit_distance_left_subclass_string",
+            "test_edit_distance_right_subclass_string"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": [
+            "test_edit_distance_one_empty"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 11,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 991,
+      "seconds": 121.625,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "b2041e3559f6214bede8838d3ac59fc47dd7f88453358912a01f35042b9a02ef",
+        "answer_sha256": "efa4d7d59684bd91927a712bc1c232f9c1bff842b518e763e3a4489a60c2e845",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813752.9179704,
+        "coverage_status": "incomplete",
+        "notes": "Listed distance expectations appear correct; input str-subclasses at both positions and Unicode/case sensitivity are tested. No exact built-in int output assertion, so an int subclass could pass. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping lists None/list invalid inputs absent from code; prose misstates instruction as forbidding parametrization.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "required mutant detection incomplete",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1467,
+      "seconds": 175.71799999999348,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "68ad0978e89c111f97d4a6af73da58f3cdcd2a144864d3a6e77f8a94e8cbe2a7",
+        "answer_sha256": "7e405640e629e25ceeb89464f3bebc2bec5bb98c9b33edaf73ee1caafa38ec95",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793813934.2222152,
+        "coverage_status": "incomplete",
+        "notes": "Malformed nested/starred tuple construction with mismatched delimiters; ListChild built with multiple positional arguments; valid-case inputs incorrectly use subclasses; functions named run00000 are not pytest test functions. No proper valid-list behavior coverage. Full source read; no unsafe operations, syntax/collection failures retained.",
+        "execution_claim_review": "No execution claim; generic coverage mapping unsupported by malformed cases.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_list_of_strings_subclass_raises_type_error",
+            "test_list_of_subclass_raises_type_error_even_if_content_is_valid_str",
+            "test_list_of_strings_containing_subclass_raises_type_error"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_all_same_returns_one_tuple",
+            "test_two_runs_returns_two_tuples",
+            "test_runs_not_combined_when_separated",
+            "test_run_length_correct_for_various_counts"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_all_same_returns_one_tuple",
+            "test_two_runs_returns_two_tuples",
+            "test_runs_not_combined_when_separated",
+            "test_run_length_correct_for_various_counts"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1238,
+      "seconds": 136.56200000000536,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "1d371e5b0ebfee570546a6fcb406094f5a75a427311d1df8098e6d471759e73b",
+        "answer_sha256": "59ead837f1657d03c2b09042f716b767e6387a965837d985dc996af13e27e827",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814089.1921067,
+        "coverage_status": "incomplete",
+        "notes": "Valid run expected values appear correct, but nested list is invalid and is called without expected TypeError. No list-subclass rejection, no exact recursive output types, and valid mutation check compares only id (does not catch in-place changes). Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose claims outer-list subclass coverage but only str subclasses are tested; denies contract behavior for invalid nested lists.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR025",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 0,
+          "test_cases": 21,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_two_identical",
+            "test_three_identical",
+            "test_four_identical",
+            "test_five_identical",
+            "test_single_run_then_different",
+            "test_two_runs_separated",
+            "test_two_runs_separated_identical_strings"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 21,
+          "relevant_failures": [
+            "test_two_identical",
+            "test_three_identical",
+            "test_four_identical",
+            "test_five_identical"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 991,
+      "seconds": 116.81299999999464,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "b8b0b33d4960cd13e015996842071cf7dd15b5ae93c76a6a7c6cf6f38e719bed",
+        "answer_sha256": "517786fc6aa3b012e09ff8731d2993d7801d52bb8831a68166dbdf51d429a690",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814160.774713,
+        "coverage_status": "incomplete",
+        "notes": "Run expectations and valid input nonmutation check appear correct. No input list/str-subclass rejection tests. Recursive output checks use isinstance and allow subclasses, contrary to exact-type requirement. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping states returned types are not subclasses although isinstance checks do not establish that.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "required mutant detection incomplete",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values0-TypeError]",
+            "test_xor_checksum_rejects_invalid_types[bad_values1-TypeError]",
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values1-0-int]",
+            "test_xor_checksum_valid_inputs[values2-255-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values4-4-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_xor_checksum_rejects_invalid_types[bad_values3-TypeError]",
+            "test_xor_checksum_rejects_out_of_range_values[valid_prefix4-5-valid_suffix4]",
+            "test_xor_checksum_valid_inputs[values0-0-int]",
+            "test_xor_checksum_valid_inputs[values1-0-int]",
+            "test_xor_checksum_valid_inputs[values2-255-int]",
+            "test_xor_checksum_valid_inputs[values3-255-int]",
+            "test_xor_checksum_valid_inputs[values4-4-int]",
+            "test_xor_checksum_valid_inputs[values5-0-int]",
+            "test_xor_checksum_valid_inputs[values6-100-int]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1244,
+      "seconds": 141.65599999998813,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "925140f2eba85e6555cdbcfd53ff76f98ec58993a06f26cb2a49ebf6b6c6e19e",
+        "answer_sha256": "5a50ea6bad361b454df151940472fc345c55bbb6add6728b237aa5f06f6f490d",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814316.7709935,
+        "coverage_status": "incomplete",
+        "notes": "Valid [1,1] expected TypeError and valid [5,0] expected ValueError. Conditional identity assert becomes assert0 on empty input; identity comparison is not nonmutation. No actual list/int subclass tests, no exact int return, no mixed type/value ordering witness. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping confuses nested lists with list subclasses; mutation limitation acknowledged but required check absent.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_identical_values_even_count",
+            "test_mixed_bytes"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_bool_rejected",
+            "test_int_subclass_rejected",
+            "test_identical_values_even_count",
+            "test_mixed_bytes"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_empty_returns_zero",
+            "test_single_byte_returns_value",
+            "test_xor_two_bytes",
+            "test_xor_three_bytes",
+            "test_xor_with_zero",
+            "test_identical_values_even_count",
+            "test_identical_values_odd_count",
+            "test_max_byte",
+            "test_mixed_bytes",
+            "test_input_not_mutated"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 22,
+          "relevant_failures": [
+            "test_empty_returns_zero",
+            "test_single_byte_returns_value",
+            "test_xor_two_bytes",
+            "test_xor_three_bytes",
+            "test_xor_with_zero",
+            "test_identical_values_even_count",
+            "test_identical_values_odd_count",
+            "test_max_byte",
+            "test_mixed_bytes",
+            "test_input_not_mutated"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1831,
+      "seconds": 217.5460000000021,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "acbe30c933a09df51f2e6c9b8f1c6b93ab0d6658303eec5aef00428c755471c4",
+        "answer_sha256": "25bf3e7d4c866fa9e13e92eb6a0aa567ac59ab04eaddda58983cdc4b5595f7b6",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814544.7733994,
+        "coverage_status": "incomplete",
+        "notes": "Wrong XOR results: four5s should0 not5; 255^100^200 is83 not55. Float/str/None/MyInt256 incorrectly expect ValueError instead of TypeError. MyList nested as element does not test outer list-subclass rejection. isinstance int and not bool still allows int subclasses; exact output missing. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping incorrectly claims exact output int and outer list-subclass coverage; prose treats nested ints as valid despite flat list contract.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV004",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "invalid; collection failure expected",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        },
+        "M03": {
+          "exit_code": 2,
+          "test_cases": 1,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1774,
+      "seconds": 207.15599999998813,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "b4791e0cb9e81b7d2f3d9607e54e8cfcb9199c0c6136bb689cd9937eef4dec08",
+        "answer_sha256": "7bc6cf0a7858d69e7b3c525c6e69da5249bb3feea780addce73f8fa6ffdf15ab",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814728.8438196,
+        "coverage_status": "incomplete",
+        "notes": "Syntax-invalid parametrization (id assignment placed inside list and stray closing delimiters); unsupported explicit keyword; supposed valid case passes int not list; empty/valid byte lists incorrectly expect ValueError; invalid element types also assigned ValueError. Full source read; no unsafe operations, syntax failure retained.",
+        "execution_claim_review": "No execution claim; generic coverage claims unsupported by malformed/incorrect cases.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_invalid_type_string_subclass"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true,
+      "generated_tokens": 795,
+      "seconds": 92.39099999997416,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "dccbd542d62fc8af3f421992e8a042ac6bfe243fcaa65ebb4bcbfcb9a3ba47a6",
+        "answer_sha256": "8c5e9c76288c4bcdbb83a7ffa85f8364f52a627a5ebace4f35df7aee5fe38251",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814877.7275836,
+        "coverage_status": "incomplete",
+        "notes": "Listed valid/invalid expectations appear correct and str-subclass rejection present. No exact output int assertion, no non-ASCII digit/lookalike rejection, and no malformed str-subclass precedence witness. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose incorrectly describes tests as parametrized and states there are66 valid byte strings; coverage omissions acknowledged.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 2,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 16,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_values[v002]",
+            "test_values[v003]",
+            "test_values[v004]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 646,
+      "seconds": 74.84400000001187,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "cf506973c3079e6a80ced1353c29389accab97bccf3338c9974d76a861f4a0a1",
+        "answer_sha256": "afdc9d8f3c5bea4bdd4aa50657278a020400b8df494e98b5a7daf2fe7168c19d",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793814964.3585827,
+        "coverage_status": "incomplete",
+        "notes": "Listed expectations appear correct, exact int output and malformed StrChild type-before-value witness present. Missing non-ASCII/fullwidth digit rejection and no mixed alphabetic-case example such as aB. Frozen ASCII/case coverage incomplete. Full source read; no unsafe operations.",
+        "execution_claim_review": "none observed",
+        "reason": null,
+        "prose_status": "valid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "required mutant detection incomplete",
+        "frozen contract coverage incomplete/not fully assessed"
+      ]
+    },
+    {
+      "task": "TR038",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 14,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_invalid_type_string_subclass"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 14,
+          "relevant_failures": [
+            "test_valid_hex_0",
+            "test_valid_hex_1",
+            "test_valid_hex_f",
+            "test_valid_hex_uppercase",
+            "test_valid_hex_mixed_case"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true,
+      "generated_tokens": 828,
+      "seconds": 91.23499999998603,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "ed0a6f74b38aeaa21d608ed649b6054f196572f959377c2b952adaf0a70ba467",
+        "answer_sha256": "7c3c7e6d61f291d6ec7f88b105bffeda2c3ecfb966cc85b4c5986c8d95fd25bc",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815076.7790296,
+        "coverage_status": "incomplete",
+        "notes": "Listed hex and exception expectations appear correct. No exact built-in int output assertion, no non-ASCII/fullwidth digit rejection, no malformed StrChild precedence witness. Full source inspected; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose misleadingly says256 byte values are covered and calls bytes a tested subclass although ordinary bytes used.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": []
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_low_ge_high_raises"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 19,
+          "relevant_failures": [
+            "test_low_gte_high_raises"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 957,
+      "seconds": 112.125,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "f0b4399b6414cbecef8c4f49cf260b3414cfdf11fb5800a695e5b34a7f679d87",
+        "answer_sha256": "59c269300366948e0736227ecb4f0b42e9e208541ee32ec9ad100a4cec76d311",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815167.0816498,
+        "coverage_status": "incomplete",
+        "notes": "Valid args are lists rather than single-element argument tuples, so interval_union(*args) passes wrong count/types; empty input unpacks empty list into no arguments. Several exception cases test wrong arity rather than contract validation. Recursive type helper never called. Missing input subclass/bool and ordering/shape witnesses. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose says nested types checked although recursive helper is unused; no concrete requirement mapping.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_unsorted_input",
+            "test_low_equal_high"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_low_greater_than_high"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1532,
+      "seconds": 169.63999999998487,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "5f315e5e04499e9f2c7297251e6f6834f9f723c0ab3048c1626ce16961353d68",
+        "answer_sha256": "a44f9784c03c648e28c4a8ad426ea696ceadf14600df8f8c0ce865e0599296c7",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815260.041934,
+        "coverage_status": "incomplete",
+        "notes": "Unsorted overlapping intervals [(3,7),(1,5)] incorrectly expected as two intervals instead of [(1,7)]. Missing empty case, mutation check, input subclass/bool and mixed-invalid ordering checks; output isinstance checks permit subclasses and omit exact outer list type. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping also fails to merge nested intervals and treats reversed endpoints as sortable rather than invalid.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV011",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": [
+            "test_interval_union_valid[intervals4-expected4]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 17,
+          "relevant_failures": []
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1155,
+      "seconds": 133.70300000000861,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "b8bdcc6c850a1a55a930ddac0317657a804484111cb303f3edb43fe797d005cf",
+        "answer_sha256": "d49fc56abe13e0b1e5f459d7f61e5d9754af79fbeb41dbc026e13c5ebcbd2586",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815440.5458422,
+        "coverage_status": "incomplete",
+        "notes": "Unsorted case wrongly retains nested (1,2) instead of merging into (0,2). Invalid parametrization wraps each intended input with None, so all calls receive an invalid outer tuple and do not isolate advertised validation. Accepts TypeError or ValueError indiscriminately. Missing exact recursive output/input subclass/bool/mutation/precedence checks. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping attributes specific type/value witnesses to wrapped cases that only reject the outer tuple.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 26,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_invalid_type_row_bool",
+            "test_invalid_type_column_bool",
+            "test_invalid_type_rows_bool",
+            "test_invalid_type_columns_bool"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 26,
+          "relevant_failures": [
+            "test_valid_offset_0_0",
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true,
+      "generated_tokens": 1352,
+      "seconds": 149.53100000001723,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "05d96bee37a6e0e8359d71574a0dce0f12213e9d664aae5bec43be1f9a7018f1",
+        "answer_sha256": "18ae536045d160b7e283e9e3ac2feaeb30694cf6a11303ca7739c9ae176893c9",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815552.4087126,
+        "coverage_status": "incomplete",
+        "notes": "Listed results and exceptions appear correct; float/bool/str checks at all four positions. No int-subclass tests at any position, no exact output int assertion, no single-cell successful case. Some shape-before-bounds/type-value witnesses exist via zero dimensions. Main guard only runs when script invoked directly, not pytest import. Full source read; safe for isolated execution.",
+        "execution_claim_review": "No execution claim; limitations admit subclass gap; mapping states exact int return without assertion.",
+        "reason": null,
+        "prose_status": "valid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "frozen contract coverage incomplete/not fully assessed"
+      ]
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": true,
+      "eligible_mutant_kills": 3,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 0,
+          "test_cases": 15,
+          "relevant_failures": []
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_invalid_type_row",
+            "test_invalid_type_column",
+            "test_invalid_type_rows",
+            "test_invalid_type_columns"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_valid_offset_0_0",
+            "test_valid_offset_1_2",
+            "test_valid_offset_max"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": true,
+      "generated_tokens": 850,
+      "seconds": 99.35999999998603,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "51ff7beac03acbb66828f57107e4bddb1d54630f0c9d5249d926d105a9ef7e68",
+        "answer_sha256": "6249577ccbbdebea478bbc0a963363a17e51b5f36e3c58adf5cd26cff51bdd00",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815691.689114,
+        "coverage_status": "incomplete",
+        "notes": "Listed values/exceptions appear correct on reference, but uses object identity is expected instead of value equality, an unsupported extra constraint (also implies built-in type at those cases). No ordinary invalid-type or int-subclass cases at four positions; no single-cell success. Main guard inactive under pytest. Full source read; safe for isolated execution.",
+        "execution_claim_review": "No explicit execution claim; limitations admit bool-only type coverage and subclass gap.",
+        "reason": null,
+        "prose_status": "valid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "frozen contract coverage incomplete/not fully assessed"
+      ]
+    },
+    {
+      "task": "TR049",
+      "split": "training",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_typeerror[e001]",
+            "test_raises_typeerror[e003]",
+            "test_raises_typeerror[e004]",
+            "test_raises_typeerror[e005]",
+            "test_raises_typeerror[e006]",
+            "test_raises_typeerror[e007]",
+            "test_raises_typeerror[e022]",
+            "test_raises_typeerror[e023]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v002]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 33,
+          "relevant_failures": [
+            "test_values[v000]",
+            "test_values[v001]",
+            "test_raises_valueerror[e027]",
+            "test_raises_valueerror[e028]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1109,
+      "seconds": 131.03099999998813,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "6378d44f1257e7557761765adeff3d0cc1d91d0f05c4671f045ade223beb7363",
+        "answer_sha256": "12fe1f090909480a96a8570db653e2305949e0931a85e6a01d4ea911b0bbd8e1",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793815793.292012,
+        "coverage_status": "incomplete",
+        "notes": "Wrong offset: (1,1,2,2) expected4 instead of3. Nonpositive exact-int shapes incorrectly grouped under TypeError; out-of-bounds expects ValueError instead of IndexError; valid (0,1,1,2) and (1,1,2,2) incorrectly treated as errors. No non-square successful example. Exact output and input bool/subclass checks present. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; generic mapping unsupported by misclassified value/index cases.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "original-e1",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]",
+            "test_grid_neighbors[True-0-3-3-None]",
+            "test_grid_neighbors[0-True-3-3-None]",
+            "test_grid_neighbors[0-0-True-3-None]",
+            "test_grid_neighbors[0-0-3-True-None]",
+            "test_grid_neighbors[False-0-3-3-None]",
+            "test_grid_neighbors[False-False-3-3-None]",
+            "test_bool_rejected"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-1-1-expected1]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-0-3-3-expected7]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 52,
+          "relevant_failures": [
+            "test_grid_neighbors[0-0-3-3-expected0]",
+            "test_grid_neighbors[0-0-2-2-expected2]",
+            "test_grid_neighbors[1-1-2-2-expected3]",
+            "test_grid_neighbors[1-1-3-3-expected4]",
+            "test_grid_neighbors[0-0-3-1-expected5]",
+            "test_grid_neighbors[0-2-3-3-expected6]",
+            "test_grid_neighbors[2-1-3-3-expected8]",
+            "test_grid_neighbors[1-0-2-2-expected10]",
+            "test_grid_neighbors[0-1-3-3-expected11]",
+            "test_grid_neighbors[2-2-3-3-expected12]",
+            "test_grid_neighbors[1-2-3-3-expected13]",
+            "test_grid_neighbors[1-1-4-4-expected14]",
+            "test_grid_neighbors[0-0-4-4-expected15]",
+            "test_grid_neighbors[3-3-4-4-expected16]",
+            "test_grid_neighbors[3-3-5-5-expected17]",
+            "test_grid_neighbors[4-3-5-5-None]",
+            "test_grid_neighbors[3-4-5-5-None]",
+            "test_grid_neighbors[0-0-1-1-None]",
+            "test_grid_neighbors[2-0-3-1-None]",
+            "test_grid_neighbors[2-1-3-2-None]",
+            "test_grid_neighbors[0-2-1-3-None]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1894,
+      "seconds": 227.875,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "97e2dc2476eeb91e84f27c0ca7ea329450c4b70d3e63fcc38b0cf73445bdcbf0",
+        "answer_sha256": "0dc06805b799282d6dc364dd10c773461c58d53892e21672479f893fb1142946",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793816095.9255953,
+        "coverage_status": "incomplete",
+        "notes": "Many wrong neighbor lists/order: top-left expects down before right; one-column grid includes out-of-bounds column1; valid cells sometimes expected to raise; one intended valid row is outside shape. Broad exception tuple masks exception-class requirements. Missing int-subclass and exact coordinate types; right-order test is pass. These failures do not hinge on outer-container wording ambiguity. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; mapping promises up/right/down/left while expected lists violate that order.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "original-e5",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_typeerror[args2]",
+            "test_raises_typeerror[args3]",
+            "test_raises_typeerror[args8]",
+            "test_raises_typeerror[args9]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 31,
+          "relevant_failures": [
+            "test_values[args0-expected0]",
+            "test_values[args1-expected1]",
+            "test_values[args2-expected2]",
+            "test_raises_indexerror[args0]"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 641,
+      "seconds": 78.39099999997416,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "c291f445af367c18da031573fc85d9ead014a493e5c528bfc2aca7f0ef62703b",
+        "answer_sha256": "c393eb14daad997341d843c127c2d1ec0d4f119ce07cca4570245c7bc13c6afb",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793816096.1521275,
+        "coverage_status": "incomplete",
+        "notes": "Single-cell grid wrongly expected to have neighbor(1,0); other lists omit neighbors/include out-of-bounds coordinates and violate order. Negative coordinates wrongly expect ValueError rather than IndexError; valid(1,1,2,2) expected IndexError. No exact recursive coordinate type checks; wrong-arity exception case. Failure independent of outer-container wording ambiguity. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; generic mapping does not identify concrete requirements and overstates invalid-case isolation.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    },
+    {
+      "task": "DV007",
+      "split": "development",
+      "variant": "base",
+      "truncated": false,
+      "format_valid": true,
+      "strict_acceptance": "pending frozen coverage/prose review; diagnostic only",
+      "syntax": "parsed",
+      "execution": "completed",
+      "reference_valid": false,
+      "eligible_mutant_kills": null,
+      "designated_mutants": 3,
+      "variants": {
+        "reference": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M01": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_is_bool",
+            "test_grid_neighbors_column_is_bool",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M02": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        },
+        "M03": {
+          "exit_code": 1,
+          "test_cases": 15,
+          "relevant_failures": [
+            "test_grid_neighbors_valid_ints",
+            "test_grid_neighbors_row_zero_is_valid_when_rows_is_one",
+            "test_grid_neighbors_column_zero_is_valid_when_columns_is_one"
+          ]
+        }
+      },
+      "execution_claim_flags": [],
+      "provisional_executable_pass": false,
+      "generated_tokens": 1494,
+      "seconds": 170.2039999999979,
+      "stop_reason": "eos",
+      "review": {
+        "sha256": "408e96d659119b044bebfdef1451163f67714384eb1ae76c1a3e0ec555ef8e78",
+        "answer_sha256": "2437bc36d2a549678d078448484894c8abc647355eada16f674538f1b02d3cad",
+        "approved_for_isolated_execution": true,
+        "source_inspected": true,
+        "reviewer": "coordinating agent; manual source inspection, no independent review claimed",
+        "unix_time": 1793816291.8454368,
+        "coverage_status": "incomplete",
+        "notes": "Expected neighbor lists include original cell, out-of-bounds coordinates, duplicates and wrong order. Thin-grid examples also wrong. Catch-all exception/pass tests accept invalid bounds behavior. Missing ordinary invalid types/int subclasses and exact coordinate type assertions. Clear failures independent of outer-container wording ambiguity. Full source read; no unsafe operations.",
+        "execution_claim_review": "No execution claim; prose incorrectly says bounds behavior unspecified despite explicit IndexError contract.",
+        "reason": null,
+        "prose_status": "invalid"
+      },
+      "strict_accepted": false,
+      "rejection_reasons": [
+        "reference not valid or not executable",
+        "frozen contract coverage incomplete/not fully assessed",
+        "mapping/claims review not valid or not fully assessed"
+      ]
+    }
+  ],
+  "unattempted": [],
+  "runtime": {
+    "generation_and_preflight_seconds": 3253.9530000000086,
+    "generation_seconds": 3175.7499999998545,
+    "total_generated_tokens": 27105,
+    "peak_torch_allocated": 7922842112,
+    "peak_torch_reserved": 7992246272,
+    "gpu_sample_min_free_MiB": 692.0,
+    "process_samples": 0,
+    "process_peak_shared_bytes": null
+  },
+  "review_limit": "Source/rubric review by same coordinating agent; not independent scientific validation.",
+  "frozen_protocol_sha256": "39ac6900c9711391a5a528f09c914d7a9e8f74defd134d5189a7e4845c8c332d",
+  "freeze_manifest_sha256": "f97d48bcb8619e52b638c89318f486a3fa33ad8a14fc6cc474d2838d97da8942",
+  "source_reviews_sha256": "4d758fe0bddb3f86abb8274acc4736c37fb44a978e195f3572727b3e0349ad71"
+}

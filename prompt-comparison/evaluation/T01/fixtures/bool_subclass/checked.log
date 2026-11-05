@@ -1,0 +1,52 @@
+..........FFF...F.                                                       [100%]
+================================== FAILURES ===================================
+__________________________ test_types[values3-True] ___________________________
+
+values = (1, 2), steps = True
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+__________________________ test_types[values4-False] __________________________
+
+values = (1, 2), steps = False
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+____________________________ test_types[values5-1] ____________________________
+
+values = (1, 2), steps = 1
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+__________________________ test_types[values9-True] ___________________________
+
+values = (), steps = True
+
+    @pytest.mark.parametrize("values,steps", [([],1), (None,1), (TupleChild((1,2)),1), ((1,2),True), ((1,2),False), ((1,2),IntChild(1)), ((1,2),1.5), ((1,2),"1"), ((1,2),None), ((),True)])
+    def test_types(values,steps):
+>       with pytest.raises(TypeError): rotate_right(values,steps)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:11: Failed
+=========================== short test summary info ===========================
+FAILED test_checked.py::test_types[values3-True] - Failed: DID NOT RAISE Type...
+FAILED test_checked.py::test_types[values4-False] - Failed: DID NOT RAISE Typ...
+FAILED test_checked.py::test_types[values5-1] - Failed: DID NOT RAISE TypeError
+FAILED test_checked.py::test_types[values9-True] - Failed: DID NOT RAISE Type...
+4 failed, 14 passed in 0.23s

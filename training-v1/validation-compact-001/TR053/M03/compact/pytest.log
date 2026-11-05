@@ -1,0 +1,187 @@
+.FFFFFFF.....                                                            [100%]
+================================== FAILURES ===================================
+___________________________ test_values[args1-0.01] ___________________________
+
+args = (1,), expected = '0.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-0.01' == '0.01'
+E         
+E         - 0.01
+E         + -0.01
+E         ? +
+
+test_target.py:27: AssertionError
+__________________________ test_values[args2--0.01] ___________________________
+
+args = (-1,), expected = '-0.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '0.01' == '-0.01'
+E         
+E         - -0.01
+E         ? -
+E         + 0.01
+
+test_target.py:27: AssertionError
+___________________________ test_values[args3-0.99] ___________________________
+
+args = (99,), expected = '0.99'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-0.99' == '0.99'
+E         
+E         - 0.99
+E         + -0.99
+E         ? +
+
+test_target.py:27: AssertionError
+___________________________ test_values[args4-1.00] ___________________________
+
+args = (100,), expected = '1.00'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-1.00' == '1.00'
+E         
+E         - 1.00
+E         + -1.00
+E         ? +
+
+test_target.py:27: AssertionError
+__________________________ test_values[args5--1.00] ___________________________
+
+args = (-100,), expected = '-1.00'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '1.00' == '-1.00'
+E         
+E         - -1.00
+E         ? -
+E         + 1.00
+
+test_target.py:27: AssertionError
+__________________________ test_values[args6-123.45] __________________________
+
+args = (12345,), expected = '123.45'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-123.45' == '123.45'
+E         
+E         - 123.45
+E         + -123.45
+E         ? +
+
+test_target.py:27: AssertionError
+_____________ test_values[args7-10000000000000000000000000000.01] _____________
+
+args = (1000000000000000000000000000001,)
+expected = '10000000000000000000000000000.01'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), '0.00'),
+        pytest.param((1,), '0.01'),
+        pytest.param((-1,), '-0.01'),
+        pytest.param((99,), '0.99'),
+        pytest.param((100,), '1.00'),
+        pytest.param((-100,), '-1.00'),
+        pytest.param((12345,), '123.45'),
+        pytest.param((1000000000000000000000000000001,), '10000000000000000000000000000.01'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=format_cents(*args)
+>       assert actual == expected
+E       AssertionError: assert '-10000000000...0000000000.01' == '100000000000...0000000000.01'
+E         
+E         - 10000000000000000000000000000.01
+E         + -10000000000000000000000000000.01
+E         ? +
+
+test_target.py:27: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-0.01] - AssertionError: assert '-0.0...
+FAILED test_target.py::test_values[args2--0.01] - AssertionError: assert '0.0...
+FAILED test_target.py::test_values[args3-0.99] - AssertionError: assert '-0.9...
+FAILED test_target.py::test_values[args4-1.00] - AssertionError: assert '-1.0...
+FAILED test_target.py::test_values[args5--1.00] - AssertionError: assert '1.0...
+FAILED test_target.py::test_values[args6-123.45] - AssertionError: assert '-1...
+FAILED test_target.py::test_values[args7-10000000000000000000000000000.01] - ...
+7 failed, 6 passed in 0.34s

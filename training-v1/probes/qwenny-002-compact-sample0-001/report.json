@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "scope": "Predeclared compact-format E5 diagnostic on two visible development tasks; no final evaluation.",
+  "training_run": "runs/qwenny-002-compact",
+  "thinking": false,
+  "seed": 42,
+  "temperature": 1.0,
+  "top_k": 20,
+  "top_p": 0.95,
+  "presence_penalty": 0.0,
+  "repetition_penalty": 1.0,
+  "max_new_tokens": 2048,
+  "context_limit": 16134,
+  "completed": [
+    {
+      "task": "DV001",
+      "variant": "compact-epoch-5-sample-0",
+      "prompt_tokens": 370,
+      "generated_tokens": 530,
+      "seconds": 60.375,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793795317.8733284,
+        "allocated": 5883908096,
+        "reserved": 7992246272,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7992246272,
+        "cuda_free": 1015455744,
+        "total": 10736893952
+      }
+    },
+    {
+      "task": "DV002",
+      "variant": "compact-epoch-5-sample-0",
+      "prompt_tokens": 361,
+      "generated_tokens": 537,
+      "seconds": 60.875,
+      "terminated": true,
+      "truncated": false,
+      "python_blocks": 1,
+      "memory": {
+        "unix_time": 1793795378.7396069,
+        "allocated": 5883908096,
+        "reserved": 7994343424,
+        "peak_allocated": 7922842112,
+        "peak_reserved": 7994343424,
+        "cuda_free": 1013358592,
+        "total": 10736893952
+      }
+    }
+  ],
+  "reload_checks": [
+    {
+      "epoch": 1,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 3,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 5,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "current_task": "DV002",
+  "current_variant": "compact-epoch-5-sample-0"
+}

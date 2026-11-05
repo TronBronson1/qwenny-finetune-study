@@ -1,0 +1,107 @@
+```python
+from subject import rotate_right
+import pytest
+
+# --- Type Validation Tests ---
+
+def test_rotate_empty_tuple():
+    assert rotate_right((), 1) == ()
+
+def test_rotate_single_element():
+    assert rotate_right((5,), 10) == (5,)
+
+def test_rotate_right_basic():
+    values = (1, 2, 3)
+    assert rotate_right(values, 1) == (3, 1, 2)
+
+def test_rotate_left_via_negative_steps():
+    values = (1, 2, 3)
+    # -1 step rotates right by length-1 (equivalent to left by 1)
+    assert rotate_right(values, -1) == (2, 3, 1)
+
+def test_rotate_large_wrapping_positive():
+    values = ("a", "b")
+    assert rotate_right(values, 5) == ("b", "a")  # 5 % 2 = 1
+
+def test_rotate_large_wrapping_negative():
+    values = ("x", "y")
+    assert rotate_right(values, -3) == ("x", "y") # -3 % 2 = -1 -> effectively shift left 1 / right 1
+
+def test_rotate_complex_types():
+    data = [1, 2.5, "str", None]
+    container = tuple(data)
+    result = rotate_right(container, 2)
+    expected = (None, 1, 2.5, "str")
+    assert result == expected
+    # Verify identity preservation for list elements inside
+    assert result[0] is None
+    assert result[2] is data[1]
+
+# --- Invalid Input Type Tests ---
+
+def test_reject_bool_as_steps_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right((1, 2), True)
+
+def test_reject_list_as_values_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right([1, 2], 1)
+
+def test_reject_string_as_values_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right("abc", 1)
+
+def test_reject_float_as_steps_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right((1, 2), 1.5)
+
+def test_reject_dict_as_steps_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right((1, 2), {"step": 1})
+
+def test_reject_tuple_subclass_as_values_is_not_accepted():
+    class MyTuple(tuple):
+        pass
+    with pytest.raises(TypeError):
+        rotate_right(MyTuple((1, 2)), 1)
+
+def test_reject_int_subclass_as_steps_is_not_accepted():
+    class MyInt(int):
+        pass
+    with pytest.raises(TypeError):
+        rotate_right((1, 2), MyInt(1))
+
+def test_reject_none_as_steps_is_not_accepted():
+    with pytest.raises(TypeError):
+        rotate_right((1, 2), None)
+
+def test_reject_zero_steps_returns_same():
+    values = (1, 2, 3, 4)
+    assert rotate_right(values, 0) == values
+
+def test_reject_large_step_well_behaves():
+    values = (1, 2, 3)
+    result = rotate_right(values, 100)
+    assert result == (1, 2, 3)
+
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])
+```
+
+### Requirement-to-Input Mapping
+
+| Contract Requirement | Test Case(s) | Logic Verified |
+| :--- | :--- | :--- |
+| `values` must be exact built-in `tuple` | `test_reject_list...`, `test_reject_string...`, `test_reject_tuple_subclass...` | Checks `isinstance` against `tuple` base class; ensures `list`, `str`, and subclasses raise `TypeError`. |
+| `steps` must be exact built-in `int` (reject bool) | `test_reject_bool_as_steps...`, `test_reject_float_as_steps...`, `test_reject_int_subclass...` | Checks `isinstance(steps, int)` combined with `not isinstance(steps, bool)`. |
+| Empty input returns `()` | `test_rotate_empty_tuple` | Verifies `rotate_right((), k) == ()`. |
+| Negative steps rotate left | `test_rotate_left_via_negative_steps` | Confirms negative step logic matches expected left rotation. |
+| Modulo wrapping | `test_rotate_large_wrapping_positive`, `test_rotate_large_wrapping_negative` | Ensures large positive/negative steps wrap correctly. |
+| Element identity preservation | `test_rotate_complex_types` | Asserts `result[x] is original_list[x]` for nested mutable objects. |
+| No mutation of input | `test_rotate_complex_types` | Compares `id(input)` vs `id(result)` or content equality without shared mutable references affecting original. |
+| Zero steps | `test_reject_zero_steps_returns_same` | Confirms no change occurs at 0 steps. |
+
+### Coverage Limitations
+*   **Empty Tuple Edge Cases:** Only covers `rotate_right((), steps)` where `steps` is valid. Does not explicitly verify behavior if the user passes a non-empty tuple that results in an empty sequence (impossible for rotation unless input is empty).
+*   **Exception Ordering:** While all invalid types are tested individually, there is no single test covering multiple simultaneous type violations (e.g., `type=(...)` passed as a string and `steps=1` passed as a float) because Python raises the first caught exception from the function's internal logic.
+*   **Nested Mutability:** Identity checks are performed only on the top-level tuple's first element which happens to be a list reference. Deeply nested structures within other immutable types inside the tuple are not explicitly asserted for identity, though the contract implies it.<|im_end|>

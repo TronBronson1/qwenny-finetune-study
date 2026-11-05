@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="12" time="0.291" timestamp="2026-11-04T07:12:59.022214-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-1]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-5]" time="0.000" /><testcase classname="test_target" name="test_values[args3-3]" time="0.000" /><testcase classname="test_target" name="test_values[args4--1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ([1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),)),
+        pytest.param(([True],)),
+        pytest.param(([IntChild(1)],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+        pytest.param((ListChild([]),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ([True],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),)),
+        pytest.param(([True],)),
+        pytest.param(([IntChild(1)],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+        pytest.param((ListChild([]),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ([1],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),)),
+        pytest.param(([True],)),
+        pytest.param(([IntChild(1)],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+        pytest.param((ListChild([]),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000"><failure message="ValueError: empty">args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([1]),)),
+        pytest.param(([True],)),
+        pytest.param(([IntChild(1)],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+        pytest.param((ListChild([]),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           lower_median(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = []
+
+    def lower_median(values):
+        _types((values,), ('ints',))
+        if not values:
+&gt;           raise ValueError('empty')
+E           ValueError: empty
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /></testsuite></testsuites>

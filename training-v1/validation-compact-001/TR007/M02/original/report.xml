@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="13" time="0.302" timestamp="2026-11-04T07:11:54.621748-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="assert 1 == 0">args = (0,), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert 8 == 7">args = (7,), expected = 7
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 8 == 7
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert 2 == 1">args = (10,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 3 == 2">args = (101,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert 28 == 27">args = (999,), expected = 27
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 28 == 27
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert 9 == 8">args = (1000000000000000000000000000007,), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((7,), 7, id="v001"),
+        pytest.param((10,), 1, id="v002"),
+        pytest.param((101,), 2, id="v003"),
+        pytest.param((999,), 27, id="v004"),
+        pytest.param((1000000000000000000000000000007,), 8, id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=digit_sum(*args)
+&gt;       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:28: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /></testsuite></testsuites>

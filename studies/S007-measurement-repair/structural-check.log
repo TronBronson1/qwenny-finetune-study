@@ -1,0 +1,28 @@
+tasks checked: 72; with at least one automatic finding: 8
+  3  spec says case-sensitive but no value case with strings differing only
+  3  spec mentions empty input but no empty value case
+  3  MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm 
+  2  spec mentions Unicode but no value case uses a non-ASCII character
+
+TR002 strip-prefix ['str', 'str'] val=10 exc=14
+    - spec says case-sensitive but no value case with strings differing only by case
+TR018 is-palindrome ['str'] val=10 exc=4
+    - spec says case-sensitive but no value case with strings differing only by case
+TR023 plural-count ['int', 'str'] val=6 exc=15
+    - spec mentions empty input but no empty value case
+TR036 lower-median ['ints'] val=5 exc=11
+    - spec mentions empty input but no empty value case
+TR040 parse-key-value ['str'] val=5 exc=10
+    - spec mentions empty input but no empty value case
+TR042 semantic-version ['str'] val=4 exc=22
+    - spec mentions Unicode but no value case uses a non-ASCII character
+TR047 index-of-nth ['str', 'str', 'int'] val=10 exc=21
+    - spec says case-sensitive but no value case with strings differing only by case
+TR049 row-major-index ['int', 'int', 'int', 'int'] val=4 exc=45
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness
+TR050 row-major-index ['int', 'int', 'int'] val=5 exc=27
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness
+DV002 strict-clock-parsing ['str'] val=5 exc=24
+    - spec mentions Unicode but no value case uses a non-ASCII character
+DV007 grid-neighbors ['int', 'int', 'int', 'int'] val=6 exc=50
+    - MANUAL: spec has shape(ValueError)-before-bounds(IndexError); confirm a mixed witness

@@ -1,0 +1,16 @@
+...........................F                                             [100%]
+================================== FAILURES ===================================
+_____________________________ test_types[01:02_1] _____________________________
+
+text = '01:02'
+
+    @pytest.mark.parametrize("text", [True,False,1,1.5,None,b"01:02",StrChild("01:02")])
+    def test_types(text):
+>       with pytest.raises(TypeError): minute_of_day(text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_checked.py:13: Failed
+=========================== short test summary info ===========================
+FAILED test_checked.py::test_types[01:02_1] - Failed: DID NOT RAISE TypeError
+1 failed, 27 passed in 0.22s

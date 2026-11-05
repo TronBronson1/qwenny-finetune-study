@@ -1,0 +1,221 @@
+FFFFFFF........                                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('', ''), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('', 'a'), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('abc', 'abc'), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'abc', expected = 'abc'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('abc')
+E        +  and   <class 'str'> = type('abc')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('abc', 'abd'), expected = 'ab'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'ab', expected = 'ab'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('ab')
+E        +  and   <class 'str'> = type('ab')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('abc', 'a'), expected = 'a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'a', expected = 'a'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('a')
+E        +  and   <class 'str'> = type('a')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('Ab', 'ab'), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('é字a', 'é字b'), expected = 'é字'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=common_prefix(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'é字', expected = 'é字'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('é字')
+E        +  and   <class 'str'> = type('é字')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'sub...
+7 failed, 8 passed in 0.63s

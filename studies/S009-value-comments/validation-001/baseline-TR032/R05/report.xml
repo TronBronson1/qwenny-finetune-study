@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="15" time="0.384" timestamp="2026-11-04T18:57:18.412657-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert ([-1, -3], [0], [1, 3]) == ([-1, -3], [0], [3, 1])&#10;  &#10;  At index 2 diff: [1, 3] != [3, 1]&#10;  Use -v to get more diff">args = ([3, 1, 0, -1, -3],), expected = ([-1, -3], [0], [3, 1])
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), ([], [], []), id="v000"),
+        pytest.param(([0],), ([], [0], []), id="v001"),
+        pytest.param(([-1, 2, 0, -3, 2, 0],), ([-1, -3], [0, 0], [2, 2]), id="v002"),
+        pytest.param(([1, 2],), ([], [], [1, 2]), id="v003"),
+        pytest.param(([-2, -1],), ([-2, -1], [], []), id="v004"),
+        pytest.param(([3, 1, 0, -1, -3],), ([-1, -3], [0], [3, 1]), id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=partition_sign(*args)
+&gt;       assert actual == expected
+E       assert ([-1, -3], [0], [1, 3]) == ([-1, -3], [0], [3, 1])
+E         
+E         At index 2 diff: [1, 3] != [3, 1]
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /></testsuite></testsuites>

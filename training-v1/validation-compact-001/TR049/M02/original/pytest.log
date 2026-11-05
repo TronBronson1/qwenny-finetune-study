@@ -1,0 +1,40 @@
+.F.F.............................................                        [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = (0, 2, 2, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+>       assert actual == expected
+E       assert -2 == 2
+
+test_target.py:26: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (1, 2, 2, 3), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0, id="v000"),
+        pytest.param((0, 2, 2, 3), 2, id="v001"),
+        pytest.param((1, 0, 2, 3), 3, id="v002"),
+        pytest.param((1, 2, 2, 3), 5, id="v003"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+>       assert actual == expected
+E       assert 1 == 5
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - assert -2 == 2
+FAILED test_target.py::test_values[v003] - assert 1 == 5
+2 failed, 47 passed in 0.38s

@@ -1,0 +1,199 @@
+FFFFFF...........F                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0, 'cat'), expected = '0 cats'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 0, noun = 'cat'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v001] ______________________________
+
+args = (1, 'cat'), expected = '1 cat'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 1, noun = 'cat'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v002] ______________________________
+
+args = (2, 'cat'), expected = '2 cats'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, noun = 'cat'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v003] ______________________________
+
+args = (1, 'box'), expected = '1 box'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 1, noun = 'box'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v004] ______________________________
+
+args = (2, 'box'), expected = '2 boxs'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, noun = 'box'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+______________________________ test_values[v005] ______________________________
+
+args = (10, 'Ã©'), expected = '10 Ã©s'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 'cat'), '0 cats', id="v000"),
+        pytest.param((1, 'cat'), '1 cat', id="v001"),
+        pytest.param((2, 'cat'), '2 cats', id="v002"),
+        pytest.param((1, 'box'), '1 box', id="v003"),
+        pytest.param((2, 'box'), '2 boxs', id="v004"),
+        pytest.param((10, 'Ã©'), '10 Ã©s', id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=plural_count(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 10, noun = 'Ã©'
+
+    def plural_count(number, noun):
+        _types((number, noun), ('int', 'str'))
+        if number < 0 or noun != '':
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[e010] _________________________
+
+args = (1, '')
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1, 'cat'), id="e009"),
+        pytest.param((1, ''), id="e010"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - ValueError: domain
+FAILED test_target.py::test_values[v001] - ValueError: domain
+FAILED test_target.py::test_values[v002] - ValueError: domain
+FAILED test_target.py::test_values[v003] - ValueError: domain
+FAILED test_target.py::test_values[v004] - ValueError: domain
+FAILED test_target.py::test_values[v005] - ValueError: domain
+FAILED test_target.py::test_raises_valueerror[e010] - Failed: DID NOT RAISE V...
+7 failed, 11 passed in 0.67s

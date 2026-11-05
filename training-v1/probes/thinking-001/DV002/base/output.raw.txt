@@ -1,0 +1,578 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Goal:** Write simple, executable Python code following a specific contract exactly.
+    *   **Function:** `minute_of_day(text)`.
+    *   **Source:** `from subject import minute_of_day`.
+    *   **Constraints:**
+        *   `text` must be an exact built-in `str` (reject subclasses).
+        *   Format: Exactly 5 ASCII characters "HH:MM".
+        *   Hours: 00..23.
+        *   Minutes: 00..59.
+        *   Return: `int` = `hour*60+minute`.
+        *   Exceptions: `TypeError` for invalid types (including subclasses of str), `ValueError` for malformed strings.
+        *   Do not mutate input.
+        *   Do not implement the function (use `pytest` to test `subject.minute_of_day`).
+        *   Do not use conditional expressions to build argument lists.
+        *   Do not use mocked/inspected/complex fixtures (unless supplied, but here none are supplied).
+        *   Explicit argument tuples.
+        *   Separate return-value cases from expected-exception cases.
+        *   Check validity logic (e.g., reversed bounds).
+        *   One Python code block.
+        *   Brief requirement-to-input mapping and honest finite-coverage limitations.
+
+2.  **Analyze the Function Contract Details:**
+    *   **Input:** `text` (str).
+    *   **Type Check:** `isinstance(text, str)` must be `True`, AND `type(text) == str` (reject subclasses). This is a crucial distinction often found in strict contracts.
+    *   **Value/Shape Check:**
+        *   Length must be exactly 5.
+        *   Format `XX:XX`.
+        *   First two chars: digits `0`-`9`, representing 00-23.
+        *   Colon must be at index 2.
+        *   Last two chars: digits `0`-`9`, representing 00-59.
+        *   ASCII only (no Unicode digits).
+        *   Output: `int`.
+    *   **Exceptions:**
+        *   `TypeError`: If not exact `str` (e.g., `bytearray`, `str` subclass).
+        *   `ValueError`: If string is malformed (wrong length, non-digits, invalid hour/minute ranges).
+
+3.  **Plan the Test Cases:**
+    *   Need `@pytest.mark.parametrize`.
+    *   Need explicit tuples for arguments.
+    *   Separate `return` cases from `raises` cases.
+    *   Need to cover:
+        *   Valid hours (00, 23).
+        *   Valid minutes (00, 59).
+        *   Invalid hours (< 00, > 23).
+        *   Invalid minutes (< 00, > 59).
+        *   Wrong length (4, 6 chars).
+        *   Wrong format (no colon, non-digits).
+        *   Type checks (subclass of str, other types).
+        *   Reversed bounds (lower > upper) check (though the contract says 00-23 and 00-59 individually, "reversed-bounds test" in the prompt instructions implies checking specific bounds logic. Since the contract specifies HH:MM ranges independently, I should test bounds logic on the resulting minute calculation or the components). Wait, the prompt says: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value." This usually applies to a specific helper or a specific scenario. However, for `minute_of_day`, the bounds are fixed (00-23, 00-59). There is no "lower bound" vs "upper bound" argument here. The prompt instruction might be a general guideline for parametrized tests in general, or it might imply I need to test edge cases where the logic *would* fail bounds. Given the strict contract, I will test the valid ranges at the edges (00, 23, 00, 59) and invalid out-of-bounds ranges. I will interpret "reversed-bounds test" instruction carefully. It says "When isolating an invalid input...". This implies if I have a test for bounds, I should check if a value exceeds the limit.
+        *   Type subclass check: `bytes` (maybe), `str` subclass.
+    *   Do not use conditional expressions to build argument lists.
+    *   Use explicit tuples.
+
+4.  **Drafting the Code:**
+    *   Import `pytest`.
+    *   Import `minute_of_day` from `subject`.
+    *   Define `test_valid_cases` returning values.
+    *   Define `test_invalid_cases` expecting exceptions.
+    *   Ensure `type(text) == str` checks are covered (e.g., `str("12:30")` is fine, but a subclass might fail). Since I cannot import a custom subclass without implementing it, I can create a simple subclass inline or use `bytes`/`bytearray` as type checks. The contract says "reject subclasses". So `class MyStr(str): pass; MyStr("00:00")`.
+    *   Wait, creating a class inside the test file is allowed to test the subclass rejection.
+    *   Need to ensure the argument tuples are explicit.
+
+5.  **Refining Argument Tuples:**
+    *   Valid: `("00:00",)`, `("05:30",)`, `("23:59",)`.
+    *   Invalid Type: `(MyStr("00:00"),)`, `(12345, )`.
+    *   Invalid Value: `("24:00",)`, `("00:60",)`, `("1:00",)`, `("00:0",)`.
+
+6.  **Addressing Specific Instructions:**
+    *   "Distinguish tests you inspected from tests you executed." -> I am generating the file, I must state this in the text below the code block.
+    *   "State limitations precisely; do not claim completeness".
+    *   "Do not claim execution."
+    *   "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly." -> Use `pytest.mark.parametrize(...)` with explicit lists or direct argument passing? `pytest.mark.parametrize` with a list of tuples is standard. I should avoid `[(f, c) for ...]`. I will write out the list of tuples explicitly.
+    *   "For a reversed-bounds test..." -> This instruction is slightly confusing for `HH:MM`. Hours 00-23, Minutes 00-59. There isn't a dynamic lower/upper bound pair like `range`. However, I can test the hour bounds (00 vs 23) and minute bounds (00 vs 59). I will test cases where the hour exceeds 23 and minute exceeds 59.
+
+7.  **Code Structure:**
+    ```python
+    import pytest
+
+    class StrSub(str):
+        pass
+
+    class TestMinuteOfDay:
+        def test_valid_edges(self):
+            # Valid cases explicit tuples
+            pass
+
+        def test_invalid_types(self):
+            # Type checks
+            pass
+
+        def test_invalid_values(self):
+            # Value checks
+            pass
+    ```
+    Actually, better to follow the instruction "write complete explicit argument tuples; unpack them directly".
+    This usually means `@pytest.mark.parametrize('text', [...])` inside a method, or `@pytest.mark.parametrize('arg', [('00:00',), ...])` and call `f(arg[0])`.
+    The instruction says: "For parametrized tests, write complete explicit argument tuples; unpack them directly. Keep ordinary return-value cases separate from expected-exception cases. Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    So I should create separate `@pytest.mark.parametrize` blocks or use `yield` style? "write complete explicit argument tuples".
+    Let's make separate functions for valid and invalid to keep them separate.
+    Wait, "Do not build argument lists through conditional expressions".
+    So: `cases = [('00:00',), ...]` is okay if it's a hardcoded list, not `if...`.
+    "Match every parametrized name to a test argument; request fixtures only when they are supplied."
+    Okay, I will write:
+    ```python
+    @pytest.mark.parametrize('arg', [('00:00',), ('23:59',), ...])
+    def test_valid(self, arg):
+        return minute_of_day(arg[0])
+    ```
+    Or better:
+    ```python
+    @pytest.mark.parametrize('text', ['00:00', '23:59'])
+    def test_valid_return(self, text):
+        result = minute_of_day(text)
+        assert isinstance(result, int)
+        # ...
+    ```
+    But the instruction says "Keep ordinary return-value cases separate from expected-exception cases."
+    So maybe `def test_valid(self):` and `def test_invalid(self):` with explicit fixtures or lists?
+    If I use `parametrize`, I am generating arguments.
+    Let's interpret "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly" carefully.
+    I will define a list of valid arguments explicitly.
+    I will define a list of invalid arguments explicitly.
+    I will define a test that iterates over valid args and returns values.
+    I will define a test that iterates over invalid args and raises.
+
+    Wait, instruction: "For parametrized tests, write complete explicit argument tuples; unpack them directly."
+    This implies:
+    ```python
+    @pytest.mark.parametrize('text', [('00:00',), ('23:59',), ('24:00',)])
+    def test_case(self, text):
+        ...
+    ```
+    Or maybe it means pass the tuple directly to the function if it accepts unpacking?
+    "Unpack them directly" -> `minute_of_day(text)` inside the test.
+    Okay, I will create two parameterized functions. One for valid, one for invalid.
+    Lists must be hardcoded, not generated via list comprehensions with conditions (e.g. no `[x for x in ...]`).
+
+    "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    This instruction is tricky. In `minute_of_day`, there is no explicit range check like `start > end`.
+    However, if I check hour bounds (00..23) and minute bounds (00..59), "lower value exceeds upper value" doesn't quite fit `HH:MM`.
+    Perhaps it refers to the minute value check vs the hour check?
+    Actually, it might mean: test `12:60` (where minute > 59) or `24:00` (hour > 23).
+    I will interpret this as checking invalid hour ranges (24 > 23) and invalid minute ranges (60 > 59).
+    "When isolating an invalid input, hold the other arguments valid."
+    So test `24:00` (Hour invalid, Minute valid) and `00:60` (Minute invalid, Hour valid).
+    I also need to test the Type subclass rejection.
+    "Exact built-in str (reject subclasses)". So `str` is valid, `bytes` is invalid, `MyStr` is invalid.
+
+    "Use the exact requested import." -> `from subject import minute_of_day`.
+
+8.  **Finalizing Test Structure:**
+    *   `class StrSub(str): ...` defined to test subclass rejection.
+    *   `test_valid_cases`: Parametrize with valid strings only. Assert return value is `int` and calculate expected.
+    *   `test_invalid_types`: Parametrize with invalid types (subclass, bytes, int, etc). Expect `TypeError`.
+    *   `test_invalid_values`: Parametrize with malformed strings (wrong length, invalid digits, out of bounds hours/minutes). Expect `ValueError`.
+
+    Wait, "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    So `valid_cases = [ ... ]` is fine. `[x for x in valid if ...]` is not.
+    I will write the lists out explicitly.
+
+    Limitations statement:
+    1.  Did not run tests (simulation/verification only).
+    2.  Coverage is limited to explicitly defined valid/invalid states.
+    3.  No dynamic input generation.
+    4.  No testing of edge cases not explicitly listed (e.g. specific whitespace handling not specified, though contract implies strict).
+
+9.  **Reviewing constraints again:**
+    *   "Write one complete pytest file".
+    *   "Return one Python code block".
+    *   "Then a brief requirement-to-input mapping".
+    *   "Honest finite-coverage limitations".
+    *   "Distinguish tests you inspected from tests you executed".
+    *   "Use explicit complete argument tuples".
+    *   "Do not mutate input".
+
+    Wait, I need to make sure I don't claim execution. I need to state limitations precisely.
+    The prompt asks me to *write* the code. It does not ask me to execute it.
+    "Before returning a test file, check each case against its concrete argument values and required result or exception." -> I must ensure the code I write is logically correct based on the contract.
+    "Do not claim completeness or that one exception-order case proves every validation ordering."
+
+    Let's assemble the code.
+
+    Imports: `pytest`, `str` (maybe for type checking).
+    Class `StrSub(str)` for subclass testing.
+    Function `test_valid_returns`.
+    Function `test_type_errors`.
+    Function `test_value_errors`.
+
+    Constraint: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    This sounds like if I have a test for a function like `range(start, end)`, I check `start > end`.
+    Here, `minute_of_day` parses `HH:MM`.
+    I will check if I can frame this.
+    If I test `hour=24` and `hour` max is 23.
+    If I test `minute=60` and `minute` max is 59.
+    I will add comments or logic to ensure these specific bound violations are explicitly checked.
+
+    Wait, "request fixtures only when they are supplied." -> None supplied.
+    "Unpack them directly." -> `minute_of_day(text)`.
+
+    Okay, ready to write.
+
+    Wait, one detail: "All returned containers/scalars must have exact built-in types as described, recursively."
+    So `assert isinstance(result, int)` and `assert not isinstance(result, int.__class__)`. Python ints don't have subclasses easily testable this way, but `type(result) == int` is safer.
+
+    "Reversed-bounds test": This instruction might be generic boilerplate.
+    "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    In the context of `minute_of_day`, there are no lower/upper bounds in the contract *other* than the range definitions.
+    However, I should ensure that invalid hour (24) is > valid hour (23).
+    I will treat "lower" as the value being tested (e.g. 24) and "upper" as the contract limit (23).
+    I will verify the test case represents a value exceeding the bound.
+
+    "Distinguish tests you inspected from tests you executed."
+    I need to write text saying "This file is designed to be executed... This analysis was performed by..."
+    Wait, "State limitations precisely; do not claim completeness".
+    I should say: "Tests listed were inspected for alignment with contract. Execution not performed."
+
+    Let's write the code block first.
+
+    ```python
+    import pytest
+
+    class StrSub(str):
+        pass
+
+    def test_valid_minutes_return_values():
+        cases = [
+            ("00:00", 0),
+            ("05:00", 300),
+            ("23:59", 1439),
+            ("01:01", 61),
+            ("12:30", 750),
+        ]
+        for text, expected in cases:
+            assert isinstance(minute_of_day(text), int)
+            assert minute_of_day(text) == expected
+    ```
+    Wait, "For parametrized tests, write complete explicit argument tuples; unpack them directly."
+    Using a list comprehension is okay if it doesn't use conditionals?
+    "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    Using `[ ... ]` is explicit. Using `[x for x in ...]` might be seen as implicit construction.
+    I should write the list explicitly as a list of tuples.
+    Actually, `@pytest.mark.parametrize` expects a list of arguments.
+    If I put `cases = [...]` inside the function, it's cleaner.
+    But `pytest` needs `@pytest.mark.parametrize` to know to iterate.
+    I can define a global `VALID_TEXTS` list.
+    Or I can use `@pytest.mark.parametrize('text, expected', [('00:00', 0), ...])`.
+    "Unpack them directly" -> `minute_of_day(text)`.
+    I will use `@pytest.mark.parametrize` for valid cases and invalid cases separately.
+    This keeps them distinct.
+
+    Revised Code Plan:
+    1. Import `pytest`, `str`.
+    2. Define subclass `StrSub`.
+    3. Define `test_valid_inputs`.
+    4. Define `test_invalid_types`.
+    5. Define `test_invalid_values`.
+
+    Constraint: "Write one complete pytest file".
+    So all in one code block.
+
+    Constraint: "Distinguish tests you inspected from tests you executed."
+    I must add a comment or header in the text below the code block stating this. Or within the file?
+    "Write one complete pytest file... Return one Python code block, then a brief requirement-to-input mapping and honest finite-coverage limitations."
+    So the text comes *after* the code block.
+    Inside the code block, I write the pytest tests.
+    I should ensure the text explains the limitations.
+
+    Wait, "Do not claim execution."
+    I must state that I did not execute the tests.
+    I inspected them against the contract.
+
+    Wait, "Unpack them directly."
+    This might mean inside the test function, `minute_of_day(arg)` where `arg` is the tuple or the extracted item.
+    If I use `parametrize('text', [...])`, `text` is the tuple item.
+    If I have tuples in the parametrize list like `('00:00',)`, then `text` will be the tuple `('00:00',)`.
+    Then `minute_of_day(text)` works.
+    Or `text` is `00:00` string.
+    If the parametrize list contains tuples `('00:00',)`, then the argument passed is that tuple.
+    If I want `minute_of_day(text)` to work, `text` should be the string.
+    So the parametrize list should contain strings directly.
+    But the instruction says "write complete explicit argument tuples".
+    Maybe it means `@pytest.mark.parametrize('text', [('00:00', '23:59')])` -> `text` is a tuple.
+    But `minute_of_day` expects a string.
+    Or `@pytest.mark.parametrize('args', [('00:00',)])` -> `args` is tuple. `minute_of_day(args[0])`.
+    "Unpack them directly" -> `minute_of_day(*arg)`?
+    Let's look at "For parametrized tests, write complete explicit argument tuples; unpack them directly."
+    This usually means: `@pytest.mark.parametrize('arg', [('a', 'b')])` and inside `def test(arg): ... f(*arg)`.
+    However, `minute_of_day` takes one string.
+    So maybe `@pytest.mark.parametrize('arg', [('00:00',)])` -> `minute_of_day(*arg)`.
+    This satisfies "unpack them directly".
+    Okay, I will use that pattern.
+
+    Wait, "Keep ordinary return-value cases separate from expected-exception cases."
+    So two parametrize functions.
+
+    Let's draft.
+    ```python
+    import pytest
+    from subject import minute_of_day
+
+    class StrSub(str):
+        pass
+
+    @pytest.mark.parametrize('args', [('00:00',), ('23:59',), ('15:45',)])
+    def test_valid_returns(args):
+        result = minute_of_day(*args)
+        assert isinstance(result, int)
+        # Verify calculation logic
+        hour = int(*args[0].split(':')[:1])
+        minute = int(*args[0].split(':')[-1])
+        assert result == hour * 60 + minute
+
+    @pytest.mark.parametrize('args', [('StrSub("00:00")',), (123,)])
+    def test_type_errors(args):
+        with pytest.raises(TypeError):
+            minute_of_day(*args)
+
+    @pytest.mark.parametrize('args', [('24:00',), ('00:60',), ('1:00',), ('00:0',)])
+    def test_value_errors(args):
+        with pytest.raises(ValueError):
+            minute_of_day(*args)
+    ```
+    Wait, `StrSub("00:00")` in a parametrize list is a string literal inside quotes?
+    If I put `('StrSub("00:00")',)` in the list, `*args` calls `minute_of_day('StrSub("00:00")',)`.
+    That's a string, not the subclass.
+    To pass the subclass instance, I need an expression.
+    Parametrize lists usually contain literals.
+    I can define a global fixture or a variable holding the instance?
+    "request fixtures only when they are supplied." -> No fixtures supplied.
+    "Do not build argument lists through conditional expressions".
+    I can define the subclass instance in the test file, then pass it to parametrize.
+    Wait, if I define `bad_str = StrSub("00:00")` in the module, I can't use it in `parametrize` list easily as a literal.
+    Parametrize takes a list of values. If I put a variable reference `bad_str` in the list, is that allowed?
+    "write complete explicit argument tuples".
+    If I write `['00:00', '23:59']` it works.
+    To pass a subclass instance, I must instantiate it.
+    If I instantiate it in the parametrize list: `[(StrSub("00:00"))]`.
+    Wait, `pytest` might evaluate the tuple at runtime before passing to the test function.
+    If I do `@pytest.mark.parametrize('args', [(StrSub("00:00"))])`, that works.
+    Is that "explicit"? Yes.
+    Is it a "conditional expression"? No.
+    Okay, I will construct the class definition and the parametrize list inside the same file.
+
+    Wait, `int(*args[0].split(...))`?
+    `args` is `('00:00',)`. `*args` unpacks to `"00:00"`.
+    `args[0]` is `"00:00"`.
+    Logic check: `result` must equal `hour*60+minute`.
+    I need to ensure `int` parsing works in my test without calling the function again.
+    But I can't mutate input.
+    I can parse the string `*args[0]` in the test to verify the expected result.
+
+    Wait, "reversed-bounds test".
+    "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    In `test_value_errors`, I have `('24:00',)`.
+    Here, the hour is 24. The valid upper bound is 23. 24 > 23.
+    In `('00:60',)`.
+    Here, the minute is 60. The valid upper bound is 59. 60 > 59.
+    I should explicitly verify this logic in the comments or test assertions.
+    "State limitations precisely... Do not claim execution."
+
+    Let's refine the invalid value cases to ensure they match "reversed-bounds" instruction.
+    Maybe I need a specific test `test_reversed_bounds`.
+    But for `minute_of_day`, the bounds are fixed.
+    I will add a check in the `test_value_errors` to verify the string components exceed bounds.
+    Actually, the instruction says "For a reversed-bounds test...".
+    It might imply I should add a specific test case labeled `test_reversed_bounds` if applicable, or ensure the test logic verifies it.
+    Since I don't have a `range` function here, I'll ensure the invalid inputs clearly violate the upper bounds.
+    I will add a docstring or comment explaining the bounds violation logic.
+
+    Wait, "Do not claim execution."
+    I must write text saying "Tests were constructed...".
+
+    One more thing: "All returned containers/scalars must have exact built-in types... recursively."
+    `minute_of_day` returns `int`. `isinstance(result, int)` and `type(result) == int`.
+    In Python 3, `int` is immutable, no subclasses usually.
+    I'll check `isinstance(result, int)`.
+
+    Okay, writing the code.
+
+    Check: "Reject invalid specified types with TypeError before value/shape checks."
+    This is the contract of the function `minute_of_day`. My tests check `TypeError` raised.
+
+    Check: "For parametrized tests, write complete explicit argument tuples; unpack them directly."
+    My code: `@pytest.mark.parametrize('args', [('00:00',)])` -> `minute_of_day(*args)`.
+    Unpacking `args` (which is a tuple containing the string) calls `minute_of_day("00:00")`.
+    This satisfies "unpack them directly".
+    Wait, `args` is `('00:00',)`. `*args` passes `"00:00"`.
+    This works.
+
+    Check: "Keep ordinary return-value cases separate from expected-exception cases."
+    I have `test_valid_returns` and `test_invalid_...`.
+
+    Check: "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    My lists are explicit: `[('00:00',), ('23:59',), ('15:45',)]`.
+
+    Check: "Use exact requested import."
+    `from subject import minute_of_day`.
+
+    Check: "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value."
+    I will add an assertion in `test_value_errors` to confirm the violation logic (e.g. `if "24:00" then 24 > 23`).
+    Wait, I can't run Python code inside assertions inside the test file logic easily without the function call.
+    I will add comments verifying the bounds.
+
+    Okay, final check on "Distinguish tests you inspected from tests you executed."
+    This should be in the text below the code block.
+    "State limitations precisely; do not claim completeness."
+
+    One detail: `int` parsing for verification.
+    `hour = int(args[0][0:2])`
+    `minute = int(args[0][3:5])`
+    Wait, `args` is `('00:00',)`. `args[0]` is `"00:00"`.
+    `args[0].split(':')` is `['00', '00']`.
+    `int('00')` is 0.
+    `0*60+0 = 0`.
+    I can calculate expected result in the test without calling `minute_of_day` to verify the contract logic is consistent.
+    But I should not assume `minute_of_day` calculates it correctly, I assume it's correct and the test verifies that the *valid* cases return the calculated value.
+    Wait, "Do not implement, replace, mock or inspect the function."
+    I should test that the function behaves as per contract.
+    So for valid cases: call `minute_of_day`, check result.
+    For invalid cases: call `minute_of_day`, catch `ValueError`.
+    For type checks: catch `TypeError`.
+    I shouldn't manually calculate the expected value to verify the function's implementation (as that would be inspecting it), but for valid cases, the contract says "Return hour*60+minute". So asserting `result == hour*60+minute` is verifying the contract logic, not inspecting the function internals.
+    So `test_valid` asserts `result == hour*60+minute`.
+    For invalid values, I assert `with pytest.raises(ValueError)`.
+    To satisfy "For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value", I will add an assertion to check that the input string represents values exceeding the contract bounds (e.g. 24 > 23).
+    I can do this by parsing the string in the test (since it's an invalid input, the parsing reveals the error).
+    Example: In `test_value_errors`, for `("24:00",)`: `assert int("24") > 23`.
+    This verifies the "reversed-bounds" condition (value > limit).
+
+    Wait, "Do not mutate input".
+    I am parsing `args[0]`. This is reading, not mutating.
+
+    Okay, ready.
+
+    One final check: "Do not claim execution."
+    The text below the code block must reflect this.
+
+    Another check: "Do not claim completeness".
+    I will list the specific test cases included and note what is not covered (e.g. all 1440 combinations).
+
+    Another check: "exact built-in types".
+    `isinstance(result, int)` is sufficient for scalars.
+    For types like `str`, `type(text) == str` is needed.
+    I will assert `type(text) == str` in the valid tests?
+    The contract says "text: an exact built-in str (reject subclasses)".
+    So my test for valid cases must ensure `type(text) == str`.
+    My parametrized valid cases are `('00:00',)`. `args[0]` is a str. `type` check is implicit in the list content.
+    But to be rigorous, I should assert `type(text) == str` inside `test_valid_returns`.
+    Wait, `minute_of_day` raises `TypeError` if not exact str.
+    So if I call it with a valid tuple, it won't raise `TypeError`.
+    I should add `assert type(text) == str` in the test to be explicit.
+
+    Okay, writing the code.
+
+    Wait, `StrSub` in the `test_type_errors`.
+    I need to instantiate it.
+    `params = [StrSub("00:00")]` -> `parametrize('args', [(['00:00',])]`?
+    No, `parametrize` takes values.
+    I will create a tuple containing the subclass instance.
+    `params = [(StrSub("00:00"))]`.
+    Wait, if I do `*args` inside the test function: `minute_of_day(*args)`.
+    `args` is `(StrSub("00:00"),)`. `*args` passes `StrSub("00:00")`.
+    `minute_of_day` should raise `TypeError`.
+    This works.
+
+    Wait, `('24:00',)` is a string. `('24:00',)` inside `args` tuple.
+    `minute_of_day(*args)` -> `minute_of_day("24:00")`.
+    If `args` is `("24:00",)`, `*args` passes `"24:00"`.
+    If `args` is `(StrSub("24:00"),)`, `*args` passes `StrSub("24:00")`.
+    This works.
+    I must ensure the parametrize list contains valid Python objects that can be unpacked.
+
+    Code structure:
+    1. Import pytest, subject.
+    2. Define StrSub.
+    3. Test Valid.
+    4. Test Types.
+    5. Test Values (Bounds).
+
+    Wait, "For a reversed-bounds test...".
+    I will create a specific test `test_reversed_bounds`?
+    "For a reversed-bounds test..." implies if such a test exists, check the condition.
+    Since `minute_of_day` doesn't take bounds as arguments, I will check if the input value exceeds the limit within the test.
+    I'll merge this into `test_invalid_values` with an assertion to prove the bounds violation.
+    Example: `assert int(args[0].split(':')[0]) > 23`.
+    This verifies "actual lower value exceeds actual upper value".
+
+    Wait, "Do not build argument lists through conditional expressions".
+    My parametrize lists are static.
+
+    Okay, let's go.
+    One nuance: "Do not mutate any input".
+    `args[0]` access is not mutation. `split` creates new string.
+    `minute_of_day` should not mutate input (internal logic).
+    My test should not mutate input either.
+
+    Wait, "exact built-in types as described".
+    Valid returns must be `int`.
+    My valid test asserts `isinstance(result, int)`.
+
+    Final check on "Write one complete pytest file importing 'from subject import minute_of_day'".
+    Yes.
+    "Do not implement, replace, mock or inspect the function."
+    I am using the function as a black box.
+
+    Limitations text:
+    - Tests inspected, not executed.
+    - Parametrize lists are hardcoded, not exhaustive of all 1440 minute combinations.
+    - No coverage of edge cases not explicitly listed.
+    - No coverage of timezone/localization aspects (contract says ASCII chars).
+
+    Wait, "Do not claim completeness".
+    Okay.
+    "Distinguish tests you inspected from tests you executed."
+    This text goes in the limitation section.
+
+    Wait, "Use exact requested import."
+    `from subject import minute_of_day`.
+
+    Wait, "Do not build argument lists through conditional expressions or duplicate tuple elements implicitly."
+    I will ensure the lists are distinct and literal.
+
+    Ready.
+</think>
+
+```python
+import pytest
+from subject import minute_of_day
+
+
+class StrSub(str):
+    pass
+
+
+@pytest.mark.parametrize('args', [('00:00',), ('05:30',), ('23:59',)])
+def test_valid_returns(args):
+    result = minute_of_day(*args)
+    text = args[0]
+    assert isinstance(result, int)
+    assert type(result) == int
+    assert isinstance(text, str)
+    assert type(text) == str
+    hour_part, minute_part = text.split(':')
+    calculated = int(hour_part) * 60 + int(minute_part)
+    assert result == calculated
+
+
+@pytest.mark.parametrize('args', [
+    (StrSub("00:00"),),
+    ("1234",),
+    ("abc:de",),
+    ("24:00",),
+    ("00:60",),
+    ("0:00",),
+])
+def test_type_errors(args):
+    with pytest.raises(TypeError):
+        minute_of_day(*args)
+
+
+@pytest.mark.parametrize('args', [
+    ("24:00",),
+    ("25:00",),
+    ("00:60",),
+    ("00:61",),
+    ("00:00 ",),
+])
+def test_value_errors(args):
+    text = args[0]
+    with pytest.raises(ValueError):
+        minute_of_day(text)
+    # Verify reversed-bounds condition for hour/minute
+    if ':' in text:
+        try:
+            hour = int(text[:2])
+            minute =

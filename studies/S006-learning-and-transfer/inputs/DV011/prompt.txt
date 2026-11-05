@@ -1,0 +1,25 @@
+<|im_start|>system
+Write simple, executable Python code that follows the supplied contract exactly.
+
+For parametrized tests, write complete explicit argument tuples; unpack them directly. Keep ordinary return-value cases separate from expected-exception cases. Do not build argument lists through conditional expressions or duplicate tuple elements implicitly.
+
+Before returning a test file, check each case against its concrete argument values and required result or exception. For a reversed-bounds test, verify that the actual lower value exceeds the actual upper value. When isolating an invalid input, hold the other arguments valid. Match every parametrized name to a test argument; request fixtures only when they are supplied. Use the exact requested import.
+
+Distinguish tests you inspected from tests you executed. State limitations precisely; do not claim completeness or that one exception-order case proves every validation ordering.<|im_end|>
+<|im_start|>user
+Function contract: interval_union(intervals).
+
+- intervals: an exact list of exact two-int tuples.
+
+Reject invalid specified types with TypeError before value/shape checks. All returned containers/scalars must have exact built-in types as described, recursively.
+
+Each pair is (low,high) with low < high, otherwise ValueError. Return sorted nonoverlapping half-open interval pairs covering the union; merge overlaps and touching intervals. Input order is arbitrary. Do not mutate input.
+
+Do not mutate any input, including nested containers.
+
+Write one complete pytest file importing 'from subject import interval_union'. Do not implement, replace, mock or inspect the function. Use only pytest and the standard library. Use explicit complete argument tuples. Return one Python code block, then a brief requirement-to-input mapping and honest finite-coverage limitations. Do not claim execution.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

@@ -1,0 +1,112 @@
+FFFFF.......                                                             [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-1] _____________________________
+
+args = ([1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1),
+        pytest.param(([4, 1],), 1),
+        pytest.param(([9, 1, 5],), 5),
+        pytest.param(([9, 1, 5, 3],), 3),
+        pytest.param(([-1, -1, 0],), -1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=lower_median(*args)
+               ^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1]
+
+    def lower_median(values):
+        _types((values,), ('ints',))
+        if not values:
+            raise ValueError('empty')
+        ordered = sorted(values)
+>       return ordered[(len(ordered) + 1) // 2]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       IndexError: list index out of range
+
+subject.py:57: IndexError
+____________________________ test_values[args1-1] _____________________________
+
+args = ([4, 1],), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1),
+        pytest.param(([4, 1],), 1),
+        pytest.param(([9, 1, 5],), 5),
+        pytest.param(([9, 1, 5, 3],), 3),
+        pytest.param(([-1, -1, 0],), -1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 4 == 1
+
+test_target.py:25: AssertionError
+____________________________ test_values[args2-5] _____________________________
+
+args = ([9, 1, 5],), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1),
+        pytest.param(([4, 1],), 1),
+        pytest.param(([9, 1, 5],), 5),
+        pytest.param(([9, 1, 5, 3],), 3),
+        pytest.param(([-1, -1, 0],), -1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 9 == 5
+
+test_target.py:25: AssertionError
+____________________________ test_values[args3-3] _____________________________
+
+args = ([9, 1, 5, 3],), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1),
+        pytest.param(([4, 1],), 1),
+        pytest.param(([9, 1, 5],), 5),
+        pytest.param(([9, 1, 5, 3],), 3),
+        pytest.param(([-1, -1, 0],), -1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 5 == 3
+
+test_target.py:25: AssertionError
+____________________________ test_values[args4--1] ____________________________
+
+args = ([-1, -1, 0],), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([1],), 1),
+        pytest.param(([4, 1],), 1),
+        pytest.param(([9, 1, 5],), 5),
+        pytest.param(([9, 1, 5, 3],), 3),
+        pytest.param(([-1, -1, 0],), -1),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=lower_median(*args)
+>       assert actual == expected
+E       assert 0 == -1
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-1] - IndexError: list index out of r...
+FAILED test_target.py::test_values[args1-1] - assert 4 == 1
+FAILED test_target.py::test_values[args2-5] - assert 9 == 5
+FAILED test_target.py::test_values[args3-3] - assert 5 == 3
+FAILED test_target.py::test_values[args4--1] - assert 0 == -1
+5 failed, 7 passed in 0.33s

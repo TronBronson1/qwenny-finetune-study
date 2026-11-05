@@ -1,0 +1,168 @@
+.FFFFF......F                                                            [100%]
+================================== FAILURES ===================================
+________________________ test_values[args1-expected1] _________________________
+
+args = (59,), expected = (0, 0, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 59
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds > 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_values[args2-expected2] _________________________
+
+args = (60,), expected = (0, 1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 60
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds > 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_values[args3-expected3] _________________________
+
+args = (3599,), expected = (0, 59, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 3599
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds > 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_values[args4-expected4] _________________________
+
+args = (3600,), expected = (1, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 3600
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds > 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_values[args5-expected5] _________________________
+
+args = (90061,), expected = (25, 1, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0)),
+        pytest.param((59,), (0, 0, 59)),
+        pytest.param((60,), (0, 1, 0)),
+        pytest.param((3599,), (0, 59, 59)),
+        pytest.param((3600,), (1, 0, 0)),
+        pytest.param((90061,), (25, 1, 1)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+>       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 90061
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds > 0:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError
+________________________ test_raises_valueerror[args0] ________________________
+
+args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1,)),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:43: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-expected1] - ValueError: domain
+FAILED test_target.py::test_values[args2-expected2] - ValueError: domain
+FAILED test_target.py::test_values[args3-expected3] - ValueError: domain
+FAILED test_target.py::test_values[args4-expected4] - ValueError: domain
+FAILED test_target.py::test_values[args5-expected5] - ValueError: domain
+FAILED test_target.py::test_raises_valueerror[args0] - Failed: DID NOT RAISE ...
+6 failed, 7 passed in 0.36s

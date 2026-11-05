@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="49" time="0.325" timestamp="2026-11-04T07:13:29.434514-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001"><failure message="assert 1 == 0">args = (0, 0, 1, 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0),
+        pytest.param((0, 2, 2, 3), 2),
+        pytest.param((1, 0, 2, 3), 3),
+        pytest.param((1, 2, 2, 3), 5),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args1-2]" time="0.001"><failure message="assert 5 == 2">args = (0, 2, 2, 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0),
+        pytest.param((0, 2, 2, 3), 2),
+        pytest.param((1, 0, 2, 3), 3),
+        pytest.param((1, 2, 2, 3), 5),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert 5 == 2
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-3]" time="0.001"><failure message="assert 4 == 3">args = (1, 0, 2, 3), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0),
+        pytest.param((0, 2, 2, 3), 2),
+        pytest.param((1, 0, 2, 3), 3),
+        pytest.param((1, 2, 2, 3), 5),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert 4 == 3
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-5]" time="0.001"><failure message="assert 6 == 5">args = (1, 2, 2, 3), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), 0),
+        pytest.param((0, 2, 2, 3), 2),
+        pytest.param((1, 0, 2, 3), 3),
+        pytest.param((1, 2, 2, 3), 5),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=row_major_offset(*args)
+&gt;       assert actual == expected
+E       assert 6 == 5
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_indexerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args14]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args15]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args16]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args17]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args18]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args19]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args20]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args21]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args22]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args23]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args24]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args25]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args26]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args27]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args28]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args29]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args30]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args31]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args32]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args33]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args34]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args35]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args36]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args37]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args38]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args39]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /></testsuite></testsuites>

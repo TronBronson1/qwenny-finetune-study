@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="26" time="0.529" timestamp="2026-11-04T18:56:05.466441-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="ValueError: bounds">args = (-1, 0, 5), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = -1, low = 0, high = 5
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: bounds">args = (0, 0, 5), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 0, low = 0, high = 5
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: bounds">args = (3, 0, 5), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 3, low = 0, high = 5
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="ValueError: bounds">args = (5, 0, 5), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 5, low = 0, high = 5
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="ValueError: bounds">args = (6, 0, 5), expected = 5
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 6, low = 0, high = 5
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="ValueError: bounds">args = (-5, -4, -2), expected = -4
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((-1, 0, 5), 0, id="v000"),
+        pytest.param((0, 0, 5), 0, id="v001"),
+        pytest.param((3, 0, 5), 3, id="v002"),
+        pytest.param((5, 0, 5), 5, id="v003"),
+        pytest.param((6, 0, 5), 5, id="v004"),
+        pytest.param((4, 2, 2), 2, id="v005"),
+        pytest.param((-5, -4, -2), -4, id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=clamp(*args)
+               ^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = -5, low = -4, high = -2
+
+    def clamp(value, low, high):
+        _types((value, low, high), ('int', 'int', 'int'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e015]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = (1, 3, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((1, 3, 2), id="e015"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:54: Failed</failure></testcase></testsuite></testsuites>

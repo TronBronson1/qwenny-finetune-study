@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="18" time="0.304" timestamp="2026-11-03T23:04:29.859637-05:00" hostname="Trons"><testcase classname="test_candidate.TestMinuteOfDayTypes" name="test_valid_str_returns_int" time="0.001" /><testcase classname="test_candidate.TestMinuteOfDayTypes" name="test_non_str_raises_type_error" time="0.001"><failure message="ValueError: not enough values to unpack (expected 3, got 2)">self = &lt;test_candidate.TestMinuteOfDayTypes object at 0x00000277279DB750&gt;
+
+    def test_non_str_raises_type_error(self):
+        cases = [
+            (1234, 5678),
+            (12, 34, "int, int"),
+            ("12:34", 56, "str, int"),
+            (None, None, "None"),
+            ([12, 34], None, "list"),
+            (f"{'x':12}:{'y':34}", None, "unicode string"),
+        ]
+    
+&gt;       for arg, _, desc in cases:
+            ^^^^^^^^^^^^
+E       ValueError: not enough values to unpack (expected 3, got 2)
+
+test_candidate.py:23: ValueError</failure></testcase><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[00:00]" time="0.001" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[00:01]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[01:00]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[12:00]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[23:59]" time="0.001" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[00:59]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_edge_cases_valid[23:00]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[24:00]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[00:60]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[13:00x]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[1:2]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[23:59 ]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[12 30]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[12-30]" time="0.000" /><testcase classname="test_candidate.TestMinuteOfDayValues" name="test_malformed_strings_raise_value_error[12:3]" time="0.000" /><testcase classname="test_candidate.TestMutability" name="test_input_not_mutated" time="0.000" /></testsuite></testsuites>

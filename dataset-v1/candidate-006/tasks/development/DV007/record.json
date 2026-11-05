@@ -1,0 +1,38 @@
+{
+  "id": "DV007",
+  "split": "development",
+  "family": "grid-neighbors",
+  "function": "grid_neighbors",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "row",
+    "column",
+    "rows",
+    "columns"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "9db0853bc126331f30b6910f1fe2da4dda760d69761f1e67262d53f6fed66080",
+  "target_sha256": "6484bbbfaf766d52083572bf10d4b1729ed89d1102d341d86b586feeb6815a2c",
+  "spec_sha256": "0de79ee815c730c069c43b6eabc57452f7fda6460272c62face196936f719f3a",
+  "answer_sha256": "aa637fd52f56a71163c89cb43f39fb1b5a849f749822212f028ad608bf983af6",
+  "valid_test_cases": 6,
+  "exception_test_cases": 35,
+  "type_before_value_witnesses": 12,
+  "oracle_checks": 6,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

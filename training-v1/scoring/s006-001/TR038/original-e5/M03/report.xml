@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="16" time="0.507" timestamp="2026-11-04T13:18:37.826868-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_values[v000]" time="0.002"><failure message="assert None == 171">args = ('ab',), expected = 171
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param( ('ab',), 0xAB, id="v000")
+        ,pytest.param( ('AB',), 0xAB, id="v001")
+        ,pytest.param( ('00',), 0, id="v002")
+        ,pytest.param( ('7f',), 0x7F, id="v003")
+        ,pytest.param( ('ff',), 0xFF, id="v004")
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 171
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v001]" time="0.001"><failure message="assert None == 171">args = ('AB',), expected = 171
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param( ('ab',), 0xAB, id="v000")
+        ,pytest.param( ('AB',), 0xAB, id="v001")
+        ,pytest.param( ('00',), 0, id="v002")
+        ,pytest.param( ('7f',), 0x7F, id="v003")
+        ,pytest.param( ('ff',), 0xFF, id="v004")
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 171
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v002]" time="0.001"><failure message="assert None == 0">args = ('00',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param( ('ab',), 0xAB, id="v000")
+        ,pytest.param( ('AB',), 0xAB, id="v001")
+        ,pytest.param( ('00',), 0, id="v002")
+        ,pytest.param( ('7f',), 0x7F, id="v003")
+        ,pytest.param( ('ff',), 0xFF, id="v004")
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 0
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v003]" time="0.001"><failure message="assert None == 127">args = ('7f',), expected = 127
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param( ('ab',), 0xAB, id="v000")
+        ,pytest.param( ('AB',), 0xAB, id="v001")
+        ,pytest.param( ('00',), 0, id="v002")
+        ,pytest.param( ('7f',), 0x7F, id="v003")
+        ,pytest.param( ('ff',), 0xFF, id="v004")
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 127
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_values[v004]" time="0.001"><failure message="assert None == 255">args = ('ff',), expected = 255
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param( ('ab',), 0xAB, id="v000")
+        ,pytest.param( ('AB',), 0xAB, id="v001")
+        ,pytest.param( ('00',), 0, id="v002")
+        ,pytest.param( ('7f',), 0x7F, id="v003")
+        ,pytest.param( ('ff',), 0xFF, id="v004")
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_hex_byte(*args)
+&gt;       assert actual == expected
+E       assert None == 255
+
+test_candidate.py:28: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_candidate" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_candidate" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[e004]" time="0.001" /><testcase classname="test_candidate" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_candidate" name="test_raises_valueerror[e006]" time="0.001" /><testcase classname="test_candidate" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[e009]" time="0.000" /><testcase classname="test_candidate" name="test_raises_valueerror[e010]" time="0.000" /></testsuite></testsuites>

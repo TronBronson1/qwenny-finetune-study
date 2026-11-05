@@ -1,0 +1,203 @@
+..FFFFFFF........F                                                       [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = ((1,), -9), expected = (1,)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert () == (1,)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ((1, 2, 3), 0), expected = (1, 2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert (1, 2) == (1, 2, 3)
+E         
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ((1, 2, 3), 1), expected = (3, 1, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert (3, 1) == (3, 1, 2)
+E         
+E         Right contains one more item: 2
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ((1, 2, 3), -1), expected = (2, 3, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert (2, 3) == (2, 3, 1)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ((1, 2, 3), 7), expected = (3, 1, 2)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert (3, 1) == (3, 1, 2)
+E         
+E         Right contains one more item: 2
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ((1, 1, 2), 2), expected = (1, 2, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       assert (1, 2) == (1, 2, 1)
+E         
+E         Right contains one more item: 1
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = (([1], {'k': 2}), 1), expected = ({'k': 2}, [1])
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(((), 0), (), id="v000"),
+        pytest.param(((), 4), (), id="v001"),
+        pytest.param(((1,), -9), (1,), id="v002"),
+        pytest.param(((1, 2, 3), 0), (1, 2, 3), id="v003"),
+        pytest.param(((1, 2, 3), 1), (3, 1, 2), id="v004"),
+        pytest.param(((1, 2, 3), -1), (2, 3, 1), id="v005"),
+        pytest.param(((1, 2, 3), 7), (3, 1, 2), id="v006"),
+        pytest.param(((1, 1, 2), 2), (1, 2, 1), id="v007"),
+        pytest.param((([1], {'k': 2}), 1), ({'k': 2}, [1]), id="v008"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=rotate_right(*args)
+>       assert actual == expected
+E       AssertionError: assert ({'k': 2},) == ({'k': 2}, [1])
+E         
+E         Right contains one more item: [1]
+E         Use -v to get more diff
+
+test_target.py:32: AssertionError
+____________________ test_identity_and_no_element_mutation ____________________
+
+    def test_identity_and_no_element_mutation():
+        first=[1]
+        second={"k":2}
+        third=object()
+        values=(first,second,third)
+        result=rotate_right(values,1)
+        assert type(result) is tuple
+        assert result[0] is third
+        assert result[1] is first
+>       assert result[2] is second
+               ^^^^^^^^^
+E       IndexError: tuple index out of range
+
+test_target.py:59: IndexError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - assert () == (1,)
+FAILED test_target.py::test_values[v003] - assert (1, 2) == (1, 2, 3)
+FAILED test_target.py::test_values[v004] - assert (3, 1) == (3, 1, 2)
+FAILED test_target.py::test_values[v005] - assert (2, 3) == (2, 3, 1)
+FAILED test_target.py::test_values[v006] - assert (3, 1) == (3, 1, 2)
+FAILED test_target.py::test_values[v007] - assert (1, 2) == (1, 2, 1)
+FAILED test_target.py::test_values[v008] - AssertionError: assert ({'k': 2},)...
+FAILED test_target.py::test_identity_and_no_element_mutation - IndexError: tu...
+8 failed, 10 passed in 0.61s

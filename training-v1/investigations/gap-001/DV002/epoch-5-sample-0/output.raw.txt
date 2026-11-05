@@ -1,0 +1,68 @@
+```python
+import copy
+import pytest
+from subject import minute_of_day
+
+class StrChild(str): pass
+
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual) == len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+    elif type(expected) is dict:
+        assert actual.keys() == expected.keys()
+        assert all(type(k) is str for k in actual)
+        for key in expected: assert_exact_shape(actual[key],expected[key])
+
+@pytest.mark.parametrize("args,expected", [
+    pytest.param(('00:00',), 0, id="v000"),
+    pytest.param(('00:30',), 30, id="v001"),
+    pytest.param(('23:59',), 1439, id="v002"),
+    pytest.param(('12:00',), 720, id="v003"),
+    pytest.param(('1439',), None, id="v004"),
+    pytest.param((b'00:00',), None, id="v005"),
+    pytest.param((StrChild('00:00'),), None, id="v006"),
+    pytest.param((StrChild('24:00'),), None, id="v007"),
+    pytest.param(('24:00',), None, id="v008"),
+    pytest.param(('00:60',), None, id="v009"),
+    pytest.param(('01:59',), None, id="v010"),
+    pytest.param(('01:60',), None, id="v011"),
+    pytest.param(('01:58',), None, id="v012"),
+    pytest.param(('01:00',), None, id="v013"),
+    pytest.param(('00:0 ',), None, id="v014"),
+    pytest.param(('00:00 ',), None, id="v015"),
+    pytest.param(('0 00',), None, id="v016"),
+    pytest.param(('00:0',), None, id="v017"),
+])
+def test_values(args,expected):
+    before=copy.deepcopy(args)
+    actual=minute_of_day(*args)
+    assert actual == expected
+    assert_exact_shape(actual,expected)
+    assert args == before
+
+@pytest.mark.parametrize("value", [
+    pytest.param(StrChild('00:00'), id="e000"),
+    pytest.param(value for value in [StrChild('00:00')]), id="e001"),
+    pytest.param((StrChild('00:00'),), id="e002"),
+    pytest.param(('00:00',), id="e003"),
+    pytest.param(('',), id="e004"),
+])
+def test_raises_typeerror(value):
+    with pytest.raises(TypeError):
+        minute_of_day(*value)
+
+@pytest.mark.parametrize("args", [
+    pytest.param((StrChild('00:00'),), id="bad000"),
+    pytest.param((StrChild('00:00'),), id="bad001"),
+    pytest.param((StrChild('00:00'),), id="bad002"),
+    pytest.param(('00:00',), id="bad003"),
+    pytest.param((StrChild('00:00'),), id="bad004"),
+])
+def test_raises_valueerror(args):
+    with pytest.raises(ValueError):
+        minute_of_day(*args)
+```
+
+Explicit return/post-state cases v000..v017 cover the listed contract examples and boundaries. Separate exception tuples isolate invalid types, specified invalid values and any listed type-before-value witnesses. Nested returned types are checked explicitly. These are finite cases, not exhaustive coverage or proof of correctness. No execution is claimed by this answer.<|im_end|>

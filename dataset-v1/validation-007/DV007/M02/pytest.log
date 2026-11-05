@@ -1,0 +1,75 @@
+FF..F....................................                                [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0, 0, 1, 1), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(-1, 0)] == []
+E         
+E         Left contains one more item: (-1, 0)
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (0, 0, 2, 3), expected = [(0, 1), (1, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(-1, 0), (0, 1), (1, 0)] == [(0, 1), (1, 0)]
+E         
+E         At index 0 diff: (-1, 0) != (0, 1)
+E         Left contains one more item: (1, 0)
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (0, 1, 1, 3), expected = [(0, 2), (0, 0)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0, 1, 1), [], id="v000"),
+        pytest.param((0, 0, 2, 3), [(0, 1), (1, 0)], id="v001"),
+        pytest.param((1, 1, 3, 3), [(0, 1), (1, 2), (2, 1), (1, 0)], id="v002"),
+        pytest.param((2, 2, 3, 3), [(1, 2), (2, 1)], id="v003"),
+        pytest.param((0, 1, 1, 3), [(0, 2), (0, 0)], id="v004"),
+        pytest.param((1, 0, 3, 1), [(0, 0), (2, 0)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=grid_neighbors(*args)
+>       assert actual == expected
+E       assert [(-1, 1), (0, 2), (0, 0)] == [(0, 2), (0, 0)]
+E         
+E         At index 0 diff: (-1, 1) != (0, 2)
+E         Left contains one more item: (0, 0)
+E         Use -v to get more diff
+
+test_target.py:28: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert [(-1, 0)] == []
+FAILED test_target.py::test_values[v001] - assert [(-1, 0), (0, 1), (1, 0)] =...
+FAILED test_target.py::test_values[v004] - assert [(-1, 1), (0, 2), (0, 0)] =...
+3 failed, 38 passed in 0.59s

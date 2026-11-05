@@ -1,0 +1,158 @@
+.........F.FFF...FFF...FFF....F                                          [100%]
+================================== FAILURES ===================================
+__ TestClampInteger.test_reversed_bounds_raises_valueerror[bad_lower_upper0] __
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCD4D5E0>
+bad_lower_upper = (5, 10)
+
+    @pytest.mark.parametrize("bad_lower_upper", [(5, 10), (0, -5)])
+    def test_reversed_bounds_raises_valueerror(self, bad_lower_upper):
+        """Test that reversed bounds (lower > upper) raises ValueError."""
+        value, lower, upper = bad_lower_upper[0], *bad_lower_upper
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:33: Failed
+_______________ TestClampInteger.test_bad_value_position[True] ________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCDF3CB0>
+bad_type_value = True
+
+    @pytest.mark.parametrize("bad_type_value", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_value_position(self, bad_type_value):
+        """Test that invalid 'value' raises TypeError regardless of valid bounds."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:40: Failed
+_______________ TestClampInteger.test_bad_value_position[False] _______________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCDF3E70>
+bad_type_value = False
+
+    @pytest.mark.parametrize("bad_type_value", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_value_position(self, bad_type_value):
+        """Test that invalid 'value' raises TypeError regardless of valid bounds."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:40: Failed
+_________________ TestClampInteger.test_bad_value_position[0] _________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCE14E20>
+bad_type_value = 0
+
+    @pytest.mark.parametrize("bad_type_value", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_value_position(self, bad_type_value):
+        """Test that invalid 'value' raises TypeError regardless of valid bounds."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:40: Failed
+_______________ TestClampInteger.test_bad_lower_position[True] ________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCDFFC20>
+bad_type_lower = True
+
+    @pytest.mark.parametrize("bad_type_lower", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_lower_position(self, bad_type_lower):
+        """Test that invalid 'lower' raises TypeError regardless of valid value/upper."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:46: Failed
+_______________ TestClampInteger.test_bad_lower_position[False] _______________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCD73B10>
+bad_type_lower = False
+
+    @pytest.mark.parametrize("bad_type_lower", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_lower_position(self, bad_type_lower):
+        """Test that invalid 'lower' raises TypeError regardless of valid value/upper."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:46: Failed
+_________________ TestClampInteger.test_bad_lower_position[0] _________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCD73D90>
+bad_type_lower = 0
+
+    @pytest.mark.parametrize("bad_type_lower", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_lower_position(self, bad_type_lower):
+        """Test that invalid 'lower' raises TypeError regardless of valid value/upper."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:46: Failed
+_______________ TestClampInteger.test_bad_upper_position[True] ________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCD7B700>
+bad_type_upper = True
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:52: Failed
+_______________ TestClampInteger.test_bad_upper_position[False] _______________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCD7B7E0>
+bad_type_upper = False
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:52: Failed
+_________________ TestClampInteger.test_bad_upper_position[0] _________________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCE05130>
+bad_type_upper = 0
+
+    @pytest.mark.parametrize("bad_type_upper", [True, False, _ExactSubInt(), 1.5, "3", None])
+    def test_bad_upper_position(self, bad_type_upper):
+        """Test that invalid 'upper' raises TypeError regardless of valid value/lower."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:52: Failed
+__________ TestClampInteger.test_type_precedence_with_boolean_lower ___________
+
+self = <test_candidate.TestClampInteger object at 0x0000022FDCE1DDB0>
+
+    def test_type_precedence_with_boolean_lower(self):
+        """Verify TypeError is raised on boolean lower (type rejection), not ValueError for bounds."""
+        # Note: This tests (5, True, 10) where bounds are valid but lower is invalid type
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:64: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampInteger::test_reversed_bounds_raises_valueerror[bad_lower_upper0]
+FAILED test_candidate.py::TestClampInteger::test_bad_value_position[True] - F...
+FAILED test_candidate.py::TestClampInteger::test_bad_value_position[False] - ...
+FAILED test_candidate.py::TestClampInteger::test_bad_value_position[0] - Fail...
+FAILED test_candidate.py::TestClampInteger::test_bad_lower_position[True] - F...
+FAILED test_candidate.py::TestClampInteger::test_bad_lower_position[False] - ...
+FAILED test_candidate.py::TestClampInteger::test_bad_lower_position[0] - Fail...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[True] - F...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[False] - ...
+FAILED test_candidate.py::TestClampInteger::test_bad_upper_position[0] - Fail...
+FAILED test_candidate.py::TestClampInteger::test_type_precedence_with_boolean_lower
+11 failed, 20 passed in 0.30s

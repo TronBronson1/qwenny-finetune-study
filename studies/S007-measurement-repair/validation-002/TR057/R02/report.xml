@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="19" time="0.436" timestamp="2026-11-04T17:06:05.279776-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001"><failure message="ValueError: character">args = ('a/b',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('a/b'),), id="e009"),
+        pytest.param((StrChild('é'),), id="e010"),
+        pytest.param((StrChild('a\tb'),), id="e011"),
+        pytest.param((StrChild('٣'),), id="e012"),
+        pytest.param((StrChild('Ａ'),), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           make_slug(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'a/b'
+
+    def make_slug(text):
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001"><failure message="ValueError: character">args = ('é',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('a/b'),), id="e009"),
+        pytest.param((StrChild('é'),), id="e010"),
+        pytest.param((StrChild('a\tb'),), id="e011"),
+        pytest.param((StrChild('٣'),), id="e012"),
+        pytest.param((StrChild('Ａ'),), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           make_slug(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'é'
+
+    def make_slug(text):
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001"><failure message="ValueError: character">args = ('a\tb',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('a/b'),), id="e009"),
+        pytest.param((StrChild('é'),), id="e010"),
+        pytest.param((StrChild('a\tb'),), id="e011"),
+        pytest.param((StrChild('٣'),), id="e012"),
+        pytest.param((StrChild('Ａ'),), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           make_slug(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'a\tb'
+
+    def make_slug(text):
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001"><failure message="ValueError: character">args = ('٣',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('a/b'),), id="e009"),
+        pytest.param((StrChild('é'),), id="e010"),
+        pytest.param((StrChild('a\tb'),), id="e011"),
+        pytest.param((StrChild('٣'),), id="e012"),
+        pytest.param((StrChild('Ａ'),), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           make_slug(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '٣'
+
+    def make_slug(text):
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001"><failure message="ValueError: character">args = ('Ａ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild(''),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild('a/b'),), id="e009"),
+        pytest.param((StrChild('é'),), id="e010"),
+        pytest.param((StrChild('a\tb'),), id="e011"),
+        pytest.param((StrChild('٣'),), id="e012"),
+        pytest.param((StrChild('Ａ'),), id="e013"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           make_slug(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'Ａ'
+
+    def make_slug(text):
+        if any((char not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_' for char in text)):
+&gt;           raise ValueError('character')
+E           ValueError: character
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /></testsuite></testsuites>

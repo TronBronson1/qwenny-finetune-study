@@ -1,0 +1,32 @@
+{
+  "id": "DV004",
+  "split": "development",
+  "family": "xor-checksum",
+  "function": "xor_checksum",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values"
+  ],
+  "schemas": [
+    "ints"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "52d9f65d89ea8e7172fa9b84ebebfff91a6163b37b8425ab836619a1b32bdaa0",
+  "target_sha256": "0d93671242705362578563c1c75a3bfe8f10a7b131ea975d61c82b573a305909",
+  "spec_sha256": "8a5816b76ca942337ae1adab15b754dfd27e6163845a1fef0d0267dc4f541d5b",
+  "answer_sha256": "26addb4cc971e09092e71ce9e01345befc3be2a155ae57999f2482aca17c2289",
+  "valid_test_cases": 6,
+  "exception_test_cases": 9,
+  "type_before_value_witnesses": 2,
+  "oracle_checks": 6,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="17" time="0.317" timestamp="2026-11-04T07:13:12.330819-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-expected2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = ('0.0.0',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.001"><failure message="ValueError: syntax">args = ('1.2',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_version(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1.2'
+
+    def parse_version(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]{0,2})'
+        if re.fullmatch(part + '\\.' + part + '\\.' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.001"><failure message="ValueError: syntax">args = ('1.2.3.4',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_version(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1.2.3.4'
+
+    def parse_version(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]{0,2})'
+        if re.fullmatch(part + '\\.' + part + '\\.' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="ValueError: syntax">args = ('01.2.3',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_version(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '01.2.3'
+
+    def parse_version(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]{0,2})'
+        if re.fullmatch(part + '\\.' + part + '\\.' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.001"><failure message="ValueError: syntax">args = ('1.2.1000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_version(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1.2.1000'
+
+    def parse_version(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]{0,2})'
+        if re.fullmatch(part + '\\.' + part + '\\.' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.001"><failure message="ValueError: syntax">args = ('1.2.٣',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('0.0.0'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('1.2'),)),
+        pytest.param((StrChild('1.2.3.4'),)),
+        pytest.param((StrChild('01.2.3'),)),
+        pytest.param((StrChild('1.2.1000'),)),
+        pytest.param((StrChild('1.2.٣'),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           parse_version(*args)
+
+test_target.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '1.2.٣'
+
+    def parse_version(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]{0,2})'
+        if re.fullmatch(part + '\\.' + part + '\\.' + part, text) is None:
+&gt;           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args4]" time="0.000" /></testsuite></testsuites>

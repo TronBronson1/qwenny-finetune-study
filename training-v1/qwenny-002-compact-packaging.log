@@ -1,0 +1,47 @@
+{
+  "status": "trained-and-import-verified",
+  "run": "qwenny-002-compact",
+  "base": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "epochs": 5,
+  "samples": 300,
+  "distinct_tasks": 60,
+  "optimizer_updates": 75,
+  "elapsed_training_and_checkpoint_evaluation_seconds": 608.2809999999881,
+  "epoch_mean_training_losses": {
+    "1": 0.8472894345720609,
+    "2": 0.6369604443510374,
+    "3": 0.40710378090540567,
+    "4": 0.19980482781926792,
+    "5": 0.12260495830948154
+  },
+  "training_peak_allocated_bytes": 7280687104,
+  "training_peak_reserved_bytes": 8095006720,
+  "min_stage_cuda_free_bytes": 801038336,
+  "windows_peak_shared_bytes": 85983232,
+  "fresh_imports": [
+    {
+      "epoch": 1,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 3,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 5,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "development_base": {
+    "A": 0.8933799689014753,
+    "B": 0.7899087692300478
+  },
+  "target_token_reduction_fraction": 0.22829096400704763,
+  "comparison": "Same examples, updates, base and numerical training runtime; fewer supervised tokens. Development targets unchanged. Compact train loss is not directly comparable to old-format train loss.",
+  "pilot_scope": "Predeclared E5 only, two visible development families, sample0 seed42; see scoring folder for strict acceptance.",
+  "quality_claim": "No general aptitude conclusion."
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="9" time="0.295" timestamp="2026-11-04T07:12:32.779096-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert 'AxBxCxXxYxZ' == 'ABCXYZ'&#10;  &#10;  - ABCXYZ&#10;  + AxBxCxXxYxZ">args = ('abcXYZ',), expected = 'ABCXYZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'AxBxCxXxYxZ' == 'ABCXYZ'
+E         
+E         - ABCXYZ
+E         + AxBxCxXxYxZ
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert 'Zx-xAx x9' == 'Z-A 9'&#10;  &#10;  - Z-A 9&#10;  + Zx-xAx x9">args = ('z-a 9',), expected = 'Z-A 9'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'Zx-xAx x9' == 'Z-A 9'
+E         
+E         - Z-A 9
+E         + Zx-xAx x9
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert 'éxßxı' == 'éßı'&#10;  &#10;  - éßı&#10;  + éxßxı&#10;  ?  + +">args = ('éßı',), expected = 'éßı'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'éxßxı' == 'éßı'
+E         
+E         - éßı
+E         + éxßxı
+E         ?  + +
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert 'Ax\nxB' == 'A\nB'&#10;  &#10;  - A&#10;  + Ax&#10;  ?  +&#10;  - B&#10;  + xB">args = ('a\nb',), expected = 'A\nB'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('abcXYZ',), 'ABCXYZ', id="v001"),
+        pytest.param(('z-a 9',), 'Z-A 9', id="v002"),
+        pytest.param(('éßı',), 'éßı', id="v003"),
+        pytest.param(('a\nb',), 'A\nB', id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'Ax\nxB' == 'A\nB'
+E         
+E         - A
+E         + Ax
+E         ?  +
+E         - B
+E         + xB
+
+test_target.py:27: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

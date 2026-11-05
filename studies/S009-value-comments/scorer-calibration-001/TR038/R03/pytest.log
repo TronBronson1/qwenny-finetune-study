@@ -1,0 +1,44 @@
+......................FF                                                 [100%]
+================================== FAILURES ===================================
+____________________ test_renamed_raises_valueerror[e009] _____________________
+
+args = ('٣f',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('',), id="e004"),
+        pytest.param(('f',), id="e005"),
+        pytest.param(('000',), id="e006"),
+        pytest.param(('g0',), id="e007"),
+        pytest.param((' ff',), id="e008"),
+        pytest.param(('٣f',), id="e009"),
+        pytest.param(('３f',), id="e010"),
+    ])
+    def test_renamed_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:52: Failed
+____________________ test_renamed_raises_valueerror[e010] _____________________
+
+args = ('３f',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('',), id="e004"),
+        pytest.param(('f',), id="e005"),
+        pytest.param(('000',), id="e006"),
+        pytest.param(('g0',), id="e007"),
+        pytest.param((' ff',), id="e008"),
+        pytest.param(('٣f',), id="e009"),
+        pytest.param(('３f',), id="e010"),
+    ])
+    def test_renamed_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:52: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_renamed_raises_valueerror[e009] - Failed: DID ...
+FAILED test_candidate.py::test_renamed_raises_valueerror[e010] - Failed: DID ...
+2 failed, 22 passed in 0.55s

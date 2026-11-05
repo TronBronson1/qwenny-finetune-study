@@ -1,0 +1,31 @@
+{
+  "id": "TR005",
+  "split": "training",
+  "family": "parity-label",
+  "function": "parity_label",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "number"
+  ],
+  "schemas": [
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "98b6bf4e0f91943c2df3c5eb889d0f3aa7d8ecd9d13d39203740e8ed41384c9a",
+  "target_sha256": "f7dbc1286c04e4301dd7f9a486fc92f66c3f79420371e3e41a76eba16f8b1838",
+  "spec_sha256": "6576826e386f69e547ec7553077fff8579dce0a0a5c7ff890c7cb58e14ac66e2",
+  "answer_sha256": "39f4aca26e6d33987d82d8083b58066d50105b5d30f4eba80dea3ee807297a0c",
+  "valid_test_cases": 6,
+  "exception_test_cases": 5,
+  "oracle_checks": 67,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

@@ -1,0 +1,26 @@
+.....F......................                                             [100%]
+================================== FAILURES ===================================
+___________ TestClampIntegerNormalRanges.test_equal_lower_and_upper ___________
+
+self = <test_candidate.TestClampIntegerNormalRanges object at 0x000002013DFB3CE0>
+
+    def test_equal_lower_and_upper(self):
+>       assert clamp_integer(4, 4, 4) == 4
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = 4, lower = 4, upper = 4
+
+    def clamp_integer(value, lower, upper):
+        if any(type(item) is not int for item in (value, lower, upper)):
+            raise TypeError("all arguments must be exact built-in integers")
+        if lower >= upper:
+>           raise ValueError("lower must not exceed upper")
+E           ValueError: lower must not exceed upper
+
+clamp_value.py:5: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerNormalRanges::test_equal_lower_and_upper
+1 failed, 27 passed in 0.23s

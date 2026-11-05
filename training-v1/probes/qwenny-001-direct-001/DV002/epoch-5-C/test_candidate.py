@@ -1,0 +1,54 @@
+import copy
+import pytest
+from subject import minute_of_day
+
+class StrChild(str): pass
+
+def assert_exact_shape(actual, expected):
+    assert type(actual) is type(expected)
+    if type(expected) in (list,tuple):
+        assert len(actual)==len(expected)
+        for a,b in zip(actual,expected): assert_exact_shape(a,b)
+    elif type(expected) is dict:
+        assert actual.keys()==expected.keys()
+        assert all(type(k) is str for k in actual.keys())
+        for key in expected: assert_exact_shape(actual[key],expected[key])
+
+@pytest.mark.parametrize("args,expected", [
+    pytest.param(('05:43',), 343, id="v001"),
+    pytest.param(('23:59',), 1439, id="v002"),
+])
+def test_values(args,expected):
+    before=copy.deepcopy(args)
+    actual=minute_of_day(*args)
+    assert actual==expected
+    assert_exact_shape(actual,expected)
+    assert args==before
+
+@pytest.mark.parametrize("args", [
+    pytest.param((StrChild('x'),), id="e001"),
+    pytest.param(('xx:x',), id="e002"),
+    pytest.param(('25:00',), id="e003"),
+    pytest.param(('00:60',), id="e004"),
+    pytest.param(('12:7a',), id="e005"),
+    pytest.param(('1-2',), id="e006"),
+    pytest.param(('ab:cd',), id="e007"),
+])
+def test_raises_typeerror_before_value(args):
+    with pytest.raises(TypeError):
+        minute_of_day(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(('24:00',), id="e008"),
+    pytest.param(('00:00',), id="e009"),
+])
+def test_raises_valueerror(args):
+    with pytest.raises(ValueError):
+        minute_of_day(*args)
+
+@pytest.mark.parametrize("args", [
+    pytest.param(('00:00', '23:59'), id="b001"),
+])
+def test_returned_order_is_preserved(args):
+    actual=minute_of_day(*args)
+    assert list(actual)[0] < list(actual)[-1]

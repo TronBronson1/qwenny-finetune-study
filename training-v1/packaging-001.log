@@ -1,0 +1,44 @@
+{
+  "status": "trained-and-fresh-reload-verified",
+  "base": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "training_samples": 300,
+  "distinct_training_tasks": 60,
+  "optimizer_updates": 75,
+  "epochs": 5,
+  "elapsed_training_and_checkpoint_evaluation_seconds": 694.9679999999935,
+  "epoch_mean_training_losses": {
+    "1": 0.9299458076556524,
+    "2": 0.7384460096557935,
+    "3": 0.5196310666700205,
+    "4": 0.27855610599120456,
+    "5": 0.12719051813085874
+  },
+  "median_microbatch_seconds": 2.0,
+  "training_peak_allocated_bytes": 7586631680,
+  "training_peak_reserved_bytes": 8126464000,
+  "min_microbatch_stage_cuda_free_bytes": 434257920,
+  "windows_peak_process_shared_bytes_during_training_interval": 85983232,
+  "reload_checks": [
+    {
+      "epoch": 1,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 3,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    },
+    {
+      "epoch": 5,
+      "max_abs_logit_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "development_base": {
+    "A": 0.8933799689014753,
+    "B": 0.7899087692300478
+  },
+  "quality_claim": "None. Teacher-forced likelihood is not executable acceptance, regression safety or reasoning preservation. Final-test families are untouched by the model."
+}

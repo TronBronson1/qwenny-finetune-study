@@ -1,0 +1,110 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0, 'cat')",
+    "expected_python": "'0 cats'",
+    "after_python": "(0, 'cat')"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1, 'cat')",
+    "expected_python": "'1 cat'",
+    "after_python": "(1, 'cat')"
+  },
+  {
+    "id": "v002",
+    "args_python": "(2, 'cat')",
+    "expected_python": "'2 cats'",
+    "after_python": "(2, 'cat')"
+  },
+  {
+    "id": "v003",
+    "args_python": "(1, 'box')",
+    "expected_python": "'1 box'",
+    "after_python": "(1, 'box')"
+  },
+  {
+    "id": "v004",
+    "args_python": "(2, 'box')",
+    "expected_python": "'2 boxs'",
+    "after_python": "(2, 'box')"
+  },
+  {
+    "id": "v005",
+    "args_python": "(10, 'é')",
+    "expected_python": "'10 és'",
+    "after_python": "(10, 'é')"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True, 'cat')",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0), 'cat')",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5, 'cat')",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad', 'cat')",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None, 'cat')",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0, StrChild('cat'))",
+    "exception": "TypeError",
+    "category": "type:noun"
+  },
+  {
+    "id": "e006",
+    "args_python": "(0, b'x')",
+    "exception": "TypeError",
+    "category": "type:noun"
+  },
+  {
+    "id": "e007",
+    "args_python": "(0, 1)",
+    "exception": "TypeError",
+    "category": "type:noun"
+  },
+  {
+    "id": "e008",
+    "args_python": "(0, None)",
+    "exception": "TypeError",
+    "category": "type:noun"
+  },
+  {
+    "id": "e009",
+    "args_python": "(-1, 'cat')",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e010",
+    "args_python": "(1, '')",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e011",
+    "args_python": "(-1, StrChild('cat'))",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

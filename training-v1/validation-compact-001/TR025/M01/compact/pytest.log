@@ -1,0 +1,40 @@
+......FF...                                                              [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([StrChild('x')],)),
+        pytest.param(([1],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = (['x'],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([StrChild('x')],)),
+        pytest.param(([1],)),
+        pytest.param(((),)),
+        pytest.param((None,)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:37: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+2 failed, 9 passed in 0.31s

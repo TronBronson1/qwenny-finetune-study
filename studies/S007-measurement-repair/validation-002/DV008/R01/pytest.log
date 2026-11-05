@@ -1,0 +1,389 @@
+FFFFFFFFFFF........                                                      [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('', ''), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('', 'abc'), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 3, expected = 3
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(3)
+E        +  and   <class 'int'> = type(3)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('abc', ''), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 3, expected = 3
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(3)
+E        +  and   <class 'int'> = type(3)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('cat', 'cat'), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('cat', 'cut'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('ab', 'ba'), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(2)
+E        +  and   <class 'int'> = type(2)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('kitten', 'sitting'), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 3, expected = 3
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(3)
+E        +  and   <class 'int'> = type(3)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('é', 'e'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = ('A', 'a'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v009] ______________________________
+
+args = ('é', 'É'), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:7: AssertionError
+______________________________ test_values[v010] ______________________________
+
+args = ('é', 'é'), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), 0, id="v000"),
+        pytest.param(('', 'abc'), 3, id="v001"),
+        pytest.param(('abc', ''), 3, id="v002"),
+        pytest.param(('cat', 'cat'), 0, id="v003"),
+        pytest.param(('cat', 'cut'), 1, id="v004"),
+        pytest.param(('ab', 'ba'), 2, id="v005"),
+        pytest.param(('kitten', 'sitting'), 3, id="v006"),
+        pytest.param(('é', 'e'), 1, id="v007"),
+        pytest.param(('A', 'a'), 1, id="v008"),
+        pytest.param(('é', 'É'), 1, id="v009"),
+        pytest.param(('é', 'é'), 2, id="v010"),
+    ])
+    def test_values(args,expected):
+        actual=edit_distance(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(2)
+E        +  and   <class 'int'> = type(2)
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v007] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v008] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v009] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v010] - AssertionError: assert <class 'sub...
+11 failed, 8 passed in 0.65s

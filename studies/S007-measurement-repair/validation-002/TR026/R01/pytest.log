@@ -1,0 +1,154 @@
+FFFFF.........                                                           [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ([],), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param(([1],), [1], id="v001"),
+        pytest.param(([2, 1, 2, 3, 1],), [2, 1, 3], id="v002"),
+        pytest.param(([0, 0, -1, -1],), [0, -1], id="v003"),
+        pytest.param(([3, 2, 1],), [3, 2, 1], id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=stable_unique(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [], expected = []
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([])
+E        +  and   <class 'list'> = type([])
+
+test_target.py:9: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ([1],), expected = [1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param(([1],), [1], id="v001"),
+        pytest.param(([2, 1, 2, 3, 1],), [2, 1, 3], id="v002"),
+        pytest.param(([0, 0, -1, -1],), [0, -1], id="v003"),
+        pytest.param(([3, 2, 1],), [3, 2, 1], id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=stable_unique(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [1], expected = [1]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([1])
+E        +  and   <class 'list'> = type([1])
+
+test_target.py:9: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ([2, 1, 2, 3, 1],), expected = [2, 1, 3]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param(([1],), [1], id="v001"),
+        pytest.param(([2, 1, 2, 3, 1],), [2, 1, 3], id="v002"),
+        pytest.param(([0, 0, -1, -1],), [0, -1], id="v003"),
+        pytest.param(([3, 2, 1],), [3, 2, 1], id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=stable_unique(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [2, 1, 3], expected = [2, 1, 3]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([2, 1, 3])
+E        +  and   <class 'list'> = type([2, 1, 3])
+
+test_target.py:9: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ([0, 0, -1, -1],), expected = [0, -1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param(([1],), [1], id="v001"),
+        pytest.param(([2, 1, 2, 3, 1],), [2, 1, 3], id="v002"),
+        pytest.param(([0, 0, -1, -1],), [0, -1], id="v003"),
+        pytest.param(([3, 2, 1],), [3, 2, 1], id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=stable_unique(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [0, -1], expected = [0, -1]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([0, -1])
+E        +  and   <class 'list'> = type([0, -1])
+
+test_target.py:9: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ([3, 2, 1],), expected = [3, 2, 1]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param(([1],), [1], id="v001"),
+        pytest.param(([2, 1, 2, 3, 1],), [2, 1, 3], id="v002"),
+        pytest.param(([0, 0, -1, -1],), [0, -1], id="v003"),
+        pytest.param(([3, 2, 1],), [3, 2, 1], id="v004"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=stable_unique(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = [3, 2, 1], expected = [3, 2, 1]
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnList'> is <class 'list'>
+E        +  where <class 'subject._ReturnList'> = type([3, 2, 1])
+E        +  and   <class 'list'> = type([3, 2, 1])
+
+test_target.py:9: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+5 failed, 9 passed in 0.58s

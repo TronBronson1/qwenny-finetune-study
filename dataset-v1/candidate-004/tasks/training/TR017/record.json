@@ -1,0 +1,33 @@
+{
+  "id": "TR017",
+  "split": "training",
+  "family": "interleave-strings",
+  "function": "interleave_strings",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "str",
+    "str"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "4217f69204e73b918c82e4d0593994dfd2b0b9073b5e41540afaf7300a27ceed",
+  "target_sha256": "ee518c873d66a6ea136b587807138fb857b6bf9f28d88ab8dcacabd6e16ae929",
+  "spec_sha256": "8035ada86e5d330d4469a47527411bf1fac906db5acffffaa057c476b5f28d8f",
+  "answer_sha256": "c4dad1cbc9cf6487f834041d65e8fec55754b014a7e2b22c4908eed765ddf6d4",
+  "valid_test_cases": 7,
+  "exception_test_cases": 8,
+  "oracle_checks": 7,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}

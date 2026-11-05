@@ -1,0 +1,128 @@
+.F.FFFF........                                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v001] ______________________________
+
+args = ('a', ''), expected = 'a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert '' == 'a'
+E         
+E         - a
+
+test_target.py:23: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('ab', '12'), expected = 'a1b2'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert '12' == 'a1b2'
+E         
+E         - a1b2
+E         + 12
+
+test_target.py:23: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('abc', '1'), expected = 'a1bc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert '1' == 'a1bc'
+E         
+E         - a1bc
+E         + 1
+
+test_target.py:23: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('a', '123'), expected = 'a123'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+>       actual=interleave_strings(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'a', right = '123'
+
+    def interleave_strings(left, right):
+        _types((left, right), ('str', 'str'))
+        result = []
+        for index in range(max(len(left), len(right))):
+            if index > len(left):
+>               result.append(left[index])
+                              ^^^^^^^^^^^
+E               IndexError: string index out of range
+
+subject.py:57: IndexError
+______________________________ test_values[v006] ______________________________
+
+args = ('é字', ' X'), expected = 'é 字X'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+>       assert actual == expected
+E       AssertionError: assert ' X' == 'é 字X'
+E         
+E         - é 字X
+E         +  X
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v001] - AssertionError: assert '' == 'a'
+FAILED test_target.py::test_values[v003] - AssertionError: assert '12' == 'a1b2'
+FAILED test_target.py::test_values[v004] - AssertionError: assert '1' == 'a1bc'
+FAILED test_target.py::test_values[v005] - IndexError: string index out of range
+FAILED test_target.py::test_values[v006] - AssertionError: assert ' X' == 'é ...
+5 failed, 10 passed in 0.56s

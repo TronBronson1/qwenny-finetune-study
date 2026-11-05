@@ -1,0 +1,74 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('0.0.0',)",
+    "expected_python": "(0, 0, 0)",
+    "after_python": "('0.0.0',)"
+  },
+  {
+    "id": "v001",
+    "args_python": "('1.2.3',)",
+    "expected_python": "(1, 2, 3)",
+    "after_python": "('1.2.3',)"
+  },
+  {
+    "id": "v002",
+    "args_python": "('999.0.10',)",
+    "expected_python": "(999, 0, 10)",
+    "after_python": "('999.0.10',)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild('0.0.0'),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "('1.2',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e005",
+    "args_python": "('1.2.3.4',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "('01.2.3',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e007",
+    "args_python": "('1.2.1000',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e008",
+    "args_python": "('1.2.٣',)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  }
+]

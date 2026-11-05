@@ -1,0 +1,20 @@
+......................F..                                                [100%]
+================================== FAILURES ===================================
+________________________ test_raises_valueerror[e012] _________________________
+
+args = ([(1, 1)],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([(1, 1)],), id="e012"),
+        pytest.param(([(2, 1)],), id="e013"),
+        pytest.param(([(1, 2, 3)],), id="e014"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:58: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_valueerror[e012] - Failed: DID NOT RAISE V...
+1 failed, 24 passed in 0.54s

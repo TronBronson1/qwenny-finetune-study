@@ -1,0 +1,673 @@
+.......FF...FF...FF...FFFFFFFFF.                                         [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = (True, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = True, rows = 1, columns = 1
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args1] _________________________
+
+args = (0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:61: Failed
+________________________ test_raises_typeerror[args5] _________________________
+
+args = (0, True, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:61: Failed
+________________________ test_raises_typeerror[args6] _________________________
+
+args = (0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:61: Failed
+________________________ test_raises_typeerror[args10] ________________________
+
+args = (0, 1, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:61: Failed
+________________________ test_raises_typeerror[args11] ________________________
+
+args = (0, 1, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:61: Failed
+________________________ test_raises_typeerror[args15] ________________________
+
+args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args16] ________________________
+
+args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args17] ________________________
+
+args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+>           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:55: ValueError
+________________________ test_raises_typeerror[args18] ________________________
+
+args = (-1, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = -1, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args19] ________________________
+
+args = (-1, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = -1, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args20] ________________________
+
+args = (-1, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = -1, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args21] ________________________
+
+args = (6, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 6, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args22] ________________________
+
+args = (6, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 6, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+________________________ test_raises_typeerror[args23] ________________________
+
+args = (6, 2, 3)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1)),
+        pytest.param((IntChild(0), 1, 1)),
+        pytest.param((1.5, 1, 1)),
+        pytest.param(('bad', 1, 1)),
+        pytest.param((None, 1, 1)),
+        pytest.param((0, True, 1)),
+        pytest.param((0, IntChild(1), 1)),
+        pytest.param((0, 1.5, 1)),
+        pytest.param((0, 'bad', 1)),
+        pytest.param((0, None, 1)),
+        pytest.param((0, 1, True)),
+        pytest.param((0, 1, IntChild(1))),
+        pytest.param((0, 1, 1.5)),
+        pytest.param((0, 1, 'bad')),
+        pytest.param((0, 1, None)),
+        pytest.param((IntChild(0), 0, 2)),
+        pytest.param((0, IntChild(0), 2)),
+        pytest.param((0, 0, IntChild(2))),
+        pytest.param((IntChild(-1), 2, 3)),
+        pytest.param((-1, IntChild(2), 3)),
+        pytest.param((-1, 2, IntChild(3))),
+        pytest.param((IntChild(6), 2, 3)),
+        pytest.param((6, IntChild(2), 3)),
+        pytest.param((6, 2, IntChild(3))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           unravel_index(*args)
+
+test_target.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 6, rows = 2, columns = 3
+
+    def unravel_index(index, rows, columns):
+        _types((index, rows, columns), ('int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= index < rows * columns:
+>           raise IndexError('index')
+E           IndexError: index
+
+subject.py:57: IndexError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args5] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args6] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args10] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args11] - Failed: DID NOT RAISE ...
+FAILED test_target.py::test_raises_typeerror[args15] - ValueError: shape
+FAILED test_target.py::test_raises_typeerror[args16] - ValueError: shape
+FAILED test_target.py::test_raises_typeerror[args17] - ValueError: shape
+FAILED test_target.py::test_raises_typeerror[args18] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args19] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args20] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args21] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args22] - IndexError: index
+FAILED test_target.py::test_raises_typeerror[args23] - IndexError: index
+15 failed, 17 passed in 0.45s

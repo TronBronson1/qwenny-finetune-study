@@ -1,0 +1,76 @@
+...FFF....                                                               [100%]
+================================== FAILURES ===================================
+______________________ test_values[args3-three two one] _______________________
+
+args = ('one two three',), expected = 'three two one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+>       assert actual == expected
+E       AssertionError: assert 'three xtwo xone' == 'three two one'
+E         
+E         - three two one
+E         + three xtwo xone
+E         ?       +    +
+
+test_target.py:25: AssertionError
+__________________________ test_values[args4-c b a] ___________________________
+
+args = (' a\tb\nc ',), expected = 'c b a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+>       assert actual == expected
+E       AssertionError: assert 'c xb xa' == 'c b a'
+E         
+E         - c b a
+E         + c xb xa
+E         ?   +  +
+
+test_target.py:25: AssertionError
+_______________________ test_values[args5-\u5b57 \xe9] ________________________
+
+args = ('é\u2003字',), expected = '字 é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('   ',), ''),
+        pytest.param(('one',), 'one'),
+        pytest.param(('one two three',), 'three two one'),
+        pytest.param((' a\tb\nc ',), 'c b a'),
+        pytest.param(('é\u2003字',), '字 é'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=reverse_words(*args)
+>       assert actual == expected
+E       AssertionError: assert '字 xé' == '字 é'
+E         
+E         - 字 é
+E         + 字 xé
+E         ?   +
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args3-three two one] - AssertionError: ass...
+FAILED test_target.py::test_values[args4-c b a] - AssertionError: assert 'c x...
+FAILED test_target.py::test_values[args5-\u5b57 \xe9] - AssertionError: asser...
+3 failed, 7 passed in 0.31s

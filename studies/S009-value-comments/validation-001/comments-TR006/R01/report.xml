@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="14" time="0.481" timestamp="2026-11-04T18:58:57.050914-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = (0,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 2, id="v002"),
+        pytest.param((5,), 120, id="v003"),
+        pytest.param((12,), 479001600, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=factorial(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(1)&#10; +  and   &lt;class 'int'&gt; = type(1)">args = (1,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 2, id="v002"),
+        pytest.param((5,), 120, id="v003"),
+        pytest.param((12,), 479001600, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=factorial(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(1)
+E        +  and   &lt;class 'int'&gt; = type(1)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(2)&#10; +  and   &lt;class 'int'&gt; = type(2)">args = (2,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 2, id="v002"),
+        pytest.param((5,), 120, id="v003"),
+        pytest.param((12,), 479001600, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=factorial(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(2)
+E        +  and   &lt;class 'int'&gt; = type(2)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(120)&#10; +  and   &lt;class 'int'&gt; = type(120)">args = (5,), expected = 120
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 2, id="v002"),
+        pytest.param((5,), 120, id="v003"),
+        pytest.param((12,), 479001600, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=factorial(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 120, expected = 120
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(120)
+E        +  and   &lt;class 'int'&gt; = type(120)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;&#10; +  where &lt;class 'subject._ReturnInt'&gt; = type(479001600)&#10; +  and   &lt;class 'int'&gt; = type(479001600)">args = (12,), expected = 479001600
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 1, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 2, id="v002"),
+        pytest.param((5,), 120, id="v003"),
+        pytest.param((12,), 479001600, id="v004"),
+    ])
+    def test_values(args,expected):
+        actual=factorial(*args)
+        assert actual == expected
+&gt;       assert_exact_shape(actual,expected)
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 479001600, expected = 479001600
+
+    def assert_exact_shape(actual, expected):
+&gt;       assert type(actual) is type(expected)
+E       AssertionError: assert &lt;class 'subject._ReturnInt'&gt; is &lt;class 'int'&gt;
+E        +  where &lt;class 'subject._ReturnInt'&gt; = type(479001600)
+E        +  and   &lt;class 'int'&gt; = type(479001600)
+
+test_target.py:7: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /></testsuite></testsuites>

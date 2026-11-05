@@ -1,0 +1,114 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild([]), [])",
+      "expected_exception": "TypeError",
+      "actual_python": "[]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "8f35d14b886ccf5d64cbda703e095c161eb91948978af0f08fac3a4976c218bf"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-constant-48-0-plus-one",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1], [])",
+      "expected_python": "[1]",
+      "actual_python": "[]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "d51c72f7c1529cd2bf163fabe54d41cd891fe5fd59565e57ada4404a8a0fe3f7"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-47-Lt",
+    "witness": {
+      "node": "test_target.py::test_raises_valueerror[e018]",
+      "case": "e018",
+      "kind": "required-exception-not-raised",
+      "args_python": "([2, 1], [])",
+      "expected_exception": "ValueError",
+      "actual_python": "[2, 1]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold",
+    "source_sha256": "e545d2b5b2b3cbe7acec1e4e982a7fd246ed4690b5e200ade1baed5672d28f49"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([], [])",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "ee0e4f0ec14084f1cdbb48f10c3e664b608d5a86ecbc2d74d281a5ab009891f6"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1], [])",
+      "expected_python": "[1]",
+      "actual_python": "[1]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "96f1dbf52773817fec44be1875a9a9e04b1dbc8464b0a2f8e035ab259cc3985b"
+  },
+  {
+    "id": "R03",
+    "requirement": "valid-input-not-mutated",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([], [])",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "556d0ec1afebbada880ba8481fa637922e0436ff8d6f00aec1f1aac5a9d0df35"
+  },
+  {
+    "id": "R04",
+    "requirement": "ordinary-nested-int-rejection",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e005]",
+      "case": "e005",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['x'], [])",
+      "expected_exception": "TypeError",
+      "actual_python": "['x']"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "1476851887393146ef764695b44c70d863d5458fe245c86072d0c4211740779f"
+  },
+  {
+    "id": "R05",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e020]",
+      "case": "e020",
+      "kind": "required-exception-wrong-class",
+      "args_python": "(ListChild([2, 1]), [])",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference",
+    "source_sha256": "1ced567714be0bfed6daa8ef101ca4e6802324eec9b0576d5a6f1a1c506e3593"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(1,)",
+    "expected_python": "'I'",
+    "after_python": "(1,)"
+  },
+  {
+    "id": "v001",
+    "args_python": "(4,)",
+    "expected_python": "'IV'",
+    "after_python": "(4,)"
+  },
+  {
+    "id": "v002",
+    "args_python": "(9,)",
+    "expected_python": "'IX'",
+    "after_python": "(9,)"
+  },
+  {
+    "id": "v003",
+    "args_python": "(40,)",
+    "expected_python": "'XL'",
+    "after_python": "(40,)"
+  },
+  {
+    "id": "v004",
+    "args_python": "(90,)",
+    "expected_python": "'XC'",
+    "after_python": "(90,)"
+  },
+  {
+    "id": "v005",
+    "args_python": "(400,)",
+    "expected_python": "'CD'",
+    "after_python": "(400,)"
+  },
+  {
+    "id": "v006",
+    "args_python": "(900,)",
+    "expected_python": "'CM'",
+    "after_python": "(900,)"
+  },
+  {
+    "id": "v007",
+    "args_python": "(1994,)",
+    "expected_python": "'MCMXCIV'",
+    "after_python": "(1994,)"
+  },
+  {
+    "id": "v008",
+    "args_python": "(3999,)",
+    "expected_python": "'MMMCMXCIX'",
+    "after_python": "(3999,)"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(1),)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e005",
+    "args_python": "(0,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "(4000,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  }
+]

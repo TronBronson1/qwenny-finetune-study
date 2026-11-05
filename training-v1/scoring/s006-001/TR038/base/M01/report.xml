@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="14" time="0.469" timestamp="2026-11-04T13:18:39.178787-05:00" hostname="Trons"><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_0" time="0.001" /><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_1" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_f" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_uppercase" time="0.001" /><testcase classname="test_candidate.TestParseHexByte" name="test_valid_hex_mixed_case" time="0.001" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_non_hex_char" time="0.001" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_single_char" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_three_chars" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_empty_string" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_string_subclass" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">self = &lt;test_candidate.TestParseHexByte object at 0x000001F635669E50&gt;
+
+    def test_invalid_type_string_subclass(self):
+        class MyStr(str):
+            pass
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:40: Failed</failure></testcase><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_integer" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_bytes" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_type_none" time="0.000" /><testcase classname="test_candidate.TestParseHexByte" name="test_invalid_reversed_bounds" time="0.000" /></testsuite></testsuites>

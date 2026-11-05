@@ -1,0 +1,75 @@
+.FF.F....                                                                [100%]
+================================== FAILURES ===================================
+__________________________ test_values[args1-ABCXYZ] __________________________
+
+args = ('abcXYZ',), expected = 'ABCXYZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abcXYZ',), 'ABCXYZ'),
+        pytest.param(('z-a 9',), 'Z-A 9'),
+        pytest.param(('éßı',), 'éßı'),
+        pytest.param(('a\nb',), 'A\nB'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'aBCXYZ' == 'ABCXYZ'
+E         
+E         - ABCXYZ
+E         ? ^
+E         + aBCXYZ
+E         ? ^
+
+test_target.py:24: AssertionError
+__________________________ test_values[args2-Z-A 9] ___________________________
+
+args = ('z-a 9',), expected = 'Z-A 9'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abcXYZ',), 'ABCXYZ'),
+        pytest.param(('z-a 9',), 'Z-A 9'),
+        pytest.param(('éßı',), 'éßı'),
+        pytest.param(('a\nb',), 'A\nB'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Z-a 9' == 'Z-A 9'
+E         
+E         - Z-A 9
+E         ?   ^
+E         + Z-a 9
+E         ?   ^
+
+test_target.py:24: AssertionError
+___________________________ test_values[args4-A\nB] ___________________________
+
+args = ('a\nb',), expected = 'A\nB'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abcXYZ',), 'ABCXYZ'),
+        pytest.param(('z-a 9',), 'Z-A 9'),
+        pytest.param(('éßı',), 'éßı'),
+        pytest.param(('a\nb',), 'A\nB'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=ascii_upper(*args)
+>       assert actual == expected
+E       AssertionError: assert 'a\nB' == 'A\nB'
+E         
+E         - A
+E         + a
+E           B
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-ABCXYZ] - AssertionError: assert 'aB...
+FAILED test_target.py::test_values[args2-Z-A 9] - AssertionError: assert 'Z-a...
+FAILED test_target.py::test_values[args4-A\nB] - AssertionError: assert 'a\nB...
+3 failed, 6 passed in 0.35s

@@ -1,0 +1,194 @@
+....F...FFFFF.....                                                       [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ('[0:0]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:38: Failed
+________________________ test_raises_typeerror[args4] _________________________
+
+args = ('[7:3]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_range(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[7:3]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low > high:
+>           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError
+________________________ test_raises_typeerror[args5] _________________________
+
+args = ('0:1',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_range(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '0:1'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ('[00:1]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_range(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[00:1]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError
+________________________ test_raises_typeerror[args7] _________________________
+
+args = ('[0:100]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_range(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:100]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError
+________________________ test_raises_typeerror[args8] _________________________
+
+args = ('[0:1] ',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('[0:0]'),)),
+        pytest.param((b'x',)),
+        pytest.param((1,)),
+        pytest.param((None,)),
+        pytest.param((StrChild('[7:3]'),)),
+        pytest.param((StrChild('0:1'),)),
+        pytest.param((StrChild('[00:1]'),)),
+        pytest.param((StrChild('[0:100]'),)),
+        pytest.param((StrChild('[0:1] '),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_range(*args)
+
+test_target.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:1] '
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:56: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args4] - ValueError: bounds
+FAILED test_target.py::test_raises_typeerror[args5] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[args6] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[args7] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[args8] - ValueError: syntax
+6 failed, 12 passed in 0.37s

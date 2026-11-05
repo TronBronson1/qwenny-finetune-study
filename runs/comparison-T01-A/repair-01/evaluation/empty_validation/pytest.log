@@ -1,0 +1,123 @@
+........F...........FF..FF....FF...                                      [100%]
+================================== FAILURES ===================================
+_____________ test_rotate_right_two_element_zero_step[values0--1] _____________
+
+values = (1, 2), steps = -1
+
+    @pytest.mark.parametrize("values, steps", [
+        ((1, 2), -1),
+        ((1, 2), 0),
+    ])
+    def test_rotate_right_two_element_zero_step(values, steps):
+        """Two elements with zero step returns same tuple."""
+        result = rotate_right(values, steps)
+>       assert result == values
+E       assert (2, 1) == (1, 2)
+E         
+E         At index 0 diff: 2 != 1
+E         Use -v to get more diff
+
+test_candidate.py:48: AssertionError
+_____________ test_rotate_right_non_tuple_values[invalid_values0] _____________
+
+invalid_values = []
+
+    @pytest.mark.parametrize("invalid_values", [
+        [],
+        {},
+        set([1, 2]),
+        "string",
+    ])
+    def test_rotate_right_non_tuple_values(invalid_values):
+        """Non-tuple values are rejected."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:114: Failed
+_____________ test_rotate_right_non_tuple_values[invalid_values1] _____________
+
+invalid_values = {}
+
+    @pytest.mark.parametrize("invalid_values", [
+        [],
+        {},
+        set([1, 2]),
+        "string",
+    ])
+    def test_rotate_right_non_tuple_values(invalid_values):
+        """Non-tuple values are rejected."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:114: Failed
+_________ test_rotate_right_tuple_subclass_rejection[invalid_values0] _________
+
+invalid_values = ((1,), (2,), (3,))
+
+    @pytest.mark.parametrize("invalid_values", [
+        ((1,), (2,), (3,)),
+        ({1: "a"}, {2: "b"}),
+    ])
+    def test_rotate_right_tuple_subclass_rejection(invalid_values):
+        """Tuple subclasses are rejected."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:124: Failed
+_________ test_rotate_right_tuple_subclass_rejection[invalid_values1] _________
+
+invalid_values = ({1: 'a'}, {2: 'b'})
+
+    @pytest.mark.parametrize("invalid_values", [
+        ((1,), (2,), (3,)),
+        ({1: "a"}, {2: "b"}),
+    ])
+    def test_rotate_right_tuple_subclass_rejection(invalid_values):
+        """Tuple subclasses are rejected."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:124: Failed
+____________ test_rotate_right_tuple_with_invalid_values[values0] _____________
+
+values = []
+
+    @pytest.mark.parametrize("values", [
+        [],
+        {},
+    ])
+    def test_rotate_right_tuple_with_invalid_values(values):
+        """Invalid values are rejected before any processing."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:146: Failed
+____________ test_rotate_right_tuple_with_invalid_values[values1] _____________
+
+values = {}
+
+    @pytest.mark.parametrize("values", [
+        [],
+        {},
+    ])
+    def test_rotate_right_tuple_with_invalid_values(values):
+        """Invalid values are rejected before any processing."""
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:146: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_right_two_element_zero_step[values0--1]
+FAILED test_candidate.py::test_rotate_right_non_tuple_values[invalid_values0]
+FAILED test_candidate.py::test_rotate_right_non_tuple_values[invalid_values1]
+FAILED test_candidate.py::test_rotate_right_tuple_subclass_rejection[invalid_values0]
+FAILED test_candidate.py::test_rotate_right_tuple_subclass_rejection[invalid_values1]
+FAILED test_candidate.py::test_rotate_right_tuple_with_invalid_values[values0]
+FAILED test_candidate.py::test_rotate_right_tuple_with_invalid_values[values1]
+7 failed, 28 passed in 0.33s

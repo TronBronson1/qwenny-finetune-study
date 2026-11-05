@@ -1,0 +1,45 @@
+.....FF.........F                                                        [100%]
+================================== FAILURES ===================================
+_____________________ test_rotate_large_wrapping_negative _____________________
+
+    def test_rotate_large_wrapping_negative():
+        values = ("x", "y")
+>       assert rotate_right(values, -3) == ("x", "y") # -3 % 2 = -1 -> effectively shift left 1 / right 1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('y', 'x') == ('x', 'y')
+E         
+E         At index 0 diff: 'y' != 'x'
+E         Use -v to get more diff
+
+test_candidate.py:27: AssertionError
+__________________________ test_rotate_complex_types __________________________
+
+    def test_rotate_complex_types():
+        data = [1, 2.5, "str", None]
+        container = tuple(data)
+        result = rotate_right(container, 2)
+        expected = (None, 1, 2.5, "str")
+>       assert result == expected
+E       AssertionError: assert ('str', None, 1, 2.5) == (None, 1, 2.5, 'str')
+E         
+E         At index 0 diff: 'str' != None
+E         Use -v to get more diff
+
+test_candidate.py:34: AssertionError
+_____________________ test_reject_large_step_well_behaves _____________________
+
+    def test_reject_large_step_well_behaves():
+        values = (1, 2, 3)
+        result = rotate_right(values, 100)
+>       assert result == (1, 2, 3)
+E       assert (3, 1, 2) == (1, 2, 3)
+E         
+E         At index 0 diff: 3 != 1
+E         Use -v to get more diff
+
+test_candidate.py:84: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_rotate_large_wrapping_negative - AssertionErro...
+FAILED test_candidate.py::test_rotate_complex_types - AssertionError: assert ...
+FAILED test_candidate.py::test_reject_large_step_well_behaves - assert (3, 1,...
+3 failed, 14 passed in 0.40s

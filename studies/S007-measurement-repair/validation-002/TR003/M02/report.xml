@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="17" time="0.423" timestamp="2026-11-04T17:03:38.437976-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert -1 == 1">args = (1, 0), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -1 == 1
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert -1 == 1">args = (0, 1), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -1 == 1
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert -8 == 8">args = (-3, 5), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -8 == 8
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="assert -8 == 8">args = (5, -3), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -8 == 8
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="assert -6 == 6">args = (-8, -2), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -6 == 6
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert -200000000000000000000 == 200000000000000000000">args = (100000000000000000000, -100000000000000000000)
+expected = 200000000000000000000
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((1, 0), 1, id="v001"),
+        pytest.param((0, 1), 1, id="v002"),
+        pytest.param((-3, 5), 8, id="v003"),
+        pytest.param((5, -3), 8, id="v004"),
+        pytest.param((-8, -2), 6, id="v005"),
+        pytest.param((100000000000000000000, -100000000000000000000), 200000000000000000000, id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=absolute_distance(*args)
+&gt;       assert actual == expected
+E       assert -200000000000000000000 == 200000000000000000000
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /></testsuite></testsuites>

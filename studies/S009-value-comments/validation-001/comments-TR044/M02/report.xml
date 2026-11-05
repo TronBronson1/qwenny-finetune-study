@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="22" time="0.527" timestamp="2026-11-04T19:00:42.824863-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: bounds">args = ('[0:99]',), expected = (0, 99)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[0:99]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: bounds">args = ('[3:7]',), expected = (3, 7)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('[0:0]',), (0, 0), id="v000"),
+        pytest.param(('[0:99]',), (0, 99), id="v001"),
+        pytest.param(('[3:7]',), (3, 7), id="v002"),
+        pytest.param(('[99:99]',), (99, 99), id="v003"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parse_range(*args)
+               ^^^^^^^^^^^^^^^^^^
+
+test_target.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '[3:7]'
+
+    def parse_range(text):
+        _types((text,), ('str',))
+        part = '(?:0|[1-9][0-9]?)'
+        if re.fullmatch('\\[' + part + ':' + part + '\\]', text) is None:
+            raise ValueError('syntax')
+        low, high = map(int, text[1:-1].split(':'))
+        if low &lt; high:
+&gt;           raise ValueError('bounds')
+E           ValueError: bounds
+
+subject.py:59: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e016]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e017]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ('[7:3]',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('[7:3]',), id="e004"),
+        pytest.param(('0:1',), id="e005"),
+        pytest.param(('[00:1]',), id="e006"),
+        pytest.param(('[0:100]',), id="e007"),
+        pytest.param(('[0:1] ',), id="e008"),
+        pytest.param(('[١:٣]',), id="e009"),
+        pytest.param(('[１:３]',), id="e010"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:50: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.001" /></testsuite></testsuites>

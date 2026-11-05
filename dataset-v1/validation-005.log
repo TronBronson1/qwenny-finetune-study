@@ -1,0 +1,28 @@
+completed 25 / 420
+completed 50 / 420
+Exception in thread Thread-129 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\threading.py", line 1012, in run
+Exception in thread Thread-127 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\threading.py", line 1075, in _bootstrap_inner
+    self._target(*self._args, **self._kwargs)
+    self.run()
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\subprocess.py", line 1599, in _readerthread
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+                  ^^^^^^^^^
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\encodings\cp1252.py", line 23, in decode
+  File "C:\Users\jalar\AppData\Local\Python\pythoncore-3.12-64\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 563: character maps to <undefined>
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 552: character maps to <undefined>

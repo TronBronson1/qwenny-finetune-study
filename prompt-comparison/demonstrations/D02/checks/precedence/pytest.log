@@ -1,0 +1,25 @@
+......................F                                                  [100%]
+================================== FAILURES ===================================
+_________________________ test_type_precedence[None-] _________________________
+
+left = None, right = ''
+
+    @pytest.mark.parametrize("left,right", [(None, "")])
+    def test_type_precedence(left, right):
+        with pytest.raises(TypeError):
+>           strip_prefix(left, right)
+
+test_target.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = None, prefix = ''
+
+    def strip_prefix(text, prefix):
+>       if prefix == "": raise ValueError
+                         ^^^^^^^^^^^^^^^^
+E       ValueError
+
+prefix_tools.py:2: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_type_precedence[None-] - ValueError
+1 failed, 22 passed in 0.23s

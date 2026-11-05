@@ -1,0 +1,151 @@
+FFFFFFF.......                                                           [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = (0,), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 1 == 0
+
+test_target.py:29: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = (1,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:29: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = (2,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:29: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (3,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:29: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (255,), expected = 8
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 9 == 8
+
+test_target.py:29: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (256,), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 2 == 1
+
+test_target.py:29: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = (1267650600228229401496703205377,), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), 0, id="v000"),
+        pytest.param((1,), 1, id="v001"),
+        pytest.param((2,), 1, id="v002"),
+        pytest.param((3,), 2, id="v003"),
+        pytest.param((255,), 8, id="v004"),
+        pytest.param((256,), 1, id="v005"),
+        pytest.param((1267650600228229401496703205377,), 2, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=population_count(*args)
+>       assert actual == expected
+E       assert 3 == 2
+
+test_target.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert 1 == 0
+FAILED test_target.py::test_values[v001] - assert 2 == 1
+FAILED test_target.py::test_values[v002] - assert 2 == 1
+FAILED test_target.py::test_values[v003] - assert 3 == 2
+FAILED test_target.py::test_values[v004] - assert 9 == 8
+FAILED test_target.py::test_values[v005] - assert 2 == 1
+FAILED test_target.py::test_values[v006] - assert 3 == 2
+7 failed, 7 passed in 0.36s

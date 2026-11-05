@@ -1,0 +1,112 @@
+......FF...FF...FF...FFF..                                               [100%]
+================================== FAILURES ===================================
+_ TestClampIntegerInvalidTypesValuePosition.test_true_as_value_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesValuePosition object at 0x000002139F56D6D0>
+
+    def test_true_as_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(True, 0, 10))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:31: Failed
+_ TestClampIntegerInvalidTypesValuePosition.test_false_as_value_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesValuePosition object at 0x000002139F56DBD0>
+
+    def test_false_as_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(False, 0, 10))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:34: Failed
+_ TestClampIntegerInvalidTypesLowerPosition.test_true_as_lower_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesLowerPosition object at 0x000002139F56DF90>
+
+    def test_true_as_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, True, 10))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:50: Failed
+_ TestClampIntegerInvalidTypesLowerPosition.test_false_as_lower_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesLowerPosition object at 0x000002139F56E0D0>
+
+    def test_false_as_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, False, 10))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:53: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_true_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x000002139F56E210>
+
+    def test_true_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, True))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:69: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_false_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x000002139F56E350>
+
+    def test_false_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, False))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:72: Failed
+__ TestClampIntegerIntSubclassInvalid.test_subclass_value_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000002139F56E490>
+
+    def test_subclass_value_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+
+test_candidate.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(MyInt(5), 0, 10))
+                                                   ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:91: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_lower_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000002139F56E5D0>
+
+    def test_subclass_lower_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+
+test_candidate.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, MyInt(0), 10))
+                                                      ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:94: NameError
+__ TestClampIntegerIntSubclassInvalid.test_subclass_upper_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x000002139F522780>
+
+    def test_subclass_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+
+test_candidate.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+>   pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+                                                         ^^^^^
+E   NameError: name 'MyInt' is not defined
+
+test_candidate.py:97: NameError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerInvalidTypesValuePosition::test_true_as_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesValuePosition::test_false_as_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesLowerPosition::test_true_as_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesLowerPosition::test_false_as_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_true_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_false_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_value_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_lower_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_upper_raises_type_error
+9 failed, 17 passed in 0.29s

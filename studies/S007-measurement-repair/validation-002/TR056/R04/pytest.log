@@ -1,0 +1,42 @@
+..................FF                                                     [100%]
+================================== FAILURES ===================================
+________________________ test_raises_valueerror[e008] _________________________
+
+args = ('#١٢٣٤٥٦',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('ffffff',), id="e004"),
+        pytest.param(('#fff',), id="e005"),
+        pytest.param(('#gg0000',), id="e006"),
+        pytest.param(('#000000\n',), id="e007"),
+        pytest.param(('#١٢٣٤٥٦',), id="e008"),
+        pytest.param(('#１２３４５６',), id="e009"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:48: Failed
+________________________ test_raises_valueerror[e009] _________________________
+
+args = ('#１２３４５６',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('ffffff',), id="e004"),
+        pytest.param(('#fff',), id="e005"),
+        pytest.param(('#gg0000',), id="e006"),
+        pytest.param(('#000000\n',), id="e007"),
+        pytest.param(('#١٢٣٤٥٦',), id="e008"),
+        pytest.param(('#１２３４５６',), id="e009"),
+    ])
+    def test_raises_valueerror(args):
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:48: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_valueerror[e008] - Failed: DID NOT RAISE V...
+FAILED test_target.py::test_raises_valueerror[e009] - Failed: DID NOT RAISE V...
+2 failed, 18 passed in 0.54s

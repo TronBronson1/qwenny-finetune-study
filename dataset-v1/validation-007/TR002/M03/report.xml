@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="24" time="0.465" timestamp="2026-11-03T20:15:22.928399-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert None == 'abc'">args = ('abc', 'z'), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=strip_prefix(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert None == 'abc'
+
+test_target.py:32: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert None == ''">args = ('', 'a'), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=strip_prefix(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert None == ''
+
+test_target.py:32: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert None == 'Abc'">args = ('Abc', 'a'), expected = 'Abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=strip_prefix(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert None == 'Abc'
+
+test_target.py:32: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert None == 'ba'">args = ('ba', 'a'), expected = 'ba'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=strip_prefix(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert None == 'ba'
+
+test_target.py:32: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v007]" time="0.001" /><testcase classname="test_target" name="test_values[v008]" time="0.000" /><testcase classname="test_target" name="test_values[v009]" time="0.001"><failure message="AssertionError: assert None == 'abc'">args = ('abc', 'abcd'), expected = 'abc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('abc', 'a'), 'bc', id="v000"),
+        pytest.param(('abc', 'abc'), '', id="v001"),
+        pytest.param(('abc', 'z'), 'abc', id="v002"),
+        pytest.param(('', 'a'), '', id="v003"),
+        pytest.param(('aaaa', 'a'), 'aaa', id="v004"),
+        pytest.param(('Abc', 'a'), 'Abc', id="v005"),
+        pytest.param(('ba', 'a'), 'ba', id="v006"),
+        pytest.param((' ab', ' '), 'ab', id="v007"),
+        pytest.param(('éclair', 'é'), 'clair', id="v008"),
+        pytest.param(('abc', 'abcd'), 'abc', id="v009"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=strip_prefix(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert None == 'abc'
+
+test_target.py:32: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e009]" time="0.000" /></testsuite></testsuites>

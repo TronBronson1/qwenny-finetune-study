@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="15" time="0.428" timestamp="2026-11-04T18:59:22.878847-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert '' == 'a'&#10;  &#10;  - a">args = ('a', ''), expected = 'a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '' == 'a'
+E         
+E         - a
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert '12' == 'a1b2'&#10;  &#10;  - a1b2&#10;  + 12">args = ('ab', '12'), expected = 'a1b2'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '12' == 'a1b2'
+E         
+E         - a1b2
+E         + 12
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert '1' == 'a1bc'&#10;  &#10;  - a1bc&#10;  + 1">args = ('abc', '1'), expected = 'a1bc'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '1' == 'a1bc'
+E         
+E         - a1bc
+E         + 1
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="IndexError: string index out of range">args = ('a', '123'), expected = 'a123'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=interleave_strings(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+left = 'a', right = '123'
+
+    def interleave_strings(left, right):
+        _types((left, right), ('str', 'str'))
+        result = []
+        for index in range(max(len(left), len(right))):
+            if index &gt; len(left):
+&gt;               result.append(left[index])
+                              ^^^^^^^^^^^
+E               IndexError: string index out of range
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert ' X' == 'é 字X'&#10;  &#10;  - é 字X&#10;  +  X">args = ('é字', ' X'), expected = 'é 字X'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('a', ''), 'a', id="v001"),
+        pytest.param(('', 'b'), 'b', id="v002"),
+        pytest.param(('ab', '12'), 'a1b2', id="v003"),
+        pytest.param(('abc', '1'), 'a1bc', id="v004"),
+        pytest.param(('a', '123'), 'a123', id="v005"),
+        pytest.param(('é字', ' X'), 'é 字X', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=interleave_strings(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert ' X' == 'é 字X'
+E         
+E         - é 字X
+E         +  X
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /></testsuite></testsuites>

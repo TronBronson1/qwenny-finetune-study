@@ -1,0 +1,28 @@
+..............F....F...                                                  [100%]
+================================== FAILURES ===================================
+______________________________ test_types[a-a1] _______________________________
+
+left = 'a', right = 'a'
+
+    @pytest.mark.parametrize("left,right", [(True, "a"), (1, "a"), (None, "a"), (b"a", "a"), (StrChild("a"), "a"), ("abc", True), ("abc", 1), ("abc", None), ("abc", b"a"), ("abc", StrChild("a"))])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+_____________________________ test_types[abc-a1] ______________________________
+
+left = 'abc', right = 'a'
+
+    @pytest.mark.parametrize("left,right", [(True, "a"), (1, "a"), (None, "a"), (b"a", "a"), (StrChild("a"), "a"), ("abc", True), ("abc", 1), ("abc", None), ("abc", b"a"), ("abc", StrChild("a"))])
+    def test_types(left, right):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:16: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_types[a-a1] - Failed: DID NOT RAISE TypeError
+FAILED test_target.py::test_types[abc-a1] - Failed: DID NOT RAISE TypeError
+2 failed, 21 passed in 0.26s

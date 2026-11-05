@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="19" time="0.545" timestamp="2026-11-04T13:18:41.193126-05:00" hostname="Trons"><testcase classname="test_candidate.TestIntervalUnionValues" name="test_single_interval" time="0.001"><failure message="TypeError: exact built-in type required">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A67AD50&gt;
+
+    def test_single_interval(self):
+        args, expected = ([(1, 5)]), [(1, 5)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+subject.py:53: in interval_union
+    _types((intervals,), ('pairs',))
+subject.py:45: in _types
+    _check(value, schema)
+subject.py:11: in _check
+    _exact(value, list)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = (1, 5), kind = &lt;class 'list'&gt;
+
+    def _exact(value, kind):
+        if type(value) is not kind:
+&gt;           raise TypeError('exact built-in type required')
+E           TypeError: exact built-in type required
+
+subject.py:5: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_touching_intervals" time="0.001"><failure message="TypeError: interval_union() takes 1 positional argument but 2 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A67AC10&gt;
+
+    def test_touching_intervals(self):
+        args, expected = ([(1, 2), (2, 3)]), [(1, 3)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:17: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_overlapping_intervals" time="0.000"><failure message="TypeError: interval_union() takes 1 positional argument but 2 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A672C40&gt;
+
+    def test_overlapping_intervals(self):
+        args, expected = ([(1, 5), (3, 7)]), [(1, 7)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:22: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_disjoint_intervals" time="0.001"><failure message="TypeError: interval_union() takes 1 positional argument but 2 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A672EA0&gt;
+
+    def test_disjoint_intervals(self):
+        args, expected = ([(1, 3), (5, 7)]), [(1, 3), (5, 7)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 2 were given
+
+test_candidate.py:27: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_complex_merge" time="0.000"><failure message="TypeError: interval_union() takes 1 positional argument but 3 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A6A1370&gt;
+
+    def test_complex_merge(self):
+        args, expected = ([(1, 3), (2, 6), (8, 10)]), [(1, 6), (8, 10)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:32: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_empty_input" time="0.001"><failure message="TypeError: interval_union() missing 1 required positional argument: 'intervals'">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A6DC7C0&gt;
+
+    def test_empty_input(self):
+        args, expected = ([], [])
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() missing 1 required positional argument: 'intervals'
+
+test_candidate.py:37: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_three_way_merge" time="0.001"><failure message="TypeError: interval_union() takes 1 positional argument but 3 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A6DCC00&gt;
+
+    def test_three_way_merge(self):
+        args, expected = ([(1, 5), (4, 8), (6, 10)]), [(1, 10)]
+&gt;       actual = interval_union(*args)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:42: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionValues" name="test_input_is_unmodified" time="0.001"><failure message="TypeError: interval_union() takes 1 positional argument but 3 were given">self = &lt;test_candidate.TestIntervalUnionValues object at 0x000002595A6B0150&gt;
+
+    def test_input_is_unmodified(self):
+        orig = copy.deepcopy([(1, 5), (3, 7), (2, 4)])
+&gt;       actual = interval_union(*orig)
+                 ^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: interval_union() takes 1 positional argument but 3 were given
+
+test_candidate.py:47: TypeError</failure></testcase><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_list_of_ints_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_list_of_tup_strings_raises" time="0.000" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_list_of_floats_raises" time="0.000" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_list_of_none_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_list_of_bad_nested_types_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_scalar_int_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidTypes" name="test_scalar_list_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidValue" name="test_low_ge_high_raises" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">self = &lt;test_candidate.TestIntervalUnionInvalidValue object at 0x000002595A67B9D0&gt;
+
+    def test_low_ge_high_raises(self):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_candidate.py:90: Failed</failure></testcase><testcase classname="test_candidate.TestIntervalUnionInvalidValue" name="test_low_gte_high_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidValue" name="test_tuple_not_exact_raises" time="0.001" /><testcase classname="test_candidate.TestIntervalUnionInvalidValue" name="test_list_element_not_tuple_raises" time="0.001" /></testsuite></testsuites>

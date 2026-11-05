@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="10" skipped="0" tests="27" time="0.372" timestamp="2026-11-04T07:12:08.109783-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-1]" time="0.001" /><testcase classname="test_target" name="test_values[args2-f]" time="0.000" /><testcase classname="test_target" name="test_values[args3-10]" time="0.000" /><testcase classname="test_target" name="test_values[args4-11111]" time="0.000" /><testcase classname="test_target" name="test_values[args5-10000]" time="0.000" /><testcase classname="test_target" name="test_values[args6-ff]" time="0.000" /><testcase classname="test_target" name="test_values[args7-100]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (True, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:49: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:49: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args5]" time="0.000"><failure message="ValueError: domain">args = (0, True)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 0, base = True
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args6]" time="0.001"><failure message="Failed: DID NOT RAISE TypeError">args = (0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+&gt;       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:49: Failed</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args7]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args8]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args9]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args10]" time="0.000"><failure message="ValueError: domain">args = (-1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, base = 2
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args11]" time="0.001"><failure message="ValueError: domain">args = (-1, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = -1, base = 2
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args12]" time="0.001"><failure message="ValueError: domain">args = (2, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 1
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args13]" time="0.001"><failure message="ValueError: domain">args = (2, 1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 1
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args14]" time="0.001"><failure message="ValueError: domain">args = (2, 17)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 17
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args15]" time="0.001"><failure message="ValueError: domain">args = (2, 17)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 2)),
+        pytest.param((IntChild(0), 2)),
+        pytest.param((1.5, 2)),
+        pytest.param(('bad', 2)),
+        pytest.param((None, 2)),
+        pytest.param((0, True)),
+        pytest.param((0, IntChild(2))),
+        pytest.param((0, 1.5)),
+        pytest.param((0, 'bad')),
+        pytest.param((0, None)),
+        pytest.param((IntChild(-1), 2)),
+        pytest.param((-1, IntChild(2))),
+        pytest.param((IntChild(2), 1)),
+        pytest.param((2, IntChild(1))),
+        pytest.param((IntChild(2), 17)),
+        pytest.param((2, IntChild(17))),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           int_to_base(*args)
+
+test_target.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 2, base = 17
+
+    def int_to_base(number, base):
+        _types((number, base), ('int', 'int'))
+        if number &lt; 0 or not 2 &lt;= base &lt;= 16:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[args0]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[args2]" time="0.000" /></testsuite></testsuites>

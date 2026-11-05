@@ -1,0 +1,97 @@
+from subject import interval_union
+import pytest
+
+# --- Valid Input Cases ---
+
+# Single interval
+def test_single_interval():
+    result = interval_union([(1, 5)])
+    assert result == [(1, 5)]
+
+# Multiple disjoint intervals
+def test_disjoint_intervals():
+    result = interval_union([(1, 2), (4, 6)])
+    assert result == [(1, 2), (4, 6)]
+
+# Touching intervals (should merge)
+def test_touching_intervals():
+    result = interval_union([(1, 2), (2, 5)])
+    assert result == [(1, 5)]
+
+# Overlapping intervals
+def test_overlapping_intervals():
+    result = interval_union([(1, 5), (3, 7)])
+    assert result == [(1, 7)]
+
+# Unsorted input list (should return sorted output)
+def test_unsorted_input():
+    result = interval_union([(3, 7), (1, 5)])
+    assert result == [(1, 5), (3, 7)]
+
+# Complex merging
+def test_complex_merging():
+    result = interval_union([(1, 10), (5, 6), (8, 12), (15, 16)])
+    assert result == [(1, 12), (15, 16)]
+
+# --- Invalid Type Cases ---
+
+# None instead of list
+def test_none_type_error():
+    with pytest.raises(TypeError):
+        interval_union(None)
+
+# Single tuple instead of list of tuples
+def test_single_tuple_type_error():
+    with pytest.raises(TypeError):
+        interval_union((1, 5))
+
+# List containing invalid tuple type (string)
+def test_string_in_list_type_error():
+    with pytest.raises(TypeError):
+        interval_union([(1, 5), ("a", "b")])
+
+# List containing invalid tuple length (three elements)
+def test_wrong_length_type_error():
+    with pytest.raises(TypeError):
+        interval_union([(1, 5, 6)])
+
+# List containing nested list instead of tuple
+def test_nested_list_type_error():
+    with pytest.raises(TypeError):
+        interval_union([[1, 5]])
+
+# --- Invalid Value Cases ---
+
+# Low >= High (not strictly less than)
+def test_low_equal_high():
+    with pytest.raises(ValueError):
+        interval_union([(1, 1)])
+
+# Low > High
+def test_low_greater_than_high():
+    with pytest.raises(ValueError):
+        interval_union([(5, 1)])
+
+# Floats used instead of ints (contract specifies two-int tuples)
+def test_float_values():
+    with pytest.raises(TypeError):
+        interval_union([(1.5, 5.5)])
+
+# Negative check (assuming contract implies low < high covers negatives if low is higher; if low < high logic holds for negatives, this is valid input. If contract implies non-negative, we add here. Based on "low < high" constraint only, negative is valid. I will assume negative is valid unless "non-negative" was implied by "int".)
+# Note: Standard "int" includes negatives. The constraint is strictly low < high.
+# (-5, -1) is valid.
+# (-1, 5) is valid.
+# So no specific negative value test is needed for ValueError unless contract specified non-negative.
+
+# --- Type Preservation Checks ---
+
+# Ensure output tuples are built-in tuples, not list-based
+def test_output_tuple_types():
+    result = interval_union([(1, 5), (10, 20)])
+    # Manually check types just to be explicit about the contract requirement
+    for pair in result:
+        assert isinstance(pair, tuple)
+        assert len(pair) == 2
+        low, high = pair
+        assert isinstance(low, int)
+        assert isinstance(high, int)

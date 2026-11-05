@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="11" time="0.402" timestamp="2026-11-03T20:10:17.935417-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.000" /><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert '\r' == '\n'&#10;  &#10;  Strings contain only whitespace, escaping them using repr()&#10;  - '\n'&#10;  ?   ^&#10;  + '\r'&#10;  ?   ^">args = ('\r',), expected = '\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('\r\n',), '\n', id="v002"),
+        pytest.param(('\r',), '\n', id="v003"),
+        pytest.param(('\n',), '\n', id="v004"),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd', id="v005"),
+        pytest.param(('\r\r\n',), '\n\n', id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '\r' == '\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n'
+E         ?   ^
+E         + '\r'
+E         ?   ^
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert 'a\nb\rc\nd' == 'a\nb\nc\nd'&#10;  &#10;    a&#10;  - b&#10;  + b&#10;    c&#10;    d">args = ('a\r\nb\rc\nd',), expected = 'a\nb\nc\nd'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('\r\n',), '\n', id="v002"),
+        pytest.param(('\r',), '\n', id="v003"),
+        pytest.param(('\n',), '\n', id="v004"),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd', id="v005"),
+        pytest.param(('\r\r\n',), '\n\n', id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'a\nb\rc\nd' == 'a\nb\nc\nd'
+E         
+E           a
+E         - b
+E         + b
+E           c
+E           d
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert '\r\n' == '\n\n'&#10;  &#10;  Strings contain only whitespace, escaping them using repr()&#10;  - '\n\n'&#10;  ?   ^&#10;  + '\r\n'&#10;  ?   ^">args = ('\r\r\n',), expected = '\n\n'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('a',), 'a', id="v001"),
+        pytest.param(('\r\n',), '\n', id="v002"),
+        pytest.param(('\r',), '\n', id="v003"),
+        pytest.param(('\n',), '\n', id="v004"),
+        pytest.param(('a\r\nb\rc\nd',), 'a\nb\nc\nd', id="v005"),
+        pytest.param(('\r\r\n',), '\n\n', id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=normalize_newlines(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert '\r\n' == '\n\n'
+E         
+E         Strings contain only whitespace, escaping them using repr()
+E         - '\n\n'
+E         ?   ^
+E         + '\r\n'
+E         ?   ^
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,177 @@
+FFFFFFF.........                                                         [100%]
+================================== FAILURES ===================================
+____________________________ test_values[args0-A] _____________________________
+
+args = (1,), expected = 'A'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Ax' == 'A'
+E         
+E         - A
+E         + Ax
+
+test_target.py:26: AssertionError
+____________________________ test_values[args1-Z] _____________________________
+
+args = (26,), expected = 'Z'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Zx' == 'Z'
+E         
+E         - Z
+E         + Zx
+
+test_target.py:26: AssertionError
+____________________________ test_values[args2-AA] ____________________________
+
+args = (27,), expected = 'AA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AAx' == 'AA'
+E         
+E         - AA
+E         + AAx
+E         ?   +
+
+test_target.py:26: AssertionError
+____________________________ test_values[args3-AZ] ____________________________
+
+args = (52,), expected = 'AZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AZx' == 'AZ'
+E         
+E         - AZ
+E         + AZx
+E         ?   +
+
+test_target.py:26: AssertionError
+____________________________ test_values[args4-ZZ] ____________________________
+
+args = (702,), expected = 'ZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'ZZx' == 'ZZ'
+E         
+E         - ZZ
+E         + ZZx
+E         ?   +
+
+test_target.py:26: AssertionError
+___________________________ test_values[args5-AAA] ____________________________
+
+args = (703,), expected = 'AAA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'AAAx' == 'AAA'
+E         
+E         - AAA
+E         + AAAx
+E         ?    +
+
+test_target.py:26: AssertionError
+___________________________ test_values[args6-ZZZ] ____________________________
+
+args = (18278,), expected = 'ZZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A'),
+        pytest.param((26,), 'Z'),
+        pytest.param((27,), 'AA'),
+        pytest.param((52,), 'AZ'),
+        pytest.param((702,), 'ZZ'),
+        pytest.param((703,), 'AAA'),
+        pytest.param((18278,), 'ZZZ'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=spreadsheet_column(*args)
+>       assert actual == expected
+E       AssertionError: assert 'ZZZx' == 'ZZZ'
+E         
+E         - ZZZ
+E         + ZZZx
+E         ?    +
+
+test_target.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args0-A] - AssertionError: assert 'Ax' == 'A'
+FAILED test_target.py::test_values[args1-Z] - AssertionError: assert 'Zx' == 'Z'
+FAILED test_target.py::test_values[args2-AA] - AssertionError: assert 'AAx' =...
+FAILED test_target.py::test_values[args3-AZ] - AssertionError: assert 'AZx' =...
+FAILED test_target.py::test_values[args4-ZZ] - AssertionError: assert 'ZZx' =...
+FAILED test_target.py::test_values[args5-AAA] - AssertionError: assert 'AAAx'...
+FAILED test_target.py::test_values[args6-ZZZ] - AssertionError: assert 'ZZZx'...
+7 failed, 9 passed in 0.34s

@@ -1,0 +1,27 @@
+.....F.........                                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v005] ______________________________
+
+args = ('Ab', 'ab'), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', ''), '', id="v000"),
+        pytest.param(('', 'a'), '', id="v001"),
+        pytest.param(('abc', 'abc'), 'abc', id="v002"),
+        pytest.param(('abc', 'abd'), 'ab', id="v003"),
+        pytest.param(('abc', 'a'), 'a', id="v004"),
+        pytest.param(('Ab', 'ab'), '', id="v005"),
+        pytest.param(('é字a', 'é字b'), 'é字', id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=common_prefix(*args)
+>       assert actual == expected
+E       AssertionError: assert 'Ab' == ''
+E         
+E         + Ab
+
+test_target.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v005] - AssertionError: assert 'Ab' == ''
+1 failed, 14 passed in 0.32s

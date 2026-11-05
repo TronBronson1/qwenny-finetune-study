@@ -1,0 +1,41 @@
+[
+  {
+    "id": "M01",
+    "defect": "weaken-exact-type",
+    "source_sha256": "789dc33c1c2d81d8414c5e8113e20c3cab2af45394cad1fbfeeb9b128a3a5277",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(TupleChild((0, 0, 0)), (0, 0, 0))",
+      "expected_exception": "TypeError",
+      "actual_python": "0"
+    }
+  },
+  {
+    "id": "M02",
+    "defect": "arithmetic-48-Add",
+    "source_sha256": "60d9b5fbea2cb35e6599e2f96244b359f1cbc26b972c3be6c55d750d67f50f4b",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "((1, 2, 3), (1, 2, 4))",
+      "expected_python": "-1",
+      "actual_python": "1"
+    }
+  },
+  {
+    "id": "M03",
+    "defect": "comparison-48-GtE",
+    "source_sha256": "a96d481247e399b9d9e2289ae195e85319cecd747b23db7d1ea8e48e4aa605cf",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "((0, 0, 0), (0, 0, 0))",
+      "expected_python": "0",
+      "actual_python": "1"
+    }
+  }
+]

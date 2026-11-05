@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="23" time="0.434" timestamp="2026-11-03T20:15:34.820970-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="assert 6 == 1">args = (0, 1), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 1), 1, id="v001"),
+        pytest.param((6, 1), 0, id="v002"),
+        pytest.param((0, -1), 6, id="v003"),
+        pytest.param((3, 14), 3, id="v004"),
+        pytest.param((3, -14), 3, id="v005"),
+        pytest.param((6, 8), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=weekday_offset(*args)
+&gt;       assert actual == expected
+E       assert 6 == 1
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="assert 5 == 0">args = (6, 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 1), 1, id="v001"),
+        pytest.param((6, 1), 0, id="v002"),
+        pytest.param((0, -1), 6, id="v003"),
+        pytest.param((3, 14), 3, id="v004"),
+        pytest.param((3, -14), 3, id="v005"),
+        pytest.param((6, 8), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=weekday_offset(*args)
+&gt;       assert actual == expected
+E       assert 5 == 0
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="assert 1 == 6">args = (0, -1), expected = 6
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 1), 1, id="v001"),
+        pytest.param((6, 1), 0, id="v002"),
+        pytest.param((0, -1), 6, id="v003"),
+        pytest.param((3, 14), 3, id="v004"),
+        pytest.param((3, -14), 3, id="v005"),
+        pytest.param((6, 8), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=weekday_offset(*args)
+&gt;       assert actual == expected
+E       assert 1 == 6
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_values[v005]" time="0.001" /><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="assert 5 == 0">args = (6, 8), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0, 0), 0, id="v000"),
+        pytest.param((0, 1), 1, id="v001"),
+        pytest.param((6, 1), 0, id="v002"),
+        pytest.param((0, -1), 6, id="v003"),
+        pytest.param((3, 14), 3, id="v004"),
+        pytest.param((3, -14), 3, id="v005"),
+        pytest.param((6, 8), 0, id="v006"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=weekday_offset(*args)
+&gt;       assert actual == expected
+E       assert 5 == 0
+
+test_target.py:29: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.000" /></testsuite></testsuites>

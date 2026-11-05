@@ -1,0 +1,67 @@
+.FFF............                                                         [100%]
+================================== FAILURES ===================================
+________________________ test_values[args1-expected1] _________________________
+
+args = ('#ffffff',), expected = (255, 255, 255)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0)),
+        pytest.param(('#ffffff',), (255, 255, 255)),
+        pytest.param(('#010203',), (1, 2, 3)),
+        pytest.param(('#00aAFF',), (0, 170, 255)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+>       assert actual == expected
+E       assert (4095, 4095, 255) == (255, 255, 255)
+E         
+E         At index 0 diff: 4095 != 255
+E         Use -v to get more diff
+
+test_target.py:23: AssertionError
+________________________ test_values[args2-expected2] _________________________
+
+args = ('#010203',), expected = (1, 2, 3)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0)),
+        pytest.param(('#ffffff',), (255, 255, 255)),
+        pytest.param(('#010203',), (1, 2, 3)),
+        pytest.param(('#00aAFF',), (0, 170, 255)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+>       assert actual == expected
+E       assert (16, 32, 3) == (1, 2, 3)
+E         
+E         At index 0 diff: 16 != 1
+E         Use -v to get more diff
+
+test_target.py:23: AssertionError
+________________________ test_values[args3-expected3] _________________________
+
+args = ('#00aAFF',), expected = (0, 170, 255)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('#000000',), (0, 0, 0)),
+        pytest.param(('#ffffff',), (255, 255, 255)),
+        pytest.param(('#010203',), (1, 2, 3)),
+        pytest.param(('#00aAFF',), (0, 170, 255)),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=decode_rgb(*args)
+>       assert actual == expected
+E       assert (10, 2735, 255) == (0, 170, 255)
+E         
+E         At index 0 diff: 10 != 0
+E         Use -v to get more diff
+
+test_target.py:23: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args1-expected1] - assert (4095, 4095, 255...
+FAILED test_target.py::test_values[args2-expected2] - assert (16, 32, 3) == (...
+FAILED test_target.py::test_values[args3-expected3] - assert (10, 2735, 255) ...
+3 failed, 13 passed in 0.33s

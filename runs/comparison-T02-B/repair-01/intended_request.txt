@@ -1,0 +1,13 @@
+Your test file executed against the correct implementation: 16 passed. It also detected all five designated faulty implementations through relevant assertions or expected-exception checks. No code execution failure needs repair. One required contract assertion is missing.
+
+UNCHANGED TASK
+Write tests for `from clock_parser import minute_of_day`. minute_of_day(text) accepts only an exact built-in str; other types including str subclasses raise TypeError. Accept exactly five ASCII characters HH:MM with two ASCII digits per field and a colon at position 2. Hours are 00 through 23, minutes 00 through 59. Return hour*60+minute as an exact built-in int. All malformed strings raise ValueError. No whitespace trimming, signs, Unicode digits or extra characters. Test midnight, end of day, interior times, hour/minute bounds, shape errors, whitespace, Unicode digits and invalid types.
+
+Write one complete pytest file using the exact requested import. Do not implement, mock, inspect, or edit the function. No dependencies beyond pytest. Return one Python code block, then a short requirement-to-input mapping and accurate limitations. Do not claim execution unless you executed the tests. Do not claim exhaustive coverage.
+
+CONTRACT REVIEW:
+- The contract requires an exact built-in int result. Equality alone accepts numerically equal floats or int subclasses. Add an explicit exact-type assertion alongside the existing expected-value assertion for return cases.
+- Make the requirement-to-input mapping name the concrete cases and assertions. Describe observed exception behavior rather than asserting which internal type-check operation the implementation uses. Do not claim the tests establish an internal validation sequence.
+- Retain accurate finite-coverage limitations and distinguish inspection from actual execution. The operator executed the previous suite; you have not executed the revised suite.
+
+Correct only the unmet requirements identified above. Return the complete corrected file, followed by the short mapping and limitations outside the Python block. Trace the concrete arguments for each changed case against the unchanged contract. Do not claim execution. This is the single allowed repair.

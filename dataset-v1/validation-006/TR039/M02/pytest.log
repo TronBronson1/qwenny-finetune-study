@@ -1,0 +1,36 @@
+FF........                                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('true',), expected = True
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('true',), True, id="v000"),
+        pytest.param(('false',), False, id="v001"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_bool_word(*args)
+>       assert actual == expected
+E       assert False == True
+
+test_target.py:24: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('false',), expected = False
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('true',), True, id="v000"),
+        pytest.param(('false',), False, id="v001"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=parse_bool_word(*args)
+>       assert actual == expected
+E       assert True == False
+
+test_target.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - assert False == True
+FAILED test_target.py::test_values[v001] - assert True == False
+2 failed, 8 passed in 0.53s

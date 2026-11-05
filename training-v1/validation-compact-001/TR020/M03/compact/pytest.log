@@ -1,0 +1,54 @@
+..F..F....                                                               [100%]
+================================== FAILURES ===================================
+______________________ test_values[args2-&lt;&amp;&gt;] _______________________
+
+args = ('<&>',), expected = '&lt;&amp;&gt;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abc',), 'abc'),
+        pytest.param(('<&>',), '&lt;&amp;&gt;'),
+        pytest.param(('"\'',), '&quot;&#x27;'),
+        pytest.param(('&amp;',), '&amp;amp;'),
+        pytest.param(("é <a x='1'>",), 'é &lt;a x=&#x27;1&#x27;&gt;'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=escape_html(*args)
+>       assert actual == expected
+E       AssertionError: assert '<&amp;&gt;' == '&lt;&amp;&gt;'
+E         
+E         - &lt;&amp;&gt;
+E         ? ^^^^
+E         + <&amp;&gt;
+E         ? ^
+
+test_target.py:25: AssertionError
+______________ test_values[args5-\xe9 &lt;a x=&#x27;1&#x27;&gt;] ______________
+
+args = ("é <a x='1'>",), expected = 'é &lt;a x=&#x27;1&#x27;&gt;'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), ''),
+        pytest.param(('abc',), 'abc'),
+        pytest.param(('<&>',), '&lt;&amp;&gt;'),
+        pytest.param(('"\'',), '&quot;&#x27;'),
+        pytest.param(('&amp;',), '&amp;amp;'),
+        pytest.param(("é <a x='1'>",), 'é &lt;a x=&#x27;1&#x27;&gt;'),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=escape_html(*args)
+>       assert actual == expected
+E       AssertionError: assert 'é <a x=&#x27;1&#x27;&gt;' == 'é &lt;a x=&#x27;1&#x27;&gt;'
+E         
+E         - é &lt;a x=&#x27;1&#x27;&gt;
+E         ?   ^^^^
+E         + é <a x=&#x27;1&#x27;&gt;
+E         ?   ^
+
+test_target.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[args2-&lt;&amp;&gt;] - AssertionError: ass...
+FAILED test_target.py::test_values[args5-\xe9 &lt;a x=&#x27;1&#x27;&gt;] - As...
+2 failed, 8 passed in 0.32s

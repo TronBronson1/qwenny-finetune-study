@@ -1,0 +1,62 @@
+............FF..                                                         [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e007] _________________________
+
+args = (0,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(1),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(0),), id="e007"),
+        pytest.param((IntChild(18279),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           spreadsheet_column(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 0
+
+    def spreadsheet_column(number):
+        if not 1 <= number <= 18278:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = (18279,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True,), id="e000"),
+        pytest.param((IntChild(1),), id="e001"),
+        pytest.param((1.5,), id="e002"),
+        pytest.param(('bad',), id="e003"),
+        pytest.param((None,), id="e004"),
+        pytest.param((IntChild(0),), id="e007"),
+        pytest.param((IntChild(18279),), id="e008"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           spreadsheet_column(*args)
+
+test_target.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+number = 18279
+
+    def spreadsheet_column(number):
+        if not 1 <= number <= 18278:
+>           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:54: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e007] - ValueError: domain
+FAILED test_target.py::test_raises_typeerror[e008] - ValueError: domain
+2 failed, 14 passed in 0.57s

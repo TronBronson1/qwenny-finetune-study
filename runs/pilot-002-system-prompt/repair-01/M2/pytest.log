@@ -1,0 +1,44 @@
+..................FFF....F..                                             [100%]
+================================== FAILURES ===================================
+_ TestClampIntegerInvalidTypesUpperPosition.test_true_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x0000018A2DDDE210>
+
+    def test_true_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, True))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:80: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_false_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x0000018A2DDDE350>
+
+    def test_false_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, False))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:83: Failed
+_ TestClampIntegerInvalidTypesUpperPosition.test_float_as_upper_raises_type_error _
+
+self = <test_candidate.TestClampIntegerInvalidTypesUpperPosition object at 0x0000018A2DD923F0>
+
+    def test_float_as_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, 1.5))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:86: Failed
+__ TestClampIntegerIntSubclassInvalid.test_subclass_upper_raises_type_error ___
+
+self = <test_candidate.TestClampIntegerIntSubclassInvalid object at 0x0000018A2DD92650>
+
+    def test_subclass_upper_raises_type_error(self):
+>       pytest.raises(TypeError, lambda: clamp_integer(5, 0, MyInt(10)))
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:105: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_true_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_false_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerInvalidTypesUpperPosition::test_float_as_upper_raises_type_error
+FAILED test_candidate.py::TestClampIntegerIntSubclassInvalid::test_subclass_upper_raises_type_error
+4 failed, 24 passed in 0.25s

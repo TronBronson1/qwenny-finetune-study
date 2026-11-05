@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="16" time="0.506" timestamp="2026-11-04T18:58:06.193998-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="AssertionError: assert 'Ax' == 'A'&#10;  &#10;  - A&#10;  + Ax">args = (1,), expected = 'A'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'Ax' == 'A'
+E         
+E         - A
+E         + Ax
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="AssertionError: assert 'Zx' == 'Z'&#10;  &#10;  - Z&#10;  + Zx">args = (26,), expected = 'Z'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'Zx' == 'Z'
+E         
+E         - Z
+E         + Zx
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="AssertionError: assert 'AAx' == 'AA'&#10;  &#10;  - AA&#10;  + AAx&#10;  ?   +">args = (27,), expected = 'AA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'AAx' == 'AA'
+E         
+E         - AA
+E         + AAx
+E         ?   +
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="AssertionError: assert 'AZx' == 'AZ'&#10;  &#10;  - AZ&#10;  + AZx&#10;  ?   +">args = (52,), expected = 'AZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'AZx' == 'AZ'
+E         
+E         - AZ
+E         + AZx
+E         ?   +
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="AssertionError: assert 'ZZx' == 'ZZ'&#10;  &#10;  - ZZ&#10;  + ZZx&#10;  ?   +">args = (702,), expected = 'ZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'ZZx' == 'ZZ'
+E         
+E         - ZZ
+E         + ZZx
+E         ?   +
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="AssertionError: assert 'AAAx' == 'AAA'&#10;  &#10;  - AAA&#10;  + AAAx&#10;  ?    +">args = (703,), expected = 'AAA'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'AAAx' == 'AAA'
+E         
+E         - AAA
+E         + AAAx
+E         ?    +
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[v006]" time="0.001"><failure message="AssertionError: assert 'ZZZx' == 'ZZZ'&#10;  &#10;  - ZZZ&#10;  + ZZZx&#10;  ?    +">args = (18278,), expected = 'ZZZ'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((1,), 'A', id="v000"),
+        pytest.param((26,), 'Z', id="v001"),
+        pytest.param((27,), 'AA', id="v002"),
+        pytest.param((52,), 'AZ', id="v003"),
+        pytest.param((702,), 'ZZ', id="v004"),
+        pytest.param((703,), 'AAA', id="v005"),
+        pytest.param((18278,), 'ZZZ', id="v006"),
+    ])
+    def test_values(args,expected):
+        actual=spreadsheet_column(*args)
+&gt;       assert actual == expected
+E       AssertionError: assert 'ZZZx' == 'ZZZ'
+E         
+E         - ZZZ
+E         + ZZZx
+E         ?    +
+
+test_target.py:23: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /></testsuite></testsuites>

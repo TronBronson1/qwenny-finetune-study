@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="22" skipped="0" tests="52" time="0.869" timestamp="2026-11-04T13:18:52.099379-05:00" hostname="Trons"><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3-3-expected0]" time="0.001"><failure message="assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]&#10;  &#10;  At index 0 diff: (0, 1) != (1, 0)&#10;  Use -v to get more diff">row = 0, column = 0, rows = 3, columns = 3, expected = [(1, 0), (0, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]
+E             
+E             At index 0 diff: (0, 1) != (1, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-0-1-1-expected1]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-2-2-expected2]" time="0.001"><failure message="assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]&#10;  &#10;  At index 0 diff: (0, 1) != (1, 0)&#10;  Use -v to get more diff">row = 0, column = 0, rows = 2, columns = 2, expected = [(1, 0), (0, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]
+E             
+E             At index 0 diff: (0, 1) != (1, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-1-2-2-expected3]" time="0.001"><failure message="assert [(1, 0)] == [(0, 1), (1, 0)]&#10;  &#10;  At index 0 diff: (1, 0) != (0, 1)&#10;  Right contains one more item: (1, 0)&#10;  Use -v to get more diff">row = 1, column = 1, rows = 2, columns = 2, expected = [(0, 1), (1, 0)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 0)] == [(0, 1), (1, 0)]
+E             
+E             At index 0 diff: (1, 0) != (0, 1)
+E             Right contains one more item: (1, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-1-3-3-expected4]" time="0.001"><failure message="assert [(1, 2), (2, 1), (1, 0)] == [(0, 1), (1, ...2, 1), (1, 2)]&#10;  &#10;  At index 0 diff: (1, 2) != (0, 1)&#10;  Right contains one more item: (1, 2)&#10;  Use -v to get more diff">row = 1, column = 1, rows = 3, columns = 3
+expected = [(0, 1), (1, 0), (2, 1), (1, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 2), (2, 1), (1, 0)] == [(0, 1), (1, ...2, 1), (1, 2)]
+E             
+E             At index 0 diff: (1, 2) != (0, 1)
+E             Right contains one more item: (1, 2)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3-1-expected5]" time="0.001"><failure message="assert [(1, 0)] == [(0, 1), (1, 0)]&#10;  &#10;  At index 0 diff: (1, 0) != (0, 1)&#10;  Right contains one more item: (1, 0)&#10;  Use -v to get more diff">row = 0, column = 0, rows = 3, columns = 1, expected = [(0, 1), (1, 0)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 0)] == [(0, 1), (1, 0)]
+E             
+E             At index 0 diff: (1, 0) != (0, 1)
+E             Right contains one more item: (1, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-2-3-3-expected6]" time="0.001"><failure message="assert [(1, 2), (0, 1)] == [(1, 2)]&#10;  &#10;  Left contains one more item: (0, 1)&#10;  Use -v to get more diff">row = 0, column = 2, rows = 3, columns = 3, expected = [(1, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 2), (0, 1)] == [(1, 2)]
+E             
+E             Left contains one more item: (0, 1)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[2-0-3-3-expected7]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[2-1-3-3-expected8]" time="0.001"><failure message="assert [(2, 2), (2, 0)] == [(1, 1), (2, 0), (2, 2)]&#10;  &#10;  At index 0 diff: (2, 2) != (1, 1)&#10;  Right contains one more item: (2, 2)&#10;  Use -v to get more diff">row = 2, column = 1, rows = 3, columns = 3, expected = [(1, 1), (2, 0), (2, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(2, 2), (2, 0)] == [(1, 1), (2, 0), (2, 2)]
+E             
+E             At index 0 diff: (2, 2) != (1, 1)
+E             Right contains one more item: (2, 2)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-0-1-3-expected9]" time="0.001"><failure message="IndexError: cell">row = 1, column = 0, rows = 1, columns = 3, expected = [(1, 1), (0, 0)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+&gt;           result = grid_neighbors(row, column, rows, columns)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 1, column = 0, rows = 1, columns = 3
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows &lt;= 0 or columns &lt;= 0:
+            raise ValueError('shape')
+        if not 0 &lt;= row &lt; rows or not 0 &lt;= column &lt; columns:
+&gt;           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-0-2-2-expected10]" time="0.001"><failure message="assert [(1, 1)] == [(1, 1), (0, 0)]&#10;  &#10;  Right contains one more item: (0, 0)&#10;  Use -v to get more diff">row = 1, column = 0, rows = 2, columns = 2, expected = [(1, 1), (0, 0)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 1)] == [(1, 1), (0, 0)]
+E             
+E             Right contains one more item: (0, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-1-3-3-expected11]" time="0.002"><failure message="assert [(0, 2), (1, 1), (0, 0)] == [(0, 0), (0, 2), (1, 1)]&#10;  &#10;  At index 0 diff: (0, 2) != (0, 0)&#10;  Use -v to get more diff">row = 0, column = 1, rows = 3, columns = 3, expected = [(0, 0), (0, 2), (1, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(0, 2), (1, 1), (0, 0)] == [(0, 0), (0, 2), (1, 1)]
+E             
+E             At index 0 diff: (0, 2) != (0, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[2-2-3-3-expected12]" time="0.001"><failure message="assert [(2, 1)] == [(1, 2), (2, 1)]&#10;  &#10;  At index 0 diff: (2, 1) != (1, 2)&#10;  Right contains one more item: (2, 1)&#10;  Use -v to get more diff">row = 2, column = 2, rows = 3, columns = 3, expected = [(1, 2), (2, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(2, 1)] == [(1, 2), (2, 1)]
+E             
+E             At index 0 diff: (2, 1) != (1, 2)
+E             Right contains one more item: (2, 1)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-2-3-3-expected13]" time="0.001"><failure message="assert [(2, 2), (1, 1)] == [(0, 2), (1, 1), (2, 2)]&#10;  &#10;  At index 0 diff: (2, 2) != (0, 2)&#10;  Right contains one more item: (2, 2)&#10;  Use -v to get more diff">row = 1, column = 2, rows = 3, columns = 3, expected = [(0, 2), (1, 1), (2, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(2, 2), (1, 1)] == [(0, 2), (1, 1), (2, 2)]
+E             
+E             At index 0 diff: (2, 2) != (0, 2)
+E             Right contains one more item: (2, 2)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[1-1-4-4-expected14]" time="0.001"><failure message="assert [(1, 2), (2, 1), (1, 0)] == [(0, 1), (1, ...1, 2), (2, 1)]&#10;  &#10;  At index 0 diff: (1, 2) != (0, 1)&#10;  Right contains one more item: (2, 1)&#10;  Use -v to get more diff">row = 1, column = 1, rows = 4, columns = 4
+expected = [(0, 1), (1, 0), (1, 2), (2, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(1, 2), (2, 1), (1, 0)] == [(0, 1), (1, ...1, 2), (2, 1)]
+E             
+E             At index 0 diff: (1, 2) != (0, 1)
+E             Right contains one more item: (2, 1)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-0-4-4-expected15]" time="0.001"><failure message="assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]&#10;  &#10;  At index 0 diff: (0, 1) != (1, 0)&#10;  Use -v to get more diff">row = 0, column = 0, rows = 4, columns = 4, expected = [(1, 0), (0, 1)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(0, 1), (1, 0)] == [(1, 0), (0, 1)]
+E             
+E             At index 0 diff: (0, 1) != (1, 0)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[3-3-4-4-expected16]" time="0.001"><failure message="assert [(3, 2)] == [(2, 3), (3, 2)]&#10;  &#10;  At index 0 diff: (3, 2) != (2, 3)&#10;  Right contains one more item: (3, 2)&#10;  Use -v to get more diff">row = 3, column = 3, rows = 4, columns = 4, expected = [(2, 3), (3, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(3, 2)] == [(2, 3), (3, 2)]
+E             
+E             At index 0 diff: (3, 2) != (2, 3)
+E             Right contains one more item: (3, 2)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[3-3-5-5-expected17]" time="0.001"><failure message="assert [(3, 4), (4, 3), (3, 2)] == [(2, 3), (3, 2)]&#10;  &#10;  At index 0 diff: (3, 4) != (2, 3)&#10;  Left contains one more item: (3, 2)&#10;  Use -v to get more diff">row = 3, column = 3, rows = 5, columns = 5, expected = [(2, 3), (3, 2)]
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+            with pytest.raises((TypeError, ValueError, IndexError)):
+                grid_neighbors(row, column, rows, columns)
+        else:
+            result = grid_neighbors(row, column, rows, columns)
+&gt;           assert result == expected
+E           assert [(3, 4), (4, 3), (3, 2)] == [(2, 3), (3, 2)]
+E             
+E             At index 0 diff: (3, 4) != (2, 3)
+E             Left contains one more item: (3, 2)
+E             Use -v to get more diff
+
+test_candidate.py:65: AssertionError</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-0-0-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3-0-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[-1-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0--1-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[-2-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0--2-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0--1-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3--1-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-3-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[3-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[4-3-5-5-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 4, column = 3, rows = 5, columns = 5, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[3-4-5-5-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 3, column = 4, rows = 5, columns = 5, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-0-1-1-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 0, column = 0, rows = 1, columns = 1, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[2-0-3-1-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 2, column = 0, rows = 3, columns = 1, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[2-1-3-2-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 2, column = 1, rows = 3, columns = 2, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[0-2-1-3-None]" time="0.001"><failure message="Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)">row = 0, column = 2, rows = 1, columns = 3, expected = None
+
+    @pytest.mark.parametrize("row, column, rows, columns, expected", [
+        # Valid cases (return list of tuples)
+        (0, 0, 3, 3, [(1, 0), (0, 1)]),
+        (0, 0, 1, 1, []),
+        (0, 0, 2, 2, [(1, 0), (0, 1)]),
+        (1, 1, 2, 2, [(0, 1), (1, 0)]),
+        (1, 1, 3, 3, [(0, 1), (1, 0), (2, 1), (1, 2)]),
+        (0, 0, 3, 1, [(0, 1), (1, 0)]),
+        (0, 2, 3, 3, [(1, 2)]),
+        (2, 0, 3, 3, [(2, 1)]),
+        (2, 1, 3, 3, [(1, 1), (2, 0), (2, 2)]),
+        (1, 0, 1, 3, [(1, 1), (0, 0)]),
+        (1, 0, 2, 2, [(1, 1), (0, 0)]),
+        (0, 1, 3, 3, [(0, 0), (0, 2), (1, 1)]),
+        (2, 2, 3, 3, [(1, 2), (2, 1)]),
+        (1, 2, 3, 3, [(0, 2), (1, 1), (2, 2)]),
+        (1, 1, 4, 4, [(0, 1), (1, 0), (1, 2), (2, 1)]),
+        (0, 0, 4, 4, [(1, 0), (0, 1)]),
+        (3, 3, 4, 4, [(2, 3), (3, 2)]),
+        (3, 3, 5, 5, [(2, 3), (3, 2)]),
+    
+        # Negative bounds cases (ValueError)
+        (0, 0, 0, 3, None),
+        (0, 0, 3, 0, None),
+        (-1, 0, 3, 3, None),
+        (0, -1, 3, 3, None),
+        (-2, 0, 3, 3, None),
+        (0, -2, 3, 3, None),
+        (0, 0, -1, 3, None),
+        (0, 0, 3, -1, None),
+    
+        # Out-of-bounds cases (IndexError)
+        (0, 3, 3, 3, None),
+        (3, 0, 3, 3, None),
+        (4, 3, 5, 5, None),
+        (3, 4, 5, 5, None),
+        (0, 0, 1, 1, None),
+        (2, 0, 3, 1, None),
+        (2, 1, 3, 2, None),
+        (0, 2, 1, 3, None),
+    
+        # Type rejection cases (TypeError)
+        (True, 0, 3, 3, None),
+        (0, True, 3, 3, None),
+        (0, 0, True, 3, None),
+        (0, 0, 3, True, None),
+        (0.0, 0, 3, 3, None),
+        (0, 0.0, 3, 3, None),
+        (0, 0, 0.0, 3, None),
+        (0, 0, 3, 0.0, None),
+    
+        # Bool subclass rejection cases (if applicable, though bool is exact int)
+        (False, 0, 3, 3, None),
+        (False, False, 3, 3, None),
+    ])
+    def test_grid_neighbors(row, column, rows, columns, expected):
+        if expected is None:
+&gt;           with pytest.raises((TypeError, ValueError, IndexError)):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE any of (TypeError, ValueError, IndexError)
+
+test_candidate.py:61: Failed</failure></testcase><testcase classname="test_candidate" name="test_grid_neighbors[True-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-True-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-True-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3-True-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0.0-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0.0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-0.0-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[0-0-3-0.0-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[False-0-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_grid_neighbors[False-False-3-3-None]" time="0.001" /><testcase classname="test_candidate" name="test_return_type_exact_list" time="0.000" /><testcase classname="test_candidate" name="test_return_element_tuple" time="0.000" /><testcase classname="test_candidate" name="test_up_order" time="0.000" /><testcase classname="test_candidate" name="test_right_order" time="0.000" /><testcase classname="test_candidate" name="test_function_exists" time="0.000" /><testcase classname="test_candidate" name="test_bool_rejected" time="0.000" /><testcase classname="test_candidate" name="test_positive_bounds_required" time="0.000" /><testcase classname="test_candidate" name="test_in_bounds_required" time="0.000" /></testsuite></testsuites>

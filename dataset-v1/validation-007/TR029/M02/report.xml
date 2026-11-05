@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="7" skipped="0" tests="22" time="0.479" timestamp="2026-11-03T20:15:40.002640-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="ValueError: width">args = ([], 2), expected = []
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [], width = 2
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: width">args = ([1], 2), expected = [[1]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1], width = 2
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: width">args = ([1, 2, 3, 4], 2), expected = [[1, 2], [3, 4]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2, 3, 4], width = 2
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="ValueError: width">args = ([1, 2, 3], 2), expected = [[1, 2], [3]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2, 3], width = 2
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="ValueError: width">args = ([1, 2], 1), expected = [[1], [2]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2], width = 1
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="ValueError: width">args = ([1, 2], 9), expected = [[1, 2]]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([], 2), [], id="v000"),
+        pytest.param(([1], 2), [[1]], id="v001"),
+        pytest.param(([1, 2, 3, 4], 2), [[1, 2], [3, 4]], id="v002"),
+        pytest.param(([1, 2, 3], 2), [[1, 2], [3]], id="v003"),
+        pytest.param(([1, 2], 1), [[1], [2]], id="v004"),
+        pytest.param(([1, 2], 9), [[1, 2]], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+&gt;       actual=chunk_list(*args)
+               ^^^^^^^^^^^^^^^^^
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+values = [1, 2], width = 9
+
+    def chunk_list(values, width):
+        _types((values, width), ('ints', 'int'))
+        if width &gt;= 0:
+&gt;           raise ValueError('width')
+E           ValueError: width
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e015]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e011]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = ([], -1)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(([1], 0), id="e010"),
+        pytest.param(([], -1), id="e011"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:58: Failed</failure></testcase></testsuite></testsuites>

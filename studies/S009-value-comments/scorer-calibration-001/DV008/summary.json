@@ -1,0 +1,1458 @@
+{
+  "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+  "review": {
+    "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+    "approved_for_isolated_execution": true,
+    "meaningful_contract_assertions": true,
+    "basis": "S007 calibrated gold plus agent inspection; node names changed only. No independent review claimed."
+  },
+  "reference_valid": true,
+  "variants": [
+    {
+      "variant": "reference",
+      "exit_code": 0,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": true,
+      "candidate_witnesses": [],
+      "seconds": 1.306024499994237,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "31b839a600bf9cd616e93ecaa8576b7fc776d5818f94a76c3007d8754e48f172"
+    },
+    {
+      "variant": "M01",
+      "exit_code": 1,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "StrChild",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "StrChild",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "StrChild",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "required-exception-not-raised",
+          "test": "test_renamed_raises_typeerror[e004]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_raises_typeerror[e004]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "StrChild",
+                  "repr": "''"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "exception": "TypeError"
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "StrChild",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "StrChild",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6781230999913532,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "6d9ef8fb457d8a2d4fd2f6045d39e7860b166a4e16fe545faaa8df9306ad1788"
+    },
+    {
+      "variant": "M02",
+      "exit_code": 1,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'abc'"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "4"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.6386902000231203,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "fba6093c632c2d2a4cff0728d6214b11f07fbb11996d2b5029ab2c5df773d35e"
+    },
+    {
+      "variant": "M03",
+      "exit_code": 1,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "'abc'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 2.1521573000063654,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "f850ddcf9d4099570dabdb6ba8e496ced639e96a9acb7ac2b5d13723f1ab40e3"
+    },
+    {
+      "variant": "R01",
+      "exit_code": 1,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v000]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v000]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v001]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v001]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "''"
+                },
+                {
+                  "type": "str",
+                  "repr": "'abc'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "3"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v002]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v002]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'abc'"
+                },
+                {
+                  "type": "str",
+                  "repr": "''"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "3"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'abc'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "''"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v003]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v003]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'cat'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'cat'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v004]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v004]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'cat'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'cut'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'cut'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'cat'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'cut'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v005]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v005]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'ab'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'ba'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "2"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'ab'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'ba'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "2"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'ab'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'ba'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v006]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v006]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'kitten'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'sitting'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "3"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'kitten'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'sitting'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "3"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'kitten'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'sitting'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v007]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v007]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'é'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'e'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'e'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'e'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v008]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v008]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'A'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'A'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'a'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'A'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'a'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v009]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v009]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'é'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'É'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'É'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "1"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'É'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v010]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v010]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'é'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'é'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "2"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "_ReturnInt",
+                "repr": "2"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.8498650999972597,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "8f175b2ee4e782ca91f5c9887ff9b35b498f486abdb5677a0bd369def6ca11c9"
+    },
+    {
+      "variant": "R02",
+      "exit_code": 1,
+      "test_cases": 19,
+      "calls": 19,
+      "reference_valid": false,
+      "candidate_witnesses": [
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v008]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v008]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'A'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'a'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'A'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'a'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'A'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'a'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        },
+        {
+          "kind": "result-or-post-state-assertion",
+          "test": "test_renamed_values[v009]",
+          "call": {
+            "node": "test_candidate.py::test_renamed_values[v009]",
+            "args": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "str",
+                  "repr": "'é'"
+                },
+                {
+                  "type": "str",
+                  "repr": "'É'"
+                }
+              ]
+            },
+            "kwargs": {
+              "type": "dict",
+              "items": []
+            },
+            "expected": {
+              "return": {
+                "type": "int",
+                "repr": "1"
+              }
+            },
+            "expected_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'É'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            },
+            "actual": {
+              "return": {
+                "type": "int",
+                "repr": "0"
+              }
+            },
+            "actual_after": {
+              "type": "tuple",
+              "items": [
+                {
+                  "type": "tuple",
+                  "items": [
+                    {
+                      "type": "str",
+                      "repr": "'é'"
+                    },
+                    {
+                      "type": "str",
+                      "repr": "'É'"
+                    }
+                  ]
+                },
+                {
+                  "type": "dict",
+                  "items": []
+                }
+              ]
+            }
+          },
+          "review_status": "requires source/contract review; finite input-bound evidence only"
+        }
+      ],
+      "seconds": 1.8220284999988507,
+      "source_sha256": "ba91d19beef4637b7bee1b2c27b36067e71b8356d7e06b9cb152dd56e0983b8a",
+      "trace_sha256": "bea44c9ebeb8b109a2b6fb73a89926f1c74c2f0cd68ef69639a64d12fc65b3ea"
+    }
+  ],
+  "designated_mutants": 5,
+  "eligible_candidate_mutants": 5,
+  "strict_acceptance": "pending hash-bound requirement/prose and witness review",
+  "policy": "No mutant credit for reference-invalid suites. Node names bind actual generated calls only. Valid-input crashes are ineligible. Related validation-class mismatches only on reference-invalid inputs. Trace candidates require semantic review before final credit."
+}

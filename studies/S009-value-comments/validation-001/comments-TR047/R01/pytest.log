@@ -1,0 +1,344 @@
+FFFFFFFFFF.....................                                          [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('', 'a', 1), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -1, expected = -1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-1)
+E        +  and   <class 'int'> = type(-1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('aaaa', 'aa', 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('aaaa', 'aa', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('aaaa', 'aa', 3), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 2, expected = 2
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(2)
+E        +  and   <class 'int'> = type(2)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = ('aaaa', 'aa', 4), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -1, expected = -1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-1)
+E        +  and   <class 'int'> = type(-1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('abc', 'abc', 1), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 0, expected = 0
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(0)
+E        +  and   <class 'int'> = type(0)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v006] ______________________________
+
+args = ('abc', 'x', 1), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -1, expected = -1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-1)
+E        +  and   <class 'int'> = type(-1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v007] ______________________________
+
+args = ('éé', 'é', 2), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v008] ______________________________
+
+args = ('Aa', 'a', 1), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 1, expected = 1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(1)
+E        +  and   <class 'int'> = type(1)
+
+test_target.py:8: AssertionError
+______________________________ test_values[v009] ______________________________
+
+args = ('aA', 'a', 2), expected = -1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('', 'a', 1), -1, id="v000"),
+        pytest.param(('aaaa', 'aa', 1), 0, id="v001"),
+        pytest.param(('aaaa', 'aa', 2), 1, id="v002"),
+        pytest.param(('aaaa', 'aa', 3), 2, id="v003"),
+        pytest.param(('aaaa', 'aa', 4), -1, id="v004"),
+        pytest.param(('abc', 'abc', 1), 0, id="v005"),
+        pytest.param(('abc', 'x', 1), -1, id="v006"),
+        pytest.param(('éé', 'é', 2), 1, id="v007"),
+        pytest.param(('Aa', 'a', 1), 1, id="v008"),
+        pytest.param(('aA', 'a', 2), -1, id="v009"),
+    ])
+    def test_values(args,expected):
+        actual=index_of_nth(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = -1, expected = -1
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnInt'> is <class 'int'>
+E        +  where <class 'subject._ReturnInt'> = type(-1)
+E        +  and   <class 'int'> = type(-1)
+
+test_target.py:8: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v006] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v007] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v008] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v009] - AssertionError: assert <class 'sub...
+10 failed, 21 passed in 0.67s

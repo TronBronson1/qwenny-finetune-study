@@ -1,0 +1,184 @@
+FFFFFF....                                                               [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v000] ______________________________
+
+args = ('',), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v001] ______________________________
+
+args = ('   ',), expected = ''
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '', expected = ''
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('')
+E        +  and   <class 'str'> = type('')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v002] ______________________________
+
+args = ('one',), expected = 'one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'one', expected = 'one'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('one')
+E        +  and   <class 'str'> = type('one')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = ('one two three',), expected = 'three two one'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'three two one', expected = 'three two one'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('three two one')
+E        +  and   <class 'str'> = type('three two one')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v004] ______________________________
+
+args = (' a\tb\nc ',), expected = 'c b a'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = 'c b a', expected = 'c b a'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('c b a')
+E        +  and   <class 'str'> = type('c b a')
+
+test_target.py:7: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = ('é\u2003字',), expected = '字 é'
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), '', id="v000"),
+        pytest.param(('   ',), '', id="v001"),
+        pytest.param(('one',), 'one', id="v002"),
+        pytest.param(('one two three',), 'three two one', id="v003"),
+        pytest.param((' a\tb\nc ',), 'c b a', id="v004"),
+        pytest.param(('é\u2003字',), '字 é', id="v005"),
+    ])
+    def test_values(args,expected):
+        actual=reverse_words(*args)
+        assert actual == expected
+>       assert_exact_shape(actual,expected)
+
+test_target.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+actual = '字 é', expected = '字 é'
+
+    def assert_exact_shape(actual, expected):
+>       assert type(actual) is type(expected)
+E       AssertionError: assert <class 'subject._ReturnStr'> is <class 'str'>
+E        +  where <class 'subject._ReturnStr'> = type('字 é')
+E        +  and   <class 'str'> = type('字 é')
+
+test_target.py:7: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v000] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v001] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v002] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v003] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v004] - AssertionError: assert <class 'sub...
+FAILED test_target.py::test_values[v005] - AssertionError: assert <class 'sub...
+6 failed, 4 passed in 0.57s

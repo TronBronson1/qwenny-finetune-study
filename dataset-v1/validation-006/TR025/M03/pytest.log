@@ -1,0 +1,73 @@
+..FF.F.....                                                              [100%]
+================================== FAILURES ===================================
+______________________________ test_values[v002] ______________________________
+
+args = (['a', 'a', 'b', 'a'],), expected = [('a', 2), ('b', 1), ('a', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['Ã©', 'Ã©', 'å­—'],), [('Ã©', 2), ('å­—', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert [('a', 0), ('b', 1), ('a', 1)] == [('a', 2), ('b', 1), ('a', 1)]
+E         
+E         At index 0 diff: ('a', 0) != ('a', 2)
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v003] ______________________________
+
+args = (['', '', 'x'],), expected = [('', 2), ('x', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['Ã©', 'Ã©', 'å­—'],), [('Ã©', 2), ('å­—', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert [('', 0), ('x', 1)] == [('', 2), ('x', 1)]
+E         
+E         At index 0 diff: ('', 0) != ('', 2)
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+______________________________ test_values[v005] ______________________________
+
+args = (['Ã©', 'Ã©', 'å­—'],), expected = [('Ã©', 2), ('å­—', 1)]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), [], id="v000"),
+        pytest.param((['a'],), [('a', 1)], id="v001"),
+        pytest.param((['a', 'a', 'b', 'a'],), [('a', 2), ('b', 1), ('a', 1)], id="v002"),
+        pytest.param((['', '', 'x'],), [('', 2), ('x', 1)], id="v003"),
+        pytest.param((['A', 'a'],), [('A', 1), ('a', 1)], id="v004"),
+        pytest.param((['Ã©', 'Ã©', 'å­—'],), [('Ã©', 2), ('å­—', 1)], id="v005"),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=run_length_encode(*args)
+>       assert actual == expected
+E       AssertionError: assert [('Ã©', 0), ('å­—', 1)] == [('Ã©', 2), ('å­—', 1)]
+E         
+E         At index 0 diff: ('Ã©', 0) != ('Ã©', 2)
+E         Use -v to get more diff
+
+test_target.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_values[v002] - AssertionError: assert [('a', 0), ...
+FAILED test_target.py::test_values[v003] - AssertionError: assert [('', 0), (...
+FAILED test_target.py::test_values[v005] - AssertionError: assert [('Ã©', 0), ...
+3 failed, 8 passed in 0.52s

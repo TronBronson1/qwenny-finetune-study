@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="32" time="0.502" timestamp="2026-11-04T18:58:14.852353-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001" /><testcase classname="test_target" name="test_values[v002]" time="0.001" /><testcase classname="test_target" name="test_values[v003]" time="0.001" /><testcase classname="test_target" name="test_values[v004]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e016]" time="0.001" /><testcase classname="test_target" name="test_raises_indexerror[e017]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e005]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e007]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e012]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e013]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e014]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e018]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 1, 1), id="e001"),
+        pytest.param((1.5, 1, 1), id="e002"),
+        pytest.param(('bad', 1, 1), id="e003"),
+        pytest.param((None, 1, 1), id="e004"),
+        pytest.param((0, True, 1), id="e005"),
+        pytest.param((0, IntChild(1), 1), id="e006"),
+        pytest.param((0, 1.5, 1), id="e007"),
+        pytest.param((0, 'bad', 1), id="e008"),
+        pytest.param((0, None, 1), id="e009"),
+        pytest.param((0, 1, True), id="e010"),
+        pytest.param((0, 1, IntChild(1)), id="e011"),
+        pytest.param((0, 1, 1.5), id="e012"),
+        pytest.param((0, 1, 'bad'), id="e013"),
+        pytest.param((0, 1, None), id="e014"),
+        pytest.param((IntChild(0), 0, 2), id="e018"),
+        pytest.param((0, IntChild(0), 2), id="e019"),
+        pytest.param((0, 0, IntChild(2)), id="e020"),
+        pytest.param((IntChild(-1), 2, 3), id="e021"),
+        pytest.param((-1, IntChild(2), 3), id="e022"),
+        pytest.param((-1, 2, IntChild(3)), id="e023"),
+        pytest.param((IntChild(6), 2, 3), id="e024"),
+        pytest.param((6, IntChild(2), 3), id="e025"),
+        pytest.param((6, 2, IntChild(3)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           unravel_index(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e019]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 1, 1), id="e001"),
+        pytest.param((1.5, 1, 1), id="e002"),
+        pytest.param(('bad', 1, 1), id="e003"),
+        pytest.param((None, 1, 1), id="e004"),
+        pytest.param((0, True, 1), id="e005"),
+        pytest.param((0, IntChild(1), 1), id="e006"),
+        pytest.param((0, 1.5, 1), id="e007"),
+        pytest.param((0, 'bad', 1), id="e008"),
+        pytest.param((0, None, 1), id="e009"),
+        pytest.param((0, 1, True), id="e010"),
+        pytest.param((0, 1, IntChild(1)), id="e011"),
+        pytest.param((0, 1, 1.5), id="e012"),
+        pytest.param((0, 1, 'bad'), id="e013"),
+        pytest.param((0, 1, None), id="e014"),
+        pytest.param((IntChild(0), 0, 2), id="e018"),
+        pytest.param((0, IntChild(0), 2), id="e019"),
+        pytest.param((0, 0, IntChild(2)), id="e020"),
+        pytest.param((IntChild(-1), 2, 3), id="e021"),
+        pytest.param((-1, IntChild(2), 3), id="e022"),
+        pytest.param((-1, 2, IntChild(3)), id="e023"),
+        pytest.param((IntChild(6), 2, 3), id="e024"),
+        pytest.param((6, IntChild(2), 3), id="e025"),
+        pytest.param((6, 2, IntChild(3)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           unravel_index(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e020]" time="0.001"><failure message="ValueError: shape">args = (0, 0, 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((True, 1, 1), id="e000"),
+        pytest.param((IntChild(0), 1, 1), id="e001"),
+        pytest.param((1.5, 1, 1), id="e002"),
+        pytest.param(('bad', 1, 1), id="e003"),
+        pytest.param((None, 1, 1), id="e004"),
+        pytest.param((0, True, 1), id="e005"),
+        pytest.param((0, IntChild(1), 1), id="e006"),
+        pytest.param((0, 1.5, 1), id="e007"),
+        pytest.param((0, 'bad', 1), id="e008"),
+        pytest.param((0, None, 1), id="e009"),
+        pytest.param((0, 1, True), id="e010"),
+        pytest.param((0, 1, IntChild(1)), id="e011"),
+        pytest.param((0, 1, 1.5), id="e012"),
+        pytest.param((0, 1, 'bad'), id="e013"),
+        pytest.param((0, 1, None), id="e014"),
+        pytest.param((IntChild(0), 0, 2), id="e018"),
+        pytest.param((0, IntChild(0), 2), id="e019"),
+        pytest.param((0, 0, IntChild(2)), id="e020"),
+        pytest.param((IntChild(-1), 2, 3), id="e021"),
+        pytest.param((-1, IntChild(2), 3), id="e022"),
+        pytest.param((-1, 2, IntChild(3)), id="e023"),
+        pytest.param((IntChild(6), 2, 3), id="e024"),
+        pytest.param((6, IntChild(2), 3), id="e025"),
+        pytest.param((6, 2, IntChild(3)), id="e026"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+&gt;           unravel_index(*args)
+
+test_target.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 0, rows = 0, columns = 2
+
+    def unravel_index(index, rows, columns):
+        if rows &lt;= 0 or columns &lt;= 0:
+&gt;           raise ValueError('shape')
+E           ValueError: shape
+
+subject.py:54: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e021]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e022]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e023]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e024]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e025]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e026]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e015]" time="0.000" /></testsuite></testsuites>

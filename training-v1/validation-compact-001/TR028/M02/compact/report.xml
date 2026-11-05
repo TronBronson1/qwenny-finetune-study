@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="10" time="0.280" timestamp="2026-11-04T07:12:41.511134-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[args0-expected0]" time="0.001" /><testcase classname="test_target" name="test_values[args1-expected1]" time="0.001"><failure message="assert [6] == [5]&#10;  &#10;  At index 0 diff: 6 != 5&#10;  Use -v to get more diff">args = ([5],), expected = [5]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), []),
+        pytest.param(([5],), [5]),
+        pytest.param(([1, 2, 3],), [1, 3, 6]),
+        pytest.param(([-1, 2, -3],), [-1, 1, -2]),
+        pytest.param(([0, 0],), [0, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=prefix_sums(*args)
+&gt;       assert actual == expected
+E       assert [6] == [5]
+E         
+E         At index 0 diff: 6 != 5
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args2-expected2]" time="0.001"><failure message="assert [2, 4, 7] == [1, 3, 6]&#10;  &#10;  At index 0 diff: 2 != 1&#10;  Use -v to get more diff">args = ([1, 2, 3],), expected = [1, 3, 6]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), []),
+        pytest.param(([5],), [5]),
+        pytest.param(([1, 2, 3],), [1, 3, 6]),
+        pytest.param(([-1, 2, -3],), [-1, 1, -2]),
+        pytest.param(([0, 0],), [0, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=prefix_sums(*args)
+&gt;       assert actual == expected
+E       assert [2, 4, 7] == [1, 3, 6]
+E         
+E         At index 0 diff: 2 != 1
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args3-expected3]" time="0.001"><failure message="assert [0, 2, -1] == [-1, 1, -2]&#10;  &#10;  At index 0 diff: 0 != -1&#10;  Use -v to get more diff">args = ([-1, 2, -3],), expected = [-1, 1, -2]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), []),
+        pytest.param(([5],), [5]),
+        pytest.param(([1, 2, 3],), [1, 3, 6]),
+        pytest.param(([-1, 2, -3],), [-1, 1, -2]),
+        pytest.param(([0, 0],), [0, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=prefix_sums(*args)
+&gt;       assert actual == expected
+E       assert [0, 2, -1] == [-1, 1, -2]
+E         
+E         At index 0 diff: 0 != -1
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_values[args4-expected4]" time="0.001"><failure message="assert [1, 1] == [0, 0]&#10;  &#10;  At index 0 diff: 1 != 0&#10;  Use -v to get more diff">args = ([0, 0],), expected = [0, 0]
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(([],), []),
+        pytest.param(([5],), [5]),
+        pytest.param(([1, 2, 3],), [1, 3, 6]),
+        pytest.param(([-1, 2, -3],), [-1, 1, -2]),
+        pytest.param(([0, 0],), [0, 0]),
+    ])
+    def test_values(args,expected):
+        before=copy.deepcopy(args)
+        actual=prefix_sums(*args)
+&gt;       assert actual == expected
+E       assert [1, 1] == [0, 0]
+E         
+E         At index 0 diff: 1 != 0
+E         Use -v to get more diff
+
+test_target.py:25: AssertionError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[args0]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args1]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args2]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[args3]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[args4]" time="0.000" /></testsuite></testsuites>

@@ -1,0 +1,266 @@
+......F...FFFFFFF.......                                                 [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e000] _________________________
+
+args = ('00',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed
+_________________________ test_raises_typeerror[e011] _________________________
+
+args = ('',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e012] _________________________
+
+args = ('f',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'f'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e013] _________________________
+
+args = ('000',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '000'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e014] _________________________
+
+args = ('g0',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 'g0'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e015] _________________________
+
+args = (' ff',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ' ff'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e016] _________________________
+
+args = ('٣f',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '٣f'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________________________ test_raises_typeerror[e017] _________________________
+
+args = ('３f',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((StrChild('00'),), id="e000"),
+        pytest.param((b'x',), id="e001"),
+        pytest.param((1,), id="e002"),
+        pytest.param((None,), id="e003"),
+        pytest.param((StrChild(''),), id="e011"),
+        pytest.param((StrChild('f'),), id="e012"),
+        pytest.param((StrChild('000'),), id="e013"),
+        pytest.param((StrChild('g0'),), id="e014"),
+        pytest.param((StrChild(' ff'),), id="e015"),
+        pytest.param((StrChild('٣f'),), id="e016"),
+        pytest.param((StrChild('３f'),), id="e017"),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           parse_hex_byte(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '３f'
+
+    def parse_hex_byte(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9a-fA-F]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e000] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e011] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e012] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e013] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e014] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e015] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e016] - ValueError: syntax
+FAILED test_target.py::test_raises_typeerror[e017] - ValueError: syntax
+8 failed, 16 passed in 0.62s

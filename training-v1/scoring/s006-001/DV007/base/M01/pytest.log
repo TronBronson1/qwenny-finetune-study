@@ -1,0 +1,106 @@
+FFFFF......FF..                                                          [100%]
+================================== FAILURES ===================================
+_______________________ test_grid_neighbors_valid_ints ________________________
+
+    def test_grid_neighbors_valid_ints():
+        row = 1
+        column = 1
+        rows = 2
+        columns = 2
+        result = grid_neighbors(row, column, rows, columns)
+>       assert result == [(0, 1), (1, 1), (1, 0), (1, 2)]
+E       assert [(0, 1), (1, 0)] == [(0, 1), (1, ...1, 0), (1, 2)]
+E         
+E         At index 1 diff: (1, 0) != (1, 1)
+E         Right contains 2 more items, first extra item: (1, 0)
+E         Use -v to get more diff
+
+test_candidate.py:12: AssertionError
+_______________________ test_grid_neighbors_row_is_bool _______________________
+
+    def test_grid_neighbors_row_is_bool():
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:15: Failed
+_____________________ test_grid_neighbors_column_is_bool ______________________
+
+    def test_grid_neighbors_column_is_bool():
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_candidate.py:19: Failed
+______________________ test_grid_neighbors_rows_is_bool _______________________
+
+    def test_grid_neighbors_rows_is_bool():
+        with pytest.raises(TypeError):
+>           grid_neighbors(1, 1, True, 2)
+
+test_candidate.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 1, column = 1, rows = True, columns = 2
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError
+_____________________ test_grid_neighbors_columns_is_bool _____________________
+
+    def test_grid_neighbors_columns_is_bool():
+        with pytest.raises(TypeError):
+>           grid_neighbors(1, 1, 2, True)
+
+test_candidate.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+row = 1, column = 1, rows = 2, columns = True
+
+    def grid_neighbors(row, column, rows, columns):
+        _types((row, column, rows, columns), ('int', 'int', 'int', 'int'))
+        if rows <= 0 or columns <= 0:
+            raise ValueError('shape')
+        if not 0 <= row < rows or not 0 <= column < columns:
+>           raise IndexError('cell')
+E           IndexError: cell
+
+subject.py:57: IndexError
+___________ test_grid_neighbors_row_zero_is_valid_when_rows_is_one ____________
+
+    def test_grid_neighbors_row_zero_is_valid_when_rows_is_one():
+        result = grid_neighbors(0, 1, 1, 2)
+>       assert result == [(0, 1), (0, 1), (0, 0), (0, 2)]
+E       assert [(0, 0)] == [(0, 1), (0, ...0, 0), (0, 2)]
+E         
+E         At index 0 diff: (0, 0) != (0, 1)
+E         Right contains 3 more items, first extra item: (0, 1)
+E         Use -v to get more diff
+
+test_candidate.py:60: AssertionError
+________ test_grid_neighbors_column_zero_is_valid_when_columns_is_one _________
+
+    def test_grid_neighbors_column_zero_is_valid_when_columns_is_one():
+        result = grid_neighbors(1, 0, 2, 1)
+>       assert result == [(0, 0), (1, 0), (1, 0), (0, 0)]
+E       assert [(0, 0)] == [(0, 0), (1, ...1, 0), (0, 0)]
+E         
+E         Right contains 3 more items, first extra item: (1, 0)
+E         Use -v to get more diff
+
+test_candidate.py:64: AssertionError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::test_grid_neighbors_valid_ints - assert [(0, 1), (1...
+FAILED test_candidate.py::test_grid_neighbors_row_is_bool - Failed: DID NOT R...
+FAILED test_candidate.py::test_grid_neighbors_column_is_bool - Failed: DID NO...
+FAILED test_candidate.py::test_grid_neighbors_rows_is_bool - IndexError: cell
+FAILED test_candidate.py::test_grid_neighbors_columns_is_bool - IndexError: cell
+FAILED test_candidate.py::test_grid_neighbors_row_zero_is_valid_when_rows_is_one
+FAILED test_candidate.py::test_grid_neighbors_column_zero_is_valid_when_columns_is_one
+7 failed, 8 passed in 0.60s

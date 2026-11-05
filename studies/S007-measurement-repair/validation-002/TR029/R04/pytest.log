@@ -1,0 +1,128 @@
+...........FFFF...........                                               [100%]
+================================== FAILURES ===================================
+_________________________ test_raises_typeerror[e005] _________________________
+
+args = (['x'], 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:50: Failed
+_________________________ test_raises_typeerror[e006] _________________________
+
+args = ([1.5], 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:50: Failed
+_________________________ test_raises_typeerror[e007] _________________________
+
+args = ([-1.5], 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:50: Failed
+_________________________ test_raises_typeerror[e008] _________________________
+
+args = ([None], 2)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]), 2), id="e000"),
+        pytest.param(([True], 2), id="e001"),
+        pytest.param(([IntChild(1)], 2), id="e002"),
+        pytest.param(((), 2), id="e003"),
+        pytest.param((None, 2), id="e004"),
+        pytest.param((['x'], 2), id="e005"),
+        pytest.param(([1.5], 2), id="e006"),
+        pytest.param(([-1.5], 2), id="e007"),
+        pytest.param(([None], 2), id="e008"),
+        pytest.param(([], True), id="e009"),
+        pytest.param(([], IntChild(2)), id="e010"),
+        pytest.param(([], 1.5), id="e011"),
+        pytest.param(([], 'bad'), id="e012"),
+        pytest.param(([], None), id="e013"),
+        pytest.param((ListChild([1]), 0), id="e016"),
+        pytest.param(([1], IntChild(0)), id="e017"),
+        pytest.param((ListChild([]), -1), id="e018"),
+        pytest.param(([], IntChild(-1)), id="e019"),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:50: Failed
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[e005] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e006] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e007] - Failed: DID NOT RAISE Ty...
+FAILED test_target.py::test_raises_typeerror[e008] - Failed: DID NOT RAISE Ty...
+4 failed, 22 passed in 0.57s

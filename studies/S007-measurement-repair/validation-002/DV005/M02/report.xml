@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="17" time="0.451" timestamp="2026-11-04T17:06:27.093119-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001"><failure message="ValueError: unbalanced">args = ('',), expected = 0
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('()',), 1, id="v001"),
+        pytest.param(('(())',), 2, id="v002"),
+        pytest.param(('()()',), 1, id="v003"),
+        pytest.param(('(()(()))',), 3, id="v004"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parenthesis_depth(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = ''
+
+    def parenthesis_depth(text):
+        _types((text,), ('str',))
+        if any((char not in '()' for char in text)):
+            raise ValueError('character')
+        depth = maximum = 1
+        for char in text:
+            depth += 1 if char == '(' else -1
+            if depth &lt; 0:
+                raise ValueError('unbalanced')
+            maximum = max(maximum, depth)
+        if depth:
+&gt;           raise ValueError('unbalanced')
+E           ValueError: unbalanced
+
+subject.py:63: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: unbalanced">args = ('()',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('()',), 1, id="v001"),
+        pytest.param(('(())',), 2, id="v002"),
+        pytest.param(('()()',), 1, id="v003"),
+        pytest.param(('(()(()))',), 3, id="v004"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parenthesis_depth(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '()'
+
+    def parenthesis_depth(text):
+        _types((text,), ('str',))
+        if any((char not in '()' for char in text)):
+            raise ValueError('character')
+        depth = maximum = 1
+        for char in text:
+            depth += 1 if char == '(' else -1
+            if depth &lt; 0:
+                raise ValueError('unbalanced')
+            maximum = max(maximum, depth)
+        if depth:
+&gt;           raise ValueError('unbalanced')
+E           ValueError: unbalanced
+
+subject.py:63: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: unbalanced">args = ('(())',), expected = 2
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('()',), 1, id="v001"),
+        pytest.param(('(())',), 2, id="v002"),
+        pytest.param(('()()',), 1, id="v003"),
+        pytest.param(('(()(()))',), 3, id="v004"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parenthesis_depth(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '(())'
+
+    def parenthesis_depth(text):
+        _types((text,), ('str',))
+        if any((char not in '()' for char in text)):
+            raise ValueError('character')
+        depth = maximum = 1
+        for char in text:
+            depth += 1 if char == '(' else -1
+            if depth &lt; 0:
+                raise ValueError('unbalanced')
+            maximum = max(maximum, depth)
+        if depth:
+&gt;           raise ValueError('unbalanced')
+E           ValueError: unbalanced
+
+subject.py:63: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="ValueError: unbalanced">args = ('()()',), expected = 1
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('()',), 1, id="v001"),
+        pytest.param(('(())',), 2, id="v002"),
+        pytest.param(('()()',), 1, id="v003"),
+        pytest.param(('(()(()))',), 3, id="v004"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parenthesis_depth(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '()()'
+
+    def parenthesis_depth(text):
+        _types((text,), ('str',))
+        if any((char not in '()' for char in text)):
+            raise ValueError('character')
+        depth = maximum = 1
+        for char in text:
+            depth += 1 if char == '(' else -1
+            if depth &lt; 0:
+                raise ValueError('unbalanced')
+            maximum = max(maximum, depth)
+        if depth:
+&gt;           raise ValueError('unbalanced')
+E           ValueError: unbalanced
+
+subject.py:63: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="ValueError: unbalanced">args = ('(()(()))',), expected = 3
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param(('',), 0, id="v000"),
+        pytest.param(('()',), 1, id="v001"),
+        pytest.param(('(())',), 2, id="v002"),
+        pytest.param(('()()',), 1, id="v003"),
+        pytest.param(('(()(()))',), 3, id="v004"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=parenthesis_depth(*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '(()(()))'
+
+    def parenthesis_depth(text):
+        _types((text,), ('str',))
+        if any((char not in '()' for char in text)):
+            raise ValueError('character')
+        depth = maximum = 1
+        for char in text:
+            depth += 1 if char == '(' else -1
+            if depth &lt; 0:
+                raise ValueError('unbalanced')
+            maximum = max(maximum, depth)
+        if depth:
+&gt;           raise ValueError('unbalanced')
+E           ValueError: unbalanced
+
+subject.py:63: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e008]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e009]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e010]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e011]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = (')',)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param(('(',), id="e004"),
+        pytest.param((')',), id="e005"),
+        pytest.param((')(',), id="e006"),
+        pytest.param(('(a)',), id="e007"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:45: Failed</failure></testcase><testcase classname="test_target" name="test_raises_valueerror[e006]" time="0.001" /><testcase classname="test_target" name="test_raises_valueerror[e007]" time="0.000" /></testsuite></testsuites>

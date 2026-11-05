@@ -1,0 +1,24 @@
+.F................                                                       [100%]
+================================== FAILURES ===================================
+_____________ TestMinuteOfDayTypes.test_non_str_raises_type_error _____________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x00000277279DB750>
+
+    def test_non_str_raises_type_error(self):
+        cases = [
+            (1234, 5678),
+            (12, 34, "int, int"),
+            ("12:34", 56, "str, int"),
+            (None, None, "None"),
+            ([12, 34], None, "list"),
+            (f"{'x':12}:{'y':34}", None, "unicode string"),
+        ]
+    
+>       for arg, _, desc in cases:
+            ^^^^^^^^^^^^
+E       ValueError: not enough values to unpack (expected 3, got 2)
+
+test_candidate.py:23: ValueError
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_non_str_raises_type_error
+1 failed, 17 passed in 0.34s

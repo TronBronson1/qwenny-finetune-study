@@ -1,0 +1,41 @@
+.F.F.F.................                                                  [100%]
+================================== FAILURES ===================================
+_____________________________ test_returns[1-3-1] _____________________________
+
+left = 1, right = 3, expected = 1
+
+    @pytest.mark.parametrize("left,right,expected", [(0, 3, 0), (1, 3, 1), (3, 3, 1), (4, 3, 2), (7, 1, 7), (10**30, 3, 333333333333333333333333333334)])
+    def test_returns(left, right, expected):
+>       assert batches(left, right) == expected
+E       assert 0 == 1
+E        +  where 0 = batches(1, 3)
+
+test_target.py:12: AssertionError
+_____________________________ test_returns[4-3-2] _____________________________
+
+left = 4, right = 3, expected = 2
+
+    @pytest.mark.parametrize("left,right,expected", [(0, 3, 0), (1, 3, 1), (3, 3, 1), (4, 3, 2), (7, 1, 7), (10**30, 3, 333333333333333333333333333334)])
+    def test_returns(left, right, expected):
+>       assert batches(left, right) == expected
+E       assert 1 == 2
+E        +  where 1 = batches(4, 3)
+
+test_target.py:12: AssertionError
+_ test_returns[1000000000000000000000000000000-3-333333333333333333333333333334] _
+
+left = 1000000000000000000000000000000, right = 3
+expected = 333333333333333333333333333334
+
+    @pytest.mark.parametrize("left,right,expected", [(0, 3, 0), (1, 3, 1), (3, 3, 1), (4, 3, 2), (7, 1, 7), (10**30, 3, 333333333333333333333333333334)])
+    def test_returns(left, right, expected):
+>       assert batches(left, right) == expected
+E       assert 333333333333333333333333333333 == 333333333333333333333333333334
+E        +  where 333333333333333333333333333333 = batches(1000000000000000000000000000000, 3)
+
+test_target.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_returns[1-3-1] - assert 0 == 1
+FAILED test_target.py::test_returns[4-3-2] - assert 1 == 2
+FAILED test_target.py::test_returns[1000000000000000000000000000000-3-333333333333333333333333333334]
+3 failed, 20 passed in 0.24s

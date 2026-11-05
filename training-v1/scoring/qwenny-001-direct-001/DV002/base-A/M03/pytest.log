@@ -1,0 +1,2156 @@
+FFFFF.FFFFFFFFFFFFFFFFFFFFFFF......F.............                        [100%]
+================================== FAILURES ===================================
+_______________ TestMinuteOfDayTypes.test_valid_str_returns_int _______________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000001687C2A65D0>
+
+    def test_valid_str_returns_int(self):
+        hour, minute = 12, 30
+        value = f"{hour:02d}:{minute:02d}"
+>       result = minute_of_day(value)
+                 ^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:30'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_____________ TestMinuteOfDayTypes.test_non_str_raises_type_error _____________
+
+self = <test_candidate.TestMinuteOfDayTypes object at 0x000001687C2A7750>
+
+    def test_non_str_raises_type_error(self):
+        with pytest.raises(TypeError):
+            minute_of_day(12)
+    
+        with pytest.raises(TypeError):
+>           minute_of_day("09:15a") # String but wrong format (will fail value check) - wait, contract says reject invalid TYPES.
+           ^^^^^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '09:15a'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+>           raise ValueError('syntax')
+E           ValueError: syntax
+
+subject.py:55: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input0] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2A7B10>
+valid_input = ('00:00', 0)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input1] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2A7C50>
+valid_input = ('00:59', 59)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:59'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input2] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C29F230>
+valid_input = ('12:30', 750)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '12:30'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input4] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2FD490>
+valid_input = ('05:05', 305)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '05:05'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input5] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C389260>
+valid_input = ('00:01', 1)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '00:01'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input6] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C389370>
+valid_input = ('10:00', 600)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '10:00'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input7] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C384150>
+valid_input = ('01:01', 61)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '01:01'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input8] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C384550>
+valid_input = ('19:45', 1185)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '19:45'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input9] __________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C20A5D0>
+valid_input = ('21:59', 1319)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '21:59'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input10] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C20A6C0>
+valid_input = ('02:02', 122)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '02:02'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input11] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C30D1D0>
+valid_input = ('03:03', 183)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '03:03'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input12] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C30D390>
+valid_input = ('04:04', 244)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '04:04'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input13] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2C9300>
+valid_input = ('06:06', 366)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '06:06'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input14] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C255910>
+valid_input = ('07:07', 427)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '07:07'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input15] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C255B50>
+valid_input = ('08:08', 488)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '08:08'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input16] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C311020>
+valid_input = ('09:09', 549)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '09:09'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input17] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C3110D0>
+valid_input = ('11:11', 671)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '11:11'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input18] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C307C50>
+valid_input = ('13:13', 793)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '13:13'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input19] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C307BB0>
+valid_input = ('14:14', 854)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '14:14'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input20] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2D8B90>
+valid_input = ('15:15', 915)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '15:15'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input21] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C395CD0>
+valid_input = ('16:16', 976)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '16:16'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input22] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C395DD0>
+valid_input = ('17:17', 1037)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '17:17'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input23] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C31D9B0>
+valid_input = ('18:18', 1098)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '18:18'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input24] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C31DA90>
+valid_input = ('20:20', 1220)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '20:20'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input25] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2BC350>
+valid_input = ('22:22', 1342)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+            with pytest.raises(ValueError):
+                minute_of_day(text)
+        else:
+>           result = minute_of_day(text)
+                     ^^^^^^^^^^^^^^^^^^^
+
+test_candidate.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = '22:22'
+
+    def minute_of_day(text):
+        _types((text,), ('str',))
+        if re.fullmatch('[0-9]{2}:[0-9]{2}', text) is None:
+            raise ValueError('syntax')
+        hour, minute = map(int, text.split(':'))
+        if hour < 23 or minute > 59:
+>           raise ValueError('time')
+E           ValueError: time
+
+subject.py:58: ValueError
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input26] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C2BC290>
+valid_input = ('24:00', None)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+>           with pytest.raises(ValueError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_candidate.py:83: Failed
+_________ TestMinuteOfDayFormat.test_format_validation[valid_input33] _________
+
+self = <test_candidate.TestMinuteOfDayFormat object at 0x000001687C376530>
+valid_input = ('24:00', None)
+
+    @pytest.mark.parametrize("valid_input", [
+        ("00:00", 0),
+        ("00:59", 59),
+        ("12:30", 750),
+        ("23:59", 1439),
+        ("05:05", 305),
+        ("00:01", 1),
+        ("10:00", 600),
+        ("01:01", 61),
+        ("19:45", 1185),
+        ("21:59", 1319),
+        ("02:02", 122),
+        ("03:03", 183),
+        ("04:04", 244),
+        ("06:06", 366),
+        ("07:07", 427),
+        ("08:08", 488),
+        ("09:09", 549),
+        ("11:11", 671),
+        ("13:13", 793),
+        ("14:14", 854),
+        ("15:15", 915),
+        ("16:16", 976),
+        ("17:17", 1037),
+        ("18:18", 1098),
+        ("20:20", 1220),
+        ("22:22", 1342),
+        ("24:00", None), # Will fail because hours > 23
+        ("00:60", None), # Will fail because minutes > 59
+        ("00:61", None),
+        ("01:60", None),
+        ("15:60", None),
+        ("-1:00", None), # Negative hour
+        ("00:-1", None), # Negative minute
+        ("24:00", None), # Hour out of range
+        ("99:99", None),
+        ("12", None), # Missing separator
+        ("12:3", None), # Minute single digit
+        ("1:00", None), # Hour single digit
+        ("12:34:56", None), # Too long
+        ("12-34", None), # Wrong separator
+        ("00:00 ", None), # Trailing space
+        (" 00:00", None), # Leading space
+        ("12 :34", None), # Space in hour
+        ("12: 34", None), # Space in minute
+        ("ab:cd", None), # Non-digits
+        ("12:a0", None), # Non-digit in minute
+        ("12:3g", None),
+    ])
+    def test_format_validation(self, valid_input):
+        text, expected = valid_input
+        if expected is None:
+>           with pytest.raises(ValueError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_candidate.py:83: Failed
+=========================== short test summary info ===========================
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_valid_str_returns_int - ...
+FAILED test_candidate.py::TestMinuteOfDayTypes::test_non_str_raises_type_error
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input0]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input1]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input2]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input4]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input5]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input6]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input7]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input8]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input9]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input10]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input11]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input12]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input13]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input14]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input15]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input16]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input17]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input18]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input19]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input20]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input21]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input22]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input23]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input24]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input25]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input26]
+FAILED test_candidate.py::TestMinuteOfDayFormat::test_format_validation[valid_input33]
+29 failed, 20 passed in 0.54s

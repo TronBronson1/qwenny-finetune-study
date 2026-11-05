@@ -1,0 +1,117 @@
+......FFFF..F.                                                           [100%]
+================================== FAILURES ===================================
+________________________ test_raises_typeerror[args0] _________________________
+
+args = ([],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([ListChild([1])],)),
+        pytest.param(([[True]],)),
+        pytest.param(([[IntChild(1)]],)),
+        pytest.param((['x'],)),
+        pytest.param((None,)),
+        pytest.param((ListChild([[1], [2, 3]]),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed
+________________________ test_raises_typeerror[args1] _________________________
+
+args = ([[1]],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([ListChild([1])],)),
+        pytest.param(([[True]],)),
+        pytest.param(([[IntChild(1)]],)),
+        pytest.param((['x'],)),
+        pytest.param((None,)),
+        pytest.param((ListChild([[1], [2, 3]]),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed
+________________________ test_raises_typeerror[args2] _________________________
+
+args = ([[True]],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([ListChild([1])],)),
+        pytest.param(([[True]],)),
+        pytest.param(([[IntChild(1)]],)),
+        pytest.param((['x'],)),
+        pytest.param((None,)),
+        pytest.param((ListChild([[1], [2, 3]]),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed
+________________________ test_raises_typeerror[args3] _________________________
+
+args = ([[1]],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([ListChild([1])],)),
+        pytest.param(([[True]],)),
+        pytest.param(([[IntChild(1)]],)),
+        pytest.param((['x'],)),
+        pytest.param((None,)),
+        pytest.param((ListChild([[1], [2, 3]]),)),
+    ])
+    def test_raises_typeerror(args):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE TypeError
+
+test_target.py:39: Failed
+________________________ test_raises_typeerror[args6] _________________________
+
+args = ([[1], [2, 3]],)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((ListChild([]),)),
+        pytest.param(([ListChild([1])],)),
+        pytest.param(([[True]],)),
+        pytest.param(([[IntChild(1)]],)),
+        pytest.param((['x'],)),
+        pytest.param((None,)),
+        pytest.param((ListChild([[1], [2, 3]]),)),
+    ])
+    def test_raises_typeerror(args):
+        with pytest.raises(TypeError):
+>           transpose(*args)
+
+test_target.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+matrix = [[1], [2, 3]]
+
+    def transpose(matrix):
+        _types((matrix,), ('matrix',))
+        if not matrix:
+            return []
+        width = len(matrix[0])
+        if any((len(row) != width for row in matrix)):
+>           raise ValueError('ragged')
+E           ValueError: ragged
+
+subject.py:58: ValueError
+=========================== short test summary info ===========================
+FAILED test_target.py::test_raises_typeerror[args0] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args1] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args2] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args3] - Failed: DID NOT RAISE T...
+FAILED test_target.py::test_raises_typeerror[args6] - ValueError: ragged
+5 failed, 9 passed in 0.33s

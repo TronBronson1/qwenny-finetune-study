@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="6" skipped="0" tests="13" time="0.460" timestamp="2026-11-04T17:05:50.661524-05:00" hostname="Trons"><testcase classname="test_target" name="test_values[v000]" time="0.001" /><testcase classname="test_target" name="test_values[v001]" time="0.001"><failure message="ValueError: domain">args = (59,), expected = (0, 0, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 59
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds &gt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v002]" time="0.001"><failure message="ValueError: domain">args = (60,), expected = (0, 1, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 60
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds &gt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v003]" time="0.001"><failure message="ValueError: domain">args = (3599,), expected = (0, 59, 59)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 3599
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds &gt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v004]" time="0.001"><failure message="ValueError: domain">args = (3600,), expected = (1, 0, 0)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 3600
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds &gt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_values[v005]" time="0.001"><failure message="ValueError: domain">args = (90061,), expected = (25, 1, 1)
+
+    @pytest.mark.parametrize("args,expected", [
+        pytest.param((0,), (0, 0, 0), id="v000"),
+        pytest.param((59,), (0, 0, 59), id="v001"),
+        pytest.param((60,), (0, 1, 0), id="v002"),
+        pytest.param((3599,), (0, 59, 59), id="v003"),
+        pytest.param((3600,), (1, 0, 0), id="v004"),
+        pytest.param((90061,), (25, 1, 1), id="v005"),
+    ])
+    def test_values(args,expected):
+&gt;       actual=seconds_to_hms(*args)
+               ^^^^^^^^^^^^^^^^^^^^^
+
+test_target.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+seconds = 90061
+
+    def seconds_to_hms(seconds):
+        _types((seconds,), ('int',))
+        if seconds &gt; 0:
+&gt;           raise ValueError('domain')
+E           ValueError: domain
+
+subject.py:55: ValueError</failure></testcase><testcase classname="test_target" name="test_raises_typeerror[e000]" time="0.001" /><testcase classname="test_target" name="test_raises_typeerror[e001]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e002]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e003]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e004]" time="0.000" /><testcase classname="test_target" name="test_raises_typeerror[e006]" time="0.000" /><testcase classname="test_target" name="test_raises_valueerror[e005]" time="0.001"><failure message="Failed: DID NOT RAISE ValueError">args = (-1,)
+
+    @pytest.mark.parametrize("args", [
+        pytest.param((-1,), id="e005"),
+    ])
+    def test_raises_valueerror(args):
+&gt;       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_target.py:41: Failed</failure></testcase></testsuite></testsuites>

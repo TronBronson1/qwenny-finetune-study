@@ -1,0 +1,554 @@
+[
+  {
+    "node": "test_candidate.py::test_renamed_values[v000]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "str",
+          "repr": "''"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "str",
+        "repr": "''"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "''"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "_ReturnStr",
+        "repr": "''"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "''"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v001]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "str",
+          "repr": "'abcXYZ'"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "str",
+        "repr": "'ABCXYZ'"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'abcXYZ'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "_ReturnStr",
+        "repr": "'ABCXYZ'"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'abcXYZ'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v002]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "str",
+          "repr": "'z-a 9'"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "str",
+        "repr": "'Z-A 9'"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'z-a 9'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "_ReturnStr",
+        "repr": "'Z-A 9'"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'z-a 9'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v003]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "str",
+          "repr": "'\u00e9\u00df\u0131'"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "str",
+        "repr": "'\u00e9\u00df\u0131'"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'\u00e9\u00df\u0131'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "_ReturnStr",
+        "repr": "'\u00e9\u00df\u0131'"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'\u00e9\u00df\u0131'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_values[v004]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "str",
+          "repr": "'a\\nb'"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "return": {
+        "type": "str",
+        "repr": "'A\\nB'"
+      }
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'a\\nb'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "return": {
+        "type": "_ReturnStr",
+        "repr": "'A\\nB'"
+      }
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "str",
+              "repr": "'a\\nb'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e000]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "StrChild",
+          "repr": "''"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "StrChild",
+              "repr": "''"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "StrChild",
+              "repr": "''"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e001]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "bytes",
+          "repr": "b'x'"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "bytes",
+              "repr": "b'x'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "bytes",
+              "repr": "b'x'"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e002]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "int",
+          "repr": "1"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "int",
+              "repr": "1"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "int",
+              "repr": "1"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "node": "test_candidate.py::test_renamed_raises_typeerror[e003]",
+    "args": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "NoneType",
+          "repr": "None"
+        }
+      ]
+    },
+    "kwargs": {
+      "type": "dict",
+      "items": []
+    },
+    "expected": {
+      "exception": "TypeError"
+    },
+    "expected_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "NoneType",
+              "repr": "None"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    },
+    "actual": {
+      "exception": "TypeError"
+    },
+    "actual_after": {
+      "type": "tuple",
+      "items": [
+        {
+          "type": "tuple",
+          "items": [
+            {
+              "type": "NoneType",
+              "repr": "None"
+            }
+          ]
+        },
+        {
+          "type": "dict",
+          "items": []
+        }
+      ]
+    }
+  }
+]

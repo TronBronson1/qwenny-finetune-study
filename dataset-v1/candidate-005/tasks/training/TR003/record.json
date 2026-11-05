@@ -1,0 +1,33 @@
+{
+  "id": "TR003",
+  "split": "training",
+  "family": "absolute-distance",
+  "function": "absolute_distance",
+  "revision": 1,
+  "status": "candidate-authored",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "left",
+    "right"
+  ],
+  "schemas": [
+    "int",
+    "int"
+  ],
+  "review_status": "pending-independent-review",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Original local contract/reference/oracle/target; no failed model output or external dataset copied.",
+  "previously_exposed_family": false,
+  "source_sha256": "5858c742e1940e9cee9bb45026bbab99f349af77644d3f5fa8fb8ac97c3504fe",
+  "target_sha256": "2cbd5b738fbb43dd63b403436830e9b18266e8ce57589b22db085b8ee6cc91ac",
+  "spec_sha256": "2f2fe82a2d0025388f8450f38a87eccafde691aa7806584ae203cc9c9016ce7f",
+  "answer_sha256": "48bbed2ea0eb2e299df42d3590f20195323749b3e1148f54d0a50ffbb4a3672d",
+  "valid_test_cases": 7,
+  "exception_test_cases": 10,
+  "oracle_checks": 232,
+  "designated_mutants": 3,
+  "pytest_validation": "pending",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage."
+}
