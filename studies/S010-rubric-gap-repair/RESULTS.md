@@ -75,3 +75,18 @@ The offline estimate above (63,486 total, maximum ≈2,906) is superseded by the
 - **Same tests:** the executable AST equals the candidate-008 gold, ignoring only display ids. Per-test-case results are identical for the reference and all 8 designated mutants.
 - **Measured fit:** the pinned tokenizer measured it in Actions run [41958509654](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41958509654): **2,918 → 1,919 tokens**. With the overlay, the longest full training chat is **2,021 (TR049)**, so all 60 fit within 2,048. That run also repeated the Windows validation: passed again on Python 3.15.2.
 - **Record:** `TRAINING_FIT_OVERLAY.json`. Candidate-008 files are unchanged. The overlay is not an export, and training still needs explicit export authorization, mask/decode checks and a maximum-example forward/backward check, as in S009.
+
+## Staged token packets (`packets-008/`, Actions run [41961720481](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41961720481))
+
+`prepare_packets_008.py` uses the unchanged `training-v1/prepare_data.encode_answer`. The output is in S009's baseline packet format.
+
+| Gate | Result |
+|---|---|
+| Candidate files match SHA256.json, and that hash equals the user-approved hash | yes |
+| Rebuild the committed S009 baseline packets from candidate-007 with the Hub tokenizer at the pinned revision | **byte-identical**: messages, train and development jsonl |
+| Candidate-008 packets | 60 training rows (60 + 24 development A/B rows); exact answer-only masks; no truncation; every decoded target equals its answer. Executable ASTs equal the gold, ignoring display ids. |
+| Lengths | Maximum training row **1,919** (TR058 overlay), then TR049 1,880 and TR050 1,554. Totals: 62,731 input and 43,617 supervised tokens; S009 baseline was 61,313 and 42,255. |
+
+The maximum training example is now 39 tokens longer than the 1,880-token example S009's GPU preflights used. Any training run must repeat the maximum-example forward/backward preflight; S009 left only 0.2–0.4 GB of free GPU memory.
+
+`authorization.json` states that these packets are **not** authorized for training. A consumer needs an explicit user authorization naming `messages_jsonl_sha256` `b3aa1c91…` and `train_jsonl_sha256` `dd2eb1a0…`.
