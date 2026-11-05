@@ -30,4 +30,8 @@ See `PROTOCOL.md` § Amendment 1 and `independent-review/case-review-008-009/DIS
 
 - **Linux validation:** **72/72 suites, 1,557 cases; 483/483 designated mutants** rejected at their declared witness (`validation-001/summary.json`). The two new TR030 cases and shape-first mutant R10 account for the +2 and +1.
 - **TR058 overlay:** rebuilt against the new hash. Its messages are unchanged (`f2484474…`), because TR058 is not affected by the amendment.
-- **Audit rerun and cloud gates:** recorded below once complete.
+- **Audit rerun, 008 → 009:** 19 → **0** surviving confirmed mutants out of 973; **0 new** (`independent-review/c007-rubric-audit/results-008-vs-009/`, regenerated).
+- **Cloud gates,** Actions run [41963290722](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41963290722):
+  - Windows Python 3.15.2 / pytest 9.2.0: **passed**. Hash `a3f14259…` verified; 72/72 suites, 1,557 cases, 483/483 mutants.
+  - Pinned tokenizer: reproduces S007 exactly. Total **64,384** chat tokens. Only TR058 is over 2,048 (2,957); its overlay is **1,967**, and the maximum full training chat with the overlay is **2,021**.
+  - `TRAINING_FIT_OVERLAY.json` was regenerated for the amended hash.
