@@ -140,7 +140,20 @@ Decide this **before** any held-out evaluation, and record it as a change to `01
   - **Gold and mutants:** every exception test now checks its inputs, and 19 audit mutants are promoted.
   - **Validation:** 482/482 mutants rejected on Windows with Python 3.15.2, and the audit rerun leaves **0 of 973** confirmed mutants surviving.
   - **Size:** 64,319 tokens in total; the TR058 overlay is 1,967 tokens.
-  - **Approval:** it needs approval of the new sentence and of the hash `fa1c0e581a1076775cfcc9e775b18f2805dd7459cf5d7f9dadeaa6ba44dfff64`. The candidate-008 approval does not transfer.
+  - **Amendment 1**, after an independent read-through review (`independent-review/case-review-008-009/`):
+    - TR030 gets two real type-before-shape witnesses and a shape-first mutant, because the 008 witness e013 does not separate the two orders.
+    - DV001's sentence now specifies identity comparison.
+    - Three labels are renamed.
+  - **After the amendment:** 1,557 cases and 483/483 mutants, passed on Windows with Python 3.15.2. The audit still shows 0 surviving mutants and none new. Total 64,384 tokens.
+  - **Approval:** it needs approval of the new wording (the main sentence, the DV001 addition and the renamed labels) and of the hash `a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb`. The candidate-008 approval does not transfer.
+- **Staged candidate-008 token packets** (`studies/S010-rubric-gap-repair/packets-008/`):
+  - Built in GitHub Actions after first regenerating S009's committed baseline packets byte-for-byte.
+  - Maximum training row 1,919 tokens (TR058 overlay), exact answer-only masks.
+  - **Not authorized for training.** That needs your explicit authorization naming `messages_jsonl_sha256` `b3aa1c91…` and `train_jsonl_sha256` `dd2eb1a0…` (`packets-008/report.json`). The maximum example is 39 tokens longer than S009's, so repeat the GPU maximum-example preflight.
+- **Independent read-through review** of the 60 new candidate-008 cases (`independent-review/case-review-008-009/` on the candidate-009 branch):
+  - None contradicts its contract.
+  - One is a weak witness (TR030 e013), which stays in the frozen 008 and is fixed in 009.
+  - This was a fresh-context reviewer agent, not an external human.
 
 ## Open decisions and next steps (in suggested order)
 
