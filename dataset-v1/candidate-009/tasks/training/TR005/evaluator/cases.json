@@ -1,0 +1,74 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0,)",
+    "expected_python": "'even'",
+    "after_python": "(0,)",
+    "category": "zero"
+  },
+  {
+    "id": "v001",
+    "args_python": "(1,)",
+    "expected_python": "'odd'",
+    "after_python": "(1,)",
+    "category": "odd"
+  },
+  {
+    "id": "v002",
+    "args_python": "(2,)",
+    "expected_python": "'even'",
+    "after_python": "(2,)",
+    "category": "even"
+  },
+  {
+    "id": "v003",
+    "args_python": "(-1,)",
+    "expected_python": "'odd'",
+    "after_python": "(-1,)",
+    "category": "negative-odd"
+  },
+  {
+    "id": "v004",
+    "args_python": "(-2,)",
+    "expected_python": "'even'",
+    "after_python": "(-2,)",
+    "category": "negative-even"
+  },
+  {
+    "id": "v005",
+    "args_python": "(1000000000000000000000000000001,)",
+    "expected_python": "'odd'",
+    "after_python": "(1000000000000000000000000000001,)",
+    "category": "large"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0),)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  }
+]

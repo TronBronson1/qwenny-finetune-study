@@ -1,0 +1,74 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "''",
+    "after_python": "('',)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('abcXYZ',)",
+    "expected_python": "'ABCXYZ'",
+    "after_python": "('abcXYZ',)",
+    "category": "ascii-case"
+  },
+  {
+    "id": "v002",
+    "args_python": "('z-a 9',)",
+    "expected_python": "'Z-A 9'",
+    "after_python": "('z-a 9',)",
+    "category": "punctuation-digits"
+  },
+  {
+    "id": "v003",
+    "args_python": "('éßı',)",
+    "expected_python": "'éßı'",
+    "after_python": "('éßı',)",
+    "category": "nonascii-unchanged"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\nb',)",
+    "expected_python": "'A\\nB'",
+    "after_python": "('a\\nb',)",
+    "category": "newline"
+  },
+  {
+    "id": "v005",
+    "args_python": "('ǅ١ｅ',)",
+    "expected_python": "'ǅ١ｅ'",
+    "after_python": "('ǅ١ｅ',)",
+    "category": "compatibility-and-nonascii-digit"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e004",
+    "args_python": "(['a'],)",
+    "exception": "TypeError",
+    "category": "explicit-invalid"
+  }
+]

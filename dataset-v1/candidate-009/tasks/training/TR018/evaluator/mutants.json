@@ -1,0 +1,58 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(StrChild(''),)",
+      "expected_exception": "TypeError",
+      "actual_python": "True"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "91c6bd1b613c9768dd83a3bb387a362a40680555f85faa1c0a1082c581e03e47"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-arithmetic-47-Mod",
+    "witness": {
+      "node": "test_target.py::test_values[v005]",
+      "case": "v005",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('ab',)",
+      "expected_python": "False",
+      "actual_python": "True"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "1a1631a0b63bed056fd800d77523b328ca78923b89863c1ce82e9a895fe8d237"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-comparison-48-Eq",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('aa',)",
+      "expected_python": "True",
+      "actual_python": "False"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "709933d1f146d2cf1be0c9c880c033807b418c2dda08cff037716a5eb563497b"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "('',)",
+      "expected_python": "True",
+      "actual_python": "1"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "5a88f6606ebec00b84de81f0cea4601a37a33cd734e3cc2de44b74d4b216dc4b"
+  }
+]

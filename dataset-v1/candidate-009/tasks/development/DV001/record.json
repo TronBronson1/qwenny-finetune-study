@@ -1,0 +1,35 @@
+{
+  "id": "DV001",
+  "split": "development",
+  "family": "sequence-rotation",
+  "function": "rotate_right",
+  "revision": 4,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values",
+    "steps"
+  ],
+  "schemas": [
+    "objects",
+    "int"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Candidate-008 plus S011 error-path preservation (prompt sentence, gold assertion, promoted audit mutants).",
+  "previously_exposed_family": true,
+  "source_sha256": "8b58928a23dc04938c7bafb492153d581354a43b24065f004289bdd4c29cdc87",
+  "target_sha256": "60859e50c0dd9d270ce5a4ea8b82dde27fd6639ae199105d8327f6e04f20fe3d",
+  "spec_sha256": "b80a007212ce282d42f18646f7f899a5dd6b1eecefdb5a5355c09c2b16d42b56",
+  "answer_sha256": "50c6d0fc7ad34cebf73bc4be7a37a659b6d1dd12f62738690b172574e235f51f",
+  "valid_test_cases": 9,
+  "exception_test_cases": 8,
+  "type_before_value_witnesses": 0,
+  "oracle_checks": 9,
+  "designated_mutants": 5,
+  "pytest_validation": "pending S011 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-008"
+}

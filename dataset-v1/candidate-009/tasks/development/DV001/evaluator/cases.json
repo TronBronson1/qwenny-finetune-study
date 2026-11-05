@@ -1,0 +1,113 @@
+[
+  {
+    "id": "v000",
+    "args_python": "((), 0)",
+    "expected_python": "()",
+    "after_python": "((), 0)",
+    "category": "empty-zero"
+  },
+  {
+    "id": "v001",
+    "args_python": "((), 4)",
+    "expected_python": "()",
+    "after_python": "((), 4)",
+    "category": "empty-positive"
+  },
+  {
+    "id": "v002",
+    "args_python": "((1,), -9)",
+    "expected_python": "(1,)",
+    "after_python": "((1,), -9)",
+    "category": "single-negative"
+  },
+  {
+    "id": "v003",
+    "args_python": "((1, 2, 3), 0)",
+    "expected_python": "(1, 2, 3)",
+    "after_python": "((1, 2, 3), 0)",
+    "category": "identity"
+  },
+  {
+    "id": "v004",
+    "args_python": "((1, 2, 3), 1)",
+    "expected_python": "(3, 1, 2)",
+    "after_python": "((1, 2, 3), 1)",
+    "category": "right"
+  },
+  {
+    "id": "v005",
+    "args_python": "((1, 2, 3), -1)",
+    "expected_python": "(2, 3, 1)",
+    "after_python": "((1, 2, 3), -1)",
+    "category": "left"
+  },
+  {
+    "id": "v006",
+    "args_python": "((1, 2, 3), 7)",
+    "expected_python": "(3, 1, 2)",
+    "after_python": "((1, 2, 3), 7)",
+    "category": "wrap"
+  },
+  {
+    "id": "v007",
+    "args_python": "((1, 1, 2), 2)",
+    "expected_python": "(1, 2, 1)",
+    "after_python": "((1, 1, 2), 2)",
+    "category": "duplicates"
+  },
+  {
+    "id": "v008",
+    "args_python": "(([1], {'k': 2}), 1)",
+    "expected_python": "({'k': 2}, [1])",
+    "after_python": "(([1], {'k': 2}), 1)",
+    "category": "mutable-elements"
+  },
+  {
+    "id": "e000",
+    "args_python": "(TupleChild(()), 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e001",
+    "args_python": "([], 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e002",
+    "args_python": "(None, 0)",
+    "exception": "TypeError",
+    "category": "type:values"
+  },
+  {
+    "id": "e003",
+    "args_python": "((), True)",
+    "exception": "TypeError",
+    "category": "type:steps"
+  },
+  {
+    "id": "e004",
+    "args_python": "((), IntChild(0))",
+    "exception": "TypeError",
+    "category": "type:steps"
+  },
+  {
+    "id": "e005",
+    "args_python": "((), 1.5)",
+    "exception": "TypeError",
+    "category": "type:steps"
+  },
+  {
+    "id": "e006",
+    "args_python": "((), 'bad')",
+    "exception": "TypeError",
+    "category": "type:steps"
+  },
+  {
+    "id": "e007",
+    "args_python": "((), None)",
+    "exception": "TypeError",
+    "category": "type:steps"
+  }
+]

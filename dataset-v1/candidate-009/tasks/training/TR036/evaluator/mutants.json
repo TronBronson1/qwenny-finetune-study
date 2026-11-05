@@ -1,0 +1,114 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild([1]),)",
+      "expected_exception": "TypeError",
+      "actual_python": "1"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "fe2a578cd2048d5717f30a761fb7502186d0aa3012bc3c236673e2ba9e07aadb"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-arithmetic-49-Mod",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([4, 1],)",
+      "expected_python": "1",
+      "actual_python": "4"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "c4f0d0a7fa4abd3af13198fbd539cc42e9c09e0e13307de5bd3227593f90ffe9"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-arithmetic-49-Add",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([4, 1],)",
+      "expected_python": "1",
+      "actual_python": "4"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "a2705679a9bd12f29686e41daa9ab7d4761638d3f758971bd3d979a6af51c1cd"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1],)",
+      "expected_python": "1",
+      "actual_python": "1"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "d9b18879017427b98f3993b1543b8a8541ef10ac73513be06f938de391cad07d"
+  },
+  {
+    "id": "R02",
+    "requirement": "valid-input-not-mutated",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([1],)",
+      "expected_python": "1",
+      "actual_python": "1"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "73f82efb0b2ba7f439440c3dbe0497429a92696cbe16cf65a656a6967f5409e6"
+  },
+  {
+    "id": "R03",
+    "requirement": "ordinary-nested-int-rejection",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e005]",
+      "case": "e005",
+      "kind": "required-exception-not-raised",
+      "args_python": "(['x'],)",
+      "expected_exception": "TypeError",
+      "actual_python": "'x'"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "f94311d27951c71824e789c8e4132b242a8147ff1f672dc2272dd84e375420e4"
+  },
+  {
+    "id": "R04",
+    "requirement": "type-before-value-priority",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e003]",
+      "case": "e003",
+      "kind": "required-exception-wrong-class",
+      "args_python": "((),)",
+      "expected_exception": "TypeError",
+      "actual_exception": "ValueError"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "613817bc2b4b2472f3ccdbf0cb402dd4c9cf28c33ce5832e5aa0f8a597db352a"
+  },
+  {
+    "id": "R05",
+    "requirement": "mutation-error: values: no input mutation (error path; contract-only)",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "input-mutated-on-expected-exception",
+      "args_python": "(ListChild([1]),)",
+      "expected_exception": "TypeError",
+      "args_after_python": "(ListChild([1, 1]),)"
+    },
+    "provenance": "S011 promotion of independent-audit mutant M-values-on-error; survived candidate-007/008 gold; witness: expected exception raised but an argument changed",
+    "source_sha256": "4e0126934637404fd50cb5ba0b4a546e3dae0c2859c052b1c3ea082409aa2315"
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "M01",
+    "requirement": "legacy-weaken-exact-type",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "required-exception-not-raised",
+      "args_python": "(ListChild([]),)",
+      "expected_exception": "TypeError",
+      "actual_python": "[]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "4de79022952e6673a0db04e1159c0288d77bbc84d0c23612987bef4c06b9f6e1"
+  },
+  {
+    "id": "M02",
+    "requirement": "legacy-comparison-49-NotEq",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(['a', 'a', 'b', 'a'],)",
+      "expected_python": "[('a', 2), ('b', 1), ('a', 1)]",
+      "actual_python": "[('a', 1), ('a', 3)]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "920401b11866fd5275d71486a3f32927f07aa1f40a0f2d05a894e777dd701339"
+  },
+  {
+    "id": "M03",
+    "requirement": "legacy-arithmetic-49-Sub",
+    "witness": {
+      "node": "test_target.py::test_values[v002]",
+      "case": "v002",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(['a', 'a', 'b', 'a'],)",
+      "expected_python": "[('a', 2), ('b', 1), ('a', 1)]",
+      "actual_python": "[('a', 0), ('b', 1), ('a', 1)]"
+    },
+    "provenance": "unchanged candidate-006 mutant; witness refreshed against revised gold; carried into candidate-008, witness refreshed",
+    "source_sha256": "7e6a6c395ad94794090d1d5f5be76e6749d01d82fda53c3348576ce854958ea5"
+  },
+  {
+    "id": "R01",
+    "requirement": "return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([],)",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "a370202b4c87929961aa8e96859ad4bf4a7891497ee72eb317d57f2cb47bb980"
+  },
+  {
+    "id": "R02",
+    "requirement": "nested-return-exact-type",
+    "witness": {
+      "node": "test_target.py::test_values[v001]",
+      "case": "v001",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "(['a'],)",
+      "expected_python": "[('a', 1)]",
+      "actual_python": "[('a', 1)]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "5cfc5f0faee1f3b9c4e833a7f10a1a63a80646a189b52caa1f664b386a8b687e"
+  },
+  {
+    "id": "R03",
+    "requirement": "valid-input-not-mutated",
+    "witness": {
+      "node": "test_target.py::test_values[v000]",
+      "case": "v000",
+      "kind": "result-or-post-state-assertion",
+      "args_python": "([],)",
+      "expected_python": "[]",
+      "actual_python": "[]"
+    },
+    "provenance": "S007 requirement-linked fixture; finite witness validated against unchanged reference; carried into candidate-008, witness refreshed",
+    "source_sha256": "eb204c0175b9f883edc0e4783dbe11da1d5be2a552abeb6c474b45510d93f097"
+  },
+  {
+    "id": "R04",
+    "requirement": "mutation-error: values: no input mutation (error path; contract-only)",
+    "witness": {
+      "node": "test_target.py::test_raises_typeerror[e000]",
+      "case": "e000",
+      "kind": "input-mutated-on-expected-exception",
+      "args_python": "(ListChild([]),)",
+      "expected_exception": "TypeError",
+      "args_after_python": "(ListChild(['']),)"
+    },
+    "provenance": "S011 promotion of independent-audit mutant M-values-on-error; survived candidate-007/008 gold; witness: expected exception raised but an argument changed",
+    "source_sha256": "47f9a6b9686953506f6e4fc9c49d0d99566dffe07a5356386bcc5196680859ee"
+  }
+]

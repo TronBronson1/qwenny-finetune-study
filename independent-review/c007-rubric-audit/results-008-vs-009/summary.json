@@ -1,0 +1,2068 @@
+{
+ "meta": {
+  "candidates": [
+   "candidate-008",
+   "candidate-009"
+  ],
+  "elapsed_seconds": 571.2,
+  "generated_utc": "2026-11-05T03:41:48Z",
+  "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39",
+  "pytest": "9.2.0",
+  "pytest_flags": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, -p no:cacheprovider, isolated temp dir, timeout 120s",
+  "python": "3.13.18",
+  "repo_commit": "f97a0d6d0d049aa918dca10f1f19872989a1356a",
+  "script_sha256": {
+   "make_report.py": "76965a606ad5e3921d77b7cde0a4d5444fe6a68b1e9ea4fc80b23c03b05db398",
+   "mutants_lib.py": "126f8ac488164acf531073a2ee3bd17dc7cd049d1f8eb92ca25a7e8cc673f054",
+   "probes.py": "0ea7e1ebf4631b147d735d0425b168e2db5f4066c6511e2539256130616ebe5e",
+   "run_audit.py": "136256b895e4ac18e7e4f12cde5fc42be75d508d2a77cfcbaec0aef043c7d69e"
+  },
+  "tasks": 72
+ },
+ "families": {
+  "type-subclass": {
+   "generated": 129,
+   "applicable": 129
+  },
+  "type-ordinary": {
+   "generated": 129,
+   "applicable": 120,
+   "no_difference": 9
+  },
+  "type-bool": {
+   "generated": 67,
+   "applicable": 67
+  },
+  "return-subclass": {
+   "generated": 103,
+   "applicable": 97,
+   "no_difference": 6
+  },
+  "return-swap": {
+   "generated": 103,
+   "applicable": 35,
+   "no_difference": 68
+  },
+  "order": {
+   "generated": 72,
+   "no_difference": 50,
+   "applicable": 22
+  },
+  "exception-class": {
+   "generated": 124,
+   "applicable": 124
+  },
+  "mutation-valid": {
+   "generated": 40,
+   "applicable": 37,
+   "no_difference": 3
+  },
+  "ascii": {
+   "generated": 49,
+   "applicable": 46,
+   "no_difference": 3
+  },
+  "boundary": {
+   "generated": 271,
+   "applicable": 257,
+   "no_difference": 14
+  },
+  "case": {
+   "generated": 28,
+   "no_difference": 8,
+   "applicable": 20
+  },
+  "mutation-error": {
+   "generated": 19,
+   "applicable": 19,
+   "gap_008": 19,
+   "fixed": 19
+  }
+ },
+ "known_gaps": [
+  {
+   "task": "TR038",
+   "gap": "non-ASCII hex digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR043",
+   "gap": "non-ASCII binary digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR044",
+   "gap": "non-ASCII decimal endpoints accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize",
+    "A-predicate-4"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR056",
+   "gap": "non-ASCII RGB hex digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV010",
+   "gap": "non-ASCII RPN digits accepted",
+   "mutants": [
+    "A-unicode-decimal-digits",
+    "A-nfkc-normalize"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV008",
+   "gap": "case-insensitive comparison",
+   "mutants": [
+    "C-input-fold-lower",
+    "C-input-fold-upper"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV011",
+   "gap": "int-subclass endpoints accepted",
+   "mutants": [
+    "T-intervals-L2-subclass"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR026",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR027",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR028",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR029",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR030",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-matrix-L2-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR031",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR032",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR033",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR034",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR035",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR036",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR058",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "TR059",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-left-L1-ordinary",
+    "T-right-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV004",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV009",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-values-L1-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  },
+  {
+   "task": "DV011",
+   "gap": "plain wrong-type list element accepted",
+   "mutants": [
+    "T-intervals-L2-ordinary"
+   ],
+   "candidate-008": "covered",
+   "candidate-009": "covered"
+  }
+ ],
+ "per_task": [
+  {
+   "task": "DV001",
+   "split": "development",
+   "function": "rotate_right",
+   "mutants": 16,
+   "applicable": 12,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV002",
+   "split": "development",
+   "function": "minute_of_day",
+   "mutants": 20,
+   "applicable": 17,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV003",
+   "split": "development",
+   "function": "roman_encode",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV004",
+   "split": "development",
+   "function": "xor_checksum",
+   "mutants": 18,
+   "applicable": 17,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV005",
+   "split": "development",
+   "function": "parenthesis_depth",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV006",
+   "split": "development",
+   "function": "keypad_encode",
+   "mutants": 14,
+   "applicable": 11,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV007",
+   "split": "development",
+   "function": "grid_neighbors",
+   "mutants": 51,
+   "applicable": 50,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV008",
+   "split": "development",
+   "function": "edit_distance",
+   "mutants": 12,
+   "applicable": 10,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV009",
+   "split": "development",
+   "function": "lower_bound",
+   "mutants": 26,
+   "applicable": 24,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "function": "rpn_evaluate",
+   "mutants": 29,
+   "applicable": 23,
+   "no_difference": 6,
+   "gaps": {
+    "candidate-008": [
+     "M-tokens-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-tokens-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "function": "interval_union",
+   "mutants": 34,
+   "applicable": 33,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [
+     "M-intervals-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-intervals-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "DV012",
+   "split": "development",
+   "function": "balanced_brackets",
+   "mutants": 7,
+   "applicable": 5,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR001",
+   "split": "training",
+   "function": "batches",
+   "mutants": 15,
+   "applicable": 14,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR002",
+   "split": "training",
+   "function": "strip_prefix",
+   "mutants": 11,
+   "applicable": 10,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR003",
+   "split": "training",
+   "function": "absolute_distance",
+   "mutants": 11,
+   "applicable": 8,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR004",
+   "split": "training",
+   "function": "clamp",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR005",
+   "split": "training",
+   "function": "parity_label",
+   "mutants": 7,
+   "applicable": 5,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR006",
+   "split": "training",
+   "function": "factorial",
+   "mutants": 17,
+   "applicable": 14,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR007",
+   "split": "training",
+   "function": "digit_sum",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR008",
+   "split": "training",
+   "function": "is_square",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR009",
+   "split": "training",
+   "function": "signed_gcd",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR010",
+   "split": "training",
+   "function": "population_count",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR011",
+   "split": "training",
+   "function": "leap_year",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR012",
+   "split": "training",
+   "function": "weekday_offset",
+   "mutants": 16,
+   "applicable": 15,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR013",
+   "split": "training",
+   "function": "int_to_base",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR014",
+   "split": "training",
+   "function": "collapse_spaces",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR015",
+   "split": "training",
+   "function": "reverse_words",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR016",
+   "split": "training",
+   "function": "count_vowels",
+   "mutants": 8,
+   "applicable": 5,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR017",
+   "split": "training",
+   "function": "interleave_strings",
+   "mutants": 10,
+   "applicable": 8,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR018",
+   "split": "training",
+   "function": "is_palindrome",
+   "mutants": 10,
+   "applicable": 7,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR019",
+   "split": "training",
+   "function": "normalize_newlines",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR020",
+   "split": "training",
+   "function": "escape_html",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR021",
+   "split": "training",
+   "function": "common_prefix",
+   "mutants": 13,
+   "applicable": 11,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR022",
+   "split": "training",
+   "function": "quote_csv_field",
+   "mutants": 6,
+   "applicable": 4,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR023",
+   "split": "training",
+   "function": "plural_count",
+   "mutants": 12,
+   "applicable": 11,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR024",
+   "split": "training",
+   "function": "ascii_upper",
+   "mutants": 15,
+   "applicable": 13,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR025",
+   "split": "training",
+   "function": "run_length_encode",
+   "mutants": 15,
+   "applicable": 13,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR026",
+   "split": "training",
+   "function": "stable_unique",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR027",
+   "split": "training",
+   "function": "pairwise_differences",
+   "mutants": 18,
+   "applicable": 16,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR028",
+   "split": "training",
+   "function": "prefix_sums",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "function": "chunk_list",
+   "mutants": 23,
+   "applicable": 21,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "function": "transpose",
+   "mutants": 21,
+   "applicable": 20,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [
+     "M-matrix-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-matrix-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "function": "multiset_intersection",
+   "mutants": 24,
+   "applicable": 22,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-left-on-error",
+     "M-right-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-left-on-error",
+    "M-right-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR032",
+   "split": "training",
+   "function": "partition_sign",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "function": "remove_at",
+   "mutants": 21,
+   "applicable": 20,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "function": "bounded_slice",
+   "mutants": 27,
+   "applicable": 26,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR035",
+   "split": "training",
+   "function": "adjacent_equal_count",
+   "mutants": 18,
+   "applicable": 16,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR036",
+   "split": "training",
+   "function": "lower_median",
+   "mutants": 17,
+   "applicable": 15,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [
+     "M-values-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-values-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR037",
+   "split": "training",
+   "function": "parse_unsigned",
+   "mutants": 13,
+   "applicable": 10,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR038",
+   "split": "training",
+   "function": "parse_hex_byte",
+   "mutants": 13,
+   "applicable": 8,
+   "no_difference": 5,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR039",
+   "split": "training",
+   "function": "parse_bool_word",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR040",
+   "split": "training",
+   "function": "parse_key_value",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR041",
+   "split": "training",
+   "function": "parse_int_pair",
+   "mutants": 15,
+   "applicable": 12,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR042",
+   "split": "training",
+   "function": "parse_version",
+   "mutants": 15,
+   "applicable": 12,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR043",
+   "split": "training",
+   "function": "parse_binary",
+   "mutants": 13,
+   "applicable": 9,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR044",
+   "split": "training",
+   "function": "parse_range",
+   "mutants": 13,
+   "applicable": 10,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR045",
+   "split": "training",
+   "function": "path_segments",
+   "mutants": 8,
+   "applicable": 6,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR046",
+   "split": "training",
+   "function": "parse_signed",
+   "mutants": 14,
+   "applicable": 10,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR047",
+   "split": "training",
+   "function": "index_of_nth",
+   "mutants": 19,
+   "applicable": 17,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR048",
+   "split": "training",
+   "function": "spreadsheet_column",
+   "mutants": 14,
+   "applicable": 12,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR049",
+   "split": "training",
+   "function": "row_major_offset",
+   "mutants": 29,
+   "applicable": 28,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR050",
+   "split": "training",
+   "function": "unravel_index",
+   "mutants": 25,
+   "applicable": 24,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR051",
+   "split": "training",
+   "function": "wrap_index",
+   "mutants": 13,
+   "applicable": 12,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR052",
+   "split": "training",
+   "function": "seconds_to_hms",
+   "mutants": 12,
+   "applicable": 10,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR053",
+   "split": "training",
+   "function": "format_cents",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR054",
+   "split": "training",
+   "function": "grouped_decimal",
+   "mutants": 9,
+   "applicable": 7,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR055",
+   "split": "training",
+   "function": "encode_rgb",
+   "mutants": 21,
+   "applicable": 19,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR056",
+   "split": "training",
+   "function": "decode_rgb",
+   "mutants": 15,
+   "applicable": 10,
+   "no_difference": 5,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR057",
+   "split": "training",
+   "function": "make_slug",
+   "mutants": 12,
+   "applicable": 9,
+   "no_difference": 3,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR058",
+   "split": "training",
+   "function": "compare_versions",
+   "mutants": 19,
+   "applicable": 18,
+   "no_difference": 1,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "function": "merge_sorted",
+   "mutants": 33,
+   "applicable": 29,
+   "no_difference": 4,
+   "gaps": {
+    "candidate-008": [
+     "M-left-on-error",
+     "M-right-on-error"
+    ],
+    "candidate-009": []
+   },
+   "fixed": [
+    "M-left-on-error",
+    "M-right-on-error"
+   ],
+   "still_open": [],
+   "new_in_009": []
+  },
+  {
+   "task": "TR060",
+   "split": "training",
+   "function": "count_ascii_categories",
+   "mutants": 23,
+   "applicable": 21,
+   "no_difference": 2,
+   "gaps": {
+    "candidate-008": [],
+    "candidate-009": []
+   },
+   "fixed": [],
+   "still_open": [],
+   "new_in_009": []
+  }
+ ],
+ "still_open": [],
+ "fixed": [
+  {
+   "task": "DV004",
+   "split": "development",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([-1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-1'), ('int', '-1'))),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '-1'),)),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e011]",
+    "test_raises_typeerror[e012]",
+    "test_raises_typeerror[e013]"
+   ]
+  },
+  {
+   "task": "DV009",
+   "split": "development",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 1.5)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('float', '1.5')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('float', '1.5')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e011]"
+   ]
+  },
+  {
+   "task": "DV010",
+   "split": "development",
+   "mutant": "M-tokens-on-error",
+   "family": "mutation-error",
+   "requirement": "tokens: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"''\"),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e013]",
+    "test_raises_typeerror[e016]",
+    "test_raises_typeerror[e017]",
+    "test_raises_typeerror[e018]",
+    "test_raises_typeerror[e019]",
+    "test_raises_typeerror[e020]",
+    "test_raises_typeerror[e021]"
+   ]
+  },
+  {
+   "task": "DV011",
+   "split": "development",
+   "mutant": "M-intervals-on-error",
+   "family": "mutation-error",
+   "requirement": "intervals: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e003]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e010]"
+   ]
+  },
+  {
+   "task": "TR025",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]"
+   ]
+  },
+  {
+   "task": "TR026",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR027",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR028",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR029",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '0')))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '0')))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e011]"
+   ]
+  },
+  {
+   "task": "TR030",
+   "split": "training",
+   "mutant": "M-matrix-on-error",
+   "family": "mutation-error",
+   "requirement": "matrix: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([1],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'), ('int', '1'))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '1'),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e003]",
+    "test_raises_typeerror[e004]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e012]"
+   ]
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "M-left-on-error",
+   "family": "mutation-error",
+   "requirement": "left: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 3)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '3')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '3')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e011]"
+   ]
+  },
+  {
+   "task": "TR031",
+   "split": "training",
+   "mutant": "M-right-on-error",
+   "family": "mutation-error",
+   "requirement": "right: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(3, [])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', (('int', '0'),))))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e003]",
+    "test_raises_typeerror[e004]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]"
+   ]
+  },
+  {
+   "task": "TR032",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR033",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '0')))",
+     "value": "'IndexError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_indexerror[e014]",
+    "test_raises_indexerror[e015]",
+    "test_raises_indexerror[e016]",
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR034",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 1, 0)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '1'), ('int', '0')))",
+     "value": "'IndexError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_indexerror[e019]",
+    "test_raises_indexerror[e020]",
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]"
+   ]
+  },
+  {
+   "task": "TR035",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(['x'],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"), ('str', \"'x'\"))),))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('str', \"'x'\"),)),))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]"
+   ]
+  },
+  {
+   "task": "TR036",
+   "split": "training",
+   "mutant": "M-values-on-error",
+   "family": "mutation-error",
+   "requirement": "values: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([],)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)),))",
+     "value": "'ValueError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()),))",
+     "value": "'ValueError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e010]",
+    "test_raises_valueerror[e009]"
+   ]
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "M-left-on-error",
+   "family": "mutation-error",
+   "requirement": "left: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "([], 3)",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', (('int', '0'),)), ('int', '3')))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('list', ()), ('int', '3')))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]",
+    "test_raises_typeerror[e010]",
+    "test_raises_typeerror[e011]"
+   ]
+  },
+  {
+   "task": "TR059",
+   "split": "training",
+   "mutant": "M-right-on-error",
+   "family": "mutation-error",
+   "requirement": "right: no input mutation (error path; contract-only)",
+   "witness": {
+    "args_python": "(3, [])",
+    "mutant": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', (('int', '0'),))))",
+     "value": "'TypeError'"
+    },
+    "reference": {
+     "outcome": "raise",
+     "post_args": "('tuple', (('int', '3'), ('list', ())))",
+     "value": "'TypeError'"
+    }
+   },
+   "killed_by_009": [
+    "test_raises_typeerror[e000]",
+    "test_raises_typeerror[e001]",
+    "test_raises_typeerror[e002]",
+    "test_raises_typeerror[e003]",
+    "test_raises_typeerror[e004]",
+    "test_raises_typeerror[e005]",
+    "test_raises_typeerror[e006]",
+    "test_raises_typeerror[e007]",
+    "test_raises_typeerror[e008]",
+    "test_raises_typeerror[e009]"
+   ]
+  }
+ ],
+ "new_in_009": [],
+ "anomalies": [
+  "DV009 B-op5:13:<-><= candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "DV009 B-op5:13:<-><= candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "DV009 B-num7:45:1->0 candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "DV009 B-num7:45:1->0 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR013 B-num3:25:2->1 candidate-008: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR013 B-num3:25:2->1 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR021 B-num4:84:1->0 candidate-008: pytest timeout (120.11 s; mutant loops forever) - counted as killed",
+  "TR021 B-num4:84:1->0 candidate-009: pytest timeout (120.1 s; mutant loops forever) - counted as killed",
+  "TR059 B-num6:59:1->0 candidate-008: pytest timeout (120.45 s; mutant loops forever) - counted as killed",
+  "TR059 B-num6:59:1->0 candidate-009: pytest timeout (120.42 s; mutant loops forever) - counted as killed"
+ ],
+ "totals": {
+  "tasks": 72,
+  "generated": 1134,
+  "applicable": 973,
+  "gap_008": 19,
+  "gap_009": 0,
+  "fixed": 19,
+  "still_open": 0,
+  "new_in_009": 0,
+  "tasks_with_gap_008": 17,
+  "tasks_with_gap_009": 0
+ }
+}

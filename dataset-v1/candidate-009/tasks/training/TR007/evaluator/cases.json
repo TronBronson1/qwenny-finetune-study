@@ -1,0 +1,86 @@
+[
+  {
+    "id": "v000",
+    "args_python": "(0,)",
+    "expected_python": "0",
+    "after_python": "(0,)",
+    "category": "zero"
+  },
+  {
+    "id": "v001",
+    "args_python": "(7,)",
+    "expected_python": "7",
+    "after_python": "(7,)",
+    "category": "single-digit"
+  },
+  {
+    "id": "v002",
+    "args_python": "(10,)",
+    "expected_python": "1",
+    "after_python": "(10,)",
+    "category": "decimal-zero"
+  },
+  {
+    "id": "v003",
+    "args_python": "(101,)",
+    "expected_python": "2",
+    "after_python": "(101,)",
+    "category": "internal-zero"
+  },
+  {
+    "id": "v004",
+    "args_python": "(999,)",
+    "expected_python": "27",
+    "after_python": "(999,)",
+    "category": "repeated-digits"
+  },
+  {
+    "id": "v005",
+    "args_python": "(1000000000000000000000000000007,)",
+    "expected_python": "8",
+    "after_python": "(1000000000000000000000000000007,)",
+    "category": "large"
+  },
+  {
+    "id": "e000",
+    "args_python": "(True,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e001",
+    "args_python": "(IntChild(0),)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1.5,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e003",
+    "args_python": "('bad',)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e004",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:number"
+  },
+  {
+    "id": "e005",
+    "args_python": "(-1,)",
+    "exception": "ValueError",
+    "category": "explicit-invalid"
+  },
+  {
+    "id": "e006",
+    "args_python": "(IntChild(-1),)",
+    "exception": "TypeError",
+    "category": "type-before-value"
+  }
+]

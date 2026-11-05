@@ -1,0 +1,48 @@
+{
+  "status": "finite-agent-category-map-pending-execution",
+  "model_visible": true,
+  "return_type": "exact built-in tuple containing the original element objects, preserving their identities",
+  "semantic_categories": [
+    {
+      "requirement": "empty-zero",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "empty-positive",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "single-negative",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "identity",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "right",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "left",
+      "gold_case": "v005"
+    },
+    {
+      "requirement": "wrap",
+      "gold_case": "v006"
+    },
+    {
+      "requirement": "duplicates",
+      "gold_case": "v007"
+    },
+    {
+      "requirement": "mutable-elements",
+      "gold_case": "v008"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": true,
+  "limitations": "Finite same-agent semantic review plus one independent-audit mutant pass; not exhaustive correctness.",
+  "mutation_scope": "valid and expected-exception calls"
+}

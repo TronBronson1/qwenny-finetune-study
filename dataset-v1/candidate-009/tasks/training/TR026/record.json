@@ -1,0 +1,33 @@
+{
+  "id": "TR026",
+  "split": "training",
+  "family": "stable-unique",
+  "function": "stable_unique",
+  "revision": 4,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "values"
+  ],
+  "schemas": [
+    "ints"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Candidate-008 plus S011 error-path preservation (prompt sentence, gold assertion, promoted audit mutants).",
+  "previously_exposed_family": false,
+  "source_sha256": "d019d92b6961e2b1ef092fd18327dce64089ea3e348d768f8f92e7fe2a6ce445",
+  "target_sha256": "2adfc116826ddfe71033c3db47b9da19c3d2bc2ac22ae6a6943b5379e06a56aa",
+  "spec_sha256": "fa3d63697f35215bfcd6142192d83c30ce8d3b48a6f7210bdc19b360a1f2643a",
+  "answer_sha256": "567056a5543695d4e44ca35dab34e8c23255cac681aff4b7e2a78ecfc5a8a902",
+  "valid_test_cases": 5,
+  "exception_test_cases": 9,
+  "type_before_value_witnesses": 0,
+  "oracle_checks": 5,
+  "designated_mutants": 8,
+  "pytest_validation": "pending S011 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-008"
+}

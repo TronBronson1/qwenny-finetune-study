@@ -1,0 +1,39 @@
+{
+  "id": "DV007",
+  "split": "development",
+  "family": "grid-neighbors",
+  "function": "grid_neighbors",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "row",
+    "column",
+    "rows",
+    "columns"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "9db0853bc126331f30b6910f1fe2da4dda760d69761f1e67262d53f6fed66080",
+  "target_sha256": "9f01eb623ef0661e68a49baa44dad3b395d4b38777b53b0d81fc16c9fce999db",
+  "spec_sha256": "1000ad3cdd6b90a9afd180bb3e9e82945a2cbc044bc01163e35f49c882d53a87",
+  "answer_sha256": "0ede9b438a15eefe10864995ffff29fa81c6d1f67504af5e97d1e82cd2844d5d",
+  "valid_test_cases": 6,
+  "exception_test_cases": 60,
+  "type_before_value_witnesses": 32,
+  "oracle_checks": 6,
+  "designated_mutants": 10,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

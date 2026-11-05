@@ -1,0 +1,37 @@
+{
+  "id": "TR055",
+  "split": "training",
+  "family": "rgb-hex-codec",
+  "function": "encode_rgb",
+  "revision": 3,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "schemas": [
+    "int",
+    "int",
+    "int"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Contract/oracle-authored derivative of candidate-007 (S010 declared additions); no failed model output used as a training answer.",
+  "previously_exposed_family": false,
+  "source_sha256": "1aa067c7b6dcf6e2ab2d364b073fcf0e5480137203e1db03dc47ae303309ed18",
+  "target_sha256": "045f3b0f3c20051c820621435996e56ab63e0e4414d52561a2d7913e85297706",
+  "spec_sha256": "3eefe2dfa1de96b39e7061bc2b3c0092e7510fb54ac7b604862b72e761f53a1d",
+  "answer_sha256": "e99e6e113d4b067c1e560f7c261b6169ef56921632d0b1971236195aeaf04f1c",
+  "valid_test_cases": 4,
+  "exception_test_cases": 27,
+  "type_before_value_witnesses": 9,
+  "oracle_checks": 4,
+  "designated_mutants": 5,
+  "pytest_validation": "pending S010 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-007"
+}

@@ -82,7 +82,7 @@ def main():
     results.sort(key=lambda x: (x["task"], x["variant"] != "reference", x["variant"]))
     refs = [r for r in results if r["variant"] == "reference"]
     import pytest
-    summary = dict(status="passed" if not failures else "failed", candidate="candidate-008", candidate_manifest_sha256=sha(C8 / "SHA256.json"),
+    summary = dict(status="passed" if not failures else "failed", candidate=C8.name, candidate_manifest_sha256=sha(C8 / "SHA256.json"),
                    runtime=f"{platform.python_version()} / pytest {pytest.__version__} / {platform.platform()}",
                    reference_suites=len(refs), reference_cases=sum(r.get("tests", 0) for r in refs),
                    designated_mutants=len(results) - len(refs), failures=failures, results=results,

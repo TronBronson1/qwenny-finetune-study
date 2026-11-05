@@ -1,0 +1,68 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('',)",
+    "expected_python": "[]",
+    "after_python": "('',)",
+    "category": "empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('/',)",
+    "expected_python": "[]",
+    "after_python": "('/',)",
+    "category": "separator-only"
+  },
+  {
+    "id": "v002",
+    "args_python": "('//a///b/',)",
+    "expected_python": "['a', 'b']",
+    "after_python": "('//a///b/',)",
+    "category": "repeated-separators"
+  },
+  {
+    "id": "v003",
+    "args_python": "('/./../',)",
+    "expected_python": "['.', '..']",
+    "after_python": "('/./../',)",
+    "category": "literal-dot-segments"
+  },
+  {
+    "id": "v004",
+    "args_python": "('a\\\\b/c',)",
+    "expected_python": "['a\\\\b', 'c']",
+    "after_python": "('a\\\\b/c',)",
+    "category": "literal-backslash"
+  },
+  {
+    "id": "v005",
+    "args_python": "('/ a /字/',)",
+    "expected_python": "[' a ', '字']",
+    "after_python": "('/ a /字/',)",
+    "category": "space-unicode"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''),)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x',)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None,)",
+    "exception": "TypeError",
+    "category": "type:text"
+  }
+]

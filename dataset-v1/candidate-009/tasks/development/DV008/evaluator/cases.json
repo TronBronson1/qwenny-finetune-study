@@ -1,0 +1,127 @@
+[
+  {
+    "id": "v000",
+    "args_python": "('', '')",
+    "expected_python": "0",
+    "after_python": "('', '')",
+    "category": "both-empty"
+  },
+  {
+    "id": "v001",
+    "args_python": "('', 'abc')",
+    "expected_python": "3",
+    "after_python": "('', 'abc')",
+    "category": "left-empty"
+  },
+  {
+    "id": "v002",
+    "args_python": "('abc', '')",
+    "expected_python": "3",
+    "after_python": "('abc', '')",
+    "category": "right-empty"
+  },
+  {
+    "id": "v003",
+    "args_python": "('cat', 'cat')",
+    "expected_python": "0",
+    "after_python": "('cat', 'cat')",
+    "category": "equal"
+  },
+  {
+    "id": "v004",
+    "args_python": "('cat', 'cut')",
+    "expected_python": "1",
+    "after_python": "('cat', 'cut')",
+    "category": "substitution"
+  },
+  {
+    "id": "v005",
+    "args_python": "('ab', 'ba')",
+    "expected_python": "2",
+    "after_python": "('ab', 'ba')",
+    "category": "two-edits"
+  },
+  {
+    "id": "v006",
+    "args_python": "('kitten', 'sitting')",
+    "expected_python": "3",
+    "after_python": "('kitten', 'sitting')",
+    "category": "multistep"
+  },
+  {
+    "id": "v007",
+    "args_python": "('é', 'e')",
+    "expected_python": "1",
+    "after_python": "('é', 'e')",
+    "category": "unicode-accent"
+  },
+  {
+    "id": "v008",
+    "args_python": "('A', 'a')",
+    "expected_python": "1",
+    "after_python": "('A', 'a')",
+    "category": "ascii-case-sensitive"
+  },
+  {
+    "id": "v009",
+    "args_python": "('é', 'É')",
+    "expected_python": "1",
+    "after_python": "('é', 'É')",
+    "category": "unicode-case-sensitive"
+  },
+  {
+    "id": "v010",
+    "args_python": "('é', 'é')",
+    "expected_python": "2",
+    "after_python": "('é', 'é')",
+    "category": "literal-codepoints-no-normalization"
+  },
+  {
+    "id": "e000",
+    "args_python": "(StrChild(''), '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e001",
+    "args_python": "(b'x', '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e002",
+    "args_python": "(1, '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e003",
+    "args_python": "(None, '')",
+    "exception": "TypeError",
+    "category": "type:left"
+  },
+  {
+    "id": "e004",
+    "args_python": "('', StrChild(''))",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e005",
+    "args_python": "('', b'x')",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e006",
+    "args_python": "('', 1)",
+    "exception": "TypeError",
+    "category": "type:right"
+  },
+  {
+    "id": "e007",
+    "args_python": "('', None)",
+    "exception": "TypeError",
+    "category": "type:right"
+  }
+]

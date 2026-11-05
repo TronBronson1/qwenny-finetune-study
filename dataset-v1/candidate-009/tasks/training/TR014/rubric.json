@@ -1,0 +1,59 @@
+{
+  "status": "finite-agent-category-map-pending-execution",
+  "model_visible": true,
+  "return_type": "exact built-in str",
+  "semantic_categories": [
+    {
+      "requirement": "empty",
+      "gold_case": "v000"
+    },
+    {
+      "requirement": "unchanged",
+      "gold_case": "v001"
+    },
+    {
+      "requirement": "spaces-only",
+      "gold_case": "v002"
+    },
+    {
+      "requirement": "edges-and-run",
+      "gold_case": "v003"
+    },
+    {
+      "requirement": "preserve-tab",
+      "gold_case": "v004"
+    },
+    {
+      "requirement": "preserve-lf",
+      "gold_case": "v005"
+    },
+    {
+      "requirement": "unicode",
+      "gold_case": "v006"
+    },
+    {
+      "requirement": "preserve-nbsp",
+      "gold_case": "v007"
+    },
+    {
+      "requirement": "preserve-lf-run",
+      "gold_case": "v008"
+    },
+    {
+      "requirement": "preserve-tab-run",
+      "gold_case": "v009"
+    },
+    {
+      "requirement": "space-then-tab-lf",
+      "gold_case": "v010"
+    },
+    {
+      "requirement": "unicode-digits",
+      "gold_case": "v011"
+    }
+  ],
+  "type_coverage": "Every stated argument/type level: ordinary and subclass; bool for int; other arguments valid.",
+  "validation_order": "Type checks before value/shape; stated shape checks before bounds.",
+  "mutation_applicable": false,
+  "limitations": "Finite same-agent semantic review plus one independent-audit mutant pass; not exhaustive correctness."
+}

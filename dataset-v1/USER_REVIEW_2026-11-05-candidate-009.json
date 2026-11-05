@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-05",
+  "timezone": "America/New_York",
+  "reviewer": "user via chat",
+  "dataset": "candidate-009",
+  "dataset_hash_manifest_sha256": "a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb",
+  "user_statements": [
+    "I have reviewed and you are approved to continue",
+    "Clarification selected when asked what the approval covers: \"Approve candidate-009\" (new instruction wording in 19 tasks, the DV001 identity sentence, 3 renamed labels, and this hash). The other options offered were left unselected: making it the current candidate, authorizing training packets, and approving the adoption-rule pre-registration."
+  ],
+  "record_kind": "user review sign-off of the S011 model-visible wording changes (including amendment 1) and approval of the candidate-009 corpus hash",
+  "reviewed": true,
+  "hash_approved": true,
+  "approved_wording": {
+    "coverage_sentence_19_tasks": "Compare inputs before and after every call, including calls that raise.",
+    "dv001_addition": "Compare arbitrary element objects by identity, not by copied value.",
+    "label_renames": {
+      "DV011": "unordered-overlap-chain -> unordered-overlap-with-disjoint",
+      "TR024": "compatibility-characters -> compatibility-and-nonascii-digit",
+      "TR060": "compatibility-characters -> compatibility-and-nonascii-digit"
+    }
+  },
+  "integrity_check_at_recording": "all 1,354 files listed in candidate-009/SHA256.json matched their recorded digests",
+  "approval_guard": "Consumers must match this exact SHA256.json hash. Approvals of candidate-006, -007 or -008 are not transferred, and this approval does not transfer to any later edit.",
+  "not_covered_by_this_record": [
+    "Selection as the current candidate: CURRENT_CANDIDATE.txt is unchanged (candidate-006).",
+    "Training authorization of the staged packets in studies/S011-error-path-preservation/packets-009/, or any training run.",
+    "Approval of the adoption-rule pre-registration proposal (independent-review/power-sim/PREREGISTRATION_PROPOSAL.md)."
+  ],
+  "per_record_review_log_asserted": false,
+  "note": "Records the user's statements and explicit selection without inventing individual reviewer actions or inferring approval from automated test counts."
+}

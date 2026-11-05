@@ -1,0 +1,33 @@
+{
+  "id": "TR030",
+  "split": "training",
+  "family": "transpose",
+  "function": "transpose",
+  "revision": 4,
+  "status": "repair-candidate-unapproved",
+  "kind": "generate-tests",
+  "module": "subject",
+  "parameters": [
+    "matrix"
+  ],
+  "schemas": [
+    "matrix"
+  ],
+  "review_status": "finite-agent-calibration-pending-execution",
+  "training_eligible": false,
+  "mutates_input_as_specified": false,
+  "provenance": "Candidate-008 plus S011 error-path preservation (prompt sentence, gold assertion, promoted audit mutants).",
+  "previously_exposed_family": false,
+  "source_sha256": "589e6fc5954a65820cfd0954dc5e114b498a8ee00ada62cc244d1955c047c510",
+  "target_sha256": "80ee76a1199fbf4cfc119e97c3f143f7761c34b219e53e63b85603ecd11e0191",
+  "spec_sha256": "36d5763b8809f3d34724f8786cfbe5a03f7b0beb8cc80c6c54ab969c01461839",
+  "answer_sha256": "7e52bbae020b36a53f6958cbb8c9d0899a142db6868799e80cbfa9276adc1ce0",
+  "valid_test_cases": 7,
+  "exception_test_cases": 17,
+  "type_before_value_witnesses": 1,
+  "oracle_checks": 7,
+  "designated_mutants": 13,
+  "pytest_validation": "pending S011 validation",
+  "limitation": "Separate algorithms are same-author checks, not independent review; finite coverage.",
+  "parent_candidate": "candidate-008"
+}
