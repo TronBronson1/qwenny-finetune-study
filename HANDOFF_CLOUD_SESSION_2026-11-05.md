@@ -145,7 +145,7 @@ Decide this **before** any held-out evaluation, and record it as a change to `01
     - DV001's sentence now specifies identity comparison.
     - Three labels are renamed.
   - **After the amendment:** 1,557 cases and 483/483 mutants, passed on Windows with Python 3.15.2. The audit still shows 0 surviving mutants and none new. Total 64,384 tokens.
-  - **Approval:** it needs approval of the new wording (the main sentence, the DV001 addition and the renamed labels) and of the hash `a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb`. The candidate-008 approval does not transfer.
+  - **Approval:** the user approved the new wording and hash `a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb` on Nov 5, 2026. Making it current and authorizing training remain separate decisions.
 - **Staged candidate-008 token packets** (`studies/S010-rubric-gap-repair/packets-008/`):
   - Built in GitHub Actions after first regenerating S009's committed baseline packets byte-for-byte.
   - Maximum training row 1,919 tokens (TR058 overlay), exact answer-only masks.
@@ -159,7 +159,7 @@ Decide this **before** any held-out evaluation, and record it as a change to `01
 ## Open decisions and next steps (in suggested order)
 
 1. Review and merge PRs #1 → #4 (→ #6), #2 and #3, or close any you reject. Then update `program/CURRENT_STATE.md` and `START_HERE.md`.
-2. Decide whether to approve candidate-009 (new sentence + hash) or keep candidate-008. Either way, use that candidate's validated TR058 fit overlay for training packets.
+2. ~~Decide whether to approve candidate-009.~~ **Approved Nov 5:** wording plus hash `a3f14259…1aeb` (`dataset-v1/USER_REVIEW_2026-11-05-candidate-009.json` on the candidate-009 branch). It is not yet current, and its packets are not authorized for training.
 3. Decide which candidate becomes current and whether it gets a training export. Both need an explicit new statement from the user.
 4. N7 is handled by the candidate-009 proposal (PR #6). Rejecting it leaves N7 as a documented, deferred gap in candidate-008.
 5. On the PC, run S009 forensics with `--run-dir`, then the frozen local diagnostic protocol, before any new paired training attempt.
