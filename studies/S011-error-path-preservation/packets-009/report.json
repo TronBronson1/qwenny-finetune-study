@@ -1,0 +1,53 @@
+{
+  "status": "staged-not-authorized-candidate-not-approved",
+  "candidate": "candidate-009",
+  "candidate_manifest_sha256": "a3f1425972bb5c25e8c9579ccad71b8f5555abc49f735cbe91d677f00b5b1aeb",
+  "tokenizer_source": "Hub Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "base_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "calibration_reproduces_s009_baseline": {
+    "messages.jsonl": true,
+    "train.jsonl": true,
+    "development.jsonl": true
+  },
+  "train_rows": 60,
+  "development_rows": 24,
+  "max_train_tokens": 1967,
+  "max_development_tokens": 3770,
+  "total_train_input_tokens": 63253,
+  "total_train_target_tokens": 44065,
+  "longest_train_rows": [
+    [
+      1967,
+      "TR058"
+    ],
+    [
+      1880,
+      "TR049"
+    ],
+    [
+      1554,
+      "TR050"
+    ],
+    [
+      1538,
+      "TR034"
+    ],
+    [
+      1408,
+      "TR059"
+    ]
+  ],
+  "train_jsonl_sha256": "6b78f1cb87168675aaaa4a9ac505f2429c4e0e30fdfffb6fc83a1677c67cb0b2",
+  "development_jsonl_sha256": "f7a9bad230c4f56601bfb077ea65dfbf98630bfecf0cb04a4481a450da589222",
+  "messages_jsonl_sha256": "92c4a9c06ea950f78798be2e2a67c4d75761c721b6fb5fa4e0e24d87e80b5dbc",
+  "no_truncation": true,
+  "decoded_target_matches_every_answer": true,
+  "prompt_and_empty_reasoning_markup_masked": true,
+  "development_policy": "12 A/B no-gradient loss views only; excluded from optimizer records",
+  "shared_presentation_changes": [
+    "TR058 S011 validated fit overlay",
+    "TR049 optional comma whitespace removed with exact AST equality",
+    "DV008 development target combining accent escaped (exact AST equality)"
+  ],
+  "script_sha256": "d3b3a01c1f97eb637d3e1a4d60ecfba40abdc577fc9359aebd4c15dea95b4130"
+}
