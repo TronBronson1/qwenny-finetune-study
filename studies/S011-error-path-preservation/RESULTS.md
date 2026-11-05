@@ -9,7 +9,7 @@ Built November 5, 2026, on CPU only. Candidate-009 is a **proposal**: it changes
 - **Mutants:** the 19 audit `mutation-error` mutants are promoted to designated mutants, R-ids continuing per task. Each was hash-checked against the audit, and each witness is an invalid case where the expected exception is raised but an argument changed. The 463 candidate-008 mutants are unchanged.
 - **Unchanged:** the other 53 tasks, all references, cases and oracle files.
 
-## Gates
+## Gates (first build, superseded by amendment 1 below)
 
 | Gate | Result |
 |---|---|
