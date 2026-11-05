@@ -102,3 +102,16 @@ For a future paired attempt, set each arm's ceiling to ≥ 1.5× the observed C0
 - `figures/microbatch_lengths.png`, `memory_accounting.png`, `free_vs_step_time.png`, `time_budget.png`.
 
 GB here means 10^9 bytes and MiB means 2^20 bytes. The 8,138 MiB post-run reading is taken from `studies/S009-value-comments/RESULTS.md`; its exact timing relative to process exit is not recorded.
+
+## 5. Ready-to-run diagnostic
+
+The protocol in §3 is implemented in `diagnostic/`:
+- `PROTOCOL.md`: the frozen text; each run records its hash.
+- `run_diagnostic.py`: orchestrator and per-condition child process.
+- `summarize.py`: summary table and frozen verdict.
+
+The training loop reuses `training-v1/runtime.py` unchanged. The CPU dry run, which needs no torch or GPU, was rehearsed in the cloud session: an injected hang was stopped by the watchdog after 31 s, the remaining conditions ran, and the frozen interpretation was applied. The real GPU path has **not** been executed. Run the dry run on the PC first:
+
+```bash
+python independent-review/s009-slowdown/diagnostic/run_diagnostic.py --dry-run --ceiling 60 --idle 1
+```
