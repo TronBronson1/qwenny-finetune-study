@@ -35,3 +35,17 @@ See `PROTOCOL.md` § Amendment 1 and `independent-review/case-review-008-009/DIS
   - Windows Python 3.15.2 / pytest 9.2.0: **passed**. Hash `a3f14259…` verified; 72/72 suites, 1,557 cases, 483/483 mutants.
   - Pinned tokenizer: reproduces S007 exactly. Total **64,384** chat tokens. Only TR058 is over 2,048 (2,957); its overlay is **1,967**, and the maximum full training chat with the overlay is **2,021**.
   - `TRAINING_FIT_OVERLAY.json` was regenerated for the amended hash.
+
+## Staged token packets (`packets-009/`, Actions run [41964023872](https://github.com/TronBronson1/qwenny-finetune-study/actions/runs/41964023872))
+
+These use the same script and gates as S010's candidate-008 packets, against the validated amendment-1 hash `a3f14259…`.
+
+| Gate | Result |
+|---|---|
+| Rebuild the committed S009 baseline packets from candidate-007 | **byte-identical**: messages, train and development jsonl |
+| Candidate-009 packets | 60 training rows (60 + 24 development A/B rows); exact answer-only masks; no truncation; every decoded target equals its answer |
+| Lengths | Maximum training row **1,967** (TR058 overlay), then TR049 1,880 and TR050 1,554. Totals: 63,253 input and 44,065 supervised tokens; candidate-008 packets have 62,731 and 43,617. |
+
+Hashes: `messages_jsonl_sha256` `92c4a9c0…`, `train_jsonl_sha256` `6b78f1cb…` (full values in `packets-009/report.json`).
+
+The packets are **not approved and not authorized for training**. Candidate-009 itself still needs user approval. The maximum example is 87 tokens longer than S009's 1,880-token preflight example, so repeat the GPU maximum-example preflight.
